@@ -387,8 +387,60 @@ function showReviewCard(){
 function revealAnswer(){document.getElementById('review-answer').style.display='block';document.getElementById('reveal-btn').style.display='none';document.getElementById('review-btns').style.display='flex';}
 function reviewRate(q){updateSrs(reviewQueue[reviewIdx].word,q);reviewIdx++;showReviewCard();updateWbBadge();}
 
-// ══════ TTS ══════
-function speak(text,btn){if(currentUtterance&&speechSynthesis.speaking){speechSynthesis.cancel();if(currentBtn){currentBtn.classList.remove('playing');currentBtn.closest('.card,.vocab-card')?.classList.remove('highlight');}if(currentBtn===btn){currentBtn=null;currentUtterance=null;return;}}const u=new SpeechSynthesisUtterance(text);u.lang='en-US';u.rate=currentRate;const v=speechSynthesis.getVoices();const p=v.find(x=>x.name.includes('Samantha'))||v.find(x=>x.lang==='en-US'&&x.localService)||v.find(x=>x.lang.startsWith('en'));if(p)u.voice=p;currentUtterance=u;currentBtn=btn;btn.classList.add('playing');btn.closest('.card,.vocab-card,.review-card')?.classList.add('highlight');u.onend=u.onerror=()=>{btn.classList.remove('playing');btn.closest('.card,.vocab-card,.review-card')?.classList.remove('highlight');currentBtn=null;currentUtterance=null;};speechSynthesis.speak(u);}
+// ══════ TTS (Azure Neural Voice with fallback) ══════
+let ttsAudio = null;
+function speak(text, btn) {
+  // Stop any current playback
+  if (ttsAudio) { ttsAudio.pause(); ttsAudio = null; }
+  if (speechSynthesis.speaking) speechSynthesis.cancel();
+  if (currentBtn) {
+    currentBtn.classList.remove('playing');
+    currentBtn.closest('.card,.vocab-card,.review-card')?.classList.remove('highlight');
+  }
+  if (currentBtn === btn) { currentBtn = null; currentUtterance = null; return; }
+
+  currentBtn = btn;
+  btn.classList.add('playing');
+  btn.closest('.card,.vocab-card,.review-card')?.classList.add('highlight');
+
+  const done = () => {
+    btn.classList.remove('playing');
+    btn.closest('.card,.vocab-card,.review-card')?.classList.remove('highlight');
+    currentBtn = null; currentUtterance = null; ttsAudio = null;
+  };
+
+  if (AZURE_PROXY) {
+    // Azure Neural TTS
+    fetch(AZURE_PROXY + '/tts', {
+      method: 'POST',
+      headers: { 'X-TTS-Text': text, 'X-TTS-Rate': String(currentRate) },
+    }).then(r => {
+      if (!r.ok) throw new Error('TTS failed');
+      return r.blob();
+    }).then(blob => {
+      const url = URL.createObjectURL(blob);
+      ttsAudio = new Audio(url);
+      ttsAudio.onended = () => { URL.revokeObjectURL(url); done(); };
+      ttsAudio.onerror = () => { URL.revokeObjectURL(url); done(); };
+      ttsAudio.play();
+    }).catch(() => {
+      // Fallback to browser TTS
+      speakFallback(text, btn, done);
+    });
+  } else {
+    speakFallback(text, btn, done);
+  }
+}
+function speakFallback(text, btn, done) {
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = 'en-US'; u.rate = currentRate;
+  const v = speechSynthesis.getVoices();
+  const p = v.find(x=>x.name.includes('Samantha')) || v.find(x=>x.lang==='en-US'&&x.localService) || v.find(x=>x.lang.startsWith('en'));
+  if (p) u.voice = p;
+  currentUtterance = u;
+  u.onend = u.onerror = done;
+  speechSynthesis.speak(u);
+}
 
 // ══════ SPEECH RECOGNITION + SCORING ══════
 function normalize(t){return t.toLowerCase().replace(/['']/g,"'").replace(/let's/g,'lets').replace(/[^\w\s']/g,'').trim().split(/\s+/);}
