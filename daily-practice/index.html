@@ -229,7 +229,7 @@
   .reader-wrap.visible{display:flex;}
   .reader-viewport{flex:1;overflow:hidden;position:relative;-webkit-tap-highlight-color:transparent;touch-action:pan-y;width:100%;}
   .reader-columns{
-    height:100%;width:100%;overflow:hidden;
+    width:max-content;min-width:100%;overflow:hidden;
     column-fill:auto;
     -webkit-font-smoothing:antialiased;
     word-wrap:break-word;overflow-wrap:break-word;
@@ -1301,24 +1301,33 @@ function calcReaderPages(cols, isNewChapter) {
     requestAnimationFrame(() => {
       const vp = document.getElementById('reader-viewport');
       readerPageWidth = vp.offsetWidth;
-      if (!readerPageWidth) return;
+      const vpHeight = vp.offsetHeight;
+      if (!readerPageWidth || !vpHeight) return;
+
       const pad = parseInt(cols.style.paddingLeft) || 20;
       const colW = readerPageWidth - pad * 2;
       cols.style.columnWidth = colW + 'px';
+      cols.style.height = vpHeight + 'px'; // Explicit px height, not %
 
-      // Force reflow
-      void cols.offsetHeight;
+      // Temporarily allow overflow to get real scrollWidth
+      cols.style.overflow = 'visible';
+      void cols.offsetHeight; // force reflow
 
       setTimeout(() => {
         const sw = cols.scrollWidth;
-        // Subtract 0.05 page tolerance to avoid blank trailing page from sub-pixel rounding
-        readerTotalPages = Math.max(1, Math.ceil(sw / readerPageWidth - 0.05));
+        cols.style.overflow = 'hidden';
+
+        readerTotalPages = Math.max(1, Math.floor(sw / readerPageWidth));
+        // If remaining pixels < 10% of a page, don't count as extra page
+        const remainder = sw - readerTotalPages * readerPageWidth;
+        if (remainder > readerPageWidth * 0.1) readerTotalPages++;
+
         if (isNewChapter) { readerPage = 0; buildToc(); }
         else { readerPage = Math.min(readerPage, readerTotalPages - 1); }
         cols.style.transition = isNewChapter ? 'none' : 'transform .3s cubic-bezier(.25,.1,.25,1)';
         cols.style.transform = `translateX(-${readerPage * readerPageWidth}px)`;
         updateReaderUI();
-      }, 120);
+      }, 50);
     });
   });
 }
