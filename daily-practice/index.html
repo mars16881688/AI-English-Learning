@@ -231,9 +231,11 @@
   .reader-viewport{flex:1;overflow:hidden;position:relative;-webkit-tap-highlight-color:transparent;}
   /* Transparent tap zones for reliable mobile page turning */
   .reader-tap-zone{position:absolute;top:0;bottom:0;z-index:2;-webkit-tap-highlight-color:transparent;}
-  .reader-tap-prev{left:0;width:28%;}
-  .reader-tap-next{right:0;width:28%;}
-  .reader-tap-center{left:28%;right:28%;top:0;bottom:0;position:absolute;z-index:2;-webkit-tap-highlight-color:transparent;}
+  .reader-tap-prev{left:0;width:22%;}
+  .reader-tap-next{right:0;width:22%;}
+  /* Floating menu button to open control bar */
+  .reader-menu-btn{position:absolute;top:12px;right:12px;z-index:3;width:36px;height:36px;border-radius:50%;border:none;background:rgba(0,0,0,.35);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;-webkit-tap-highlight-color:transparent;backdrop-filter:blur(4px);opacity:.6;transition:opacity .2s;}
+  .reader-menu-btn:hover,.reader-menu-btn:active{opacity:1;}
 
   /* Page indicator */
   .reader-page-hint{position:absolute;bottom:8px;left:0;right:0;text-align:center;font-size:11px;opacity:.4;pointer-events:none;padding-bottom:env(safe-area-inset-bottom,0px);}
@@ -463,8 +465,10 @@
 <div class="reader-wrap" id="reader-wrap">
   <div class="reader-viewport" id="reader-viewport">
     <div class="reader-tap-zone reader-tap-prev" id="reader-tap-prev"></div>
-    <div class="reader-tap-zone reader-tap-center" id="reader-tap-center"></div>
     <div class="reader-tap-zone reader-tap-next" id="reader-tap-next"></div>
+    <button class="reader-menu-btn" id="reader-menu-btn" onclick="showReaderBar()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:18px;height:18px"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
   </div>
   <div class="reader-page-hint" id="reader-page-hint"></div>
 </div>
@@ -1213,18 +1217,16 @@ function openEpubReader(arrayBuffer) {
     }
   });
 
-  // Tap zones for reliable mobile page turning (above iframe, z-index:2)
+  // Tap zones for reliable mobile page turning (edges only, z-index:2)
   const tapPrev = document.getElementById('reader-tap-prev');
   const tapNext = document.getElementById('reader-tap-next');
-  const tapCenter = document.getElementById('reader-tap-center');
 
   tapPrev.onclick = () => { if (epubRendition) epubRendition.prev(); };
   tapNext.onclick = () => { if (epubRendition) epubRendition.next(); };
-  tapCenter.onclick = () => showReaderBar();
 
-  // Swipe on tap zones (covers full viewport via the three zones)
+  // Swipe on edge tap zones
   let zoneStartX = 0, zoneStartY = 0;
-  [tapPrev, tapNext, tapCenter].forEach(zone => {
+  [tapPrev, tapNext].forEach(zone => {
     zone.addEventListener('touchstart', e => { zoneStartX = e.touches[0].clientX; zoneStartY = e.touches[0].clientY; }, { passive: true });
     zone.addEventListener('touchend', e => {
       const dx = e.changedTouches[0].clientX - zoneStartX;
