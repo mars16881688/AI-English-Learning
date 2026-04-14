@@ -233,6 +233,8 @@
   .reader-tap-zone{position:absolute;top:0;bottom:0;z-index:2;-webkit-tap-highlight-color:transparent;}
   .reader-tap-prev{left:0;width:22%;}
   .reader-tap-next{right:0;width:22%;}
+  /* Touch overlay for word lookup on mobile (covers middle area above iframe) */
+  .reader-touch-overlay{position:absolute;top:0;bottom:0;left:22%;right:22%;z-index:2;-webkit-tap-highlight-color:transparent;}
   /* Floating menu button to open control bar */
   .reader-menu-btn{position:absolute;top:12px;right:12px;z-index:3;width:36px;height:36px;border-radius:50%;border:none;background:rgba(0,0,0,.35);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;-webkit-tap-highlight-color:transparent;backdrop-filter:blur(4px);opacity:.6;transition:opacity .2s;}
   .reader-menu-btn:hover,.reader-menu-btn:active{opacity:1;}
@@ -466,6 +468,7 @@
   <div class="reader-viewport" id="reader-viewport">
     <div class="reader-tap-zone reader-tap-prev" id="reader-tap-prev"></div>
     <div class="reader-tap-zone reader-tap-next" id="reader-tap-next"></div>
+    <div class="reader-touch-overlay" id="reader-touch-overlay"></div>
     <button class="reader-menu-btn" id="reader-menu-btn" onclick="showReaderBar()">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:18px;height:18px"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
     </button>
@@ -1245,46 +1248,17 @@ function openEpubReader(arrayBuffer) {
     if (e.target && e.target.classList && e.target.classList.contains('ep-word')) return;
   });
 
-  // Word lookup: inject CSS into each chapter iframe
+  // Word lookup: inject CSS + wrap words in each chapter iframe
   epubRendition.hooks.content.register((contents) => {
     contents.addStylesheetRules({
-      'span.ep-word': { 'cursor': 'pointer', 'border-radius': '3px', 'padding': '0 1px', '-webkit-tap-highlight-color': 'rgba(0,184,184,0.15)' },
-      'span.ep-word:hover': { 'background': 'rgba(0,184,184,0.12)' },
+      'span.ep-word': { 'cursor': 'pointer', 'border-radius': '3px', 'padding': '0 1px' },
       'span.ep-word.saved': { 'border-bottom': '2px solid #ff9728' },
     });
 
-    // Make words tappable in the rendered content
     const doc = contents.document;
     const walker = doc.createTreeWalker(doc.body, NodeFilter.SHOW_TEXT, null);
     const textNodes = [];
     while (walker.nextNode()) textNodes.push(walker.currentNode);
-
-    // Track touch to distinguish tap vs swipe inside iframe
-    let wordTouchStart = null;
-    let wordLookupFired = false;
-    doc.addEventListener('touchstart', (e) => {
-      wordTouchStart = { x: e.touches[0].clientX, y: e.touches[0].clientY, t: Date.now() };
-      wordLookupFired = false;
-    }, { passive: true });
-    doc.addEventListener('touchend', (e) => {
-      if (wordLookupFired || !wordTouchStart) return;
-      const dx = e.changedTouches[0].clientX - wordTouchStart.x;
-      const dy = e.changedTouches[0].clientY - wordTouchStart.y;
-      const dt = Date.now() - wordTouchStart.t;
-      // Only trigger on short taps with minimal movement
-      if (Math.abs(dx) < 15 && Math.abs(dy) < 15 && dt < 500) {
-        const target = doc.elementFromPoint(e.changedTouches[0].clientX, e.changedTouches[0].clientY);
-        const wordSpan = target && target.closest ? target.closest('.ep-word') : (target && target.classList && target.classList.contains('ep-word') ? target : null);
-        if (wordSpan) {
-          wordLookupFired = true;
-          wordJustClicked = true;
-          const w = wordSpan.dataset.word;
-          const ctx = wordSpan.parentElement?.textContent || w;
-          lookupWordFromReader(w, ctx);
-        }
-      }
-      wordTouchStart = null;
-    });
 
     textNodes.forEach(node => {
       const text = node.textContent;
@@ -1297,9 +1271,8 @@ function openEpubReader(arrayBuffer) {
           span.className = 'ep-word' + (isInWordbook(tok.toLowerCase()) ? ' saved' : '');
           span.textContent = tok;
           span.dataset.word = tok.toLowerCase();
-          // Desktop: click handler
-          span.addEventListener('click', (e) => {
-            if (wordLookupFired) return; // Already handled by touchend
+          // Desktop click handler
+          span.addEventListener('click', () => {
             wordJustClicked = true;
             lookupWordFromReader(tok.toLowerCase(), node.parentElement?.textContent || tok);
           });
@@ -1310,6 +1283,42 @@ function openEpubReader(arrayBuffer) {
       });
       node.parentNode.replaceChild(frag, node);
     });
+  });
+
+  // Mobile word lookup: touch overlay in parent page → coordinate map to iframe
+  const touchOverlay = document.getElementById('reader-touch-overlay');
+  let olTouchStart = null;
+  touchOverlay.addEventListener('touchstart', (e) => {
+    olTouchStart = { x: e.touches[0].clientX, y: e.touches[0].clientY, t: Date.now() };
+  }, { passive: true });
+  touchOverlay.addEventListener('touchend', (e) => {
+    if (!olTouchStart) return;
+    const endX = e.changedTouches[0].clientX, endY = e.changedTouches[0].clientY;
+    const dx = endX - olTouchStart.x, dy = endY - olTouchStart.y;
+    const dt = Date.now() - olTouchStart.t;
+    olTouchStart = null;
+    // Swipe → page turn
+    if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy) * 1.5) {
+      dx < 0 ? epubRendition.next() : epubRendition.prev();
+      return;
+    }
+    // Short tap → find word in iframe via coordinate mapping
+    if (Math.abs(dx) < 15 && Math.abs(dy) < 15 && dt < 500) {
+      const iframe = epubContainer.querySelector('iframe');
+      if (!iframe || !iframe.contentDocument) return;
+      const rect = iframe.getBoundingClientRect();
+      const iframeX = endX - rect.left;
+      const iframeY = endY - rect.top;
+      const el = iframe.contentDocument.elementFromPoint(iframeX, iframeY);
+      const wordSpan = el && (el.classList.contains('ep-word') ? el : (el.closest && el.closest('.ep-word')));
+      if (wordSpan && wordSpan.dataset.word) {
+        wordJustClicked = true;
+        lookupWordFromReader(wordSpan.dataset.word, wordSpan.parentElement?.textContent || wordSpan.dataset.word);
+      } else {
+        // Tapped non-word area → show control bar
+        showReaderBar();
+      }
+    }
   });
 
   // Generate locations for progress
