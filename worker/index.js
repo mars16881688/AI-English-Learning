@@ -16,7 +16,7 @@
 
 const CORS = {
   'Access-Control-Allow-Origin': '*',
-  'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+  'Access-Control-Allow-Methods': 'GET, POST, DELETE, OPTIONS',
   'Access-Control-Allow-Headers': 'Content-Type, Authorization, X-Reference-Text, X-TTS-Text, X-TTS-Rate, X-TTS-Voice',
 };
 
@@ -49,6 +49,30 @@ export default {
       if (!user) return json({ error: 'Unauthorized' }, 401);
       if (request.method === 'GET') return handleGetSync(user, env);
       if (request.method === 'POST') return handlePostSync(request, user, env);
+    }
+
+    // Books (auth required)
+    if (path === '/books' && request.method === 'GET') {
+      const user = await authCheck(request, env);
+      if (!user) return json({ error: 'Unauthorized' }, 401);
+      return handleListBooks(user, env);
+    }
+    if (path === '/books/upload' && request.method === 'POST') {
+      const user = await authCheck(request, env);
+      if (!user) return json({ error: 'Unauthorized' }, 401);
+      return handleUploadBook(request, user, env);
+    }
+    if (path.startsWith('/books/') && request.method === 'GET') {
+      const user = await authCheck(request, env);
+      if (!user) return json({ error: 'Unauthorized' }, 401);
+      const bookId = path.replace('/books/', '');
+      return handleDownloadBook(bookId, user, env);
+    }
+    if (path.startsWith('/books/') && request.method === 'DELETE') {
+      const user = await authCheck(request, env);
+      if (!user) return json({ error: 'Unauthorized' }, 401);
+      const bookId = path.replace('/books/', '');
+      return handleDeleteBook(bookId, user, env);
     }
 
     // Score save (auth required)
@@ -247,6 +271,104 @@ function json(data, status = 200) {
 }
 function escXml(s) {
   return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+
+// ── Books (R2 storage, 50MB per user) ────────────────
+const MAX_STORAGE_PER_USER = 50 * 1024 * 1024; // 50MB
+
+async function getUserBooksMeta(username, env) {
+  const meta = await env.EP_DATA.get('books:' + username, 'json');
+  return meta || { books: [], totalSize: 0 };
+}
+async function saveUserBooksMeta(username, meta, env) {
+  await env.EP_DATA.put('books:' + username, JSON.stringify(meta));
+}
+
+async function handleListBooks(username, env) {
+  const meta = await getUserBooksMeta(username, env);
+  return json({
+    books: meta.books.map(b => ({ id: b.id, name: b.name, size: b.size, uploadedAt: b.uploadedAt })),
+    totalSize: meta.totalSize,
+    maxSize: MAX_STORAGE_PER_USER,
+    remaining: MAX_STORAGE_PER_USER - meta.totalSize,
+  });
+}
+
+async function handleUploadBook(request, username, env) {
+  const contentType = request.headers.get('Content-Type') || '';
+
+  let fileName = 'book.epub';
+  let fileData;
+
+  if (contentType.includes('multipart/form-data')) {
+    const formData = await request.formData();
+    const file = formData.get('file');
+    if (!file) return json({ error: 'No file in form data' }, 400);
+    fileName = file.name || 'book.epub';
+    fileData = await file.arrayBuffer();
+  } else {
+    fileName = request.headers.get('X-File-Name') || 'book.epub';
+    fileData = await request.arrayBuffer();
+  }
+
+  if (!fileData || fileData.byteLength === 0) return json({ error: 'Empty file' }, 400);
+  if (!fileName.toLowerCase().endsWith('.epub')) return json({ error: 'Only EPUB files supported' }, 400);
+
+  const meta = await getUserBooksMeta(username, env);
+  if (meta.totalSize + fileData.byteLength > MAX_STORAGE_PER_USER) {
+    const remaining = Math.max(0, MAX_STORAGE_PER_USER - meta.totalSize);
+    return json({ error: `Storage limit exceeded. ${Math.round(remaining / 1024 / 1024)}MB remaining.` }, 413);
+  }
+
+  const bookId = crypto.randomUUID().slice(0, 12);
+  const r2Key = `${username}/${bookId}.epub`;
+
+  await env.EP_BOOKS.put(r2Key, fileData, {
+    customMetadata: { username, fileName, bookId },
+  });
+
+  meta.books.push({
+    id: bookId,
+    name: fileName.replace('.epub', ''),
+    size: fileData.byteLength,
+    r2Key,
+    uploadedAt: new Date().toISOString(),
+  });
+  meta.totalSize += fileData.byteLength;
+  await saveUserBooksMeta(username, meta, env);
+
+  return json({ id: bookId, name: fileName.replace('.epub', ''), size: fileData.byteLength });
+}
+
+async function handleDownloadBook(bookId, username, env) {
+  const meta = await getUserBooksMeta(username, env);
+  const book = meta.books.find(b => b.id === bookId);
+  if (!book) return json({ error: 'Book not found' }, 404);
+
+  const obj = await env.EP_BOOKS.get(book.r2Key);
+  if (!obj) return json({ error: 'File not found in storage' }, 404);
+
+  return new Response(obj.body, {
+    headers: {
+      ...CORS,
+      'Content-Type': 'application/epub+zip',
+      'Content-Disposition': `attachment; filename="${book.name}.epub"`,
+    },
+  });
+}
+
+async function handleDeleteBook(bookId, username, env) {
+  const meta = await getUserBooksMeta(username, env);
+  const idx = meta.books.findIndex(b => b.id === bookId);
+  if (idx === -1) return json({ error: 'Book not found' }, 404);
+
+  const book = meta.books[idx];
+  await env.EP_BOOKS.delete(book.r2Key);
+  meta.totalSize -= book.size;
+  meta.books.splice(idx, 1);
+  await saveUserBooksMeta(username, meta, env);
+
+  return json({ ok: true, deleted: book.name });
 }
 
 // ── Admin ────────────────────────────────────────────

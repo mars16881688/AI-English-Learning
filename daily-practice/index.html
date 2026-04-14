@@ -912,11 +912,11 @@ const dictCache = {};
 let bookChapters = []; // [{title, text}]
 let currentChapter = 0;
 
-function renderReading() {
+async function renderReading() {
   const el = document.getElementById('reading-content');
-  const savedBook = localStorage.getItem(STORE_BOOK);
-  const savedText = localStorage.getItem(STORE_READING);
 
+  // If currently reading a book from localStorage cache
+  const savedBook = localStorage.getItem(STORE_BOOK);
   if (savedBook) {
     try {
       const book = JSON.parse(savedBook);
@@ -927,27 +927,63 @@ function renderReading() {
     } catch {}
   }
 
-  if (savedText) {
-    renderReadingBody(savedText);
-    return;
+  const savedText = localStorage.getItem(STORE_READING);
+  if (savedText) { renderReadingBody(savedText); return; }
+
+  // Show bookshelf + import options
+  el.innerHTML = '<div class="loading">Loading bookshelf...</div>';
+
+  let books = [];
+  let remaining = 50;
+  if (authToken) {
+    try {
+      const resp = await fetch(AZURE_PROXY + '/books', { headers: { 'Authorization': 'Bearer ' + authToken } });
+      if (resp.ok) {
+        const r = await resp.json();
+        books = r.books || [];
+        remaining = Math.round((r.remaining || 0) / 1024 / 1024);
+      }
+    } catch {}
   }
 
-  // Import screen
-  el.innerHTML = `
-    <div class="read-import">
-      <div class="read-option" onclick="document.getElementById('epub-file').click()">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
-        <h3>Import EPUB</h3>
-        <p>Upload an e-book file</p>
-        <input type="file" id="epub-file" accept=".epub" onchange="handleEpubUpload(this)">
-      </div>
-      <div class="read-option" onclick="showTextInput()">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-        <h3>Paste Text</h3>
-        <p>Article, email, document...</p>
-      </div>
+  let h = '';
+  // Import buttons
+  h += `<div class="read-import" style="flex-direction:row;gap:8px">
+    <div class="read-option" style="flex:1" onclick="document.getElementById('epub-file').click()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+      <h3>Upload EPUB</h3>
+      <p>${remaining}MB free</p>
+      <input type="file" id="epub-file" accept=".epub" onchange="handleEpubUpload(this)">
     </div>
-  `;
+    <div class="read-option" style="flex:1" onclick="showTextInput()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+      <h3>Paste Text</h3>
+      <p>Article, email...</p>
+    </div>
+  </div>`;
+
+  // Bookshelf
+  if (books.length) {
+    h += '<div class="section-title">My Books</div>';
+    books.forEach(b => {
+      const sizeMB = (b.size / 1024 / 1024).toFixed(1);
+      const date = b.uploadedAt ? b.uploadedAt.slice(0, 10) : '';
+      h += `<div class="wb-card" style="cursor:pointer" onclick="openCloudBook('${b.id}','${escJs(b.name)}')">
+        <div style="width:32px;height:32px;border-radius:6px;background:var(--accent-light);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" style="width:16px;height:16px"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+        </div>
+        <div class="wb-card-body">
+          <div class="wb-card-word">${escHtml(b.name)}</div>
+          <div class="wb-card-source">${sizeMB}MB · ${date}</div>
+        </div>
+        <button class="wb-remove" onclick="event.stopPropagation();deleteCloudBook('${b.id}','${escJs(b.name)}')" title="Delete">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>`;
+    });
+  }
+
+  el.innerHTML = h;
 }
 
 function showTextInput() {
@@ -967,78 +1003,98 @@ function startPasteReading() {
   renderReadingBody(text);
 }
 
+async function openCloudBook(bookId, bookName) {
+  const el = document.getElementById('reading-content');
+  el.innerHTML = '<div class="loading">Downloading book...</div>';
+  try {
+    const resp = await fetch(AZURE_PROXY + '/books/' + bookId, { headers: { 'Authorization': 'Bearer ' + authToken } });
+    if (!resp.ok) { el.innerHTML = '<div class="loading">Failed to download.</div>'; return; }
+    const blob = await resp.blob();
+    await parseEpubBlob(blob, bookName);
+  } catch (e) { el.innerHTML = `<div class="loading">Error: ${escHtml(e.message)}</div>`; }
+}
+
+async function deleteCloudBook(bookId, bookName) {
+  if (!confirm(`Delete "${bookName}"?`)) return;
+  await fetch(AZURE_PROXY + '/books/' + bookId, { method: 'DELETE', headers: { 'Authorization': 'Bearer ' + authToken } });
+  renderReading();
+}
+
 // ── EPUB parsing ──
 async function handleEpubUpload(input) {
   const file = input.files[0];
   if (!file) return;
   const el = document.getElementById('reading-content');
-  el.innerHTML = '<div class="loading">Parsing EPUB...</div>';
+  el.innerHTML = '<div class="loading">Uploading & parsing EPUB...</div>';
+
+  // Upload to cloud
+  if (authToken) {
+    try {
+      const formData = new FormData();
+      formData.append('file', file);
+      const upResp = await fetch(AZURE_PROXY + '/books/upload', {
+        method: 'POST',
+        headers: { 'Authorization': 'Bearer ' + authToken },
+        body: formData,
+      });
+      if (!upResp.ok) {
+        const err = await upResp.json();
+        el.innerHTML = `<div class="loading">${escHtml(err.error || 'Upload failed')}</div>`;
+        return;
+      }
+    } catch {}
+  }
 
   try {
-    const zip = await JSZip.loadAsync(file);
-
-    // 1. Find rootfile from container.xml
-    const container = await zip.file('META-INF/container.xml').async('text');
-    const containerDoc = new DOMParser().parseFromString(container, 'text/xml');
-    const rootPath = containerDoc.querySelector('rootfile').getAttribute('full-path');
-    const rootDir = rootPath.includes('/') ? rootPath.substring(0, rootPath.lastIndexOf('/') + 1) : '';
-
-    // 2. Parse OPF
-    const opf = await zip.file(rootPath).async('text');
-    const opfDoc = new DOMParser().parseFromString(opf, 'text/xml');
-
-    // Book title
-    const titleEl = opfDoc.querySelector('metadata title, dc\\:title');
-    const bookTitle = titleEl ? titleEl.textContent : file.name.replace('.epub', '');
-
-    // Manifest map: id -> href
-    const manifest = {};
-    opfDoc.querySelectorAll('manifest item').forEach(item => {
-      manifest[item.getAttribute('id')] = item.getAttribute('href');
-    });
-
-    // Spine order
-    const spineItems = [];
-    opfDoc.querySelectorAll('spine itemref').forEach(ref => {
-      const id = ref.getAttribute('idref');
-      if (manifest[id]) spineItems.push(manifest[id]);
-    });
-
-    // 3. Extract chapters
-    const chapters = [];
-    for (const href of spineItems) {
-      const fullPath = rootDir + href;
-      const f = zip.file(fullPath);
-      if (!f) continue;
-      const html = await f.async('text');
-      const doc = new DOMParser().parseFromString(html, 'text/html');
-
-      // Get title from heading or filename
-      const heading = doc.querySelector('h1, h2, h3');
-      const title = heading ? heading.textContent.trim().substring(0, 60) : href.replace(/.*\//, '').replace(/\.\w+$/, '');
-
-      // Extract text
-      const body = doc.querySelector('body');
-      if (!body) continue;
-      const text = extractText(body);
-      if (text.trim().length < 20) continue;
-      chapters.push({ title, text });
-    }
-
-    if (!chapters.length) {
-      el.innerHTML = '<div class="loading">No readable content found in this EPUB.</div>';
-      return;
-    }
-
-    bookChapters = chapters;
-    currentChapter = 0;
-    localStorage.setItem(STORE_BOOK, JSON.stringify({ title: bookTitle, chapters }));
-    localStorage.setItem(STORE_CHAPTER, '0');
-    localStorage.removeItem(STORE_READING);
-    renderBookChapter(bookTitle);
+    await parseEpubBlob(file, file.name.replace('.epub', ''));
   } catch (e) {
-    el.innerHTML = `<div class="loading">Failed to parse EPUB: ${escHtml(e.message)}</div>`;
+    document.getElementById('reading-content').innerHTML = `<div class="loading">Failed to parse EPUB: ${escHtml(e.message)}</div>`;
   }
+}
+
+async function parseEpubBlob(blob, fallbackTitle) {
+  const el = document.getElementById('reading-content');
+  el.innerHTML = '<div class="loading">Parsing EPUB...</div>';
+
+  const zip = await JSZip.loadAsync(blob);
+  const container = await zip.file('META-INF/container.xml').async('text');
+  const containerDoc = new DOMParser().parseFromString(container, 'text/xml');
+  const rootPath = containerDoc.querySelector('rootfile').getAttribute('full-path');
+  const rootDir = rootPath.includes('/') ? rootPath.substring(0, rootPath.lastIndexOf('/') + 1) : '';
+
+  const opf = await zip.file(rootPath).async('text');
+  const opfDoc = new DOMParser().parseFromString(opf, 'text/xml');
+  const titleEl = opfDoc.querySelector('metadata title, dc\\:title');
+  const bookTitle = titleEl ? titleEl.textContent : fallbackTitle;
+
+  const manifest = {};
+  opfDoc.querySelectorAll('manifest item').forEach(item => { manifest[item.getAttribute('id')] = item.getAttribute('href'); });
+  const spineItems = [];
+  opfDoc.querySelectorAll('spine itemref').forEach(ref => { const id = ref.getAttribute('idref'); if (manifest[id]) spineItems.push(manifest[id]); });
+
+  const chapters = [];
+  for (const href of spineItems) {
+    const f = zip.file(rootDir + href);
+    if (!f) continue;
+    const html = await f.async('text');
+    const doc = new DOMParser().parseFromString(html, 'text/html');
+    const heading = doc.querySelector('h1, h2, h3');
+    const title = heading ? heading.textContent.trim().substring(0, 60) : href.replace(/.*\//, '').replace(/\.\w+$/, '');
+    const body = doc.querySelector('body');
+    if (!body) continue;
+    const text = extractText(body);
+    if (text.trim().length < 20) continue;
+    chapters.push({ title, text });
+  }
+
+  if (!chapters.length) { el.innerHTML = '<div class="loading">No readable content found.</div>'; return; }
+
+  bookChapters = chapters;
+  currentChapter = 0;
+  localStorage.setItem(STORE_BOOK, JSON.stringify({ title: bookTitle, chapters }));
+  localStorage.setItem(STORE_CHAPTER, '0');
+  localStorage.removeItem(STORE_READING);
+  renderBookChapter(bookTitle);
 }
 
 function extractText(node) {

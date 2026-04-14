@@ -9,3 +9,7 @@ routes = [
 [[kv_namespaces]]
 binding = "EP_DATA"
 id = "da9164b428d54d50aaf74ecf1d5186bb"
+
+[[r2_buckets]]
+bucket_name = "ep-books"
+binding = "EP_BOOKS"
