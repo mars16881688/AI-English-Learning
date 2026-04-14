@@ -1297,27 +1297,28 @@ function loadChapterContent() {
 }
 
 function calcReaderPages(cols, isNewChapter) {
-  // Wait for DOM to settle, then measure
   requestAnimationFrame(() => {
     requestAnimationFrame(() => {
       const vp = document.getElementById('reader-viewport');
       readerPageWidth = vp.offsetWidth;
+      if (!readerPageWidth) return;
       const pad = parseInt(cols.style.paddingLeft) || 20;
-      const gap = parseInt(cols.style.columnGap) || 40;
-      const colW = Math.floor(readerPageWidth - pad * 2);
+      const colW = readerPageWidth - pad * 2;
       cols.style.columnWidth = colW + 'px';
 
-      // Force reflow then measure
-      void cols.scrollWidth;
+      // Force reflow
+      void cols.offsetHeight;
+
       setTimeout(() => {
         const sw = cols.scrollWidth;
-        readerTotalPages = Math.max(1, Math.round(sw / readerPageWidth));
+        // Subtract 0.05 page tolerance to avoid blank trailing page from sub-pixel rounding
+        readerTotalPages = Math.max(1, Math.ceil(sw / readerPageWidth - 0.05));
         if (isNewChapter) { readerPage = 0; buildToc(); }
         else { readerPage = Math.min(readerPage, readerTotalPages - 1); }
         cols.style.transition = isNewChapter ? 'none' : 'transform .3s cubic-bezier(.25,.1,.25,1)';
         cols.style.transform = `translateX(-${readerPage * readerPageWidth}px)`;
         updateReaderUI();
-      }, 100);
+      }, 120);
     });
   });
 }
