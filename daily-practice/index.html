@@ -14,6 +14,7 @@
     --accent: #58a6ff;
     --accent-hover: #79c0ff;
     --green: #3fb950;
+    --red: #f85149;
     --orange: #d29922;
     --radius: 12px;
   }
@@ -114,7 +115,13 @@
     border-radius: 10px;
   }
 
-  .play-btn {
+  .btn-group {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .play-btn, .rec-btn {
     width: 36px;
     height: 36px;
     border-radius: 50%;
@@ -129,13 +136,13 @@
     flex-shrink: 0;
   }
 
-  .play-btn:hover {
+  .play-btn:hover, .rec-btn:hover {
     border-color: var(--accent);
     color: var(--accent);
     background: rgba(88, 166, 255, 0.08);
   }
 
-  .play-btn:active {
+  .play-btn:active, .rec-btn:active {
     transform: scale(0.92);
   }
 
@@ -145,12 +152,35 @@
     animation: pulse 1.5s infinite;
   }
 
+  .rec-btn {
+    border-color: var(--border);
+    color: var(--red);
+  }
+
+  .rec-btn:hover {
+    border-color: var(--red);
+    background: rgba(248, 81, 73, 0.08);
+    color: var(--red);
+  }
+
+  .rec-btn.recording {
+    border-color: var(--red);
+    background: rgba(248, 81, 73, 0.15);
+    color: var(--red);
+    animation: rec-pulse 1s infinite;
+  }
+
   @keyframes pulse {
     0%, 100% { box-shadow: 0 0 0 0 rgba(63, 185, 80, 0.3); }
     50% { box-shadow: 0 0 0 6px rgba(63, 185, 80, 0); }
   }
 
-  .play-btn svg {
+  @keyframes rec-pulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(248, 81, 73, 0.4); }
+    50% { box-shadow: 0 0 0 8px rgba(248, 81, 73, 0); }
+  }
+
+  .play-btn svg, .rec-btn svg {
     width: 16px;
     height: 16px;
   }
@@ -169,6 +199,99 @@
     line-height: 1.6;
   }
 
+  /* Score result area */
+  .score-result {
+    display: none;
+    margin-top: 14px;
+    padding: 14px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border);
+  }
+
+  .score-result.visible {
+    display: block;
+    animation: fadeIn 0.3s ease;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .score-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+
+  .score-badge {
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 1;
+  }
+
+  .score-badge.excellent { color: var(--green); }
+  .score-badge.good { color: var(--accent); }
+  .score-badge.fair { color: var(--orange); }
+  .score-badge.poor { color: var(--red); }
+
+  .score-label {
+    font-size: 12px;
+    color: var(--text-secondary);
+    padding: 3px 10px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .score-words {
+    font-size: 15px;
+    line-height: 1.8;
+    word-spacing: 2px;
+  }
+
+  .score-words .matched {
+    color: var(--green);
+    font-weight: 500;
+  }
+
+  .score-words .missed {
+    color: var(--red);
+    text-decoration: underline;
+    text-decoration-style: wavy;
+    text-underline-offset: 3px;
+    opacity: 0.8;
+  }
+
+  .score-your-text {
+    margin-top: 8px;
+    font-size: 13px;
+    color: var(--text-secondary);
+    font-style: italic;
+  }
+
+  .score-your-text::before {
+    content: 'You said: ';
+    color: var(--text-secondary);
+    font-style: normal;
+    font-weight: 500;
+  }
+
+  .rec-hint {
+    display: none;
+    text-align: center;
+    font-size: 12px;
+    color: var(--red);
+    margin-top: 8px;
+    animation: fadeIn 0.2s ease;
+  }
+
+  .rec-hint.visible {
+    display: block;
+  }
+
+  /* Vocab cards */
   .vocab-card {
     background: var(--surface);
     border: 1px solid var(--border);
@@ -323,28 +446,21 @@
     border-color: var(--accent) !important;
   }
 
-  .nav-dates {
-    display: flex;
-    gap: 8px;
-    justify-content: center;
+  /* No speech API banner */
+  .no-speech-banner {
+    display: none;
+    background: rgba(248, 81, 73, 0.1);
+    border: 1px solid rgba(248, 81, 73, 0.3);
+    border-radius: var(--radius);
+    padding: 12px 16px;
     margin-top: 16px;
+    font-size: 13px;
+    color: var(--red);
+    text-align: center;
   }
 
-  .nav-date {
-    padding: 6px 14px;
-    border-radius: 8px;
-    border: 1px solid var(--border);
-    background: transparent;
-    color: var(--text-secondary);
-    font-size: 12px;
-    cursor: pointer;
-    text-decoration: none;
-  }
-
-  .nav-date.current {
-    background: rgba(88, 166, 255, 0.15);
-    border-color: var(--accent);
-    color: var(--accent);
+  .no-speech-banner.visible {
+    display: block;
   }
 
   @media (max-width: 480px) {
@@ -352,6 +468,7 @@
     .header h1 { font-size: 19px; }
     .sentence-en { font-size: 16px; }
     .container { padding: 16px 12px; }
+    .score-badge { font-size: 24px; }
   }
 </style>
 </head>
@@ -374,62 +491,101 @@
     <button class="speed-btn" data-speed="1.2">1.2x</button>
   </div>
 
+  <div class="no-speech-banner" id="noSpeechBanner">
+    Speech Recognition not supported in this browser. Use Chrome for recording.
+  </div>
+
   <!-- Sentences -->
   <div class="section-title">Sentences</div>
 
-  <div class="card" id="s1">
+  <div class="card" id="s1" data-text="We need to test three new channels before we scale the budget.">
     <div class="card-header">
       <span class="card-num">#1</span>
-      <button class="play-btn" onclick="speak('We need to test three new channels before we scale the budget.', this)" aria-label="Play">
-        <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="6,3 20,12 6,21"/></svg>
-      </button>
+      <div class="btn-group">
+        <button class="play-btn" onclick="speak(this.closest('.card').dataset.text, this)" aria-label="Play">
+          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="6,3 20,12 6,21"/></svg>
+        </button>
+        <button class="rec-btn" onclick="toggleRecord(this)" aria-label="Record">
+          <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="7"/></svg>
+        </button>
+      </div>
     </div>
     <div class="sentence-en">We need to test three new channels before we scale the budget.</div>
     <div class="sentence-zh">在扩大预算之前，我们需要先测试三个新渠道。</div>
+    <div class="rec-hint">Listening...</div>
+    <div class="score-result"></div>
   </div>
 
-  <div class="card" id="s2">
+  <div class="card" id="s2" data-text="Our goal this month is to improve the conversion rate on the landing page.">
     <div class="card-header">
       <span class="card-num">#2</span>
-      <button class="play-btn" onclick="speak('Our goal this month is to improve the conversion rate on the landing page.', this)" aria-label="Play">
-        <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="6,3 20,12 6,21"/></svg>
-      </button>
+      <div class="btn-group">
+        <button class="play-btn" onclick="speak(this.closest('.card').dataset.text, this)" aria-label="Play">
+          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="6,3 20,12 6,21"/></svg>
+        </button>
+        <button class="rec-btn" onclick="toggleRecord(this)" aria-label="Record">
+          <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="7"/></svg>
+        </button>
+      </div>
     </div>
     <div class="sentence-en">Our goal this month is to improve the conversion rate on the landing page.</div>
     <div class="sentence-zh">我们这个月的目标是提升着陆页的转化率。</div>
+    <div class="rec-hint">Listening...</div>
+    <div class="score-result"></div>
   </div>
 
-  <div class="card" id="s3">
+  <div class="card" id="s3" data-text="Let's focus on the user segment with the highest retention.">
     <div class="card-header">
       <span class="card-num">#3</span>
-      <button class="play-btn" onclick="speak('Let us focus on the user segment with the highest retention.', this)" aria-label="Play">
-        <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="6,3 20,12 6,21"/></svg>
-      </button>
+      <div class="btn-group">
+        <button class="play-btn" onclick="speak('Let us focus on the user segment with the highest retention.', this)" aria-label="Play">
+          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="6,3 20,12 6,21"/></svg>
+        </button>
+        <button class="rec-btn" onclick="toggleRecord(this)" aria-label="Record">
+          <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="7"/></svg>
+        </button>
+      </div>
     </div>
     <div class="sentence-en">Let's focus on the user segment with the highest retention.</div>
     <div class="sentence-zh">让我们重点关注留存率最高的用户群体。</div>
+    <div class="rec-hint">Listening...</div>
+    <div class="score-result"></div>
   </div>
 
-  <div class="card" id="s4">
+  <div class="card" id="s4" data-text="This campaign is bringing traffic, but the cost per lead is still too high.">
     <div class="card-header">
       <span class="card-num">#4</span>
-      <button class="play-btn" onclick="speak('This campaign is bringing traffic, but the cost per lead is still too high.', this)" aria-label="Play">
-        <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="6,3 20,12 6,21"/></svg>
-      </button>
+      <div class="btn-group">
+        <button class="play-btn" onclick="speak(this.closest('.card').dataset.text, this)" aria-label="Play">
+          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="6,3 20,12 6,21"/></svg>
+        </button>
+        <button class="rec-btn" onclick="toggleRecord(this)" aria-label="Record">
+          <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="7"/></svg>
+        </button>
+      </div>
     </div>
     <div class="sentence-en">This campaign is bringing traffic, but the cost per lead is still too high.</div>
     <div class="sentence-zh">这个活动带来了流量，但每个线索成本还是太高。</div>
+    <div class="rec-hint">Listening...</div>
+    <div class="score-result"></div>
   </div>
 
-  <div class="card" id="s5">
+  <div class="card" id="s5" data-text="Please share a simple growth plan with clear numbers and next steps.">
     <div class="card-header">
       <span class="card-num">#5</span>
-      <button class="play-btn" onclick="speak('Please share a simple growth plan with clear numbers and next steps.', this)" aria-label="Play">
-        <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="6,3 20,12 6,21"/></svg>
-      </button>
+      <div class="btn-group">
+        <button class="play-btn" onclick="speak(this.closest('.card').dataset.text, this)" aria-label="Play">
+          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="6,3 20,12 6,21"/></svg>
+        </button>
+        <button class="rec-btn" onclick="toggleRecord(this)" aria-label="Record">
+          <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="7"/></svg>
+        </button>
+      </div>
     </div>
     <div class="sentence-en">Please share a simple growth plan with clear numbers and next steps.</div>
     <div class="sentence-zh">请分享一份简洁的增长计划，里面要有清晰的数据和下一步动作。</div>
+    <div class="rec-hint">Listening...</div>
+    <div class="score-result"></div>
   </div>
 
   <!-- Vocabulary -->
@@ -526,6 +682,15 @@
   let currentBtn = null;
   let isPlayingAll = false;
   let playQueue = [];
+  let activeRecognition = null;
+  let activeRecBtn = null;
+
+  // Check Speech Recognition support
+  const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+  if (!SpeechRecognition) {
+    document.getElementById('noSpeechBanner').classList.add('visible');
+    document.querySelectorAll('.rec-btn').forEach(b => { b.style.display = 'none'; });
+  }
 
   // Speed control
   document.querySelectorAll('.speed-btn').forEach(btn => {
@@ -536,6 +701,7 @@
     });
   });
 
+  // ── TTS ──
   function speak(text, btn) {
     if (currentUtterance && speechSynthesis.speaking) {
       speechSynthesis.cancel();
@@ -555,7 +721,6 @@
     utterance.rate = currentRate;
     utterance.pitch = 1;
 
-    // Try to pick a good English voice
     const voices = speechSynthesis.getVoices();
     const preferred = voices.find(v => v.name.includes('Samantha'))
       || voices.find(v => v.lang === 'en-US' && v.localService)
@@ -564,7 +729,6 @@
 
     currentUtterance = utterance;
     currentBtn = btn;
-
     btn.classList.add('playing');
     btn.closest('.card, .vocab-card')?.classList.add('highlight');
 
@@ -573,12 +737,9 @@
       btn.closest('.card, .vocab-card')?.classList.remove('highlight');
       currentBtn = null;
       currentUtterance = null;
-
       if (isPlayingAll && playQueue.length > 0) {
         const next = playQueue.shift();
-        setTimeout(() => {
-          speak(next.text, next.btn);
-        }, 600);
+        setTimeout(() => speak(next.text, next.btn), 600);
       } else {
         isPlayingAll = false;
         updatePlayAllBtn(false);
@@ -609,33 +770,23 @@
       updatePlayAllBtn(false);
       return;
     }
-
     isPlayingAll = true;
     updatePlayAllBtn(true);
     playQueue = [];
-
-    // Collect all sentence cards
     document.querySelectorAll('.card').forEach(card => {
       const en = card.querySelector('.sentence-en')?.textContent;
       const btn = card.querySelector('.play-btn');
-      if (en && btn) {
-        playQueue.push({ text: en, btn: btn });
-      }
+      if (en && btn) playQueue.push({ text: en, btn });
     });
-
-    // Collect all vocab words + examples
     document.querySelectorAll('.vocab-card').forEach(card => {
       const word = card.querySelector('.vocab-word')?.textContent;
       const example = card.querySelector('.vocab-example .en')?.textContent;
       const btn = card.querySelector('.play-btn');
       if (word && btn) {
-        playQueue.push({ text: word, btn: btn });
-        if (example) {
-          playQueue.push({ text: example, btn: btn });
-        }
+        playQueue.push({ text: word, btn });
+        if (example) playQueue.push({ text: example, btn });
       }
     });
-
     if (playQueue.length > 0) {
       const first = playQueue.shift();
       speak(first.text, first.btn);
@@ -651,6 +802,159 @@
       btn.innerHTML = '<svg viewBox="0 0 24 24" fill="currentColor"><polygon points="6,3 20,12 6,21"/></svg> Play All';
       btn.style.background = '';
     }
+  }
+
+  // ── Speech Recognition + Scoring ──
+
+  function normalize(text) {
+    return text.toLowerCase()
+      .replace(/['']/g, "'")
+      .replace(/let's/g, 'lets')
+      .replace(/[^\w\s']/g, '')
+      .trim()
+      .split(/\s+/);
+  }
+
+  function scoreMatch(reference, spoken) {
+    const refWords = normalize(reference);
+    const spkWords = normalize(spoken);
+
+    // Build a position map for spoken words to handle duplicates
+    const spkUsed = new Array(spkWords.length).fill(false);
+    const results = [];
+    let matched = 0;
+
+    for (const refWord of refWords) {
+      let found = false;
+      // Try to find an unused match in spoken words
+      for (let i = 0; i < spkWords.length; i++) {
+        if (!spkUsed[i] && spkWords[i] === refWord) {
+          spkUsed[i] = true;
+          found = true;
+          break;
+        }
+      }
+      // Also accept close matches (Levenshtein distance <= 1 for words > 3 chars)
+      if (!found) {
+        for (let i = 0; i < spkWords.length; i++) {
+          if (!spkUsed[i] && refWord.length > 3 && levenshtein(spkWords[i], refWord) <= 1) {
+            spkUsed[i] = true;
+            found = true;
+            break;
+          }
+        }
+      }
+      results.push({ word: refWord, matched: found });
+      if (found) matched++;
+    }
+
+    const pct = Math.round((matched / refWords.length) * 100);
+    return { results, pct, matched, total: refWords.length, spoken };
+  }
+
+  function levenshtein(a, b) {
+    const m = a.length, n = b.length;
+    const dp = Array.from({ length: m + 1 }, () => new Array(n + 1).fill(0));
+    for (let i = 0; i <= m; i++) dp[i][0] = i;
+    for (let j = 0; j <= n; j++) dp[0][j] = j;
+    for (let i = 1; i <= m; i++) {
+      for (let j = 1; j <= n; j++) {
+        dp[i][j] = a[i-1] === b[j-1]
+          ? dp[i-1][j-1]
+          : 1 + Math.min(dp[i-1][j], dp[i][j-1], dp[i-1][j-1]);
+      }
+    }
+    return dp[m][n];
+  }
+
+  function renderScore(card, result) {
+    const el = card.querySelector('.score-result');
+
+    let grade, gradeClass;
+    if (result.pct >= 90) { grade = 'Excellent'; gradeClass = 'excellent'; }
+    else if (result.pct >= 70) { grade = 'Good'; gradeClass = 'good'; }
+    else if (result.pct >= 50) { grade = 'Fair'; gradeClass = 'fair'; }
+    else { grade = 'Keep Trying'; gradeClass = 'poor'; }
+
+    const wordsHtml = result.results.map(r =>
+      `<span class="${r.matched ? 'matched' : 'missed'}">${r.word}</span>`
+    ).join(' ');
+
+    el.innerHTML = `
+      <div class="score-header">
+        <span class="score-badge ${gradeClass}">${result.pct}%</span>
+        <span class="score-label">${grade} (${result.matched}/${result.total} words)</span>
+      </div>
+      <div class="score-words">${wordsHtml}</div>
+      <div class="score-your-text">${result.spoken}</div>
+    `;
+    el.classList.add('visible');
+  }
+
+  function toggleRecord(btn) {
+    if (!SpeechRecognition) return;
+
+    const card = btn.closest('.card');
+    const hint = card.querySelector('.rec-hint');
+    const reference = card.dataset.text;
+
+    // Stop any playing audio
+    if (speechSynthesis.speaking) {
+      speechSynthesis.cancel();
+      if (currentBtn) {
+        currentBtn.classList.remove('playing');
+        currentBtn.closest('.card, .vocab-card')?.classList.remove('highlight');
+      }
+    }
+
+    // If already recording this card, stop
+    if (activeRecognition && activeRecBtn === btn) {
+      activeRecognition.stop();
+      return;
+    }
+
+    // If recording another card, stop that first
+    if (activeRecognition) {
+      activeRecognition.stop();
+    }
+
+    const recognition = new SpeechRecognition();
+    recognition.lang = 'en-US';
+    recognition.interimResults = false;
+    recognition.maxAlternatives = 1;
+    recognition.continuous = false;
+
+    activeRecognition = recognition;
+    activeRecBtn = btn;
+
+    btn.classList.add('recording');
+    hint.classList.add('visible');
+    card.querySelector('.score-result').classList.remove('visible');
+
+    recognition.onresult = (event) => {
+      const spoken = event.results[0][0].transcript;
+      const result = scoreMatch(reference, spoken);
+      renderScore(card, result);
+    };
+
+    recognition.onerror = (event) => {
+      if (event.error !== 'no-speech' && event.error !== 'aborted') {
+        const el = card.querySelector('.score-result');
+        el.innerHTML = `<div style="color:var(--red);font-size:13px">Error: ${event.error}. Check microphone permission.</div>`;
+        el.classList.add('visible');
+      }
+    };
+
+    recognition.onend = () => {
+      btn.classList.remove('recording');
+      hint.classList.remove('visible');
+      if (activeRecBtn === btn) {
+        activeRecognition = null;
+        activeRecBtn = null;
+      }
+    };
+
+    recognition.start();
   }
 
   // Pre-load voices
