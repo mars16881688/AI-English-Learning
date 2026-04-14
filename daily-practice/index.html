@@ -984,6 +984,30 @@ function toggleRecord(btn){
 // ══════ READING ══════
 const STORE_READING = 'ep_reading_text';
 const dictCache = {};
+let cnDict = null; // ECDICT EN-CN dictionary (loaded lazily)
+
+async function loadCnDict() {
+  if (cnDict) return cnDict;
+  try {
+    const resp = await fetch(DATA_BASE + '/ecdict.json?v=1');
+    if (resp.ok) { cnDict = await resp.json(); }
+  } catch {}
+  if (!cnDict) cnDict = {};
+  return cnDict;
+}
+function getCnEntry(word) {
+  if (!cnDict) return null;
+  const entry = cnDict[word.toLowerCase()];
+  if (!entry) return null;
+  const pipeIdx = entry.indexOf('|');
+  if (pipeIdx > 0 && entry.charAt(0) === '/') {
+    return { phonetic: entry.substring(0, pipeIdx), meaning: entry.substring(pipeIdx + 1) };
+  }
+  if (pipeIdx > 0) {
+    return { phonetic: entry.substring(0, pipeIdx), meaning: entry.substring(pipeIdx + 1) };
+  }
+  return { phonetic: '', meaning: entry };
+}
 
 async function renderReading() {
   const el = document.getElementById('reading-content');
@@ -1173,22 +1197,36 @@ function openEpubReader(arrayBuffer) {
     }
   });
 
-  // Tap to turn page / show bar
+  // Tap to turn page / show bar (skip if word was just looked up)
+  let wordJustClicked = false;
   epubRendition.on('click', (e) => {
+    if (wordJustClicked) { wordJustClicked = false; return; }
     const w = vp.offsetWidth;
     const x = e.clientX || (e.changedTouches && e.changedTouches[0].clientX) || w / 2;
+    if (e.target && e.target.classList && e.target.classList.contains('ep-word')) return;
     if (x < w * 0.3) epubRendition.prev();
     else if (x > w * 0.7) epubRendition.next();
     else showReaderBar();
   });
 
-  // Swipe
+  // Swipe via epub.js events
   let touchX = 0;
   epubRendition.on('touchstart', e => { touchX = e.changedTouches[0].clientX; });
   epubRendition.on('touchend', e => {
     const dx = e.changedTouches[0].clientX - touchX;
     if (Math.abs(dx) > 40) { dx < 0 ? epubRendition.next() : epubRendition.prev(); }
   });
+
+  // Fallback: swipe on viewport div (works even if iframe swallows events)
+  let vpTouchX = 0, vpTouchY = 0;
+  vp.addEventListener('touchstart', e => { vpTouchX = e.touches[0].clientX; vpTouchY = e.touches[0].clientY; }, { passive: true });
+  vp.addEventListener('touchend', e => {
+    const dx = e.changedTouches[0].clientX - vpTouchX;
+    const dy = e.changedTouches[0].clientY - vpTouchY;
+    if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy) * 1.5) {
+      dx < 0 ? epubRendition.next() : epubRendition.prev();
+    }
+  }, { passive: true });
 
   // Word lookup: inject CSS into each chapter iframe
   epubRendition.hooks.content.register((contents) => {
@@ -1216,7 +1254,7 @@ function openEpubReader(arrayBuffer) {
           span.textContent = tok;
           span.dataset.word = tok.toLowerCase();
           span.addEventListener('click', (e) => {
-            e.stopPropagation();
+            wordJustClicked = true;
             lookupWordFromReader(tok.toLowerCase(), node.parentElement?.textContent || tok);
           });
           frag.appendChild(span);
@@ -1383,23 +1421,32 @@ async function lookupWord(el) {
   overlay.classList.add('visible');
   popup.innerHTML = '<div class="word-popup-loading">Looking up...</div>';
 
-  // Fetch dictionary
-  let data = dictCache[word];
-  if (!data) {
-    try {
-      const resp = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${encodeURIComponent(word)}`);
-      if (resp.ok) { data = await resp.json(); dictCache[word] = data; }
-    } catch {}
-  }
+  // Load CN dict + EN dict in parallel
+  const [cnDictData, enData] = await Promise.all([
+    loadCnDict(),
+    (async () => {
+      let data = dictCache[word];
+      if (!data) {
+        try {
+          const resp = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${encodeURIComponent(word)}`);
+          if (resp.ok) { data = await resp.json(); dictCache[word] = data; }
+        } catch {}
+      }
+      return data;
+    })(),
+  ]);
 
+  const cn = getCnEntry(word);
   const saved = isInWordbook(word);
   let phonetic = '';
   let meanings = [];
 
-  if (data && data[0]) {
-    phonetic = data[0].phonetic || (data[0].phonetics && data[0].phonetics.find(p => p.text)?.text) || '';
-    meanings = (data[0].meanings || []).slice(0, 3);
+  if (enData && enData[0]) {
+    phonetic = enData[0].phonetic || (enData[0].phonetics && enData[0].phonetics.find(p => p.text)?.text) || '';
+    meanings = (enData[0].meanings || []).slice(0, 3);
   }
+  // Fallback phonetic from CN dict
+  if (!phonetic && cn && cn.phonetic) phonetic = cn.phonetic;
 
   // Highlight word in context (escape first, then wrap)
   const ctxEscaped = escHtml(ctx);
@@ -1409,6 +1456,12 @@ async function lookupWord(el) {
   if (phonetic) h += `<span class="word-popup-phonetic">${escHtml(phonetic)}</span>`;
   h += '</div>';
 
+  // Chinese translation (prominent)
+  if (cn && cn.meaning) {
+    h += `<div style="font-size:15px;color:var(--accent);font-weight:600;margin-bottom:12px;padding:8px 12px;background:var(--accent-light);border-radius:8px">${escHtml(cn.meaning)}</div>`;
+  }
+
+  // English definitions
   if (meanings.length) {
     meanings.forEach(m => {
       h += `<div style="margin-bottom:8px"><span class="word-popup-pos">${escHtml(m.partOfSpeech)}</span>`;
@@ -1416,27 +1469,28 @@ async function lookupWord(el) {
       defs.forEach(d => { h += `<div class="word-popup-def">${escHtml(d.definition)}</div>`; });
       h += '</div>';
     });
-  } else {
+  } else if (!cn) {
     h += '<div class="word-popup-def" style="color:var(--text-secondary)">No dictionary entry found</div>';
   }
 
   h += `<div class="word-popup-ctx">${ctxHtml}</div>`;
   h += `<div class="word-popup-actions">`;
   h += `<button class="play" onclick="speak('${escJs(word)}',this)">Play</button>`;
-  h += `<button class="${saved?'save saved':'save'}" id="popup-save-btn" onclick="togglePopupSave('${escJs(word)}','${escJs(phonetic)}')">${saved?'Saved':'Save to Wordbook'}</button>`;
+  const cnMeaning = cn ? cn.meaning.split(/[,;，；]/)[0].trim() : '';
+  h += `<button class="${saved?'save saved':'save'}" id="popup-save-btn" onclick="togglePopupSave('${escJs(word)}','${escJs(phonetic)}','${escJs(cnMeaning)}')">${saved?'Saved':'Save to Wordbook'}</button>`;
   h += '</div>';
 
   popup.innerHTML = h;
 }
 
-function togglePopupSave(word, phonetic) {
+function togglePopupSave(word, phonetic, cnMeaning) {
   const btn = document.getElementById('popup-save-btn');
   if (isInWordbook(word)) {
     removeFromWordbook(word);
     btn.textContent = 'Save to Wordbook';
     btn.classList.remove('saved');
   } else {
-    addToWordbook(word, phonetic, '', 'reading');
+    addToWordbook(word, phonetic, cnMeaning || '', 'reading');
     btn.textContent = 'Saved';
     btn.classList.add('saved');
   }
