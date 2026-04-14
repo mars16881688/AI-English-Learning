@@ -13,286 +13,143 @@
     --text-secondary: #82888d;
     --accent: #00b8b8;
     --accent-hover: #00a3a3;
+    --accent-light: rgba(0,184,184,0.1);
     --green: #00b99a;
     --red: #f7415f;
     --orange: #ff9728;
-    --purple: #bc8cff;
     --radius: 12px;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'SF Pro Text', sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    line-height: 1.7;
-    min-height: 100vh;
-    padding-bottom: 70px;
+    background: var(--bg); color: var(--text); line-height: 1.7;
+    min-height: 100vh; padding-bottom: 70px;
   }
 
-  /* ── Nav bar ── */
+  /* ── Nav ── */
   .nav {
-    position: fixed;
-    bottom: 0; left: 0; right: 0;
-    background: rgba(255, 255, 255, 0.96);
-    backdrop-filter: blur(12px);
-    border-top: 1px solid var(--border);
-    display: flex;
-    z-index: 200;
+    position: fixed; bottom: 0; left: 0; right: 0;
+    background: rgba(255,255,255,0.96); backdrop-filter: blur(12px);
+    border-top: 1px solid var(--border); display: flex; z-index: 200;
   }
   .nav-item {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 8px 0 6px;
-    cursor: pointer;
-    color: var(--text-secondary);
-    font-size: 11px;
-    gap: 2px;
-    transition: color 0.15s;
-    border: none;
-    background: none;
-    -webkit-tap-highlight-color: transparent;
+    flex: 1; display: flex; flex-direction: column; align-items: center;
+    padding: 8px 0 6px; cursor: pointer; color: var(--text-secondary);
+    font-size: 11px; gap: 2px; border: none; background: none;
+    -webkit-tap-highlight-color: transparent; transition: color 0.15s;
   }
   .nav-item:hover, .nav-item.active { color: var(--accent); }
   .nav-item svg { width: 22px; height: 22px; }
   .nav-badge {
-    position: absolute;
-    top: 4px;
-    right: calc(50% - 18px);
-    background: var(--red);
-    color: #fff;
-    font-size: 10px;
-    font-weight: 700;
-    min-width: 16px;
-    height: 16px;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0 4px;
+    position: absolute; top: 4px; right: calc(50% - 18px);
+    background: var(--red); color: #fff; font-size: 10px; font-weight: 700;
+    min-width: 16px; height: 16px; border-radius: 8px;
+    display: flex; align-items: center; justify-content: center; padding: 0 4px;
   }
 
   /* ── Header ── */
   .header {
     background: linear-gradient(135deg, #e6f9f9, #ffffff);
-    border-bottom: 1px solid var(--border);
-    padding: 28px 20px 24px;
-    text-align: center;
+    border-bottom: 1px solid var(--border); padding: 28px 20px 24px; text-align: center;
   }
+  .header-inner { position: relative; }
   .header-back {
-    position: absolute;
-    left: 16px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: var(--accent);
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 14px;
-    display: flex;
-    align-items: center;
-    gap: 4px;
+    position: absolute; left: 0; top: 50%; transform: translateY(-50%);
+    color: var(--accent); background: none; border: none; cursor: pointer;
+    font-size: 14px; display: flex; align-items: center; gap: 4px;
   }
   .header-back svg { width: 18px; height: 18px; }
-  .header-inner { position: relative; }
   .header .date-label {
-    font-size: 13px;
-    color: var(--text-secondary);
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin-bottom: 6px;
+    font-size: 13px; color: var(--text-secondary);
+    letter-spacing: 2px; text-transform: uppercase; margin-bottom: 6px;
   }
   .header h1 { font-size: 22px; font-weight: 700; margin-bottom: 6px; }
   .theme-tag {
-    display: inline-block;
-    background: rgba(0, 240, 196, 0.15);
-    color: var(--accent);
-    padding: 4px 14px;
-    border-radius: 20px;
-    font-size: 13px;
-    font-weight: 500;
+    display: inline-block; background: var(--accent-light); color: var(--accent);
+    padding: 4px 14px; border-radius: 20px; font-size: 13px; font-weight: 500;
   }
   .container { max-width: 680px; margin: 0 auto; padding: 20px 16px; }
 
-  /* ── Calendar page ── */
+  /* ── Theme picker ── */
+  .theme-picker { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0; }
+  .theme-chip {
+    padding: 8px 16px; border-radius: 20px; border: 1.5px solid var(--border);
+    background: var(--surface); color: var(--text-secondary);
+    font-size: 13px; font-weight: 500; cursor: pointer; transition: all 0.15s;
+  }
+  .theme-chip:hover { border-color: var(--accent); color: var(--accent); }
+  .theme-chip.active {
+    background: var(--accent); color: #fff; border-color: var(--accent);
+  }
+
+  /* ── Streak ── */
   .streak-bar {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    padding: 16px;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    margin-bottom: 20px;
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+    padding: 16px; background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius); margin-bottom: 20px;
   }
   .streak-num { font-size: 36px; font-weight: 800; color: var(--orange); line-height: 1; }
   .streak-text { font-size: 13px; color: var(--text-secondary); }
-  .streak-fire { font-size: 28px; }
 
-  .cal-month-title {
-    font-size: 15px;
-    font-weight: 600;
-    color: var(--text);
-    margin: 20px 0 10px;
-  }
-  .cal-grid {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 6px;
-    margin-bottom: 8px;
-  }
-  .cal-dow {
-    text-align: center;
-    font-size: 11px;
-    color: var(--text-secondary);
-    padding: 4px 0;
-  }
+  /* ── Calendar ── */
+  .cal-month-title { font-size: 15px; font-weight: 600; margin: 20px 0 10px; }
+  .cal-grid { display: grid; grid-template-columns: repeat(7,1fr); gap: 6px; margin-bottom: 8px; }
+  .cal-dow { text-align: center; font-size: 11px; color: var(--text-secondary); padding: 4px 0; }
   .cal-day {
-    aspect-ratio: 1;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: 14px;
-    color: var(--text-secondary);
-    border: 1px solid transparent;
-    cursor: default;
-    position: relative;
+    aspect-ratio: 1; border-radius: 10px; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; font-size: 14px;
+    color: var(--text-secondary); border: 1px solid transparent; cursor: default; position: relative;
   }
   .cal-day.empty { visibility: hidden; }
-  .cal-day.has-lesson {
-    cursor: pointer;
-    color: var(--text);
-    border-color: var(--border);
-    background: var(--surface);
-  }
+  .cal-day.has-lesson { cursor: pointer; color: var(--text); border-color: var(--border); background: var(--surface); }
   .cal-day.has-lesson:hover { border-color: var(--accent); }
-  .cal-day.checked {
-    background: rgba(0, 185, 154, 0.12);
-    border-color: var(--green);
-    color: var(--green);
-    font-weight: 700;
-  }
+  .cal-day.checked { background: rgba(0,185,154,0.1); border-color: var(--green); color: var(--green); font-weight: 700; }
   .cal-day.today { box-shadow: inset 0 0 0 2px var(--accent); }
-  .cal-day .dot {
-    width: 4px; height: 4px;
-    border-radius: 50%;
-    background: var(--green);
-    position: absolute;
-    bottom: 4px;
-  }
+  .cal-day .dot { width: 4px; height: 4px; border-radius: 50%; background: var(--green); position: absolute; bottom: 4px; }
   .cal-checkin-times {
-    font-size: 12px;
-    color: var(--text-secondary);
-    margin-top: 12px;
-    padding: 10px 14px;
-    background: var(--surface);
-    border-radius: var(--radius);
-    border: 1px solid var(--border);
+    font-size: 12px; color: var(--text-secondary); margin-top: 12px;
+    padding: 10px 14px; background: var(--surface); border-radius: var(--radius); border: 1px solid var(--border);
   }
-  .cal-checkin-times h4 {
-    font-size: 13px;
-    color: var(--text);
-    margin-bottom: 6px;
-  }
+  .cal-checkin-times h4 { font-size: 13px; color: var(--text); margin-bottom: 6px; }
 
-  /* ── Section titles ── */
+  /* ── Section title ── */
   .section-title {
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--text-secondary);
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    margin: 28px 0 14px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
+    font-size: 14px; font-weight: 600; color: var(--text-secondary);
+    letter-spacing: 1.5px; text-transform: uppercase; margin: 28px 0 14px;
+    display: flex; align-items: center; gap: 8px;
   }
   .section-title::after { content: ''; flex: 1; height: 1px; background: var(--border); }
 
   /* ── Cards ── */
   .card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 20px;
-    margin-bottom: 14px;
-    transition: border-color 0.2s;
+    background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 20px; margin-bottom: 14px; transition: border-color 0.2s;
   }
   .card:hover { border-color: var(--accent); }
-  .card-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 12px;
-  }
-  .card-num {
-    font-size: 12px;
-    font-weight: 700;
-    color: var(--accent);
-    background: rgba(0, 240, 196, 0.1);
-    padding: 2px 10px;
-    border-radius: 10px;
-  }
+  .card-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+  .card-num { font-size: 12px; font-weight: 700; color: var(--accent); background: var(--accent-light); padding: 2px 10px; border-radius: 10px; }
   .btn-group { display: flex; gap: 8px; align-items: center; }
-
   .icon-btn {
-    width: 36px; height: 36px;
-    border-radius: 50%;
-    border: 1.5px solid var(--border);
-    background: transparent;
-    color: var(--text);
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.2s;
-    flex-shrink: 0;
+    width: 36px; height: 36px; border-radius: 50%; border: 1.5px solid var(--border);
+    background: transparent; color: var(--text-secondary); cursor: pointer;
+    display: flex; align-items: center; justify-content: center; transition: all 0.2s; flex-shrink: 0;
   }
-  .icon-btn:hover {
-    border-color: var(--accent);
-    color: var(--accent);
-    background: rgba(0, 240, 196, 0.08);
-  }
+  .icon-btn:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-light); }
   .icon-btn:active { transform: scale(0.92); }
   .icon-btn svg { width: 16px; height: 16px; }
-  .icon-btn.playing {
-    border-color: var(--green);
-    color: var(--green);
-    animation: pulse 1.5s infinite;
-  }
+  .icon-btn.playing { border-color: var(--green); color: var(--green); animation: pulse 1.5s infinite; }
   .icon-btn.rec { color: var(--red); }
-  .icon-btn.rec:hover { border-color: var(--red); background: rgba(247,65,95,0.08); color: var(--red); }
-  .icon-btn.rec.recording {
-    border-color: var(--red);
-    background: rgba(247,65,95,0.15);
-    animation: rec-pulse 1s infinite;
-  }
+  .icon-btn.rec:hover { border-color: var(--red); background: rgba(247,65,95,0.06); color: var(--red); }
+  .icon-btn.rec.recording { border-color: var(--red); background: rgba(247,65,95,0.1); animation: rec-pulse 1s infinite; }
 
-  @keyframes pulse {
-    0%,100% { box-shadow: 0 0 0 0 rgba(0,185,154,0.3); }
-    50% { box-shadow: 0 0 0 6px rgba(0,185,154,0); }
-  }
-  @keyframes rec-pulse {
-    0%,100% { box-shadow: 0 0 0 0 rgba(247,65,95,0.4); }
-    50% { box-shadow: 0 0 0 8px rgba(247,65,95,0); }
-  }
+  @keyframes pulse { 0%,100% { box-shadow: 0 0 0 0 rgba(0,185,154,0.25); } 50% { box-shadow: 0 0 0 6px rgba(0,185,154,0); } }
+  @keyframes rec-pulse { 0%,100% { box-shadow: 0 0 0 0 rgba(247,65,95,0.3); } 50% { box-shadow: 0 0 0 8px rgba(247,65,95,0); } }
 
   .sentence-en { font-size: 17px; font-weight: 500; line-height: 1.6; margin-bottom: 8px; }
   .sentence-zh { font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
 
-  /* ── Score result ── */
-  .score-result {
-    display: none;
-    margin-top: 14px;
-    padding: 14px;
-    border-radius: 10px;
-    background: rgba(0,0,0,0.02);
-    border: 1px solid var(--border);
-  }
+  /* ── Score ── */
+  .score-result { display: none; margin-top: 14px; padding: 14px; border-radius: 10px; background: rgba(0,0,0,0.02); border: 1px solid var(--border); }
   .score-result.visible { display: block; animation: fadeIn 0.3s ease; }
   @keyframes fadeIn { from { opacity:0; transform:translateY(6px); } to { opacity:1; transform:translateY(0); } }
   .score-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
@@ -310,209 +167,106 @@
   .rec-hint { display: none; text-align: center; font-size: 12px; color: var(--red); margin-top: 8px; }
   .rec-hint.visible { display: block; animation: fadeIn 0.2s ease; }
 
-  /* ── Vocab cards ── */
-  .vocab-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 20px;
-    margin-bottom: 14px;
-  }
+  /* ── Vocab ── */
+  .vocab-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; margin-bottom: 14px; }
   .vocab-card:hover { border-color: var(--orange); }
   .vocab-word { font-size: 20px; font-weight: 700; margin-right: 8px; }
   .vocab-phonetic { font-size: 14px; color: var(--text-secondary); font-family: 'Lucida Sans Unicode', sans-serif; }
-  .vocab-meaning {
-    display: inline-block;
-    background: rgba(255,151,40,0.15);
-    color: var(--orange);
-    padding: 2px 10px;
-    border-radius: 8px;
-    font-size: 13px;
-    font-weight: 500;
-    margin-left: 8px;
-  }
+  .vocab-meaning { display: inline-block; background: rgba(255,151,40,0.1); color: var(--orange); padding: 2px 10px; border-radius: 8px; font-size: 13px; font-weight: 500; margin-left: 8px; }
   .vocab-header { display: flex; align-items: center; flex-wrap: wrap; gap: 4px; margin-bottom: 12px; }
-  .vocab-example {
-    background: rgba(0,0,0,0.02);
-    border-left: 3px solid var(--border);
-    padding: 10px 14px;
-    border-radius: 0 8px 8px 0;
-    margin-top: 10px;
-  }
+  .vocab-example { background: rgba(0,0,0,0.02); border-left: 3px solid var(--border); padding: 10px 14px; border-radius: 0 8px 8px 0; margin-top: 10px; }
   .vocab-example .en { font-size: 14px; line-height: 1.6; }
   .vocab-example .zh { font-size: 13px; color: var(--text-secondary); margin-top: 4px; }
 
-  /* ── Wordbook star ── */
+  /* ── Star / Wordbook ── */
   .star-btn {
-    width: 32px; height: 32px;
-    border-radius: 50%;
-    border: 1.5px solid var(--border);
-    background: transparent;
-    color: var(--text-secondary);
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.2s;
-    flex-shrink: 0;
-    margin-left: auto;
+    width: 32px; height: 32px; border-radius: 50%; border: 1.5px solid var(--border);
+    background: transparent; color: var(--text-secondary); cursor: pointer;
+    display: flex; align-items: center; justify-content: center; transition: all 0.2s; flex-shrink: 0; margin-left: auto;
   }
   .star-btn:hover { border-color: var(--orange); color: var(--orange); }
-  .star-btn.saved { border-color: var(--orange); color: var(--orange); background: rgba(255,151,40,0.12); }
+  .star-btn.saved { border-color: var(--orange); color: var(--orange); background: rgba(255,151,40,0.08); }
   .star-btn svg { width: 16px; height: 16px; }
 
-  /* ── Wordbook page ── */
-  .wb-empty {
-    text-align: center;
-    padding: 60px 20px;
-    color: var(--text-secondary);
-  }
+  .wb-empty { text-align: center; padding: 60px 20px; color: var(--text-secondary); }
   .wb-empty svg { width: 48px; height: 48px; margin-bottom: 12px; opacity: 0.4; }
-  .wb-count {
-    font-size: 13px;
-    color: var(--text-secondary);
-    margin-bottom: 16px;
-  }
-  .wb-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 16px;
-    margin-bottom: 10px;
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-  }
+  .wb-count { font-size: 13px; color: var(--text-secondary); margin-bottom: 16px; }
+  .wb-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px; margin-bottom: 10px; display: flex; align-items: flex-start; gap: 12px; }
   .wb-card:hover { border-color: var(--orange); }
   .wb-card-body { flex: 1; min-width: 0; }
   .wb-card-word { font-size: 17px; font-weight: 700; }
   .wb-card-phonetic { font-size: 13px; color: var(--text-secondary); margin-left: 8px; }
   .wb-card-meaning { font-size: 13px; color: var(--orange); margin-top: 2px; }
   .wb-card-source { font-size: 11px; color: var(--text-secondary); margin-top: 4px; }
-  .wb-remove {
-    background: none;
-    border: none;
-    color: var(--text-secondary);
-    cursor: pointer;
-    padding: 4px;
-    border-radius: 6px;
-    flex-shrink: 0;
-  }
-  .wb-remove:hover { color: var(--red); background: rgba(247,65,95,0.1); }
+  .wb-remove { background: none; border: none; color: var(--text-secondary); cursor: pointer; padding: 4px; border-radius: 6px; flex-shrink: 0; }
+  .wb-remove:hover { color: var(--red); background: rgba(247,65,95,0.06); }
   .wb-remove svg { width: 16px; height: 16px; }
 
-  /* ── Wordbook add form ── */
-  .wb-add-form {
-    display: flex;
-    gap: 8px;
-    margin-bottom: 16px;
-  }
+  .wb-add-form { display: flex; gap: 8px; margin-bottom: 16px; }
   .wb-add-input {
-    flex: 1;
-    padding: 10px 14px;
-    border-radius: 10px;
-    border: 1px solid var(--border);
-    background: var(--surface);
-    color: var(--text);
-    font-size: 15px;
-    outline: none;
-    transition: border-color 0.2s;
+    flex: 1; padding: 10px 14px; border-radius: 10px; border: 1px solid var(--border);
+    background: var(--surface); color: var(--text); font-size: 15px; outline: none; transition: border-color 0.2s;
   }
   .wb-add-input::placeholder { color: var(--text-secondary); }
   .wb-add-input:focus { border-color: var(--accent); }
   .wb-add-btn {
-    padding: 10px 18px;
-    border-radius: 10px;
-    border: none;
-    background: var(--accent);
-    color: #ffffff;
-    font-size: 14px;
-    font-weight: 600;
-    cursor: pointer;
-    white-space: nowrap;
-    transition: all 0.15s;
+    padding: 10px 18px; border-radius: 10px; border: none; background: var(--accent);
+    color: #fff; font-size: 14px; font-weight: 600; cursor: pointer; white-space: nowrap; transition: all 0.15s;
   }
   .wb-add-btn:hover { background: var(--accent-hover); }
-  .wb-add-btn:active { transform: scale(0.96); }
-  .wb-add-btn:disabled { opacity: 0.4; cursor: default; }
 
-  /* ── Speed control ── */
-  .speed-control {
-    display: flex; align-items: center; gap: 8px; justify-content: center;
-    margin: 16px 0 0; padding: 10px;
-    background: var(--surface); border-radius: var(--radius); border: 1px solid var(--border);
-  }
+  /* ── Speed ── */
+  .speed-control { display: flex; align-items: center; gap: 8px; justify-content: center; margin: 16px 0 0; padding: 10px; background: var(--surface); border-radius: var(--radius); border: 1px solid var(--border); }
   .speed-control label { font-size: 13px; color: var(--text-secondary); }
-  .speed-btn {
-    padding: 4px 12px; border-radius: 8px; border: 1px solid var(--border);
-    background: transparent; color: var(--text-secondary); font-size: 13px;
-    cursor: pointer; transition: all 0.15s;
-  }
+  .speed-btn { padding: 4px 12px; border-radius: 8px; border: 1px solid var(--border); background: transparent; color: var(--text-secondary); font-size: 13px; cursor: pointer; transition: all 0.15s; }
   .speed-btn:hover { border-color: var(--accent); color: var(--accent); }
-  .speed-btn.active { background: rgba(0,240,196,0.15); border-color: var(--accent); color: var(--accent); font-weight: 600; }
+  .speed-btn.active { background: var(--accent-light); border-color: var(--accent); color: var(--accent); font-weight: 600; }
 
-  .highlight { background: rgba(0,240,196,0.12); border-color: var(--accent) !important; }
-
-  .no-speech-banner {
-    display: none; background: rgba(247,65,95,0.1); border: 1px solid rgba(248,81,73,0.3);
-    border-radius: var(--radius); padding: 12px 16px; margin-top: 12px; font-size: 13px; color: var(--red); text-align: center;
-  }
+  .highlight { background: var(--accent-light); border-color: var(--accent) !important; }
+  .no-speech-banner { display: none; background: rgba(247,65,95,0.06); border: 1px solid rgba(247,65,95,0.2); border-radius: var(--radius); padding: 12px 16px; margin-top: 12px; font-size: 13px; color: var(--red); text-align: center; }
   .no-speech-banner.visible { display: block; }
+
+  .loading { text-align: center; padding: 60px 20px; color: var(--text-secondary); font-size: 14px; }
+
+  .page { display: none; }
+  .page.active { display: block; animation: fadeIn 0.25s ease; }
 
   @media (max-width: 480px) {
     .header { padding: 24px 16px 20px; }
     .header h1 { font-size: 19px; }
     .sentence-en { font-size: 16px; }
     .container { padding: 16px 12px; }
-    .score-badge { font-size: 24px; }
-    .cal-day { font-size: 13px; }
   }
-
-  /* Page transitions */
-  .page { display: none; }
-  .page.active { display: block; animation: fadeIn 0.25s ease; }
 </style>
 </head>
 <body>
 
-<!-- ════ PAGE: Calendar ════ -->
 <div class="page" id="page-calendar">
-  <div class="header">
-    <div class="header-inner">
-      <h1>Daily English Practice</h1>
-      <div class="date-label" id="cal-today-label"></div>
-    </div>
-  </div>
+  <div class="header"><div class="header-inner">
+    <h1>Daily English Practice</h1>
+    <div class="date-label" id="cal-today-label"></div>
+  </div></div>
   <div class="container" id="cal-content"></div>
 </div>
 
-<!-- ════ PAGE: Lesson ════ -->
 <div class="page" id="page-lesson">
-  <div class="header">
-    <div class="header-inner">
-      <button class="header-back" onclick="navigate('calendar')">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
-      </button>
-      <div class="date-label" id="lesson-date"></div>
-      <h1>Daily English Practice</h1>
-      <span class="theme-tag" id="lesson-theme"></span>
-    </div>
-  </div>
+  <div class="header"><div class="header-inner">
+    <button class="header-back" onclick="navigate('calendar')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg></button>
+    <div class="date-label" id="lesson-date"></div>
+    <h1>Daily English Practice</h1>
+    <span class="theme-tag" id="lesson-theme"></span>
+  </div></div>
   <div class="container" id="lesson-content"></div>
 </div>
 
-<!-- ════ PAGE: Wordbook ════ -->
 <div class="page" id="page-wordbook">
-  <div class="header">
-    <div class="header-inner">
-      <h1>Wordbook</h1>
-      <div class="date-label">My Saved Words</div>
-    </div>
-  </div>
+  <div class="header"><div class="header-inner">
+    <h1>Wordbook</h1>
+    <div class="date-label">My Saved Words</div>
+  </div></div>
   <div class="container" id="wb-content"></div>
 </div>
 
-<!-- ════ Bottom Nav ════ -->
 <nav class="nav">
   <button class="nav-item" onclick="navigate('calendar')" id="nav-calendar">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
@@ -530,552 +284,274 @@
 </nav>
 
 <script>
-// ══════════════════════════════════════════
-// DATA: Lessons
-// ══════════════════════════════════════════
-const LESSONS = {
-  "2026-04-14": {
-    theme: "Growth / Marketing",
-    sentences: [
-      { en: "We need to test three new channels before we scale the budget.", zh: "在扩大预算之前，我们需要先测试三个新渠道。" },
-      { en: "Our goal this month is to improve the conversion rate on the landing page.", zh: "我们这个月的目标是提升着陆页的转化率。" },
-      { en: "Let's focus on the user segment with the highest retention.", zh: "让我们重点关注留存率最高的用户群体。" },
-      { en: "This campaign is bringing traffic, but the cost per lead is still too high.", zh: "这个活动带来了流量，但每个线索成本还是太高。" },
-      { en: "Please share a simple growth plan with clear numbers and next steps.", zh: "请分享一份简洁的增长计划，里面要有清晰的数据和下一步动作。" }
-    ],
-    vocabulary: [
-      { word: "acquisition", phonetic: "/ˌækwɪˈzɪʃən/", meaning: "获客", example: { en: "Our acquisition cost went down after the new ad creative.", zh: "新广告素材上线后，我们的获客成本下降了。" }},
-      { word: "conversion", phonetic: "/kənˈvɜːrʒən/", meaning: "转化", example: { en: "We improved conversion by simplifying the sign-up flow.", zh: "通过简化注册流程，我们提升了转化率。" }},
-      { word: "retention", phonetic: "/rɪˈtenʃən/", meaning: "留存", example: { en: "Day-7 retention improved after we redesigned the onboarding flow.", zh: "重新设计引导流程后，7日留存率提升了。" }},
-      { word: "budget", phonetic: "/ˈbʌdʒɪt/", meaning: "预算", example: { en: "We need to reallocate budget from underperforming channels.", zh: "我们需要把预算从表现不好的渠道挪走。" }},
-      { word: "landing page", phonetic: "/ˈlændɪŋ peɪdʒ/", meaning: "着陆页", example: { en: "The landing page bounce rate is too high, we need to A/B test the headline.", zh: "着陆页的跳出率太高了，我们需要对标题做 A/B 测试。" }}
-    ]
-  }
-};
-
-// ══════════════════════════════════════════
-// STORAGE helpers
-// ══════════════════════════════════════════
+// ══════ CONFIG ══════
+const DATA_BASE = './data';
 const STORE_CHECKINS = 'ep_checkins';
 const STORE_WORDBOOK = 'ep_wordbook';
+const STORE_THEME = 'ep_theme';
 
-function getCheckins() {
-  try { return JSON.parse(localStorage.getItem(STORE_CHECKINS)) || {}; } catch { return {}; }
+// ══════ STATE ══════
+let dataIndex = null; // {dates:[], themes:{}}
+let lessonCache = {}; // dateStr -> lesson data
+let currentTheme = localStorage.getItem(STORE_THEME) || 'growth';
+let currentRate = 0.85;
+let currentUtterance = null;
+let currentBtn = null;
+let activeRecognition = null;
+let activeRecBtn = null;
+const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+const hasSR = !!SpeechRecognition;
+
+// ══════ DATA FETCHING ══════
+async function loadIndex() {
+  if (dataIndex) return dataIndex;
+  const r = await fetch(DATA_BASE + '/index.json?t=' + Date.now());
+  dataIndex = await r.json();
+  return dataIndex;
 }
+async function loadLesson(dateStr) {
+  if (lessonCache[dateStr]) return lessonCache[dateStr];
+  const r = await fetch(DATA_BASE + '/' + dateStr + '.json?t=' + Date.now());
+  if (!r.ok) return null;
+  const data = await r.json();
+  lessonCache[dateStr] = data;
+  return data;
+}
+
+// ══════ STORAGE ══════
+function getCheckins() { try { return JSON.parse(localStorage.getItem(STORE_CHECKINS)) || {}; } catch { return {}; } }
 function addCheckin(date) {
-  const all = getCheckins();
-  const times = all[date] || [];
+  const all = getCheckins(); const times = all[date] || [];
   const now = new Date().toLocaleTimeString('zh-CN', { hour: '2-digit', minute: '2-digit' });
   if (times[times.length - 1] !== now) times.push(now);
-  all[date] = times;
-  localStorage.setItem(STORE_CHECKINS, JSON.stringify(all));
+  all[date] = times; localStorage.setItem(STORE_CHECKINS, JSON.stringify(all));
 }
 function getStreak() {
-  const checkins = getCheckins();
-  const today = new Date();
-  let streak = 0;
-  for (let i = 0; i < 365; i++) {
-    const d = new Date(today);
-    d.setDate(d.getDate() - i);
-    const key = fmtDate(d);
-    if (checkins[key]) { streak++; } else if (i > 0) { break; }
-  }
-  return streak;
+  const c = getCheckins(); const today = new Date(); let s = 0;
+  for (let i = 0; i < 365; i++) { const d = new Date(today); d.setDate(d.getDate()-i); if (c[fmtDate(d)]) s++; else if (i>0) break; }
+  return s;
 }
-
-function getWordbook() {
-  try { return JSON.parse(localStorage.getItem(STORE_WORDBOOK)) || []; } catch { return []; }
-}
+function getWordbook() { try { return JSON.parse(localStorage.getItem(STORE_WORDBOOK)) || []; } catch { return []; } }
 function saveWordbook(wb) { localStorage.setItem(STORE_WORDBOOK, JSON.stringify(wb)); }
-function isInWordbook(word) { return getWordbook().some(w => w.word.toLowerCase() === word.toLowerCase()); }
-function addToWordbook(word, phonetic, meaning, source) {
-  const wb = getWordbook();
-  if (wb.some(w => w.word.toLowerCase() === word.toLowerCase())) return;
-  wb.push({ word, phonetic, meaning, source, addedAt: new Date().toISOString() });
-  saveWordbook(wb);
-  updateWbBadge();
-}
-function removeFromWordbook(word) {
-  const wb = getWordbook().filter(w => w.word.toLowerCase() !== word.toLowerCase());
-  saveWordbook(wb);
-  updateWbBadge();
-}
-function updateWbBadge() {
-  const count = getWordbook().length;
-  const el = document.getElementById('wb-badge-count');
-  if (count > 0) {
-    el.className = 'nav-badge';
-    el.textContent = count;
-  } else {
-    el.className = '';
-    el.textContent = '';
-  }
-}
+function isInWordbook(w) { return getWordbook().some(x => x.word.toLowerCase() === w.toLowerCase()); }
+function addToWordbook(w, ph, m, src) { const wb = getWordbook(); if (wb.some(x=>x.word.toLowerCase()===w.toLowerCase())) return; wb.push({word:w,phonetic:ph,meaning:m,source:src,addedAt:new Date().toISOString()}); saveWordbook(wb); updateWbBadge(); }
+function removeFromWordbook(w) { saveWordbook(getWordbook().filter(x=>x.word.toLowerCase()!==w.toLowerCase())); updateWbBadge(); }
+function updateWbBadge() { const c=getWordbook().length; const el=document.getElementById('wb-badge-count'); if(c>0){el.className='nav-badge';el.textContent=c;}else{el.className='';el.textContent='';} }
 
-// ══════════════════════════════════════════
-// UTILS
-// ══════════════════════════════════════════
-function fmtDate(d) {
-  return d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0');
-}
+// ══════ UTILS ══════
+function fmtDate(d) { return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'); }
 function todayStr() { return fmtDate(new Date()); }
-function fmtDateDisplay(str) {
-  const d = new Date(str + 'T00:00:00');
-  return d.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
-}
-const DOW_SHORT = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
-const MONTH_NAMES = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+function fmtDateDisplay(s) { return new Date(s+'T00:00:00').toLocaleDateString('en-US',{weekday:'long',year:'numeric',month:'long',day:'numeric'}); }
+const DOW = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+const MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+function escHtml(s) { const d=document.createElement('div'); d.textContent=s; return d.innerHTML; }
+function escJs(s) { return s.replace(/\\/g,'\\\\').replace(/'/g,"\\'").replace(/"/g,'&quot;'); }
 
-// ══════════════════════════════════════════
-// ROUTING
-// ══════════════════════════════════════════
-let currentPage = '';
+// ══════ ROUTING ══════
 function navigate(page, arg) {
-  if (page === 'calendar') { location.hash = '#/'; }
-  else if (page === 'lesson') { location.hash = '#/' + arg; }
-  else if (page === 'wordbook') { location.hash = '#/wordbook'; }
+  if (page==='calendar') location.hash='#/';
+  else if (page==='lesson') location.hash='#/'+arg;
+  else if (page==='wordbook') location.hash='#/wordbook';
 }
-function navigateToday() {
+async function navigateToday() {
+  const idx = await loadIndex();
   const today = todayStr();
-  if (LESSONS[today]) navigate('lesson', today);
-  else {
-    const dates = Object.keys(LESSONS).sort().reverse();
-    if (dates.length) navigate('lesson', dates[0]);
-    else navigate('calendar');
-  }
+  if (idx.dates.includes(today)) navigate('lesson', today);
+  else if (idx.dates.length) navigate('lesson', idx.dates[idx.dates.length-1]);
+  else navigate('calendar');
 }
-
-function handleRoute() {
-  const hash = location.hash.replace('#/', '').replace('#', '');
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
-
-  if (hash === 'wordbook') {
-    currentPage = 'wordbook';
+async function handleRoute() {
+  const hash = location.hash.replace('#/','').replace('#','');
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('active'));
+  if (hash==='wordbook') {
     document.getElementById('page-wordbook').classList.add('active');
     document.getElementById('nav-wordbook').classList.add('active');
     renderWordbook();
-  } else if (hash && LESSONS[hash]) {
-    currentPage = 'lesson';
+  } else if (hash && hash.match(/^\d{4}-\d{2}-\d{2}$/)) {
     document.getElementById('page-lesson').classList.add('active');
     document.getElementById('nav-today').classList.add('active');
-    renderLesson(hash);
+    await renderLesson(hash);
     addCheckin(hash);
   } else {
-    currentPage = 'calendar';
     document.getElementById('page-calendar').classList.add('active');
     document.getElementById('nav-calendar').classList.add('active');
-    renderCalendar();
+    await renderCalendar();
   }
   updateWbBadge();
 }
 window.addEventListener('hashchange', handleRoute);
 
-// ══════════════════════════════════════════
-// RENDER: Calendar
-// ══════════════════════════════════════════
-function renderCalendar() {
+// ══════ RENDER: Calendar ══════
+async function renderCalendar() {
+  const idx = await loadIndex();
   const today = new Date();
   document.getElementById('cal-today-label').textContent = fmtDateDisplay(todayStr());
   const checkins = getCheckins();
   const streak = getStreak();
-
-  // Determine months to show (current + previous)
+  const dateSet = new Set(idx.dates);
   const months = [];
-  for (let i = 1; i >= 0; i--) {
-    const d = new Date(today.getFullYear(), today.getMonth() - i, 1);
-    months.push({ year: d.getFullYear(), month: d.getMonth() });
-  }
+  for (let i=1;i>=0;i--) { const d=new Date(today.getFullYear(),today.getMonth()-i,1); months.push({year:d.getFullYear(),month:d.getMonth()}); }
 
-  let html = `
-    <div class="streak-bar">
-      <span class="streak-fire">&#x1F525;</span>
-      <div>
-        <div class="streak-num">${streak}</div>
-        <div class="streak-text">day streak</div>
-      </div>
-    </div>
-  `;
+  let h = `<div class="streak-bar"><span style="font-size:28px">&#x1F525;</span><div><div class="streak-num">${streak}</div><div class="streak-text">day streak</div></div></div>`;
+  const tc = checkins[todayStr()];
+  if (tc && tc.length) h += `<div class="cal-checkin-times"><h4>Today's check-ins</h4>${tc.map(t=>'<span style="margin-right:12px">'+t+'</span>').join('')}</div>`;
 
-  // Checkin detail for today
-  const todayCheckins = checkins[todayStr()];
-  if (todayCheckins && todayCheckins.length) {
-    html += `<div class="cal-checkin-times"><h4>Today's check-ins</h4>${todayCheckins.map(t => '<span style="margin-right:12px">' + t + '</span>').join('')}</div>`;
-  }
-
-  for (const { year, month } of months) {
-    const firstDay = new Date(year, month, 1).getDay();
-    const daysInMonth = new Date(year, month + 1, 0).getDate();
-    html += `<div class="cal-month-title">${MONTH_NAMES[month]} ${year}</div><div class="cal-grid">`;
-    for (const d of DOW_SHORT) html += `<div class="cal-dow">${d}</div>`;
-    for (let i = 0; i < firstDay; i++) html += '<div class="cal-day empty"></div>';
-    for (let d = 1; d <= daysInMonth; d++) {
-      const dateStr = `${year}-${String(month+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
-      const hasLesson = !!LESSONS[dateStr];
-      const isChecked = !!checkins[dateStr];
-      const isToday = dateStr === todayStr();
-      const cls = ['cal-day'];
-      if (hasLesson) cls.push('has-lesson');
-      if (isChecked) cls.push('checked');
-      if (isToday) cls.push('today');
-      const onclick = hasLesson ? ` onclick="navigate('lesson','${dateStr}')"` : '';
-      html += `<div class="${cls.join(' ')}"${onclick}>${d}${isChecked ? '<span class="dot"></span>' : ''}</div>`;
+  for (const {year,month} of months) {
+    const fd=new Date(year,month,1).getDay(), dim=new Date(year,month+1,0).getDate();
+    h += `<div class="cal-month-title">${MONTHS[month]} ${year}</div><div class="cal-grid">`;
+    for (const d of DOW) h+=`<div class="cal-dow">${d}</div>`;
+    for (let i=0;i<fd;i++) h+='<div class="cal-day empty"></div>';
+    for (let d=1;d<=dim;d++) {
+      const ds=`${year}-${String(month+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
+      const has=dateSet.has(ds), ck=!!checkins[ds], it=ds===todayStr();
+      const cls=['cal-day']; if(has)cls.push('has-lesson'); if(ck)cls.push('checked'); if(it)cls.push('today');
+      const oc=has?` onclick="navigate('lesson','${ds}')"`:'';
+      h+=`<div class="${cls.join(' ')}"${oc}>${d}${ck?'<span class="dot"></span>':''}</div>`;
     }
-    html += '</div>';
+    h+='</div>';
   }
-
-  document.getElementById('cal-content').innerHTML = html;
+  document.getElementById('cal-content').innerHTML = h;
 }
 
-// ══════════════════════════════════════════
-// RENDER: Lesson
-// ══════════════════════════════════════════
-function renderLesson(dateStr) {
-  const lesson = LESSONS[dateStr];
-  document.getElementById('lesson-date').textContent = fmtDateDisplay(dateStr);
-  document.getElementById('lesson-theme').textContent = lesson.theme;
+// ══════ RENDER: Lesson ══════
+async function renderLesson(dateStr) {
+  const el = document.getElementById('lesson-content');
+  el.innerHTML = '<div class="loading">Loading...</div>';
+  const lesson = await loadLesson(dateStr);
+  if (!lesson) { el.innerHTML = '<div class="loading">No lesson for this date.</div>'; return; }
 
-  // Checkin times
+  document.getElementById('lesson-date').textContent = fmtDateDisplay(dateStr);
+  const themes = lesson.themes;
+  const themeKeys = Object.keys(themes);
+  if (!themes[currentTheme]) currentTheme = themeKeys[0];
+  const theme = themes[currentTheme];
+  document.getElementById('lesson-theme').textContent = theme.label;
+
+  // Check-in times
   const checkins = getCheckins();
   const times = checkins[dateStr] || [];
 
-  let html = '';
+  let h = '';
+  if (times.length) h += `<div class="cal-checkin-times"><h4>Check-in times</h4>${times.map(t=>'<span style="margin-right:12px">'+t+'</span>').join('')}</div>`;
 
-  // Checkin times display
-  if (times.length) {
-    html += `<div class="cal-checkin-times"><h4>Check-in times</h4>${times.map(t => '<span style="margin-right:12px">' + t + '</span>').join('')}</div>`;
+  // Theme picker
+  h += '<div class="theme-picker">';
+  for (const k of themeKeys) {
+    const active = k === currentTheme ? ' active' : '';
+    h += `<button class="theme-chip${active}" onclick="switchTheme('${k}','${dateStr}')">${escHtml(themes[k].label)}</button>`;
   }
+  h += '</div>';
 
-  // Speed control
-  html += `
-    <div class="speed-control">
-      <label>Speed</label>
-      <button class="speed-btn" data-speed="0.7">0.7x</button>
-      <button class="speed-btn active" data-speed="0.85">0.85x</button>
-      <button class="speed-btn" data-speed="1">1x</button>
-      <button class="speed-btn" data-speed="1.2">1.2x</button>
-    </div>
-  `;
-
-  if (!hasSpeechRecognition) {
-    html += '<div class="no-speech-banner visible">Speech Recognition not supported. Use Chrome for recording.</div>';
-  }
+  // Speed
+  h += `<div class="speed-control"><label>Speed</label>
+    <button class="speed-btn" data-speed="0.7">0.7x</button>
+    <button class="speed-btn active" data-speed="0.85">0.85x</button>
+    <button class="speed-btn" data-speed="1">1x</button>
+    <button class="speed-btn" data-speed="1.2">1.2x</button></div>`;
+  if (!hasSR) h += '<div class="no-speech-banner visible">Speech Recognition not supported. Use Chrome.</div>';
 
   // Sentences
-  html += '<div class="section-title">Sentences</div>';
-  lesson.sentences.forEach((s, i) => {
-    const ttsText = s.en.replace(/Let's/g, 'Let us');
-    html += `
-      <div class="card" data-text="${escHtml(s.en)}">
-        <div class="card-header">
-          <span class="card-num">#${i+1}</span>
-          <div class="btn-group">
-            <button class="icon-btn" onclick="speak('${escJs(ttsText)}', this)" aria-label="Play">
-              <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="6,3 20,12 6,21"/></svg>
-            </button>
-            ${hasSpeechRecognition ? `<button class="icon-btn rec" onclick="toggleRecord(this)" aria-label="Record">
-              <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="7"/></svg>
-            </button>` : ''}
-          </div>
-        </div>
-        <div class="sentence-en">${escHtml(s.en)}</div>
-        <div class="sentence-zh">${escHtml(s.zh)}</div>
-        <div class="rec-hint">Listening...</div>
-        <div class="score-result"></div>
-      </div>
-    `;
+  h += '<div class="section-title">Sentences</div>';
+  theme.sentences.forEach((s,i) => {
+    const tts = s.en.replace(/Let's/g,'Let us');
+    h += `<div class="card" data-text="${escHtml(s.en)}">
+      <div class="card-header"><span class="card-num">#${i+1}</span><div class="btn-group">
+        <button class="icon-btn" onclick="speak('${escJs(tts)}',this)"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="6,3 20,12 6,21"/></svg></button>
+        ${hasSR?'<button class="icon-btn rec" onclick="toggleRecord(this)"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="7"/></svg></button>':''}
+      </div></div>
+      <div class="sentence-en">${escHtml(s.en)}</div><div class="sentence-zh">${escHtml(s.zh)}</div>
+      <div class="rec-hint">Listening...</div><div class="score-result"></div></div>`;
   });
 
   // Vocabulary
-  html += '<div class="section-title">Vocabulary</div>';
-  lesson.vocabulary.forEach(v => {
+  h += '<div class="section-title">Vocabulary</div>';
+  theme.vocabulary.forEach(v => {
     const saved = isInWordbook(v.word);
-    html += `
-      <div class="vocab-card">
-        <div class="vocab-header">
-          <span class="vocab-word">${escHtml(v.word)}</span>
-          <span class="vocab-phonetic">${escHtml(v.phonetic)}</span>
-          <span class="vocab-meaning">${escHtml(v.meaning)}</span>
-          <button class="icon-btn" onclick="speak('${escJs(v.word)}', this)" aria-label="Play" style="margin-left:auto">
-            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="6,3 20,12 6,21"/></svg>
-          </button>
-          <button class="star-btn ${saved ? 'saved' : ''}" onclick="toggleStar(this, '${escJs(v.word)}', '${escJs(v.phonetic)}', '${escJs(v.meaning)}', '${escJs(dateStr)}')" aria-label="Save to wordbook">
-            <svg viewBox="0 0 24 24" fill="${saved ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          </button>
-        </div>
-        <div class="vocab-example">
-          <div class="en">${escHtml(v.example.en)}</div>
-          <div class="zh">${escHtml(v.example.zh)}</div>
-        </div>
-      </div>
-    `;
+    h += `<div class="vocab-card"><div class="vocab-header">
+      <span class="vocab-word">${escHtml(v.word)}</span>
+      <span class="vocab-phonetic">${escHtml(v.phonetic)}</span>
+      <span class="vocab-meaning">${escHtml(v.meaning)}</span>
+      <button class="icon-btn" onclick="speak('${escJs(v.word)}',this)" style="margin-left:auto"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="6,3 20,12 6,21"/></svg></button>
+      <button class="star-btn ${saved?'saved':''}" onclick="toggleStar(this,'${escJs(v.word)}','${escJs(v.phonetic)}','${escJs(v.meaning)}','${escJs(dateStr)}')">
+        <svg viewBox="0 0 24 24" fill="${saved?'currentColor':'none'}" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      </button>
+    </div>
+    <div class="vocab-example"><div class="en">${escHtml(v.example.en)}</div><div class="zh">${escHtml(v.example.zh)}</div></div></div>`;
   });
 
-  document.getElementById('lesson-content').innerHTML = html;
-
-  // Rebind speed buttons
+  el.innerHTML = h;
   document.querySelectorAll('.speed-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('.speed-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      currentRate = parseFloat(btn.dataset.speed);
-    });
+    btn.addEventListener('click', () => { document.querySelectorAll('.speed-btn').forEach(b=>b.classList.remove('active')); btn.classList.add('active'); currentRate=parseFloat(btn.dataset.speed); });
   });
 }
 
-// ══════════════════════════════════════════
-// RENDER: Wordbook
-// ══════════════════════════════════════════
+function switchTheme(key, dateStr) {
+  currentTheme = key;
+  localStorage.setItem(STORE_THEME, key);
+  renderLesson(dateStr);
+}
+
+// ══════ RENDER: Wordbook ══════
 function renderWordbook() {
   const wb = getWordbook();
-  let html = '';
-
-  // Add word form - always visible
-  html += `
-    <div class="wb-add-form">
-      <input class="wb-add-input" id="wb-word-input" type="text" placeholder="Type a word, e.g. funnel" autocomplete="off" autocapitalize="none" spellcheck="false">
-      <button class="wb-add-btn" id="wb-add-btn" onclick="handleAddWord()">Add</button>
-    </div>
-  `;
-
-  if (wb.length === 0) {
-    html += `<div class="wb-empty">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-      <div style="font-size:16px;font-weight:600;margin-bottom:6px">Wordbook is empty</div>
-      <div>Type a word above or tap the star icon in lessons to save words here.</div>
-    </div>`;
+  let h = `<div class="wb-add-form"><input class="wb-add-input" id="wb-word-input" type="text" placeholder="Type a word, e.g. funnel" autocomplete="off" autocapitalize="none" spellcheck="false"><button class="wb-add-btn" onclick="handleAddWord()">Add</button></div>`;
+  if (!wb.length) {
+    h += `<div class="wb-empty"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg><div style="font-size:16px;font-weight:600;margin-bottom:6px">Wordbook is empty</div><div>Type a word above or tap the star in lessons.</div></div>`;
   } else {
-    html += `<div class="wb-count">${wb.length} word${wb.length > 1 ? 's' : ''} saved</div>`;
-    const sorted = [...wb].sort((a, b) => b.addedAt.localeCompare(a.addedAt));
-    for (const w of sorted) {
-      const addedDate = new Date(w.addedAt).toLocaleDateString('zh-CN');
-      html += `
-        <div class="wb-card">
-          <button class="icon-btn" onclick="speak('${escJs(w.word)}', this)" aria-label="Play" style="width:32px;height:32px;flex-shrink:0">
-            <svg viewBox="0 0 24 24" fill="currentColor" style="width:14px;height:14px"><polygon points="6,3 20,12 6,21"/></svg>
-          </button>
-          <div class="wb-card-body">
-            <div>
-              <span class="wb-card-word">${escHtml(w.word)}</span>
-              <span class="wb-card-phonetic">${escHtml(w.phonetic || '')}</span>
-            </div>
-            ${w.meaning ? `<div class="wb-card-meaning">${escHtml(w.meaning)}</div>` : ''}
-            <div class="wb-card-source">Added ${addedDate}${w.source ? ' from ' + w.source : ''}</div>
-          </div>
-          <button class="wb-remove" onclick="removeWord('${escJs(w.word)}')" aria-label="Remove">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-          </button>
-        </div>
-      `;
-    }
+    h += `<div class="wb-count">${wb.length} word${wb.length>1?'s':''} saved</div>`;
+    [...wb].sort((a,b)=>b.addedAt.localeCompare(a.addedAt)).forEach(w => {
+      h += `<div class="wb-card">
+        <button class="icon-btn" onclick="speak('${escJs(w.word)}',this)" style="width:32px;height:32px"><svg viewBox="0 0 24 24" fill="currentColor" style="width:14px;height:14px"><polygon points="6,3 20,12 6,21"/></svg></button>
+        <div class="wb-card-body"><div><span class="wb-card-word">${escHtml(w.word)}</span><span class="wb-card-phonetic">${escHtml(w.phonetic||'')}</span></div>
+        ${w.meaning?`<div class="wb-card-meaning">${escHtml(w.meaning)}</div>`:''}
+        <div class="wb-card-source">Added ${new Date(w.addedAt).toLocaleDateString('zh-CN')}${w.source?' from '+w.source:''}</div></div>
+        <button class="wb-remove" onclick="removeWord('${escJs(w.word)}')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div>`;
+    });
   }
-
-  document.getElementById('wb-content').innerHTML = html;
-
-  // Bind Enter key on input
-  const input = document.getElementById('wb-word-input');
-  if (input) {
-    input.addEventListener('keydown', e => { if (e.key === 'Enter') handleAddWord(); });
-    input.focus();
-  }
+  document.getElementById('wb-content').innerHTML = h;
+  const inp = document.getElementById('wb-word-input');
+  if (inp) { inp.addEventListener('keydown', e => { if(e.key==='Enter') handleAddWord(); }); inp.focus(); }
 }
-
 function handleAddWord() {
-  const input = document.getElementById('wb-word-input');
-  const raw = (input.value || '').trim();
-  if (!raw) return;
-
-  // Parse: support "word" or "word /phonetic/ meaning" or "word - meaning"
-  let word = raw, phonetic = '', meaning = '';
-  // Try "word /phonetic/ meaning"
-  const phMatch = raw.match(/^(.+?)\s+(\/[^/]+\/)\s*(.*)$/);
-  if (phMatch) {
-    word = phMatch[1].trim();
-    phonetic = phMatch[2].trim();
-    meaning = phMatch[3].trim();
-  } else {
-    // Try "word - meaning" or "word = meaning"
-    const dashMatch = raw.match(/^(.+?)\s*[-=]\s+(.+)$/);
-    if (dashMatch) {
-      word = dashMatch[1].trim();
-      meaning = dashMatch[2].trim();
-    }
-  }
-
-  if (isInWordbook(word)) {
-    input.value = '';
-    input.placeholder = 'Already in wordbook!';
-    setTimeout(() => { input.placeholder = "Type a word, e.g. funnel"; }, 1500);
-    return;
-  }
-
-  addToWordbook(word, phonetic, meaning, 'manual');
-  renderWordbook();
+  const inp=document.getElementById('wb-word-input'); const raw=(inp.value||'').trim(); if(!raw) return;
+  let word=raw,phonetic='',meaning='';
+  const pm=raw.match(/^(.+?)\s+(\/[^/]+\/)\s*(.*)$/);
+  if(pm){word=pm[1].trim();phonetic=pm[2].trim();meaning=pm[3].trim();}
+  else{const dm=raw.match(/^(.+?)\s*[-=]\s+(.+)$/);if(dm){word=dm[1].trim();meaning=dm[2].trim();}}
+  if(isInWordbook(word)){inp.value='';inp.placeholder='Already saved!';setTimeout(()=>{inp.placeholder="Type a word, e.g. funnel";},1500);return;}
+  addToWordbook(word,phonetic,meaning,'manual'); renderWordbook();
 }
+function toggleStar(btn,w,ph,m,src) { if(isInWordbook(w)){removeFromWordbook(w);btn.classList.remove('saved');btn.querySelector('svg').setAttribute('fill','none');}else{addToWordbook(w,ph,m,src);btn.classList.add('saved');btn.querySelector('svg').setAttribute('fill','currentColor');} }
+function removeWord(w) { removeFromWordbook(w); renderWordbook(); }
 
-function toggleStar(btn, word, phonetic, meaning, source) {
-  if (isInWordbook(word)) {
-    removeFromWordbook(word);
-    btn.classList.remove('saved');
-    btn.querySelector('svg').setAttribute('fill', 'none');
-  } else {
-    addToWordbook(word, phonetic, meaning, source);
-    btn.classList.add('saved');
-    btn.querySelector('svg').setAttribute('fill', 'currentColor');
-  }
-}
-function removeWord(word) {
-  removeFromWordbook(word);
-  renderWordbook();
-}
-
-// ══════════════════════════════════════════
-// TTS
-// ══════════════════════════════════════════
-let currentRate = 0.85;
-let currentUtterance = null;
-let currentBtn = null;
-
+// ══════ TTS ══════
 function speak(text, btn) {
-  if (currentUtterance && speechSynthesis.speaking) {
-    speechSynthesis.cancel();
-    if (currentBtn) {
-      currentBtn.classList.remove('playing');
-      currentBtn.closest('.card, .vocab-card')?.classList.remove('highlight');
-    }
-    if (currentBtn === btn) { currentBtn = null; currentUtterance = null; return; }
-  }
-  const utt = new SpeechSynthesisUtterance(text);
-  utt.lang = 'en-US';
-  utt.rate = currentRate;
-  const voices = speechSynthesis.getVoices();
-  const pref = voices.find(v => v.name.includes('Samantha'))
-    || voices.find(v => v.lang === 'en-US' && v.localService)
-    || voices.find(v => v.lang.startsWith('en'));
-  if (pref) utt.voice = pref;
-
-  currentUtterance = utt;
-  currentBtn = btn;
-  btn.classList.add('playing');
-  btn.closest('.card, .vocab-card')?.classList.add('highlight');
-
-  utt.onend = utt.onerror = () => {
-    btn.classList.remove('playing');
-    btn.closest('.card, .vocab-card')?.classList.remove('highlight');
-    currentBtn = null;
-    currentUtterance = null;
-  };
-  speechSynthesis.speak(utt);
+  if(currentUtterance&&speechSynthesis.speaking){speechSynthesis.cancel();if(currentBtn){currentBtn.classList.remove('playing');currentBtn.closest('.card,.vocab-card')?.classList.remove('highlight');}if(currentBtn===btn){currentBtn=null;currentUtterance=null;return;}}
+  const u=new SpeechSynthesisUtterance(text); u.lang='en-US'; u.rate=currentRate;
+  const v=speechSynthesis.getVoices(); const p=v.find(x=>x.name.includes('Samantha'))||v.find(x=>x.lang==='en-US'&&x.localService)||v.find(x=>x.lang.startsWith('en'));
+  if(p)u.voice=p; currentUtterance=u; currentBtn=btn;
+  btn.classList.add('playing'); btn.closest('.card,.vocab-card')?.classList.add('highlight');
+  u.onend=u.onerror=()=>{btn.classList.remove('playing');btn.closest('.card,.vocab-card')?.classList.remove('highlight');currentBtn=null;currentUtterance=null;};
+  speechSynthesis.speak(u);
 }
 
-// ══════════════════════════════════════════
-// Speech Recognition + Scoring
-// ══════════════════════════════════════════
-const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-const hasSpeechRecognition = !!SpeechRecognition;
-let activeRecognition = null;
-let activeRecBtn = null;
+// ══════ SPEECH RECOGNITION ══════
+function normalize(t){return t.toLowerCase().replace(/['']/g,"'").replace(/let's/g,'lets').replace(/[^\w\s']/g,'').trim().split(/\s+/);}
+function lev(a,b){const m=a.length,n=b.length,d=Array.from({length:m+1},()=>new Array(n+1).fill(0));for(let i=0;i<=m;i++)d[i][0]=i;for(let j=0;j<=n;j++)d[0][j]=j;for(let i=1;i<=m;i++)for(let j=1;j<=n;j++)d[i][j]=a[i-1]===b[j-1]?d[i-1][j-1]:1+Math.min(d[i-1][j],d[i][j-1],d[i-1][j-1]);return d[m][n];}
+function scoreMatch(ref,spoken){const rw=normalize(ref),sw=normalize(spoken),used=new Array(sw.length).fill(false),res=[];let m=0;for(const r of rw){let f=false;for(let i=0;i<sw.length;i++){if(!used[i]&&sw[i]===r){used[i]=true;f=true;break;}}if(!f)for(let i=0;i<sw.length;i++){if(!used[i]&&r.length>3&&lev(sw[i],r)<=1){used[i]=true;f=true;break;}}res.push({word:r,matched:f});if(f)m++;}return{results:res,pct:Math.round(m/rw.length*100),matched:m,total:rw.length,spoken};}
+function renderScore(card,r){const el=card.querySelector('.score-result');let g,gc;if(r.pct>=90){g='Excellent';gc='excellent';}else if(r.pct>=70){g='Good';gc='good';}else if(r.pct>=50){g='Fair';gc='fair';}else{g='Keep Trying';gc='poor';}el.innerHTML=`<div class="score-header"><span class="score-badge ${gc}">${r.pct}%</span><span class="score-label">${g} (${r.matched}/${r.total})</span></div><div class="score-words">${r.results.map(x=>`<span class="${x.matched?'matched':'missed'}">${x.word}</span>`).join(' ')}</div><div class="score-your-text">${escHtml(r.spoken)}</div>`;el.classList.add('visible');}
+function toggleRecord(btn){if(!SpeechRecognition)return;const card=btn.closest('.card'),hint=card.querySelector('.rec-hint'),ref=card.dataset.text;if(speechSynthesis.speaking){speechSynthesis.cancel();if(currentBtn){currentBtn.classList.remove('playing');currentBtn.closest('.card,.vocab-card')?.classList.remove('highlight');}}if(activeRecognition&&activeRecBtn===btn){activeRecognition.stop();return;}if(activeRecognition)activeRecognition.stop();const rec=new SpeechRecognition();rec.lang='en-US';rec.interimResults=false;rec.maxAlternatives=1;rec.continuous=false;activeRecognition=rec;activeRecBtn=btn;btn.classList.add('recording');hint.classList.add('visible');card.querySelector('.score-result').classList.remove('visible');rec.onresult=e=>{renderScore(card,scoreMatch(ref,e.results[0][0].transcript));};rec.onerror=e=>{if(e.error!=='no-speech'&&e.error!=='aborted'){const el=card.querySelector('.score-result');el.innerHTML=`<div style="color:var(--red);font-size:13px">Error: ${e.error}</div>`;el.classList.add('visible');}};rec.onend=()=>{btn.classList.remove('recording');hint.classList.remove('visible');if(activeRecBtn===btn){activeRecognition=null;activeRecBtn=null;}};rec.start();}
 
-function normalize(text) {
-  return text.toLowerCase().replace(/['']/g, "'").replace(/let's/g, 'lets').replace(/[^\w\s']/g, '').trim().split(/\s+/);
-}
-function levenshtein(a, b) {
-  const m = a.length, n = b.length;
-  const dp = Array.from({ length: m+1 }, () => new Array(n+1).fill(0));
-  for (let i = 0; i <= m; i++) dp[i][0] = i;
-  for (let j = 0; j <= n; j++) dp[0][j] = j;
-  for (let i = 1; i <= m; i++)
-    for (let j = 1; j <= n; j++)
-      dp[i][j] = a[i-1]===b[j-1] ? dp[i-1][j-1] : 1+Math.min(dp[i-1][j],dp[i][j-1],dp[i-1][j-1]);
-  return dp[m][n];
-}
-function scoreMatch(ref, spoken) {
-  const refW = normalize(ref), spkW = normalize(spoken);
-  const used = new Array(spkW.length).fill(false);
-  const results = [];
-  let matched = 0;
-  for (const rw of refW) {
-    let found = false;
-    for (let i = 0; i < spkW.length; i++) {
-      if (!used[i] && spkW[i] === rw) { used[i] = true; found = true; break; }
-    }
-    if (!found) {
-      for (let i = 0; i < spkW.length; i++) {
-        if (!used[i] && rw.length > 3 && levenshtein(spkW[i], rw) <= 1) { used[i] = true; found = true; break; }
-      }
-    }
-    results.push({ word: rw, matched: found });
-    if (found) matched++;
-  }
-  return { results, pct: Math.round(matched/refW.length*100), matched, total: refW.length, spoken };
-}
-function renderScore(card, result) {
-  const el = card.querySelector('.score-result');
-  let grade, gc;
-  if (result.pct >= 90) { grade='Excellent'; gc='excellent'; }
-  else if (result.pct >= 70) { grade='Good'; gc='good'; }
-  else if (result.pct >= 50) { grade='Fair'; gc='fair'; }
-  else { grade='Keep Trying'; gc='poor'; }
-  el.innerHTML = `
-    <div class="score-header">
-      <span class="score-badge ${gc}">${result.pct}%</span>
-      <span class="score-label">${grade} (${result.matched}/${result.total})</span>
-    </div>
-    <div class="score-words">${result.results.map(r => `<span class="${r.matched?'matched':'missed'}">${r.word}</span>`).join(' ')}</div>
-    <div class="score-your-text">${escHtml(result.spoken)}</div>
-  `;
-  el.classList.add('visible');
-}
-function toggleRecord(btn) {
-  if (!SpeechRecognition) return;
-  const card = btn.closest('.card');
-  const hint = card.querySelector('.rec-hint');
-  const ref = card.dataset.text;
-  if (speechSynthesis.speaking) {
-    speechSynthesis.cancel();
-    if (currentBtn) { currentBtn.classList.remove('playing'); currentBtn.closest('.card,.vocab-card')?.classList.remove('highlight'); }
-  }
-  if (activeRecognition && activeRecBtn === btn) { activeRecognition.stop(); return; }
-  if (activeRecognition) activeRecognition.stop();
-
-  const rec = new SpeechRecognition();
-  rec.lang = 'en-US'; rec.interimResults = false; rec.maxAlternatives = 1; rec.continuous = false;
-  activeRecognition = rec; activeRecBtn = btn;
-  btn.classList.add('recording'); hint.classList.add('visible');
-  card.querySelector('.score-result').classList.remove('visible');
-
-  rec.onresult = e => { renderScore(card, scoreMatch(ref, e.results[0][0].transcript)); };
-  rec.onerror = e => {
-    if (e.error !== 'no-speech' && e.error !== 'aborted') {
-      const el = card.querySelector('.score-result');
-      el.innerHTML = `<div style="color:var(--red);font-size:13px">Error: ${e.error}</div>`;
-      el.classList.add('visible');
-    }
-  };
-  rec.onend = () => {
-    btn.classList.remove('recording'); hint.classList.remove('visible');
-    if (activeRecBtn === btn) { activeRecognition = null; activeRecBtn = null; }
-  };
-  rec.start();
-}
-
-// ══════════════════════════════════════════
-// HELPERS
-// ══════════════════════════════════════════
-function escHtml(s) { const d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
-function escJs(s) { return s.replace(/\\/g, '\\\\').replace(/'/g, "\\'").replace(/"/g, '&quot;'); }
-
-// ══════════════════════════════════════════
-// INIT
-// ══════════════════════════════════════════
+// ══════ INIT ══════
 speechSynthesis.getVoices();
-speechSynthesis.onvoiceschanged = () => speechSynthesis.getVoices();
+speechSynthesis.onvoiceschanged=()=>speechSynthesis.getVoices();
 updateWbBadge();
-if (!location.hash || location.hash === '#/' || location.hash === '#') {
-  navigateToday();
-} else {
-  handleRoute();
-}
+(async()=>{
+  await loadIndex();
+  if(!location.hash||location.hash==='#/'||location.hash==='#') await navigateToday();
+  else await handleRoute();
+})();
 </script>
 </body>
 </html>

@@ -1,0 +1,90 @@
+{
+  "date": "2026-04-14",
+  "themes": {
+    "growth": {
+      "label": "Growth / Marketing",
+      "sentences": [
+        {"en": "We need to test three new channels before we scale the budget.", "zh": "在扩大预算之前，我们需要先测试三个新渠道。"},
+        {"en": "Our goal this month is to improve the conversion rate on the landing page.", "zh": "我们这个月的目标是提升着陆页的转化率。"},
+        {"en": "Let's focus on the user segment with the highest retention.", "zh": "让我们重点关注留存率最高的用户群体。"},
+        {"en": "This campaign is bringing traffic, but the cost per lead is still too high.", "zh": "这个活动带来了流量，但每个线索成本还是太高。"},
+        {"en": "Please share a simple growth plan with clear numbers and next steps.", "zh": "请分享一份简洁的增长计划，里面要有清晰的数据和下一步动作。"}
+      ],
+      "vocabulary": [
+        {"word": "acquisition", "phonetic": "/ˌækwɪˈzɪʃən/", "meaning": "获客", "example": {"en": "Our acquisition cost went down after the new ad creative.", "zh": "新广告素材上线后，我们的获客成本下降了。"}},
+        {"word": "conversion", "phonetic": "/kənˈvɜːrʒən/", "meaning": "转化", "example": {"en": "We improved conversion by simplifying the sign-up flow.", "zh": "通过简化注册流程，我们提升了转化率。"}},
+        {"word": "retention", "phonetic": "/rɪˈtenʃən/", "meaning": "留存", "example": {"en": "Day-7 retention improved after we redesigned the onboarding flow.", "zh": "重新设计引导流程后，7日留存率提升了。"}},
+        {"word": "budget", "phonetic": "/ˈbʌdʒɪt/", "meaning": "预算", "example": {"en": "We need to reallocate budget from underperforming channels.", "zh": "我们需要把预算从表现不好的渠道挪走。"}},
+        {"word": "landing page", "phonetic": "/ˈlændɪŋ peɪdʒ/", "meaning": "着陆页", "example": {"en": "The landing page bounce rate is too high, we need to A/B test the headline.", "zh": "着陆页的跳出率太高了，我们需要对标题做 A/B 测试。"}}
+      ]
+    },
+    "product": {
+      "label": "Product / Metrics",
+      "sentences": [
+        {"en": "The daily active users dropped by 12% after the last release.", "zh": "上次发版后，日活用户下降了 12%。"},
+        {"en": "We should prioritize features based on user feedback and data.", "zh": "我们应该根据用户反馈和数据来排列功能优先级。"},
+        {"en": "The onboarding completion rate is our most important metric this quarter.", "zh": "新手引导完成率是本季度最重要的指标。"},
+        {"en": "Can you walk me through the user journey from sign-up to first trade?", "zh": "你能带我看一下从注册到首笔交易的用户旅程吗？"},
+        {"en": "We need to reduce the number of steps in the KYC process.", "zh": "我们需要减少 KYC 流程的步骤数量。"}
+      ],
+      "vocabulary": [
+        {"word": "metric", "phonetic": "/ˈmetrɪk/", "meaning": "指标", "example": {"en": "Which metric best reflects user engagement?", "zh": "哪个指标最能反映用户参与度？"}},
+        {"word": "onboarding", "phonetic": "/ˈɒnbɔːrdɪŋ/", "meaning": "新手引导", "example": {"en": "A smooth onboarding experience reduces early churn.", "zh": "流畅的新手引导能减少早期流失。"}},
+        {"word": "iteration", "phonetic": "/ˌɪtəˈreɪʃən/", "meaning": "迭代", "example": {"en": "Each iteration should deliver measurable improvement.", "zh": "每次迭代都应该带来可衡量的改善。"}},
+        {"word": "churn", "phonetic": "/tʃɜːrn/", "meaning": "流失", "example": {"en": "Our monthly churn rate is higher than the industry benchmark.", "zh": "我们的月流失率高于行业基准。"}},
+        {"word": "funnel", "phonetic": "/ˈfʌnəl/", "meaning": "漏斗", "example": {"en": "There is a big drop-off at the second step of the funnel.", "zh": "漏斗的第二步有很大的流失。"}}
+      ]
+    },
+    "finance": {
+      "label": "Finance / Investment",
+      "sentences": [
+        {"en": "The stock price surged 8% after the earnings beat expectations.", "zh": "财报超预期后，股价飙升了 8%。"},
+        {"en": "Investors are concerned about the rising interest rate environment.", "zh": "投资者对加息环境感到担忧。"},
+        {"en": "The company announced a share buyback program worth 500 million dollars.", "zh": "公司宣布了一项价值 5 亿美元的股票回购计划。"},
+        {"en": "We need to diversify our portfolio to manage risk better.", "zh": "我们需要分散投资组合以更好地管理风险。"},
+        {"en": "The P/E ratio suggests the stock is overvalued compared to its peers.", "zh": "市盈率显示该股票相对于同行被高估了。"}
+      ],
+      "vocabulary": [
+        {"word": "earnings", "phonetic": "/ˈɜːrnɪŋz/", "meaning": "盈利/财报", "example": {"en": "The company will release its quarterly earnings next week.", "zh": "公司将于下周发布季度财报。"}},
+        {"word": "portfolio", "phonetic": "/pɔːrtˈfoʊlioʊ/", "meaning": "投资组合", "example": {"en": "A balanced portfolio includes both stocks and bonds.", "zh": "均衡的投资组合包括股票和债券。"}},
+        {"word": "dividend", "phonetic": "/ˈdɪvɪdend/", "meaning": "股息", "example": {"en": "The company increased its dividend by 15% this year.", "zh": "公司今年将股息提高了 15%。"}},
+        {"word": "volatility", "phonetic": "/ˌvɒləˈtɪləti/", "meaning": "波动性", "example": {"en": "Market volatility tends to increase during earnings season.", "zh": "财报季期间市场波动性往往会加大。"}},
+        {"word": "valuation", "phonetic": "/ˌvæljuˈeɪʃən/", "meaning": "估值", "example": {"en": "The startup's valuation doubled after the latest funding round.", "zh": "最新一轮融资后，这家初创公司的估值翻了一倍。"}}
+      ]
+    },
+    "team": {
+      "label": "Team / Management",
+      "sentences": [
+        {"en": "Let's align on the OKRs before we kick off the new quarter.", "zh": "在新季度开始前，让我们先对齐 OKR。"},
+        {"en": "I'd like to get your feedback on the proposal before the meeting.", "zh": "会议之前，我想先听听你对方案的反馈。"},
+        {"en": "We should delegate more responsibilities to the team leads.", "zh": "我们应该把更多职责下放给团队负责人。"},
+        {"en": "The cross-functional collaboration between marketing and product needs improvement.", "zh": "市场和产品之间的跨部门协作需要改善。"},
+        {"en": "Please prepare a brief update on your team's progress for the all-hands.", "zh": "请为全员会议准备一份你团队进展的简要更新。"}
+      ],
+      "vocabulary": [
+        {"word": "delegate", "phonetic": "/ˈdelɪɡeɪt/", "meaning": "委派/下放", "example": {"en": "Good managers delegate tasks and focus on strategy.", "zh": "好的管理者会委派任务，专注于策略。"}},
+        {"word": "alignment", "phonetic": "/əˈlaɪnmənt/", "meaning": "对齐/一致", "example": {"en": "We need better alignment between the two teams.", "zh": "两个团队之间需要更好的对齐。"}},
+        {"word": "stakeholder", "phonetic": "/ˈsteɪkhoʊldər/", "meaning": "利益相关方", "example": {"en": "Make sure all stakeholders are informed before the launch.", "zh": "确保在上线前通知所有利益相关方。"}},
+        {"word": "accountability", "phonetic": "/əˌkaʊntəˈbɪləti/", "meaning": "责任制", "example": {"en": "Clear accountability prevents tasks from falling through the cracks.", "zh": "清晰的责任制能防止任务遗漏。"}},
+        {"word": "bandwidth", "phonetic": "/ˈbændwɪdθ/", "meaning": "精力/带宽", "example": {"en": "The team doesn't have enough bandwidth to take on another project.", "zh": "团队没有足够的精力再承接一个项目。"}}
+      ]
+    },
+    "strategy": {
+      "label": "Strategy / Planning",
+      "sentences": [
+        {"en": "Our competitive advantage lies in the speed of execution.", "zh": "我们的竞争优势在于执行速度。"},
+        {"en": "We should focus on one market before expanding to others.", "zh": "我们应该先专注一个市场，再向其他市场扩张。"},
+        {"en": "The total addressable market for this segment is approximately 2 billion dollars.", "zh": "这个细分市场的总可触达市场规模约为 20 亿美元。"},
+        {"en": "We need a clear go-to-market strategy before the product launch.", "zh": "产品上线前我们需要一个清晰的市场进入策略。"},
+        {"en": "Let's do a SWOT analysis to identify our strengths and weaknesses.", "zh": "让我们做一个 SWOT 分析来识别优势和劣势。"}
+      ],
+      "vocabulary": [
+        {"word": "go-to-market", "phonetic": "/ˌɡoʊ tə ˈmɑːrkɪt/", "meaning": "市场进入策略", "example": {"en": "Our go-to-market plan includes partnerships with local brokers.", "zh": "我们的市场进入策略包括与本地券商合作。"}},
+        {"word": "moat", "phonetic": "/moʊt/", "meaning": "护城河", "example": {"en": "Network effects create a strong moat against competitors.", "zh": "网络效应形成了对抗竞争者的强护城河。"}},
+        {"word": "scalable", "phonetic": "/ˈskeɪləbəl/", "meaning": "可规模化的", "example": {"en": "We need a scalable solution, not a quick fix.", "zh": "我们需要一个可规模化的方案，而不是临时补丁。"}},
+        {"word": "benchmark", "phonetic": "/ˈbentʃmɑːrk/", "meaning": "基准/对标", "example": {"en": "Let's benchmark our metrics against the top 3 competitors.", "zh": "让我们把指标与前三名竞品做对标。"}},
+        {"word": "leverage", "phonetic": "/ˈlevərɪdʒ/", "meaning": "杠杆/利用", "example": {"en": "We can leverage our existing user base to launch the new product.", "zh": "我们可以利用现有用户基础来推出新产品。"}}
+      ]
+    }
+  }
+}

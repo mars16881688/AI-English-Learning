@@ -1,0 +1,10 @@
+{
+  "dates": ["2026-04-14"],
+  "themes": {
+    "growth": "Growth / Marketing",
+    "product": "Product / Metrics",
+    "finance": "Finance / Investment",
+    "team": "Team / Management",
+    "strategy": "Strategy / Planning"
+  }
+}
