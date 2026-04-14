@@ -280,45 +280,99 @@
 
   /* ── Mobile ── */
   @media(max-width:480px){
-    body{padding-bottom:calc(70px + env(safe-area-inset-bottom, 0px));}
-    .nav{padding-bottom:env(safe-area-inset-bottom, 0px);}
-    .header{padding:20px 16px 16px;}
-    .header h1{font-size:18px;}
-    .header .date-label{font-size:11px;letter-spacing:1px;}
-    .container{padding:14px 12px;}
-    .card{padding:16px;}
-    .sentence-en{font-size:15px;}
-    .sentence-zh{font-size:13px;}
-    .vocab-card{padding:16px;}
-    .vocab-word{font-size:17px;}
-    .vocab-phonetic{font-size:12px;}
-    .vocab-meaning{font-size:12px;padding:2px 8px;}
-    .vocab-header{gap:4px 6px;}
-    .vocab-example{padding:8px 12px;}
+    body{padding-bottom:calc(62px + env(safe-area-inset-bottom, 0px));}
+    .nav{padding-bottom:env(safe-area-inset-bottom, 0px);height:auto;}
+    .nav-item{padding:6px 0 4px;font-size:10px;gap:1px;}
+    .nav-item svg{width:20px;height:20px;}
+    .header{padding:16px 14px 14px;}
+    .header h1{font-size:17px;}
+    .header .date-label{font-size:10px;letter-spacing:1px;margin-bottom:4px;}
+    .header-back{left:8px;}
+    .theme-tag{font-size:11px;padding:3px 10px;}
+    .container{padding:12px 10px;}
+    .card{padding:14px;margin-bottom:10px;}
+    .card-header{margin-bottom:8px;}
+    .sentence-en{font-size:15px;line-height:1.5;margin-bottom:6px;}
+    .sentence-zh{font-size:13px;line-height:1.5;}
+    .vocab-card{padding:14px;margin-bottom:10px;}
+    .vocab-word{font-size:16px;}
+    .vocab-phonetic{font-size:11px;}
+    .vocab-meaning{font-size:11px;padding:2px 6px;margin-left:4px;}
+    .vocab-header{gap:3px 4px;margin-bottom:8px;}
+    .vocab-example{padding:8px 10px;margin-top:8px;}
     .vocab-example .en{font-size:13px;}
     .vocab-example .zh{font-size:12px;}
-    .icon-btn{width:34px;height:34px;}
-    .star-btn{width:30px;height:30px;}
-    .controls-bar{flex-direction:column;gap:8px;padding:10px 12px;}
+    .icon-btn{width:32px;height:32px;}
+    .icon-btn svg{width:14px;height:14px;}
+    .star-btn{width:28px;height:28px;}
+    .star-btn svg{width:14px;height:14px;}
+    .btn-group{gap:6px;}
+    .controls-bar{flex-direction:column;gap:6px;padding:8px 10px;margin-top:10px;}
     .controls-bar .sep{display:none;}
-    .controls-bar>div,.controls-bar-row{display:flex;align-items:center;gap:6px;width:100%;justify-content:center;}
-    .theme-picker{gap:6px;}
-    .theme-chip{padding:6px 12px;font-size:12px;}
+    .controls-bar>div{display:flex;align-items:center;gap:6px;justify-content:center;}
+    .voice-btn,.speed-btn{padding:4px 10px;font-size:12px;}
+    .controls-bar label{font-size:12px;}
+    .theme-picker{gap:5px;margin:10px 0;}
+    .theme-chip{padding:5px 10px;font-size:11px;}
+    .section-title{margin:18px 0 10px;font-size:12px;}
     .az-score{grid-template-columns:repeat(2,1fr);gap:6px;}
     .az-score-item{padding:6px;}
     .az-score-item .num{font-size:18px;}
-    .az-word{font-size:12px;padding:2px 6px;}
-    .score-badge{font-size:24px;}
-    .auth-box{margin:30px auto;padding:24px 20px;}
-    .auth-user-bar{padding:6px 12px;font-size:12px;}
-    .review-word{font-size:24px;}
-    .review-btns{flex-wrap:wrap;}
-    .review-btn{min-width:70px;padding:8px 0;font-size:13px;}
-    .wb-card{padding:12px;gap:10px;}
-    .wb-card-word{font-size:15px;}
+    .az-word{font-size:11px;padding:2px 5px;}
+    .score-result{padding:10px;margin-top:10px;}
+    .score-badge{font-size:22px;}
+    .score-label{font-size:11px;padding:2px 8px;}
+    .score-words{font-size:13px;line-height:1.7;}
+    .score-your-text{font-size:12px;}
+    .auth-box{margin:24px 10px;padding:20px 16px;}
+    .auth-box h2{font-size:18px;}
+    .auth-input{padding:10px 12px;font-size:14px;}
+    .auth-btn{padding:10px;font-size:14px;}
+    .auth-user-bar{padding:6px 10px;font-size:11px;}
+    .review-card{padding:18px;}
+    .review-word{font-size:22px;}
+    .review-phonetic{font-size:14px;margin-bottom:12px;}
+    .review-btns{flex-wrap:wrap;gap:6px;}
+    .review-btn{min-width:65px;padding:8px 0;font-size:12px;}
+    .review-progress{font-size:12px;}
+    .wb-add-form{gap:6px;}
+    .wb-add-input{padding:8px 10px;font-size:14px;}
+    .wb-add-btn{padding:8px 14px;font-size:13px;}
+    .wb-card{padding:10px;gap:8px;}
+    .wb-card-word{font-size:14px;}
+    .wb-card-phonetic{font-size:11px;}
+    .wb-card-meaning{font-size:12px;}
+    .wb-card-source{font-size:10px;}
+    .wb-card-srs{font-size:10px;}
+    .streak-bar{padding:12px;}
     .streak-num{font-size:28px;}
-    .cal-grid{gap:4px;}
-    .cal-day{font-size:12px;border-radius:8px;}
+    .cal-grid{gap:3px;}
+    .cal-day{font-size:11px;border-radius:7px;}
+    .cal-month-title{font-size:14px;margin:14px 0 8px;}
+    .word-popup{padding:16px 16px calc(16px + env(safe-area-inset-bottom,0px));max-height:55vh;}
+    .word-popup-word{font-size:20px;}
+    .word-popup-def{font-size:13px;}
+    .word-popup-ctx{font-size:13px;padding:8px 10px;}
+    .word-popup-actions button{padding:8px;font-size:13px;}
+    .read-option{padding:16px;}
+    .read-option svg{width:28px;height:28px;}
+    .read-option h3{font-size:14px;}
+    .read-input{min-height:100px;font-size:14px;padding:12px;}
+    .reader-top{padding:6px 12px;padding-top:calc(6px + env(safe-area-inset-top,0px));}
+    .reader-top .title{font-size:13px;}
+    .reader-top .chapter-label{font-size:10px;}
+    .reader-top button{font-size:12px;padding:4px 6px;}
+    .reader-bottom{padding:6px 12px;padding-bottom:calc(6px + env(safe-area-inset-bottom,0px));}
+    .reader-page-label{font-size:11px;}
+    .reader-columns{padding:14px 16px;column-gap:32px;}
+    .reader-columns p{font-size:15px;line-height:1.8;margin-bottom:10px;}
+    .reader-toc-panel{width:240px;}
+    .reader-toc-item{font-size:13px;padding:8px 14px;}
+    .card-score{font-size:11px;padding:1px 6px;}
+    .no-speech-banner{font-size:12px;padding:10px 12px;}
+    .review-banner{padding:12px 14px;}
+    .review-banner-text{font-size:13px;}
+    .review-banner-count{font-size:20px;}
   }
 </style>
 </head>
