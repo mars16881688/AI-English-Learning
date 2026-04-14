@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily English Practice - Growth & Marketing</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --surface: #161b22;
+    --border: #30363d;
+    --text: #e6edf3;
+    --text-secondary: #8b949e;
+    --accent: #58a6ff;
+    --accent-hover: #79c0ff;
+    --green: #3fb950;
+    --orange: #d29922;
+    --radius: 12px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'SF Pro Text', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    min-height: 100vh;
+    padding: 0 0 80px;
+  }
+
+  .header {
+    background: linear-gradient(135deg, #1a1f35, #0d1117);
+    border-bottom: 1px solid var(--border);
+    padding: 32px 20px 28px;
+    text-align: center;
+  }
+
+  .header .date {
+    font-size: 13px;
+    color: var(--text-secondary);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+
+  .header .theme-tag {
+    display: inline-block;
+    background: rgba(88, 166, 255, 0.15);
+    color: var(--accent);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 500;
+  }
+
+  .container {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 24px 16px;
+  }
+
+  .section-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin: 32px 0 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .section-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px;
+    margin-bottom: 14px;
+    transition: border-color 0.2s;
+  }
+
+  .card:hover {
+    border-color: var(--accent);
+  }
+
+  .card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+  }
+
+  .card-num {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--accent);
+    background: rgba(88, 166, 255, 0.1);
+    padding: 2px 10px;
+    border-radius: 10px;
+  }
+
+  .play-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1.5px solid var(--border);
+    background: transparent;
+    color: var(--text);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    flex-shrink: 0;
+  }
+
+  .play-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: rgba(88, 166, 255, 0.08);
+  }
+
+  .play-btn:active {
+    transform: scale(0.92);
+  }
+
+  .play-btn.playing {
+    border-color: var(--green);
+    color: var(--green);
+    animation: pulse 1.5s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(63, 185, 80, 0.3); }
+    50% { box-shadow: 0 0 0 6px rgba(63, 185, 80, 0); }
+  }
+
+  .play-btn svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .sentence-en {
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 1.6;
+    margin-bottom: 8px;
+    color: var(--text);
+  }
+
+  .sentence-zh {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  .vocab-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px;
+    margin-bottom: 14px;
+  }
+
+  .vocab-card:hover {
+    border-color: var(--orange);
+  }
+
+  .vocab-word {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text);
+    margin-right: 8px;
+  }
+
+  .vocab-phonetic {
+    font-size: 14px;
+    color: var(--text-secondary);
+    font-family: 'Lucida Sans Unicode', sans-serif;
+  }
+
+  .vocab-meaning {
+    display: inline-block;
+    background: rgba(210, 153, 34, 0.15);
+    color: var(--orange);
+    padding: 2px 10px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    margin-left: 8px;
+  }
+
+  .vocab-header {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-bottom: 12px;
+  }
+
+  .vocab-example {
+    background: rgba(255, 255, 255, 0.03);
+    border-left: 3px solid var(--border);
+    padding: 10px 14px;
+    border-radius: 0 8px 8px 0;
+    margin-top: 10px;
+  }
+
+  .vocab-example .en {
+    font-size: 14px;
+    color: var(--text);
+    line-height: 1.6;
+  }
+
+  .vocab-example .zh {
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin-top: 4px;
+  }
+
+  .speed-control {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: center;
+    margin: 20px 0 0;
+    padding: 12px;
+    background: var(--surface);
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+  }
+
+  .speed-control label {
+    font-size: 13px;
+    color: var(--text-secondary);
+  }
+
+  .speed-btn {
+    padding: 4px 12px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text-secondary);
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+
+  .speed-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  .speed-btn.active {
+    background: rgba(88, 166, 255, 0.15);
+    border-color: var(--accent);
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  .play-all-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(22, 27, 34, 0.95);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid var(--border);
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    z-index: 100;
+  }
+
+  .play-all-btn {
+    padding: 10px 28px;
+    border-radius: 24px;
+    border: none;
+    background: var(--accent);
+    color: #0d1117;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .play-all-btn:hover {
+    background: var(--accent-hover);
+    transform: translateY(-1px);
+  }
+
+  .play-all-btn:active {
+    transform: scale(0.97);
+  }
+
+  .play-all-btn svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .highlight {
+    background: rgba(88, 166, 255, 0.12);
+    border-color: var(--accent) !important;
+  }
+
+  .nav-dates {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    margin-top: 16px;
+  }
+
+  .nav-date {
+    padding: 6px 14px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text-secondary);
+    font-size: 12px;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  .nav-date.current {
+    background: rgba(88, 166, 255, 0.15);
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  @media (max-width: 480px) {
+    .header { padding: 24px 16px 20px; }
+    .header h1 { font-size: 19px; }
+    .sentence-en { font-size: 16px; }
+    .container { padding: 16px 12px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="date">Monday, April 14, 2026</div>
+  <h1>Daily English Practice</h1>
+  <span class="theme-tag">Growth / Marketing</span>
+</div>
+
+<div class="container">
+
+  <!-- Speed Control -->
+  <div class="speed-control">
+    <label>Speed</label>
+    <button class="speed-btn" data-speed="0.7">0.7x</button>
+    <button class="speed-btn active" data-speed="0.85">0.85x</button>
+    <button class="speed-btn" data-speed="1">1x</button>
+    <button class="speed-btn" data-speed="1.2">1.2x</button>
+  </div>
+
+  <!-- Sentences -->
+  <div class="section-title">Sentences</div>
+
+  <div class="card" id="s1">
+    <div class="card-header">
+      <span class="card-num">#1</span>
+      <button class="play-btn" onclick="speak('We need to test three new channels before we scale the budget.', this)" aria-label="Play">
+        <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="6,3 20,12 6,21"/></svg>
+      </button>
+    </div>
+    <div class="sentence-en">We need to test three new channels before we scale the budget.</div>
+    <div class="sentence-zh">在扩大预算之前，我们需要先测试三个新渠道。</div>
+  </div>
+
+  <div class="card" id="s2">
+    <div class="card-header">
+      <span class="card-num">#2</span>
+      <button class="play-btn" onclick="speak('Our goal this month is to improve the conversion rate on the landing page.', this)" aria-label="Play">
+        <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="6,3 20,12 6,21"/></svg>
+      </button>
+    </div>
+    <div class="sentence-en">Our goal this month is to improve the conversion rate on the landing page.</div>
+    <div class="sentence-zh">我们这个月的目标是提升着陆页的转化率。</div>
+  </div>
+
+  <div class="card" id="s3">
+    <div class="card-header">
+      <span class="card-num">#3</span>
+      <button class="play-btn" onclick="speak('Let us focus on the user segment with the highest retention.', this)" aria-label="Play">
+        <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="6,3 20,12 6,21"/></svg>
+      </button>
+    </div>
+    <div class="sentence-en">Let's focus on the user segment with the highest retention.</div>
+    <div class="sentence-zh">让我们重点关注留存率最高的用户群体。</div>
+  </div>
+
+  <div class="card" id="s4">
+    <div class="card-header">
+      <span class="card-num">#4</span>
+      <button class="play-btn" onclick="speak('This campaign is bringing traffic, but the cost per lead is still too high.', this)" aria-label="Play">
+        <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="6,3 20,12 6,21"/></svg>
+      </button>
+    </div>
+    <div class="sentence-en">This campaign is bringing traffic, but the cost per lead is still too high.</div>
+    <div class="sentence-zh">这个活动带来了流量，但每个线索成本还是太高。</div>
+  </div>
+
+  <div class="card" id="s5">
+    <div class="card-header">
+      <span class="card-num">#5</span>
+      <button class="play-btn" onclick="speak('Please share a simple growth plan with clear numbers and next steps.', this)" aria-label="Play">
+        <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="6,3 20,12 6,21"/></svg>
+      </button>
+    </div>
+    <div class="sentence-en">Please share a simple growth plan with clear numbers and next steps.</div>
+    <div class="sentence-zh">请分享一份简洁的增长计划，里面要有清晰的数据和下一步动作。</div>
+  </div>
+
+  <!-- Vocabulary -->
+  <div class="section-title">Vocabulary</div>
+
+  <div class="vocab-card">
+    <div class="vocab-header">
+      <span class="vocab-word">acquisition</span>
+      <span class="vocab-phonetic">/ˌækwɪˈzɪʃən/</span>
+      <span class="vocab-meaning">获客</span>
+      <button class="play-btn" onclick="speak('acquisition', this)" aria-label="Play" style="margin-left:auto">
+        <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="6,3 20,12 6,21"/></svg>
+      </button>
+    </div>
+    <div class="vocab-example">
+      <div class="en">Our acquisition cost went down after the new ad creative.</div>
+      <div class="zh">新广告素材上线后，我们的获客成本下降了。</div>
+    </div>
+  </div>
+
+  <div class="vocab-card">
+    <div class="vocab-header">
+      <span class="vocab-word">conversion</span>
+      <span class="vocab-phonetic">/kənˈvɜːrʒən/</span>
+      <span class="vocab-meaning">转化</span>
+      <button class="play-btn" onclick="speak('conversion', this)" aria-label="Play" style="margin-left:auto">
+        <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="6,3 20,12 6,21"/></svg>
+      </button>
+    </div>
+    <div class="vocab-example">
+      <div class="en">We improved conversion by simplifying the sign-up flow.</div>
+      <div class="zh">通过简化注册流程，我们提升了转化率。</div>
+    </div>
+  </div>
+
+  <div class="vocab-card">
+    <div class="vocab-header">
+      <span class="vocab-word">retention</span>
+      <span class="vocab-phonetic">/rɪˈtenʃən/</span>
+      <span class="vocab-meaning">留存</span>
+      <button class="play-btn" onclick="speak('retention', this)" aria-label="Play" style="margin-left:auto">
+        <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="6,3 20,12 6,21"/></svg>
+      </button>
+    </div>
+    <div class="vocab-example">
+      <div class="en">Day-7 retention improved after we redesigned the onboarding flow.</div>
+      <div class="zh">重新设计引导流程后，7日留存率提升了。</div>
+    </div>
+  </div>
+
+  <div class="vocab-card">
+    <div class="vocab-header">
+      <span class="vocab-word">budget</span>
+      <span class="vocab-phonetic">/ˈbʌdʒɪt/</span>
+      <span class="vocab-meaning">预算</span>
+      <button class="play-btn" onclick="speak('budget', this)" aria-label="Play" style="margin-left:auto">
+        <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="6,3 20,12 6,21"/></svg>
+      </button>
+    </div>
+    <div class="vocab-example">
+      <div class="en">We need to reallocate budget from underperforming channels.</div>
+      <div class="zh">我们需要把预算从表现不好的渠道挪走。</div>
+    </div>
+  </div>
+
+  <div class="vocab-card">
+    <div class="vocab-header">
+      <span class="vocab-word">landing page</span>
+      <span class="vocab-phonetic">/ˈlændɪŋ peɪdʒ/</span>
+      <span class="vocab-meaning">着陆页</span>
+      <button class="play-btn" onclick="speak('landing page', this)" aria-label="Play" style="margin-left:auto">
+        <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="6,3 20,12 6,21"/></svg>
+      </button>
+    </div>
+    <div class="vocab-example">
+      <div class="en">The landing page bounce rate is too high, we need to A/B test the headline.</div>
+      <div class="zh">着陆页的跳出率太高了，我们需要对标题做 A/B 测试。</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- Play All Bar -->
+<div class="play-all-bar">
+  <button class="play-all-btn" onclick="playAll()">
+    <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="6,3 20,12 6,21"/></svg>
+    Play All
+  </button>
+</div>
+
+<script>
+  let currentRate = 0.85;
+  let currentUtterance = null;
+  let currentBtn = null;
+  let isPlayingAll = false;
+  let playQueue = [];
+
+  // Speed control
+  document.querySelectorAll('.speed-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.speed-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentRate = parseFloat(btn.dataset.speed);
+    });
+  });
+
+  function speak(text, btn) {
+    if (currentUtterance && speechSynthesis.speaking) {
+      speechSynthesis.cancel();
+      if (currentBtn) {
+        currentBtn.classList.remove('playing');
+        currentBtn.closest('.card, .vocab-card')?.classList.remove('highlight');
+      }
+      if (currentBtn === btn) {
+        currentBtn = null;
+        currentUtterance = null;
+        return;
+      }
+    }
+
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = 'en-US';
+    utterance.rate = currentRate;
+    utterance.pitch = 1;
+
+    // Try to pick a good English voice
+    const voices = speechSynthesis.getVoices();
+    const preferred = voices.find(v => v.name.includes('Samantha'))
+      || voices.find(v => v.lang === 'en-US' && v.localService)
+      || voices.find(v => v.lang.startsWith('en'));
+    if (preferred) utterance.voice = preferred;
+
+    currentUtterance = utterance;
+    currentBtn = btn;
+
+    btn.classList.add('playing');
+    btn.closest('.card, .vocab-card')?.classList.add('highlight');
+
+    utterance.onend = () => {
+      btn.classList.remove('playing');
+      btn.closest('.card, .vocab-card')?.classList.remove('highlight');
+      currentBtn = null;
+      currentUtterance = null;
+
+      if (isPlayingAll && playQueue.length > 0) {
+        const next = playQueue.shift();
+        setTimeout(() => {
+          speak(next.text, next.btn);
+        }, 600);
+      } else {
+        isPlayingAll = false;
+        updatePlayAllBtn(false);
+      }
+    };
+
+    utterance.onerror = () => {
+      btn.classList.remove('playing');
+      btn.closest('.card, .vocab-card')?.classList.remove('highlight');
+      currentBtn = null;
+      currentUtterance = null;
+      isPlayingAll = false;
+      updatePlayAllBtn(false);
+    };
+
+    speechSynthesis.speak(utterance);
+  }
+
+  function playAll() {
+    if (isPlayingAll) {
+      isPlayingAll = false;
+      playQueue = [];
+      speechSynthesis.cancel();
+      if (currentBtn) {
+        currentBtn.classList.remove('playing');
+        currentBtn.closest('.card, .vocab-card')?.classList.remove('highlight');
+      }
+      updatePlayAllBtn(false);
+      return;
+    }
+
+    isPlayingAll = true;
+    updatePlayAllBtn(true);
+    playQueue = [];
+
+    // Collect all sentence cards
+    document.querySelectorAll('.card').forEach(card => {
+      const en = card.querySelector('.sentence-en')?.textContent;
+      const btn = card.querySelector('.play-btn');
+      if (en && btn) {
+        playQueue.push({ text: en, btn: btn });
+      }
+    });
+
+    // Collect all vocab words + examples
+    document.querySelectorAll('.vocab-card').forEach(card => {
+      const word = card.querySelector('.vocab-word')?.textContent;
+      const example = card.querySelector('.vocab-example .en')?.textContent;
+      const btn = card.querySelector('.play-btn');
+      if (word && btn) {
+        playQueue.push({ text: word, btn: btn });
+        if (example) {
+          playQueue.push({ text: example, btn: btn });
+        }
+      }
+    });
+
+    if (playQueue.length > 0) {
+      const first = playQueue.shift();
+      speak(first.text, first.btn);
+    }
+  }
+
+  function updatePlayAllBtn(playing) {
+    const btn = document.querySelector('.play-all-btn');
+    if (playing) {
+      btn.innerHTML = '<svg viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg> Stop';
+      btn.style.background = '#da3633';
+    } else {
+      btn.innerHTML = '<svg viewBox="0 0 24 24" fill="currentColor"><polygon points="6,3 20,12 6,21"/></svg> Play All';
+      btn.style.background = '';
+    }
+  }
+
+  // Pre-load voices
+  speechSynthesis.getVoices();
+  speechSynthesis.onvoiceschanged = () => speechSynthesis.getVoices();
+</script>
+
+</body>
+</html>
