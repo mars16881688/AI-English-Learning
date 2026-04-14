@@ -31,6 +31,10 @@ export default {
     if (path === '/tts' && request.method === 'POST') return handleTTS(request, env);
     if (path === '/assess' && request.method === 'POST') return handleAssess(request, env);
 
+    // Admin — list all users (requires ADMIN_KEY)
+    if (path === '/admin/users' && request.method === 'GET') return handleAdminUsers(request, env);
+    if (path.startsWith('/admin/user/') && request.method === 'GET') return handleAdminUserDetail(request, env);
+
     // Auth
     if (path === '/auth' && request.method === 'POST') return handleAuth(request, env);
 
@@ -221,4 +225,48 @@ function json(data, status = 200) {
 }
 function escXml(s) {
   return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+
+// ── Admin ────────────────────────────────────────────
+function adminAuth(request, env) {
+  const key = new URL(request.url).searchParams.get('key');
+  return key && key === env.ADMIN_KEY;
+}
+
+async function handleAdminUsers(request, env) {
+  if (!adminAuth(request, env)) return json({ error: 'Forbidden' }, 403);
+
+  // List all user:* keys
+  const list = await env.EP_DATA.list({ prefix: 'user:' });
+  const users = [];
+  for (const key of list.keys) {
+    const data = await env.EP_DATA.get(key.name, 'json');
+    if (!data) continue;
+    const d = data.data || {};
+    const checkinDays = Object.keys(d.checkins || {}).length;
+    const wordCount = (d.wordbook || []).length;
+    const scoreCount = Object.keys(d.scores || {}).length;
+    const lastCheckin = Object.keys(d.checkins || {}).sort().pop() || 'never';
+    users.push({
+      name: key.name.replace('user:', ''),
+      checkinDays,
+      wordCount,
+      scoreCount,
+      lastCheckin,
+      theme: d.theme || 'growth',
+    });
+  }
+  return json({ users, total: users.length });
+}
+
+async function handleAdminUserDetail(request, env) {
+  if (!adminAuth(request, env)) return json({ error: 'Forbidden' }, 403);
+
+  const name = new URL(request.url).pathname.replace('/admin/user/', '');
+  const data = await env.EP_DATA.get('user:' + name, 'json');
+  if (!data) return json({ error: 'User not found' }, 404);
+
+  // Strip sensitive fields
+  const { pin, token, ...safe } = data;
+  return json({ name, ...safe });
 }
