@@ -722,6 +722,9 @@ function navigate(p,a){if(p==='auth')location.hash='#/auth';else if(p==='calenda
 async function navigateToday(){const idx=await loadIndex();const t=todayStr();if(idx.dates.includes(t))navigate('lesson',t);else if(idx.dates.length)navigate('lesson',idx.dates[idx.dates.length-1]);else navigate('calendar');}
 async function handleRoute(){
   const hash=location.hash.replace('#/','').replace('#','');
+  // Close reader overlay when navigating away
+  if(hash!=='reading' && document.getElementById('reader-wrap').classList.contains('visible')) closeBookReader();
+  closeWordPopup();
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
   document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('active'));
   const navEl = document.querySelector('.nav');
