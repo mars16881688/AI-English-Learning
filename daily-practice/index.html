@@ -369,25 +369,34 @@
     .cal-grid{gap:3px;}
     .cal-day{font-size:11px;border-radius:7px;}
     .cal-month-title{font-size:14px;margin:14px 0 8px;}
-    .word-popup{padding:16px 16px calc(16px + env(safe-area-inset-bottom,0px));max-height:55vh;}
+    /* Word popup — bigger tap targets */
+    .word-popup{padding:16px 16px calc(16px + env(safe-area-inset-bottom,0px));max-height:55vh;border-radius:14px 14px 0 0;}
     .word-popup-word{font-size:20px;}
-    .word-popup-def{font-size:13px;}
-    .word-popup-ctx{font-size:13px;padding:8px 10px;}
-    .word-popup-actions button{padding:8px;font-size:13px;}
-    .read-option{padding:16px;}
-    .read-option svg{width:28px;height:28px;}
-    .read-option h3{font-size:14px;}
-    .read-input{min-height:100px;font-size:14px;padding:12px;}
-    .reader-top{padding:6px 12px;padding-top:calc(6px + env(safe-area-inset-top,0px));}
-    .reader-top .title{font-size:13px;}
-    .reader-top .chapter-label{font-size:10px;}
-    .reader-top button{font-size:12px;padding:4px 6px;}
-    .reader-bottom{padding:6px 12px;padding-bottom:calc(6px + env(safe-area-inset-bottom,0px));}
-    .reader-page-label{font-size:11px;}
-    .reader-columns{padding:14px 16px;column-gap:32px;}
-    .reader-columns p{font-size:15px;line-height:1.8;margin-bottom:10px;}
-    .reader-toc-panel{width:240px;}
-    .reader-toc-item{font-size:13px;padding:8px 14px;}
+    .word-popup-phonetic{font-size:13px;}
+    .word-popup-def{font-size:14px;line-height:1.5;}
+    .word-popup-ctx{font-size:14px;padding:10px 12px;}
+    .word-popup-ctx mark{padding:1px 4px;background:rgba(0,184,184,.2);}
+    .word-popup-actions{gap:10px;margin-top:16px;}
+    .word-popup-actions button{padding:12px;font-size:14px;border-radius:12px;min-height:44px;}
+    /* Reading import — proper tap targets */
+    .read-option{padding:20px;min-height:100px;}
+    .read-option svg{width:32px;height:32px;}
+    .read-option h3{font-size:15px;}
+    .read-option p{font-size:12px;}
+    .read-input{min-height:100px;font-size:15px;padding:14px;}
+    /* Reader — let JS control padding/font, don't override here */
+    .reader-toc-panel{width:260px;}
+    .reader-toc-item{font-size:14px;padding:12px 16px;min-height:44px;display:flex;align-items:center;}
+    /* Reader control bar — touch friendly */
+    .reader-bar-btn{padding:6px 12px;font-size:11px;}
+    .reader-bar-btn svg{width:22px;height:22px;}
+    .reader-adj-btn{width:36px;height:36px;font-size:18px;}
+    .reader-bg-btn{width:36px;height:36px;}
+    .reader-setting-row .label{font-size:13px;}
+    .reader-adj-val{font-size:14px;}
+    .reader-bar-progress{gap:8px;}
+    .reader-bar-progress span{font-size:12px;}
+    /* Misc */
     .card-score{font-size:11px;padding:1px 6px;}
     .no-speech-banner{font-size:12px;padding:10px 12px;}
     .review-banner{padding:12px 14px;}
@@ -1230,10 +1239,12 @@ function applyReaderTheme() {
 
 function applyReaderTypography() {
   const cols = document.getElementById('reader-columns');
-  const pad = window.innerWidth <= 480 ? 20 : 28;
+  const w = window.innerWidth;
+  const pad = w <= 380 ? 16 : w <= 480 ? 20 : 28;
+  const vPad = w <= 480 ? 16 : 24;
   cols.style.fontSize = readerFontSize + 'px';
   cols.style.lineHeight = readerLineHeight.toFixed(1);
-  cols.style.padding = `${pad}px ${pad}px`;
+  cols.style.padding = `${vPad}px ${pad}px`;
   cols.style.columnGap = (pad * 2) + 'px';
   document.getElementById('font-size-val').textContent = readerFontSize;
   document.getElementById('line-height-val').textContent = readerLineHeight.toFixed(1);
@@ -1269,12 +1280,16 @@ function loadChapterContent() {
     setTimeout(() => {
       const vp = document.getElementById('reader-viewport');
       readerPageWidth = vp.offsetWidth;
-      cols.style.columnWidth = (readerPageWidth - parseInt(cols.style.paddingLeft || 28) * 2) + 'px';
-      readerTotalPages = Math.max(1, Math.ceil(cols.scrollWidth / readerPageWidth));
-      readerPage = 0;
-      updateReaderUI();
-      buildToc();
-    }, 60);
+      const pad = parseInt(cols.style.paddingLeft) || 20;
+      cols.style.columnWidth = Math.floor(readerPageWidth - pad * 2) + 'px';
+      // Double-check after reflow
+      setTimeout(() => {
+        readerTotalPages = Math.max(1, Math.ceil(cols.scrollWidth / readerPageWidth));
+        readerPage = 0;
+        updateReaderUI();
+        buildToc();
+      }, 80);
+    }, 80);
   });
 }
 
@@ -1310,8 +1325,8 @@ function goReaderPage(dir) {
 function setupReaderGestures() {
   const vp = document.getElementById('reader-viewport');
   vp.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; touchStartY = e.touches[0].clientY; touchDeltaX = 0; isSwiping = false; document.getElementById('reader-columns').style.transition = 'none'; }, { passive: true });
-  vp.addEventListener('touchmove', e => { const dx = e.touches[0].clientX - touchStartX, dy = e.touches[0].clientY - touchStartY; if (!isSwiping && Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 10) isSwiping = true; if (!isSwiping) return; touchDeltaX = dx; document.getElementById('reader-columns').style.transform = `translateX(${-(readerPage * readerPageWidth) + dx * 0.6}px)`; }, { passive: true });
-  vp.addEventListener('touchend', () => { if (isSwiping && Math.abs(touchDeltaX) > 50) goReaderPage(touchDeltaX < 0 ? 1 : -1); else { const cols = document.getElementById('reader-columns'); cols.style.transition = 'transform .3s cubic-bezier(.25,.1,.25,1)'; cols.style.transform = `translateX(-${readerPage * readerPageWidth}px)`; } isSwiping = false; touchDeltaX = 0; }, { passive: true });
+  vp.addEventListener('touchmove', e => { const dx = e.touches[0].clientX - touchStartX, dy = e.touches[0].clientY - touchStartY; if (!isSwiping && Math.abs(dx) > Math.abs(dy) * 1.5 && Math.abs(dx) > 20) isSwiping = true; if (!isSwiping) return; touchDeltaX = dx; document.getElementById('reader-columns').style.transform = `translateX(${-(readerPage * readerPageWidth) + dx * 0.4}px)`; }, { passive: true });
+  vp.addEventListener('touchend', () => { if (isSwiping && Math.abs(touchDeltaX) > 60) goReaderPage(touchDeltaX < 0 ? 1 : -1); else { const cols = document.getElementById('reader-columns'); cols.style.transition = 'transform .3s cubic-bezier(.25,.1,.25,1)'; cols.style.transform = `translateX(-${readerPage * readerPageWidth}px)`; } isSwiping = false; touchDeltaX = 0; }, { passive: true });
   vp.addEventListener('click', e => {
     if (isSwiping || Math.abs(touchDeltaX) > 10) return;
     if (e.target.classList.contains('w')) return;
@@ -1335,14 +1350,16 @@ function recalcPages() {
   requestAnimationFrame(() => {
     setTimeout(() => {
       const cols = document.getElementById('reader-columns');
-      const pad = parseInt(cols.style.paddingLeft || 28);
-      cols.style.columnWidth = (readerPageWidth - pad * 2) + 'px';
-      readerTotalPages = Math.max(1, Math.ceil(cols.scrollWidth / readerPageWidth));
-      readerPage = Math.min(readerPage, readerTotalPages - 1);
-      cols.style.transition = 'none';
-      cols.style.transform = `translateX(-${readerPage * readerPageWidth}px)`;
-      updateReaderUI();
-    }, 60);
+      const pad = parseInt(cols.style.paddingLeft) || 20;
+      cols.style.columnWidth = Math.floor(readerPageWidth - pad * 2) + 'px';
+      setTimeout(() => {
+        readerTotalPages = Math.max(1, Math.ceil(cols.scrollWidth / readerPageWidth));
+        readerPage = Math.min(readerPage, readerTotalPages - 1);
+        cols.style.transition = 'none';
+        cols.style.transform = `translateX(-${readerPage * readerPageWidth}px)`;
+        updateReaderUI();
+      }, 80);
+    }, 80);
   });
 }
 
