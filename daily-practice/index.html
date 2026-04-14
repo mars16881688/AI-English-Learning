@@ -228,7 +228,7 @@ const STORE_CHECKINS = 'ep_checkins';
 const STORE_WORDBOOK = 'ep_wordbook';
 const STORE_THEME = 'ep_theme';
 // Azure pronunciation proxy URL — set after deploying Cloudflare Worker
-const AZURE_PROXY = localStorage.getItem('ep_azure_proxy') || '';
+const AZURE_PROXY = localStorage.getItem('ep_azure_proxy') || 'https://speech.marswang.ac.cn';
 
 // ══════ STATE ══════
 let dataIndex = null, lessonCache = {};

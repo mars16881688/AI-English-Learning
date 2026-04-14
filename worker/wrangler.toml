@@ -1,3 +1,7 @@
 name = "english-pronunciation-proxy"
 main = "index.js"
 compatibility_date = "2024-01-01"
+
+routes = [
+  { pattern = "speech.marswang.ac.cn", custom_domain = true }
+]
