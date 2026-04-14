@@ -5,3 +5,7 @@ compatibility_date = "2024-01-01"
 routes = [
   { pattern = "speech.marswang.ac.cn", custom_domain = true }
 ]
+
+[[kv_namespaces]]
+binding = "EP_DATA"
+id = "da9164b428d54d50aaf74ecf1d5186bb"

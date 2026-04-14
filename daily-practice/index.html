@@ -183,11 +183,54 @@
   .no-speech-banner{display:none;background:rgba(247,65,95,.06);border:1px solid rgba(247,65,95,.2);border-radius:var(--radius);padding:12px 16px;margin-top:12px;font-size:13px;color:var(--red);text-align:center;}
   .no-speech-banner.visible{display:block;}
   .loading{text-align:center;padding:60px 20px;color:var(--text-secondary);font-size:14px;}
+
+  /* Auth page */
+  .auth-box{max-width:360px;margin:60px auto;padding:32px 24px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);text-align:center;}
+  .auth-box h2{font-size:20px;margin-bottom:4px;}
+  .auth-box .sub{font-size:13px;color:var(--text-secondary);margin-bottom:20px;}
+  .auth-input{width:100%;padding:12px 14px;border-radius:10px;border:1px solid var(--border);background:var(--bg);color:var(--text);font-size:15px;outline:none;margin-bottom:10px;transition:border-color .2s;}
+  .auth-input:focus{border-color:var(--accent);}
+  .auth-btn{width:100%;padding:12px;border-radius:10px;border:none;background:var(--accent);color:#fff;font-size:15px;font-weight:600;cursor:pointer;transition:all .15s;margin-top:4px;}
+  .auth-btn:hover{background:var(--accent-hover);}
+  .auth-toggle{font-size:13px;color:var(--accent);cursor:pointer;margin-top:14px;display:inline-block;}
+  .auth-toggle:hover{text-decoration:underline;}
+  .auth-error{font-size:13px;color:var(--red);margin-top:8px;min-height:18px;}
+  .auth-user-bar{display:flex;align-items:center;justify-content:space-between;padding:8px 16px;background:var(--surface);border-bottom:1px solid var(--border);font-size:13px;color:var(--text-secondary);}
+  .auth-user-bar .name{font-weight:600;color:var(--text);}
+  .auth-user-bar .logout{color:var(--red);cursor:pointer;border:none;background:none;font-size:12px;}
+  .auth-user-bar .logout:hover{text-decoration:underline;}
+
+  /* Score badge on cards */
+  .card-score{display:inline-flex;align-items:center;gap:4px;font-size:12px;font-weight:700;padding:2px 8px;border-radius:8px;margin-left:8px;}
+  .card-score.s-excellent{background:rgba(0,185,154,.1);color:var(--green);}
+  .card-score.s-good{background:var(--accent-light);color:var(--accent);}
+  .card-score.s-fair{background:rgba(255,151,40,.08);color:var(--orange);}
+  .card-score.s-poor{background:rgba(247,65,95,.06);color:var(--red);}
   .page{display:none;}.page.active{display:block;animation:fadeIn .25s ease;}
   @media(max-width:480px){.header{padding:24px 16px 20px;}.header h1{font-size:19px;}.sentence-en{font-size:16px;}.container{padding:16px 12px;}.az-score{grid-template-columns:repeat(2,1fr);}}
 </style>
 </head>
 <body>
+
+<div class="page" id="page-auth">
+  <div class="header"><div class="header-inner"><h1>Daily English Practice</h1><div class="date-label">Sign in to sync your progress</div></div></div>
+  <div class="container">
+    <div class="auth-box">
+      <h2 id="auth-title">Sign In</h2>
+      <div class="sub" id="auth-sub">Enter your name and PIN</div>
+      <input class="auth-input" id="auth-name" type="text" placeholder="Name" autocomplete="off" autocapitalize="none">
+      <input class="auth-input" id="auth-pin" type="password" placeholder="4-digit PIN" maxlength="6" inputmode="numeric">
+      <button class="auth-btn" id="auth-btn" onclick="handleAuth()">Sign In</button>
+      <div class="auth-error" id="auth-error"></div>
+      <span class="auth-toggle" id="auth-toggle" onclick="toggleAuthMode()">No account? Register</span>
+    </div>
+  </div>
+</div>
+
+<div id="user-bar" class="auth-user-bar" style="display:none">
+  <div><span class="name" id="user-display-name"></span></div>
+  <button class="logout" onclick="logout()">Sign Out</button>
+</div>
 
 <div class="page" id="page-calendar">
   <div class="header"><div class="header-inner"><h1>Daily English Practice</h1><div class="date-label" id="cal-today-label"></div></div></div>
@@ -238,6 +281,12 @@ const VOICES = { female: 'en-US-JennyNeural', male: 'en-US-GuyNeural' };
 // Azure pronunciation proxy URL — set after deploying Cloudflare Worker
 const AZURE_PROXY = localStorage.getItem('ep_azure_proxy') || 'https://speech.marswang.ac.cn';
 
+// ══════ AUTH STATE ══════
+let authToken = localStorage.getItem('ep_token') || '';
+let authName = localStorage.getItem('ep_name') || '';
+let authMode = 'login'; // 'login' | 'register'
+let userScores = {}; // key(sentence/word) -> { pct, accuracy, fluency, completeness, overall, date }
+
 // ══════ STATE ══════
 let dataIndex = null, lessonCache = {};
 let currentTheme = localStorage.getItem(STORE_THEME) || 'growth';
@@ -246,6 +295,96 @@ let currentRate = 0.85, currentUtterance = null, currentBtn = null;
 let activeRecognition = null, activeRecBtn = null;
 const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
 const hasSR = !!SR;
+
+// ══════ AUTH FUNCTIONS ══════
+function toggleAuthMode() {
+  authMode = authMode === 'login' ? 'register' : 'login';
+  document.getElementById('auth-title').textContent = authMode === 'login' ? 'Sign In' : 'Register';
+  document.getElementById('auth-btn').textContent = authMode === 'login' ? 'Sign In' : 'Register';
+  document.getElementById('auth-toggle').textContent = authMode === 'login' ? 'No account? Register' : 'Have an account? Sign In';
+  document.getElementById('auth-error').textContent = '';
+}
+async function handleAuth() {
+  const name = document.getElementById('auth-name').value.trim();
+  const pin = document.getElementById('auth-pin').value.trim();
+  const errEl = document.getElementById('auth-error');
+  if (!name) { errEl.textContent = 'Enter your name'; return; }
+  if (!pin || pin.length < 4) { errEl.textContent = '4-digit PIN required'; return; }
+  errEl.textContent = '';
+  document.getElementById('auth-btn').textContent = 'Loading...';
+  try {
+    const resp = await fetch(AZURE_PROXY + '/auth', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ action: authMode === 'login' ? 'login' : 'register', name, pin }),
+    });
+    const result = await resp.json();
+    if (!resp.ok) { errEl.textContent = result.error || 'Failed'; document.getElementById('auth-btn').textContent = authMode === 'login' ? 'Sign In' : 'Register'; return; }
+    authToken = result.token; authName = result.name || name;
+    localStorage.setItem('ep_token', authToken);
+    localStorage.setItem('ep_name', authName);
+    // Load cloud data if login
+    if (result.data) {
+      applyCloudData(result.data);
+    }
+    showLoggedIn();
+  } catch (e) {
+    errEl.textContent = 'Network error';
+    document.getElementById('auth-btn').textContent = authMode === 'login' ? 'Sign In' : 'Register';
+  }
+}
+function logout() {
+  authToken = ''; authName = '';
+  localStorage.removeItem('ep_token');
+  localStorage.removeItem('ep_name');
+  userScores = {};
+  document.getElementById('user-bar').style.display = 'none';
+  navigate('auth');
+}
+function showLoggedIn() {
+  document.getElementById('user-bar').style.display = 'flex';
+  document.getElementById('user-display-name').textContent = authName;
+  document.getElementById('page-auth').classList.remove('active');
+  navigateToday();
+}
+function applyCloudData(data) {
+  if (data.checkins) localStorage.setItem(STORE_CHECKINS, JSON.stringify(data.checkins));
+  if (data.wordbook) localStorage.setItem(STORE_WORDBOOK, JSON.stringify(data.wordbook));
+  if (data.scores) userScores = data.scores;
+  if (data.theme) { currentTheme = data.theme; localStorage.setItem(STORE_THEME, data.theme); }
+  if (data.voice) { currentVoice = data.voice; localStorage.setItem(STORE_VOICE, data.voice); }
+}
+async function syncToCloud() {
+  if (!authToken) return;
+  try {
+    await fetch(AZURE_PROXY + '/sync', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + authToken },
+      body: JSON.stringify({ data: { checkins: getCheckins(), wordbook: getWordbook(), scores: userScores, theme: currentTheme, voice: currentVoice } }),
+    });
+  } catch {}
+}
+async function saveScoreToCloud(key, score) {
+  userScores[key.substring(0, 80)] = score;
+  if (!authToken) return;
+  try {
+    await fetch(AZURE_PROXY + '/score', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + authToken },
+      body: JSON.stringify({ key, score }),
+    });
+  } catch {}
+}
+function getScoreFor(key) {
+  return userScores[key.substring(0, 80)] || null;
+}
+function scoreBadgeHtml(key) {
+  const s = getScoreFor(key);
+  if (!s) return '';
+  const pct = s.overall || s.pct || 0;
+  const cls = pct >= 90 ? 's-excellent' : pct >= 70 ? 's-good' : pct >= 50 ? 's-fair' : 's-poor';
+  return `<span class="card-score ${cls}">${pct}%</span>`;
+}
 
 // ══════ SRS intervals (days) ══════
 const SRS_INTERVALS = [0, 1, 3, 7, 14, 30, 60];
@@ -292,8 +431,8 @@ function getStreak(){const c=getCheckins();const t=new Date();let s=0;for(let i=
 function getWordbook(){try{return JSON.parse(localStorage.getItem(STORE_WORDBOOK))||[];}catch{return[];}}
 function saveWordbook(wb){localStorage.setItem(STORE_WORDBOOK,JSON.stringify(wb));}
 function isInWordbook(w){return getWordbook().some(x=>x.word.toLowerCase()===w.toLowerCase());}
-function addToWordbook(w,ph,m,src){const wb=getWordbook();if(wb.some(x=>x.word.toLowerCase()===w.toLowerCase()))return;wb.push({word:w,phonetic:ph,meaning:m,source:src,addedAt:new Date().toISOString(),srs:{level:0,nextReview:todayStr(),reviewCount:0}});saveWordbook(wb);updateWbBadge();}
-function removeFromWordbook(w){saveWordbook(getWordbook().filter(x=>x.word.toLowerCase()!==w.toLowerCase()));updateWbBadge();}
+function addToWordbook(w,ph,m,src){const wb=getWordbook();if(wb.some(x=>x.word.toLowerCase()===w.toLowerCase()))return;wb.push({word:w,phonetic:ph,meaning:m,source:src,addedAt:new Date().toISOString(),srs:{level:0,nextReview:todayStr(),reviewCount:0}});saveWordbook(wb);updateWbBadge();syncToCloud();}
+function removeFromWordbook(w){saveWordbook(getWordbook().filter(x=>x.word.toLowerCase()!==w.toLowerCase()));updateWbBadge();syncToCloud();}
 function updateWbBadge(){const due=getDueWords().length;const el=document.getElementById('wb-badge-count');if(due>0){el.className='nav-badge';el.textContent=due;}else{el.className='';el.textContent='';}}
 
 // ══════ UTILS ══════
@@ -306,15 +445,18 @@ function escHtml(s){const d=document.createElement('div');d.textContent=s;return
 function escJs(s){return s.replace(/\\/g,'\\\\').replace(/'/g,"\\'").replace(/"/g,'&quot;');}
 
 // ══════ ROUTING ══════
-function navigate(p,a){if(p==='calendar')location.hash='#/';else if(p==='lesson')location.hash='#/'+a;else if(p==='wordbook')location.hash='#/wordbook';else if(p==='review')location.hash='#/review';}
+function navigate(p,a){if(p==='auth')location.hash='#/auth';else if(p==='calendar')location.hash='#/';else if(p==='lesson')location.hash='#/'+a;else if(p==='wordbook')location.hash='#/wordbook';else if(p==='review')location.hash='#/review';}
 async function navigateToday(){const idx=await loadIndex();const t=todayStr();if(idx.dates.includes(t))navigate('lesson',t);else if(idx.dates.length)navigate('lesson',idx.dates[idx.dates.length-1]);else navigate('calendar');}
 async function handleRoute(){
   const hash=location.hash.replace('#/','').replace('#','');
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
   document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('active'));
+  const navEl = document.querySelector('.nav');
+  if(hash==='auth'){document.getElementById('page-auth').classList.add('active');navEl.style.display='none';return;}
+  navEl.style.display='flex';
   if(hash==='wordbook'){document.getElementById('page-wordbook').classList.add('active');document.getElementById('nav-wordbook').classList.add('active');renderWordbook();}
   else if(hash==='review'){document.getElementById('page-review').classList.add('active');document.getElementById('nav-wordbook').classList.add('active');renderReview();}
-  else if(hash&&hash.match(/^\d{4}-\d{2}-\d{2}$/)){document.getElementById('page-lesson').classList.add('active');document.getElementById('nav-today').classList.add('active');await renderLesson(hash);addCheckin(hash);}
+  else if(hash&&hash.match(/^\d{4}-\d{2}-\d{2}$/)){document.getElementById('page-lesson').classList.add('active');document.getElementById('nav-today').classList.add('active');await renderLesson(hash);addCheckin(hash);syncToCloud();}
   else{document.getElementById('page-calendar').classList.add('active');document.getElementById('nav-calendar').classList.add('active');await renderCalendar();}
   updateWbBadge();
 }
@@ -346,7 +488,7 @@ async function renderLesson(dateStr){
   if(!hasSR)h+='<div class="no-speech-banner visible">Speech Recognition not supported. Use Chrome.</div>';
   h+='<div class="section-title">Sentences</div>';
   theme.sentences.forEach((s,i)=>{const tts=s.en.replace(/Let's/g,'Let us');
-    h+=`<div class="card" data-text="${escHtml(s.en)}"><div class="card-header"><span class="card-num">#${i+1}</span><div class="btn-group"><button class="icon-btn" onclick="speak('${escJs(tts)}',this)"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="6,3 20,12 6,21"/></svg></button>${hasSR?`<button class="icon-btn rec" onclick="toggleRecord(this)"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="7"/></svg></button>`:''}</div></div><div class="sentence-en">${escHtml(s.en)}</div><div class="sentence-zh">${escHtml(s.zh)}</div><div class="rec-hint">Listening...</div><div class="score-result"></div></div>`;});
+    h+=`<div class="card" data-text="${escHtml(s.en)}"><div class="card-header"><span class="card-num">#${i+1}${scoreBadgeHtml(s.en)}</span><div class="btn-group"><button class="icon-btn" onclick="speak('${escJs(tts)}',this)"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="6,3 20,12 6,21"/></svg></button>${hasSR?`<button class="icon-btn rec" onclick="toggleRecord(this)"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="7"/></svg></button>`:''}</div></div><div class="sentence-en">${escHtml(s.en)}</div><div class="sentence-zh">${escHtml(s.zh)}</div><div class="rec-hint">Listening...</div><div class="score-result"></div></div>`;});
   h+='<div class="section-title">Vocabulary</div>';
   theme.vocabulary.forEach(v=>{const saved=isInWordbook(v.word);
     h+=`<div class="vocab-card"><div class="vocab-header"><span class="vocab-word">${escHtml(v.word)}</span><span class="vocab-phonetic">${escHtml(v.phonetic)}</span><span class="vocab-meaning">${escHtml(v.meaning)}</span><button class="icon-btn" onclick="speak('${escJs(v.word)}',this)" style="margin-left:auto"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="6,3 20,12 6,21"/></svg></button><button class="star-btn ${saved?'saved':''}" onclick="toggleStar(this,'${escJs(v.word)}','${escJs(v.phonetic)}','${escJs(v.meaning)}','${escJs(dateStr)}')"><svg viewBox="0 0 24 24" fill="${saved?'currentColor':'none'}" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></button></div><div class="vocab-example"><div class="en">${escHtml(v.example.en)}</div><div class="zh">${escHtml(v.example.zh)}</div></div></div>`;});
@@ -486,6 +628,25 @@ function renderScore(card, result, azureResult) {
     }
   }
   el.innerHTML=h;el.classList.add('visible');
+
+  // Save score
+  const ref = card.dataset.text;
+  const scoreObj = { pct: result.pct };
+  if (azureResult && azureResult.NBest && azureResult.NBest[0]?.PronunciationAssessment) {
+    const pa = azureResult.NBest[0].PronunciationAssessment;
+    scoreObj.accuracy = Math.round(pa.AccuracyScore);
+    scoreObj.fluency = Math.round(pa.FluencyScore);
+    scoreObj.completeness = Math.round(pa.CompletenessScore);
+    scoreObj.overall = Math.round(pa.PronScore);
+  }
+  saveScoreToCloud(ref, scoreObj);
+  // Update badge in card header
+  const numEl = card.querySelector('.card-num');
+  if (numEl) {
+    const oldBadge = numEl.querySelector('.card-score');
+    if (oldBadge) oldBadge.remove();
+    numEl.insertAdjacentHTML('beforeend', scoreBadgeHtml(ref));
+  }
 }
 
 // ══════ RECORDING (Web Speech + optional Azure) ══════
@@ -548,7 +709,22 @@ function toggleRecord(btn){
 // ══════ INIT ══════
 speechSynthesis.getVoices();speechSynthesis.onvoiceschanged=()=>speechSynthesis.getVoices();
 updateWbBadge();
-(async()=>{await loadIndex();if(!location.hash||location.hash==='#/'||location.hash==='#')await navigateToday();else await handleRoute();})();
+(async()=>{
+  await loadIndex();
+  if (authToken && authName) {
+    // Already logged in — load cloud data
+    showLoggedIn();
+    try {
+      const resp = await fetch(AZURE_PROXY + '/sync', { headers: { 'Authorization': 'Bearer ' + authToken } });
+      if (resp.ok) { const r = await resp.json(); if (r.data) { applyCloudData(r.data); } }
+      else if (resp.status === 401) { logout(); return; }
+    } catch {}
+  } else {
+    // Show auth page
+    navigate('auth');
+    return;
+  }
+})();
 </script>
 </body>
 </html>
