@@ -229,7 +229,7 @@
   .reader-wrap.visible{display:flex;}
   .reader-viewport{flex:1;overflow:hidden;position:relative;-webkit-tap-highlight-color:transparent;touch-action:pan-y;width:100%;}
   .reader-columns{
-    width:max-content;min-width:100%;overflow:hidden;
+    overflow:hidden;
     column-fill:auto;
     -webkit-font-smoothing:antialiased;
     word-wrap:break-word;overflow-wrap:break-word;
@@ -1298,36 +1298,45 @@ function loadChapterContent() {
 
 function calcReaderPages(cols, isNewChapter) {
   requestAnimationFrame(() => {
+    const vp = document.getElementById('reader-viewport');
+    readerPageWidth = vp.offsetWidth;
+    const vpHeight = vp.offsetHeight;
+    if (!readerPageWidth || !vpHeight) return;
+
+    const pad = parseInt(cols.style.paddingLeft) || 20;
+    const colW = readerPageWidth - pad * 2;
+    const gap = parseInt(cols.style.columnGap) || (pad * 2);
+
+    // Set explicit dimensions
+    cols.style.width = readerPageWidth + 'px';
+    cols.style.height = vpHeight + 'px';
+    cols.style.columnWidth = colW + 'px';
+
     requestAnimationFrame(() => {
-      const vp = document.getElementById('reader-viewport');
-      readerPageWidth = vp.offsetWidth;
-      const vpHeight = vp.offsetHeight;
-      if (!readerPageWidth || !vpHeight) return;
+      // Measure: clone into a hidden measurer with no width/overflow constraint
+      const measurer = cols.cloneNode(true);
+      measurer.style.cssText = cols.style.cssText;
+      measurer.style.position = 'absolute';
+      measurer.style.visibility = 'hidden';
+      measurer.style.overflow = 'visible';
+      measurer.style.width = 'auto';
+      measurer.style.left = '-99999px';
+      measurer.style.transition = 'none';
+      measurer.style.transform = 'none';
+      vp.appendChild(measurer);
 
-      const pad = parseInt(cols.style.paddingLeft) || 20;
-      const colW = readerPageWidth - pad * 2;
-      cols.style.columnWidth = colW + 'px';
-      cols.style.height = vpHeight + 'px'; // Explicit px height, not %
+      const sw = measurer.scrollWidth;
+      vp.removeChild(measurer);
 
-      // Temporarily allow overflow to get real scrollWidth
-      cols.style.overflow = 'visible';
-      void cols.offsetHeight; // force reflow
+      // Calculate pages: each page = colW + gap, minus one gap for last page, plus padding
+      readerTotalPages = Math.max(1, Math.round(sw / readerPageWidth));
 
-      setTimeout(() => {
-        const sw = cols.scrollWidth;
-        cols.style.overflow = 'hidden';
-
-        readerTotalPages = Math.max(1, Math.floor(sw / readerPageWidth));
-        // If remaining pixels < 10% of a page, don't count as extra page
-        const remainder = sw - readerTotalPages * readerPageWidth;
-        if (remainder > readerPageWidth * 0.1) readerTotalPages++;
-
-        if (isNewChapter) { readerPage = 0; buildToc(); }
-        else { readerPage = Math.min(readerPage, readerTotalPages - 1); }
-        cols.style.transition = isNewChapter ? 'none' : 'transform .3s cubic-bezier(.25,.1,.25,1)';
-        cols.style.transform = `translateX(-${readerPage * readerPageWidth}px)`;
-        updateReaderUI();
-      }, 50);
+      if (isNewChapter) { readerPage = 0; buildToc(); }
+      else { readerPage = Math.min(readerPage, readerTotalPages - 1); }
+      cols.style.overflow = 'hidden';
+      cols.style.transition = isNewChapter ? 'none' : 'transform .3s cubic-bezier(.25,.1,.25,1)';
+      cols.style.transform = `translateX(-${readerPage * readerPageWidth}px)`;
+      updateReaderUI();
     });
   });
 }
