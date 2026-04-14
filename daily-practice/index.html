@@ -6,16 +6,16 @@
 <title>Daily English Practice</title>
 <style>
   :root {
-    --bg: #0d1117;
-    --surface: #161b22;
-    --border: #30363d;
-    --text: #e6edf3;
-    --text-secondary: #8b949e;
-    --accent: #58a6ff;
-    --accent-hover: #79c0ff;
-    --green: #3fb950;
-    --red: #f85149;
-    --orange: #d29922;
+    --bg: #07121c;
+    --surface: #1f2a32;
+    --border: #2a343c;
+    --text: #cfd1d3;
+    --text-secondary: #82888d;
+    --accent: #00f0c4;
+    --accent-hover: #33f5d2;
+    --green: #00b99a;
+    --red: #f7415f;
+    --orange: #ff9728;
     --purple: #bc8cff;
     --radius: 12px;
   }
@@ -33,7 +33,7 @@
   .nav {
     position: fixed;
     bottom: 0; left: 0; right: 0;
-    background: rgba(22, 27, 34, 0.96);
+    background: rgba(7, 18, 28, 0.96);
     backdrop-filter: blur(12px);
     border-top: 1px solid var(--border);
     display: flex;
@@ -75,7 +75,7 @@
 
   /* ── Header ── */
   .header {
-    background: linear-gradient(135deg, #1a1f35, #0d1117);
+    background: linear-gradient(135deg, #0f2f2a, #07121c);
     border-bottom: 1px solid var(--border);
     padding: 28px 20px 24px;
     text-align: center;
@@ -106,7 +106,7 @@
   .header h1 { font-size: 22px; font-weight: 700; margin-bottom: 6px; }
   .theme-tag {
     display: inline-block;
-    background: rgba(88, 166, 255, 0.15);
+    background: rgba(0, 240, 196, 0.15);
     color: var(--accent);
     padding: 4px 14px;
     border-radius: 20px;
@@ -171,7 +171,7 @@
   }
   .cal-day.has-lesson:hover { border-color: var(--accent); }
   .cal-day.checked {
-    background: rgba(63, 185, 80, 0.12);
+    background: rgba(0, 185, 154, 0.12);
     border-color: var(--green);
     color: var(--green);
     font-weight: 700;
@@ -233,7 +233,7 @@
     font-size: 12px;
     font-weight: 700;
     color: var(--accent);
-    background: rgba(88, 166, 255, 0.1);
+    background: rgba(0, 240, 196, 0.1);
     padding: 2px 10px;
     border-radius: 10px;
   }
@@ -255,7 +255,7 @@
   .icon-btn:hover {
     border-color: var(--accent);
     color: var(--accent);
-    background: rgba(88, 166, 255, 0.08);
+    background: rgba(0, 240, 196, 0.08);
   }
   .icon-btn:active { transform: scale(0.92); }
   .icon-btn svg { width: 16px; height: 16px; }
@@ -265,20 +265,20 @@
     animation: pulse 1.5s infinite;
   }
   .icon-btn.rec { color: var(--red); }
-  .icon-btn.rec:hover { border-color: var(--red); background: rgba(248,81,73,0.08); color: var(--red); }
+  .icon-btn.rec:hover { border-color: var(--red); background: rgba(247,65,95,0.08); color: var(--red); }
   .icon-btn.rec.recording {
     border-color: var(--red);
-    background: rgba(248,81,73,0.15);
+    background: rgba(247,65,95,0.15);
     animation: rec-pulse 1s infinite;
   }
 
   @keyframes pulse {
-    0%,100% { box-shadow: 0 0 0 0 rgba(63,185,80,0.3); }
-    50% { box-shadow: 0 0 0 6px rgba(63,185,80,0); }
+    0%,100% { box-shadow: 0 0 0 0 rgba(0,185,154,0.3); }
+    50% { box-shadow: 0 0 0 6px rgba(0,185,154,0); }
   }
   @keyframes rec-pulse {
-    0%,100% { box-shadow: 0 0 0 0 rgba(248,81,73,0.4); }
-    50% { box-shadow: 0 0 0 8px rgba(248,81,73,0); }
+    0%,100% { box-shadow: 0 0 0 0 rgba(247,65,95,0.4); }
+    50% { box-shadow: 0 0 0 8px rgba(247,65,95,0); }
   }
 
   .sentence-en { font-size: 17px; font-weight: 500; line-height: 1.6; margin-bottom: 8px; }
@@ -323,7 +323,7 @@
   .vocab-phonetic { font-size: 14px; color: var(--text-secondary); font-family: 'Lucida Sans Unicode', sans-serif; }
   .vocab-meaning {
     display: inline-block;
-    background: rgba(210,153,34,0.15);
+    background: rgba(255,151,40,0.15);
     color: var(--orange);
     padding: 2px 10px;
     border-radius: 8px;
@@ -358,7 +358,7 @@
     margin-left: auto;
   }
   .star-btn:hover { border-color: var(--orange); color: var(--orange); }
-  .star-btn.saved { border-color: var(--orange); color: var(--orange); background: rgba(210,153,34,0.12); }
+  .star-btn.saved { border-color: var(--orange); color: var(--orange); background: rgba(255,151,40,0.12); }
   .star-btn svg { width: 16px; height: 16px; }
 
   /* ── Wordbook page ── */
@@ -398,7 +398,7 @@
     border-radius: 6px;
     flex-shrink: 0;
   }
-  .wb-remove:hover { color: var(--red); background: rgba(248,81,73,0.1); }
+  .wb-remove:hover { color: var(--red); background: rgba(247,65,95,0.1); }
   .wb-remove svg { width: 16px; height: 16px; }
 
   /* ── Wordbook add form ── */
@@ -425,7 +425,7 @@
     border-radius: 10px;
     border: none;
     background: var(--accent);
-    color: #0d1117;
+    color: #07121c;
     font-size: 14px;
     font-weight: 600;
     cursor: pointer;
@@ -449,12 +449,12 @@
     cursor: pointer; transition: all 0.15s;
   }
   .speed-btn:hover { border-color: var(--accent); color: var(--accent); }
-  .speed-btn.active { background: rgba(88,166,255,0.15); border-color: var(--accent); color: var(--accent); font-weight: 600; }
+  .speed-btn.active { background: rgba(0,240,196,0.15); border-color: var(--accent); color: var(--accent); font-weight: 600; }
 
-  .highlight { background: rgba(88,166,255,0.12); border-color: var(--accent) !important; }
+  .highlight { background: rgba(0,240,196,0.12); border-color: var(--accent) !important; }
 
   .no-speech-banner {
-    display: none; background: rgba(248,81,73,0.1); border: 1px solid rgba(248,81,73,0.3);
+    display: none; background: rgba(247,65,95,0.1); border: 1px solid rgba(248,81,73,0.3);
     border-radius: var(--radius); padding: 12px 16px; margin-top: 12px; font-size: 13px; color: var(--red); text-align: center;
   }
   .no-speech-banner.visible { display: block; }
