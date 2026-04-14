@@ -225,14 +225,22 @@
   .read-option p{font-size:13px;color:var(--text-secondary);margin:0;}
   .read-option input[type=file]{display:none;}
   /* Book reader — WeChat Read style */
-  .reader-wrap{position:fixed;top:0;left:0;right:0;bottom:0;z-index:150;display:none;flex-direction:column;transition:background .3s;}
+  .reader-wrap{position:fixed;top:0;left:0;right:0;bottom:0;z-index:150;display:none;flex-direction:column;transition:background .3s;overflow:hidden;}
   .reader-wrap.visible{display:flex;}
-  .reader-viewport{flex:1;overflow:hidden;position:relative;-webkit-tap-highlight-color:transparent;touch-action:pan-y;}
-  .reader-columns{height:100%;column-fill:auto;overflow:hidden;transition:transform .3s cubic-bezier(.25,.1,.25,1);-webkit-font-smoothing:antialiased;}
-  .reader-columns p{text-indent:0;orphans:2;widows:2;margin-bottom:0.8em;}
-  .reader-columns .w{cursor:pointer;border-radius:3px;padding:0 1px;transition:background .1s;-webkit-tap-highlight-color:transparent;}
+  .reader-viewport{flex:1;overflow:hidden;position:relative;-webkit-tap-highlight-color:transparent;touch-action:pan-y;width:100%;}
+  .reader-columns{
+    height:100%;width:100%;overflow:hidden;
+    column-fill:auto;
+    -webkit-font-smoothing:antialiased;
+    word-wrap:break-word;overflow-wrap:break-word;
+    -webkit-hyphens:auto;hyphens:auto;
+    transition:transform .3s cubic-bezier(.25,.1,.25,1);
+    box-sizing:border-box;
+  }
+  .reader-columns p{text-indent:0;orphans:2;widows:2;margin-top:0;margin-bottom:0.8em;word-wrap:break-word;overflow-wrap:break-word;}
+  .reader-columns .w{cursor:pointer;border-radius:3px;padding:0 1px;-webkit-tap-highlight-color:transparent;}
   .reader-columns .w:hover{background:rgba(0,0,0,.06);}
-  .reader-columns .w.active{background:var(--accent);color:#fff;}
+  .reader-columns .w.active{background:var(--accent);color:#fff;border-radius:3px;}
   .reader-columns .w.saved{border-bottom:2px solid var(--orange);}
 
   /* Floating page indicator (always visible, subtle) */
@@ -1163,8 +1171,9 @@ async function parseEpubBlob(blob, fallbackTitle) {
     const title = heading ? heading.textContent.trim().substring(0, 60) : href.replace(/.*\//, '').replace(/\.\w+$/, '');
     const body = doc.querySelector('body');
     if (!body) continue;
-    const text = extractText(body);
-    if (text.trim().length < 20) continue;
+    const rawText = extractText(body);
+    const text = rawText.replace(/[ \t]+/g, ' ').replace(/\n{3,}/g, '\n\n').trim();
+    if (text.length < 20) continue;
     chapters.push({ title, text });
   }
 
@@ -1222,7 +1231,13 @@ function openBookReader() {
   document.getElementById('reader-wrap').classList.add('visible');
   applyReaderTheme();
   loadChapterContent();
-  if (!readerGesturesSetup) { setupReaderGestures(); readerGesturesSetup = true; }
+  if (!readerGesturesSetup) {
+    setupReaderGestures();
+    readerGesturesSetup = true;
+    // Recalc on resize / orientation change
+    let resizeTimer;
+    window.addEventListener('resize', () => { clearTimeout(resizeTimer); resizeTimer = setTimeout(() => { if (document.getElementById('reader-wrap').classList.contains('visible')) recalcPages(); }, 200); });
+  }
 }
 
 function applyReaderTheme() {
@@ -1258,10 +1273,13 @@ function loadChapterContent() {
   document.getElementById('reader-chapter-label').textContent = ch.title;
 
   let h = '';
-  ch.text.split(/\n\s*\n|\n/).forEach(para => {
-    if (!para.trim()) return;
+  // Clean text: collapse multiple newlines, trim whitespace
+  const cleanText = ch.text.replace(/\r\n/g, '\n').replace(/\n{3,}/g, '\n\n').replace(/[ \t]+/g, ' ').trim();
+  cleanText.split(/\n\s*\n|\n/).forEach(para => {
+    const trimmed = para.trim();
+    if (!trimmed || trimmed.length < 2) return;
     h += '<p>';
-    (para.match(/[\w']+|[^\w\s]+|\s+/g) || []).forEach(tok => {
+    (trimmed.match(/[\w']+|[^\w\s]+|\s+/g) || []).forEach(tok => {
       if (/^\s+$/.test(tok)) { h += ' '; return; }
       if (/^[^\w']+$/.test(tok)) { h += tok; return; }
       const clean = tok.toLowerCase().replace(/[^a-z']/g, '');
@@ -1275,21 +1293,32 @@ function loadChapterContent() {
   cols.innerHTML = h;
   cols.style.transform = 'translateX(0)';
   applyReaderTypography();
+  calcReaderPages(cols, true);
+}
 
+function calcReaderPages(cols, isNewChapter) {
+  // Wait for DOM to settle, then measure
   requestAnimationFrame(() => {
-    setTimeout(() => {
+    requestAnimationFrame(() => {
       const vp = document.getElementById('reader-viewport');
       readerPageWidth = vp.offsetWidth;
       const pad = parseInt(cols.style.paddingLeft) || 20;
-      cols.style.columnWidth = Math.floor(readerPageWidth - pad * 2) + 'px';
-      // Double-check after reflow
+      const gap = parseInt(cols.style.columnGap) || 40;
+      const colW = Math.floor(readerPageWidth - pad * 2);
+      cols.style.columnWidth = colW + 'px';
+
+      // Force reflow then measure
+      void cols.scrollWidth;
       setTimeout(() => {
-        readerTotalPages = Math.max(1, Math.ceil(cols.scrollWidth / readerPageWidth));
-        readerPage = 0;
+        const sw = cols.scrollWidth;
+        readerTotalPages = Math.max(1, Math.round(sw / readerPageWidth));
+        if (isNewChapter) { readerPage = 0; buildToc(); }
+        else { readerPage = Math.min(readerPage, readerTotalPages - 1); }
+        cols.style.transition = isNewChapter ? 'none' : 'transform .3s cubic-bezier(.25,.1,.25,1)';
+        cols.style.transform = `translateX(-${readerPage * readerPageWidth}px)`;
         updateReaderUI();
-        buildToc();
-      }, 80);
-    }, 80);
+      }, 100);
+    });
   });
 }
 
@@ -1347,20 +1376,7 @@ function adjFontSize(d) { readerFontSize = Math.max(14, Math.min(28, readerFontS
 function adjLineHeight(d) { readerLineHeight = Math.max(1.4, Math.min(3.0, readerLineHeight + d)); readerLineHeight = Math.round(readerLineHeight * 10) / 10; applyReaderTypography(); recalcPages(); }
 function setReaderTheme(t) { readerTheme = t; localStorage.setItem('ep_reader_theme', t); applyReaderTheme(); }
 function recalcPages() {
-  requestAnimationFrame(() => {
-    setTimeout(() => {
-      const cols = document.getElementById('reader-columns');
-      const pad = parseInt(cols.style.paddingLeft) || 20;
-      cols.style.columnWidth = Math.floor(readerPageWidth - pad * 2) + 'px';
-      setTimeout(() => {
-        readerTotalPages = Math.max(1, Math.ceil(cols.scrollWidth / readerPageWidth));
-        readerPage = Math.min(readerPage, readerTotalPages - 1);
-        cols.style.transition = 'none';
-        cols.style.transform = `translateX(-${readerPage * readerPageWidth}px)`;
-        updateReaderUI();
-      }, 80);
-    }, 80);
-  });
+  calcReaderPages(document.getElementById('reader-columns'), false);
 }
 
 function buildToc() {
