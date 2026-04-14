@@ -11,7 +11,7 @@
 const CORS_HEADERS = {
   'Access-Control-Allow-Origin': '*',
   'Access-Control-Allow-Methods': 'POST, OPTIONS',
-  'Access-Control-Allow-Headers': 'Content-Type, X-Reference-Text, X-TTS-Text, X-TTS-Rate',
+  'Access-Control-Allow-Headers': 'Content-Type, X-Reference-Text, X-TTS-Text, X-TTS-Rate, X-TTS-Voice',
 };
 
 export default {
@@ -65,7 +65,8 @@ async function handleTTS(request, key, region) {
   const ratePct = Math.round((rateRaw - 1) * 100);
   const rateStr = (ratePct >= 0 ? '+' : '') + ratePct + '%';
 
-  const ssml = `<speak version='1.0' xmlns='http://www.w3.org/2001/10/synthesis' xml:lang='en-US'><voice name='en-US-JennyNeural'><prosody rate='${rateStr}'>${escXml(text)}</prosody></voice></speak>`;
+  const voiceName = request.headers.get('X-TTS-Voice') || 'en-US-JennyNeural';
+  const ssml = `<speak version='1.0' xmlns='http://www.w3.org/2001/10/synthesis' xml:lang='en-US'><voice name='${voiceName}'><prosody rate='${rateStr}'>${escXml(text)}</prosody></voice></speak>`;
 
   const token = await getToken(key, region);
   if (!token) {

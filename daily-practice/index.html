@@ -167,6 +167,12 @@
   .review-progress{font-size:13px;color:var(--text-secondary);margin-bottom:16px;}
 
   /* Speed */
+  .controls-bar{display:flex;align-items:center;gap:8px;justify-content:center;flex-wrap:wrap;margin:16px 0 0;padding:10px;background:var(--surface);border-radius:var(--radius);border:1px solid var(--border);}
+  .controls-bar label{font-size:13px;color:var(--text-secondary);}
+  .controls-bar .sep{width:1px;height:20px;background:var(--border);margin:0 4px;}
+  .voice-btn{padding:4px 12px;border-radius:8px;border:1px solid var(--border);background:transparent;color:var(--text-secondary);font-size:13px;cursor:pointer;transition:all .15s;}
+  .voice-btn:hover{border-color:var(--accent);color:var(--accent);}
+  .voice-btn.active{background:var(--accent-light);border-color:var(--accent);color:var(--accent);font-weight:600;}
   .speed-control{display:flex;align-items:center;gap:8px;justify-content:center;margin:16px 0 0;padding:10px;background:var(--surface);border-radius:var(--radius);border:1px solid var(--border);}
   .speed-control label{font-size:13px;color:var(--text-secondary);}
   .speed-btn{padding:4px 12px;border-radius:8px;border:1px solid var(--border);background:transparent;color:var(--text-secondary);font-size:13px;cursor:pointer;transition:all .15s;}
@@ -227,12 +233,15 @@ const DATA_BASE = './data';
 const STORE_CHECKINS = 'ep_checkins';
 const STORE_WORDBOOK = 'ep_wordbook';
 const STORE_THEME = 'ep_theme';
+const STORE_VOICE = 'ep_voice';
+const VOICES = { female: 'en-US-JennyNeural', male: 'en-US-GuyNeural' };
 // Azure pronunciation proxy URL — set after deploying Cloudflare Worker
 const AZURE_PROXY = localStorage.getItem('ep_azure_proxy') || 'https://speech.marswang.ac.cn';
 
 // ══════ STATE ══════
 let dataIndex = null, lessonCache = {};
 let currentTheme = localStorage.getItem(STORE_THEME) || 'growth';
+let currentVoice = localStorage.getItem(STORE_VOICE) || 'female';
 let currentRate = 0.85, currentUtterance = null, currentBtn = null;
 let activeRecognition = null, activeRecBtn = null;
 const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -333,7 +342,7 @@ async function renderLesson(dateStr){
   let h='';
   if(times.length)h+=`<div class="cal-checkin-times"><h4>Check-in times</h4>${times.map(t=>'<span style="margin-right:12px">'+t+'</span>').join('')}</div>`;
   h+='<div class="theme-picker">';for(const k of tk){h+=`<button class="theme-chip${k===currentTheme?' active':''}" onclick="switchTheme('${k}','${dateStr}')">${escHtml(themes[k].label)}</button>`;}h+='</div>';
-  h+=`<div class="speed-control"><label>Speed</label><button class="speed-btn" data-speed="0.7">0.7x</button><button class="speed-btn active" data-speed="0.85">0.85x</button><button class="speed-btn" data-speed="1">1x</button><button class="speed-btn" data-speed="1.2">1.2x</button></div>`;
+  h+=`<div class="controls-bar"><label>Voice</label><button class="voice-btn${currentVoice==='female'?' active':''}" onclick="switchVoice('female')">Female</button><button class="voice-btn${currentVoice==='male'?' active':''}" onclick="switchVoice('male')">Male</button><span class="sep"></span><label>Speed</label><button class="speed-btn" data-speed="0.7">0.7x</button><button class="speed-btn${currentRate===0.85?' active':''}" data-speed="0.85">0.85x</button><button class="speed-btn${currentRate===1?' active':''}" data-speed="1">1x</button><button class="speed-btn" data-speed="1.2">1.2x</button></div>`;
   if(!hasSR)h+='<div class="no-speech-banner visible">Speech Recognition not supported. Use Chrome.</div>';
   h+='<div class="section-title">Sentences</div>';
   theme.sentences.forEach((s,i)=>{const tts=s.en.replace(/Let's/g,'Let us');
@@ -345,6 +354,7 @@ async function renderLesson(dateStr){
   document.querySelectorAll('.speed-btn').forEach(btn=>{btn.addEventListener('click',()=>{document.querySelectorAll('.speed-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');currentRate=parseFloat(btn.dataset.speed);});});
 }
 function switchTheme(k,d){currentTheme=k;localStorage.setItem(STORE_THEME,k);renderLesson(d);}
+function switchVoice(v){currentVoice=v;localStorage.setItem(STORE_VOICE,v);document.querySelectorAll('.voice-btn').forEach(b=>{b.classList.toggle('active',b.textContent.toLowerCase()===v);});}
 
 // ══════ WORDBOOK ══════
 function renderWordbook(){
@@ -413,7 +423,7 @@ function speak(text, btn) {
     // Azure Neural TTS
     fetch(AZURE_PROXY + '/tts', {
       method: 'POST',
-      headers: { 'X-TTS-Text': text, 'X-TTS-Rate': String(currentRate) },
+      headers: { 'X-TTS-Text': text, 'X-TTS-Rate': String(currentRate), 'X-TTS-Voice': VOICES[currentVoice] || VOICES.female },
     }).then(r => {
       if (!r.ok) throw new Error('TTS failed');
       return r.blob();
