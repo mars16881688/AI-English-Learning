@@ -204,6 +204,37 @@
   .card-score.s-good{background:var(--accent-light);color:var(--accent);}
   .card-score.s-fair{background:rgba(255,151,40,.08);color:var(--orange);}
   .card-score.s-poor{background:rgba(247,65,95,.06);color:var(--red);}
+  /* Reading */
+  .read-input{width:100%;min-height:120px;padding:14px;border-radius:var(--radius);border:1px solid var(--border);background:var(--surface);color:var(--text);font-size:15px;line-height:1.7;resize:vertical;outline:none;font-family:inherit;}
+  .read-input:focus{border-color:var(--accent);}
+  .read-input::placeholder{color:var(--text-secondary);}
+  .read-start{width:100%;padding:12px;border-radius:10px;border:none;background:var(--accent);color:#fff;font-size:15px;font-weight:600;cursor:pointer;margin-top:10px;transition:all .15s;}
+  .read-start:hover{background:var(--accent-hover);}
+  .read-body{line-height:2;font-size:16px;}
+  .read-body .w{cursor:pointer;border-radius:4px;padding:1px 2px;transition:background .1s;-webkit-tap-highlight-color:transparent;}
+  .read-body .w:hover{background:var(--accent-light);}
+  .read-body .w.active{background:var(--accent);color:#fff;border-radius:4px;}
+  .read-body .w.saved{border-bottom:2px solid var(--orange);}
+  .read-body p{margin-bottom:12px;}
+
+  /* Word popup */
+  .word-popup-overlay{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.3);z-index:300;-webkit-tap-highlight-color:transparent;}
+  .word-popup-overlay.visible{display:block;}
+  .word-popup{position:fixed;bottom:0;left:0;right:0;background:var(--surface);border-radius:16px 16px 0 0;padding:20px 20px calc(20px + env(safe-area-inset-bottom,0px));z-index:301;max-height:60vh;overflow-y:auto;animation:slideUp .25s ease;}
+  @keyframes slideUp{from{transform:translateY(100%);}to{transform:translateY(0);}}
+  .word-popup-word{font-size:24px;font-weight:800;}
+  .word-popup-phonetic{font-size:14px;color:var(--text-secondary);margin-left:8px;}
+  .word-popup-pos{font-size:12px;color:var(--accent);background:var(--accent-light);padding:2px 8px;border-radius:6px;margin-right:6px;}
+  .word-popup-def{font-size:14px;line-height:1.6;margin-top:6px;color:var(--text);}
+  .word-popup-ctx{margin-top:10px;padding:10px 14px;background:rgba(0,0,0,.02);border-left:3px solid var(--accent);border-radius:0 8px 8px 0;font-size:14px;line-height:1.6;color:var(--text-secondary);}
+  .word-popup-ctx mark{background:rgba(0,184,184,.15);color:var(--accent);font-weight:600;border-radius:2px;padding:0 2px;}
+  .word-popup-actions{display:flex;gap:8px;margin-top:14px;}
+  .word-popup-actions button{flex:1;padding:10px;border-radius:10px;border:none;font-size:14px;font-weight:600;cursor:pointer;transition:all .15s;}
+  .word-popup-actions .play{background:var(--accent-light);color:var(--accent);}
+  .word-popup-actions .save{background:var(--accent);color:#fff;}
+  .word-popup-actions .save.saved{background:var(--orange);color:#fff;}
+  .word-popup-loading{text-align:center;padding:20px;color:var(--text-secondary);font-size:13px;}
+
   .page{display:none;}.page.active{display:block;animation:fadeIn .25s ease;}
 
   /* ── Mobile ── */
@@ -299,12 +330,24 @@
   <div class="container" id="review-content"></div>
 </div>
 
+<div class="page" id="page-reading">
+  <div class="header"><div class="header-inner"><h1>Reading</h1><div class="date-label">Tap any word to look up</div></div></div>
+  <div class="container" id="reading-content"></div>
+</div>
+
+<!-- Word popup -->
+<div class="word-popup-overlay" id="word-popup-overlay" onclick="closeWordPopup()"></div>
+<div class="word-popup" id="word-popup" style="display:none"></div>
+
 <nav class="nav">
   <button class="nav-item" onclick="navigate('calendar')" id="nav-calendar">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Calendar
   </button>
   <button class="nav-item" onclick="navigateToday()" id="nav-today">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10"/></svg>Today
+  </button>
+  <button class="nav-item" onclick="navigate('reading')" id="nav-reading">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>Reading
   </button>
   <button class="nav-item" onclick="navigate('wordbook')" id="nav-wordbook" style="position:relative">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg><span id="wb-badge-count"></span>Wordbook
@@ -487,7 +530,7 @@ function escHtml(s){const d=document.createElement('div');d.textContent=s;return
 function escJs(s){return s.replace(/\\/g,'\\\\').replace(/'/g,"\\'").replace(/"/g,'&quot;');}
 
 // ══════ ROUTING ══════
-function navigate(p,a){if(p==='auth')location.hash='#/auth';else if(p==='calendar')location.hash='#/';else if(p==='lesson')location.hash='#/'+a;else if(p==='wordbook')location.hash='#/wordbook';else if(p==='review')location.hash='#/review';}
+function navigate(p,a){if(p==='auth')location.hash='#/auth';else if(p==='calendar')location.hash='#/';else if(p==='lesson')location.hash='#/'+a;else if(p==='wordbook')location.hash='#/wordbook';else if(p==='review')location.hash='#/review';else if(p==='reading')location.hash='#/reading';}
 async function navigateToday(){const idx=await loadIndex();const t=todayStr();if(idx.dates.includes(t))navigate('lesson',t);else if(idx.dates.length)navigate('lesson',idx.dates[idx.dates.length-1]);else navigate('calendar');}
 async function handleRoute(){
   const hash=location.hash.replace('#/','').replace('#','');
@@ -498,6 +541,7 @@ async function handleRoute(){
   navEl.style.display='flex';
   if(hash==='wordbook'){document.getElementById('page-wordbook').classList.add('active');document.getElementById('nav-wordbook').classList.add('active');renderWordbook();}
   else if(hash==='review'){document.getElementById('page-review').classList.add('active');document.getElementById('nav-wordbook').classList.add('active');renderReview();}
+  else if(hash==='reading'){document.getElementById('page-reading').classList.add('active');document.getElementById('nav-reading').classList.add('active');renderReading();}
   else if(hash&&hash.match(/^\d{4}-\d{2}-\d{2}$/)){document.getElementById('page-lesson').classList.add('active');document.getElementById('nav-today').classList.add('active');await renderLesson(hash);addCheckin(hash);syncToCloud();}
   else{document.getElementById('page-calendar').classList.add('active');document.getElementById('nav-calendar').classList.add('active');await renderCalendar();}
   updateWbBadge();
@@ -744,6 +788,156 @@ function toggleRecord(btn){
   rec.onerror=e=>{if(e.error!=='no-speech'&&e.error!=='aborted'){const el=card.querySelector('.score-result');el.innerHTML=`<div style="color:var(--red);font-size:13px">Error: ${e.error}</div>`;el.classList.add('visible');}};
   rec.onend=()=>{btn.classList.remove('recording');hint.classList.remove('visible');if(activeRecBtn===btn){activeRecognition=null;activeRecBtn=null;}if(mediaRecorder&&mediaRecorder.state==='recording')mediaRecorder.stop();};
   rec.start();
+}
+
+// ══════ READING ══════
+const STORE_READING = 'ep_reading_text';
+const dictCache = {};
+
+function renderReading() {
+  const saved = localStorage.getItem(STORE_READING) || '';
+  const el = document.getElementById('reading-content');
+
+  if (!saved) {
+    el.innerHTML = `<textarea class="read-input" id="read-input" placeholder="Paste any English text here — article, email, document..."></textarea><button class="read-start" onclick="startReading()">Start Reading</button>`;
+    return;
+  }
+  renderReadingBody(saved);
+}
+
+function startReading() {
+  const text = document.getElementById('read-input').value.trim();
+  if (!text) return;
+  localStorage.setItem(STORE_READING, text);
+  renderReadingBody(text);
+}
+
+function renderReadingBody(text) {
+  const el = document.getElementById('reading-content');
+  let h = '<button style="margin-bottom:14px;padding:6px 14px;border-radius:8px;border:1px solid var(--border);background:var(--surface);color:var(--text-secondary);font-size:13px;cursor:pointer" onclick="clearReading()">Change Text</button>';
+  h += '<div class="read-body">';
+
+  const paragraphs = text.split(/\n\s*\n|\n/);
+  paragraphs.forEach((para, pi) => {
+    if (!para.trim()) return;
+    h += '<p>';
+    // Split into words while preserving punctuation
+    const tokens = para.match(/[\w']+|[^\w\s]+|\s+/g) || [];
+    tokens.forEach((tok, ti) => {
+      if (/^\s+$/.test(tok)) { h += ' '; return; }
+      if (/^[^\w']+$/.test(tok)) { h += tok; return; }
+      const clean = tok.toLowerCase().replace(/[^a-z']/g, '');
+      const saved = clean && isInWordbook(clean) ? ' saved' : '';
+      h += `<span class="w${saved}" data-word="${escHtml(clean)}" data-pi="${pi}" data-ti="${ti}" onclick="lookupWord(this)">${escHtml(tok)}</span>`;
+    });
+    h += '</p>';
+  });
+  h += '</div>';
+  el.innerHTML = h;
+}
+
+function clearReading() {
+  localStorage.removeItem(STORE_READING);
+  renderReading();
+}
+
+function getSentenceContext(el) {
+  // Get the paragraph text and find the sentence containing this word
+  const p = el.closest('p');
+  if (!p) return el.dataset.word;
+  const text = p.textContent;
+  // Simple sentence split
+  const sentences = text.match(/[^.!?]+[.!?]+/g) || [text];
+  const word = el.dataset.word;
+  for (const s of sentences) {
+    if (s.toLowerCase().includes(word)) return s.trim();
+  }
+  return text.substring(0, 120);
+}
+
+async function lookupWord(el) {
+  const word = el.dataset.word;
+  if (!word || word.length < 2) return;
+
+  // Highlight active word
+  document.querySelectorAll('.read-body .w.active').forEach(w => w.classList.remove('active'));
+  el.classList.add('active');
+
+  const popup = document.getElementById('word-popup');
+  const overlay = document.getElementById('word-popup-overlay');
+  const ctx = getSentenceContext(el);
+
+  // Show loading
+  popup.style.display = 'block';
+  overlay.classList.add('visible');
+  popup.innerHTML = '<div class="word-popup-loading">Looking up...</div>';
+
+  // Fetch dictionary
+  let data = dictCache[word];
+  if (!data) {
+    try {
+      const resp = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${encodeURIComponent(word)}`);
+      if (resp.ok) { data = await resp.json(); dictCache[word] = data; }
+    } catch {}
+  }
+
+  const saved = isInWordbook(word);
+  let phonetic = '';
+  let meanings = [];
+
+  if (data && data[0]) {
+    phonetic = data[0].phonetic || (data[0].phonetics && data[0].phonetics.find(p => p.text)?.text) || '';
+    meanings = (data[0].meanings || []).slice(0, 3);
+  }
+
+  // Highlight word in context
+  const ctxHtml = ctx.replace(new RegExp(`\\b${word}\\b`, 'gi'), m => `<mark>${m}</mark>`);
+
+  let h = `<div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;flex-wrap:wrap"><span class="word-popup-word">${escHtml(word)}</span>`;
+  if (phonetic) h += `<span class="word-popup-phonetic">${escHtml(phonetic)}</span>`;
+  h += '</div>';
+
+  if (meanings.length) {
+    meanings.forEach(m => {
+      h += `<div style="margin-bottom:8px"><span class="word-popup-pos">${escHtml(m.partOfSpeech)}</span>`;
+      const defs = (m.definitions || []).slice(0, 2);
+      defs.forEach(d => { h += `<div class="word-popup-def">${escHtml(d.definition)}</div>`; });
+      h += '</div>';
+    });
+  } else {
+    h += '<div class="word-popup-def" style="color:var(--text-secondary)">No dictionary entry found</div>';
+  }
+
+  h += `<div class="word-popup-ctx">${ctxHtml}</div>`;
+  h += `<div class="word-popup-actions">`;
+  h += `<button class="play" onclick="speak('${escJs(word)}',this)">Play</button>`;
+  h += `<button class="${saved?'save saved':'save'}" id="popup-save-btn" onclick="togglePopupSave('${escJs(word)}','${escJs(phonetic)}')">${saved?'Saved':'Save to Wordbook'}</button>`;
+  h += '</div>';
+
+  popup.innerHTML = h;
+}
+
+function togglePopupSave(word, phonetic) {
+  const btn = document.getElementById('popup-save-btn');
+  if (isInWordbook(word)) {
+    removeFromWordbook(word);
+    btn.textContent = 'Save to Wordbook';
+    btn.classList.remove('saved');
+  } else {
+    addToWordbook(word, phonetic, '', 'reading');
+    btn.textContent = 'Saved';
+    btn.classList.add('saved');
+  }
+  // Update word highlight in reading body
+  document.querySelectorAll(`.read-body .w[data-word="${word}"]`).forEach(w => {
+    w.classList.toggle('saved', isInWordbook(word));
+  });
+}
+
+function closeWordPopup() {
+  document.getElementById('word-popup').style.display = 'none';
+  document.getElementById('word-popup-overlay').classList.remove('visible');
+  document.querySelectorAll('.read-body .w.active').forEach(w => w.classList.remove('active'));
 }
 
 // ══════ INIT ══════
