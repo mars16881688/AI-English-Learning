@@ -207,7 +207,49 @@
   .card-score.s-fair{background:rgba(255,151,40,.08);color:var(--orange);}
   .card-score.s-poor{background:rgba(247,65,95,.06);color:var(--red);}
   .page{display:none;}.page.active{display:block;animation:fadeIn .25s ease;}
-  @media(max-width:480px){.header{padding:24px 16px 20px;}.header h1{font-size:19px;}.sentence-en{font-size:16px;}.container{padding:16px 12px;}.az-score{grid-template-columns:repeat(2,1fr);}}
+
+  /* ── Mobile ── */
+  @media(max-width:480px){
+    body{padding-bottom:calc(70px + env(safe-area-inset-bottom, 0px));}
+    .nav{padding-bottom:env(safe-area-inset-bottom, 0px);}
+    .header{padding:20px 16px 16px;}
+    .header h1{font-size:18px;}
+    .header .date-label{font-size:11px;letter-spacing:1px;}
+    .container{padding:14px 12px;}
+    .card{padding:16px;}
+    .sentence-en{font-size:15px;}
+    .sentence-zh{font-size:13px;}
+    .vocab-card{padding:16px;}
+    .vocab-word{font-size:17px;}
+    .vocab-phonetic{font-size:12px;}
+    .vocab-meaning{font-size:12px;padding:2px 8px;}
+    .vocab-header{gap:4px 6px;}
+    .vocab-example{padding:8px 12px;}
+    .vocab-example .en{font-size:13px;}
+    .vocab-example .zh{font-size:12px;}
+    .icon-btn{width:34px;height:34px;}
+    .star-btn{width:30px;height:30px;}
+    .controls-bar{flex-direction:column;gap:8px;padding:10px 12px;}
+    .controls-bar .sep{display:none;}
+    .controls-bar>div,.controls-bar-row{display:flex;align-items:center;gap:6px;width:100%;justify-content:center;}
+    .theme-picker{gap:6px;}
+    .theme-chip{padding:6px 12px;font-size:12px;}
+    .az-score{grid-template-columns:repeat(2,1fr);gap:6px;}
+    .az-score-item{padding:6px;}
+    .az-score-item .num{font-size:18px;}
+    .az-word{font-size:12px;padding:2px 6px;}
+    .score-badge{font-size:24px;}
+    .auth-box{margin:30px auto;padding:24px 20px;}
+    .auth-user-bar{padding:6px 12px;font-size:12px;}
+    .review-word{font-size:24px;}
+    .review-btns{flex-wrap:wrap;}
+    .review-btn{min-width:70px;padding:8px 0;font-size:13px;}
+    .wb-card{padding:12px;gap:10px;}
+    .wb-card-word{font-size:15px;}
+    .streak-num{font-size:28px;}
+    .cal-grid{gap:4px;}
+    .cal-day{font-size:12px;border-radius:8px;}
+  }
 </style>
 </head>
 <body>
@@ -484,7 +526,7 @@ async function renderLesson(dateStr){
   let h='';
   if(times.length)h+=`<div class="cal-checkin-times"><h4>Check-in times</h4>${times.map(t=>'<span style="margin-right:12px">'+t+'</span>').join('')}</div>`;
   h+='<div class="theme-picker">';for(const k of tk){h+=`<button class="theme-chip${k===currentTheme?' active':''}" onclick="switchTheme('${k}','${dateStr}')">${escHtml(themes[k].label)}</button>`;}h+='</div>';
-  h+=`<div class="controls-bar"><label>Voice</label><button class="voice-btn${currentVoice==='female'?' active':''}" onclick="switchVoice('female')">Female</button><button class="voice-btn${currentVoice==='male'?' active':''}" onclick="switchVoice('male')">Male</button><span class="sep"></span><label>Speed</label><button class="speed-btn" data-speed="0.7">0.7x</button><button class="speed-btn${currentRate===0.85?' active':''}" data-speed="0.85">0.85x</button><button class="speed-btn${currentRate===1?' active':''}" data-speed="1">1x</button><button class="speed-btn" data-speed="1.2">1.2x</button></div>`;
+  h+=`<div class="controls-bar"><div style="display:flex;align-items:center;gap:8px"><label>Voice</label><button class="voice-btn${currentVoice==='female'?' active':''}" onclick="switchVoice('female')">Female</button><button class="voice-btn${currentVoice==='male'?' active':''}" onclick="switchVoice('male')">Male</button></div><span class="sep"></span><div style="display:flex;align-items:center;gap:8px"><label>Speed</label><button class="speed-btn" data-speed="0.7">0.7x</button><button class="speed-btn${currentRate===0.85?' active':''}" data-speed="0.85">0.85x</button><button class="speed-btn${currentRate===1?' active':''}" data-speed="1">1x</button><button class="speed-btn" data-speed="1.2">1.2x</button></div></div>`;
   if(!hasSR)h+='<div class="no-speech-banner visible">Speech Recognition not supported. Use Chrome.</div>';
   h+='<div class="section-title">Sentences</div>';
   theme.sentences.forEach((s,i)=>{const tts=s.en.replace(/Let's/g,'Let us');
