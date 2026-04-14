@@ -260,6 +260,7 @@
       <div class="sub" id="auth-sub">Enter your name and PIN</div>
       <input class="auth-input" id="auth-name" type="text" placeholder="Name" autocomplete="off" autocapitalize="none">
       <input class="auth-input" id="auth-pin" type="password" placeholder="4-digit PIN" maxlength="6" inputmode="numeric">
+      <input class="auth-input" id="auth-invite" type="text" placeholder="Invite code" autocomplete="off" style="display:none">
       <button class="auth-btn" id="auth-btn" onclick="handleAuth()">Sign In</button>
       <div class="auth-error" id="auth-error"></div>
       <span class="auth-toggle" id="auth-toggle" onclick="toggleAuthMode()">No account? Register</span>
@@ -342,6 +343,7 @@ function toggleAuthMode() {
   document.getElementById('auth-title').textContent = authMode === 'login' ? 'Sign In' : 'Register';
   document.getElementById('auth-btn').textContent = authMode === 'login' ? 'Sign In' : 'Register';
   document.getElementById('auth-toggle').textContent = authMode === 'login' ? 'No account? Register' : 'Have an account? Sign In';
+  document.getElementById('auth-invite').style.display = authMode === 'register' ? 'block' : 'none';
   document.getElementById('auth-error').textContent = '';
 }
 async function handleAuth() {
@@ -356,7 +358,7 @@ async function handleAuth() {
     const resp = await fetch(AZURE_PROXY + '/auth', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ action: authMode === 'login' ? 'login' : 'register', name, pin }),
+      body: JSON.stringify({ action: authMode === 'login' ? 'login' : 'register', name, pin, invite: (document.getElementById('auth-invite').value || '').trim() }),
     });
     const result = await resp.json();
     if (!resp.ok) { errEl.textContent = result.error || 'Failed'; document.getElementById('auth-btn').textContent = authMode === 'login' ? 'Sign In' : 'Register'; return; }

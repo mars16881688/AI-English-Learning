@@ -70,6 +70,20 @@
 
   .empty{color:var(--text2);font-size:13px;font-style:italic;}
 
+  .action-btn{padding:4px 10px;border-radius:6px;border:1px solid var(--border);background:none;font-size:12px;cursor:pointer;transition:all .15s;margin-right:4px;}
+  .action-btn:hover{opacity:.8;}
+  .action-btn.ban{color:var(--red);border-color:rgba(247,65,95,.3);}
+  .action-btn.ban:hover{background:rgba(247,65,95,.06);}
+  .action-btn.unban{color:var(--green);border-color:rgba(0,185,154,.3);}
+  .action-btn.unban:hover{background:rgba(0,185,154,.06);}
+  .action-btn.del{color:var(--red);border-color:rgba(247,65,95,.3);}
+  .action-btn.del:hover{background:rgba(247,65,95,.1);}
+  .badge.banned{background:rgba(247,65,95,.1);color:var(--red);}
+  .invite-grid{display:flex;flex-wrap:wrap;gap:6px;}
+  .invite-chip{padding:6px 12px;border-radius:8px;font-size:13px;font-family:monospace;background:var(--surface);border:1px solid var(--border);}
+  .invite-chip.used{color:var(--text2);text-decoration:line-through;opacity:.6;}
+  .invite-chip.available{color:var(--accent);border-color:var(--accent);font-weight:600;cursor:pointer;}
+  .invite-chip.available:hover{background:rgba(0,184,184,.06);}
   @keyframes fadeIn{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
   @media(max-width:480px){.stats{grid-template-columns:repeat(2,1fr);}.stat .num{font-size:22px;}}
 </style>
@@ -89,8 +103,18 @@
 
   <div id="dashboard" style="display:none">
     <div class="stats" id="stats"></div>
+
+    <!-- Invite codes -->
+    <div id="invite-section" style="margin-bottom:20px;">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;">
+        <h3 style="font-size:14px;color:var(--text2);">INVITE CODES</h3>
+        <button onclick="generateInvites()" style="padding:6px 14px;border-radius:8px;border:none;background:var(--accent);color:#fff;font-size:13px;font-weight:600;cursor:pointer;">Generate 5 Codes</button>
+      </div>
+      <div id="invite-list"></div>
+    </div>
+
     <div class="table-wrap"><table class="table" id="user-table">
-      <thead><tr><th>User</th><th>Check-ins</th><th>Words</th><th>Scores</th><th>Last Active</th><th>Status</th></tr></thead>
+      <thead><tr><th>User</th><th>Check-ins</th><th>Words</th><th>Scores</th><th>Last Active</th><th>Status</th><th>Actions</th></tr></thead>
       <tbody id="user-tbody"></tbody>
     </table></div>
     <div class="detail" id="detail"></div>
@@ -149,15 +173,22 @@ function render(result) {
   const tbody = document.getElementById('user-tbody');
   tbody.innerHTML = users.sort((a, b) => b.lastCheckin.localeCompare(a.lastCheckin)).map(u => {
     const isActive = u.lastCheckin === today2;
-    return `<tr>
+    const statusBadge = u.banned ? '<span class="badge banned">Banned</span>' : `<span class="badge ${isActive ? 'active' : 'inactive'}">${isActive ? 'Today' : 'Away'}</span>`;
+    const actions = u.banned
+      ? `<button class="action-btn unban" onclick="unbanUser('${u.name}')">Unban</button>`
+      : `<button class="action-btn ban" onclick="banUser('${u.name}')">Ban</button>`;
+    return `<tr style="${u.banned ? 'opacity:.5' : ''}">
       <td><span class="name" onclick="loadDetail('${u.name}')">${esc(u.name)}</span></td>
       <td>${u.checkinDays} days</td>
       <td>${u.wordCount}</td>
       <td>${u.scoreCount}</td>
       <td>${u.lastCheckin}</td>
-      <td><span class="badge ${isActive ? 'active' : 'inactive'}">${isActive ? 'Today' : 'Away'}</span></td>
+      <td>${statusBadge}</td>
+      <td>${actions}<button class="action-btn del" onclick="deleteUser('${u.name}')">Delete</button></td>
     </tr>`;
   }).join('');
+
+  loadInvites();
 }
 
 async function loadDetail(name) {
@@ -235,6 +266,36 @@ function renderDetail(result) {
 }
 
 function esc(s) { const d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
+
+async function banUser(name) {
+  if (!confirm(`Ban "${name}"? They will lose access to TTS and sync.`)) return;
+  await fetch(`${API}/admin/ban?key=${adminKey}`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ name }) });
+  loadDashboard();
+}
+async function unbanUser(name) {
+  await fetch(`${API}/admin/unban?key=${adminKey}`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ name }) });
+  loadDashboard();
+}
+async function deleteUser(name) {
+  if (!confirm(`Permanently delete "${name}" and all their data?`)) return;
+  await fetch(`${API}/admin/delete?key=${adminKey}`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ name }) });
+  loadDashboard();
+}
+async function generateInvites() {
+  const resp = await fetch(`${API}/admin/invite?key=${adminKey}`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ count: 5 }) });
+  const result = await resp.json();
+  loadInvites();
+}
+async function loadInvites() {
+  const resp = await fetch(`${API}/admin/invites?key=${adminKey}`);
+  if (!resp.ok) return;
+  const result = await resp.json();
+  const el = document.getElementById('invite-list');
+  if (!result.invites.length) { el.innerHTML = '<div style="font-size:13px;color:var(--text2)">No invite codes yet. Generate some to let people register.</div>'; return; }
+  const available = result.invites.filter(i => !i.used);
+  const used = result.invites.filter(i => i.used);
+  el.innerHTML = `<div class="invite-grid">${available.map(i => `<span class="invite-chip available" onclick="navigator.clipboard.writeText('${i.code}');this.textContent='Copied!';setTimeout(()=>{this.textContent='${i.code}'},1000)" title="Click to copy">${i.code}</span>`).join('')}${used.map(i => `<span class="invite-chip used" title="Used by ${i.usedBy || '?'}">${i.code}</span>`).join('')}</div>`;
+}
 </script>
 </body>
 </html>

@@ -31,9 +31,14 @@ export default {
     if (path === '/tts' && request.method === 'POST') return handleTTS(request, env);
     if (path === '/assess' && request.method === 'POST') return handleAssess(request, env);
 
-    // Admin — list all users (requires ADMIN_KEY)
+    // Admin
     if (path === '/admin/users' && request.method === 'GET') return handleAdminUsers(request, env);
     if (path.startsWith('/admin/user/') && request.method === 'GET') return handleAdminUserDetail(request, env);
+    if (path === '/admin/ban' && request.method === 'POST') return handleAdminBan(request, env);
+    if (path === '/admin/unban' && request.method === 'POST') return handleAdminUnban(request, env);
+    if (path === '/admin/delete' && request.method === 'POST') return handleAdminDelete(request, env);
+    if (path === '/admin/invite' && request.method === 'POST') return handleAdminInvite(request, env);
+    if (path === '/admin/invites' && request.method === 'GET') return handleAdminListInvites(request, env);
 
     // Auth
     if (path === '/auth' && request.method === 'POST') return handleAuth(request, env);
@@ -69,6 +74,20 @@ async function handleAuth(request, env) {
     const existing = await env.EP_DATA.get(key, 'json');
     if (existing) return json({ error: 'Name already taken' }, 409);
 
+    // Invite code required
+    const invite = (await request.clone().json()).invite || '';
+    const inviteKey = 'invite:' + invite;
+    const inviteData = await env.EP_DATA.get(inviteKey, 'json');
+    if (!inviteData || inviteData.used) {
+      return json({ error: 'Valid invite code required' }, 403);
+    }
+
+    // Mark invite as used
+    inviteData.used = true;
+    inviteData.usedBy = name.toLowerCase().trim();
+    inviteData.usedAt = new Date().toISOString();
+    await env.EP_DATA.put(inviteKey, JSON.stringify(inviteData));
+
     const token = crypto.randomUUID();
     const userData = {
       pin,
@@ -83,6 +102,7 @@ async function handleAuth(request, env) {
   if (action === 'login') {
     const user = await env.EP_DATA.get(key, 'json');
     if (!user || user.pin !== pin) return json({ error: 'Invalid name or PIN' }, 401);
+    if (user.banned) return json({ error: 'Account has been disabled' }, 403);
     return json({ token: user.token, name: name.trim(), data: user.data });
   }
 
@@ -95,6 +115,8 @@ async function authCheck(request, env) {
   if (!token) return null;
   const username = await env.EP_DATA.get('token:' + token);
   if (!username) return null;
+  const user = await env.EP_DATA.get('user:' + username, 'json');
+  if (user && user.banned) return null;
   return username;
 }
 
@@ -254,6 +276,7 @@ async function handleAdminUsers(request, env) {
       scoreCount,
       lastCheckin,
       theme: d.theme || 'growth',
+      banned: !!data.banned,
     });
   }
   return json({ users, total: users.length });
@@ -269,4 +292,59 @@ async function handleAdminUserDetail(request, env) {
   // Strip sensitive fields
   const { pin, token, ...safe } = data;
   return json({ name, ...safe });
+}
+
+async function handleAdminBan(request, env) {
+  if (!adminAuth(request, env)) return json({ error: 'Forbidden' }, 403);
+  const { name } = await request.json();
+  const user = await env.EP_DATA.get('user:' + name, 'json');
+  if (!user) return json({ error: 'User not found' }, 404);
+  user.banned = true;
+  await env.EP_DATA.put('user:' + name, JSON.stringify(user));
+  return json({ ok: true, name, banned: true });
+}
+
+async function handleAdminUnban(request, env) {
+  if (!adminAuth(request, env)) return json({ error: 'Forbidden' }, 403);
+  const { name } = await request.json();
+  const user = await env.EP_DATA.get('user:' + name, 'json');
+  if (!user) return json({ error: 'User not found' }, 404);
+  user.banned = false;
+  await env.EP_DATA.put('user:' + name, JSON.stringify(user));
+  return json({ ok: true, name, banned: false });
+}
+
+async function handleAdminDelete(request, env) {
+  if (!adminAuth(request, env)) return json({ error: 'Forbidden' }, 403);
+  const { name } = await request.json();
+  const user = await env.EP_DATA.get('user:' + name, 'json');
+  if (!user) return json({ error: 'User not found' }, 404);
+  if (user.token) await env.EP_DATA.delete('token:' + user.token);
+  await env.EP_DATA.delete('user:' + name);
+  return json({ ok: true, deleted: name });
+}
+
+async function handleAdminInvite(request, env) {
+  if (!adminAuth(request, env)) return json({ error: 'Forbidden' }, 403);
+  const { count } = await request.json();
+  const num = Math.min(count || 1, 20);
+  const codes = [];
+  for (let i = 0; i < num; i++) {
+    const code = crypto.randomUUID().slice(0, 8);
+    await env.EP_DATA.put('invite:' + code, JSON.stringify({ created: new Date().toISOString(), used: false }));
+    codes.push(code);
+  }
+  return json({ codes });
+}
+
+async function handleAdminListInvites(request, env) {
+  if (!adminAuth(request, env)) return json({ error: 'Forbidden' }, 403);
+  const list = await env.EP_DATA.list({ prefix: 'invite:' });
+  const invites = [];
+  for (const key of list.keys) {
+    const data = await env.EP_DATA.get(key.name, 'json');
+    if (!data) continue;
+    invites.push({ code: key.name.replace('invite:', ''), ...data });
+  }
+  return json({ invites });
 }
