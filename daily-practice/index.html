@@ -224,13 +224,39 @@
   .read-option h3{font-size:15px;margin-bottom:4px;}
   .read-option p{font-size:13px;color:var(--text-secondary);margin:0;}
   .read-option input[type=file]{display:none;}
+  /* Book reader */
+  .reader-wrap{position:fixed;top:0;left:0;right:0;bottom:0;background:var(--surface);z-index:150;display:none;flex-direction:column;}
+  .reader-wrap.visible{display:flex;}
+  .reader-top{display:flex;align-items:center;justify-content:space-between;padding:10px 16px;border-bottom:1px solid var(--border);min-height:44px;padding-top:env(safe-area-inset-top,10px);}
+  .reader-top .title{font-size:14px;font-weight:600;flex:1;text-align:center;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;padding:0 8px;}
+  .reader-top .chapter-label{font-size:11px;color:var(--text-secondary);text-align:center;margin-top:2px;}
+  .reader-top button{background:none;border:none;color:var(--accent);font-size:13px;cursor:pointer;padding:4px 8px;white-space:nowrap;}
+  .reader-viewport{flex:1;overflow:hidden;position:relative;-webkit-tap-highlight-color:transparent;touch-action:pan-y;}
+  .reader-columns{height:100%;padding:20px 24px;column-gap:48px;column-fill:auto;overflow:hidden;transition:transform .3s cubic-bezier(.25,.1,.25,1);}
+  .reader-columns p{margin-bottom:14px;text-indent:0;orphans:2;widows:2;line-height:1.9;font-size:17px;color:var(--text);}
+  .reader-columns .w{cursor:pointer;border-radius:3px;padding:0 1px;transition:background .1s;-webkit-tap-highlight-color:transparent;}
+  .reader-columns .w:hover{background:var(--accent-light);}
+  .reader-columns .w.active{background:var(--accent);color:#fff;}
+  .reader-columns .w.saved{border-bottom:2px solid var(--orange);}
+  .reader-bottom{display:flex;align-items:center;gap:12px;padding:8px 16px 8px;padding-bottom:calc(8px + env(safe-area-inset-bottom,0px));border-top:1px solid var(--border);}
+  .reader-progress{flex:1;height:3px;background:var(--border);border-radius:2px;overflow:hidden;}
+  .reader-progress-fill{height:100%;background:var(--accent);border-radius:2px;transition:width .3s;}
+  .reader-page-label{font-size:12px;color:var(--text-secondary);white-space:nowrap;}
+  .reader-toc{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.4);z-index:160;display:none;}
+  .reader-toc.visible{display:block;}
+  .reader-toc-panel{position:absolute;top:0;bottom:0;left:0;width:280px;background:var(--surface);overflow-y:auto;padding:20px 0;padding-top:calc(20px + env(safe-area-inset-top,0px));animation:slideRight .25s ease;}
+  @keyframes slideRight{from{transform:translateX(-100%);}to{transform:translateX(0);}}
+  .reader-toc-title{padding:0 16px;font-size:12px;color:var(--text-secondary);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;}
+  .reader-toc-item{padding:10px 16px;font-size:14px;cursor:pointer;transition:background .1s;border-left:3px solid transparent;}
+  .reader-toc-item:hover{background:rgba(0,0,0,.03);}
+  .reader-toc-item.current{color:var(--accent);font-weight:600;border-left-color:var(--accent);background:var(--accent-light);}
   .chapter-nav{display:flex;align-items:center;gap:8px;margin-bottom:14px;flex-wrap:wrap;}
   .chapter-select{flex:1;padding:8px 12px;border-radius:8px;border:1px solid var(--border);background:var(--surface);color:var(--text);font-size:14px;outline:none;min-width:0;}
-  .chapter-select:focus{border-color:var(--accent);}
   .chapter-btn{padding:8px 14px;border-radius:8px;border:1px solid var(--border);background:var(--surface);color:var(--text-secondary);font-size:13px;cursor:pointer;white-space:nowrap;}
   .chapter-btn:hover{border-color:var(--accent);color:var(--accent);}
   .chapter-btn:disabled{opacity:.3;cursor:default;}
   .book-title{font-size:13px;color:var(--text-secondary);margin-bottom:6px;}
+  @media(max-width:480px){.reader-columns{padding:16px 20px;column-gap:40px;}.reader-columns p{font-size:16px;line-height:1.85;}.reader-toc-panel{width:260px;}}
 
   /* Word popup */
   .word-popup-overlay{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.3);z-index:300;-webkit-tap-highlight-color:transparent;}
@@ -348,6 +374,25 @@
 <div class="page" id="page-reading">
   <div class="header"><div class="header-inner"><h1>Reading</h1><div class="date-label">Tap any word to look up</div></div></div>
   <div class="container" id="reading-content"></div>
+</div>
+
+<!-- Book reader (fullscreen) -->
+<div class="reader-wrap" id="reader-wrap">
+  <div class="reader-top">
+    <button onclick="toggleToc()">Contents</button>
+    <div><div class="title" id="reader-title"></div><div class="chapter-label" id="reader-chapter-label"></div></div>
+    <button onclick="closeBookReader()">Done</button>
+  </div>
+  <div class="reader-viewport" id="reader-viewport">
+    <div class="reader-columns" id="reader-columns"></div>
+  </div>
+  <div class="reader-bottom">
+    <div class="reader-page-label" id="reader-page-label">1 / 1</div>
+    <div class="reader-progress"><div class="reader-progress-fill" id="reader-progress-fill"></div></div>
+  </div>
+</div>
+<div class="reader-toc" id="reader-toc" onclick="if(event.target===this)toggleToc()">
+  <div class="reader-toc-panel" id="reader-toc-panel"></div>
 </div>
 
 <!-- Word popup -->
@@ -962,31 +1007,40 @@ function extractText(node) {
   return text;
 }
 
+// ── Book reader (Apple Books style) ──
+let readerPage = 0;
+let readerTotalPages = 1;
+let readerPageWidth = 0;
+let touchStartX = 0, touchStartY = 0, touchDeltaX = 0, isSwiping = false;
+let readerBookTitle = '';
+
 function renderBookChapter(bookTitle) {
-  const el = document.getElementById('reading-content');
+  readerBookTitle = bookTitle;
+  openBookReader();
+}
+
+function openBookReader() {
+  const wrap = document.getElementById('reader-wrap');
+  wrap.classList.add('visible');
+  document.getElementById('reader-title').textContent = readerBookTitle;
+  loadChapterContent();
+  setupReaderGestures();
+}
+
+function loadChapterContent() {
   const ch = bookChapters[currentChapter];
   if (!ch) return;
 
-  let h = `<div class="book-title">${escHtml(bookTitle)}</div>`;
-  h += '<div class="chapter-nav">';
-  h += `<button class="chapter-btn" onclick="prevChapter()" ${currentChapter <= 0 ? 'disabled' : ''}>Prev</button>`;
-  h += `<select class="chapter-select" onchange="goToChapter(this.value)">`;
-  bookChapters.forEach((c, i) => {
-    h += `<option value="${i}" ${i === currentChapter ? 'selected' : ''}>${i + 1}. ${escHtml(c.title)}</option>`;
-  });
-  h += '</select>';
-  h += `<button class="chapter-btn" onclick="nextChapter()" ${currentChapter >= bookChapters.length - 1 ? 'disabled' : ''}>Next</button>`;
-  h += `<button class="chapter-btn" onclick="closeBook()" style="color:var(--red);border-color:rgba(247,65,95,.3)">Close</button>`;
-  h += '</div>';
+  document.getElementById('reader-chapter-label').textContent = ch.title;
 
-  // Render chapter text with clickable words
-  h += '<div class="read-body">';
+  // Build chapter HTML
+  let h = '';
   const paragraphs = ch.text.split(/\n\s*\n|\n/);
-  paragraphs.forEach((para, pi) => {
+  paragraphs.forEach(para => {
     if (!para.trim()) return;
     h += '<p>';
     const tokens = para.match(/[\w']+|[^\w\s]+|\s+/g) || [];
-    tokens.forEach((tok, ti) => {
+    tokens.forEach(tok => {
       if (/^\s+$/.test(tok)) { h += ' '; return; }
       if (/^[^\w']+$/.test(tok)) { h += tok; return; }
       const clean = tok.toLowerCase().replace(/[^a-z']/g, '');
@@ -995,32 +1049,136 @@ function renderBookChapter(bookTitle) {
     });
     h += '</p>';
   });
-  h += '</div>';
-  el.innerHTML = h;
-  el.scrollTop = 0;
+
+  const cols = document.getElementById('reader-columns');
+  cols.innerHTML = h;
+  cols.style.transform = 'translateX(0)';
+
+  // Calculate pages after render
+  requestAnimationFrame(() => {
+    setTimeout(() => {
+      const viewport = document.getElementById('reader-viewport');
+      readerPageWidth = viewport.offsetWidth;
+      cols.style.columnWidth = (readerPageWidth - 48) + 'px';
+      readerTotalPages = Math.max(1, Math.ceil(cols.scrollWidth / readerPageWidth));
+      readerPage = 0;
+      updateReaderUI();
+      buildToc();
+    }, 50);
+  });
+}
+
+function updateReaderUI() {
+  const pct = readerTotalPages > 1 ? ((readerPage + 1) / readerTotalPages * 100) : 100;
+  document.getElementById('reader-progress-fill').style.width = pct + '%';
+  document.getElementById('reader-page-label').textContent = `${readerPage + 1} / ${readerTotalPages}`;
+}
+
+function goReaderPage(dir) {
+  const next = readerPage + dir;
+  if (next < 0) {
+    // Go to prev chapter
+    if (currentChapter > 0) { currentChapter--; localStorage.setItem(STORE_CHAPTER, String(currentChapter)); loadChapterContent(); readerPage = 0; }
+    return;
+  }
+  if (next >= readerTotalPages) {
+    // Go to next chapter
+    if (currentChapter < bookChapters.length - 1) { currentChapter++; localStorage.setItem(STORE_CHAPTER, String(currentChapter)); loadChapterContent(); }
+    return;
+  }
+  readerPage = next;
+  const cols = document.getElementById('reader-columns');
+  cols.style.transition = 'transform .3s cubic-bezier(.25,.1,.25,1)';
+  cols.style.transform = `translateX(-${readerPage * readerPageWidth}px)`;
+  updateReaderUI();
+}
+
+function setupReaderGestures() {
+  const vp = document.getElementById('reader-viewport');
+  // Prevent duplicate listeners
+  vp.onpointerdown = null; vp.onpointermove = null; vp.onpointerup = null;
+
+  vp.addEventListener('touchstart', e => {
+    touchStartX = e.touches[0].clientX;
+    touchStartY = e.touches[0].clientY;
+    touchDeltaX = 0;
+    isSwiping = false;
+    document.getElementById('reader-columns').style.transition = 'none';
+  }, { passive: true });
+
+  vp.addEventListener('touchmove', e => {
+    const dx = e.touches[0].clientX - touchStartX;
+    const dy = e.touches[0].clientY - touchStartY;
+    if (!isSwiping && Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 10) isSwiping = true;
+    if (!isSwiping) return;
+    touchDeltaX = dx;
+    const cols = document.getElementById('reader-columns');
+    const offset = -(readerPage * readerPageWidth) + dx * 0.6;
+    cols.style.transform = `translateX(${offset}px)`;
+  }, { passive: true });
+
+  vp.addEventListener('touchend', () => {
+    if (isSwiping && Math.abs(touchDeltaX) > 50) {
+      goReaderPage(touchDeltaX < 0 ? 1 : -1);
+    } else {
+      // Snap back
+      const cols = document.getElementById('reader-columns');
+      cols.style.transition = 'transform .3s cubic-bezier(.25,.1,.25,1)';
+      cols.style.transform = `translateX(-${readerPage * readerPageWidth}px)`;
+    }
+    isSwiping = false;
+    touchDeltaX = 0;
+  }, { passive: true });
+
+  // Click to turn page (desktop + tap without swipe)
+  vp.addEventListener('click', e => {
+    if (isSwiping || Math.abs(touchDeltaX) > 10) return;
+    // Don't trigger on word taps
+    if (e.target.classList.contains('w')) return;
+    const x = e.clientX;
+    const w = vp.offsetWidth;
+    if (x < w * 0.3) goReaderPage(-1);
+    else if (x > w * 0.7) goReaderPage(1);
+  });
+}
+
+function buildToc() {
+  const panel = document.getElementById('reader-toc-panel');
+  let h = '<div class="reader-toc-title">Contents</div>';
+  bookChapters.forEach((c, i) => {
+    h += `<div class="reader-toc-item${i === currentChapter ? ' current' : ''}" onclick="goToChapter(${i});toggleToc()">${i + 1}. ${escHtml(c.title)}</div>`;
+  });
+  panel.innerHTML = h;
+}
+
+function toggleToc() {
+  document.getElementById('reader-toc').classList.toggle('visible');
+}
+
+function closeBookReader() {
+  document.getElementById('reader-wrap').classList.remove('visible');
+  document.getElementById('reader-toc').classList.remove('visible');
 }
 
 function prevChapter() {
   if (currentChapter <= 0) return;
   currentChapter--;
   localStorage.setItem(STORE_CHAPTER, String(currentChapter));
-  const bookTitle = JSON.parse(localStorage.getItem(STORE_BOOK)).title;
-  renderBookChapter(bookTitle);
+  loadChapterContent();
 }
 function nextChapter() {
   if (currentChapter >= bookChapters.length - 1) return;
   currentChapter++;
   localStorage.setItem(STORE_CHAPTER, String(currentChapter));
-  const bookTitle = JSON.parse(localStorage.getItem(STORE_BOOK)).title;
-  renderBookChapter(bookTitle);
+  loadChapterContent();
 }
 function goToChapter(idx) {
   currentChapter = parseInt(idx);
   localStorage.setItem(STORE_CHAPTER, String(currentChapter));
-  const bookTitle = JSON.parse(localStorage.getItem(STORE_BOOK)).title;
-  renderBookChapter(bookTitle);
+  loadChapterContent();
 }
 function closeBook() {
+  closeBookReader();
   localStorage.removeItem(STORE_BOOK);
   localStorage.removeItem(STORE_CHAPTER);
   bookChapters = [];
