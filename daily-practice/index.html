@@ -401,6 +401,41 @@
   .wb-remove:hover { color: var(--red); background: rgba(248,81,73,0.1); }
   .wb-remove svg { width: 16px; height: 16px; }
 
+  /* ── Wordbook add form ── */
+  .wb-add-form {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+  .wb-add-input {
+    flex: 1;
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--text);
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .wb-add-input::placeholder { color: var(--text-secondary); }
+  .wb-add-input:focus { border-color: var(--accent); }
+  .wb-add-btn {
+    padding: 10px 18px;
+    border-radius: 10px;
+    border: none;
+    background: var(--accent);
+    color: #0d1117;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.15s;
+  }
+  .wb-add-btn:hover { background: var(--accent-hover); }
+  .wb-add-btn:active { transform: scale(0.96); }
+  .wb-add-btn:disabled { opacity: 0.4; cursor: default; }
+
   /* ── Speed control ── */
   .speed-control {
     display: flex; align-items: center; gap: 8px; justify-content: center;
@@ -795,16 +830,24 @@ function renderWordbook() {
   const wb = getWordbook();
   let html = '';
 
+  // Add word form - always visible
+  html += `
+    <div class="wb-add-form">
+      <input class="wb-add-input" id="wb-word-input" type="text" placeholder="Type a word, e.g. funnel" autocomplete="off" autocapitalize="none" spellcheck="false">
+      <button class="wb-add-btn" id="wb-add-btn" onclick="handleAddWord()">Add</button>
+    </div>
+  `;
+
   if (wb.length === 0) {
-    html = `<div class="wb-empty">
+    html += `<div class="wb-empty">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
       <div style="font-size:16px;font-weight:600;margin-bottom:6px">Wordbook is empty</div>
-      <div>Tap the star icon next to any vocabulary word to save it here.</div>
+      <div>Type a word above or tap the star icon in lessons to save words here.</div>
     </div>`;
   } else {
     html += `<div class="wb-count">${wb.length} word${wb.length > 1 ? 's' : ''} saved</div>`;
-    wb.sort((a, b) => b.addedAt.localeCompare(a.addedAt));
-    for (const w of wb) {
+    const sorted = [...wb].sort((a, b) => b.addedAt.localeCompare(a.addedAt));
+    for (const w of sorted) {
       const addedDate = new Date(w.addedAt).toLocaleDateString('zh-CN');
       html += `
         <div class="wb-card">
@@ -814,9 +857,9 @@ function renderWordbook() {
           <div class="wb-card-body">
             <div>
               <span class="wb-card-word">${escHtml(w.word)}</span>
-              <span class="wb-card-phonetic">${escHtml(w.phonetic)}</span>
+              <span class="wb-card-phonetic">${escHtml(w.phonetic || '')}</span>
             </div>
-            <div class="wb-card-meaning">${escHtml(w.meaning)}</div>
+            ${w.meaning ? `<div class="wb-card-meaning">${escHtml(w.meaning)}</div>` : ''}
             <div class="wb-card-source">Added ${addedDate}${w.source ? ' from ' + w.source : ''}</div>
           </div>
           <button class="wb-remove" onclick="removeWord('${escJs(w.word)}')" aria-label="Remove">
@@ -828,6 +871,46 @@ function renderWordbook() {
   }
 
   document.getElementById('wb-content').innerHTML = html;
+
+  // Bind Enter key on input
+  const input = document.getElementById('wb-word-input');
+  if (input) {
+    input.addEventListener('keydown', e => { if (e.key === 'Enter') handleAddWord(); });
+    input.focus();
+  }
+}
+
+function handleAddWord() {
+  const input = document.getElementById('wb-word-input');
+  const raw = (input.value || '').trim();
+  if (!raw) return;
+
+  // Parse: support "word" or "word /phonetic/ meaning" or "word - meaning"
+  let word = raw, phonetic = '', meaning = '';
+  // Try "word /phonetic/ meaning"
+  const phMatch = raw.match(/^(.+?)\s+(\/[^/]+\/)\s*(.*)$/);
+  if (phMatch) {
+    word = phMatch[1].trim();
+    phonetic = phMatch[2].trim();
+    meaning = phMatch[3].trim();
+  } else {
+    // Try "word - meaning" or "word = meaning"
+    const dashMatch = raw.match(/^(.+?)\s*[-=]\s+(.+)$/);
+    if (dashMatch) {
+      word = dashMatch[1].trim();
+      meaning = dashMatch[2].trim();
+    }
+  }
+
+  if (isInWordbook(word)) {
+    input.value = '';
+    input.placeholder = 'Already in wordbook!';
+    setTimeout(() => { input.placeholder = "Type a word, e.g. funnel"; }, 1500);
+    return;
+  }
+
+  addToWordbook(word, phonetic, meaning, 'manual');
+  renderWordbook();
 }
 
 function toggleStar(btn, word, phonetic, meaning, source) {
