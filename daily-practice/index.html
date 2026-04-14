@@ -983,11 +983,7 @@ function toggleRecord(btn){
 
 // ══════ READING ══════
 const STORE_READING = 'ep_reading_text';
-const STORE_BOOK = 'ep_book';
-const STORE_CHAPTER = 'ep_chapter';
 const dictCache = {};
-let bookChapters = []; // [{title, text}]
-let currentChapter = 0;
 
 async function renderReading() {
   const el = document.getElementById('reading-content');
@@ -1135,14 +1131,6 @@ const READER_THEMES = {
 
 // epub.js needs the raw EPUB ArrayBuffer, not parsed chapters
 let epubArrayBuffer = null;
-
-function renderBookChapter(bookTitle) {
-  readerBookTitle = bookTitle;
-  // epub.js needs the raw file — load from cloud or localStorage
-  if (epubArrayBuffer) {
-    openEpubReader(epubArrayBuffer);
-  }
-}
 
 function openEpubReader(arrayBuffer) {
   const wrap = document.getElementById('reader-wrap');
@@ -1307,7 +1295,7 @@ function buildToc() {
   const toc = epubBook.navigation.toc;
   let h = '<div class="reader-toc-title">Contents</div>';
   toc.forEach((item, i) => {
-    h += `<div class="reader-toc-item" onclick="epubRendition.display('${item.href}');toggleToc()">${escHtml(item.label.trim())}</div>`;
+    h += `<div class="reader-toc-item" onclick="epubRendition.display('${escJs(item.href)}');toggleToc()">${escHtml(item.label.trim())}</div>`;
   });
   document.getElementById('reader-toc-panel').innerHTML = h;
 }
@@ -1321,28 +1309,20 @@ function closeBookReader() {
 }
 
 function prevChapter() {
-  if (currentChapter <= 0) return;
-  currentChapter--;
-  localStorage.setItem(STORE_CHAPTER, String(currentChapter));
-  loadChapterContent();
+  if (!epubBook || !epubRendition) return;
+  const spine = epubBook.spine;
+  const current = epubRendition.location?.start?.href;
+  if (!current) return;
+  const idx = spine.items.findIndex(s => current.includes(s.href));
+  if (idx > 0) epubRendition.display(spine.items[idx - 1].href);
 }
 function nextChapter() {
-  if (currentChapter >= bookChapters.length - 1) return;
-  currentChapter++;
-  localStorage.setItem(STORE_CHAPTER, String(currentChapter));
-  loadChapterContent();
-}
-function goToChapter(idx) {
-  currentChapter = parseInt(idx);
-  localStorage.setItem(STORE_CHAPTER, String(currentChapter));
-  loadChapterContent();
-}
-function closeBook() {
-  closeBookReader();
-  localStorage.removeItem(STORE_BOOK);
-  localStorage.removeItem(STORE_CHAPTER);
-  bookChapters = [];
-  renderReading();
+  if (!epubBook || !epubRendition) return;
+  const spine = epubBook.spine;
+  const current = epubRendition.location?.start?.href;
+  if (!current) return;
+  const idx = spine.items.findIndex(s => current.includes(s.href));
+  if (idx >= 0 && idx < spine.items.length - 1) epubRendition.display(spine.items[idx + 1].href);
 }
 
 function renderReadingBody(text) {
@@ -1421,8 +1401,9 @@ async function lookupWord(el) {
     meanings = (data[0].meanings || []).slice(0, 3);
   }
 
-  // Highlight word in context
-  const ctxHtml = ctx.replace(new RegExp(`\\b${word}\\b`, 'gi'), m => `<mark>${m}</mark>`);
+  // Highlight word in context (escape first, then wrap)
+  const ctxEscaped = escHtml(ctx);
+  const ctxHtml = ctxEscaped.replace(new RegExp(`\\b${word}\\b`, 'gi'), m => `<mark>${m}</mark>`);
 
   let h = `<div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;flex-wrap:wrap"><span class="word-popup-word">${escHtml(word)}</span>`;
   if (phonetic) h += `<span class="word-popup-phonetic">${escHtml(phonetic)}</span>`;

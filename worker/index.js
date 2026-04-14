@@ -88,7 +88,8 @@ export default {
 
 // ── Auth ─────────────────────────────────────────────
 async function handleAuth(request, env) {
-  const { action, name, pin } = await request.json();
+  const body = await request.json();
+  const { action, name, pin } = body;
   if (!name || !pin || pin.length < 4) {
     return json({ error: 'Name and 4-digit PIN required' }, 400);
   }
@@ -99,7 +100,7 @@ async function handleAuth(request, env) {
     if (existing) return json({ error: 'Name already taken' }, 409);
 
     // Invite code required
-    const invite = (await request.clone().json()).invite || '';
+    const invite = body.invite || '';
     const inviteKey = 'invite:' + invite;
     const inviteData = await env.EP_DATA.get(inviteKey, 'json');
     if (!inviteData || inviteData.used) {
