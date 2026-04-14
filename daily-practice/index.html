@@ -231,13 +231,17 @@
   .reader-columns{
     overflow:hidden;
     column-fill:auto;
+    padding:0;margin:0;
     -webkit-font-smoothing:antialiased;
+    transition:transform .3s cubic-bezier(.25,.1,.25,1);
+  }
+  .reader-columns p{
+    text-indent:0;orphans:2;widows:2;
+    margin:0;padding:0 24px 0.8em 24px;
     word-wrap:break-word;overflow-wrap:break-word;
     -webkit-hyphens:auto;hyphens:auto;
-    transition:transform .3s cubic-bezier(.25,.1,.25,1);
-    box-sizing:border-box;
   }
-  .reader-columns p{text-indent:0;orphans:2;widows:2;margin-top:0;margin-bottom:0.8em;word-wrap:break-word;overflow-wrap:break-word;}
+  .reader-columns p:first-child{padding-top:20px;}
   .reader-columns .w{cursor:pointer;border-radius:3px;padding:0 1px;-webkit-tap-highlight-color:transparent;}
   .reader-columns .w:hover{background:rgba(0,0,0,.06);}
   .reader-columns .w.active{background:var(--accent);color:#fff;border-radius:3px;}
@@ -1254,13 +1258,11 @@ function applyReaderTheme() {
 
 function applyReaderTypography() {
   const cols = document.getElementById('reader-columns');
-  const w = window.innerWidth;
-  const pad = w <= 380 ? 16 : w <= 480 ? 20 : 28;
-  const vPad = w <= 480 ? 16 : 24;
   cols.style.fontSize = readerFontSize + 'px';
   cols.style.lineHeight = readerLineHeight.toFixed(1);
-  cols.style.padding = `${vPad}px ${pad}px`;
-  cols.style.columnGap = (pad * 2) + 'px';
+  // No padding on columns — padding is on <p> elements
+  cols.style.padding = '0';
+  cols.style.columnGap = '0';
   document.getElementById('font-size-val').textContent = readerFontSize;
   document.getElementById('line-height-val').textContent = readerLineHeight.toFixed(1);
   localStorage.setItem('ep_reader_font', readerFontSize);
@@ -1297,43 +1299,26 @@ function loadChapterContent() {
 }
 
 function calcReaderPages(cols, isNewChapter) {
+  const vp = document.getElementById('reader-viewport');
+  readerPageWidth = vp.offsetWidth;
+  const vpHeight = vp.offsetHeight;
+  if (!readerPageWidth || !vpHeight) return;
+
+  // Simple: each column = full viewport width, no gap, no padding
+  cols.style.width = readerPageWidth + 'px';
+  cols.style.height = vpHeight + 'px';
+  cols.style.columnWidth = readerPageWidth + 'px';
+  cols.style.columnGap = '0px';
+  cols.style.overflow = 'hidden';
+
+  // Wait for layout, then measure
   requestAnimationFrame(() => {
-    const vp = document.getElementById('reader-viewport');
-    readerPageWidth = vp.offsetWidth;
-    const vpHeight = vp.offsetHeight;
-    if (!readerPageWidth || !vpHeight) return;
-
-    const pad = parseInt(cols.style.paddingLeft) || 20;
-    const colW = readerPageWidth - pad * 2;
-    const gap = parseInt(cols.style.columnGap) || (pad * 2);
-
-    // Set explicit dimensions
-    cols.style.width = readerPageWidth + 'px';
-    cols.style.height = vpHeight + 'px';
-    cols.style.columnWidth = colW + 'px';
-
     requestAnimationFrame(() => {
-      // Measure: clone into a hidden measurer with no width/overflow constraint
-      const measurer = cols.cloneNode(true);
-      measurer.style.cssText = cols.style.cssText;
-      measurer.style.position = 'absolute';
-      measurer.style.visibility = 'hidden';
-      measurer.style.overflow = 'visible';
-      measurer.style.width = 'auto';
-      measurer.style.left = '-99999px';
-      measurer.style.transition = 'none';
-      measurer.style.transform = 'none';
-      vp.appendChild(measurer);
-
-      const sw = measurer.scrollWidth;
-      vp.removeChild(measurer);
-
-      // Calculate pages: each page = colW + gap, minus one gap for last page, plus padding
+      const sw = cols.scrollWidth;
       readerTotalPages = Math.max(1, Math.round(sw / readerPageWidth));
 
       if (isNewChapter) { readerPage = 0; buildToc(); }
       else { readerPage = Math.min(readerPage, readerTotalPages - 1); }
-      cols.style.overflow = 'hidden';
       cols.style.transition = isNewChapter ? 'none' : 'transform .3s cubic-bezier(.25,.1,.25,1)';
       cols.style.transform = `translateX(-${readerPage * readerPageWidth}px)`;
       updateReaderUI();
