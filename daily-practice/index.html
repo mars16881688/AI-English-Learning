@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Daily English Practice</title>
+<script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
 <style>
   :root {
     --bg: #f5f6f6; --surface: #ffffff; --border: #eaebec;
@@ -216,6 +217,20 @@
   .read-body .w.active{background:var(--accent);color:#fff;border-radius:4px;}
   .read-body .w.saved{border-bottom:2px solid var(--orange);}
   .read-body p{margin-bottom:12px;}
+  .read-import{display:flex;flex-direction:column;gap:12px;margin-bottom:20px;}
+  .read-option{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px;text-align:center;cursor:pointer;transition:border-color .15s;}
+  .read-option:hover{border-color:var(--accent);}
+  .read-option svg{width:32px;height:32px;color:var(--accent);margin-bottom:8px;}
+  .read-option h3{font-size:15px;margin-bottom:4px;}
+  .read-option p{font-size:13px;color:var(--text-secondary);margin:0;}
+  .read-option input[type=file]{display:none;}
+  .chapter-nav{display:flex;align-items:center;gap:8px;margin-bottom:14px;flex-wrap:wrap;}
+  .chapter-select{flex:1;padding:8px 12px;border-radius:8px;border:1px solid var(--border);background:var(--surface);color:var(--text);font-size:14px;outline:none;min-width:0;}
+  .chapter-select:focus{border-color:var(--accent);}
+  .chapter-btn{padding:8px 14px;border-radius:8px;border:1px solid var(--border);background:var(--surface);color:var(--text-secondary);font-size:13px;cursor:pointer;white-space:nowrap;}
+  .chapter-btn:hover{border-color:var(--accent);color:var(--accent);}
+  .chapter-btn:disabled{opacity:.3;cursor:default;}
+  .book-title{font-size:13px;color:var(--text-secondary);margin-bottom:6px;}
 
   /* Word popup */
   .word-popup-overlay{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.3);z-index:300;-webkit-tap-highlight-color:transparent;}
@@ -792,43 +807,241 @@ function toggleRecord(btn){
 
 // ══════ READING ══════
 const STORE_READING = 'ep_reading_text';
+const STORE_BOOK = 'ep_book';
+const STORE_CHAPTER = 'ep_chapter';
 const dictCache = {};
+let bookChapters = []; // [{title, text}]
+let currentChapter = 0;
 
 function renderReading() {
-  const saved = localStorage.getItem(STORE_READING) || '';
   const el = document.getElementById('reading-content');
+  const savedBook = localStorage.getItem(STORE_BOOK);
+  const savedText = localStorage.getItem(STORE_READING);
 
-  if (!saved) {
-    el.innerHTML = `<textarea class="read-input" id="read-input" placeholder="Paste any English text here — article, email, document..."></textarea><button class="read-start" onclick="startReading()">Start Reading</button>`;
+  if (savedBook) {
+    try {
+      const book = JSON.parse(savedBook);
+      bookChapters = book.chapters;
+      currentChapter = parseInt(localStorage.getItem(STORE_CHAPTER) || '0');
+      renderBookChapter(book.title);
+      return;
+    } catch {}
+  }
+
+  if (savedText) {
+    renderReadingBody(savedText);
     return;
   }
-  renderReadingBody(saved);
+
+  // Import screen
+  el.innerHTML = `
+    <div class="read-import">
+      <div class="read-option" onclick="document.getElementById('epub-file').click()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+        <h3>Import EPUB</h3>
+        <p>Upload an e-book file</p>
+        <input type="file" id="epub-file" accept=".epub" onchange="handleEpubUpload(this)">
+      </div>
+      <div class="read-option" onclick="showTextInput()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        <h3>Paste Text</h3>
+        <p>Article, email, document...</p>
+      </div>
+    </div>
+  `;
 }
 
-function startReading() {
+function showTextInput() {
+  const el = document.getElementById('reading-content');
+  el.innerHTML = `
+    <button style="margin-bottom:10px;padding:6px 14px;border-radius:8px;border:1px solid var(--border);background:var(--surface);color:var(--text-secondary);font-size:13px;cursor:pointer" onclick="renderReading()">Back</button>
+    <textarea class="read-input" id="read-input" placeholder="Paste any English text here..."></textarea>
+    <button class="read-start" onclick="startPasteReading()">Start Reading</button>
+  `;
+}
+
+function startPasteReading() {
   const text = document.getElementById('read-input').value.trim();
   if (!text) return;
   localStorage.setItem(STORE_READING, text);
+  localStorage.removeItem(STORE_BOOK);
   renderReadingBody(text);
 }
 
-function renderReadingBody(text) {
+// ── EPUB parsing ──
+async function handleEpubUpload(input) {
+  const file = input.files[0];
+  if (!file) return;
   const el = document.getElementById('reading-content');
-  let h = '<button style="margin-bottom:14px;padding:6px 14px;border-radius:8px;border:1px solid var(--border);background:var(--surface);color:var(--text-secondary);font-size:13px;cursor:pointer" onclick="clearReading()">Change Text</button>';
-  h += '<div class="read-body">';
+  el.innerHTML = '<div class="loading">Parsing EPUB...</div>';
 
-  const paragraphs = text.split(/\n\s*\n|\n/);
+  try {
+    const zip = await JSZip.loadAsync(file);
+
+    // 1. Find rootfile from container.xml
+    const container = await zip.file('META-INF/container.xml').async('text');
+    const containerDoc = new DOMParser().parseFromString(container, 'text/xml');
+    const rootPath = containerDoc.querySelector('rootfile').getAttribute('full-path');
+    const rootDir = rootPath.includes('/') ? rootPath.substring(0, rootPath.lastIndexOf('/') + 1) : '';
+
+    // 2. Parse OPF
+    const opf = await zip.file(rootPath).async('text');
+    const opfDoc = new DOMParser().parseFromString(opf, 'text/xml');
+
+    // Book title
+    const titleEl = opfDoc.querySelector('metadata title, dc\\:title');
+    const bookTitle = titleEl ? titleEl.textContent : file.name.replace('.epub', '');
+
+    // Manifest map: id -> href
+    const manifest = {};
+    opfDoc.querySelectorAll('manifest item').forEach(item => {
+      manifest[item.getAttribute('id')] = item.getAttribute('href');
+    });
+
+    // Spine order
+    const spineItems = [];
+    opfDoc.querySelectorAll('spine itemref').forEach(ref => {
+      const id = ref.getAttribute('idref');
+      if (manifest[id]) spineItems.push(manifest[id]);
+    });
+
+    // 3. Extract chapters
+    const chapters = [];
+    for (const href of spineItems) {
+      const fullPath = rootDir + href;
+      const f = zip.file(fullPath);
+      if (!f) continue;
+      const html = await f.async('text');
+      const doc = new DOMParser().parseFromString(html, 'text/html');
+
+      // Get title from heading or filename
+      const heading = doc.querySelector('h1, h2, h3');
+      const title = heading ? heading.textContent.trim().substring(0, 60) : href.replace(/.*\//, '').replace(/\.\w+$/, '');
+
+      // Extract text
+      const body = doc.querySelector('body');
+      if (!body) continue;
+      const text = extractText(body);
+      if (text.trim().length < 20) continue;
+      chapters.push({ title, text });
+    }
+
+    if (!chapters.length) {
+      el.innerHTML = '<div class="loading">No readable content found in this EPUB.</div>';
+      return;
+    }
+
+    bookChapters = chapters;
+    currentChapter = 0;
+    localStorage.setItem(STORE_BOOK, JSON.stringify({ title: bookTitle, chapters }));
+    localStorage.setItem(STORE_CHAPTER, '0');
+    localStorage.removeItem(STORE_READING);
+    renderBookChapter(bookTitle);
+  } catch (e) {
+    el.innerHTML = `<div class="loading">Failed to parse EPUB: ${escHtml(e.message)}</div>`;
+  }
+}
+
+function extractText(node) {
+  let text = '';
+  for (const child of node.childNodes) {
+    if (child.nodeType === 3) {
+      text += child.textContent;
+    } else if (child.nodeType === 1) {
+      const tag = child.tagName.toLowerCase();
+      if (['script', 'style', 'svg'].includes(tag)) continue;
+      if (['p', 'div', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'li', 'br', 'tr'].includes(tag)) {
+        text += '\n';
+      }
+      text += extractText(child);
+      if (['p', 'div', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'li', 'tr'].includes(tag)) {
+        text += '\n';
+      }
+    }
+  }
+  return text;
+}
+
+function renderBookChapter(bookTitle) {
+  const el = document.getElementById('reading-content');
+  const ch = bookChapters[currentChapter];
+  if (!ch) return;
+
+  let h = `<div class="book-title">${escHtml(bookTitle)}</div>`;
+  h += '<div class="chapter-nav">';
+  h += `<button class="chapter-btn" onclick="prevChapter()" ${currentChapter <= 0 ? 'disabled' : ''}>Prev</button>`;
+  h += `<select class="chapter-select" onchange="goToChapter(this.value)">`;
+  bookChapters.forEach((c, i) => {
+    h += `<option value="${i}" ${i === currentChapter ? 'selected' : ''}>${i + 1}. ${escHtml(c.title)}</option>`;
+  });
+  h += '</select>';
+  h += `<button class="chapter-btn" onclick="nextChapter()" ${currentChapter >= bookChapters.length - 1 ? 'disabled' : ''}>Next</button>`;
+  h += `<button class="chapter-btn" onclick="closeBook()" style="color:var(--red);border-color:rgba(247,65,95,.3)">Close</button>`;
+  h += '</div>';
+
+  // Render chapter text with clickable words
+  h += '<div class="read-body">';
+  const paragraphs = ch.text.split(/\n\s*\n|\n/);
   paragraphs.forEach((para, pi) => {
     if (!para.trim()) return;
     h += '<p>';
-    // Split into words while preserving punctuation
     const tokens = para.match(/[\w']+|[^\w\s]+|\s+/g) || [];
     tokens.forEach((tok, ti) => {
       if (/^\s+$/.test(tok)) { h += ' '; return; }
       if (/^[^\w']+$/.test(tok)) { h += tok; return; }
       const clean = tok.toLowerCase().replace(/[^a-z']/g, '');
       const saved = clean && isInWordbook(clean) ? ' saved' : '';
-      h += `<span class="w${saved}" data-word="${escHtml(clean)}" data-pi="${pi}" data-ti="${ti}" onclick="lookupWord(this)">${escHtml(tok)}</span>`;
+      h += `<span class="w${saved}" data-word="${escHtml(clean)}" onclick="lookupWord(this)">${escHtml(tok)}</span>`;
+    });
+    h += '</p>';
+  });
+  h += '</div>';
+  el.innerHTML = h;
+  el.scrollTop = 0;
+}
+
+function prevChapter() {
+  if (currentChapter <= 0) return;
+  currentChapter--;
+  localStorage.setItem(STORE_CHAPTER, String(currentChapter));
+  const bookTitle = JSON.parse(localStorage.getItem(STORE_BOOK)).title;
+  renderBookChapter(bookTitle);
+}
+function nextChapter() {
+  if (currentChapter >= bookChapters.length - 1) return;
+  currentChapter++;
+  localStorage.setItem(STORE_CHAPTER, String(currentChapter));
+  const bookTitle = JSON.parse(localStorage.getItem(STORE_BOOK)).title;
+  renderBookChapter(bookTitle);
+}
+function goToChapter(idx) {
+  currentChapter = parseInt(idx);
+  localStorage.setItem(STORE_CHAPTER, String(currentChapter));
+  const bookTitle = JSON.parse(localStorage.getItem(STORE_BOOK)).title;
+  renderBookChapter(bookTitle);
+}
+function closeBook() {
+  localStorage.removeItem(STORE_BOOK);
+  localStorage.removeItem(STORE_CHAPTER);
+  bookChapters = [];
+  renderReading();
+}
+
+function renderReadingBody(text) {
+  const el = document.getElementById('reading-content');
+  let h = '<button style="margin-bottom:14px;padding:6px 14px;border-radius:8px;border:1px solid var(--border);background:var(--surface);color:var(--text-secondary);font-size:13px;cursor:pointer" onclick="clearReading()">Change Text</button>';
+  h += '<div class="read-body">';
+  const paragraphs = text.split(/\n\s*\n|\n/);
+  paragraphs.forEach((para, pi) => {
+    if (!para.trim()) return;
+    h += '<p>';
+    const tokens = para.match(/[\w']+|[^\w\s]+|\s+/g) || [];
+    tokens.forEach((tok, ti) => {
+      if (/^\s+$/.test(tok)) { h += ' '; return; }
+      if (/^[^\w']+$/.test(tok)) { h += tok; return; }
+      const clean = tok.toLowerCase().replace(/[^a-z']/g, '');
+      const saved = clean && isInWordbook(clean) ? ' saved' : '';
+      h += `<span class="w${saved}" data-word="${escHtml(clean)}" onclick="lookupWord(this)">${escHtml(tok)}</span>`;
     });
     h += '</p>';
   });
