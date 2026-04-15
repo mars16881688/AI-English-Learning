@@ -628,6 +628,7 @@ async function handleAuth() {
       applyCloudData(result.data);
     }
     showLoggedIn();
+    navigateToday();
   } catch (e) {
     errEl.textContent = 'Network error';
     document.getElementById('auth-btn').textContent = authMode === 'login' ? 'Sign In' : 'Register';
@@ -1689,6 +1690,9 @@ updateWbBadge();
       if (resp.ok) { const r = await resp.json(); if (r.data) { applyCloudData(r.data); } }
       else if (resp.status === 401) { logout(); return; }
     } catch {}
+    // Default to today's lesson if no specific hash
+    const h = location.hash.replace('#/','').replace('#','');
+    if (!h || h === '/') { await navigateToday(); } else { handleRoute(); }
   } else {
     // Show auth page
     navigate('auth');
