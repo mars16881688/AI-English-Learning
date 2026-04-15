@@ -92,6 +92,12 @@
   .score-words .matched{color:var(--green);font-weight:500;}.score-words .missed{color:var(--red);text-decoration:underline wavy;text-underline-offset:3px;opacity:.8;}
   .score-your-text{margin-top:8px;font-size:13px;color:var(--text-secondary);font-style:italic;}
   .score-your-text::before{content:'You said: ';font-style:normal;font-weight:500;}
+  .pron-tips{margin-top:12px;display:flex;flex-direction:column;gap:8px;}
+  .pron-tip{padding:10px 12px;border-radius:8px;background:rgba(247,65,95,0.04);border:1px solid rgba(247,65,95,0.15);font-size:13px;line-height:1.6;}
+  .pron-tip-word{font-weight:700;color:var(--red);margin-right:2px;}
+  .pron-tip-ipa{color:var(--text-secondary);font-size:12px;}
+  .pron-tip-detail{color:var(--text);margin-top:4px;}
+  .pron-tip-heard{color:var(--orange);font-style:italic;font-size:12px;}
   .rec-hint{display:none;text-align:center;font-size:12px;color:var(--red);margin-top:8px;}
   .rec-hint.visible{display:flex;align-items:center;justify-content:center;gap:10px;animation:fadeIn .2s ease;}
   .rec-stop-btn{padding:4px 14px;border-radius:14px;border:1.5px solid var(--red);background:rgba(247,65,95,0.08);color:var(--red);font-size:12px;font-weight:600;cursor:pointer;transition:all .2s;}
@@ -893,12 +899,72 @@ function speakFallback(text, btn, done) {
 // ══════ SPEECH RECOGNITION + SCORING ══════
 function normalize(t){return t.toLowerCase().replace(/['']/g,"'").replace(/let's/g,'lets').replace(/[^\w\s']/g,'').trim().split(/\s+/);}
 function lev(a,b){const m=a.length,n=b.length,d=Array.from({length:m+1},()=>new Array(n+1).fill(0));for(let i=0;i<=m;i++)d[i][0]=i;for(let j=0;j<=n;j++)d[0][j]=j;for(let i=1;i<=m;i++)for(let j=1;j<=n;j++)d[i][j]=a[i-1]===b[j-1]?d[i-1][j-1]:1+Math.min(d[i-1][j],d[i][j-1],d[i-1][j-1]);return d[m][n];}
-function scoreMatch(ref,spoken){const rw=normalize(ref),sw=normalize(spoken),used=new Array(sw.length).fill(false),res=[];let m=0;for(const r of rw){let f=false;for(let i=0;i<sw.length;i++){if(!used[i]&&sw[i]===r){used[i]=true;f=true;break;}}if(!f)for(let i=0;i<sw.length;i++){if(!used[i]&&r.length>3&&lev(sw[i],r)<=1){used[i]=true;f=true;break;}}res.push({word:r,matched:f});if(f)m++;}return{results:res,pct:Math.round(m/rw.length*100),matched:m,total:rw.length,spoken};}
+function scoreMatch(ref,spoken){
+  const rw=normalize(ref),sw=normalize(spoken),used=new Array(sw.length).fill(false),res=[];let m=0;
+  for(const r of rw){
+    let f=false,closest=null,closestDist=Infinity;
+    for(let i=0;i<sw.length;i++){if(!used[i]&&sw[i]===r){used[i]=true;f=true;break;}}
+    if(!f)for(let i=0;i<sw.length;i++){if(!used[i]&&r.length>3&&lev(sw[i],r)<=1){used[i]=true;f=true;break;}}
+    if(!f){
+      // Find closest spoken word for pronunciation feedback
+      for(let i=0;i<sw.length;i++){if(!used[i]){const d=lev(sw[i],r);if(d<closestDist){closestDist=d;closest=sw[i];}}}
+    }
+    res.push({word:r,matched:f,heard:f?null:closest});if(f)m++;
+  }
+  return{results:res,pct:Math.round(m/rw.length*100),matched:m,total:rw.length,spoken};
+}
+
+// Common pronunciation issues: word → { ipa, tip (Chinese guidance) }
+const pronGuide = {
+  acquisition:/ˌækwɪˈzɪʃən/,activation:/ˌæktɪˈveɪʃən/,onboarding:/ˈɒnbɔːrdɪŋ/,
+  referral:/rɪˈfɜːrəl/,churn:/tʃɜːrn/,metrics:/ˈmetrɪks/,retention:/rɪˈtenʃən/,
+  revenue:/ˈrevənjuː/,margin:/ˈmɑːrdʒɪn/,valuation:/ˌvæljuˈeɪʃən/,
+  premium:/ˈpriːmiəm/,dividend:/ˈdɪvɪdend/,consensus:/kənˈsensəs/,
+  scalability:/ˌskeɪləˈbɪlɪti/,deployment:/dɪˈplɔɪmənt/,latency:/ˈleɪtənsi/,
+  throughput:/ˈθruːpʊt/,bottleneck:/ˈbɒtlnek/,discoverability:/dɪˌskʌvərəˈbɪlɪti/,
+  degraded:/dɪˈɡreɪdɪd/,engagement:/ɪnˈɡeɪdʒmənt/,roadmap:/ˈrəʊdmæp/,
+  profitability:/ˌprɒfɪtəˈbɪlɪti/,localization:/ˌləʊkəlaɪˈzeɪʃən/,
+  collaborate:/kəˈlæbəreɪt/,stakeholder:/ˈsteɪkˌhəʊldər/,
+  iterate:/ˈɪtəreɪt/,leverage:/ˈlevərɪdʒ/,optimize:/ˈɒptɪmaɪz/,
+  analytics:/ˌænəˈlɪtɪks/,hypothesis:/haɪˈpɒθəsɪs/,
+  architecture:/ˈɑːrkɪtektʃər/,infrastructure:/ˈɪnfrəstrʌktʃər/,
+};
+function getPronTip(refWord, heardWord) {
+  const w = refWord.toLowerCase();
+  const h = heardWord ? heardWord.toLowerCase() : '';
+  const ipa = pronGuide[w] || '';
+  // Analyze what went wrong based on what was heard
+  let tip = '';
+  if (!h || h === w) return null;
+  // Common confusion patterns
+  if (w.includes('tion') && !h.includes('tion') && !h.includes('shun')) tip = `"-tion" 发 /ʃən/（类似"审"），不是 /tiɒn/`;
+  else if (w.includes('th') && (h.includes('d') || h.includes('t') || h.includes('z') || h.includes('s'))) tip = `"th" 需要舌尖抵上齿：/θ/ 送气（think）或 /ð/ 振动（the）`;
+  else if (w.includes('r') && !h.includes('r')) tip = `注意 "r" 音：舌头后卷不触碰上颚，区别于中文的"日"`;
+  else if (w.endsWith('ly') && !h.endsWith('ly')) tip = `词尾 "-ly" 要轻读 /li/，不要吞掉`;
+  else if (w.endsWith('ing') && !h.endsWith('ing')) tip = `词尾 "-ing" 发 /ɪŋ/，注意鼻音 ng`;
+  else if (w.includes('v') && h.replace('v','').length === h.length - 0 && (h.includes('w') || h.includes('b'))) tip = `"v" 上齿轻咬下唇送气，不是 "w" 或 "b"`;
+  else if (lev(w, h) <= 2) tip = `发音接近但不够准确，注意每个音节的重音位置`;
+  else tip = `机器听到 "${h}"，和目标词差距较大，建议先听标准发音再模仿`;
+  return { word: refWord, ipa, heard: heardWord, tip };
+}
 
 function renderScore(card, result, azureResult) {
   const el=card.querySelector('.score-result');
   let g,gc;if(result.pct>=90){g='Excellent';gc='excellent';}else if(result.pct>=70){g='Good';gc='good';}else if(result.pct>=50){g='Fair';gc='fair';}else{g='Keep Trying';gc='poor';}
   let h=`<div class="score-header"><span class="score-badge ${gc}">${result.pct}%</span><span class="score-label">${g} (${result.matched}/${result.total})</span></div><div class="score-words">${result.results.map(x=>`<span class="${x.matched?'matched':'missed'}">${x.word}</span>`).join(' ')}</div><div class="score-your-text">${escHtml(result.spoken)}</div>`;
+
+  // Pronunciation tips for missed words
+  const tips = result.results.filter(x => !x.matched && x.heard).map(x => getPronTip(x.word, x.heard)).filter(Boolean);
+  if (tips.length) {
+    h += '<div class="pron-tips">';
+    tips.forEach(t => {
+      h += `<div class="pron-tip"><span class="pron-tip-word">${escHtml(t.word)}</span>`;
+      if (t.ipa) h += ` <span class="pron-tip-ipa">${t.ipa}</span>`;
+      h += `<div class="pron-tip-heard">heard: "${escHtml(t.heard)}"</div>`;
+      h += `<div class="pron-tip-detail">${t.tip}</div></div>`;
+    });
+    h += '</div>';
+  }
 
   // Azure detailed scores
   if (azureResult && azureResult.NBest && azureResult.NBest[0]) {
