@@ -93,7 +93,12 @@
   .score-your-text{margin-top:8px;font-size:13px;color:var(--text-secondary);font-style:italic;}
   .score-your-text::before{content:'You said: ';font-style:normal;font-weight:500;}
   .rec-hint{display:none;text-align:center;font-size:12px;color:var(--red);margin-top:8px;}
-  .rec-hint.visible{display:block;animation:fadeIn .2s ease;}
+  .rec-hint.visible{display:flex;align-items:center;justify-content:center;gap:10px;animation:fadeIn .2s ease;}
+  .rec-stop-btn{padding:4px 14px;border-radius:14px;border:1.5px solid var(--red);background:rgba(247,65,95,0.08);color:var(--red);font-size:12px;font-weight:600;cursor:pointer;transition:all .2s;}
+  .rec-stop-btn:active{transform:scale(0.95);}
+  .playback-btn{display:inline-flex;align-items:center;gap:4px;margin-top:8px;padding:4px 12px;border-radius:14px;border:1.5px solid var(--accent);background:var(--accent-light);color:var(--accent);font-size:12px;font-weight:500;cursor:pointer;transition:all .2s;}
+  .playback-btn:active{transform:scale(0.95);}
+  .playback-btn svg{width:12px;height:12px;}
 
   /* Azure score detail */
   .az-score{margin-top:12px;display:grid;grid-template-columns:repeat(4,1fr);gap:8px;}
@@ -779,7 +784,7 @@ async function renderLesson(dateStr){
   if(!hasSR)h+='<div class="no-speech-banner visible">Speech Recognition not supported. Use Chrome.</div>';
   h+='<div class="section-title">Sentences</div>';
   theme.sentences.forEach((s,i)=>{const tts=s.en.replace(/Let's/g,'Let us');
-    h+=`<div class="card" data-text="${escHtml(s.en)}"><div class="card-header"><span class="card-num">#${i+1}${scoreBadgeHtml(s.en)}</span><div class="btn-group"><button class="icon-btn" onclick="speak('${escJs(tts)}',this)"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="6,3 20,12 6,21"/></svg></button>${hasSR?`<button class="icon-btn rec" onclick="toggleRecord(this)"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="7"/></svg></button>`:''}</div></div><div class="sentence-en">${escHtml(s.en)}</div><div class="sentence-zh">${escHtml(s.zh)}</div><div class="rec-hint">Listening...</div><div class="score-result"></div></div>`;});
+    h+=`<div class="card" data-text="${escHtml(s.en)}"><div class="card-header"><span class="card-num">#${i+1}${scoreBadgeHtml(s.en)}</span><div class="btn-group"><button class="icon-btn" onclick="speak('${escJs(tts)}',this)"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="6,3 20,12 6,21"/></svg></button>${hasSR?`<button class="icon-btn rec" onclick="toggleRecord(this)"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="7"/></svg></button>`:''}</div></div><div class="sentence-en">${escHtml(s.en)}</div><div class="sentence-zh">${escHtml(s.zh)}</div><div class="rec-hint">Listening... tap ■ to finish</div><div class="score-result"></div></div>`;});
   h+='<div class="section-title">Vocabulary</div>';
   theme.vocabulary.forEach(v=>{const saved=isInWordbook(v.word);
     h+=`<div class="vocab-card"><div class="vocab-header"><span class="vocab-word">${escHtml(v.word)}</span><span class="vocab-phonetic">${escHtml(v.phonetic)}</span><span class="vocab-meaning">${escHtml(v.meaning)}</span><button class="icon-btn" onclick="speak('${escJs(v.word)}',this)" style="margin-left:auto"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="6,3 20,12 6,21"/></svg></button><button class="star-btn ${saved?'saved':''}" onclick="toggleStar(this,'${escJs(v.word)}','${escJs(v.phonetic)}','${escJs(v.meaning)}','${escJs(dateStr)}')"><svg viewBox="0 0 24 24" fill="${saved?'currentColor':'none'}" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></button></div><div class="vocab-example"><div class="en">${escHtml(v.example.en)}</div><div class="zh">${escHtml(v.example.zh)}</div></div></div>`;});
@@ -918,6 +923,10 @@ function renderScore(card, result, azureResult) {
       }
     }
   }
+  // Playback button if recording exists
+  if (cardRecordings.has(card)) {
+    h += `<button class="playback-btn" onclick="playRecording(this)"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="6,3 20,12 6,21"/></svg>Play my recording</button>`;
+  }
   el.innerHTML=h;el.classList.add('visible');
 
   // Save score
@@ -943,58 +952,90 @@ function renderScore(card, result, azureResult) {
 // ══════ RECORDING (Web Speech + optional Azure) ══════
 let mediaRecorder = null;
 let audioChunks = [];
+const cardRecordings = new WeakMap();
 
 function toggleRecord(btn){
   if(!SR)return;
   const card=btn.closest('.card'),hint=card.querySelector('.rec-hint'),ref=card.dataset.text;
   if(speechSynthesis.speaking){speechSynthesis.cancel();if(currentBtn){currentBtn.classList.remove('playing');currentBtn.closest('.card,.vocab-card')?.classList.remove('highlight');}}
-  if(activeRecognition&&activeRecBtn===btn){activeRecognition.stop();if(mediaRecorder&&mediaRecorder.state==='recording')mediaRecorder.stop();return;}
+  // Tap again to stop
+  if(activeRecognition&&activeRecBtn===btn){activeRecognition.stop();return;}
   if(activeRecognition)activeRecognition.stop();
 
-  const rec=new SR();rec.lang='en-US';rec.interimResults=false;rec.maxAlternatives=1;rec.continuous=false;
+  const rec=new SR();rec.lang='en-US';rec.interimResults=false;rec.maxAlternatives=1;rec.continuous=true;
   activeRecognition=rec;activeRecBtn=btn;btn.classList.add('recording');hint.classList.add('visible');
+  btn.querySelector('svg').innerHTML='<rect x="6" y="6" width="12" height="12" rx="2"/>';
   card.querySelector('.score-result').classList.remove('visible');
 
-  // Start audio recording for Azure (if configured)
-  let azurePromise = null;
-  if (AZURE_PROXY) {
-    navigator.mediaDevices.getUserMedia({ audio: { sampleRate: 16000, channelCount: 1 } }).then(stream => {
-      audioChunks = [];
-      mediaRecorder = new MediaRecorder(stream, { mimeType: 'audio/webm' });
-      mediaRecorder.ondataavailable = e => { if (e.data.size > 0) audioChunks.push(e.data); };
-      mediaRecorder.onstop = () => { stream.getTracks().forEach(t => t.stop()); };
-      mediaRecorder.start();
-    }).catch(() => {});
-  }
-
+  // Collect transcripts
+  let allTranscripts = [];
   rec.onresult=e=>{
-    const spoken = e.results[0][0].transcript;
-    const result = scoreMatch(ref, spoken);
-
-    if (AZURE_PROXY && mediaRecorder && mediaRecorder.state === 'recording') {
-      mediaRecorder.stop();
-      // Wait for audio data, then send to Azure
-      setTimeout(async () => {
-        if (audioChunks.length) {
-          const blob = new Blob(audioChunks, { type: 'audio/webm' });
-          try {
-            const resp = await fetch(AZURE_PROXY + '/assess', {
-              method: 'POST',
-              headers: { 'X-Reference-Text': ref },
-              body: blob,
-            });
-            const azResult = await resp.json();
-            renderScore(card, result, azResult);
-          } catch { renderScore(card, result, null); }
-        } else { renderScore(card, result, null); }
-      }, 300);
-    } else {
-      renderScore(card, result, null);
+    for (let i = e.resultIndex; i < e.results.length; i++) {
+      if (e.results[i].isFinal) allTranscripts.push(e.results[i][0].transcript);
     }
   };
   rec.onerror=e=>{if(e.error!=='no-speech'&&e.error!=='aborted'){const el=card.querySelector('.score-result');el.innerHTML=`<div style="color:var(--red);font-size:13px">Error: ${e.error}</div>`;el.classList.add('visible');}};
-  rec.onend=()=>{btn.classList.remove('recording');hint.classList.remove('visible');if(activeRecBtn===btn){activeRecognition=null;activeRecBtn=null;}if(mediaRecorder&&mediaRecorder.state==='recording')mediaRecorder.stop();};
+  rec.onend=()=>{
+    btn.classList.remove('recording');hint.classList.remove('visible');
+    btn.querySelector('svg').innerHTML='<circle cx="12" cy="12" r="7"/>';
+    const wasActive = activeRecBtn===btn;
+    if(wasActive){activeRecognition=null;activeRecBtn=null;}
+
+    // Finish audio recording, then score
+    const doScore = () => {
+      if (!wasActive || !allTranscripts.length) return;
+      const spoken = allTranscripts.join(' ');
+      const result = scoreMatch(ref, spoken);
+      if (AZURE_PROXY && cardRecordings.has(card)) {
+        const recording = cardRecordings.get(card);
+        fetch(AZURE_PROXY + '/assess', {
+          method: 'POST',
+          headers: { 'X-Reference-Text': ref },
+          body: recording.blob,
+        }).then(r => r.json()).then(az => renderScore(card, result, az)).catch(() => renderScore(card, result, null));
+      } else {
+        renderScore(card, result, null);
+      }
+    };
+
+    if (mediaRecorder && mediaRecorder.state === 'recording') {
+      mediaRecorder.onstop = () => {
+        mediaRecorder._stream.getTracks().forEach(t => t.stop());
+        if (audioChunks.length) {
+          const blob = new Blob(audioChunks, { type: 'audio/webm' });
+          const url = URL.createObjectURL(blob);
+          const old = cardRecordings.get(card);
+          if (old) URL.revokeObjectURL(old.url);
+          cardRecordings.set(card, { url, blob });
+        }
+        doScore();
+      };
+      mediaRecorder.stop();
+    } else {
+      doScore();
+    }
+  };
+
+  // Start audio recording for playback
+  audioChunks = [];
+  navigator.mediaDevices.getUserMedia({ audio: { sampleRate: 16000, channelCount: 1 } }).then(stream => {
+    mediaRecorder = new MediaRecorder(stream, { mimeType: 'audio/webm' });
+    mediaRecorder._stream = stream;
+    mediaRecorder.ondataavailable = e => { if (e.data.size > 0) audioChunks.push(e.data); };
+    mediaRecorder.start();
+  }).catch(() => {});
+
   rec.start();
+}
+
+let playbackAudio = null;
+function playRecording(btn){
+  const card = btn.closest('.card');
+  const rec = cardRecordings.get(card);
+  if(!rec)return;
+  if(playbackAudio){playbackAudio.pause();playbackAudio=null;}
+  playbackAudio = new Audio(rec.url);
+  playbackAudio.play();
 }
 
 // ══════ READING ══════
