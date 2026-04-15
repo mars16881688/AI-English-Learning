@@ -1,4 +1,4 @@
-name: Daily English Practice Reminder
+name: DailyDose Reminder
 
 on:
   schedule:
@@ -28,7 +28,7 @@ jobs:
 
           curl -sf -H "Content-Type: application/json" -d "{
             \"embeds\": [{
-              \"title\": \"Daily English Practice\",
+              \"title\": \"DailyDose\",
               \"description\": \"**${TODAY}**\nTheme: ${THEME}\n\n5 sentences + vocabulary with audio playback\",
               \"url\": \"${PAGES_URL}\",
               \"color\": 3447003,
