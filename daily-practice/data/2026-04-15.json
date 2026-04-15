@@ -1,0 +1,90 @@
+{
+  "date": "2026-04-15",
+  "themes": {
+    "growth": {
+      "label": "Growth / Marketing",
+      "sentences": [
+        {"en": "We need to improve our activation rate before scaling acquisition spend.", "zh": "在扩大获客支出之前，我们需要先提升激活率。"},
+        {"en": "The referral program contributed 18% of new sign-ups last quarter.", "zh": "推荐计划在上季度贡献了18%的新注册用户。"},
+        {"en": "Our cost per acquisition dropped by 22% after optimizing the landing page.", "zh": "优化落地页后，我们的获客成本下降了22%。"},
+        {"en": "Let us A/B test the onboarding flow to reduce first-week churn.", "zh": "我们来对新手引导流程做A/B测试，以减少首周流失。"},
+        {"en": "The push notification opt-in rate on iOS is significantly lower than Android.", "zh": "iOS上的推送通知授权率明显低于Android。"}
+      ],
+      "vocabulary": [
+        {"word": "activation", "phonetic": "/ˌæktɪˈveɪʃən/", "meaning": "激活", "example": {"en": "User activation is the most critical step in the growth funnel.", "zh": "用户激活是增长漏斗中最关键的一步。"}},
+        {"word": "acquisition", "phonetic": "/ˌækwɪˈzɪʃən/", "meaning": "获客；获取", "example": {"en": "Paid acquisition channels are becoming more expensive each year.", "zh": "付费获客渠道每年都在变贵。"}},
+        {"word": "referral", "phonetic": "/rɪˈfɜːrəl/", "meaning": "推荐；转介绍", "example": {"en": "Referral traffic has the highest conversion rate among all channels.", "zh": "推荐流量在所有渠道中转化率最高。"}},
+        {"word": "onboarding", "phonetic": "/ˈɒnbɔːrdɪŋ/", "meaning": "新手引导；入职", "example": {"en": "A smooth onboarding experience reduces early drop-off significantly.", "zh": "流畅的新手引导体验能显著减少早期流失。"}},
+        {"word": "opt-in", "phonetic": "/ˈɒpt ɪn/", "meaning": "选择加入；授权同意", "example": {"en": "We redesigned the opt-in prompt to explain the value of notifications.", "zh": "我们重新设计了授权弹窗，说明推送通知的价值。"}}
+      ]
+    },
+    "product": {
+      "label": "Product / Metrics",
+      "sentences": [
+        {"en": "The feature adoption rate is only 12%, which suggests a discoverability issue.", "zh": "功能采用率只有12%，说明存在可发现性问题。"},
+        {"en": "We should track time-to-value as a leading indicator of retention.", "zh": "我们应该把首次价值达成时间作为留存的先行指标来追踪。"},
+        {"en": "The API response time degraded after the last deployment.", "zh": "上次部署后，API响应时间出现了退化。"},
+        {"en": "Our DAU to MAU ratio indicates strong user engagement.", "zh": "我们的DAU/MAU比值显示用户粘性很强。"},
+        {"en": "The product roadmap needs to balance quick wins with long-term bets.", "zh": "产品路线图需要在速赢项目和长期押注之间取得平衡。"}
+      ],
+      "vocabulary": [
+        {"word": "adoption", "phonetic": "/əˈdɒpʃən/", "meaning": "采用；采纳", "example": {"en": "Feature adoption is measured by the percentage of active users who use it weekly.", "zh": "功能采用率通过每周使用该功能的活跃用户百分比来衡量。"}},
+        {"word": "discoverability", "phonetic": "/dɪˌskʌvərəˈbɪlɪti/", "meaning": "可发现性", "example": {"en": "Poor discoverability is the top reason features go unused.", "zh": "可发现性差是功能无人使用的首要原因。"}},
+        {"word": "degraded", "phonetic": "/dɪˈɡreɪdɪd/", "meaning": "退化的；性能下降的", "example": {"en": "The system operated in a degraded state for two hours.", "zh": "系统在性能退化状态下运行了两个小时。"}},
+        {"word": "engagement", "phonetic": "/ɪnˈɡeɪdʒmənt/", "meaning": "用户互动；参与度", "example": {"en": "Push notifications increased daily engagement by 15%.", "zh": "推送通知使日均互动率提升了15%。"}},
+        {"word": "roadmap", "phonetic": "/ˈrəʊdmæp/", "meaning": "路线图", "example": {"en": "The Q3 roadmap focuses on international expansion features.", "zh": "Q3路线图聚焦于国际化扩张功能。"}}
+      ]
+    },
+    "finance": {
+      "label": "Finance / Investment",
+      "sentences": [
+        {"en": "The forward P/E ratio suggests the stock is trading at a premium to its peers.", "zh": "远期市盈率表明该股票相对同行存在溢价。"},
+        {"en": "Operating margin expanded by 3 percentage points year over year.", "zh": "营业利润率同比扩大了3个百分点。"},
+        {"en": "The company raised $200 million in a Series C round at a $2 billion valuation.", "zh": "该公司以20亿美元估值完成了2亿美元的C轮融资。"},
+        {"en": "Dividend yield remains attractive compared to fixed-income alternatives.", "zh": "与固定收益替代品相比，股息率仍然具有吸引力。"},
+        {"en": "Revenue beat consensus estimates by 8% driven by strong international growth.", "zh": "受强劲的国际增长推动，营收超出市场一致预期8%。"}
+      ],
+      "vocabulary": [
+        {"word": "premium", "phonetic": "/ˈpriːmiəm/", "meaning": "溢价；额外费用", "example": {"en": "Investors are willing to pay a premium for companies with strong moats.", "zh": "投资者愿意为拥有强大护城河的公司支付溢价。"}},
+        {"word": "margin", "phonetic": "/ˈmɑːdʒɪn/", "meaning": "利润率；边际", "example": {"en": "Gross margin improved after renegotiating supplier contracts.", "zh": "重新谈判供应商合同后，毛利率有所改善。"}},
+        {"word": "valuation", "phonetic": "/ˌvæljuˈeɪʃən/", "meaning": "估值", "example": {"en": "The startup's valuation tripled in just 18 months.", "zh": "这家创业公司的估值在短短18个月内翻了三倍。"}},
+        {"word": "dividend", "phonetic": "/ˈdɪvɪdend/", "meaning": "股息；红利", "example": {"en": "The board approved a quarterly dividend of $0.50 per share.", "zh": "董事会批准了每股0.50美元的季度股息。"}},
+        {"word": "consensus", "phonetic": "/kənˈsensəs/", "meaning": "共识；一致意见", "example": {"en": "Analyst consensus expects earnings growth of 15% next year.", "zh": "分析师一致预期明年盈利增长15%。"}}
+      ]
+    },
+    "team": {
+      "label": "Team / Management",
+      "sentences": [
+        {"en": "We should align on priorities before assigning tasks to the sprint.", "zh": "在分配冲刺任务之前，我们应该先统一优先级。"},
+        {"en": "The new hire is ramping up faster than expected thanks to the buddy system.", "zh": "由于伙伴制度，新员工上手速度比预期更快。"},
+        {"en": "Cross-functional collaboration broke down during the last release cycle.", "zh": "在上一个发布周期中，跨职能协作出现了问题。"},
+        {"en": "I want to give you some constructive feedback on the presentation.", "zh": "我想就你的演示给一些建设性的反馈。"},
+        {"en": "The team retrospective surfaced several process bottlenecks we need to address.", "zh": "团队复盘暴露了几个我们需要解决的流程瓶颈。"}
+      ],
+      "vocabulary": [
+        {"word": "align", "phonetic": "/əˈlaɪn/", "meaning": "对齐；统一", "example": {"en": "It is important to align the team on the definition of done.", "zh": "让团队就完成标准达成一致非常重要。"}},
+        {"word": "ramp up", "phonetic": "/ræmp ʌp/", "meaning": "逐步提升；加速上手", "example": {"en": "New engineers usually take three months to fully ramp up.", "zh": "新工程师通常需要三个月才能完全上手。"}},
+        {"word": "cross-functional", "phonetic": "/krɒs ˈfʌŋkʃənəl/", "meaning": "跨职能的", "example": {"en": "Cross-functional teams deliver faster because they reduce handoffs.", "zh": "跨职能团队交付更快，因为减少了交接环节。"}},
+        {"word": "constructive", "phonetic": "/kənˈstrʌktɪv/", "meaning": "建设性的", "example": {"en": "Constructive feedback focuses on behavior, not personality.", "zh": "建设性反馈关注行为，而非性格。"}},
+        {"word": "retrospective", "phonetic": "/ˌretrəˈspektɪv/", "meaning": "复盘；回顾", "example": {"en": "We hold a retrospective after every major project to capture learnings.", "zh": "我们在每个重大项目后都会做复盘，以总结经验。"}}
+      ]
+    },
+    "strategy": {
+      "label": "Strategy / Planning",
+      "sentences": [
+        {"en": "Our competitive advantage lies in the network effects of the platform.", "zh": "我们的竞争优势在于平台的网络效应。"},
+        {"en": "We are entering the Southeast Asian market with a localization-first approach.", "zh": "我们以本地化优先的策略进入东南亚市场。"},
+        {"en": "The total addressable market for this segment is estimated at $50 billion.", "zh": "该细分市场的总可寻址市场规模估计为500亿美元。"},
+        {"en": "We need to diversify revenue streams to reduce dependence on a single product.", "zh": "我们需要多元化收入来源，以减少对单一产品的依赖。"},
+        {"en": "The pivot from B2C to B2B was the turning point for the company.", "zh": "从B2C转向B2B是公司的转折点。"}
+      ],
+      "vocabulary": [
+        {"word": "network effect", "phonetic": "/ˈnetwɜːk ɪˈfekt/", "meaning": "网络效应", "example": {"en": "Social platforms benefit from strong network effects as more users join.", "zh": "随着更多用户加入，社交平台受益于强大的网络效应。"}},
+        {"word": "localization", "phonetic": "/ˌləʊkəlaɪˈzeɪʃən/", "meaning": "本地化", "example": {"en": "Localization goes beyond translation to include cultural adaptation.", "zh": "本地化不仅仅是翻译，还包括文化适配。"}},
+        {"word": "addressable", "phonetic": "/əˈdresəbl/", "meaning": "可触达的；可寻址的", "example": {"en": "The serviceable addressable market is a more realistic measure than the total.", "zh": "可服务的可寻址市场是比总量更现实的衡量指标。"}},
+        {"word": "diversify", "phonetic": "/daɪˈvɜːsɪfaɪ/", "meaning": "多元化", "example": {"en": "Smart investors diversify their portfolio across asset classes.", "zh": "聪明的投资者会跨资产类别分散投资组合。"}},
+        {"word": "pivot", "phonetic": "/ˈpɪvət/", "meaning": "转型；战略转向", "example": {"en": "The company pivoted from hardware to a software subscription model.", "zh": "该公司从硬件转型为软件订阅模式。"}}
+      ]
+    }
+  }
+}
