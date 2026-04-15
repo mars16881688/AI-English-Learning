@@ -54,6 +54,10 @@
   .cal-day.has-lesson{cursor:pointer;color:var(--text);border-color:var(--border);background:var(--surface);}
   .cal-day.has-lesson:hover{border-color:var(--accent);}
   .cal-day.checked{background:rgba(0,185,154,0.1);border-color:var(--green);color:var(--green);font-weight:700;}
+  .cal-day.level-1{background:rgba(0,185,154,0.15);border-color:rgba(0,185,154,0.3);color:var(--text);font-weight:600;}
+  .cal-day.level-2{background:rgba(0,185,154,0.3);border-color:rgba(0,185,154,0.4);color:var(--text);font-weight:700;}
+  .cal-day.level-3{background:rgba(0,185,154,0.5);border-color:rgba(0,185,154,0.6);color:#fff;font-weight:700;}
+  .cal-day.level-4{background:rgba(0,185,154,0.75);border-color:rgba(0,185,154,0.8);color:#fff;font-weight:700;}
   .cal-day.today{box-shadow:inset 0 0 0 2px var(--accent);}
   .cal-day .dot{width:4px;height:4px;border-radius:50%;background:var(--green);position:absolute;bottom:4px;}
 
@@ -166,6 +170,23 @@
   .review-banner-text{font-size:14px;font-weight:600;color:var(--accent);}
   .review-banner-count{font-size:24px;font-weight:800;color:var(--accent);}
   .review-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px;margin-bottom:16px;text-align:center;}
+
+  /* Leaderboard */
+  .rank-tabs{display:flex;gap:8px;margin-bottom:16px;}
+  .rank-tab{flex:1;padding:10px;border-radius:10px;border:1.5px solid var(--border);background:var(--surface);color:var(--text-secondary);font-size:14px;font-weight:600;cursor:pointer;text-align:center;transition:all .15s;}
+  .rank-tab:hover{border-color:var(--accent);color:var(--accent);}
+  .rank-tab.active{background:var(--accent);color:#fff;border-color:var(--accent);}
+  .rank-list{list-style:none;}
+  .rank-item{display:flex;align-items:center;gap:12px;padding:14px 16px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);margin-bottom:8px;transition:border-color .15s;}
+  .rank-item.me{border-color:var(--accent);background:var(--accent-light);}
+  .rank-pos{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;background:var(--bg);color:var(--text-secondary);flex-shrink:0;}
+  .rank-item:nth-child(1) .rank-pos{background:linear-gradient(135deg,#FFD700,#FFA500);color:#fff;}
+  .rank-item:nth-child(2) .rank-pos{background:linear-gradient(135deg,#C0C0C0,#A0A0A0);color:#fff;}
+  .rank-item:nth-child(3) .rank-pos{background:linear-gradient(135deg,#CD7F32,#A0522D);color:#fff;}
+  .rank-name{flex:1;font-weight:600;font-size:15px;}
+  .rank-value{font-size:18px;font-weight:800;color:var(--accent);}
+  .rank-sub{font-size:11px;color:var(--text-secondary);text-align:right;}
+  .rank-right{text-align:right;}
   .review-word{font-size:28px;font-weight:800;margin-bottom:4px;}
   .review-phonetic{font-size:16px;color:var(--text-secondary);margin-bottom:16px;}
   .review-reveal{padding:10px 24px;border-radius:10px;border:1.5px solid var(--border);background:var(--surface);color:var(--text);font-size:15px;cursor:pointer;transition:all .15s;}
@@ -479,6 +500,11 @@
   <div class="container" id="reading-content"></div>
 </div>
 
+<div class="page" id="page-rank">
+  <div class="header"><div class="header-inner"><h1>Leaderboard</h1><div class="date-label">Who's putting in the hours?</div></div></div>
+  <div class="container" id="rank-content"></div>
+</div>
+
 <!-- Book reader (epub.js powered) -->
 <div class="reader-wrap" id="reader-wrap">
   <div class="reader-viewport" id="reader-viewport">
@@ -572,6 +598,9 @@
   <button class="nav-item" onclick="navigate('wordbook')" id="nav-wordbook" style="position:relative">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg><span id="wb-badge-count"></span>Wordbook
   </button>
+  <button class="nav-item" onclick="navigate('rank')" id="nav-rank">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg>Rank
+  </button>
 </nav>
 
 <script>
@@ -597,6 +626,7 @@ let currentTheme = localStorage.getItem(STORE_THEME) || 'growth';
 let currentVoice = localStorage.getItem(STORE_VOICE) || 'female';
 let currentRate = 0.85, currentUtterance = null, currentBtn = null;
 let activeRecognition = null, activeRecBtn = null;
+let lessonSessionStart = null; // timestamp when user enters a lesson page
 const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
 const hasSR = !!SR;
 
@@ -732,7 +762,40 @@ async function loadLesson(d) { if (lessonCache[d]) return lessonCache[d]; const 
 
 // ══════ STORAGE ══════
 function getCheckins(){try{return JSON.parse(localStorage.getItem(STORE_CHECKINS))||{};}catch{return {};}}
-function addCheckin(d){const a=getCheckins();const t=a[d]||[];const n=new Date().toLocaleTimeString('zh-CN',{hour:'2-digit',minute:'2-digit'});if(t[t.length-1]!==n)t.push(n);a[d]=t;localStorage.setItem(STORE_CHECKINS,JSON.stringify(a));}
+// Migrate old format: ["09:30"] → { times: ["09:30"], minutes: 0 }
+function getCheckinEntry(ck, d){
+  const v = ck[d];
+  if (!v) return null;
+  if (Array.isArray(v)) return { times: v, minutes: 0 };
+  return v;
+}
+function addCheckin(d){
+  const a=getCheckins();
+  const entry = getCheckinEntry(a, d) || { times: [], minutes: 0 };
+  const n=new Date().toLocaleTimeString('zh-CN',{hour:'2-digit',minute:'2-digit'});
+  if(entry.times[entry.times.length-1]!==n) entry.times.push(n);
+  a[d]=entry;
+  localStorage.setItem(STORE_CHECKINS,JSON.stringify(a));
+}
+function addStudyMinutes(d, mins){
+  if (!mins || mins <= 0) return;
+  const a=getCheckins();
+  const entry = getCheckinEntry(a, d) || { times: [], minutes: 0 };
+  entry.minutes = (entry.minutes || 0) + mins;
+  a[d]=entry;
+  localStorage.setItem(STORE_CHECKINS,JSON.stringify(a));
+}
+function getMinutesForDay(d){
+  const ck=getCheckins();
+  const entry = getCheckinEntry(ck, d);
+  return entry ? (entry.minutes || 0) : 0;
+}
+function flushLessonSession(){
+  if (!lessonSessionStart) return;
+  const mins = Math.round((Date.now() - lessonSessionStart) / 60000);
+  lessonSessionStart = null;
+  if (mins >= 1) { addStudyMinutes(todayStr(), mins); syncToCloud(); }
+}
 function getStreak(){const c=getCheckins();const t=new Date();let s=0;for(let i=0;i<365;i++){const d=new Date(t);d.setDate(d.getDate()-i);if(c[fmtDate(d)])s++;else if(i>0)break;}return s;}
 function getWordbook(){try{return JSON.parse(localStorage.getItem(STORE_WORDBOOK))||[];}catch{return[];}}
 function saveWordbook(wb){localStorage.setItem(STORE_WORDBOOK,JSON.stringify(wb));}
@@ -751,10 +814,12 @@ function escHtml(s){const d=document.createElement('div');d.textContent=s;return
 function escJs(s){return s.replace(/\\/g,'\\\\').replace(/'/g,"\\'").replace(/"/g,'&quot;');}
 
 // ══════ ROUTING ══════
-function navigate(p,a){if(p==='auth')location.hash='#/auth';else if(p==='calendar')location.hash='#/';else if(p==='lesson')location.hash='#/'+a;else if(p==='wordbook')location.hash='#/wordbook';else if(p==='review')location.hash='#/review';else if(p==='reading')location.hash='#/reading';}
+function navigate(p,a){if(p==='auth')location.hash='#/auth';else if(p==='calendar')location.hash='#/';else if(p==='lesson')location.hash='#/'+a;else if(p==='wordbook')location.hash='#/wordbook';else if(p==='review')location.hash='#/review';else if(p==='reading')location.hash='#/reading';else if(p==='rank')location.hash='#/rank';}
 async function navigateToday(){const idx=await loadIndex();const t=todayStr();if(idx.dates.includes(t))navigate('lesson',t);else if(idx.dates.length)navigate('lesson',idx.dates[idx.dates.length-1]);else navigate('calendar');}
 async function handleRoute(){
   const hash=location.hash.replace('#/','').replace('#','');
+  // Flush study time when leaving lesson page
+  flushLessonSession();
   // Close reader overlay when navigating away
   if(hash!=='reading' && document.getElementById('reader-wrap').classList.contains('visible')) closeBookReader();
   closeWordPopup();
@@ -766,11 +831,13 @@ async function handleRoute(){
   if(hash==='wordbook'){document.getElementById('page-wordbook').classList.add('active');document.getElementById('nav-wordbook').classList.add('active');renderWordbook();}
   else if(hash==='review'){document.getElementById('page-review').classList.add('active');document.getElementById('nav-wordbook').classList.add('active');renderReview();}
   else if(hash==='reading'){document.getElementById('page-reading').classList.add('active');document.getElementById('nav-reading').classList.add('active');renderReading();}
-  else if(hash&&hash.match(/^\d{4}-\d{2}-\d{2}$/)){document.getElementById('page-lesson').classList.add('active');document.getElementById('nav-today').classList.add('active');await renderLesson(hash);addCheckin(hash);syncToCloud();}
+  else if(hash==='rank'){document.getElementById('page-rank').classList.add('active');document.getElementById('nav-rank').classList.add('active');renderLeaderboard();}
+  else if(hash&&hash.match(/^\d{4}-\d{2}-\d{2}$/)){document.getElementById('page-lesson').classList.add('active');document.getElementById('nav-today').classList.add('active');lessonSessionStart=Date.now();await renderLesson(hash);addCheckin(hash);syncToCloud();}
   else{document.getElementById('page-calendar').classList.add('active');document.getElementById('nav-calendar').classList.add('active');await renderCalendar();}
   updateWbBadge();
 }
 window.addEventListener('hashchange',handleRoute);
+window.addEventListener('beforeunload',flushLessonSession);
 
 // ══════ CALENDAR ══════
 async function renderCalendar(){
@@ -778,7 +845,9 @@ async function renderCalendar(){
   const ck=getCheckins(),streak=getStreak(),ds=new Set(idx.dates);
   const months=[];for(let i=1;i>=0;i--){const d=new Date(today.getFullYear(),today.getMonth()-i,1);months.push({year:d.getFullYear(),month:d.getMonth()});}
   let h=`<div class="streak-bar"><span style="font-size:28px">&#x1F525;</span><div><div class="streak-num">${streak}</div><div class="streak-text">day streak</div></div></div>`;
-  for(const{year,month}of months){const fd=new Date(year,month,1).getDay(),dim=new Date(year,month+1,0).getDate();h+=`<div class="cal-month-title">${MONTHS[month]} ${year}</div><div class="cal-grid">`;for(const d of DOW)h+=`<div class="cal-dow">${d}</div>`;for(let i=0;i<fd;i++)h+='<div class="cal-day empty"></div>';for(let d=1;d<=dim;d++){const s=`${year}-${String(month+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;const has=ds.has(s),c=!!ck[s],it=s===todayStr();const cls=['cal-day'];if(has)cls.push('has-lesson');if(c)cls.push('checked');if(it)cls.push('today');const oc=has?` onclick="navigate('lesson','${s}')"`:'';h+=`<div class="${cls.join(' ')}"${oc}>${d}${c?'<span class="dot"></span>':''}</div>`;}h+='</div>';}
+  function heatLevel(mins){if(mins>=60)return'level-4';if(mins>=31)return'level-3';if(mins>=11)return'level-2';if(mins>=1)return'level-1';return'';}
+  h+='<div style="display:flex;align-items:center;gap:6px;justify-content:flex-end;margin-bottom:12px;font-size:11px;color:var(--text-secondary)"><span>Less</span><span style="width:12px;height:12px;border-radius:3px;background:rgba(0,185,154,0.15)"></span><span style="width:12px;height:12px;border-radius:3px;background:rgba(0,185,154,0.3)"></span><span style="width:12px;height:12px;border-radius:3px;background:rgba(0,185,154,0.5)"></span><span style="width:12px;height:12px;border-radius:3px;background:rgba(0,185,154,0.75)"></span><span>More</span></div>';
+  for(const{year,month}of months){const fd=new Date(year,month,1).getDay(),dim=new Date(year,month+1,0).getDate();h+=`<div class="cal-month-title">${MONTHS[month]} ${year}</div><div class="cal-grid">`;for(const d of DOW)h+=`<div class="cal-dow">${d}</div>`;for(let i=0;i<fd;i++)h+='<div class="cal-day empty"></div>';for(let d=1;d<=dim;d++){const s=`${year}-${String(month+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;const has=ds.has(s),entry=getCheckinEntry(ck,s),c=!!entry,mins=entry?(entry.minutes||0):0,it=s===todayStr();const cls=['cal-day'];if(has)cls.push('has-lesson');const lvl=heatLevel(mins);if(lvl)cls.push(lvl);else if(c)cls.push('checked');if(it)cls.push('today');const oc=has?` onclick="navigate('lesson','${s}')"`:'';const tip=mins?` title="${mins} min"`:c?' title="visited"':'';h+=`<div class="${cls.join(' ')}"${oc}${tip}>${d}${c?'<span class="dot"></span>':''}</div>`;}h+='</div>';}
   document.getElementById('cal-content').innerHTML=h;
 }
 
@@ -846,6 +915,35 @@ function showReviewCard(){
 }
 function revealAnswer(){document.getElementById('review-answer').style.display='block';document.getElementById('reveal-btn').style.display='none';document.getElementById('review-btns').style.display='flex';}
 function reviewRate(q){updateSrs(reviewQueue[reviewIdx].word,q);reviewIdx++;showReviewCard();updateWbBadge();}
+
+// ══════ LEADERBOARD ══════
+let rankMode = 'total'; // 'total' | 'today'
+async function renderLeaderboard(){
+  const el=document.getElementById('rank-content');
+  el.innerHTML='<div class="loading">Loading leaderboard...</div>';
+  let board = [];
+  try {
+    const resp = await fetch(AZURE_PROXY + '/leaderboard');
+    if (resp.ok) { const r = await resp.json(); board = r.leaderboard || []; }
+  } catch {}
+  if (!board.length) { el.innerHTML='<div class="loading">No data yet. Start learning to appear on the leaderboard!</div>'; return; }
+  function renderBoard(){
+    const sorted = rankMode === 'today'
+      ? [...board].sort((a,b) => b.todayMinutes - a.todayMinutes || b.totalMinutes - a.totalMinutes)
+      : [...board].sort((a,b) => b.totalMinutes - a.totalMinutes || b.checkinDays - a.checkinDays);
+    let h = `<div class="rank-tabs"><button class="rank-tab${rankMode==='total'?' active':''}" onclick="rankMode='total';document.querySelector('[data-rankboard]').outerHTML='';renderLeaderboard()">Total</button><button class="rank-tab${rankMode==='today'?' active':''}" onclick="rankMode='today';document.querySelector('[data-rankboard]').outerHTML='';renderLeaderboard()">Today</button></div>`;
+    h += '<div data-rankboard>';
+    sorted.forEach((u, i) => {
+      const isMe = authName && u.name.toLowerCase() === authName.toLowerCase();
+      const val = rankMode === 'today' ? u.todayMinutes : u.totalMinutes;
+      const fmtTime = val >= 60 ? Math.floor(val/60) + 'h ' + (val%60) + 'm' : val + ' min';
+      h += `<div class="rank-item${isMe?' me':''}"><div class="rank-pos">${i+1}</div><div class="rank-name">${escHtml(u.name)}</div><div class="rank-right"><div class="rank-value">${fmtTime}</div><div class="rank-sub">${u.streak}d streak · ${u.checkinDays} days</div></div></div>`;
+    });
+    h += '</div>';
+    el.innerHTML = h;
+  }
+  renderBoard();
+}
 
 // ══════ TTS (Azure Neural Voice with fallback) ══════
 let ttsAudio = null;

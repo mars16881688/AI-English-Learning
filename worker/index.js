@@ -27,9 +27,10 @@ export default {
     const url = new URL(request.url);
     const path = url.pathname;
 
-    // Speech endpoints (no auth needed)
+    // Public endpoints (no auth needed)
     if (path === '/tts' && request.method === 'POST') return handleTTS(request, env);
     if (path === '/assess' && request.method === 'POST') return handleAssess(request, env);
+    if (path === '/leaderboard' && request.method === 'GET') return handleLeaderboard(env);
 
     // Admin
     if (path === '/admin/users' && request.method === 'GET') return handleAdminUsers(request, env);
@@ -470,4 +471,35 @@ async function handleAdminListInvites(request, env) {
     invites.push({ code: key.name.replace('invite:', ''), ...data });
   }
   return json({ invites });
+}
+
+// ══════ LEADERBOARD (public) ══════
+async function handleLeaderboard(env) {
+  const today = new Date().toISOString().slice(0, 10);
+  const list = await env.EP_DATA.list({ prefix: 'user:' });
+  const board = [];
+  for (const key of list.keys) {
+    const data = await env.EP_DATA.get(key.name, 'json');
+    if (!data || data.banned) continue;
+    const d = data.data || {};
+    const checkins = d.checkins || {};
+    let totalMinutes = 0, todayMinutes = 0, checkinDays = 0;
+    for (const [date, val] of Object.entries(checkins)) {
+      checkinDays++;
+      const mins = (val && typeof val === 'object' && !Array.isArray(val)) ? (val.minutes || 0) : 0;
+      totalMinutes += mins;
+      if (date === today) todayMinutes = mins;
+    }
+    // Compute streak
+    let streak = 0;
+    const d2 = new Date();
+    for (let i = 0; i < 365; i++) {
+      const dd = new Date(d2); dd.setDate(dd.getDate() - i);
+      const ds = dd.toISOString().slice(0, 10);
+      if (checkins[ds]) streak++; else if (i > 0) break;
+    }
+    board.push({ name: key.name.replace('user:', ''), totalMinutes, todayMinutes, streak, checkinDays });
+  }
+  board.sort((a, b) => b.totalMinutes - a.totalMinutes || b.checkinDays - a.checkinDays);
+  return json({ leaderboard: board.slice(0, 20) });
 }
