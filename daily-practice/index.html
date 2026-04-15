@@ -916,18 +916,21 @@ function scoreMatch(ref,spoken){
 
 // Common pronunciation issues: word → { ipa, tip (Chinese guidance) }
 const pronGuide = {
-  acquisition:/ˌækwɪˈzɪʃən/,activation:/ˌæktɪˈveɪʃən/,onboarding:/ˈɒnbɔːrdɪŋ/,
-  referral:/rɪˈfɜːrəl/,churn:/tʃɜːrn/,metrics:/ˈmetrɪks/,retention:/rɪˈtenʃən/,
-  revenue:/ˈrevənjuː/,margin:/ˈmɑːrdʒɪn/,valuation:/ˌvæljuˈeɪʃən/,
-  premium:/ˈpriːmiəm/,dividend:/ˈdɪvɪdend/,consensus:/kənˈsensəs/,
-  scalability:/ˌskeɪləˈbɪlɪti/,deployment:/dɪˈplɔɪmənt/,latency:/ˈleɪtənsi/,
-  throughput:/ˈθruːpʊt/,bottleneck:/ˈbɒtlnek/,discoverability:/dɪˌskʌvərəˈbɪlɪti/,
-  degraded:/dɪˈɡreɪdɪd/,engagement:/ɪnˈɡeɪdʒmənt/,roadmap:/ˈrəʊdmæp/,
-  profitability:/ˌprɒfɪtəˈbɪlɪti/,localization:/ˌləʊkəlaɪˈzeɪʃən/,
-  collaborate:/kəˈlæbəreɪt/,stakeholder:/ˈsteɪkˌhəʊldər/,
-  iterate:/ˈɪtəreɪt/,leverage:/ˈlevərɪdʒ/,optimize:/ˈɒptɪmaɪz/,
-  analytics:/ˌænəˈlɪtɪks/,hypothesis:/haɪˈpɒθəsɪs/,
-  architecture:/ˈɑːrkɪtektʃər/,infrastructure:/ˈɪnfrəstrʌktʃər/,
+  acquisition:"ˌækwɪˈzɪʃən",activation:"ˌæktɪˈveɪʃən",onboarding:"ˈɒnbɔːrdɪŋ",
+  referral:"rɪˈfɜːrəl",churn:"tʃɜːrn",metrics:"ˈmetrɪks",retention:"rɪˈtenʃən",
+  revenue:"ˈrevənjuː",margin:"ˈmɑːrdʒɪn",valuation:"ˌvæljuˈeɪʃən",
+  premium:"ˈpriːmiəm",dividend:"ˈdɪvɪdend",consensus:"kənˈsensəs",
+  scalability:"ˌskeɪləˈbɪlɪti",deployment:"dɪˈplɔɪmənt",latency:"ˈleɪtənsi",
+  throughput:"ˈθruːpʊt",bottleneck:"ˈbɒtlnek",discoverability:"dɪˌskʌvərəˈbɪlɪti",
+  degraded:"dɪˈɡreɪdɪd",engagement:"ɪnˈɡeɪdʒmənt",roadmap:"ˈrəʊdmæp",
+  profitability:"ˌprɒfɪtəˈbɪlɪti",localization:"ˌləʊkəlaɪˈzeɪʃən",
+  collaborate:"kəˈlæbəreɪt",stakeholder:"ˈsteɪkˌhəʊldər",
+  iterate:"ˈɪtəreɪt",leverage:"ˈlevərɪdʒ",optimize:"ˈɒptɪmaɪz",
+  analytics:"ˌænəˈlɪtɪks",hypothesis:"haɪˈpɒθəsɪs",
+  architecture:"ˈɑːrkɪtektʃər",infrastructure:"ˈɪnfrəstrʌktʃər",
+  flow:"fləʊ",test:"test",reduce:"rɪˈdjuːs",improve:"ɪmˈpruːv",
+  spend:"spend",scaling:"ˈskeɪlɪŋ",contributed:"kənˈtrɪbjuːtɪd",
+  significantly:"sɪɡˈnɪfɪkəntli",notification:"ˌnəʊtɪfɪˈkeɪʃən",
 };
 function getPronTip(refWord, heardWord) {
   const w = refWord.toLowerCase();
@@ -936,15 +939,20 @@ function getPronTip(refWord, heardWord) {
   // Analyze what went wrong based on what was heard
   let tip = '';
   if (!h || h === w) return null;
-  // Common confusion patterns
+  // Common confusion patterns for Chinese English learners
   if (w.includes('tion') && !h.includes('tion') && !h.includes('shun')) tip = `"-tion" 发 /ʃən/（类似"审"），不是 /tiɒn/`;
-  else if (w.includes('th') && (h.includes('d') || h.includes('t') || h.includes('z') || h.includes('s'))) tip = `"th" 需要舌尖抵上齿：/θ/ 送气（think）或 /ð/ 振动（the）`;
-  else if (w.includes('r') && !h.includes('r')) tip = `注意 "r" 音：舌头后卷不触碰上颚，区别于中文的"日"`;
+  else if (w.includes('th') && (h.replace(/th/g,'').length === h.length) && (h.includes('d') || h.includes('t') || h.includes('z') || h.includes('s'))) tip = `"th" 需要舌尖抵上齿：/θ/ 送气（think）或 /ð/ 振动（the）`;
+  else if (w.startsWith('fl') && h.startsWith('sh')) tip = `"fl" 是下唇轻触上齿后送气 + /l/，不是 "sh"。先单独练 "f" 再加 "l"`;
+  else if (w.startsWith('fl') && !h.startsWith('fl')) tip = `"fl" 辅音组合：先发 /f/（上齿咬下唇），紧接 /l/（舌尖抵上齿龈）`;
+  else if (w.includes('r') && !h.includes('r') && w.length > 3) tip = `注意 "r" 音：舌头后卷不触碰上颚，区别于中文的"日"`;
   else if (w.endsWith('ly') && !h.endsWith('ly')) tip = `词尾 "-ly" 要轻读 /li/，不要吞掉`;
-  else if (w.endsWith('ing') && !h.endsWith('ing')) tip = `词尾 "-ing" 发 /ɪŋ/，注意鼻音 ng`;
-  else if (w.includes('v') && h.replace('v','').length === h.length - 0 && (h.includes('w') || h.includes('b'))) tip = `"v" 上齿轻咬下唇送气，不是 "w" 或 "b"`;
+  else if (w.endsWith('ing') && !h.endsWith('ing')) tip = `词尾 "-ing" 发 /ɪŋ/，注意鼻音 ng，舌根抵住软腭`;
+  else if (w.includes('v') && !h.includes('v') && (h.includes('w') || h.includes('b'))) tip = `"v" 上齿轻咬下唇振动送气，不是 "w"（双唇）或 "b"（爆破）`;
+  else if (w.startsWith('ch') && !h.startsWith('ch')) tip = `"ch" 发 /tʃ/，舌尖抵上齿龈后弹开，类似"吃"但不卷舌`;
+  else if (w.includes('oa') && h.includes('o') && !h.includes('oa')) tip = `"oa" 发长元音 /əʊ/，嘴巴从半开到收圆`;
+  else if (w.length > 6 && h.length < w.length * 0.6) tip = `单词较长，注意每个音节都要发出来，不要吞音。可以先拆分音节慢读`;
   else if (lev(w, h) <= 2) tip = `发音接近但不够准确，注意每个音节的重音位置`;
-  else tip = `机器听到 "${h}"，和目标词差距较大，建议先听标准发音再模仿`;
+  else tip = `机器听到 "${h}"，差距较大。建议：先点 ▶ 听标准发音，再慢速模仿`;
   return { word: refWord, ipa, heard: heardWord, tip };
 }
 
