@@ -1,0 +1,39 @@
+name: Daily English Practice Reminder
+
+on:
+  schedule:
+    # 1:20 PM HKT = 5:20 AM UTC
+    - cron: '20 5 * * *'
+  workflow_dispatch: {}
+
+jobs:
+  remind:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send Discord reminder
+        env:
+          WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: |
+          DOW=$(date -u +%w)
+          case "$DOW" in
+            1) THEME="Growth / Marketing" ;;
+            2) THEME="Product / Metrics" ;;
+            3) THEME="Finance / Investment" ;;
+            4) THEME="Team / Management" ;;
+            5) THEME="Strategy / Planning" ;;
+            *) THEME="Review / Weekend" ;;
+          esac
+          TODAY=$(date -u '+%Y-%m-%d %A')
+          PAGES_URL="https://mars16881688.github.io/AI-English-Learning/"
+
+          curl -sf -H "Content-Type: application/json" -d "{
+            \"embeds\": [{
+              \"title\": \"Daily English Practice\",
+              \"description\": \"**${TODAY}**\nTheme: ${THEME}\n\n5 sentences + vocabulary with audio playback\",
+              \"url\": \"${PAGES_URL}\",
+              \"color\": 3447003,
+              \"footer\": {
+                \"text\": \"Tap to open practice page\"
+              }
+            }]
+          }" "$WEBHOOK_URL"

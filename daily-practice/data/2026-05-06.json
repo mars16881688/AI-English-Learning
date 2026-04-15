@@ -1,0 +1,90 @@
+{
+  "date": "2026-05-06",
+  "themes": {
+    "growth": {
+      "label": "Growth / Marketing",
+      "sentences": [
+        {"en": "The propensity model predicts which users are most likely to make their first deposit.", "zh": "倾向性模型预测哪些用户最有可能完成首次入金。"},
+        {"en": "We need to optimize the onboarding funnel for users coming from social media channels.", "zh": "我们需要优化来自社交媒体渠道用户的引导漏斗。"},
+        {"en": "The word-of-mouth effect in the expat community drove a 15% lift in registrations.", "zh": "外籍社区的口碑效应带动注册量提升了15%。"},
+        {"en": "Our retention cohorts show that power users engage with at least five features weekly.", "zh": "留存同期群显示高频用户每周至少使用五个功能。"},
+        {"en": "The growth model projects us hitting one million users by Q3 if current trends hold.", "zh": "增长模型预测如果当前趋势保持，我们将在Q3达到100万用户。"}
+      ],
+      "vocabulary": [
+        {"word": "propensity model", "phonetic": "/prəˈpensɪti ˈmɒdəl/", "meaning": "倾向性模型", "example": {"en": "The propensity model uses behavioral signals to score user intent.", "zh": "倾向性模型使用行为信号来评估用户意图。"}},
+        {"word": "word-of-mouth", "phonetic": "/wɜːd əv maʊθ/", "meaning": "口碑", "example": {"en": "Word-of-mouth is the most trusted form of marketing.", "zh": "口碑是最受信任的营销形式。"}},
+        {"word": "power user", "phonetic": "/ˈpaʊər ˈjuːzər/", "meaning": "高频用户；核心用户", "example": {"en": "Power users often become your best advocates and product testers.", "zh": "高频用户往往成为你最好的推广者和产品测试者。"}},
+        {"word": "lift", "phonetic": "/lɪft/", "meaning": "提升（量）", "example": {"en": "The new creative generated a 20% lift in click-through rate.", "zh": "新素材带来了20%的点击率提升。"}},
+        {"word": "growth model", "phonetic": "/ɡrəʊθ ˈmɒdəl/", "meaning": "增长模型", "example": {"en": "The growth model combines acquisition, activation, and monetization assumptions.", "zh": "增长模型结合了获客、激活和变现的假设。"}}
+      ]
+    },
+    "product": {
+      "label": "Product / Metrics",
+      "sentences": [
+        {"en": "The API gateway handles authentication, rate limiting, and request routing.", "zh": "API网关处理认证、速率限制和请求路由。"},
+        {"en": "We are running a multivariate test with four different checkout flow variations.", "zh": "我们正在运行一个包含四种不同结账流程变体的多变量测试。"},
+        {"en": "The error budget for this quarter is nearly exhausted after two major incidents.", "zh": "在两次重大事故后，本季度的错误预算几乎耗尽。"},
+        {"en": "User retention on the web platform is 30% lower than on the native mobile app.", "zh": "网页端的用户留存比原生移动应用低30%。"},
+        {"en": "The product team is adopting a dual-track agile approach for discovery and delivery.", "zh": "产品团队正在采用双轨敏捷方法来同时进行探索和交付。"}
+      ],
+      "vocabulary": [
+        {"word": "API gateway", "phonetic": "/ˌeɪ piː ˈaɪ ˈɡeɪtweɪ/", "meaning": "API网关", "example": {"en": "The API gateway is the single entry point for all client requests.", "zh": "API网关是所有客户端请求的唯一入口。"}},
+        {"word": "multivariate test", "phonetic": "/ˌmʌltiˈveəriət test/", "meaning": "多变量测试", "example": {"en": "A multivariate test evaluates multiple variables simultaneously.", "zh": "多变量测试同时评估多个变量。"}},
+        {"word": "error budget", "phonetic": "/ˈerər ˈbʌdʒɪt/", "meaning": "错误预算", "example": {"en": "When the error budget runs out, the team must prioritize reliability work.", "zh": "当错误预算用完时，团队必须优先处理可靠性工作。"}},
+        {"word": "native app", "phonetic": "/ˈneɪtɪv æp/", "meaning": "原生应用", "example": {"en": "Native apps offer better performance and deeper OS integration.", "zh": "原生应用提供更好的性能和更深的操作系统集成。"}},
+        {"word": "dual-track agile", "phonetic": "/djuːəl træk ˈædʒaɪl/", "meaning": "双轨敏捷", "example": {"en": "Dual-track agile separates discovery research from delivery engineering.", "zh": "双轨敏捷将探索研究与交付工程分开。"}}
+      ]
+    },
+    "finance": {
+      "label": "Finance / Investment",
+      "sentences": [
+        {"en": "The Sharpe ratio of this portfolio indicates strong risk-adjusted returns.", "zh": "该投资组合的夏普比率表明风险调整后的回报很强。"},
+        {"en": "The company's working capital position has deteriorated over the past two quarters.", "zh": "该公司的营运资金状况在过去两个季度恶化了。"},
+        {"en": "Activist investors are pushing for a board seat and a strategic review.", "zh": "激进投资者正在争取一个董事会席位并要求进行战略审查。"},
+        {"en": "The credit spread widening signals growing concern about corporate default risk.", "zh": "信用利差扩大表明市场对企业违约风险的担忧加剧。"},
+        {"en": "The stock has a beta of 1.5, meaning it is 50% more volatile than the broad market.", "zh": "该股的beta系数为1.5，意味着它的波动比大盘高出50%。"}
+      ],
+      "vocabulary": [
+        {"word": "Sharpe ratio", "phonetic": "/ʃɑːp ˈreɪʃiəʊ/", "meaning": "夏普比率", "example": {"en": "A Sharpe ratio above 1.0 is generally considered good risk-adjusted performance.", "zh": "夏普比率超过1.0通常被认为是良好的风险调整后表现。"}},
+        {"word": "working capital", "phonetic": "/ˈwɜːkɪŋ ˈkæpɪtəl/", "meaning": "营运资金", "example": {"en": "Negative working capital may indicate the company is struggling to meet short-term obligations.", "zh": "负的营运资金可能表明公司难以履行短期义务。"}},
+        {"word": "activist investor", "phonetic": "/ˈæktɪvɪst ɪnˈvestər/", "meaning": "激进投资者", "example": {"en": "Activist investors often push for cost-cutting measures or asset sales.", "zh": "激进投资者通常推动削减成本或出售资产。"}},
+        {"word": "credit spread", "phonetic": "/ˈkredɪt spred/", "meaning": "信用利差", "example": {"en": "Widening credit spreads reflect higher perceived risk in corporate bonds.", "zh": "信用利差扩大反映了市场对公司债券更高风险的感知。"}},
+        {"word": "beta", "phonetic": "/ˈbeɪtə/", "meaning": "贝塔系数（相对波动性）", "example": {"en": "Low-beta stocks tend to outperform during market downturns.", "zh": "低贝塔股票往往在市场下跌时表现更好。"}}
+      ]
+    },
+    "team": {
+      "label": "Team / Management",
+      "sentences": [
+        {"en": "The objective should be aspirational, and the key results should be concrete and time-bound.", "zh": "目标应该是有抱负的，关键结果应该是具体的且有时间限制的。"},
+        {"en": "We are rotating team members across projects to broaden their skill set.", "zh": "我们在项目间轮转团队成员，以拓宽他们的技能组合。"},
+        {"en": "The candidate demonstrated strong problem-solving skills during the case interview.", "zh": "候选人在案例面试中展示了很强的解决问题能力。"},
+        {"en": "We should celebrate small wins to maintain momentum during long-running projects.", "zh": "我们应该庆祝小胜利，以在长周期项目中保持动力。"},
+        {"en": "The manager must provide clear context so the team understands the why behind each decision.", "zh": "管理者必须提供清晰的背景，让团队理解每个决策背后的原因。"}
+      ],
+      "vocabulary": [
+        {"word": "aspirational", "phonetic": "/ˌæspɪˈreɪʃənəl/", "meaning": "有抱负的；有志向的", "example": {"en": "Aspirational OKRs should make the team stretch beyond what feels comfortable.", "zh": "有抱负的OKR应该让团队超越舒适区。"}},
+        {"word": "rotate", "phonetic": "/rəʊˈteɪt/", "meaning": "轮转；轮岗", "example": {"en": "We rotate on-call duty among all engineers to share the burden.", "zh": "我们在所有工程师之间轮转值班以分担负担。"}},
+        {"word": "case interview", "phonetic": "/keɪs ˈɪntəvjuː/", "meaning": "案例面试", "example": {"en": "The case interview tests analytical thinking under time pressure.", "zh": "案例面试在时间压力下测试分析思维能力。"}},
+        {"word": "momentum", "phonetic": "/məˈmentəm/", "meaning": "势头；动力", "example": {"en": "Building momentum early in a project helps sustain team energy.", "zh": "在项目早期建立势头有助于维持团队活力。"}},
+        {"word": "context", "phonetic": "/ˈkɒntekst/", "meaning": "背景；上下文", "example": {"en": "Leaders who share context empower teams to make better autonomous decisions.", "zh": "分享背景信息的领导者能赋能团队做出更好的自主决策。"}}
+      ]
+    },
+    "strategy": {
+      "label": "Strategy / Planning",
+      "sentences": [
+        {"en": "The disruptive innovation targets the low end of the market that incumbents ignore.", "zh": "颠覆性创新瞄准的是现有玩家忽视的市场低端。"},
+        {"en": "We should build optionality into our strategy to adapt as the market evolves.", "zh": "我们应该在战略中构建可选择性，以便随市场演变而调整。"},
+        {"en": "The customer acquisition flywheel is finally starting to spin on its own.", "zh": "获客飞轮终于开始自行转动了。"},
+        {"en": "Our strategic retreat from the Australian market freed up resources for higher-priority regions.", "zh": "从澳大利亚市场的战略撤退释放了资源给更高优先级的地区。"},
+        {"en": "The margin of safety in our financial projections accounts for a 20% revenue shortfall.", "zh": "我们财务预测中的安全边际考虑了20%的收入缺口。"}
+      ],
+      "vocabulary": [
+        {"word": "disruptive innovation", "phonetic": "/dɪsˈrʌptɪv ˌɪnəˈveɪʃən/", "meaning": "颠覆性创新", "example": {"en": "Disruptive innovation starts in niche markets and gradually moves upmarket.", "zh": "颠覆性创新从利基市场起步，逐步向高端市场移动。"}},
+        {"word": "optionality", "phonetic": "/ˌɒpʃəˈnælɪti/", "meaning": "可选择性", "example": {"en": "Building optionality means keeping multiple strategic paths open.", "zh": "构建可选择性意味着保持多条战略路径的开放。"}},
+        {"word": "margin of safety", "phonetic": "/ˈmɑːdʒɪn əv ˈseɪfti/", "meaning": "安全边际", "example": {"en": "Value investors seek a wide margin of safety when buying stocks.", "zh": "价值投资者在买入股票时追求较大的安全边际。"}},
+        {"word": "niche market", "phonetic": "/niːʃ ˈmɑːkɪt/", "meaning": "利基市场", "example": {"en": "Dominating a niche market is often more profitable than competing in a broad one.", "zh": "主导利基市场往往比在宽泛市场竞争更有利可图。"}},
+        {"word": "projections", "phonetic": "/prəˈdʒekʃənz/", "meaning": "预测；预估", "example": {"en": "Revenue projections should include both optimistic and conservative scenarios.", "zh": "收入预测应包含乐观和保守两种情景。"}}
+      ]
+    }
+  }
+}

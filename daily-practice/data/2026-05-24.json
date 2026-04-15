@@ -1,0 +1,90 @@
+{
+  "date": "2026-05-24",
+  "themes": {
+    "growth": {
+      "label": "Growth / Marketing",
+      "sentences": [
+        {"en": "The lookalike audience campaign outperformed our interest-based targeting by 2x.", "zh": "相似人群广告系列的表现比兴趣定向高出2倍。"},
+        {"en": "We are shifting budget from awareness campaigns to bottom-of-funnel conversion ads.", "zh": "我们正在将预算从品牌认知活动转向漏斗底端的转化广告。"},
+        {"en": "The email open rate improved after we started personalizing subject lines.", "zh": "开始个性化邮件主题行后，邮件打开率提升了。"},
+        {"en": "Churn prediction models help us intervene before users leave the platform.", "zh": "流失预测模型帮助我们在用户离开平台之前进行干预。"},
+        {"en": "The referral incentive structure needs to reward both the inviter and the invitee.", "zh": "推荐激励结构需要同时奖励邀请人和被邀请人。"}
+      ],
+      "vocabulary": [
+        {"word": "lookalike audience", "phonetic": "/ˈlʊkəlaɪk ˈɔːdiəns/", "meaning": "相似人群", "example": {"en": "Lookalike audiences are built from your highest-value customer profiles.", "zh": "相似人群是基于你最高价值的客户画像构建的。"}},
+        {"word": "bottom-of-funnel", "phonetic": "/ˈbɒtəm əv ˈfʌnəl/", "meaning": "漏斗底端", "example": {"en": "Bottom-of-funnel content focuses on purchase decisions and comparisons.", "zh": "漏斗底端内容侧重于购买决策和产品对比。"}},
+        {"word": "open rate", "phonetic": "/ˈəʊpən reɪt/", "meaning": "打开率", "example": {"en": "Industry average email open rate for fintech is around 21%.", "zh": "金融科技行业的邮件平均打开率约为21%。"}},
+        {"word": "churn prediction", "phonetic": "/tʃɜːn prɪˈdɪkʃən/", "meaning": "流失预测", "example": {"en": "Machine learning models improve churn prediction accuracy over rule-based systems.", "zh": "机器学习模型比基于规则的系统提高了流失预测准确率。"}},
+        {"word": "incentive", "phonetic": "/ɪnˈsentɪv/", "meaning": "激励", "example": {"en": "Cash incentives drive faster action but may attract low-quality users.", "zh": "现金激励能驱动更快行动，但可能吸引低质量用户。"}}
+      ]
+    },
+    "product": {
+      "label": "Product / Metrics",
+      "sentences": [
+        {"en": "The feature flag allows us to toggle the experiment without redeploying code.", "zh": "功能开关让我们无需重新部署代码就能切换实验。"},
+        {"en": "We observed a statistically significant lift in conversion with 95% confidence.", "zh": "我们以95%的置信度观察到了统计显著的转化提升。"},
+        {"en": "The user journey map exposed three unnecessary redirects in the signup flow.", "zh": "用户旅程地图暴露了注册流程中三个不必要的跳转。"},
+        {"en": "Technical debt is slowing down our release velocity and we need to allocate sprint capacity for it.", "zh": "技术债务正在拖慢我们的发布速度，需要为此分配迭代容量。"},
+        {"en": "The data warehouse query latency impacts the dashboard refresh time for internal users.", "zh": "数据仓库查询延迟影响了内部用户的看板刷新时间。"}
+      ],
+      "vocabulary": [
+        {"word": "feature flag", "phonetic": "/ˈfiːtʃər flæɡ/", "meaning": "功能开关", "example": {"en": "Feature flags decouple deployment from release, reducing risk.", "zh": "功能开关将部署与发布解耦，降低了风险。"}},
+        {"word": "statistically significant", "phonetic": "/stəˈtɪstɪkli sɪɡˈnɪfɪkənt/", "meaning": "统计显著的", "example": {"en": "Results are not actionable until they are statistically significant.", "zh": "结果在统计显著之前不具有可行性。"}},
+        {"word": "user journey", "phonetic": "/ˈjuːzər ˈdʒɜːni/", "meaning": "用户旅程", "example": {"en": "Mapping the user journey helps identify pain points and opportunities.", "zh": "绘制用户旅程地图有助于识别痛点和机会。"}},
+        {"word": "technical debt", "phonetic": "/ˈteknɪkəl det/", "meaning": "技术债务", "example": {"en": "Ignoring technical debt eventually makes every new feature more expensive to build.", "zh": "忽视技术债务最终会使每个新功能的开发成本更高。"}},
+        {"word": "dashboard", "phonetic": "/ˈdæʃbɔːd/", "meaning": "看板；仪表盘", "example": {"en": "The executive dashboard shows real-time metrics across all business lines.", "zh": "管理层看板展示所有业务线的实时指标。"}}
+      ]
+    },
+    "finance": {
+      "label": "Finance / Investment",
+      "sentences": [
+        {"en": "The IPO priced at the top of the range, reflecting strong institutional demand.", "zh": "IPO定价在区间上限，反映了强劲的机构需求。"},
+        {"en": "Revenue concentration risk is high since the top 5 clients account for 60% of income.", "zh": "收入集中度风险较高，因为前5大客户占了60%的收入。"},
+        {"en": "The put-call ratio is elevated, suggesting bearish sentiment among options traders.", "zh": "看跌看涨比率偏高，表明期权交易者情绪偏空。"},
+        {"en": "Operating expenses grew faster than revenue, compressing the net profit margin.", "zh": "运营费用增速快于营收，压缩了净利润率。"},
+        {"en": "The SPAC merger provided the company with a faster route to public listing.", "zh": "SPAC合并为该公司提供了更快的上市路径。"}
+      ],
+      "vocabulary": [
+        {"word": "IPO", "phonetic": "/ˌaɪ piː ˈəʊ/", "meaning": "首次公开募股", "example": {"en": "The company filed for an IPO with the SEC last Friday.", "zh": "该公司上周五向SEC提交了IPO申请。"}},
+        {"word": "concentration risk", "phonetic": "/ˌkɒnsənˈtreɪʃən rɪsk/", "meaning": "集中度风险", "example": {"en": "Portfolio diversification is the primary defense against concentration risk.", "zh": "投资组合多元化是防范集中度风险的主要手段。"}},
+        {"word": "put-call ratio", "phonetic": "/pʊt kɔːl ˈreɪʃiəʊ/", "meaning": "看跌看涨比率", "example": {"en": "An extremely high put-call ratio can be a contrarian bullish signal.", "zh": "极高的看跌看涨比率可能是逆向看涨信号。"}},
+        {"word": "compress", "phonetic": "/kəmˈpres/", "meaning": "压缩", "example": {"en": "Rising costs compressed margins across the entire industry.", "zh": "成本上升压缩了整个行业的利润率。"}},
+        {"word": "SPAC", "phonetic": "/spæk/", "meaning": "特殊目的收购公司", "example": {"en": "SPAC deals peaked in 2021 but have since faced tighter regulatory scrutiny.", "zh": "SPAC交易在2021年达到高峰，此后面临更严格的监管审查。"}}
+      ]
+    },
+    "team": {
+      "label": "Team / Management",
+      "sentences": [
+        {"en": "The stretch goal motivates the team but the committed goal must be achievable.", "zh": "挑战目标激励团队，但承诺目标必须是可达成的。"},
+        {"en": "We rotated the sprint facilitator role to develop leadership skills across the team.", "zh": "我们轮换冲刺引导者角色，以培养团队成员的领导力。"},
+        {"en": "The exit interview revealed that lack of career progression was the top reason for leaving.", "zh": "离职面谈显示缺乏职业发展是离职的首要原因。"},
+        {"en": "Psychological safety enables team members to take risks without fear of blame.", "zh": "心理安全感让团队成员能够冒险而不怕被责怪。"},
+        {"en": "The headcount planning for next year depends on the revenue forecast.", "zh": "明年的编制规划取决于收入预测。"}
+      ],
+      "vocabulary": [
+        {"word": "stretch goal", "phonetic": "/stretʃ ɡəʊl/", "meaning": "挑战目标", "example": {"en": "A good stretch goal is ambitious but not demoralizing.", "zh": "好的挑战目标是有雄心但不会令人泄气的。"}},
+        {"word": "facilitator", "phonetic": "/fəˈsɪlɪteɪtər/", "meaning": "引导者；促进者", "example": {"en": "The facilitator keeps the meeting focused and ensures everyone participates.", "zh": "引导者让会议保持聚焦，并确保每个人都参与。"}},
+        {"word": "exit interview", "phonetic": "/ˈeksɪt ˈɪntəvjuː/", "meaning": "离职面谈", "example": {"en": "Patterns from exit interviews should inform your retention strategy.", "zh": "离职面谈中的规律应该指导你的留人策略。"}},
+        {"word": "psychological safety", "phonetic": "/ˌsaɪkəˈlɒdʒɪkəl ˈseɪfti/", "meaning": "心理安全感", "example": {"en": "Google's Project Aristotle found psychological safety is the top predictor of team success.", "zh": "Google的亚里士多德项目发现心理安全感是团队成功的首要预测因素。"}},
+        {"word": "headcount", "phonetic": "/ˈhedkaʊnt/", "meaning": "编制；人数", "example": {"en": "We froze headcount in Q2 to control operating expenses.", "zh": "我们在Q2冻结了编制以控制运营费用。"}}
+      ]
+    },
+    "strategy": {
+      "label": "Strategy / Planning",
+      "sentences": [
+        {"en": "The winner-take-all dynamic in this market means we must capture share quickly.", "zh": "这个市场赢者通吃的特性意味着我们必须快速抢占份额。"},
+        {"en": "Cannibalization between product lines is acceptable if total revenue grows.", "zh": "如果总收入增长，产品线之间的自相蚕食是可以接受的。"},
+        {"en": "The ecosystem play is to integrate deeply with third-party tools and platforms.", "zh": "生态系统策略是与第三方工具和平台深度集成。"},
+        {"en": "Our pricing power comes from the unique data insights we provide to traders.", "zh": "我们的定价权来自于我们为交易者提供的独特数据洞察。"},
+        {"en": "The three-horizon framework helps balance short-term execution with long-term innovation.", "zh": "三层面框架帮助平衡短期执行与长期创新。"}
+      ],
+      "vocabulary": [
+        {"word": "winner-take-all", "phonetic": "/ˈwɪnər teɪk ɔːl/", "meaning": "赢者通吃", "example": {"en": "Social networks tend to be winner-take-all markets due to strong network effects.", "zh": "由于强大的网络效应，社交网络往往是赢者通吃的市场。"}},
+        {"word": "cannibalization", "phonetic": "/ˌkænɪbəlaɪˈzeɪʃən/", "meaning": "自相蚕食", "example": {"en": "Apple accepted iPhone cannibalization of iPad sales because total profit grew.", "zh": "苹果接受了iPhone对iPad销售的蚕食，因为总利润增长了。"}},
+        {"word": "ecosystem", "phonetic": "/ˈiːkəʊˌsɪstəm/", "meaning": "生态系统", "example": {"en": "A thriving developer ecosystem attracts more users and increases platform value.", "zh": "繁荣的开发者生态系统吸引更多用户并增加平台价值。"}},
+        {"word": "pricing power", "phonetic": "/ˈpraɪsɪŋ ˈpaʊər/", "meaning": "定价权", "example": {"en": "Companies with pricing power can raise prices without losing customers.", "zh": "拥有定价权的公司可以提价而不流失客户。"}},
+        {"word": "three-horizon", "phonetic": "/θriː həˈraɪzən/", "meaning": "三层面", "example": {"en": "Horizon 1 is core business, Horizon 2 is emerging opportunities, Horizon 3 is future bets.", "zh": "第一层面是核心业务，第二层面是新兴机会，第三层面是未来押注。"}}
+      ]
+    }
+  }
+}

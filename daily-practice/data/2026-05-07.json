@@ -1,0 +1,90 @@
+{
+  "date": "2026-05-07",
+  "themes": {
+    "growth": {
+      "label": "Growth / Marketing",
+      "sentences": [
+        {"en": "We launched a drip campaign targeting dormant users who haven't logged in for 30 days.", "zh": "我们针对30天未登录的沉默用户启动了一个滴灌式邮件营销活动。"},
+        {"en": "The viral coefficient exceeded 1.2, meaning each user is bringing more than one new user.", "zh": "病毒系数超过了1.2，意味着每个用户带来了不止一个新用户。"},
+        {"en": "Attribution modeling shows that social media is an undervalued touchpoint in our funnel.", "zh": "归因模型显示社交媒体是我们漏斗中一个被低估的触点。"},
+        {"en": "We should implement progressive profiling to reduce friction on the sign-up form.", "zh": "我们应该实施渐进式信息收集，以减少注册表单的摩擦。"},
+        {"en": "The uplift from the personalized homepage experiment was statistically significant.", "zh": "个性化首页实验带来的提升在统计上是显著的。"}
+      ],
+      "vocabulary": [
+        {"word": "dormant", "phonetic": "/ˈdɔːrmənt/", "meaning": "休眠的；沉默的", "example": {"en": "Reactivating dormant users is cheaper than acquiring new ones.", "zh": "重新激活沉默用户比获取新用户更便宜。"}},
+        {"word": "attribution", "phonetic": "/ˌætrɪˈbjuːʃən/", "meaning": "归因", "example": {"en": "Multi-touch attribution gives a fairer picture of channel contribution.", "zh": "多触点归因能更公平地反映各渠道的贡献。"}},
+        {"word": "touchpoint", "phonetic": "/ˈtʌtʃpɔɪnt/", "meaning": "触点；接触点", "example": {"en": "Every touchpoint is an opportunity to reinforce the brand message.", "zh": "每个触点都是强化品牌信息的机会。"}},
+        {"word": "uplift", "phonetic": "/ˈʌplɪft/", "meaning": "提升；增量", "example": {"en": "The experiment showed a 9% uplift in click-through rate.", "zh": "实验显示点击率提升了9%。"}},
+        {"word": "friction", "phonetic": "/ˈfrɪkʃən/", "meaning": "摩擦；阻力", "example": {"en": "Removing unnecessary friction from the checkout flow increased completion by 20%.", "zh": "去除结账流程中不必要的摩擦使完成率提升了20%。"}}
+      ]
+    },
+    "product": {
+      "label": "Product / Metrics",
+      "sentences": [
+        {"en": "We need to instrument the new feature so we can track usage from day one.", "zh": "我们需要对新功能做埋点，这样从第一天起就能追踪使用情况。"},
+        {"en": "The 95th percentile latency spiked after we rolled out the update.", "zh": "更新上线后，P95延迟出现了飙升。"},
+        {"en": "Feature flags allow us to decouple deployment from release.", "zh": "功能开关让我们可以把部署和发布解耦。"},
+        {"en": "The cohort analysis revealed that users acquired in January had better lifetime value.", "zh": "队列分析显示1月获取的用户拥有更高的生命周期价值。"},
+        {"en": "We are shipping an MVP first and will iterate based on early feedback.", "zh": "我们先上线一个最小可行产品，然后基于早期反馈迭代。"}
+      ],
+      "vocabulary": [
+        {"word": "instrument", "phonetic": "/ˈɪnstrəmənt/", "meaning": "埋点；仪器化", "example": {"en": "Make sure to instrument every key interaction in the user flow.", "zh": "确保对用户流程中每个关键交互做埋点。"}},
+        {"word": "latency", "phonetic": "/ˈleɪtənsi/", "meaning": "延迟", "example": {"en": "High latency on the trading page directly impacts user satisfaction.", "zh": "交易页面的高延迟直接影响用户满意度。"}},
+        {"word": "decouple", "phonetic": "/diːˈkʌpəl/", "meaning": "解耦", "example": {"en": "We decoupled the backend service to allow independent scaling.", "zh": "我们对后端服务做了解耦，以支持独立扩展。"}},
+        {"word": "cohort", "phonetic": "/ˈkoʊhɔːrt/", "meaning": "队列；群组", "example": {"en": "Analyze each cohort separately to find retention patterns.", "zh": "分别分析每个队列以发现留存规律。"}},
+        {"word": "iterate", "phonetic": "/ˈɪtəreɪt/", "meaning": "迭代", "example": {"en": "We plan to iterate on the design after the first round of user testing.", "zh": "我们计划在第一轮用户测试后对设计进行迭代。"}}
+      ]
+    },
+    "finance": {
+      "label": "Finance / Investment",
+      "sentences": [
+        {"en": "The company's free cash flow has been consistently positive for eight consecutive quarters.", "zh": "该公司的自由现金流已连续八个季度保持正值。"},
+        {"en": "Short sellers are betting against the stock due to slowing revenue growth.", "zh": "由于营收增速放缓，卖空者正在做空该股票。"},
+        {"en": "The yield curve inversion has historically been a reliable recession indicator.", "zh": "收益率曲线倒挂在历史上一直是可靠的衰退指标。"},
+        {"en": "Management guided for mid-single-digit revenue growth in the next fiscal year.", "zh": "管理层指引下一财年营收增速为中个位数。"},
+        {"en": "The stock rallied on news of a strategic partnership with a major cloud provider.", "zh": "因与大型云服务商达成战略合作的消息，股价大涨。"}
+      ],
+      "vocabulary": [
+        {"word": "rally", "phonetic": "/ˈræli/", "meaning": "反弹；大涨", "example": {"en": "Tech stocks rallied after the Fed signaled a pause in rate hikes.", "zh": "美联储释放暂停加息信号后，科技股大涨。"}},
+        {"word": "recession", "phonetic": "/rɪˈseʃən/", "meaning": "衰退", "example": {"en": "Defensive sectors tend to outperform during a recession.", "zh": "防御性板块往往在经济衰退期间表现更好。"}},
+        {"word": "fiscal", "phonetic": "/ˈfɪskəl/", "meaning": "财政的；财年的", "example": {"en": "The fiscal year ends in March for many Japanese companies.", "zh": "许多日本公司的财年在3月结束。"}},
+        {"word": "guidance", "phonetic": "/ˈɡaɪdəns/", "meaning": "业绩指引", "example": {"en": "The company raised its full-year guidance after a strong first half.", "zh": "在强劲的上半年后，公司上调了全年业绩指引。"}},
+        {"word": "yield curve", "phonetic": "/jiːld kɜːrv/", "meaning": "收益率曲线", "example": {"en": "An inverted yield curve often precedes an economic downturn.", "zh": "收益率曲线倒挂往往先于经济下行出现。"}}
+      ]
+    },
+    "team": {
+      "label": "Team / Management",
+      "sentences": [
+        {"en": "I would like you to take ownership of the entire onboarding redesign project.", "zh": "我希望你能全权负责整个新手引导改版项目。"},
+        {"en": "Let's set up a cadence of weekly syncs to keep everyone on the same page.", "zh": "让我们建立每周同步会的节奏，确保所有人保持信息一致。"},
+        {"en": "The performance review cycle begins next month, so start documenting your achievements.", "zh": "绩效评估周期下个月开始，请开始记录你的成果。"},
+        {"en": "We need to upskill the team on data literacy to make better decisions.", "zh": "我们需要提升团队的数据素养，以做出更好的决策。"},
+        {"en": "Please escalate the issue to the engineering lead if it is not resolved by end of day.", "zh": "如果今天下班前问题没解决，请升级到工程负责人。"}
+      ],
+      "vocabulary": [
+        {"word": "ownership", "phonetic": "/ˈoʊnərʃɪp/", "meaning": "主人翁意识；负责", "example": {"en": "Taking ownership means being accountable for both success and failure.", "zh": "承担主人翁意识意味着对成功和失败都负责。"}},
+        {"word": "cadence", "phonetic": "/ˈkeɪdəns/", "meaning": "节奏；频率", "example": {"en": "Our team operates on a two-week sprint cadence.", "zh": "我们团队按两周冲刺的节奏运作。"}},
+        {"word": "upskill", "phonetic": "/ˈʌpskɪl/", "meaning": "技能提升", "example": {"en": "The company invested in upskilling employees on AI tools.", "zh": "公司投资提升员工的AI工具技能。"}},
+        {"word": "escalate", "phonetic": "/ˈeskəleɪt/", "meaning": "升级；上报", "example": {"en": "Do not hesitate to escalate critical bugs to the on-call engineer.", "zh": "遇到关键bug不要犹豫，直接上报给值班工程师。"}},
+        {"word": "sync", "phonetic": "/sɪŋk/", "meaning": "同步会议", "example": {"en": "Let's have a quick sync before the client meeting.", "zh": "客户会议前我们快速同步一下。"}}
+      ]
+    },
+    "strategy": {
+      "label": "Strategy / Planning",
+      "sentences": [
+        {"en": "We are adopting a platform strategy to build an ecosystem around our core product.", "zh": "我们正在采用平台策略，围绕核心产品构建生态系统。"},
+        {"en": "The land-and-expand model has proven effective in the enterprise segment.", "zh": "先落地再扩张的模式在企业级市场已被证明是有效的。"},
+        {"en": "First-mover advantage is less important than execution speed in this market.", "zh": "在这个市场中，先发优势不如执行速度重要。"},
+        {"en": "We should benchmark our unit economics against the top three competitors.", "zh": "我们应该将单位经济模型与前三名竞争对手进行对标。"},
+        {"en": "The strategic moat comes from proprietary data that competitors cannot replicate.", "zh": "战略护城河来自竞争对手无法复制的专有数据。"}
+      ],
+      "vocabulary": [
+        {"word": "ecosystem", "phonetic": "/ˈiːkoʊsɪstəm/", "meaning": "生态系统", "example": {"en": "A healthy developer ecosystem drives platform adoption.", "zh": "健康的开发者生态系统推动平台采用。"}},
+        {"word": "benchmark", "phonetic": "/ˈbentʃmɑːrk/", "meaning": "基准；对标", "example": {"en": "We benchmark our NPS score against industry leaders every quarter.", "zh": "我们每季度将NPS分数与行业领先者对标。"}},
+        {"word": "moat", "phonetic": "/moʊt/", "meaning": "护城河", "example": {"en": "Switching costs create a strong moat for the business.", "zh": "转换成本为业务构建了强大的护城河。"}},
+        {"word": "proprietary", "phonetic": "/prəˈpraɪəteri/", "meaning": "专有的；独家的", "example": {"en": "Our proprietary algorithm gives us an edge in trade execution.", "zh": "我们的专有算法在交易执行上给了我们优势。"}},
+        {"word": "unit economics", "phonetic": "/ˈjuːnɪt ˌekəˈnɒmɪks/", "meaning": "单位经济模型", "example": {"en": "Healthy unit economics are essential before scaling a business.", "zh": "在扩大业务规模之前，健康的单位经济模型是必要的。"}}
+      ]
+    }
+  }
+}

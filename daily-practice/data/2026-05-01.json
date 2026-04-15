@@ -1,0 +1,90 @@
+{
+  "date": "2026-05-01",
+  "themes": {
+    "growth": {
+      "label": "Growth / Marketing",
+      "sentences": [
+        {"en": "The attribution model is giving too much credit to the last touchpoint.", "zh": "归因模型给了最后一个触点过多的贡献。"},
+        {"en": "We should run a cohort analysis to understand how retention changes over time.", "zh": "我们应该做一个同期群分析，来了解留存随时间的变化。"},
+        {"en": "The reactivation campaign brought back 3,000 dormant users last month.", "zh": "召回活动上个月唤回了3000名沉睡用户。"},
+        {"en": "Our brand awareness in Singapore is significantly lower than in Hong Kong.", "zh": "我们在新加坡的品牌认知度明显低于香港。"},
+        {"en": "The click-through rate on the email campaign exceeded industry benchmarks.", "zh": "邮件活动的点击率超过了行业基准。"}
+      ],
+      "vocabulary": [
+        {"word": "attribution", "phonetic": "/ˌætrɪˈbjuːʃən/", "meaning": "归因", "example": {"en": "Multi-touch attribution gives a more complete picture of the customer journey.", "zh": "多触点归因能更完整地呈现客户旅程。"}},
+        {"word": "cohort", "phonetic": "/ˈkəʊhɔːt/", "meaning": "同期群；队列", "example": {"en": "The January cohort has the highest 30-day retention we have seen.", "zh": "1月同期群的30日留存率是我们见过的最高水平。"}},
+        {"word": "reactivation", "phonetic": "/riːˌæktɪˈveɪʃən/", "meaning": "召回；重新激活", "example": {"en": "Reactivation emails with personalized offers have a 12% open rate.", "zh": "带个性化优惠的召回邮件有12%的打开率。"}},
+        {"word": "dormant", "phonetic": "/ˈdɔːmənt/", "meaning": "沉睡的；不活跃的", "example": {"en": "We define dormant users as those who have not logged in for 90 days.", "zh": "我们将90天未登录的用户定义为沉睡用户。"}},
+        {"word": "click-through rate", "phonetic": "/klɪk θruː reɪt/", "meaning": "点击率（CTR）", "example": {"en": "A higher click-through rate indicates more compelling ad copy.", "zh": "更高的点击率说明广告文案更有吸引力。"}}
+      ]
+    },
+    "product": {
+      "label": "Product / Metrics",
+      "sentences": [
+        {"en": "The feature flag system allows us to toggle features without deploying new code.", "zh": "功能开关系统让我们无需部署新代码就能切换功能。"},
+        {"en": "We discovered a race condition that causes duplicate orders under high load.", "zh": "我们发现了一个在高负载下导致重复订单的竞态条件。"},
+        {"en": "The load time for the portfolio page is three seconds, which is unacceptable.", "zh": "投资组合页面的加载时间是3秒，这是不可接受的。"},
+        {"en": "User satisfaction scores dropped after we removed the quick trade button.", "zh": "移除快捷交易按钮后，用户满意度分数下降了。"},
+        {"en": "We need to define acceptance criteria before the sprint planning meeting.", "zh": "我们需要在冲刺规划会议前定义验收标准。"}
+      ],
+      "vocabulary": [
+        {"word": "feature flag", "phonetic": "/ˈfiːtʃə flæɡ/", "meaning": "功能开关", "example": {"en": "Use feature flags to test new features with a small percentage of users.", "zh": "使用功能开关对小比例用户测试新功能。"}},
+        {"word": "race condition", "phonetic": "/reɪs kənˈdɪʃən/", "meaning": "竞态条件", "example": {"en": "The race condition was fixed by adding a database lock.", "zh": "通过添加数据库锁修复了竞态条件。"}},
+        {"word": "latency", "phonetic": "/ˈleɪtənsi/", "meaning": "延迟", "example": {"en": "We reduced API latency from 500ms to 120ms by adding a cache layer.", "zh": "通过添加缓存层，我们将API延迟从500毫秒降到了120毫秒。"}},
+        {"word": "acceptance criteria", "phonetic": "/əkˈseptəns kraɪˈtɪəriə/", "meaning": "验收标准", "example": {"en": "Clear acceptance criteria prevent scope creep during development.", "zh": "清晰的验收标准能防止开发过程中的范围蔓延。"}},
+        {"word": "toggle", "phonetic": "/ˈtɒɡəl/", "meaning": "切换", "example": {"en": "You can toggle dark mode in the settings page.", "zh": "你可以在设置页面切换深色模式。"}}
+      ]
+    },
+    "finance": {
+      "label": "Finance / Investment",
+      "sentences": [
+        {"en": "The company's debt-to-equity ratio has risen to concerning levels.", "zh": "该公司的资产负债率已升至令人担忧的水平。"},
+        {"en": "Institutional investors are rotating out of growth stocks into value plays.", "zh": "机构投资者正从成长股轮动到价值股。"},
+        {"en": "The IPO was priced at the top of the indicative range.", "zh": "IPO定价在指导价区间的上限。"},
+        {"en": "Gross merchandise value grew 35% year over year driven by cross-border trade.", "zh": "受跨境贸易推动，GMV同比增长了35%。"},
+        {"en": "The management guided for flat revenue growth in the next quarter.", "zh": "管理层给出了下季度营收持平的指引。"}
+      ],
+      "vocabulary": [
+        {"word": "debt-to-equity", "phonetic": "/det tuː ˈekwɪti/", "meaning": "资产负债率", "example": {"en": "A high debt-to-equity ratio indicates greater financial risk.", "zh": "高资产负债率表示更大的财务风险。"}},
+        {"word": "rotation", "phonetic": "/rəʊˈteɪʃən/", "meaning": "轮动", "example": {"en": "Sector rotation drove a sell-off in technology stocks this week.", "zh": "板块轮动本周引发了科技股的抛售。"}},
+        {"word": "IPO", "phonetic": "/ˌaɪ piː ˈəʊ/", "meaning": "首次公开募股", "example": {"en": "The company postponed its IPO due to unfavorable market conditions.", "zh": "由于市场环境不利，该公司推迟了IPO。"}},
+        {"word": "guidance", "phonetic": "/ˈɡaɪdəns/", "meaning": "业绩指引", "example": {"en": "Management raised full-year guidance after a strong first quarter.", "zh": "在强劲的一季度后，管理层上调了全年业绩指引。"}},
+        {"word": "indicative", "phonetic": "/ɪnˈdɪkətɪv/", "meaning": "指导性的；参考性的", "example": {"en": "The indicative price range for the offering is $18 to $22 per share.", "zh": "此次发行的指导价区间为每股18至22美元。"}}
+      ]
+    },
+    "team": {
+      "label": "Team / Management",
+      "sentences": [
+        {"en": "I want to coach you through this challenge rather than solve it for you.", "zh": "我想引导你度过这个挑战，而不是替你解决。"},
+        {"en": "The performance review cycle starts next week, please prepare your self-assessment.", "zh": "绩效考核周期下周开始，请准备好自评。"},
+        {"en": "We need to improve psychological safety so people feel comfortable raising concerns.", "zh": "我们需要提升心理安全感，让大家敢于提出问题。"},
+        {"en": "The new hire will shadow the senior analyst for the first two weeks.", "zh": "新员工将在前两周跟随高级分析师学习。"},
+        {"en": "Let us set up a weekly one-on-one to track your progress on the key results.", "zh": "我们设定每周一对一，来跟踪你在关键结果上的进展。"}
+      ],
+      "vocabulary": [
+        {"word": "coach", "phonetic": "/kəʊtʃ/", "meaning": "教练式引导", "example": {"en": "Good managers coach their reports instead of micromanaging them.", "zh": "好的管理者用教练式引导来带下属，而非事无巨细地管理。"}},
+        {"word": "self-assessment", "phonetic": "/self əˈsesmənt/", "meaning": "自评", "example": {"en": "Your self-assessment should include specific examples of impact.", "zh": "你的自评应该包含具体的影响力案例。"}},
+        {"word": "psychological safety", "phonetic": "/ˌsaɪkəˈlɒdʒɪkəl ˈseɪfti/", "meaning": "心理安全感", "example": {"en": "Teams with high psychological safety innovate faster.", "zh": "心理安全感高的团队创新速度更快。"}},
+        {"word": "shadow", "phonetic": "/ˈʃædəʊ/", "meaning": "跟岗学习", "example": {"en": "Shadowing experienced colleagues accelerates the learning curve.", "zh": "跟岗学习能加速学习曲线。"}},
+        {"word": "one-on-one", "phonetic": "/wʌn ɒn wʌn/", "meaning": "一对一面谈", "example": {"en": "Use one-on-ones to discuss career development, not just status updates.", "zh": "一对一面谈应该讨论职业发展，而不仅仅是工作进度。"}}
+      ]
+    },
+    "strategy": {
+      "label": "Strategy / Planning",
+      "sentences": [
+        {"en": "We are building a flywheel where better data leads to better recommendations.", "zh": "我们正在构建一个飞轮效应：更好的数据带来更好的推荐。"},
+        {"en": "The incumbents are slow to adapt, which creates a window of opportunity for us.", "zh": "现有玩家适应缓慢，这给我们创造了机会窗口。"},
+        {"en": "Our unit economics need to be positive before we pursue aggressive expansion.", "zh": "在大举扩张之前，我们的单位经济模型需要是正的。"},
+        {"en": "The strategic retreat from unprofitable markets will improve overall margins.", "zh": "从不盈利的市场战略性撤退将提升整体利润率。"},
+        {"en": "We should conduct a thorough due diligence before the acquisition closes.", "zh": "在收购完成前，我们应该进行彻底的尽职调查。"}
+      ],
+      "vocabulary": [
+        {"word": "flywheel", "phonetic": "/ˈflaɪwiːl/", "meaning": "飞轮效应", "example": {"en": "Amazon's flywheel starts with low prices driving more traffic.", "zh": "亚马逊的飞轮从低价吸引更多流量开始。"}},
+        {"word": "incumbent", "phonetic": "/ɪnˈkʌmbənt/", "meaning": "现有玩家；在位者", "example": {"en": "Incumbents often underestimate the threat from agile startups.", "zh": "现有玩家常常低估敏捷创业公司的威胁。"}},
+        {"word": "unit economics", "phonetic": "/ˈjuːnɪt ˌiːkəˈnɒmɪks/", "meaning": "单位经济模型", "example": {"en": "Healthy unit economics mean each customer generates profit over their lifetime.", "zh": "健康的单位经济模型意味着每个客户在其生命周期内产生利润。"}},
+        {"word": "due diligence", "phonetic": "/djuː ˈdɪlɪdʒəns/", "meaning": "尽职调查", "example": {"en": "Due diligence uncovered several undisclosed liabilities.", "zh": "尽职调查发现了几项未披露的负债。"}},
+        {"word": "retreat", "phonetic": "/rɪˈtriːt/", "meaning": "撤退；退出", "example": {"en": "A strategic retreat is not failure; it is resource reallocation.", "zh": "战略撤退不是失败，而是资源重新配置。"}}
+      ]
+    }
+  }
+}

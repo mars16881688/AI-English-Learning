@@ -1,0 +1,90 @@
+{
+  "date": "2026-04-16",
+  "themes": {
+    "growth": {
+      "label": "Growth / Marketing",
+      "sentences": [
+        {"en": "Our organic search traffic has plateaued — we need to invest in content marketing.", "zh": "我们的自然搜索流量已经见顶——需要加大内容营销投入。"},
+        {"en": "The conversion rate from trial to paid dropped 5% after the pricing change.", "zh": "调价后，从试用到付费的转化率下降了5%。"},
+        {"en": "Retargeting ads brought back 12% of users who abandoned the sign-up process.", "zh": "再营销广告带回了12%放弃注册流程的用户。"},
+        {"en": "We should segment users by behavior rather than demographics for this campaign.", "zh": "这次活动我们应该按行为而不是人口统计来分群。"},
+        {"en": "The viral coefficient exceeded 1.0 for the first time this month.", "zh": "病毒系数本月首次超过1.0。"}
+      ],
+      "vocabulary": [
+        {"word": "plateau", "phonetic": "/plæˈtəʊ/", "meaning": "趋于平稳；进入瓶颈期", "example": {"en": "User growth has plateaued after the initial launch spike.", "zh": "初期上线高峰过后，用户增长已趋于平稳。"}},
+        {"word": "conversion", "phonetic": "/kənˈvɜːʃən/", "meaning": "转化", "example": {"en": "Improving the checkout flow increased conversion by 20%.", "zh": "优化结账流程使转化率提升了20%。"}},
+        {"word": "retargeting", "phonetic": "/riːˈtɑːɡɪtɪŋ/", "meaning": "再营销；重定向", "example": {"en": "Retargeting campaigns typically have a higher ROI than cold acquisition.", "zh": "再营销广告通常比冷启动获客的投资回报率更高。"}},
+        {"word": "segment", "phonetic": "/ˈseɡmənt/", "meaning": "细分；分群", "example": {"en": "We segmented users into three tiers based on trading frequency.", "zh": "我们根据交易频率将用户分为三个层级。"}},
+        {"word": "viral coefficient", "phonetic": "/ˈvaɪrəl ˌkəʊɪˈfɪʃənt/", "meaning": "病毒系数", "example": {"en": "A viral coefficient above 1.0 means each user brings in more than one new user.", "zh": "病毒系数超过1.0意味着每个用户能带来一个以上的新用户。"}}
+      ]
+    },
+    "product": {
+      "label": "Product / Metrics",
+      "sentences": [
+        {"en": "We need to define success metrics before launching the experiment.", "zh": "在启动实验之前，我们需要先定义成功指标。"},
+        {"en": "The p95 latency spiked to 800ms during the morning trading session.", "zh": "早盘交易时段，P95延迟飙升到了800毫秒。"},
+        {"en": "User feedback indicates the portfolio page is too cluttered.", "zh": "用户反馈显示持仓页面过于杂乱。"},
+        {"en": "We shipped the dark mode feature two sprints ahead of schedule.", "zh": "我们比计划提前两个冲刺交付了暗黑模式功能。"},
+        {"en": "The crash rate on Android 14 is three times higher than on other versions.", "zh": "Android 14上的崩溃率是其他版本的三倍。"}
+      ],
+      "vocabulary": [
+        {"word": "latency", "phonetic": "/ˈleɪtənsi/", "meaning": "延迟", "example": {"en": "High latency in the order execution flow leads to user complaints.", "zh": "下单执行流程中的高延迟导致用户投诉。"}},
+        {"word": "cluttered", "phonetic": "/ˈklʌtəd/", "meaning": "杂乱的；过于拥挤的", "example": {"en": "A cluttered interface overwhelms new users and increases bounce rate.", "zh": "杂乱的界面会让新用户不知所措，增加跳出率。"}},
+        {"word": "sprint", "phonetic": "/sprɪnt/", "meaning": "冲刺（敏捷开发周期）", "example": {"en": "Each sprint lasts two weeks and ends with a demo to stakeholders.", "zh": "每个冲刺持续两周，结束时向利益相关方演示。"}},
+        {"word": "crash rate", "phonetic": "/kræʃ reɪt/", "meaning": "崩溃率", "example": {"en": "Keeping the crash rate below 0.1% is a key stability target.", "zh": "将崩溃率控制在0.1%以下是关键的稳定性目标。"}},
+        {"word": "experiment", "phonetic": "/ɪkˈsperɪmənt/", "meaning": "实验；试验", "example": {"en": "We ran an experiment to test whether push notifications improve retention.", "zh": "我们做了一个实验来测试推送通知是否能提升留存。"}}
+      ]
+    },
+    "finance": {
+      "label": "Finance / Investment",
+      "sentences": [
+        {"en": "EBITDA grew 25% year over year, indicating strong operational efficiency.", "zh": "EBITDA同比增长25%，显示出强劲的运营效率。"},
+        {"en": "The company initiated a $500 million share buyback program.", "zh": "公司启动了一项5亿美元的股票回购计划。"},
+        {"en": "Free cash flow turned positive for the first time since the IPO.", "zh": "自上市以来，自由现金流首次转正。"},
+        {"en": "The bond yield curve inverted again, raising recession concerns.", "zh": "债券收益率曲线再次倒挂，引发了衰退担忧。"},
+        {"en": "Earnings per share came in at $1.25, beating the street estimate of $1.10.", "zh": "每股收益为1.25美元，超过华尔街预期的1.10美元。"}
+      ],
+      "vocabulary": [
+        {"word": "EBITDA", "phonetic": "/iːˈbɪtdɑː/", "meaning": "息税折旧摊销前利润", "example": {"en": "EBITDA is often used to compare profitability across companies.", "zh": "EBITDA常被用来比较不同公司间的盈利能力。"}},
+        {"word": "buyback", "phonetic": "/ˈbaɪbæk/", "meaning": "回购", "example": {"en": "Share buybacks reduce the outstanding share count and boost EPS.", "zh": "股票回购减少了流通股数量，提升了每股收益。"}},
+        {"word": "free cash flow", "phonetic": "/friː kæʃ fləʊ/", "meaning": "自由现金流", "example": {"en": "Positive free cash flow allows the company to fund growth without new debt.", "zh": "正的自由现金流使公司无需新增债务即可为增长提供资金。"}},
+        {"word": "yield curve", "phonetic": "/jiːld kɜːv/", "meaning": "收益率曲线", "example": {"en": "An inverted yield curve has historically been a recession predictor.", "zh": "收益率曲线倒挂在历史上一直是衰退的预测信号。"}},
+        {"word": "EPS", "phonetic": "/iː piː ˈes/", "meaning": "每股收益（Earnings Per Share）", "example": {"en": "Analysts revised EPS estimates upward after the strong Q1 report.", "zh": "在强劲的Q1报告后，分析师上调了每股收益预期。"}}
+      ]
+    },
+    "team": {
+      "label": "Team / Management",
+      "sentences": [
+        {"en": "I would like to promote her to team lead — she has consistently exceeded expectations.", "zh": "我想提拔她为团队负责人——她一直超出预期。"},
+        {"en": "We need to hire two senior engineers to unblock the infrastructure workstream.", "zh": "我们需要招两名高级工程师来解除基础设施工作流的阻塞。"},
+        {"en": "The employee satisfaction survey revealed concerns about work-life balance.", "zh": "员工满意度调查揭示了工作与生活平衡方面的担忧。"},
+        {"en": "Let us set up a weekly sync to keep all stakeholders in the loop.", "zh": "我们建立一个每周同步会，让所有利益相关方保持信息同步。"},
+        {"en": "Delegating this project to the junior team will be a great growth opportunity.", "zh": "把这个项目委派给初级团队将是一个很好的成长机会。"}
+      ],
+      "vocabulary": [
+        {"word": "promote", "phonetic": "/prəˈməʊt/", "meaning": "晋升；提拔", "example": {"en": "She was promoted to VP after leading the product turnaround.", "zh": "在领导产品扭亏后，她被提升为副总裁。"}},
+        {"word": "unblock", "phonetic": "/ʌnˈblɒk/", "meaning": "解除阻塞；疏通", "example": {"en": "The CTO stepped in to unblock the dependency issue between teams.", "zh": "CTO介入解决了团队间的依赖阻塞问题。"}},
+        {"word": "stakeholder", "phonetic": "/ˈsteɪkhəʊldə/", "meaning": "利益相关方", "example": {"en": "All stakeholders must approve the budget before we proceed.", "zh": "在我们继续之前，所有利益相关方必须批准预算。"}},
+        {"word": "delegate", "phonetic": "/ˈdelɪɡeɪt/", "meaning": "委派；授权", "example": {"en": "Good managers delegate tasks while retaining accountability.", "zh": "好的管理者委派任务的同时保留问责权。"}},
+        {"word": "work-life balance", "phonetic": "/wɜːk laɪf ˈbæləns/", "meaning": "工作与生活平衡", "example": {"en": "The company introduced flexible hours to improve work-life balance.", "zh": "公司引入了弹性工时以改善工作与生活平衡。"}}
+      ]
+    },
+    "strategy": {
+      "label": "Strategy / Planning",
+      "sentences": [
+        {"en": "Our moat is the proprietary data we have accumulated over five years.", "zh": "我们的护城河是过去五年积累的独有数据。"},
+        {"en": "The board approved a three-year strategic plan focused on vertical integration.", "zh": "董事会批准了一项聚焦垂直整合的三年战略计划。"},
+        {"en": "We should pursue a land-and-expand strategy with enterprise clients.", "zh": "我们应该对企业客户采用先切入再扩展的策略。"},
+        {"en": "Market saturation in Tier 1 cities forces us to look at lower-tier markets.", "zh": "一线城市的市场饱和迫使我们转向下沉市场。"},
+        {"en": "The merger will create synergies worth an estimated $300 million annually.", "zh": "合并预计每年将产生价值3亿美元的协同效应。"}
+      ],
+      "vocabulary": [
+        {"word": "moat", "phonetic": "/məʊt/", "meaning": "护城河（竞争壁垒）", "example": {"en": "Brand recognition serves as a powerful moat against new entrants.", "zh": "品牌认知度是抵御新进入者的强大护城河。"}},
+        {"word": "vertical integration", "phonetic": "/ˈvɜːtɪkəl ˌɪntɪˈɡreɪʃən/", "meaning": "垂直整合", "example": {"en": "Vertical integration helped the company control costs across the supply chain.", "zh": "垂直整合帮助公司在整个供应链中控制成本。"}},
+        {"word": "land-and-expand", "phonetic": "/lænd ənd ɪkˈspænd/", "meaning": "先切入再扩展", "example": {"en": "The land-and-expand model starts with a small deal and grows over time.", "zh": "先切入再扩展的模式从小订单起步，随时间逐步增长。"}},
+        {"word": "saturation", "phonetic": "/ˌsætʃəˈreɪʃən/", "meaning": "饱和", "example": {"en": "Market saturation means growth must come from taking competitors' share.", "zh": "市场饱和意味着增长必须来自抢夺竞争对手的份额。"}},
+        {"word": "synergy", "phonetic": "/ˈsɪnədʒi/", "meaning": "协同效应", "example": {"en": "The acquisition created cost synergies by consolidating back-office operations.", "zh": "此次收购通过整合后台运营创造了成本协同效应。"}}
+      ]
+    }
+  }
+}

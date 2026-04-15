@@ -1,0 +1,90 @@
+{
+  "date": "2026-05-12",
+  "themes": {
+    "growth": {
+      "label": "Growth / Marketing",
+      "sentences": [
+        {"en": "The referral incentive restructure resulted in a 25% increase in invite completions.", "zh": "推荐激励结构调整使邀请完成率提升了25%。"},
+        {"en": "We are experimenting with dynamic pricing to maximize revenue during peak demand.", "zh": "我们正在尝试动态定价以在需求高峰期最大化收入。"},
+        {"en": "The funnel diagnostic revealed that 40% of drop-offs happen between account creation and first deposit.", "zh": "漏斗诊断显示40%的流失发生在开户和首次入金之间。"},
+        {"en": "Push notification frequency needs to be capped to avoid unsubscribes.", "zh": "推送通知频率需要设置上限以避免退订。"},
+        {"en": "We are integrating a recommendation engine to personalize the discovery feed.", "zh": "我们正在集成推荐引擎以个性化发现信息流。"}
+      ],
+      "vocabulary": [
+        {"word": "incentive", "phonetic": "/ɪnˈsentɪv/", "meaning": "激励；奖励", "example": {"en": "Cash incentives drive faster adoption than non-monetary rewards.", "zh": "现金激励比非货币奖励更快推动采用。"}},
+        {"word": "dynamic pricing", "phonetic": "/daɪˈnæmɪk ˈpraɪsɪŋ/", "meaning": "动态定价", "example": {"en": "Airlines and ride-sharing apps pioneered dynamic pricing strategies.", "zh": "航空公司和打车应用率先采用了动态定价策略。"}},
+        {"word": "diagnostic", "phonetic": "/ˌdaɪəɡˈnɒstɪk/", "meaning": "诊断", "example": {"en": "A funnel diagnostic helps pinpoint where users are getting stuck.", "zh": "漏斗诊断帮助精确定位用户卡在哪里。"}},
+        {"word": "unsubscribe", "phonetic": "/ˌʌnsəbˈskraɪb/", "meaning": "退订", "example": {"en": "High unsubscribe rates signal that email frequency or content needs adjustment.", "zh": "高退订率表明邮件频率或内容需要调整。"}},
+        {"word": "recommendation engine", "phonetic": "/ˌrekəmenˈdeɪʃən ˈendʒɪn/", "meaning": "推荐引擎", "example": {"en": "The recommendation engine increased average session time by 35%.", "zh": "推荐引擎将平均会话时长提升了35%。"}}
+      ]
+    },
+    "product": {
+      "label": "Product / Metrics",
+      "sentences": [
+        {"en": "The error budget for this service is nearly exhausted, so we should freeze new deployments.", "zh": "这个服务的错误预算几乎用完，所以我们应该冻结新部署。"},
+        {"en": "We conducted a usability study with 12 participants and found three critical issues.", "zh": "我们对12名参与者进行了可用性研究，发现了三个关键问题。"},
+        {"en": "The real-time notification system requires WebSocket connections for every active client.", "zh": "实时通知系统需要为每个活跃客户端建立WebSocket连接。"},
+        {"en": "We are building a design system to ensure visual consistency across all product surfaces.", "zh": "我们正在构建设计系统以确保所有产品界面的视觉一致性。"},
+        {"en": "The DAU growth has plateaued, indicating we may have saturated our current user base.", "zh": "DAU增长已经见顶，表明我们可能已经饱和了当前用户群。"}
+      ],
+      "vocabulary": [
+        {"word": "error budget", "phonetic": "/ˈerər ˈbʌdʒɪt/", "meaning": "错误预算", "example": {"en": "When the error budget runs out, the team shifts focus from features to reliability.", "zh": "当错误预算用完时，团队将重心从功能转向可靠性。"}},
+        {"word": "usability", "phonetic": "/ˌjuːzəˈbɪləti/", "meaning": "可用性", "example": {"en": "Usability testing should happen early and often in the design process.", "zh": "可用性测试应该在设计过程中尽早且频繁地进行。"}},
+        {"word": "design system", "phonetic": "/dɪˈzaɪn ˈsɪstəm/", "meaning": "设计系统", "example": {"en": "A mature design system speeds up development and ensures brand consistency.", "zh": "成熟的设计系统能加速开发并确保品牌一致性。"}},
+        {"word": "plateaued", "phonetic": "/plæˈtoʊd/", "meaning": "见顶；进入平台期", "example": {"en": "Growth has plateaued because we have not tapped into new user segments.", "zh": "增长已见顶，因为我们还没有开拓新的用户群体。"}},
+        {"word": "saturated", "phonetic": "/ˈsætʃəreɪtɪd/", "meaning": "饱和的", "example": {"en": "The domestic market is saturated, so international expansion is necessary.", "zh": "国内市场已经饱和，因此国际扩张是必要的。"}}
+      ]
+    },
+    "finance": {
+      "label": "Finance / Investment",
+      "sentences": [
+        {"en": "The fund manager is rotating out of growth stocks into defensive names ahead of the downturn.", "zh": "基金经理正在从成长股轮换到防御性股票，以应对即将到来的下行。"},
+        {"en": "Earnings per share grew by 18% year over year, beating the Street estimates by a wide margin.", "zh": "每股收益同比增长18%，大幅超过华尔街预期。"},
+        {"en": "The credit spread widened, signaling increased risk perception in the corporate bond market.", "zh": "信用利差扩大，预示公司债市场的风险感知上升。"},
+        {"en": "The trailing twelve-month revenue shows a clear deceleration from the prior year.", "zh": "过去十二个月的收入显示出与去年相比明显的减速。"},
+        {"en": "The activist investor acquired a 5% stake and is pushing for a board seat.", "zh": "维权投资者获取了5%的股权，并在争取一个董事会席位。"}
+      ],
+      "vocabulary": [
+        {"word": "rotation", "phonetic": "/roʊˈteɪʃən/", "meaning": "轮换；轮动", "example": {"en": "Sector rotation is a common strategy during market cycle transitions.", "zh": "板块轮动是市场周期转换期间的常见策略。"}},
+        {"word": "credit spread", "phonetic": "/ˈkredɪt spred/", "meaning": "信用利差", "example": {"en": "Widening credit spreads often precede economic slowdowns.", "zh": "信用利差扩大往往先于经济放缓出现。"}},
+        {"word": "deceleration", "phonetic": "/diːˌseləˈreɪʃən/", "meaning": "减速", "example": {"en": "Revenue deceleration concerned investors despite the company still being profitable.", "zh": "尽管公司仍然盈利，但营收减速令投资者担忧。"}},
+        {"word": "activist investor", "phonetic": "/ˈæktɪvɪst ɪnˈvestər/", "meaning": "维权投资者", "example": {"en": "The activist investor demanded a review of the company's capital allocation strategy.", "zh": "维权投资者要求审查公司的资本配置策略。"}},
+        {"word": "trailing twelve months", "phonetic": "/ˈtreɪlɪŋ twelv mʌnθs/", "meaning": "过去十二个月（TTM）", "example": {"en": "Trailing twelve-month revenue is used to smooth out seasonal fluctuations.", "zh": "过去十二个月收入用于平滑季节性波动。"}}
+      ]
+    },
+    "team": {
+      "label": "Team / Management",
+      "sentences": [
+        {"en": "The objective for this cycle is to build a world-class customer support experience.", "zh": "这个周期的目标是打造世界级的客户支持体验。"},
+        {"en": "We are moving from a top-down management style to a more collaborative approach.", "zh": "我们正在从自上而下的管理风格转向更协作的方式。"},
+        {"en": "The knowledge transfer session ensured continuity after the senior engineer's departure.", "zh": "知识转移会议确保了高级工程师离职后的工作连续性。"},
+        {"en": "I appreciate you flagging the risk early — that is exactly the kind of initiative we need.", "zh": "感谢你提前标记了风险——这正是我们需要的主动性。"},
+        {"en": "The performance improvement plan lasts 60 days and includes weekly check-ins.", "zh": "绩效改进计划持续60天，包括每周检查。"}
+      ],
+      "vocabulary": [
+        {"word": "knowledge transfer", "phonetic": "/ˈnɒlɪdʒ ˈtrænsfɜːr/", "meaning": "知识转移", "example": {"en": "Schedule knowledge transfer sessions before any team member transition.", "zh": "在任何团队成员变动前安排知识转移会议。"}},
+        {"word": "initiative", "phonetic": "/ɪˈnɪʃətɪv/", "meaning": "主动性；倡议", "example": {"en": "Showing initiative in problem-solving is valued in leadership roles.", "zh": "在领导岗位中，解决问题时展现主动性是被看重的。"}},
+        {"word": "performance improvement plan", "phonetic": "/pərˈfɔːrməns ɪmˈpruːvmənt plæn/", "meaning": "绩效改进计划（PIP）", "example": {"en": "A performance improvement plan clearly defines expectations and timelines.", "zh": "绩效改进计划明确定义了期望和时间线。"}},
+        {"word": "continuity", "phonetic": "/ˌkɒntɪˈnjuːɪti/", "meaning": "连续性", "example": {"en": "Business continuity planning prepares the team for unexpected disruptions.", "zh": "业务连续性规划使团队为意外中断做好准备。"}},
+        {"word": "collaborative", "phonetic": "/kəˈlæbərətɪv/", "meaning": "协作的", "example": {"en": "A collaborative culture encourages open dialogue and shared ownership.", "zh": "协作文化鼓励开放对话和共同责任。"}}
+      ]
+    },
+    "strategy": {
+      "label": "Strategy / Planning",
+      "sentences": [
+        {"en": "The market intelligence report highlights three emerging threats from fintech startups.", "zh": "市场情报报告强调了来自金融科技初创公司的三个新兴威胁。"},
+        {"en": "We are leveraging our first-party data as a strategic asset for personalization.", "zh": "我们正在将第一方数据作为个性化的战略资产来利用。"},
+        {"en": "The build-versus-buy analysis favors acquiring the technology rather than building in-house.", "zh": "自建还是购买的分析倾向于收购技术而非内部自建。"},
+        {"en": "The addressable market expands significantly if we add options trading to the platform.", "zh": "如果我们在平台上添加期权交易，可触达市场将显著扩大。"},
+        {"en": "Our differentiation strategy rests on superior user experience and local content.", "zh": "我们的差异化策略建立在卓越的用户体验和本地化内容之上。"}
+      ],
+      "vocabulary": [
+        {"word": "first-party data", "phonetic": "/fɜːrst ˈpɑːrti ˈdeɪtə/", "meaning": "第一方数据", "example": {"en": "First-party data is more reliable and privacy-compliant than third-party data.", "zh": "第一方数据比第三方数据更可靠且符合隐私规定。"}},
+        {"word": "build-versus-buy", "phonetic": "/bɪld ˈvɜːrsəs baɪ/", "meaning": "自建还是购买", "example": {"en": "The build-versus-buy decision depends on time-to-market and strategic importance.", "zh": "自建还是购买的决定取决于上市时间和战略重要性。"}},
+        {"word": "differentiation", "phonetic": "/ˌdɪfəˌrenʃiˈeɪʃən/", "meaning": "差异化", "example": {"en": "Product differentiation is the key to avoiding price wars.", "zh": "产品差异化是避免价格战的关键。"}},
+        {"word": "emerging", "phonetic": "/ɪˈmɜːrdʒɪŋ/", "meaning": "新兴的", "example": {"en": "Emerging markets present both high growth potential and elevated risk.", "zh": "新兴市场既有高增长潜力也有高风险。"}},
+        {"word": "in-house", "phonetic": "/ˌɪn ˈhaʊs/", "meaning": "内部的；自建的", "example": {"en": "We moved the design function in-house to speed up iteration cycles.", "zh": "我们将设计职能收归内部以加快迭代周期。"}}
+      ]
+    }
+  }
+}

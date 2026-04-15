@@ -1,0 +1,90 @@
+{
+  "date": "2026-05-15",
+  "themes": {
+    "growth": {
+      "label": "Growth / Marketing",
+      "sentences": [
+        {"en": "The viral coefficient is above 1, meaning each user brings in more than one new user.", "zh": "病毒系数超过1，意味着每个用户带来超过一个新用户。"},
+        {"en": "We should segment users by behavior rather than demographics for better targeting.", "zh": "我们应该按行为而非人口统计来分群，以实现更精准的触达。"},
+        {"en": "The retargeting campaign recovered 15% of users who abandoned the sign-up flow.", "zh": "再营销活动挽回了15%放弃注册流程的用户。"},
+        {"en": "Our email open rate dropped below 20%, so we need to refresh the subject lines.", "zh": "邮件打开率降到了20%以下，我们需要更新邮件标题。"},
+        {"en": "The referral reward structure needs to incentivize both the inviter and the invitee.", "zh": "推荐奖励结构需要同时激励邀请人和被邀请人。"}
+      ],
+      "vocabulary": [
+        {"word": "viral coefficient", "phonetic": "/ˈvaɪrəl ˌkəʊɪˈfɪʃənt/", "meaning": "病毒系数", "example": {"en": "A viral coefficient above 1 indicates exponential organic growth.", "zh": "病毒系数大于1表示指数级的自然增长。"}},
+        {"word": "retargeting", "phonetic": "/riːˈtɑːɡɪtɪŋ/", "meaning": "再营销；重定向", "example": {"en": "Retargeting ads remind users to complete their unfinished actions.", "zh": "再营销广告提醒用户完成未完成的操作。"}},
+        {"word": "segmentation", "phonetic": "/ˌseɡmənˈteɪʃən/", "meaning": "分群；细分", "example": {"en": "Behavioral segmentation reveals more actionable insights than age-based grouping.", "zh": "行为分群比按年龄分组能揭示更有行动价值的洞察。"}},
+        {"word": "incentivize", "phonetic": "/ɪnˈsentɪvaɪz/", "meaning": "激励", "example": {"en": "We incentivize early adopters with exclusive access to premium features.", "zh": "我们通过独家高级功能使用权来激励早期用户。"}},
+        {"word": "open rate", "phonetic": "/ˈəʊpən reɪt/", "meaning": "打开率", "example": {"en": "Personalizing subject lines can boost the email open rate by up to 30%.", "zh": "个性化邮件标题可以将打开率提升最多30%。"}}
+      ]
+    },
+    "product": {
+      "label": "Product / Metrics",
+      "sentences": [
+        {"en": "The bounce rate on the homepage is 65%, which means most visitors leave immediately.", "zh": "首页跳出率为65%，意味着大多数访客立即离开。"},
+        {"en": "We should instrument the app to track every critical user interaction.", "zh": "我们应该给应用埋点，追踪每个关键的用户交互。"},
+        {"en": "The error rate on the payment endpoint exceeds our SLA threshold.", "zh": "支付接口的错误率超出了我们的SLA阈值。"},
+        {"en": "Product-market fit is validated when users actively recommend the product to others.", "zh": "当用户主动向他人推荐产品时，产品市场匹配就得到了验证。"},
+        {"en": "We need to prioritize technical debt reduction before adding new features.", "zh": "在添加新功能之前，我们需要优先减少技术债务。"}
+      ],
+      "vocabulary": [
+        {"word": "bounce rate", "phonetic": "/baʊns reɪt/", "meaning": "跳出率", "example": {"en": "A high bounce rate often indicates poor content relevance or slow loading.", "zh": "高跳出率通常表明内容相关性差或加载速度慢。"}},
+        {"word": "instrument", "phonetic": "/ˈɪnstrʊmənt/", "meaning": "埋点；插桩", "example": {"en": "We instrumented the checkout flow to capture drop-off points.", "zh": "我们对结账流程进行了埋点，以捕获流失节点。"}},
+        {"word": "SLA", "phonetic": "/ˌes el ˈeɪ/", "meaning": "服务等级协议", "example": {"en": "Our SLA guarantees 99.9% uptime for all trading services.", "zh": "我们的SLA保证所有交易服务99.9%的正常运行时间。"}},
+        {"word": "product-market fit", "phonetic": "/ˈprɒdʌkt ˈmɑːkɪt fɪt/", "meaning": "产品市场匹配", "example": {"en": "Achieving product-market fit is the single most important milestone for a startup.", "zh": "实现产品市场匹配是创业公司最重要的里程碑。"}},
+        {"word": "technical debt", "phonetic": "/ˈteknɪkəl det/", "meaning": "技术债务", "example": {"en": "Ignoring technical debt slows down development velocity over time.", "zh": "忽视技术债务会随时间推移降低开发速度。"}}
+      ]
+    },
+    "finance": {
+      "label": "Finance / Investment",
+      "sentences": [
+        {"en": "The Federal Reserve signaled a pause in rate hikes at the last meeting.", "zh": "美联储在上次会议上暗示暂停加息。"},
+        {"en": "The company's debt-to-equity ratio has improved significantly over the past year.", "zh": "该公司的资产负债率在过去一年显著改善。"},
+        {"en": "Market capitalization surpassed $100 billion after the strong quarterly results.", "zh": "强劲的季度业绩后，市值突破了1000亿美元。"},
+        {"en": "The put-call ratio suggests that investors are hedging against a potential downturn.", "zh": "看跌看涨比率表明投资者正在对冲潜在的下行风险。"},
+        {"en": "Revenue per user increased by 18% thanks to the premium subscription tier.", "zh": "得益于高级订阅层级，用户均收入增长了18%。"}
+      ],
+      "vocabulary": [
+        {"word": "rate hike", "phonetic": "/reɪt haɪk/", "meaning": "加息", "example": {"en": "Rate hikes typically slow down borrowing and cool the economy.", "zh": "加息通常会减缓借贷并为经济降温。"}},
+        {"word": "debt-to-equity", "phonetic": "/det tə ˈekwɪti/", "meaning": "资产负债率", "example": {"en": "A lower debt-to-equity ratio indicates a healthier balance sheet.", "zh": "较低的资产负债率表示更健康的资产负债表。"}},
+        {"word": "market capitalization", "phonetic": "/ˈmɑːkɪt ˌkæpɪtəlaɪˈzeɪʃən/", "meaning": "市值", "example": {"en": "Apple's market capitalization makes it the most valuable public company.", "zh": "苹果的市值使其成为最有价值的上市公司。"}},
+        {"word": "hedging", "phonetic": "/ˈhedʒɪŋ/", "meaning": "对冲", "example": {"en": "Hedging with options is a common strategy to limit downside risk.", "zh": "用期权对冲是限制下行风险的常见策略。"}},
+        {"word": "ARPU", "phonetic": "/ˈɑːpuː/", "meaning": "每用户平均收入", "example": {"en": "Improving ARPU is often more cost-effective than acquiring new users.", "zh": "提升每用户平均收入通常比获取新用户更具性价比。"}}
+      ]
+    },
+    "team": {
+      "label": "Team / Management",
+      "sentences": [
+        {"en": "The 360-degree feedback revealed blind spots in my leadership style.", "zh": "360度反馈揭示了我领导风格中的盲点。"},
+        {"en": "We should empower team leads to make decisions without waiting for approval.", "zh": "我们应该赋能团队负责人，让他们无需等待审批就能做决策。"},
+        {"en": "The quarterly business review is an opportunity to celebrate wins and course-correct.", "zh": "季度业务回顾是庆祝成果和纠偏的好机会。"},
+        {"en": "Psychological safety is the foundation of high-performing teams.", "zh": "心理安全感是高效团队的基础。"},
+        {"en": "I want each team member to own at least one key result this quarter.", "zh": "我希望每位团队成员本季度至少负责一个关键结果。"}
+      ],
+      "vocabulary": [
+        {"word": "empower", "phonetic": "/ɪmˈpaʊər/", "meaning": "赋能；授权", "example": {"en": "Empowering employees leads to faster decision-making and higher morale.", "zh": "赋能员工能带来更快的决策和更高的士气。"}},
+        {"word": "blind spot", "phonetic": "/blaɪnd spɒt/", "meaning": "盲点", "example": {"en": "Regular peer feedback helps identify professional blind spots.", "zh": "定期的同侪反馈有助于发现职业盲点。"}},
+        {"word": "course-correct", "phonetic": "/kɔːs kəˈrekt/", "meaning": "纠偏；修正方向", "example": {"en": "We need to course-correct early before the project goes off track.", "zh": "我们需要尽早纠偏，以免项目偏离轨道。"}},
+        {"word": "psychological safety", "phonetic": "/ˌsaɪkəˈlɒdʒɪkəl ˈseɪfti/", "meaning": "心理安全感", "example": {"en": "Teams with high psychological safety are more innovative and collaborative.", "zh": "心理安全感高的团队更具创新性和协作性。"}},
+        {"word": "ownership", "phonetic": "/ˈəʊnəʃɪp/", "meaning": "主人翁意识；责任担当", "example": {"en": "Strong ownership means taking responsibility for outcomes, not just tasks.", "zh": "强主人翁意识意味着对结果负责，而不仅仅是完成任务。"}}
+      ]
+    },
+    "strategy": {
+      "label": "Strategy / Planning",
+      "sentences": [
+        {"en": "The blue ocean strategy focuses on creating new market space rather than competing in existing ones.", "zh": "蓝海战略聚焦于创造新的市场空间，而非在现有市场竞争。"},
+        {"en": "Our unit economics must be sustainable before we pursue aggressive expansion.", "zh": "在追求激进扩张之前，我们的单位经济模型必须可持续。"},
+        {"en": "We are shifting from a product-led to a sales-led growth motion.", "zh": "我们正在从产品驱动增长转向销售驱动增长模式。"},
+        {"en": "The second-mover advantage allows us to learn from competitors' mistakes.", "zh": "后发优势让我们能够从竞争对手的错误中学习。"},
+        {"en": "Market penetration in tier-2 cities offers the highest growth potential.", "zh": "二线城市的市场渗透率提供了最高的增长潜力。"}
+      ],
+      "vocabulary": [
+        {"word": "unit economics", "phonetic": "/ˈjuːnɪt ˌiːkəˈnɒmɪks/", "meaning": "单位经济模型", "example": {"en": "Healthy unit economics mean each customer generates more revenue than it costs to serve.", "zh": "健康的单位经济模型意味着每位客户产生的收入高于服务成本。"}},
+        {"word": "penetration", "phonetic": "/ˌpenɪˈtreɪʃən/", "meaning": "渗透率", "example": {"en": "Smartphone penetration in Southeast Asia has reached 75%.", "zh": "东南亚的智能手机渗透率已达到75%。"}},
+        {"word": "blue ocean", "phonetic": "/bluː ˈəʊʃən/", "meaning": "蓝海", "example": {"en": "Finding a blue ocean means avoiding direct competition entirely.", "zh": "找到蓝海意味着完全避开直接竞争。"}},
+        {"word": "product-led growth", "phonetic": "/ˈprɒdʌkt led ɡrəʊθ/", "meaning": "产品驱动增长", "example": {"en": "Product-led growth relies on the product itself as the primary acquisition channel.", "zh": "产品驱动增长依赖产品本身作为主要获客渠道。"}},
+        {"word": "tier-2 city", "phonetic": "/tɪər tuː ˈsɪti/", "meaning": "二线城市", "example": {"en": "Tier-2 cities often have lower customer acquisition costs and less competition.", "zh": "二线城市通常获客成本更低，竞争也更少。"}}
+      ]
+    }
+  }
+}

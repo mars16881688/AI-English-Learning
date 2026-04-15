@@ -1,0 +1,90 @@
+{
+  "date": "2026-05-04",
+  "themes": {
+    "growth": {
+      "label": "Growth / Marketing",
+      "sentences": [
+        {"en": "The retention curve flattens after day 30, which indicates we found product-market fit for this cohort.", "zh": "留存曲线在第30天后趋于平稳，说明我们为这个用户群找到了产品市场匹配。"},
+        {"en": "We are running a win-back campaign targeting users who uninstalled in the past 60 days.", "zh": "我们正在针对过去60天内卸载的用户运行召回活动。"},
+        {"en": "The creative refresh increased the impression-to-install ratio by 25%.", "zh": "素材更新使展示到安装的转化率提升了25%。"},
+        {"en": "Cross-selling wealth management products to brokerage users shows promising early results.", "zh": "向证券用户交叉销售理财产品的早期结果令人鼓舞。"},
+        {"en": "We need to build an automated nurture sequence for users who abandon the KYC flow.", "zh": "我们需要为放弃KYC流程的用户建立自动化培育序列。"}
+      ],
+      "vocabulary": [
+        {"word": "product-market fit", "phonetic": "/ˈprɒdʌkt ˈmɑːkɪt fɪt/", "meaning": "产品市场匹配", "example": {"en": "You have product-market fit when users are disappointed if the product disappears.", "zh": "当用户会因产品消失而失望时，你就找到了产品市场匹配。"}},
+        {"word": "win-back", "phonetic": "/wɪn bæk/", "meaning": "召回；挽回", "example": {"en": "The win-back email offered a fee waiver to lapsed subscribers.", "zh": "召回邮件向流失订阅者提供了免手续费的优惠。"}},
+        {"word": "impression", "phonetic": "/ɪmˈpreʃən/", "meaning": "展示量；曝光", "example": {"en": "We served 2 million impressions but only 15,000 resulted in clicks.", "zh": "我们投放了200万次展示，但只有1.5万次产生了点击。"}},
+        {"word": "cross-sell", "phonetic": "/krɒs sel/", "meaning": "交叉销售", "example": {"en": "Cross-selling increases average revenue per user without new acquisition costs.", "zh": "交叉销售在没有新获客成本的情况下提升了用户平均收入。"}},
+        {"word": "nurture sequence", "phonetic": "/ˈnɜːtʃər ˈsiːkwəns/", "meaning": "培育序列", "example": {"en": "A well-designed nurture sequence converts cold leads into paying customers.", "zh": "设计良好的培育序列能将冷线索转化为付费客户。"}}
+      ]
+    },
+    "product": {
+      "label": "Product / Metrics",
+      "sentences": [
+        {"en": "The microservice architecture allows each team to deploy independently.", "zh": "微服务架构允许每个团队独立部署。"},
+        {"en": "We added a circuit breaker to prevent cascading failures across services.", "zh": "我们添加了熔断器来防止跨服务的级联故障。"},
+        {"en": "The 95th percentile response time is more meaningful than the average.", "zh": "第95百分位的响应时间比平均值更有意义。"},
+        {"en": "The beta program collected 500 pieces of qualitative feedback in two weeks.", "zh": "Beta测试计划在两周内收集了500条定性反馈。"},
+        {"en": "We should implement graceful degradation so core features still work during outages.", "zh": "我们应该实现优雅降级，使核心功能在故障时仍然可用。"}
+      ],
+      "vocabulary": [
+        {"word": "microservice", "phonetic": "/ˈmaɪkrəʊˌsɜːvɪs/", "meaning": "微服务", "example": {"en": "Each microservice handles a single business domain.", "zh": "每个微服务处理一个单独的业务领域。"}},
+        {"word": "circuit breaker", "phonetic": "/ˈsɜːkɪt ˈbreɪkər/", "meaning": "熔断器", "example": {"en": "The circuit breaker opens automatically when the error rate exceeds 50%.", "zh": "当错误率超过50%时，熔断器会自动打开。"}},
+        {"word": "percentile", "phonetic": "/pəˈsentaɪl/", "meaning": "百分位", "example": {"en": "We target the 99th percentile latency to be under 200 milliseconds.", "zh": "我们的目标是第99百分位延迟低于200毫秒。"}},
+        {"word": "qualitative", "phonetic": "/ˈkwɒlɪtətɪv/", "meaning": "定性的", "example": {"en": "Qualitative feedback complements quantitative data by explaining the why.", "zh": "定性反馈通过解释原因来补充定量数据。"}},
+        {"word": "graceful degradation", "phonetic": "/ˈɡreɪsfəl ˌdeɡrəˈdeɪʃən/", "meaning": "优雅降级", "example": {"en": "Graceful degradation ensures the app remains usable even when some services fail.", "zh": "优雅降级确保即使部分服务故障，应用仍然可用。"}}
+      ]
+    },
+    "finance": {
+      "label": "Finance / Investment",
+      "sentences": [
+        {"en": "The company's return on equity has consistently exceeded 20% for five straight years.", "zh": "该公司的股本回报率连续五年稳定超过20%。"},
+        {"en": "Insider buying activity has increased significantly ahead of the earnings date.", "zh": "在财报日之前，内部人士买入活动显著增加。"},
+        {"en": "The convertible bond offers downside protection with upside participation.", "zh": "可转换债券提供下行保护同时保留上涨参与空间。"},
+        {"en": "Market capitalization just crossed the $10 billion mark after today's rally.", "zh": "今日反弹后，市值刚刚突破100亿美元关口。"},
+        {"en": "The trailing twelve-month revenue shows a clear acceleration in growth momentum.", "zh": "过去十二个月的营收显示增长动能明显加速。"}
+      ],
+      "vocabulary": [
+        {"word": "return on equity", "phonetic": "/rɪˈtɜːn ɒn ˈekwɪti/", "meaning": "股本回报率（ROE）", "example": {"en": "A high return on equity indicates the company is efficient at generating profits.", "zh": "高股本回报率表明公司在创造利润方面效率很高。"}},
+        {"word": "insider buying", "phonetic": "/ɪnˈsaɪdər ˈbaɪɪŋ/", "meaning": "内部人士买入", "example": {"en": "Insider buying is often interpreted as a bullish signal by the market.", "zh": "内部人士买入通常被市场解读为看涨信号。"}},
+        {"word": "convertible bond", "phonetic": "/kənˈvɜːtəbl bɒnd/", "meaning": "可转换债券", "example": {"en": "Convertible bonds can be converted into equity at a predetermined price.", "zh": "可转换债券可以按预定价格转换为股权。"}},
+        {"word": "market capitalization", "phonetic": "/ˈmɑːkɪt ˌkæpɪtəlaɪˈzeɪʃən/", "meaning": "市值", "example": {"en": "Market capitalization is calculated by multiplying share price by total shares outstanding.", "zh": "市值等于股价乘以总流通股数。"}},
+        {"word": "trailing twelve months", "phonetic": "/ˈtreɪlɪŋ twelv mʌnθs/", "meaning": "过去十二个月（TTM）", "example": {"en": "Trailing twelve-month data smooths out seasonal fluctuations.", "zh": "过去十二个月的数据能平滑季节性波动。"}}
+      ]
+    },
+    "team": {
+      "label": "Team / Management",
+      "sentences": [
+        {"en": "The RACI matrix clarifies who is responsible, accountable, consulted, and informed.", "zh": "RACI矩阵明确了谁负责执行、谁最终问责、谁需要咨询、谁需要知会。"},
+        {"en": "We should invest in upskilling the team rather than hiring externally for every gap.", "zh": "我们应该投资于团队技能提升，而不是每个缺口都外部招聘。"},
+        {"en": "The post-incident review identified three process failures that need immediate attention.", "zh": "事后复盘识别出三个需要立即关注的流程故障。"},
+        {"en": "Transparent communication from leadership builds trust during uncertain times.", "zh": "不确定时期，领导层的透明沟通能建立信任。"},
+        {"en": "The manager calibration session ensures consistent rating standards across teams.", "zh": "管理者校准会议确保各团队间评级标准一致。"}
+      ],
+      "vocabulary": [
+        {"word": "RACI", "phonetic": "/ˈreɪsi/", "meaning": "RACI矩阵（责任分配）", "example": {"en": "Use a RACI chart to prevent confusion about project roles.", "zh": "使用RACI图表来防止项目角色的混淆。"}},
+        {"word": "upskill", "phonetic": "/ˈʌpskɪl/", "meaning": "技能提升", "example": {"en": "We budget 5% of payroll for upskilling programs each year.", "zh": "我们每年拨出5%的薪资预算用于技能提升项目。"}},
+        {"word": "post-incident review", "phonetic": "/pəʊst ˈɪnsɪdənt rɪˈvjuː/", "meaning": "事后复盘", "example": {"en": "A blameless post-incident review focuses on systems, not individuals.", "zh": "无指责的事后复盘关注系统问题，而非个人。"}},
+        {"word": "calibration", "phonetic": "/ˌkælɪˈbreɪʃən/", "meaning": "校准", "example": {"en": "Performance calibration prevents rating inflation across departments.", "zh": "绩效校准防止各部门的评级膨胀。"}},
+        {"word": "transparent", "phonetic": "/trænsˈpærənt/", "meaning": "透明的", "example": {"en": "Transparent decision-making increases employee buy-in.", "zh": "透明的决策过程能增加员工的认同感。"}}
+      ]
+    },
+    "strategy": {
+      "label": "Strategy / Planning",
+      "sentences": [
+        {"en": "The winner-takes-all dynamic in this market makes speed critical.", "zh": "这个市场的赢家通吃动态使速度至关重要。"},
+        {"en": "We are applying the jobs-to-be-done framework to rethink our product positioning.", "zh": "我们正在运用待完成工作框架来重新思考产品定位。"},
+        {"en": "The ecosystem play requires us to open our API to third-party developers.", "zh": "生态系统策略要求我们向第三方开发者开放API。"},
+        {"en": "Concentration risk is our biggest strategic vulnerability right now.", "zh": "集中风险是我们目前最大的战略脆弱点。"},
+        {"en": "The three-horizon framework helps balance short-term execution with long-term innovation.", "zh": "三地平线框架有助于平衡短期执行与长期创新。"}
+      ],
+      "vocabulary": [
+        {"word": "winner-takes-all", "phonetic": "/ˈwɪnər teɪks ɔːl/", "meaning": "赢家通吃", "example": {"en": "Platform businesses often exhibit winner-takes-all market structures.", "zh": "平台类企业通常呈现赢家通吃的市场结构。"}},
+        {"word": "jobs-to-be-done", "phonetic": "/dʒɒbz tə biː dʌn/", "meaning": "待完成工作（JTBD）", "example": {"en": "The jobs-to-be-done framework asks what progress the customer is trying to make.", "zh": "待完成工作框架追问客户试图取得什么进展。"}},
+        {"word": "ecosystem", "phonetic": "/ˈiːkəʊsɪstəm/", "meaning": "生态系统", "example": {"en": "A thriving ecosystem attracts more developers and creates more value for users.", "zh": "繁荣的生态系统吸引更多开发者，为用户创造更多价值。"}},
+        {"word": "concentration risk", "phonetic": "/ˌkɒnsənˈtreɪʃən rɪsk/", "meaning": "集中风险", "example": {"en": "Relying on one market for 80% of revenue creates severe concentration risk.", "zh": "80%的收入依赖单一市场会造成严重的集中风险。"}},
+        {"word": "three-horizon", "phonetic": "/θriː həˈraɪzən/", "meaning": "三地平线（框架）", "example": {"en": "Horizon one optimizes the core business; horizon three explores breakthrough ideas.", "zh": "第一地平线优化核心业务；第三地平线探索突破性创意。"}}
+      ]
+    }
+  }
+}

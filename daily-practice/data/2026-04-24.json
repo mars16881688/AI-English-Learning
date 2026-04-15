@@ -1,0 +1,90 @@
+{
+  "date": "2026-04-24",
+  "themes": {
+    "growth": {
+      "label": "Growth / Marketing",
+      "sentences": [
+        {"en": "The viral coefficient is below 1.0, which means the product is not growing organically.", "zh": "病毒系数低于1.0，意味着产品没有实现自然增长。"},
+        {"en": "We ran a cohort analysis and found that users acquired in January have the best LTV.", "zh": "我们做了同期群分析，发现1月获取的用户LTV最高。"},
+        {"en": "Deep linking from the email campaign increased app open rates by 35%.", "zh": "邮件活动中的深度链接使App打开率提升了35%。"},
+        {"en": "The churn prediction model flagged 2,000 users who are at risk of leaving.", "zh": "流失预测模型标记了2000名有流失风险的用户。"},
+        {"en": "We should invest more in content marketing to build top-of-funnel awareness.", "zh": "我们应该加大内容营销投入，建立漏斗顶部的品牌认知。"}
+      ],
+      "vocabulary": [
+        {"word": "viral coefficient", "phonetic": "/ˈvaɪrəl ˌkəʊɪˈfɪʃənt/", "meaning": "病毒系数", "example": {"en": "A viral coefficient above 1.0 means each user brings in more than one new user.", "zh": "病毒系数大于1.0意味着每个用户能带来超过一个新用户。"}},
+        {"word": "cohort", "phonetic": "/ˈkəʊhɔːt/", "meaning": "同期群；群组", "example": {"en": "The March cohort showed 20% better retention than the February cohort.", "zh": "3月群组的留存比2月群组高出20%。"}},
+        {"word": "deep linking", "phonetic": "/diːp ˈlɪŋkɪŋ/", "meaning": "深度链接", "example": {"en": "Deep linking takes users directly to specific content inside the app.", "zh": "深度链接将用户直接引导到App内的特定内容。"}},
+        {"word": "prediction model", "phonetic": "/prɪˈdɪkʃən ˈmɒdəl/", "meaning": "预测模型", "example": {"en": "The prediction model uses behavioral signals to identify at-risk users.", "zh": "预测模型使用行为信号来识别高风险用户。"}},
+        {"word": "top-of-funnel", "phonetic": "/tɒp əv ˈfʌnəl/", "meaning": "漏斗顶部", "example": {"en": "Blog posts and social media are our main top-of-funnel channels.", "zh": "博客文章和社交媒体是我们主要的漏斗顶部渠道。"}}
+      ]
+    },
+    "product": {
+      "label": "Product / Metrics",
+      "sentences": [
+        {"en": "The feature flag system allows us to release features gradually to a subset of users.", "zh": "功能开关系统允许我们将功能逐步发布给一部分用户。"},
+        {"en": "Session duration increased by 18% after we added the personalized feed.", "zh": "添加个性化信息流后，会话时长增加了18%。"},
+        {"en": "The technical debt from the legacy system is slowing down our release velocity.", "zh": "遗留系统的技术债务正在拖慢我们的发布速度。"},
+        {"en": "We need to define acceptance criteria before the sprint starts.", "zh": "冲刺开始前，我们需要定义验收标准。"},
+        {"en": "The accessibility audit revealed that 30% of our pages fail WCAG compliance.", "zh": "无障碍审计显示，我们30%的页面不符合WCAG标准。"}
+      ],
+      "vocabulary": [
+        {"word": "feature flag", "phonetic": "/ˈfiːtʃə flæɡ/", "meaning": "功能开关", "example": {"en": "We use feature flags to test new features with a small percentage of users first.", "zh": "我们使用功能开关先对一小部分用户测试新功能。"}},
+        {"word": "session duration", "phonetic": "/ˈseʃən djʊˈreɪʃən/", "meaning": "会话时长", "example": {"en": "Average session duration is a key indicator of product stickiness.", "zh": "平均会话时长是产品粘性的关键指标。"}},
+        {"word": "technical debt", "phonetic": "/ˈteknɪkəl det/", "meaning": "技术债务", "example": {"en": "Ignoring technical debt leads to slower development and more bugs over time.", "zh": "忽视技术债务会导致开发速度变慢、Bug越来越多。"}},
+        {"word": "acceptance criteria", "phonetic": "/əkˈseptəns kraɪˈtɪəriə/", "meaning": "验收标准", "example": {"en": "Clear acceptance criteria prevent scope creep during development.", "zh": "清晰的验收标准能防止开发过程中的范围蔓延。"}},
+        {"word": "compliance", "phonetic": "/kəmˈplaɪəns/", "meaning": "合规；符合标准", "example": {"en": "Regulatory compliance is non-negotiable for fintech products.", "zh": "对于金融科技产品，合规是不可妥协的。"}}
+      ]
+    },
+    "finance": {
+      "label": "Finance / Investment",
+      "sentences": [
+        {"en": "The company reported a net loss of $50 million, wider than the previous quarter.", "zh": "公司报告净亏损5000万美元，亏损幅度较上季度扩大。"},
+        {"en": "Institutional investors hold 65% of the outstanding shares.", "zh": "机构投资者持有65%的流通股。"},
+        {"en": "The debt-to-equity ratio is at 1.8, which raises concerns about financial leverage.", "zh": "资产负债率为1.8，引发了对财务杠杆的担忧。"},
+        {"en": "Options trading volume surged ahead of the earnings announcement.", "zh": "财报发布前，期权交易量大幅飙升。"},
+        {"en": "The stock is trading below its 200-day moving average, indicating a bearish trend.", "zh": "该股在200日均线下方交易，表明处于看跌趋势。"}
+      ],
+      "vocabulary": [
+        {"word": "net loss", "phonetic": "/net lɒs/", "meaning": "净亏损", "example": {"en": "The startup reported a net loss for the fifth consecutive quarter.", "zh": "这家初创公司连续第五个季度报告净亏损。"}},
+        {"word": "outstanding shares", "phonetic": "/aʊtˈstændɪŋ ʃeəz/", "meaning": "流通股", "example": {"en": "The total number of outstanding shares determines the market capitalization.", "zh": "流通股总数决定了公司的市值。"}},
+        {"word": "debt-to-equity", "phonetic": "/det tə ˈekwɪti/", "meaning": "资产负债率", "example": {"en": "A high debt-to-equity ratio can signal financial risk to investors.", "zh": "高资产负债率可能向投资者传递财务风险信号。"}},
+        {"word": "options", "phonetic": "/ˈɒpʃənz/", "meaning": "期权", "example": {"en": "Call options give the holder the right to buy the stock at a set price.", "zh": "看涨期权赋予持有者以固定价格买入股票的权利。"}},
+        {"word": "moving average", "phonetic": "/ˈmuːvɪŋ ˈævərɪdʒ/", "meaning": "均线；移动平均", "example": {"en": "Traders often watch the 50-day and 200-day moving averages for trend signals.", "zh": "交易者通常关注50日和200日均线来判断趋势信号。"}}
+      ]
+    },
+    "team": {
+      "label": "Team / Management",
+      "sentences": [
+        {"en": "The performance review cycle starts next week, and all self-assessments are due Friday.", "zh": "绩效考核周期下周开始，所有自评材料周五前提交。"},
+        {"en": "We need to build a succession plan for critical roles in the organization.", "zh": "我们需要为组织中的关键岗位建立继任计划。"},
+        {"en": "The one-on-one meetings should focus on career development, not just task updates.", "zh": "一对一会议应该聚焦职业发展，而不只是任务进度更新。"},
+        {"en": "I noticed the team is working overtime too frequently, which is not sustainable.", "zh": "我注意到团队加班过于频繁，这是不可持续的。"},
+        {"en": "The mentorship program has improved junior engineer retention by 25%.", "zh": "导师计划使初级工程师的留存率提升了25%。"}
+      ],
+      "vocabulary": [
+        {"word": "self-assessment", "phonetic": "/self əˈsesmənt/", "meaning": "自评", "example": {"en": "A good self-assessment highlights both achievements and areas for growth.", "zh": "好的自评既要突出成就，也要指出成长空间。"}},
+        {"word": "succession plan", "phonetic": "/səkˈseʃən plæn/", "meaning": "继任计划", "example": {"en": "Without a succession plan, the departure of a key leader can disrupt operations.", "zh": "没有继任计划的话，关键领导者的离职可能会扰乱运营。"}},
+        {"word": "one-on-one", "phonetic": "/wʌn ɒn wʌn/", "meaning": "一对一会议", "example": {"en": "Effective one-on-one meetings build trust between managers and their reports.", "zh": "有效的一对一会议能建立管理者与下属之间的信任。"}},
+        {"word": "sustainable", "phonetic": "/səˈsteɪnəbəl/", "meaning": "可持续的", "example": {"en": "Working 60 hours a week is not sustainable for the team's health.", "zh": "每周工作60小时对团队健康而言是不可持续的。"}},
+        {"word": "mentorship", "phonetic": "/ˈmentɔːʃɪp/", "meaning": "导师制", "example": {"en": "A strong mentorship culture helps new hires grow faster.", "zh": "良好的导师文化帮助新员工更快成长。"}}
+      ]
+    },
+    "strategy": {
+      "label": "Strategy / Planning",
+      "sentences": [
+        {"en": "The blue ocean strategy suggests creating new market space rather than competing in existing ones.", "zh": "蓝海战略建议创造新的市场空间，而非在现有市场中竞争。"},
+        {"en": "We are evaluating an acquisition to fast-track our entry into the wealth management space.", "zh": "我们正在评估一项收购，以加速进入财富管理领域。"},
+        {"en": "The flywheel effect means that each improvement compounds over time.", "zh": "飞轮效应意味着每项改进都会随时间产生复利效果。"},
+        {"en": "Customer concentration risk is too high when 40% of revenue comes from one client.", "zh": "当40%的收入来自单一客户时，客户集中度风险过高。"},
+        {"en": "We should build a platform play rather than a single-product business.", "zh": "我们应该打造平台型业务，而非单一产品型企业。"}
+      ],
+      "vocabulary": [
+        {"word": "blue ocean", "phonetic": "/bluː ˈəʊʃən/", "meaning": "蓝海", "example": {"en": "A blue ocean strategy avoids head-to-head competition by creating new demand.", "zh": "蓝海战略通过创造新需求来避免正面竞争。"}},
+        {"word": "fast-track", "phonetic": "/fɑːst træk/", "meaning": "快速通道；加速", "example": {"en": "The partnership will fast-track our product launch by six months.", "zh": "这个合作关系将使我们的产品上线加速六个月。"}},
+        {"word": "flywheel", "phonetic": "/ˈflaɪwiːl/", "meaning": "飞轮", "example": {"en": "Amazon's flywheel connects lower prices, more customers, and more sellers.", "zh": "亚马逊的飞轮将更低价格、更多客户和更多卖家连接在一起。"}},
+        {"word": "concentration risk", "phonetic": "/ˌkɒnsənˈtreɪʃən rɪsk/", "meaning": "集中度风险", "example": {"en": "Reducing concentration risk requires diversifying the client base.", "zh": "降低集中度风险需要多元化客户基础。"}},
+        {"word": "platform play", "phonetic": "/ˈplætfɔːm pleɪ/", "meaning": "平台型打法", "example": {"en": "A platform play creates value by connecting buyers and sellers.", "zh": "平台型打法通过连接买卖双方来创造价值。"}}
+      ]
+    }
+  }
+}

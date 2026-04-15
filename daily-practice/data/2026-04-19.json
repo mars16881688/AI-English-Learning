@@ -1,0 +1,90 @@
+{
+  "date": "2026-04-19",
+  "themes": {
+    "growth": {
+      "label": "Growth / Marketing",
+      "sentences": [
+        {"en": "The upsell flow increased average revenue per user by 22%.", "zh": "追加销售流程使每用户平均收入提升了22%。"},
+        {"en": "We should run a cohort analysis to understand retention by acquisition channel.", "zh": "我们应该做一个群组分析来了解不同获客渠道的留存情况。"},
+        {"en": "The landing page bounce rate is 65% — we need a clearer value proposition.", "zh": "落地页跳出率是65%——我们需要更清晰的价值主张。"},
+        {"en": "Gamification elements boosted DAU by 15% in the first two weeks.", "zh": "游戏化元素在前两周内使日活提升了15%。"},
+        {"en": "Our SEO strategy should target long-tail keywords with high purchase intent.", "zh": "我们的SEO策略应该瞄准购买意图高的长尾关键词。"}
+      ],
+      "vocabulary": [
+        {"word": "upsell", "phonetic": "/ˈʌpsel/", "meaning": "追加销售；向上销售", "example": {"en": "The upsell prompt at checkout increased premium subscriptions by 30%.", "zh": "结账时的追加销售提示使高级订阅增加了30%。"}},
+        {"word": "cohort analysis", "phonetic": "/ˈkəʊhɔːt əˈnæləsɪs/", "meaning": "群组分析", "example": {"en": "Cohort analysis revealed that users acquired via referral retain 2x better.", "zh": "群组分析显示通过推荐获得的用户留存率高出2倍。"}},
+        {"word": "bounce rate", "phonetic": "/baʊns reɪt/", "meaning": "跳出率", "example": {"en": "A high bounce rate on mobile suggests the page is not optimized for small screens.", "zh": "移动端高跳出率说明页面未针对小屏幕优化。"}},
+        {"word": "gamification", "phonetic": "/ˌɡeɪmɪfɪˈkeɪʃən/", "meaning": "游戏化", "example": {"en": "Gamification techniques like badges and streaks increase user engagement.", "zh": "徽章和连续签到等游戏化技巧能提升用户参与度。"}},
+        {"word": "long-tail keyword", "phonetic": "/lɒŋ teɪl ˈkiːwɜːd/", "meaning": "长尾关键词", "example": {"en": "Long-tail keywords have lower search volume but higher conversion rates.", "zh": "长尾关键词搜索量较低但转化率更高。"}}
+      ]
+    },
+    "product": {
+      "label": "Product / Metrics",
+      "sentences": [
+        {"en": "The canary deployment caught a regression before it reached all users.", "zh": "金丝雀部署在影响所有用户之前发现了回归问题。"},
+        {"en": "We need to build a self-service analytics dashboard for the business team.", "zh": "我们需要为业务团队搭建一个自助分析仪表盘。"},
+        {"en": "The product spec was signed off by engineering and design last Friday.", "zh": "产品规格上周五已获得工程和设计团队的签字确认。"},
+        {"en": "Load testing revealed the system can handle 10,000 concurrent connections.", "zh": "压力测试显示系统能处理10000个并发连接。"},
+        {"en": "The accessibility audit flagged 12 issues that need to be fixed before launch.", "zh": "无障碍审计标记了12个需要在上线前修复的问题。"}
+      ],
+      "vocabulary": [
+        {"word": "canary deployment", "phonetic": "/kəˈneəri dɪˈplɔɪmənt/", "meaning": "金丝雀部署", "example": {"en": "Canary deployment routes 5% of traffic to the new version first.", "zh": "金丝雀部署先将5%的流量导向新版本。"}},
+        {"word": "self-service", "phonetic": "/self ˈsɜːvɪs/", "meaning": "自助式的", "example": {"en": "Self-service tools empower non-technical users to extract their own insights.", "zh": "自助工具使非技术用户能够自行提取洞察。"}},
+        {"word": "sign off", "phonetic": "/saɪn ɒf/", "meaning": "签字确认；批准", "example": {"en": "Legal needs to sign off on the privacy policy before we go live.", "zh": "法务需要在上线前签字确认隐私政策。"}},
+        {"word": "concurrent", "phonetic": "/kənˈkʌrənt/", "meaning": "并发的；同时的", "example": {"en": "The system must support 50,000 concurrent users during peak hours.", "zh": "系统必须在高峰时段支持5万并发用户。"}},
+        {"word": "accessibility", "phonetic": "/əkˌsesəˈbɪlɪti/", "meaning": "无障碍性", "example": {"en": "Improving accessibility benefits all users, not just those with disabilities.", "zh": "提升无障碍性对所有用户都有益，而不仅仅是残障用户。"}}
+      ]
+    },
+    "finance": {
+      "label": "Finance / Investment",
+      "sentences": [
+        {"en": "The price-to-book ratio of 0.9 makes this bank stock an interesting value play.", "zh": "0.9的市净率使这只银行股成为一个有趣的价值投资标的。"},
+        {"en": "Institutional ownership stands at 72%, indicating strong smart money interest.", "zh": "机构持股比例为72%，表明聪明钱的浓厚兴趣。"},
+        {"en": "The debt-to-equity ratio of 1.5 is elevated compared to industry peers.", "zh": "1.5的资产负债率相对于同行偏高。"},
+        {"en": "We expect operating leverage to kick in as revenue scales past $100 million.", "zh": "我们预计当收入突破1亿美元时运营杠杆效应将显现。"},
+        {"en": "The company declared a special dividend after the asset sale closed.", "zh": "资产出售完成后，公司宣布了一笔特别股息。"}
+      ],
+      "vocabulary": [
+        {"word": "price-to-book ratio", "phonetic": "/praɪs tə bʊk ˈreɪʃiəʊ/", "meaning": "市净率（P/B）", "example": {"en": "A price-to-book ratio below 1 suggests the stock may be undervalued.", "zh": "市净率低于1表明该股票可能被低估。"}},
+        {"word": "institutional ownership", "phonetic": "/ˌɪnstɪˈtjuːʃənəl ˈəʊnəʃɪp/", "meaning": "机构持股比例", "example": {"en": "High institutional ownership often leads to lower stock price volatility.", "zh": "高机构持股比例通常导致股价波动性较低。"}},
+        {"word": "debt-to-equity ratio", "phonetic": "/det tə ˈekwɪti ˈreɪʃiəʊ/", "meaning": "资产负债率", "example": {"en": "A high debt-to-equity ratio increases the company's financial risk.", "zh": "高资产负债率增加了公司的财务风险。"}},
+        {"word": "operating leverage", "phonetic": "/ˈɒpəreɪtɪŋ ˈliːvərɪdʒ/", "meaning": "运营杠杆", "example": {"en": "Software companies benefit from high operating leverage due to low marginal costs.", "zh": "软件公司因边际成本低而受益于高运营杠杆。"}},
+        {"word": "asset sale", "phonetic": "/ˈæset seɪl/", "meaning": "资产出售", "example": {"en": "The asset sale generated $2 billion in proceeds for debt reduction.", "zh": "资产出售产生了20亿美元的收入用于偿还债务。"}}
+      ]
+    },
+    "team": {
+      "label": "Team / Management",
+      "sentences": [
+        {"en": "The skip-level meeting gave me valuable insight into team morale.", "zh": "越级面谈让我对团队士气有了宝贵的了解。"},
+        {"en": "We should standardize the interview rubric to reduce hiring bias.", "zh": "我们应该标准化面试评分标准以减少招聘偏见。"},
+        {"en": "The town hall covered our Q1 results and the strategic priorities for Q2.", "zh": "全员大会介绍了Q1业绩和Q2的战略重点。"},
+        {"en": "I want to empower the team to make decisions without waiting for my approval.", "zh": "我想赋能团队在不等待我审批的情况下做决策。"},
+        {"en": "Knowledge sharing sessions every Friday have improved team-wide competency.", "zh": "每周五的知识分享会提升了全团队的能力水平。"}
+      ],
+      "vocabulary": [
+        {"word": "skip-level", "phonetic": "/skɪp ˈlevəl/", "meaning": "越级（面谈）", "example": {"en": "Skip-level meetings help executives hear unfiltered feedback from the front line.", "zh": "越级面谈帮助高管听到来自一线的未经过滤的反馈。"}},
+        {"word": "rubric", "phonetic": "/ˈruːbrɪk/", "meaning": "评分标准；规则", "example": {"en": "A clear interview rubric ensures every candidate is assessed consistently.", "zh": "清晰的面试评分标准确保每位候选人都被一致地评估。"}},
+        {"word": "town hall", "phonetic": "/taʊn hɔːl/", "meaning": "全员大会", "example": {"en": "The CEO hosts a monthly town hall to share company updates.", "zh": "CEO每月举办一次全员大会分享公司动态。"}},
+        {"word": "empower", "phonetic": "/ɪmˈpaʊə/", "meaning": "赋能；授权", "example": {"en": "Empowering team leads to make budget decisions speeds up execution.", "zh": "授权团队负责人做预算决策能加速执行。"}},
+        {"word": "competency", "phonetic": "/ˈkɒmpɪtənsi/", "meaning": "能力；胜任力", "example": {"en": "We mapped competency levels to guide career development conversations.", "zh": "我们制定了能力等级映射来指导职业发展对话。"}}
+      ]
+    },
+    "strategy": {
+      "label": "Strategy / Planning",
+      "sentences": [
+        {"en": "The blue ocean strategy requires us to redefine the value curve.", "zh": "蓝海战略要求我们重新定义价值曲线。"},
+        {"en": "We are evaluating three acquisition targets to accelerate market entry.", "zh": "我们正在评估三个收购标的以加速市场进入。"},
+        {"en": "The scenario planning exercise prepared us for a potential market downturn.", "zh": "情景规划演练为我们应对潜在的市场低迷做好了准备。"},
+        {"en": "Our pricing power comes from the stickiness of the platform.", "zh": "我们的定价能力来自于平台的用户粘性。"},
+        {"en": "Vertical specialization in wealth management sets us apart from generalist brokers.", "zh": "在财富管理上的垂直专业化使我们区别于综合券商。"}
+      ],
+      "vocabulary": [
+        {"word": "blue ocean", "phonetic": "/bluː ˈəʊʃən/", "meaning": "蓝海（无竞争市场空间）", "example": {"en": "A blue ocean strategy focuses on creating uncontested market space.", "zh": "蓝海战略专注于创造无竞争的市场空间。"}},
+        {"word": "acquisition target", "phonetic": "/ˌækwɪˈzɪʃən ˈtɑːɡɪt/", "meaning": "收购标的", "example": {"en": "The due diligence on the acquisition target revealed hidden liabilities.", "zh": "对收购标的的尽职调查发现了隐藏的负债。"}},
+        {"word": "scenario planning", "phonetic": "/sɪˈnɑːriəʊ ˈplænɪŋ/", "meaning": "情景规划", "example": {"en": "Scenario planning helps leadership prepare for multiple possible futures.", "zh": "情景规划帮助管理层为多种可能的未来做准备。"}},
+        {"word": "pricing power", "phonetic": "/ˈpraɪsɪŋ ˈpaʊə/", "meaning": "定价能力", "example": {"en": "Companies with strong pricing power can pass cost increases to customers.", "zh": "拥有强定价能力的公司可以将成本上涨转嫁给客户。"}},
+        {"word": "stickiness", "phonetic": "/ˈstɪkinəs/", "meaning": "粘性（用户依赖度）", "example": {"en": "High switching costs create stickiness that protects against churn.", "zh": "高转换成本创造了防止流失的用户粘性。"}}
+      ]
+    }
+  }
+}

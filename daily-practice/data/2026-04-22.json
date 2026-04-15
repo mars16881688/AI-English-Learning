@@ -1,0 +1,90 @@
+{
+  "date": "2026-04-22",
+  "themes": {
+    "growth": {
+      "label": "Growth / Marketing",
+      "sentences": [
+        {"en": "We need to double down on the channels that show positive unit economics.", "zh": "我们需要加大投入在展现正向单位经济模型的渠道上。"},
+        {"en": "The landing page bounce rate dropped after we simplified the value proposition.", "zh": "简化价值主张后，落地页跳出率下降了。"},
+        {"en": "Our re-engagement campaign brought back 12% of dormant users last month.", "zh": "我们的唤醒营销活动上个月召回了12%的沉默用户。"},
+        {"en": "The viral loop only works when existing users see clear incentives to share.", "zh": "只有当现有用户看到明确的分享激励时，病毒循环才能生效。"},
+        {"en": "We should sunset the referral bonus if the payback period exceeds 90 days.", "zh": "如果回收期超过90天，我们应该停止推荐奖励。"}
+      ],
+      "vocabulary": [
+        {"word": "bounce rate", "phonetic": "/baʊns reɪt/", "meaning": "跳出率", "example": {"en": "A high bounce rate usually indicates a mismatch between ad copy and landing page content.", "zh": "高跳出率通常意味着广告文案与落地页内容不匹配。"}},
+        {"word": "dormant", "phonetic": "/ˈdɔːrmənt/", "meaning": "沉默的；休眠的", "example": {"en": "We classify users as dormant if they haven't logged in for 30 days.", "zh": "如果用户30天未登录，我们将其归类为沉默用户。"}},
+        {"word": "incentive", "phonetic": "/ɪnˈsentɪv/", "meaning": "激励；奖励", "example": {"en": "Cash incentives drive short-term signups but don't guarantee long-term retention.", "zh": "现金激励能推动短期注册，但不能保证长期留存。"}},
+        {"word": "sunset", "phonetic": "/ˈsʌnset/", "meaning": "停止；下线（产品或功能）", "example": {"en": "The team decided to sunset the old loyalty program by the end of Q2.", "zh": "团队决定在Q2结束前下线旧的忠诚度计划。"}},
+        {"word": "payback period", "phonetic": "/ˈpeɪbæk ˈpɪəriəd/", "meaning": "回收期", "example": {"en": "If the payback period is under 6 months, the channel is worth scaling.", "zh": "如果回收期在6个月以内，这个渠道值得放量。"}}
+      ]
+    },
+    "product": {
+      "label": "Product / Metrics",
+      "sentences": [
+        {"en": "The crash rate spiked on Android after the latest release.", "zh": "最新版本发布后，Android端崩溃率飙升。"},
+        {"en": "We need to set up a feature flag before rolling out the new checkout flow.", "zh": "在灰度发布新结算流程之前，我们需要先设置功能开关。"},
+        {"en": "Session duration increased but conversion stayed flat, which suggests a UX bottleneck.", "zh": "会话时长增加了但转化率持平，说明存在用户体验瓶颈。"},
+        {"en": "The product spec should include edge cases for users with incomplete KYC.", "zh": "产品需求文档应该包含未完成KYC认证用户的边界情况。"},
+        {"en": "Our error budget is almost exhausted so we should freeze non-critical deployments.", "zh": "我们的错误预算几乎耗尽，应该冻结非关键部署。"}
+      ],
+      "vocabulary": [
+        {"word": "crash rate", "phonetic": "/kræʃ reɪt/", "meaning": "崩溃率", "example": {"en": "We need to bring the crash rate below 0.5% before the next app store review.", "zh": "在下次应用商店审核前，我们需要把崩溃率降到0.5%以下。"}},
+        {"word": "feature flag", "phonetic": "/ˈfiːtʃər flæɡ/", "meaning": "功能开关", "example": {"en": "Feature flags allow us to test changes with a small percentage of users first.", "zh": "功能开关允许我们先对一小部分用户测试变更。"}},
+        {"word": "edge case", "phonetic": "/edʒ keɪs/", "meaning": "边界情况", "example": {"en": "The QA team uncovered several edge cases that the original spec didn't address.", "zh": "QA团队发现了几个原始需求文档未涵盖的边界情况。"}},
+        {"word": "error budget", "phonetic": "/ˈerər ˈbʌdʒɪt/", "meaning": "错误预算", "example": {"en": "When the error budget runs out, the team must prioritize reliability over new features.", "zh": "当错误预算耗尽时，团队必须优先保障稳定性而非新功能。"}},
+        {"word": "bottleneck", "phonetic": "/ˈbɒtlnek/", "meaning": "瓶颈", "example": {"en": "The payment gateway became the bottleneck during the flash sale.", "zh": "闪购期间，支付网关成了瓶颈。"}}
+      ]
+    },
+    "finance": {
+      "label": "Finance / Investment",
+      "sentences": [
+        {"en": "The stock has been trading sideways for two weeks ahead of the earnings call.", "zh": "在财报电话会议之前，该股已横盘交易两周。"},
+        {"en": "Institutional investors have been rotating out of growth stocks into value names.", "zh": "机构投资者一直在从成长股轮动到价值股。"},
+        {"en": "The company announced a $500 million share buyback program to support the stock price.", "zh": "公司宣布了5亿美元的股票回购计划以支撑股价。"},
+        {"en": "Net interest margin contracted due to the inverted yield curve.", "zh": "由于收益率曲线倒挂，净息差收窄了。"},
+        {"en": "The IPO was priced at the top of the range, reflecting strong institutional demand.", "zh": "IPO定价在区间上限，反映了机构需求强劲。"}
+      ],
+      "vocabulary": [
+        {"word": "sideways", "phonetic": "/ˈsaɪdweɪz/", "meaning": "横盘的", "example": {"en": "The index has been moving sideways as traders await the Fed decision.", "zh": "在交易员等待美联储决议期间，指数一直横盘整理。"}},
+        {"word": "buyback", "phonetic": "/ˈbaɪbæk/", "meaning": "股票回购", "example": {"en": "Share buybacks reduce the number of outstanding shares and boost earnings per share.", "zh": "股票回购减少流通股数量，提升每股收益。"}},
+        {"word": "net interest margin", "phonetic": "/net ˈɪntrəst ˈmɑːrdʒɪn/", "meaning": "净息差", "example": {"en": "Banks with wider net interest margins tend to outperform in a rising rate environment.", "zh": "净息差更大的银行在加息环境中往往表现更好。"}},
+        {"word": "inverted", "phonetic": "/ɪnˈvɜːrtɪd/", "meaning": "倒挂的", "example": {"en": "An inverted yield curve is historically a reliable recession indicator.", "zh": "收益率曲线倒挂历来是可靠的衰退指标。"}},
+        {"word": "IPO", "phonetic": "/ˌaɪ piː ˈəʊ/", "meaning": "首次公开募股", "example": {"en": "The company plans to file for an IPO in the second half of this year.", "zh": "公司计划在今年下半年申请IPO。"}}
+      ]
+    },
+    "team": {
+      "label": "Team / Management",
+      "sentences": [
+        {"en": "Let's do a skip-level meeting to get unfiltered feedback from the front-line team.", "zh": "我们做一次跨级会议，直接获取一线团队的真实反馈。"},
+        {"en": "The hiring bar should not drop just because we are under headcount pressure.", "zh": "不能因为有人员编制压力就降低招聘标准。"},
+        {"en": "I want each team lead to present their OKR progress in the Thursday all-hands.", "zh": "我希望每个团队负责人在周四全员会上汇报OKR进展。"},
+        {"en": "We need to address the knowledge silo before the senior engineer leaves next month.", "zh": "在资深工程师下月离职前，我们需要解决知识孤岛问题。"},
+        {"en": "The 360-degree feedback showed a gap between self-assessment and peer perception.", "zh": "360度反馈显示自我评估与同事认知之间存在差距。"}
+      ],
+      "vocabulary": [
+        {"word": "skip-level", "phonetic": "/skɪp ˈlevəl/", "meaning": "跨级（会议）", "example": {"en": "Skip-level meetings help managers understand issues that don't surface in regular reports.", "zh": "跨级会议帮助管理者了解常规汇报中不会浮现的问题。"}},
+        {"word": "hiring bar", "phonetic": "/ˈhaɪərɪŋ bɑːr/", "meaning": "招聘标准", "example": {"en": "Maintaining a high hiring bar is essential for team quality in the long run.", "zh": "保持高招聘标准对长期团队质量至关重要。"}},
+        {"word": "all-hands", "phonetic": "/ɔːl hændz/", "meaning": "全员会议", "example": {"en": "The CEO uses the monthly all-hands to share company strategy and celebrate wins.", "zh": "CEO利用月度全员会议分享公司战略并庆祝成绩。"}},
+        {"word": "knowledge silo", "phonetic": "/ˈnɒlɪdʒ ˈsaɪləʊ/", "meaning": "知识孤岛", "example": {"en": "Documentation and pair programming help break down knowledge silos.", "zh": "文档和结对编程有助于打破知识孤岛。"}},
+        {"word": "self-assessment", "phonetic": "/self əˈsesmənt/", "meaning": "自我评估", "example": {"en": "Accurate self-assessment is a sign of professional maturity.", "zh": "准确的自我评估是职业成熟度的标志。"}}
+      ]
+    },
+    "strategy": {
+      "label": "Strategy / Planning",
+      "sentences": [
+        {"en": "Our land-and-expand strategy has proven effective in the SMB segment.", "zh": "我们的先落地再扩展策略在中小企业客群中被证明是有效的。"},
+        {"en": "We should evaluate the total addressable market before committing resources to this vertical.", "zh": "在向这个垂直领域投入资源之前，我们应该评估总可达市场规模。"},
+        {"en": "The competitive moat comes from our proprietary data, not from the technology itself.", "zh": "竞争护城河来自我们的专有数据，而非技术本身。"},
+        {"en": "Entering the Japan market requires a localization strategy beyond simple translation.", "zh": "进入日本市场需要超越简单翻译的本地化策略。"},
+        {"en": "The board wants us to achieve profitability before pursuing the next round of funding.", "zh": "董事会希望我们在寻求下一轮融资之前实现盈利。"}
+      ],
+      "vocabulary": [
+        {"word": "land-and-expand", "phonetic": "/lænd ənd ɪkˈspænd/", "meaning": "先落地再扩展", "example": {"en": "The land-and-expand model starts with a small deal and grows within the account.", "zh": "先落地再扩展模式从小额交易开始，在客户内部逐步增长。"}},
+        {"word": "total addressable market", "phonetic": "/ˈtəʊtl əˈdresəbl ˈmɑːrkɪt/", "meaning": "总可达市场（TAM）", "example": {"en": "Investors want to see a TAM large enough to justify the valuation.", "zh": "投资者希望看到足够大的TAM来支撑估值。"}},
+        {"word": "moat", "phonetic": "/məʊt/", "meaning": "护城河", "example": {"en": "Network effects create a strong moat that is hard for competitors to replicate.", "zh": "网络效应创造了竞争对手难以复制的强大护城河。"}},
+        {"word": "localization", "phonetic": "/ˌləʊkəlaɪˈzeɪʃən/", "meaning": "本地化", "example": {"en": "Localization includes adapting the product to local regulations, language, and user habits.", "zh": "本地化包括将产品适配当地法规、语言和用户习惯。"}},
+        {"word": "profitability", "phonetic": "/ˌprɒfɪtəˈbɪlɪti/", "meaning": "盈利能力", "example": {"en": "The path to profitability requires cutting customer acquisition costs by at least 30%.", "zh": "实现盈利的路径需要将获客成本至少降低30%。"}}
+      ]
+    }
+  }
+}

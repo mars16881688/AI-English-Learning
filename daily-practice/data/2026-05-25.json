@@ -1,0 +1,90 @@
+{
+  "date": "2026-05-25",
+  "themes": {
+    "growth": {
+      "label": "Growth / Marketing",
+      "sentences": [
+        {"en": "The activation milestone is defined as completing the first trade within 7 days.", "zh": "激活里程碑定义为7天内完成首笔交易。"},
+        {"en": "We ran a multivariate test on the landing page to optimize headline, image, and CTA simultaneously.", "zh": "我们在落地页上运行了多变量测试，同时优化标题、图片和行动号召。"},
+        {"en": "The dormant user reactivation campaign generated 8,000 logins in the first week.", "zh": "沉默用户唤醒活动在第一周产生了8000次登录。"},
+        {"en": "Embedding the product into partner apps through a white-label solution expands distribution.", "zh": "通过白标方案将产品嵌入合作伙伴App扩大了分发渠道。"},
+        {"en": "The net promoter score rose from 32 to 45 after improving customer support response times.", "zh": "改善客服响应时间后，净推荐值从32上升到45。"}
+      ],
+      "vocabulary": [
+        {"word": "milestone", "phonetic": "/ˈmaɪlstəʊn/", "meaning": "里程碑", "example": {"en": "Reaching one million users was a major milestone for the startup.", "zh": "达到一百万用户是这家创业公司的重要里程碑。"}},
+        {"word": "multivariate", "phonetic": "/ˌmʌltɪˈveəriət/", "meaning": "多变量的", "example": {"en": "Multivariate testing examines multiple variables at once to find the best combination.", "zh": "多变量测试同时检验多个变量以找到最佳组合。"}},
+        {"word": "dormant", "phonetic": "/ˈdɔːmənt/", "meaning": "沉默的；休眠的", "example": {"en": "Dormant users have not logged in for at least 90 days.", "zh": "沉默用户至少90天没有登录。"}},
+        {"word": "white-label", "phonetic": "/waɪt ˈleɪbəl/", "meaning": "白标", "example": {"en": "White-label solutions let partners offer the product under their own brand.", "zh": "白标方案让合作伙伴以自己的品牌提供产品。"}},
+        {"word": "net promoter score", "phonetic": "/net prəˈməʊtər skɔːr/", "meaning": "净推荐值", "example": {"en": "NPS is measured by asking users how likely they are to recommend the product.", "zh": "NPS通过询问用户推荐产品的可能性来衡量。"}}
+      ]
+    },
+    "product": {
+      "label": "Product / Metrics",
+      "sentences": [
+        {"en": "The crash rate on Android is 3x higher than iOS, pointing to a device fragmentation issue.", "zh": "Android的崩溃率是iOS的3倍，指向设备碎片化问题。"},
+        {"en": "We use a weighted scoring model to prioritize items in the product backlog.", "zh": "我们使用加权评分模型来排列产品待办列表中的优先级。"},
+        {"en": "The real-time notification system needs to handle 10,000 messages per second at peak.", "zh": "实时通知系统需要在高峰时每秒处理10,000条消息。"},
+        {"en": "Customer satisfaction dropped after we removed the legacy portfolio view.", "zh": "我们移除旧版持仓视图后，客户满意度下降了。"},
+        {"en": "The canary deployment detected a memory leak before it reached production.", "zh": "金丝雀部署在问题到达生产环境之前检测到了内存泄漏。"}
+      ],
+      "vocabulary": [
+        {"word": "fragmentation", "phonetic": "/ˌfræɡmenˈteɪʃən/", "meaning": "碎片化", "example": {"en": "Android device fragmentation makes testing across all screen sizes challenging.", "zh": "Android设备碎片化使得在所有屏幕尺寸上测试变得困难。"}},
+        {"word": "backlog", "phonetic": "/ˈbæklɒɡ/", "meaning": "待办列表；积压", "example": {"en": "The product backlog should be groomed every two weeks.", "zh": "产品待办列表应每两周梳理一次。"}},
+        {"word": "throughput", "phonetic": "/ˈθruːpʊt/", "meaning": "吞吐量", "example": {"en": "The system throughput needs to scale linearly with user growth.", "zh": "系统吞吐量需要随用户增长线性扩展。"}},
+        {"word": "legacy", "phonetic": "/ˈleɡəsi/", "meaning": "遗留的；旧版的", "example": {"en": "Migrating off the legacy system is our top infrastructure priority.", "zh": "迁移旧系统是我们基础设施的首要任务。"}},
+        {"word": "canary deployment", "phonetic": "/kəˈneəri dɪˈplɔɪmənt/", "meaning": "金丝雀部署", "example": {"en": "Canary deployments expose changes to a small subset of users first.", "zh": "金丝雀部署先将变更暴露给一小部分用户。"}}
+      ]
+    },
+    "finance": {
+      "label": "Finance / Investment",
+      "sentences": [
+        {"en": "The company's enterprise value to EBITDA multiple is trading at a discount to peers.", "zh": "该公司的企业价值/EBITDA倍数相对同行存在折价。"},
+        {"en": "Margin expansion was driven by operating leverage as revenue scaled.", "zh": "随着营收规模扩大，经营杠杆推动了利润率扩张。"},
+        {"en": "The warrant exercise price is set at a 20% premium to the current share price.", "zh": "认股权证的行权价设定为当前股价的20%溢价。"},
+        {"en": "Gross merchandise value grew 35% year over year but take rate remained flat.", "zh": "GMV同比增长35%，但货币化率保持不变。"},
+        {"en": "The quarterly guidance was revised downward due to macroeconomic headwinds.", "zh": "由于宏观经济逆风，季度指引被下调。"}
+      ],
+      "vocabulary": [
+        {"word": "EBITDA", "phonetic": "/iːˈbɪtdɑː/", "meaning": "息税折旧摊销前利润", "example": {"en": "EBITDA strips out non-operating factors to show core profitability.", "zh": "EBITDA剔除非经营性因素以展示核心盈利能力。"}},
+        {"word": "operating leverage", "phonetic": "/ˈɒpəreɪtɪŋ ˈlevərɪdʒ/", "meaning": "经营杠杆", "example": {"en": "High operating leverage means a small revenue increase leads to a larger profit increase.", "zh": "高经营杠杆意味着小幅营收增长带来更大的利润增长。"}},
+        {"word": "warrant", "phonetic": "/ˈwɒrənt/", "meaning": "认股权证", "example": {"en": "Warrants give holders the right to buy shares at a fixed price within a set period.", "zh": "认股权证赋予持有人在规定期限内以固定价格购买股票的权利。"}},
+        {"word": "take rate", "phonetic": "/teɪk reɪt/", "meaning": "货币化率；抽成率", "example": {"en": "The platform's take rate is 2.5% of each transaction value.", "zh": "平台的货币化率是每笔交易金额的2.5%。"}},
+        {"word": "headwind", "phonetic": "/ˈhedwɪnd/", "meaning": "逆风；不利因素", "example": {"en": "Currency depreciation is a headwind for companies with overseas revenue.", "zh": "货币贬值对有海外收入的公司是不利因素。"}}
+      ]
+    },
+    "team": {
+      "label": "Team / Management",
+      "sentences": [
+        {"en": "The RACI matrix clarifies who is responsible, accountable, consulted, and informed.", "zh": "RACI矩阵明确了谁负责执行、谁承担责任、谁被咨询和谁被通知。"},
+        {"en": "We promoted two senior engineers to staff level based on their impact across teams.", "zh": "我们根据跨团队的影响力将两名高级工程师晋升为Staff级别。"},
+        {"en": "The culture survey shows that 78% of employees feel empowered to make decisions.", "zh": "文化调查显示78%的员工感到被赋能做决策。"},
+        {"en": "We introduced asynchronous standups to accommodate colleagues in different time zones.", "zh": "我们引入了异步站会，以适应不同时区的同事。"},
+        {"en": "The competency framework defines what success looks like at each career level.", "zh": "能力框架定义了每个职级的成功标准。"}
+      ],
+      "vocabulary": [
+        {"word": "RACI", "phonetic": "/ˈreɪsi/", "meaning": "RACI矩阵（责任分工模型）", "example": {"en": "A clear RACI prevents confusion about who owns the final decision.", "zh": "清晰的RACI矩阵能避免关于谁拥有最终决策权的混淆。"}},
+        {"word": "staff level", "phonetic": "/stɑːf ˈlevəl/", "meaning": "Staff级别（高级技术职级）", "example": {"en": "Staff engineers are expected to influence technical direction beyond their immediate team.", "zh": "Staff级别的工程师应在直属团队之外影响技术方向。"}},
+        {"word": "empower", "phonetic": "/ɪmˈpaʊər/", "meaning": "赋能；授权", "example": {"en": "Empowering team members to own decisions speeds up execution.", "zh": "赋能团队成员自主决策加快了执行速度。"}},
+        {"word": "asynchronous", "phonetic": "/eɪˈsɪŋkrənəs/", "meaning": "异步的", "example": {"en": "Asynchronous communication reduces meeting overload in distributed teams.", "zh": "异步沟通减少了分布式团队的会议负担。"}},
+        {"word": "competency", "phonetic": "/kəmˈpetənsi/", "meaning": "能力；胜任力", "example": {"en": "The competency model maps required skills to each job family and level.", "zh": "能力模型将所需技能映射到每个岗位族和级别。"}}
+      ]
+    },
+    "strategy": {
+      "label": "Strategy / Planning",
+      "sentences": [
+        {"en": "The market penetration in Singapore reached 8%, leaving significant room for growth.", "zh": "新加坡的市场渗透率达到8%，仍有显著增长空间。"},
+        {"en": "Our dual-brand strategy targets both premium and mass-market segments.", "zh": "我们的双品牌策略同时瞄准高端和大众市场细分。"},
+        {"en": "Disintermediation is the biggest threat to traditional brokerage firms.", "zh": "去中介化是传统券商面临的最大威胁。"},
+        {"en": "The platform strategy pivots from being a tool to becoming an infrastructure layer.", "zh": "平台策略从做工具转向成为基础设施层。"},
+        {"en": "Adjacent market expansion into insurance creates upsell opportunities for existing users.", "zh": "向保险邻近市场扩展为现有用户创造了追加销售机会。"}
+      ],
+      "vocabulary": [
+        {"word": "penetration", "phonetic": "/ˌpenɪˈtreɪʃən/", "meaning": "渗透率", "example": {"en": "Smartphone penetration in Hong Kong is among the highest globally.", "zh": "香港的智能手机渗透率在全球排名前列。"}},
+        {"word": "dual-brand", "phonetic": "/ˈdjuːəl brænd/", "meaning": "双品牌", "example": {"en": "A dual-brand approach lets you compete in different price segments without brand dilution.", "zh": "双品牌策略让你在不稀释品牌的情况下竞争不同价格带。"}},
+        {"word": "disintermediation", "phonetic": "/ˌdɪsˌɪntəˌmiːdiˈeɪʃən/", "meaning": "去中介化", "example": {"en": "Blockchain technology accelerates disintermediation in financial services.", "zh": "区块链技术加速了金融服务领域的去中介化。"}},
+        {"word": "infrastructure", "phonetic": "/ˈɪnfrəstrʌktʃər/", "meaning": "基础设施", "example": {"en": "Becoming infrastructure makes the platform sticky and hard to replace.", "zh": "成为基础设施让平台具有粘性且难以被替代。"}},
+        {"word": "upsell", "phonetic": "/ˈʌpsel/", "meaning": "追加销售", "example": {"en": "Upselling premium features to free users is a key monetization lever.", "zh": "向免费用户追加销售高级功能是关键的变现杠杆。"}}
+      ]
+    }
+  }
+}

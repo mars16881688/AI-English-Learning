@@ -1,0 +1,90 @@
+{
+  "date": "2026-05-05",
+  "themes": {
+    "growth": {
+      "label": "Growth / Marketing",
+      "sentences": [
+        {"en": "The referral loop works because both the inviter and the invitee receive a reward.", "zh": "推荐循环之所以有效，是因为邀请者和被邀请者都能获得奖励。"},
+        {"en": "We are shifting from a growth-at-all-costs mindset to sustainable and profitable growth.", "zh": "我们正在从不计成本的增长思维转向可持续的盈利增长。"},
+        {"en": "The install-to-registration ratio improved after we simplified the verification steps.", "zh": "简化验证步骤后，安装到注册的转化比提升了。"},
+        {"en": "Geo-targeted campaigns in Shenzhen outperformed our national average by 60%.", "zh": "深圳的地域定向投放效果比全国平均水平高出60%。"},
+        {"en": "The influencer partnership drove a 3x spike in app store search volume.", "zh": "网红合作推动了应用商店搜索量3倍的增长。"}
+      ],
+      "vocabulary": [
+        {"word": "referral loop", "phonetic": "/rɪˈfɜːrəl luːp/", "meaning": "推荐循环", "example": {"en": "A strong referral loop turns each new user into a distribution channel.", "zh": "强大的推荐循环把每个新用户变成分发渠道。"}},
+        {"word": "sustainable", "phonetic": "/səˈsteɪnəbl/", "meaning": "可持续的", "example": {"en": "Sustainable growth requires positive unit economics.", "zh": "可持续增长需要正向的单位经济模型。"}},
+        {"word": "geo-targeted", "phonetic": "/ˈdʒiːəʊ ˈtɑːɡɪtɪd/", "meaning": "地域定向的", "example": {"en": "Geo-targeted ads let us customize messaging by city.", "zh": "地域定向广告让我们可以按城市定制推广信息。"}},
+        {"word": "spike", "phonetic": "/spaɪk/", "meaning": "骤增；尖峰", "example": {"en": "The traffic spike after the TV interview crashed our server.", "zh": "电视采访后的流量骤增导致了服务器宕机。"}},
+        {"word": "search volume", "phonetic": "/sɜːtʃ ˈvɒljuːm/", "meaning": "搜索量", "example": {"en": "Branded search volume is a proxy for brand awareness.", "zh": "品牌词搜索量是品牌认知度的代理指标。"}}
+      ]
+    },
+    "product": {
+      "label": "Product / Metrics",
+      "sentences": [
+        {"en": "The dashboard needs real-time data refresh instead of the current hourly batch.", "zh": "仪表盘需要实时数据刷新，而不是当前的每小时批量更新。"},
+        {"en": "We are migrating from a monolithic architecture to event-driven microservices.", "zh": "我们正在从单体架构迁移到事件驱动的微服务架构。"},
+        {"en": "The heatmap analysis shows that 70% of users never scroll below the fold.", "zh": "热力图分析显示70%的用户从未滚动到首屏以下。"},
+        {"en": "We need to implement idempotent APIs to handle duplicate payment requests safely.", "zh": "我们需要实现幂等API来安全处理重复的支付请求。"},
+        {"en": "The product analytics pipeline processes over 50 million events daily.", "zh": "产品分析管道每天处理超过5000万个事件。"}
+      ],
+      "vocabulary": [
+        {"word": "real-time", "phonetic": "/rɪəl taɪm/", "meaning": "实时的", "example": {"en": "Real-time stock quotes are essential for active traders.", "zh": "实时股票报价对活跃交易者来说是必需的。"}},
+        {"word": "monolithic", "phonetic": "/ˌmɒnəˈlɪθɪk/", "meaning": "单体的", "example": {"en": "The monolithic codebase became too complex for a single team to maintain.", "zh": "单体代码库变得太复杂，单个团队无法维护。"}},
+        {"word": "heatmap", "phonetic": "/ˈhiːtmæp/", "meaning": "热力图", "example": {"en": "The click heatmap revealed that users were tapping on non-interactive elements.", "zh": "点击热力图显示用户在点击不可交互的元素。"}},
+        {"word": "idempotent", "phonetic": "/ˌaɪdɛmˈpəʊtənt/", "meaning": "幂等的", "example": {"en": "Idempotent operations produce the same result regardless of how many times they are called.", "zh": "幂等操作无论被调用多少次，都产生相同的结果。"}},
+        {"word": "pipeline", "phonetic": "/ˈpaɪplaɪn/", "meaning": "管道；流水线", "example": {"en": "The data pipeline ingests raw events and outputs structured analytics tables.", "zh": "数据管道接收原始事件，输出结构化的分析表。"}}
+      ]
+    },
+    "finance": {
+      "label": "Finance / Investment",
+      "sentences": [
+        {"en": "The Federal Reserve's balance sheet reduction is tightening liquidity conditions.", "zh": "美联储的缩表正在收紧流动性条件。"},
+        {"en": "The company's net asset value per share exceeds the current market price.", "zh": "该公司每股净资产值超过当前市场价格。"},
+        {"en": "Hedge funds are increasing their exposure to emerging market equities.", "zh": "对冲基金正在增加对新兴市场股票的敞口。"},
+        {"en": "The stock went ex-dividend yesterday, which explains the 2% price drop.", "zh": "该股昨天除息，这解释了2%的价格下跌。"},
+        {"en": "The quarterly earnings call will address concerns about slowing subscription growth.", "zh": "季度财报电话会将回应对订阅增长放缓的担忧。"}
+      ],
+      "vocabulary": [
+        {"word": "balance sheet", "phonetic": "/ˈbæləns ʃiːt/", "meaning": "资产负债表", "example": {"en": "A strong balance sheet with low debt gives the company flexibility in downturns.", "zh": "低负债的强劲资产负债表让公司在低迷期有更多灵活性。"}},
+        {"word": "liquidity", "phonetic": "/lɪˈkwɪdɪti/", "meaning": "流动性", "example": {"en": "Reduced liquidity makes it harder to exit large positions quickly.", "zh": "流动性降低使得快速退出大仓位更加困难。"}},
+        {"word": "exposure", "phonetic": "/ɪkˈspəʊʒər/", "meaning": "敞口；风险暴露", "example": {"en": "We need to reduce our exposure to the Chinese property sector.", "zh": "我们需要降低对中国房地产板块的敞口。"}},
+        {"word": "ex-dividend", "phonetic": "/eks ˈdɪvɪdend/", "meaning": "除息", "example": {"en": "Shares bought on or after the ex-dividend date do not receive the upcoming dividend.", "zh": "在除息日当天或之后买入的股票不享有即将发放的股息。"}},
+        {"word": "earnings call", "phonetic": "/ˈɜːnɪŋz kɔːl/", "meaning": "财报电话会", "example": {"en": "The CEO's commentary on the earnings call is often more important than the numbers.", "zh": "CEO在财报电话会上的评论往往比数字本身更重要。"}}
+      ]
+    },
+    "team": {
+      "label": "Team / Management",
+      "sentences": [
+        {"en": "The stretch goal pushes the team beyond their comfort zone without being unrealistic.", "zh": "挑战性目标把团队推出舒适区，但又不至于不切实际。"},
+        {"en": "We are implementing a competency framework to standardize career progression.", "zh": "我们正在实施能力模型来标准化职业晋升路径。"},
+        {"en": "The town hall meeting is an opportunity for leadership to address employee concerns directly.", "zh": "全员大会是领导层直接回应员工关切的机会。"},
+        {"en": "Distributed teams require more intentional communication rituals than co-located ones.", "zh": "分布式团队比集中办公的团队需要更刻意的沟通机制。"},
+        {"en": "The 360-degree feedback process gives a holistic view of each employee's performance.", "zh": "360度反馈流程提供了对每位员工绩效的全面视角。"}
+      ],
+      "vocabulary": [
+        {"word": "stretch goal", "phonetic": "/stretʃ ɡəʊl/", "meaning": "挑战性目标", "example": {"en": "A well-set stretch goal is ambitious but achievable with extra effort.", "zh": "设定得当的挑战性目标是有雄心的，但通过额外努力可以实现。"}},
+        {"word": "competency framework", "phonetic": "/ˈkɒmpɪtənsi ˈfreɪmwɜːk/", "meaning": "能力模型", "example": {"en": "The competency framework defines expectations at each level.", "zh": "能力模型定义了每个层级的期望标准。"}},
+        {"word": "town hall", "phonetic": "/taʊn hɔːl/", "meaning": "全员大会", "example": {"en": "The monthly town hall includes a Q&A session with the executive team.", "zh": "月度全员大会包含与高管团队的问答环节。"}},
+        {"word": "distributed team", "phonetic": "/dɪˈstrɪbjuːtɪd tiːm/", "meaning": "分布式团队", "example": {"en": "Distributed teams benefit from asynchronous documentation practices.", "zh": "分布式团队受益于异步文档实践。"}},
+        {"word": "360-degree feedback", "phonetic": "/ˌθriː sɪksti dɪˈɡriː ˈfiːdbæk/", "meaning": "360度反馈", "example": {"en": "360-degree feedback collects input from peers, managers, and direct reports.", "zh": "360度反馈从同事、上级和直属下属收集意见。"}}
+      ]
+    },
+    "strategy": {
+      "label": "Strategy / Planning",
+      "sentences": [
+        {"en": "The platform moat deepens as more third-party integrations are built on top of it.", "zh": "随着越来越多第三方集成构建在平台上，平台护城河不断加深。"},
+        {"en": "We should apply the Pareto principle and focus on the 20% of features that drive 80% of value.", "zh": "我们应该运用帕累托法则，聚焦于创造80%价值的20%功能。"},
+        {"en": "The strategic narrative needs to resonate with both investors and customers.", "zh": "战略叙事需要同时引起投资者和客户的共鸣。"},
+        {"en": "Decentralized decision-making accelerates execution in fast-moving markets.", "zh": "去中心化的决策加速了快速变化市场中的执行。"},
+        {"en": "Our competitive intelligence report shows two new entrants preparing to launch.", "zh": "我们的竞争情报报告显示有两个新进入者正在准备上线。"}
+      ],
+      "vocabulary": [
+        {"word": "Pareto principle", "phonetic": "/pəˈreɪtəʊ ˈprɪnsɪpəl/", "meaning": "帕累托法则（二八定律）", "example": {"en": "The Pareto principle suggests that a small number of inputs produce most results.", "zh": "帕累托法则表明少量的投入产生大部分的结果。"}},
+        {"word": "narrative", "phonetic": "/ˈnærətɪv/", "meaning": "叙事；故事线", "example": {"en": "A compelling narrative helps align the entire organization around a shared vision.", "zh": "引人入胜的叙事有助于让整个组织围绕共同愿景凝聚。"}},
+        {"word": "decentralized", "phonetic": "/diːˈsentrəlaɪzd/", "meaning": "去中心化的", "example": {"en": "Decentralized organizations empower teams to make local decisions quickly.", "zh": "去中心化的组织赋能团队快速做出本地决策。"}},
+        {"word": "competitive intelligence", "phonetic": "/kəmˈpetɪtɪv ɪnˈtelɪdʒəns/", "meaning": "竞争情报", "example": {"en": "Competitive intelligence helps us anticipate market shifts before they happen.", "zh": "竞争情报帮助我们在市场变化发生前预判。"}},
+        {"word": "entrant", "phonetic": "/ˈentrənt/", "meaning": "新进入者", "example": {"en": "New entrants often disrupt markets with lower prices and simpler products.", "zh": "新进入者通常以更低的价格和更简单的产品颠覆市场。"}}
+      ]
+    }
+  }
+}

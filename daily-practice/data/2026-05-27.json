@@ -1,0 +1,90 @@
+{
+  "date": "2026-05-27",
+  "themes": {
+    "growth": {
+      "label": "Growth / Marketing",
+      "sentences": [
+        {"en": "The incrementality test proved that 40% of conversions would have happened without the ad.", "zh": "增量测试证明40%的转化即使没有广告也会发生。"},
+        {"en": "We launched a referral waitlist to build anticipation before the product goes live.", "zh": "我们推出了推荐候补名单，在产品上线前营造期待感。"},
+        {"en": "The geo-targeted campaign in Macau outperformed Hong Kong on a per-dollar basis.", "zh": "澳门的地理定向广告活动在每美元效率上优于香港。"},
+        {"en": "Triggered emails based on user behavior have 3x higher click-through rates than batch sends.", "zh": "基于用户行为触发的邮件比批量发送的邮件点击率高3倍。"},
+        {"en": "The growth team runs a weekly experimentation review to share learnings across squads.", "zh": "增长团队每周进行实验回顾，以跨小组分享经验教训。"}
+      ],
+      "vocabulary": [
+        {"word": "incrementality", "phonetic": "/ˌɪŋkrəmenˈtælɪti/", "meaning": "增量性", "example": {"en": "Incrementality testing isolates the true impact of a campaign from organic demand.", "zh": "增量测试将广告活动的真实影响与自然需求隔离开来。"}},
+        {"word": "waitlist", "phonetic": "/ˈweɪtlɪst/", "meaning": "候补名单", "example": {"en": "The waitlist grew to 50,000 users before the beta launch.", "zh": "在测试版发布前，候补名单增长到了50,000名用户。"}},
+        {"word": "geo-targeted", "phonetic": "/ˈdʒiːəʊ ˈtɑːɡɪtɪd/", "meaning": "地理定向的", "example": {"en": "Geo-targeted ads let us customize messaging for each market.", "zh": "地理定向广告让我们为每个市场定制信息。"}},
+        {"word": "triggered", "phonetic": "/ˈtrɪɡərd/", "meaning": "触发的", "example": {"en": "Triggered notifications are sent when a user completes a specific action.", "zh": "触发式通知在用户完成特定操作时发送。"}},
+        {"word": "experimentation", "phonetic": "/ɪkˌsperɪmenˈteɪʃən/", "meaning": "实验", "example": {"en": "A culture of experimentation allows teams to test ideas quickly and cheaply.", "zh": "实验文化让团队能快速且低成本地测试想法。"}}
+      ]
+    },
+    "product": {
+      "label": "Product / Metrics",
+      "sentences": [
+        {"en": "The semantic search upgrade improved query accuracy by 25% over keyword matching.", "zh": "语义搜索升级比关键词匹配提升了25%的查询准确率。"},
+        {"en": "We use progressive disclosure to avoid overwhelming new users with advanced features.", "zh": "我们使用渐进式展示来避免用高级功能让新用户感到压倒。"},
+        {"en": "The SLA guarantees 99.95% uptime for the trading engine.", "zh": "SLA保证交易引擎99.95%的可用时间。"},
+        {"en": "We ran a usability test with 8 participants and identified 5 critical pain points.", "zh": "我们用8名参与者做了可用性测试，识别出5个关键痛点。"},
+        {"en": "The dark mode feature request has been the most upvoted item in our feedback portal.", "zh": "深色模式的功能请求是我们反馈平台中投票最多的项目。"}
+      ],
+      "vocabulary": [
+        {"word": "semantic search", "phonetic": "/sɪˈmæntɪk sɜːtʃ/", "meaning": "语义搜索", "example": {"en": "Semantic search understands user intent, not just the literal keywords typed.", "zh": "语义搜索理解用户意图，而不仅是输入的字面关键词。"}},
+        {"word": "progressive disclosure", "phonetic": "/prəˈɡresɪv dɪsˈkləʊʒər/", "meaning": "渐进式展示", "example": {"en": "Progressive disclosure shows basic options first and reveals advanced settings on demand.", "zh": "渐进式展示先显示基本选项，按需展示高级设置。"}},
+        {"word": "SLA", "phonetic": "/ˌes el ˈeɪ/", "meaning": "服务等级协议", "example": {"en": "Breaching the SLA triggers financial penalties and escalation to management.", "zh": "违反SLA会触发财务处罚和向管理层的升级。"}},
+        {"word": "usability", "phonetic": "/ˌjuːzəˈbɪlɪti/", "meaning": "可用性", "example": {"en": "Usability testing with real users reveals problems that internal reviews miss.", "zh": "用真实用户做可用性测试能发现内部评审遗漏的问题。"}},
+        {"word": "upvote", "phonetic": "/ˈʌpvəʊt/", "meaning": "投赞成票", "example": {"en": "The most upvoted feature requests guide our product prioritization.", "zh": "票数最高的功能请求指导我们的产品优先级排序。"}}
+      ]
+    },
+    "finance": {
+      "label": "Finance / Investment",
+      "sentences": [
+        {"en": "The P/B ratio below 1.0 suggests the stock is trading below its book value.", "zh": "市净率低于1.0表明该股票交易价格低于其账面价值。"},
+        {"en": "The fund manager reduced exposure to high-beta names ahead of the policy meeting.", "zh": "基金经理在政策会议前减少了高贝塔股票的敞口。"},
+        {"en": "The convertible bond offers downside protection with upside participation.", "zh": "可转债提供了下行保护和上行参与的机会。"},
+        {"en": "Same-store sales growth is the most telling metric for retail chain performance.", "zh": "同店销售增长是衡量零售连锁业绩最有说服力的指标。"},
+        {"en": "The trailing twelve-month revenue run rate reached $400 million.", "zh": "过去十二个月的收入年化率达到了4亿美元。"}
+      ],
+      "vocabulary": [
+        {"word": "book value", "phonetic": "/bʊk ˈvæljuː/", "meaning": "账面价值", "example": {"en": "Book value per share is calculated by dividing total equity by shares outstanding.", "zh": "每股账面价值通过总权益除以流通股数计算。"}},
+        {"word": "high-beta", "phonetic": "/haɪ ˈbiːtə/", "meaning": "高贝塔（高波动性）", "example": {"en": "High-beta stocks tend to outperform in bull markets but underperform in downturns.", "zh": "高贝塔股票在牛市中往往表现优异，但在下跌中表现不佳。"}},
+        {"word": "convertible bond", "phonetic": "/kənˈvɜːtɪbəl bɒnd/", "meaning": "可转债", "example": {"en": "Convertible bonds can be exchanged for a predetermined number of shares.", "zh": "可转债可以按预定数量兑换为股票。"}},
+        {"word": "same-store sales", "phonetic": "/seɪm stɔːr seɪlz/", "meaning": "同店销售", "example": {"en": "Positive same-store sales growth shows organic demand, not just new store openings.", "zh": "正向的同店销售增长显示的是有机需求，而不仅是新店开业。"}},
+        {"word": "run rate", "phonetic": "/rʌn reɪt/", "meaning": "年化率；运行速率", "example": {"en": "The current quarterly revenue implies a $500 million annual run rate.", "zh": "当前季度收入暗示5亿美元的年化收入水平。"}}
+      ]
+    },
+    "team": {
+      "label": "Team / Management",
+      "sentences": [
+        {"en": "The onboarding buddy helps new joiners navigate the organization and build relationships.", "zh": "入职伙伴帮助新员工了解组织并建立人脉关系。"},
+        {"en": "We decompose quarterly OKRs into monthly milestones to maintain accountability.", "zh": "我们将季度OKR分解为月度里程碑以保持责任感。"},
+        {"en": "The meeting-free Wednesday policy gives engineers four hours of uninterrupted focus time.", "zh": "周三无会议政策给工程师提供了四小时不间断的专注时间。"},
+        {"en": "Transparent decision-making builds trust even when people disagree with the outcome.", "zh": "透明的决策过程即使人们不同意结果也能建立信任。"},
+        {"en": "The quarterly town hall is where leadership shares business updates and takes questions live.", "zh": "季度全员大会是管理层分享业务动态并现场回答问题的场合。"}
+      ],
+      "vocabulary": [
+        {"word": "buddy system", "phonetic": "/ˈbʌdi ˈsɪstəm/", "meaning": "伙伴制", "example": {"en": "The buddy system pairs every new hire with an experienced colleague for the first month.", "zh": "伙伴制在第一个月为每位新员工配对一名有经验的同事。"}},
+        {"word": "decompose", "phonetic": "/ˌdiːkəmˈpəʊz/", "meaning": "分解", "example": {"en": "Decomposing large goals into smaller tasks makes progress measurable.", "zh": "将大目标分解为小任务使进展可衡量。"}},
+        {"word": "accountability", "phonetic": "/əˌkaʊntəˈbɪlɪti/", "meaning": "责任感；问责制", "example": {"en": "Accountability means owning the result, not just the effort.", "zh": "责任感意味着对结果负责，而不仅仅是对努力负责。"}},
+        {"word": "transparent", "phonetic": "/trænsˈpærənt/", "meaning": "透明的", "example": {"en": "Transparent communication reduces rumors and builds organizational trust.", "zh": "透明沟通减少谣言并建立组织信任。"}},
+        {"word": "town hall", "phonetic": "/taʊn hɔːl/", "meaning": "全员大会", "example": {"en": "The CEO uses the town hall to share the company vision and answer employee questions.", "zh": "CEO利用全员大会分享公司愿景并回答员工问题。"}}
+      ]
+    },
+    "strategy": {
+      "label": "Strategy / Planning",
+      "sentences": [
+        {"en": "The build-versus-buy analysis favors acquiring the technology rather than developing in-house.", "zh": "自建与购买分析倾向于收购技术而非内部开发。"},
+        {"en": "Customer acquisition cost must decline over time as brand awareness grows.", "zh": "随着品牌知名度提升，获客成本必须随时间下降。"},
+        {"en": "The capital-light model allows us to scale without proportional increases in fixed costs.", "zh": "轻资产模式让我们能在固定成本不等比增加的情况下扩展。"},
+        {"en": "Scenario planning prepares the organization for multiple possible futures simultaneously.", "zh": "情景规划让组织同时为多种可能的未来做好准备。"},
+        {"en": "The acquisition accelerates our entry into the wealth management vertical by two years.", "zh": "这笔收购将我们进入财富管理垂直领域的时间缩短了两年。"}
+      ],
+      "vocabulary": [
+        {"word": "build-versus-buy", "phonetic": "/bɪld ˈvɜːsəs baɪ/", "meaning": "自建与购买", "example": {"en": "The build-versus-buy decision depends on strategic importance and time-to-market.", "zh": "自建与购买的决策取决于战略重要性和上市时间。"}},
+        {"word": "capital-light", "phonetic": "/ˈkæpɪtəl laɪt/", "meaning": "轻资产的", "example": {"en": "Capital-light businesses generate higher returns on invested capital.", "zh": "轻资产业务在投入资本上产生更高回报。"}},
+        {"word": "scenario planning", "phonetic": "/sɪˈnɑːriəʊ ˈplænɪŋ/", "meaning": "情景规划", "example": {"en": "Scenario planning uses best-case, base-case, and worst-case projections.", "zh": "情景规划使用最优、基准和最差三种预测。"}},
+        {"word": "vertical", "phonetic": "/ˈvɜːtɪkəl/", "meaning": "垂直领域", "example": {"en": "Expanding into adjacent verticals is a proven path to sustained growth.", "zh": "向邻近垂直领域扩展是实现持续增长的成熟路径。"}},
+        {"word": "time-to-market", "phonetic": "/taɪm tə ˈmɑːkɪt/", "meaning": "上市时间", "example": {"en": "Reducing time-to-market gives us a competitive edge in fast-moving sectors.", "zh": "缩短上市时间在快速变化的行业中给我们竞争优势。"}}
+      ]
+    }
+  }
+}

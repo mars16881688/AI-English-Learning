@@ -1,0 +1,90 @@
+{
+  "date": "2026-05-23",
+  "themes": {
+    "growth": {
+      "label": "Growth / Marketing",
+      "sentences": [
+        {"en": "The cohort analysis reveals that users acquired in Q1 have higher lifetime value.", "zh": "同期群分析显示Q1获取的用户生命周期价值更高。"},
+        {"en": "We should double down on the channel with the lowest blended CPA.", "zh": "我们应该加大在混合CPA最低的渠道上的投入。"},
+        {"en": "The invite-only launch created scarcity and boosted word-of-mouth.", "zh": "仅限邀请的发布创造了稀缺感，并促进了口碑传播。"},
+        {"en": "Cross-selling the wealth management product to brokerage users lifted ARPU by 40%.", "zh": "向证券用户交叉销售财富管理产品使ARPU提升了40%。"},
+        {"en": "The notification frequency test showed that three times per week is the sweet spot.", "zh": "推送频率测试表明每周三次是最佳频率。"}
+      ],
+      "vocabulary": [
+        {"word": "cohort", "phonetic": "/ˈkəʊhɔːt/", "meaning": "同期群；队列", "example": {"en": "The January cohort shows 20% better retention than the December cohort.", "zh": "一月同期群比十二月同期群留存高20%。"}},
+        {"word": "blended", "phonetic": "/ˈblendɪd/", "meaning": "混合的；综合的", "example": {"en": "Blended CPA across all channels is $45 per new customer.", "zh": "所有渠道的混合获客成本为每位新客户45美元。"}},
+        {"word": "scarcity", "phonetic": "/ˈskeəsɪti/", "meaning": "稀缺性", "example": {"en": "Scarcity tactics work well for product launches but can erode trust if overused.", "zh": "稀缺策略对产品发布效果好，但过度使用会侵蚀信任。"}},
+        {"word": "cross-selling", "phonetic": "/krɒs ˈselɪŋ/", "meaning": "交叉销售", "example": {"en": "Cross-selling increases revenue without additional acquisition cost.", "zh": "交叉销售在不增加获客成本的情况下提升收入。"}},
+        {"word": "sweet spot", "phonetic": "/swiːt spɒt/", "meaning": "最佳平衡点", "example": {"en": "Finding the sweet spot between personalization and privacy is crucial.", "zh": "在个性化和隐私之间找到最佳平衡点至关重要。"}}
+      ]
+    },
+    "product": {
+      "label": "Product / Metrics",
+      "sentences": [
+        {"en": "The completion rate for the KYC process is only 60%, indicating too many steps.", "zh": "KYC流程的完成率只有60%，说明步骤太多了。"},
+        {"en": "We instrumented the app to capture every user interaction for behavioral analysis.", "zh": "我们对App进行了埋点，以捕获每个用户交互用于行为分析。"},
+        {"en": "The rollout will follow a phased approach starting with 10% of users.", "zh": "发布将采用分阶段方式，先覆盖10%的用户。"},
+        {"en": "Latency below 100 milliseconds is critical for the real-time quote feature.", "zh": "对于实时报价功能，延迟低于100毫秒至关重要。"},
+        {"en": "The accessibility audit revealed 15 issues that need to be fixed before launch.", "zh": "无障碍审查发现了15个需要在上线前修复的问题。"}
+      ],
+      "vocabulary": [
+        {"word": "completion rate", "phonetic": "/kəmˈpliːʃən reɪt/", "meaning": "完成率", "example": {"en": "Simplifying the form increased the completion rate from 40% to 72%.", "zh": "简化表单后，完成率从40%提升到了72%。"}},
+        {"word": "instrument", "phonetic": "/ˈɪnstrəment/", "meaning": "埋点；检测", "example": {"en": "We need to instrument the checkout flow to understand where users drop off.", "zh": "我们需要对结账流程做埋点，了解用户在哪里流失。"}},
+        {"word": "rollout", "phonetic": "/ˈrəʊlaʊt/", "meaning": "发布；推出", "example": {"en": "The gradual rollout helps us catch bugs before they affect all users.", "zh": "渐进式发布帮助我们在影响所有用户之前捕获缺陷。"}},
+        {"word": "latency", "phonetic": "/ˈleɪtənsi/", "meaning": "延迟", "example": {"en": "Network latency is the main bottleneck for users in Southeast Asia.", "zh": "网络延迟是东南亚用户面临的主要瓶颈。"}},
+        {"word": "accessibility", "phonetic": "/əkˌsesɪˈbɪlɪti/", "meaning": "无障碍；可访问性", "example": {"en": "Improving accessibility is not only ethical but also expands your user base.", "zh": "改善无障碍不仅是道德要求，也能扩大用户群。"}}
+      ]
+    },
+    "finance": {
+      "label": "Finance / Investment",
+      "sentences": [
+        {"en": "Earnings per share came in at $2.15, beating the street estimate of $1.90.", "zh": "每股收益为2.15美元，超过华尔街预期的1.90美元。"},
+        {"en": "The asset allocation model suggests overweighting emerging markets this quarter.", "zh": "资产配置模型建议本季度超配新兴市场。"},
+        {"en": "Volatility picked up sharply as geopolitical tensions escalated.", "zh": "随着地缘政治紧张局势升级，波动率急剧上升。"},
+        {"en": "The fixed-income portfolio delivered steady returns despite rising rates.", "zh": "尽管利率上升，固定收益投资组合仍实现了稳定回报。"},
+        {"en": "The company maintained its investment-grade credit rating after the acquisition.", "zh": "该公司在收购后维持了投资级信用评级。"}
+      ],
+      "vocabulary": [
+        {"word": "earnings per share", "phonetic": "/ˈɜːnɪŋz pɜː ʃeər/", "meaning": "每股收益", "example": {"en": "Diluted earnings per share accounts for stock options and convertible bonds.", "zh": "稀释每股收益考虑了期权和可转债的影响。"}},
+        {"word": "overweight", "phonetic": "/ˌəʊvəˈweɪt/", "meaning": "超配", "example": {"en": "We are overweight on technology stocks due to strong earnings momentum.", "zh": "由于强劲的盈利势头，我们超配科技股。"}},
+        {"word": "volatility", "phonetic": "/ˌvɒləˈtɪlɪti/", "meaning": "波动率", "example": {"en": "The VIX index is a widely used measure of market volatility.", "zh": "VIX指数是衡量市场波动率的常用指标。"}},
+        {"word": "fixed-income", "phonetic": "/fɪkst ˈɪnkʌm/", "meaning": "固定收益", "example": {"en": "Fixed-income securities include government bonds and corporate bonds.", "zh": "固定收益证券包括国债和公司债券。"}},
+        {"word": "credit rating", "phonetic": "/ˈkredɪt ˈreɪtɪŋ/", "meaning": "信用评级", "example": {"en": "A downgrade in credit rating increases the company's borrowing cost.", "zh": "信用评级下调会增加公司的借贷成本。"}}
+      ]
+    },
+    "team": {
+      "label": "Team / Management",
+      "sentences": [
+        {"en": "The hiring pipeline has 12 candidates in the final interview stage.", "zh": "招聘管道有12位候选人处于终面阶段。"},
+        {"en": "We introduced a mentorship program to accelerate junior team members' development.", "zh": "我们推出了导师计划来加速初级团队成员的成长。"},
+        {"en": "The standup meeting should be timeboxed to 15 minutes maximum.", "zh": "站会应该限时最多15分钟。"},
+        {"en": "His key result of reducing ticket resolution time by 30% was achieved ahead of schedule.", "zh": "他将工单解决时间缩短30%的关键结果提前达成了。"},
+        {"en": "We need to address the knowledge silo problem by improving documentation.", "zh": "我们需要通过改善文档来解决知识孤岛问题。"}
+      ],
+      "vocabulary": [
+        {"word": "pipeline", "phonetic": "/ˈpaɪplaɪn/", "meaning": "管道；流程线", "example": {"en": "A healthy hiring pipeline ensures we always have qualified candidates ready.", "zh": "健康的招聘管道确保我们始终有合格的候选人储备。"}},
+        {"word": "mentorship", "phonetic": "/ˈmentɔːʃɪp/", "meaning": "导师制", "example": {"en": "Mentorship pairs experienced leaders with high-potential employees.", "zh": "导师制将经验丰富的领导与高潜力员工配对。"}},
+        {"word": "timebox", "phonetic": "/ˈtaɪmbɒks/", "meaning": "限时", "example": {"en": "Timeboxing discussions prevents meetings from running over.", "zh": "限时讨论能防止会议超时。"}},
+        {"word": "resolution", "phonetic": "/ˌrezəˈluːʃən/", "meaning": "解决；分辨率", "example": {"en": "The average ticket resolution time improved from 48 hours to 24 hours.", "zh": "平均工单解决时间从48小时改善到了24小时。"}},
+        {"word": "knowledge silo", "phonetic": "/ˈnɒlɪdʒ ˈsaɪləʊ/", "meaning": "知识孤岛", "example": {"en": "Knowledge silos form when critical information is held by a single person.", "zh": "当关键信息只掌握在一个人手里时，就会形成知识孤岛。"}}
+      ]
+    },
+    "strategy": {
+      "label": "Strategy / Planning",
+      "sentences": [
+        {"en": "The flywheel effect kicks in once user-generated content reaches critical mass.", "zh": "当用户生成内容达到临界规模时，飞轮效应就会启动。"},
+        {"en": "We should conduct a SWOT analysis before entering the Taiwan market.", "zh": "进入台湾市场之前，我们应该进行SWOT分析。"},
+        {"en": "Platform stickiness increases when users integrate the product into daily workflows.", "zh": "当用户将产品融入日常工作流时，平台粘性就会增强。"},
+        {"en": "The blue ocean opportunity lies in serving underbanked retail investors.", "zh": "蓝海机会在于服务银行服务不足的散户投资者。"},
+        {"en": "Strategic patience is required because market education takes time in new territories.", "zh": "需要战略耐心，因为在新市场进行用户教育需要时间。"}
+      ],
+      "vocabulary": [
+        {"word": "flywheel", "phonetic": "/ˈflaɪwiːl/", "meaning": "飞轮", "example": {"en": "Amazon's flywheel connects lower prices, more customers, and more sellers.", "zh": "亚马逊的飞轮连接了更低价格、更多客户和更多卖家。"}},
+        {"word": "critical mass", "phonetic": "/ˈkrɪtɪkəl mæs/", "meaning": "临界规模", "example": {"en": "A marketplace needs to reach critical mass on both supply and demand sides.", "zh": "双边市场需要在供需两端都达到临界规模。"}},
+        {"word": "stickiness", "phonetic": "/ˈstɪkinəs/", "meaning": "粘性", "example": {"en": "High switching costs create natural stickiness for enterprise software.", "zh": "高转换成本为企业软件创造了天然粘性。"}},
+        {"word": "blue ocean", "phonetic": "/bluː ˈəʊʃən/", "meaning": "蓝海", "example": {"en": "Blue ocean strategy focuses on creating new demand rather than competing for existing demand.", "zh": "蓝海战略专注于创造新需求，而非争夺现有需求。"}},
+        {"word": "underbanked", "phonetic": "/ˌʌndəˈbæŋkt/", "meaning": "银行服务不足的", "example": {"en": "Fintech companies are targeting the underbanked population with mobile-first solutions.", "zh": "金融科技公司正以移动优先方案瞄准银行服务不足的人群。"}}
+      ]
+    }
+  }
+}

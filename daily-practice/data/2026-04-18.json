@@ -1,0 +1,90 @@
+{
+  "date": "2026-04-18",
+  "themes": {
+    "growth": {
+      "label": "Growth / Marketing",
+      "sentences": [
+        {"en": "The funnel analysis shows a 40% drop-off between registration and first deposit.", "zh": "漏斗分析显示从注册到首次入金之间有40%的流失。"},
+        {"en": "Influencer partnerships generated 5,000 qualified leads last month.", "zh": "网红合作上个月产生了5000个有效线索。"},
+        {"en": "We are testing a freemium model to lower the barrier to entry.", "zh": "我们正在测试免费增值模式以降低进入门槛。"},
+        {"en": "The churn rate spiked after we removed the free tier.", "zh": "取消免费层后，流失率急剧上升。"},
+        {"en": "Cross-selling insurance products to existing brokerage clients is our Q3 focus.", "zh": "向现有券商客户交叉销售保险产品是我们Q3的重点。"}
+      ],
+      "vocabulary": [
+        {"word": "funnel", "phonetic": "/ˈfʌnəl/", "meaning": "漏斗", "example": {"en": "Mapping the entire funnel helps identify where users drop off.", "zh": "绘制完整漏斗有助于识别用户在哪里流失。"}},
+        {"word": "drop-off", "phonetic": "/ˈdrɒpɒf/", "meaning": "流失；下降", "example": {"en": "The biggest drop-off occurs at the identity verification step.", "zh": "最大的流失发生在身份验证环节。"}},
+        {"word": "freemium", "phonetic": "/ˈfriːmiəm/", "meaning": "免费增值", "example": {"en": "The freemium model lets users try core features before paying.", "zh": "免费增值模式让用户先试用核心功能再付费。"}},
+        {"word": "churn rate", "phonetic": "/tʃɜːn reɪt/", "meaning": "流失率", "example": {"en": "Reducing monthly churn rate by 1% has a compounding effect on revenue.", "zh": "月流失率降低1%对收入有复利效应。"}},
+        {"word": "cross-selling", "phonetic": "/krɒs ˈselɪŋ/", "meaning": "交叉销售", "example": {"en": "Cross-selling complementary products increases average revenue per user.", "zh": "交叉销售互补产品能提高用户平均收入。"}}
+      ]
+    },
+    "product": {
+      "label": "Product / Metrics",
+      "sentences": [
+        {"en": "The feature flag system allows us to do a gradual rollout.", "zh": "功能开关系统允许我们进行渐进式发布。"},
+        {"en": "We are tracking Net Promoter Score as a proxy for user satisfaction.", "zh": "我们用净推荐值作为用户满意度的代理指标。"},
+        {"en": "The data pipeline broke overnight, causing stale prices on the dashboard.", "zh": "数据管道在夜间中断，导致仪表盘上显示过期价格。"},
+        {"en": "Technical debt in the notification system is slowing down new feature delivery.", "zh": "通知系统中的技术债务正在拖慢新功能交付。"},
+        {"en": "We achieved 99.99% uptime this quarter, exceeding our target.", "zh": "本季度我们实现了99.99%的正常运行时间，超过了目标。"}
+      ],
+      "vocabulary": [
+        {"word": "feature flag", "phonetic": "/ˈfiːtʃə flæɡ/", "meaning": "功能开关", "example": {"en": "Feature flags let us disable a broken feature without deploying new code.", "zh": "功能开关让我们无需部署新代码就能禁用出问题的功能。"}},
+        {"word": "Net Promoter Score", "phonetic": "/net prəˈməʊtə skɔː/", "meaning": "净推荐值（NPS）", "example": {"en": "Our Net Promoter Score increased from 45 to 62 after the redesign.", "zh": "重新设计后，我们的净推荐值从45提升到了62。"}},
+        {"word": "pipeline", "phonetic": "/ˈpaɪplaɪn/", "meaning": "管道；流水线", "example": {"en": "The CI/CD pipeline runs tests automatically on every commit.", "zh": "CI/CD流水线在每次提交时自动运行测试。"}},
+        {"word": "technical debt", "phonetic": "/ˈteknɪkəl det/", "meaning": "技术债务", "example": {"en": "Accumulating technical debt slows the entire development team over time.", "zh": "技术债务的积累会随时间拖慢整个开发团队。"}},
+        {"word": "uptime", "phonetic": "/ˈʌptaɪm/", "meaning": "正常运行时间", "example": {"en": "Financial platforms must maintain near-perfect uptime during trading hours.", "zh": "金融平台必须在交易时段保持近乎完美的正常运行时间。"}}
+      ]
+    },
+    "finance": {
+      "label": "Finance / Investment",
+      "sentences": [
+        {"en": "The hedge fund reduced its position in Chinese tech stocks amid regulatory concerns.", "zh": "对冲基金因监管担忧减少了中国科技股的持仓。"},
+        {"en": "Net asset value per share declined 3% due to unrealized losses.", "zh": "由于未实现亏损，每股净资产下降了3%。"},
+        {"en": "The options market is pricing in a 20% move after the earnings call.", "zh": "期权市场定价反映了财报电话会后20%的波动预期。"},
+        {"en": "We hedged our currency exposure using forward contracts.", "zh": "我们使用远期合约对冲了汇率敞口。"},
+        {"en": "The quick ratio of 0.8 suggests potential liquidity issues.", "zh": "0.8的速动比率表明可能存在流动性问题。"}
+      ],
+      "vocabulary": [
+        {"word": "hedge fund", "phonetic": "/hedʒ fʌnd/", "meaning": "对冲基金", "example": {"en": "Hedge funds often use leverage to amplify returns.", "zh": "对冲基金通常使用杠杆来放大回报。"}},
+        {"word": "net asset value", "phonetic": "/net ˈæset ˈvæljuː/", "meaning": "净资产价值（NAV）", "example": {"en": "Mutual fund shares are priced daily based on net asset value.", "zh": "共同基金份额根据净资产价值每日定价。"}},
+        {"word": "options", "phonetic": "/ˈɒpʃənz/", "meaning": "期权", "example": {"en": "Buying put options is a common way to protect against downside risk.", "zh": "买入看跌期权是对冲下行风险的常见方式。"}},
+        {"word": "forward contract", "phonetic": "/ˈfɔːwəd ˈkɒntrækt/", "meaning": "远期合约", "example": {"en": "We locked in the exchange rate with a six-month forward contract.", "zh": "我们通过六个月的远期合约锁定了汇率。"}},
+        {"word": "liquidity", "phonetic": "/lɪˈkwɪdɪti/", "meaning": "流动性", "example": {"en": "Low liquidity in small-cap stocks can lead to wider bid-ask spreads.", "zh": "小盘股的低流动性可能导致更大的买卖价差。"}}
+      ]
+    },
+    "team": {
+      "label": "Team / Management",
+      "sentences": [
+        {"en": "The key result for this OKR must be measurable and time-bound.", "zh": "这个OKR的关键结果必须是可衡量和有时限的。"},
+        {"en": "Remote teams require more intentional communication to stay productive.", "zh": "远程团队需要更刻意的沟通才能保持高效。"},
+        {"en": "I noticed you handled the escalation really well — keep it up.", "zh": "我注意到你处理升级问题做得很好——继续保持。"},
+        {"en": "We should rotate the on-call schedule to prevent burnout.", "zh": "我们应该轮换值班安排以防止职业倦怠。"},
+        {"en": "The headcount request was approved — we can start the hiring process.", "zh": "人员编制申请已获批——我们可以开始招聘流程了。"}
+      ],
+      "vocabulary": [
+        {"word": "measurable", "phonetic": "/ˈmeʒərəbəl/", "meaning": "可衡量的", "example": {"en": "Every key result should be measurable with a clear numeric target.", "zh": "每个关键结果都应该有明确的数字目标，是可衡量的。"}},
+        {"word": "intentional", "phonetic": "/ɪnˈtenʃənəl/", "meaning": "有意的；刻意的", "example": {"en": "Intentional one-on-one meetings build trust between managers and reports.", "zh": "刻意安排的一对一会议能建立经理和下属之间的信任。"}},
+        {"word": "escalation", "phonetic": "/ˌeskəˈleɪʃən/", "meaning": "升级（问题上报）", "example": {"en": "The escalation was handled within 30 minutes thanks to clear protocols.", "zh": "由于有清晰的流程，升级问题在30分钟内得到了处理。"}},
+        {"word": "burnout", "phonetic": "/ˈbɜːnaʊt/", "meaning": "职业倦怠", "example": {"en": "Chronic overwork is the leading cause of burnout in tech companies.", "zh": "长期超负荷工作是科技公司职业倦怠的主要原因。"}},
+        {"word": "headcount", "phonetic": "/ˈhedkaʊnt/", "meaning": "人员编制", "example": {"en": "We need to justify the headcount increase with a clear business case.", "zh": "我们需要用清晰的商业论证来支持人员编制的增加。"}}
+      ]
+    },
+    "strategy": {
+      "label": "Strategy / Planning",
+      "sentences": [
+        {"en": "We are adopting a platform strategy to create a two-sided marketplace.", "zh": "我们正在采用平台策略来创建双边市场。"},
+        {"en": "The risk-reward profile of this expansion does not justify the investment.", "zh": "这次扩张的风险回报比不足以证明投资的合理性。"},
+        {"en": "Our differentiation comes from the superior execution speed of trades.", "zh": "我们的差异化来自于更优越的交易执行速度。"},
+        {"en": "The regulatory landscape in Singapore is more favorable than in Hong Kong for this product.", "zh": "就这个产品而言，新加坡的监管环境比香港更有利。"},
+        {"en": "We are building optionality by investing in three parallel technology bets.", "zh": "我们通过投资三个并行的技术方向来构建选择权。"}
+      ],
+      "vocabulary": [
+        {"word": "two-sided marketplace", "phonetic": "/tuː saɪdɪd ˈmɑːkɪtpleɪs/", "meaning": "双边市场", "example": {"en": "A two-sided marketplace requires building supply and demand simultaneously.", "zh": "双边市场需要同时构建供给端和需求端。"}},
+        {"word": "risk-reward", "phonetic": "/rɪsk rɪˈwɔːd/", "meaning": "风险回报", "example": {"en": "Every strategic decision should be evaluated on its risk-reward profile.", "zh": "每个战略决策都应该从风险回报比来评估。"}},
+        {"word": "differentiation", "phonetic": "/ˌdɪfəˌrenʃiˈeɪʃən/", "meaning": "差异化", "example": {"en": "Product differentiation is key to commanding a price premium.", "zh": "产品差异化是获得价格溢价的关键。"}},
+        {"word": "regulatory landscape", "phonetic": "/ˈreɡjʊlətəri ˈlændskeɪp/", "meaning": "监管环境", "example": {"en": "Understanding the regulatory landscape is essential before entering a new market.", "zh": "在进入新市场之前，了解监管环境至关重要。"}},
+        {"word": "optionality", "phonetic": "/ˌɒpʃəˈnælɪti/", "meaning": "选择权；灵活性", "example": {"en": "Building optionality early gives us flexibility to pivot if needed.", "zh": "早期构建选择权使我们在需要时有灵活性进行调整。"}}
+      ]
+    }
+  }
+}

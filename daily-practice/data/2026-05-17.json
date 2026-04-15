@@ -1,0 +1,90 @@
+{
+  "date": "2026-05-17",
+  "themes": {
+    "growth": {
+      "label": "Growth / Marketing",
+      "sentences": [
+        {"en": "The lookalike audience performed 3 times better than the broad targeting group.", "zh": "相似受众的表现是宽泛定向组的3倍。"},
+        {"en": "We are testing deep links that take users directly to the relevant content in the app.", "zh": "我们正在测试深度链接，直接把用户带到应用内的相关内容。"},
+        {"en": "The customer lifetime value for premium subscribers is four times that of free users.", "zh": "付费订阅用户的客户终身价值是免费用户的四倍。"},
+        {"en": "Our top-of-funnel awareness campaign generated 50,000 impressions yesterday.", "zh": "我们的漏斗顶部品牌认知活动昨天产生了5万次曝光。"},
+        {"en": "The upsell prompt at the end of onboarding converted at 12%.", "zh": "新手引导结束时的升级提示转化率为12%。"}
+      ],
+      "vocabulary": [
+        {"word": "lookalike audience", "phonetic": "/ˈlʊkəlaɪk ˈɔːdiəns/", "meaning": "相似受众", "example": {"en": "Lookalike audiences are built from your best existing customers' profiles.", "zh": "相似受众是基于你最优质的现有客户画像构建的。"}},
+        {"word": "deep link", "phonetic": "/diːp lɪŋk/", "meaning": "深度链接", "example": {"en": "Deep links improve conversion by skipping the homepage and going straight to the offer.", "zh": "深度链接跳过首页直达优惠页面，从而提升转化率。"}},
+        {"word": "lifetime value", "phonetic": "/ˈlaɪftaɪm ˈvæljuː/", "meaning": "终身价值（LTV）", "example": {"en": "Maximizing lifetime value is more profitable than constantly acquiring new users.", "zh": "最大化终身价值比不断获取新用户更有利可图。"}},
+        {"word": "impression", "phonetic": "/ɪmˈpreʃən/", "meaning": "曝光；展示次数", "example": {"en": "The banner ad received 200,000 impressions but only 500 clicks.", "zh": "横幅广告获得了20万次曝光，但只有500次点击。"}},
+        {"word": "upsell", "phonetic": "/ˈʌpsel/", "meaning": "升级销售", "example": {"en": "The upsell strategy increased average order value by 35%.", "zh": "升级销售策略将平均订单价值提高了35%。"}}
+      ]
+    },
+    "product": {
+      "label": "Product / Metrics",
+      "sentences": [
+        {"en": "The A/B test showed a statistically significant improvement in the treatment group.", "zh": "A/B测试显示实验组有统计学上显著的改善。"},
+        {"en": "We should build a modular architecture so features can be released independently.", "zh": "我们应该构建模块化架构，让功能可以独立发布。"},
+        {"en": "The watchlist feature has the highest stickiness among all product features.", "zh": "自选股功能在所有产品功能中粘性最高。"},
+        {"en": "We need to define the minimum viable product before committing engineering resources.", "zh": "在投入工程资源之前，我们需要先定义最小可行产品。"},
+        {"en": "The real-time notification system reduced the average response time by 60%.", "zh": "实时通知系统将平均响应时间减少了60%。"}
+      ],
+      "vocabulary": [
+        {"word": "statistically significant", "phonetic": "/stəˈtɪstɪkəli sɪɡˈnɪfɪkənt/", "meaning": "统计显著的", "example": {"en": "We need at least 10,000 samples to achieve statistically significant results.", "zh": "我们需要至少1万个样本才能获得统计显著的结果。"}},
+        {"word": "modular", "phonetic": "/ˈmɒdjʊlər/", "meaning": "模块化的", "example": {"en": "A modular codebase makes it easier to maintain and scale the product.", "zh": "模块化的代码库使产品更容易维护和扩展。"}},
+        {"word": "stickiness", "phonetic": "/ˈstɪkinəs/", "meaning": "粘性", "example": {"en": "High stickiness means users keep coming back to the product habitually.", "zh": "高粘性意味着用户习惯性地反复使用产品。"}},
+        {"word": "MVP", "phonetic": "/ˌem viː ˈpiː/", "meaning": "最小可行产品", "example": {"en": "Ship the MVP first and iterate based on real user feedback.", "zh": "先发布最小可行产品，再基于真实用户反馈迭代。"}},
+        {"word": "real-time", "phonetic": "/rɪəl taɪm/", "meaning": "实时的", "example": {"en": "Real-time market data is essential for active traders.", "zh": "实时行情数据对活跃交易者至关重要。"}}
+      ]
+    },
+    "finance": {
+      "label": "Finance / Investment",
+      "sentences": [
+        {"en": "The earnings per share exceeded expectations by 12 cents, sending the stock up 6%.", "zh": "每股收益超出预期12美分，推动股价上涨6%。"},
+        {"en": "The central bank's quantitative easing policy has inflated asset prices across the board.", "zh": "央行的量化宽松政策全面推高了资产价格。"},
+        {"en": "We see value in defensive sectors like utilities and healthcare during this downturn.", "zh": "在此次下行中，我们看好公用事业和医疗等防御性板块的价值。"},
+        {"en": "The trailing twelve-month revenue reached $500 million for the first time.", "zh": "过去十二个月的营收首次达到5亿美元。"},
+        {"en": "Insider buying is often interpreted as a bullish signal by the market.", "zh": "内部人买入通常被市场解读为看多信号。"}
+      ],
+      "vocabulary": [
+        {"word": "earnings per share", "phonetic": "/ˈɜːnɪŋz pɜː ʃeər/", "meaning": "每股收益（EPS）", "example": {"en": "Diluted earnings per share is a more conservative measure than basic EPS.", "zh": "稀释每股收益是比基本EPS更保守的指标。"}},
+        {"word": "quantitative easing", "phonetic": "/ˈkwɒntɪtətɪv ˈiːzɪŋ/", "meaning": "量化宽松", "example": {"en": "Quantitative easing increases money supply by purchasing government bonds.", "zh": "量化宽松通过购买国债来增加货币供应。"}},
+        {"word": "defensive sector", "phonetic": "/dɪˈfensɪv ˈsektər/", "meaning": "防御性板块", "example": {"en": "Defensive sectors tend to outperform during economic recessions.", "zh": "防御性板块往往在经济衰退期间表现较好。"}},
+        {"word": "trailing twelve months", "phonetic": "/ˈtreɪlɪŋ twelv mʌnθs/", "meaning": "过去十二个月（TTM）", "example": {"en": "The trailing twelve-month P/E ratio removes seasonal distortions.", "zh": "过去十二个月的市盈率消除了季节性失真。"}},
+        {"word": "insider buying", "phonetic": "/ˈɪnsaɪdər ˈbaɪɪŋ/", "meaning": "内部人买入", "example": {"en": "A cluster of insider buying often precedes positive news announcements.", "zh": "密集的内部人买入往往先于利好消息公布。"}}
+      ]
+    },
+    "team": {
+      "label": "Team / Management",
+      "sentences": [
+        {"en": "The one-on-one meeting should focus on the employee's growth, not just status updates.", "zh": "一对一面谈应该聚焦员工的成长，而不只是状态更新。"},
+        {"en": "We introduced a RACI matrix to clarify roles and responsibilities for the project.", "zh": "我们引入了RACI矩阵来明确项目的角色和职责。"},
+        {"en": "The onsite offsite helped the remote team build stronger personal connections.", "zh": "线下团建帮助远程团队建立了更强的个人联系。"},
+        {"en": "Please draft a headcount proposal for the Q3 hiring plan.", "zh": "请为Q3招聘计划起草一份人员编制提案。"},
+        {"en": "High performers should be given stretch assignments to accelerate their development.", "zh": "应该给高绩效员工挑战性任务来加速他们的成长。"}
+      ],
+      "vocabulary": [
+        {"word": "one-on-one", "phonetic": "/wʌn ɒn wʌn/", "meaning": "一对一面谈", "example": {"en": "Effective one-on-ones build trust between managers and direct reports.", "zh": "有效的一对一面谈能建立管理者和直接下属之间的信任。"}},
+        {"word": "RACI", "phonetic": "/ˈreɪsi/", "meaning": "RACI矩阵（负责/批准/咨询/知情）", "example": {"en": "The RACI matrix prevents confusion about who makes the final decision.", "zh": "RACI矩阵防止了关于谁做最终决策的混乱。"}},
+        {"word": "headcount", "phonetic": "/ˈhedkaʊnt/", "meaning": "人员编制", "example": {"en": "The budget only allows for three additional headcount this quarter.", "zh": "预算本季度只允许增加三个编制。"}},
+        {"word": "stretch assignment", "phonetic": "/stretʃ əˈsaɪnmənt/", "meaning": "挑战性任务", "example": {"en": "A stretch assignment pushes employees beyond their comfort zone.", "zh": "挑战性任务推动员工走出舒适区。"}},
+        {"word": "offsite", "phonetic": "/ˈɒfsaɪt/", "meaning": "团建；异地会议", "example": {"en": "The annual offsite is the best time to discuss long-term strategy.", "zh": "年度团建是讨论长期战略的最佳时机。"}}
+      ]
+    },
+    "strategy": {
+      "label": "Strategy / Planning",
+      "sentences": [
+        {"en": "The winner-take-all dynamics in this market make speed of execution critical.", "zh": "这个市场赢家通吃的特性使得执行速度至关重要。"},
+        {"en": "We are pursuing a razor-and-blade model where the app is free but premium data is paid.", "zh": "我们采用剃刀与刀片模式，应用免费但高级数据付费。"},
+        {"en": "The switching cost for existing users creates a natural barrier to entry for competitors.", "zh": "现有用户的转换成本为竞争对手创造了天然的进入壁垒。"},
+        {"en": "Our three-year vision is to become the default investment platform for young professionals.", "zh": "我们的三年愿景是成为年轻专业人士的默认投资平台。"},
+        {"en": "The macro environment favors companies with strong cash reserves and low debt.", "zh": "宏观环境有利于现金储备充足且负债率低的公司。"}
+      ],
+      "vocabulary": [
+        {"word": "winner-take-all", "phonetic": "/ˈwɪnər teɪk ɔːl/", "meaning": "赢家通吃", "example": {"en": "Social media platforms often exhibit winner-take-all market dynamics.", "zh": "社交媒体平台经常表现出赢家通吃的市场特性。"}},
+        {"word": "switching cost", "phonetic": "/ˈswɪtʃɪŋ kɒst/", "meaning": "转换成本", "example": {"en": "High switching costs lock in customers and improve retention.", "zh": "高转换成本锁定客户并提升留存率。"}},
+        {"word": "barrier to entry", "phonetic": "/ˈbæriər tə ˈentri/", "meaning": "进入壁垒", "example": {"en": "Licensing requirements create a high barrier to entry in financial services.", "zh": "牌照要求在金融服务领域创造了很高的进入壁垒。"}},
+        {"word": "macro environment", "phonetic": "/ˈmækrəʊ ɪnˈvaɪrənmənt/", "meaning": "宏观环境", "example": {"en": "The macro environment influences investment decisions more than company fundamentals.", "zh": "宏观环境对投资决策的影响大于公司基本面。"}},
+        {"word": "razor-and-blade", "phonetic": "/ˈreɪzər ənd bleɪd/", "meaning": "剃刀与刀片模式", "example": {"en": "The razor-and-blade model generates recurring revenue from consumable add-ons.", "zh": "剃刀与刀片模式通过消耗性附加产品产生经常性收入。"}}
+      ]
+    }
+  }
+}

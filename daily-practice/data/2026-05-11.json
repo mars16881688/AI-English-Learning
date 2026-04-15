@@ -1,0 +1,90 @@
+{
+  "date": "2026-05-11",
+  "themes": {
+    "growth": {
+      "label": "Growth / Marketing",
+      "sentences": [
+        {"en": "The affiliate program now accounts for 15% of total revenue and is growing fast.", "zh": "联盟营销计划现在占总收入的15%，并且增长迅速。"},
+        {"en": "We implemented deep linking so users land directly on the relevant in-app page.", "zh": "我们实现了深度链接，让用户直接到达相关的应用内页面。"},
+        {"en": "The churn prediction model flagged 2,000 at-risk users for proactive outreach.", "zh": "流失预测模型标记了2000名高风险用户，以便主动触达。"},
+        {"en": "Brand awareness in the Hong Kong market increased by 8 percentage points after the outdoor campaign.", "zh": "户外广告活动后，香港市场的品牌知名度提升了8个百分点。"},
+        {"en": "We should invest in content marketing to build organic authority in the long run.", "zh": "我们应该投资内容营销，长期构建自然流量的权威性。"}
+      ],
+      "vocabulary": [
+        {"word": "affiliate", "phonetic": "/əˈfɪliət/", "meaning": "联盟；合作伙伴", "example": {"en": "Affiliate partners earn a commission for every referred paying user.", "zh": "联盟伙伴为每个推荐的付费用户赚取佣金。"}},
+        {"word": "deep linking", "phonetic": "/diːp ˈlɪŋkɪŋ/", "meaning": "深度链接", "example": {"en": "Deep linking improves the user experience by skipping unnecessary navigation.", "zh": "深度链接通过跳过不必要的导航来改善用户体验。"}},
+        {"word": "proactive", "phonetic": "/proʊˈæktɪv/", "meaning": "主动的；积极的", "example": {"en": "Proactive customer support reduces complaint tickets by addressing issues early.", "zh": "主动客户支持通过尽早解决问题来减少投诉工单。"}},
+        {"word": "brand awareness", "phonetic": "/brænd əˈwernəs/", "meaning": "品牌知名度", "example": {"en": "Measuring brand awareness helps quantify the impact of upper-funnel campaigns.", "zh": "衡量品牌知名度有助于量化漏斗上层活动的影响。"}},
+        {"word": "authority", "phonetic": "/ɔːˈθɒrəti/", "meaning": "权威性", "example": {"en": "Publishing high-quality research builds domain authority over time.", "zh": "发布高质量研究能随时间建立领域权威性。"}}
+      ]
+    },
+    "product": {
+      "label": "Product / Metrics",
+      "sentences": [
+        {"en": "The accessibility audit revealed that 30% of our screens fail WCAG AA standards.", "zh": "无障碍审计显示我们30%的页面不符合WCAG AA标准。"},
+        {"en": "We built a self-service analytics tool so non-technical teams can pull their own reports.", "zh": "我们构建了一个自助分析工具，让非技术团队也能自己拉报表。"},
+        {"en": "The load test simulated 100,000 concurrent users and the system held up well.", "zh": "负载测试模拟了10万并发用户，系统表现良好。"},
+        {"en": "We are migrating the monolith to microservices to improve scalability.", "zh": "我们正在将单体架构迁移到微服务以提升可扩展性。"},
+        {"en": "The A/B test was inconclusive because the sample size was too small.", "zh": "A/B测试结果不确定，因为样本量太小。"}
+      ],
+      "vocabulary": [
+        {"word": "accessibility", "phonetic": "/əkˌsesəˈbɪləti/", "meaning": "无障碍访问", "example": {"en": "Accessibility improvements benefit all users, not just those with disabilities.", "zh": "无障碍改进惠及所有用户，不仅仅是残障人士。"}},
+        {"word": "self-service", "phonetic": "/ˌself ˈsɜːrvɪs/", "meaning": "自助式", "example": {"en": "Self-service tools empower teams to move faster without engineering support.", "zh": "自助工具使团队能在无需工程支持的情况下更快推进。"}},
+        {"word": "concurrent", "phonetic": "/kənˈkɜːrənt/", "meaning": "并发的", "example": {"en": "The system supports up to 50,000 concurrent WebSocket connections.", "zh": "系统支持最多5万个并发WebSocket连接。"}},
+        {"word": "monolith", "phonetic": "/ˈmɒnəlɪθ/", "meaning": "单体架构", "example": {"en": "Breaking the monolith into services reduces deployment risk.", "zh": "将单体架构拆分为服务能降低部署风险。"}},
+        {"word": "inconclusive", "phonetic": "/ˌɪnkənˈkluːsɪv/", "meaning": "不确定的；无定论的", "example": {"en": "If the result is inconclusive, extend the test duration to get more data.", "zh": "如果结果不确定，延长测试时间以获取更多数据。"}}
+      ]
+    },
+    "finance": {
+      "label": "Finance / Investment",
+      "sentences": [
+        {"en": "The bond auction attracted strong demand, pushing yields to a three-month low.", "zh": "国债拍卖吸引了强劲需求，将收益率推至三个月新低。"},
+        {"en": "The company is trading at a significant discount to its sum-of-the-parts valuation.", "zh": "该公司的交易价格相对于分部估值有显著折价。"},
+        {"en": "Foreign exchange headwinds reduced reported revenue by approximately 5%.", "zh": "汇率逆风使报告收入减少了约5%。"},
+        {"en": "The short interest ratio spiked to 15%, indicating growing skepticism among investors.", "zh": "卖空利率飙升至15%，表明投资者的怀疑情绪在增长。"},
+        {"en": "Management expects operating leverage to improve as the business scales.", "zh": "管理层预计随着业务扩大，经营杠杆将改善。"}
+      ],
+      "vocabulary": [
+        {"word": "headwind", "phonetic": "/ˈhedwɪnd/", "meaning": "逆风；不利因素", "example": {"en": "Currency headwinds offset the strong underlying revenue growth.", "zh": "汇率逆风抵消了强劲的底层营收增长。"}},
+        {"word": "short interest", "phonetic": "/ʃɔːrt ˈɪntrəst/", "meaning": "卖空利率；做空比例", "example": {"en": "A high short interest can lead to a short squeeze if the stock rises.", "zh": "高做空比例可能在股价上涨时引发轧空。"}},
+        {"word": "operating leverage", "phonetic": "/ˈɒpəreɪtɪŋ ˈlevərɪdʒ/", "meaning": "经营杠杆", "example": {"en": "Software companies benefit from high operating leverage as they scale.", "zh": "软件公司在规模扩大时受益于高经营杠杆。"}},
+        {"word": "sum-of-the-parts", "phonetic": "/sʌm əv ðə pɑːrts/", "meaning": "分部估值法", "example": {"en": "The sum-of-the-parts analysis suggests the conglomerate is undervalued.", "zh": "分部估值分析表明该综合企业被低估了。"}},
+        {"word": "auction", "phonetic": "/ˈɔːkʃən/", "meaning": "拍卖", "example": {"en": "The Treasury auction results influence short-term bond market sentiment.", "zh": "国债拍卖结果影响短期债市情绪。"}}
+      ]
+    },
+    "team": {
+      "label": "Team / Management",
+      "sentences": [
+        {"en": "The 360-degree feedback process helps identify blind spots in leadership behavior.", "zh": "360度反馈流程有助于发现领导行为中的盲点。"},
+        {"en": "We are standardizing the promotion criteria to ensure fairness across departments.", "zh": "我们正在标准化晋升标准，以确保各部门的公平性。"},
+        {"en": "The team charter defines our shared values, working norms, and conflict resolution process.", "zh": "团队章程定义了我们共同的价值观、工作规范和冲突解决流程。"},
+        {"en": "I want to empower you to make decisions without waiting for my approval.", "zh": "我希望赋权给你，让你无需等待我的批准就能做决策。"},
+        {"en": "The sprint velocity has been trending downward for three consecutive sprints.", "zh": "冲刺速率已连续三个冲刺呈下降趋势。"}
+      ],
+      "vocabulary": [
+        {"word": "blind spot", "phonetic": "/blaɪnd spɒt/", "meaning": "盲点", "example": {"en": "Self-awareness exercises help leaders discover their blind spots.", "zh": "自我意识练习帮助领导者发现盲点。"}},
+        {"word": "promotion criteria", "phonetic": "/prəˈmoʊʃən kraɪˈtɪəriə/", "meaning": "晋升标准", "example": {"en": "Clear promotion criteria motivate employees to develop in the right direction.", "zh": "清晰的晋升标准能激励员工朝正确的方向发展。"}},
+        {"word": "empower", "phonetic": "/ɪmˈpaʊər/", "meaning": "赋权", "example": {"en": "Empowering team members builds trust and speeds up execution.", "zh": "赋权团队成员能建立信任并加速执行。"}},
+        {"word": "velocity", "phonetic": "/vəˈlɒsɪti/", "meaning": "速率（敏捷开发）", "example": {"en": "Sprint velocity helps predict how much work the team can complete.", "zh": "冲刺速率有助于预测团队能完成多少工作。"}},
+        {"word": "charter", "phonetic": "/ˈtʃɑːrtər/", "meaning": "章程", "example": {"en": "Every new team should draft a team charter in the first week.", "zh": "每个新团队应该在第一周起草团队章程。"}}
+      ]
+    },
+    "strategy": {
+      "label": "Strategy / Planning",
+      "sentences": [
+        {"en": "The disruption theory suggests that incumbents are most vulnerable at the low end of the market.", "zh": "颠覆理论认为在位者在市场低端最为脆弱。"},
+        {"en": "We should pursue a niche strategy first before going after the mass market.", "zh": "我们应该先追求利基策略，再进军大众市场。"},
+        {"en": "The partnership with the local bank gives us instant credibility in the Singapore market.", "zh": "与当地银行的合作使我们在新加坡市场立刻获得了可信度。"},
+        {"en": "Our competitive intelligence shows that the top rival is doubling its marketing budget.", "zh": "我们的竞争情报显示头号对手正在将营销预算翻倍。"},
+        {"en": "The optionality of this investment allows us to scale up or exit with limited downside.", "zh": "这笔投资的可选择性允许我们在有限下行风险的情况下扩大规模或退出。"}
+      ],
+      "vocabulary": [
+        {"word": "disruption", "phonetic": "/dɪsˈrʌpʃən/", "meaning": "颠覆", "example": {"en": "Digital disruption has reshaped the financial services industry.", "zh": "数字颠覆重塑了金融服务业。"}},
+        {"word": "niche", "phonetic": "/niːʃ/", "meaning": "利基；细分市场", "example": {"en": "Dominating a niche market is more profitable than being average in a large one.", "zh": "主导一个利基市场比在大市场中表现平庸更有利可图。"}},
+        {"word": "credibility", "phonetic": "/ˌkredɪˈbɪlɪti/", "meaning": "可信度", "example": {"en": "Winning industry awards boosts brand credibility among institutional clients.", "zh": "获得行业奖项能提升在机构客户中的品牌可信度。"}},
+        {"word": "competitive intelligence", "phonetic": "/kəmˈpetɪtɪv ɪnˈtelɪdʒəns/", "meaning": "竞争情报", "example": {"en": "Competitive intelligence informs our positioning and pricing strategy.", "zh": "竞争情报为我们的定位和定价策略提供参考。"}},
+        {"word": "optionality", "phonetic": "/ˌɒpʃəˈnæləti/", "meaning": "可选择性", "example": {"en": "Keeping optionality open is valuable when market conditions are uncertain.", "zh": "在市场条件不确定时保持可选择性是有价值的。"}}
+      ]
+    }
+  }
+}

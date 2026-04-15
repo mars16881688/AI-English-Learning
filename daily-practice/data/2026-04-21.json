@@ -1,0 +1,90 @@
+{
+  "date": "2026-04-21",
+  "themes": {
+    "growth": {
+      "label": "Growth / Marketing",
+      "sentences": [
+        {"en": "We are testing dynamic pricing on subscription tiers to optimize ARPU.", "zh": "我们正在对订阅层级进行动态定价测试以优化ARPU。"},
+        {"en": "The social proof elements on the homepage increased sign-up rate by 18%.", "zh": "首页上的社会认同元素使注册率提升了18%。"},
+        {"en": "Our CAC-to-LTV ratio is 1:4, which gives us room to scale acquisition.", "zh": "我们的CAC与LTV比率为1:4，这给了我们扩大获客的空间。"},
+        {"en": "The win-back campaign re-engaged 8% of dormant users.", "zh": "召回活动重新激活了8%的沉默用户。"},
+        {"en": "Personalized push notifications outperformed generic blasts by 2x on click-through rate.", "zh": "个性化推送通知的点击率比通用群发高出2倍。"}
+      ],
+      "vocabulary": [
+        {"word": "ARPU", "phonetic": "/ˈɑːpuː/", "meaning": "每用户平均收入（Average Revenue Per User）", "example": {"en": "Introducing premium features helped increase ARPU by 15%.", "zh": "引入高级功能帮助ARPU提升了15%。"}},
+        {"word": "social proof", "phonetic": "/ˈsəʊʃəl pruːf/", "meaning": "社会认同", "example": {"en": "Displaying user testimonials is a form of social proof that builds trust.", "zh": "展示用户推荐语是一种建立信任的社会认同形式。"}},
+        {"word": "dormant", "phonetic": "/ˈdɔːmənt/", "meaning": "沉默的；不活跃的", "example": {"en": "We defined dormant users as those who have not logged in for 90 days.", "zh": "我们将沉默用户定义为90天未登录的用户。"}},
+        {"word": "win-back", "phonetic": "/wɪn bæk/", "meaning": "召回；唤回", "example": {"en": "The win-back email offered a 30-day free trial to former subscribers.", "zh": "召回邮件向前订阅用户提供了30天免费试用。"}},
+        {"word": "click-through rate", "phonetic": "/klɪk θruː reɪt/", "meaning": "点击率（CTR）", "example": {"en": "A higher click-through rate indicates the ad creative is resonating with users.", "zh": "更高的点击率表明广告创意与用户产生了共鸣。"}}
+      ]
+    },
+    "product": {
+      "label": "Product / Metrics",
+      "sentences": [
+        {"en": "The design system reduced UI inconsistencies across 15 product screens.", "zh": "设计系统减少了15个产品页面之间的UI不一致问题。"},
+        {"en": "We need to implement rate limiting on the public API to prevent abuse.", "zh": "我们需要在公开API上实现限流以防止滥用。"},
+        {"en": "The QA team automated 80% of the regression test suite this quarter.", "zh": "QA团队本季度自动化了80%的回归测试套件。"},
+        {"en": "User retention at Day 7 improved from 35% to 42% after the onboarding redesign.", "zh": "新手引导重新设计后，第7天留存率从35%提升到42%。"},
+        {"en": "The hotfix was deployed in under 30 minutes thanks to our CI/CD pipeline.", "zh": "得益于CI/CD流水线，热修复在30分钟内完成了部署。"}
+      ],
+      "vocabulary": [
+        {"word": "design system", "phonetic": "/dɪˈzaɪn ˈsɪstəm/", "meaning": "设计系统", "example": {"en": "A mature design system speeds up both design and development workflows.", "zh": "成熟的设计系统能加速设计和开发工作流。"}},
+        {"word": "rate limiting", "phonetic": "/reɪt ˈlɪmɪtɪŋ/", "meaning": "限流", "example": {"en": "Rate limiting protects the server from being overwhelmed by too many requests.", "zh": "限流保护服务器不被过多请求淹没。"}},
+        {"word": "regression test", "phonetic": "/rɪˈɡreʃən test/", "meaning": "回归测试", "example": {"en": "Automated regression tests catch bugs introduced by new code changes.", "zh": "自动化回归测试能捕获新代码变更引入的缺陷。"}},
+        {"word": "retention", "phonetic": "/rɪˈtenʃən/", "meaning": "留存", "example": {"en": "Retention is the single most important metric for long-term growth.", "zh": "留存是长期增长最重要的单一指标。"}},
+        {"word": "hotfix", "phonetic": "/ˈhɒtfɪks/", "meaning": "热修复", "example": {"en": "A hotfix was pushed to production within an hour of discovering the bug.", "zh": "在发现缺陷后一小时内，热修复被推送到了生产环境。"}}
+      ]
+    },
+    "finance": {
+      "label": "Finance / Investment",
+      "sentences": [
+        {"en": "The trailing twelve-month revenue grew 40% driven by market share gains.", "zh": "过去十二个月收入增长40%，主要受市场份额增长驱动。"},
+        {"en": "The Sharpe ratio of 1.8 indicates the portfolio is delivering strong risk-adjusted returns.", "zh": "1.8的夏普比率表明投资组合正在提供强劲的风险调整后收益。"},
+        {"en": "Cash and equivalents on the balance sheet total $3.2 billion.", "zh": "资产负债表上的现金及等价物总计32亿美元。"},
+        {"en": "The cost of capital rose as interest rates increased throughout the year.", "zh": "随着全年利率上升，资本成本也随之提高。"},
+        {"en": "The IPO was oversubscribed 12 times, reflecting strong investor demand.", "zh": "IPO获得了12倍超额认购，反映了强劲的投资者需求。"}
+      ],
+      "vocabulary": [
+        {"word": "trailing twelve months", "phonetic": "/ˈtreɪlɪŋ twelv mʌnθs/", "meaning": "过去十二个月（TTM）", "example": {"en": "Trailing twelve-month revenue is used to assess a company's recent performance.", "zh": "过去十二个月收入用于评估公司的近期表现。"}},
+        {"word": "Sharpe ratio", "phonetic": "/ʃɑːp ˈreɪʃiəʊ/", "meaning": "夏普比率", "example": {"en": "A Sharpe ratio above 1 is generally considered acceptable by investors.", "zh": "夏普比率超过1通常被投资者认为是可接受的。"}},
+        {"word": "balance sheet", "phonetic": "/ˈbæləns ʃiːt/", "meaning": "资产负债表", "example": {"en": "A strong balance sheet provides a buffer during economic downturns.", "zh": "强健的资产负债表在经济低迷期提供了缓冲。"}},
+        {"word": "cost of capital", "phonetic": "/kɒst əv ˈkæpɪtəl/", "meaning": "资本成本", "example": {"en": "Projects must generate returns above the cost of capital to create value.", "zh": "项目必须产生高于资本成本的回报才能创造价值。"}},
+        {"word": "oversubscribed", "phonetic": "/ˌəʊvəsəbˈskraɪbd/", "meaning": "超额认购", "example": {"en": "The bond issuance was oversubscribed, allowing the company to lower the coupon.", "zh": "债券发行获得超额认购，使公司得以降低票面利率。"}}
+      ]
+    },
+    "team": {
+      "label": "Team / Management",
+      "sentences": [
+        {"en": "The offsite focused on building psychological safety within the leadership team.", "zh": "外出团建聚焦于在领导团队中建立心理安全感。"},
+        {"en": "We are transitioning from a functional structure to a squad-based model.", "zh": "我们正在从职能型组织架构转向小队制模式。"},
+        {"en": "The succession plan ensures business continuity if key leaders depart.", "zh": "继任计划确保关键领导人离职时的业务连续性。"},
+        {"en": "Regular calibration sessions keep performance ratings fair across teams.", "zh": "定期的校准会议使各团队间的绩效评级保持公平。"},
+        {"en": "The new onboarding checklist reduced time-to-productivity for new hires by 30%.", "zh": "新的入职检查清单将新员工的产出达标时间缩短了30%。"}
+      ],
+      "vocabulary": [
+        {"word": "psychological safety", "phonetic": "/ˌsaɪkəˈlɒdʒɪkəl ˈseɪfti/", "meaning": "心理安全感", "example": {"en": "Teams with high psychological safety are more likely to take creative risks.", "zh": "心理安全感高的团队更愿意进行创造性的冒险。"}},
+        {"word": "squad", "phonetic": "/skwɒd/", "meaning": "小队（敏捷组织中的跨职能团队）", "example": {"en": "Each squad owns a product area end-to-end, from design to deployment.", "zh": "每个小队端到端负责一个产品领域，从设计到部署。"}},
+        {"word": "succession plan", "phonetic": "/səkˈseʃən plæn/", "meaning": "继任计划", "example": {"en": "A robust succession plan identifies at least two candidates for each critical role.", "zh": "完善的继任计划为每个关键岗位至少确定两名候选人。"}},
+        {"word": "calibration", "phonetic": "/ˌkælɪˈbreɪʃən/", "meaning": "校准（绩效评级对齐）", "example": {"en": "Performance calibration ensures managers apply consistent standards.", "zh": "绩效校准确保管理者应用一致的标准。"}},
+        {"word": "time-to-productivity", "phonetic": "/taɪm tə ˌprɒdʌkˈtɪvɪti/", "meaning": "产出达标时间", "example": {"en": "Reducing time-to-productivity lowers the total cost of onboarding.", "zh": "缩短产出达标时间降低了入职的总成本。"}}
+      ]
+    },
+    "strategy": {
+      "label": "Strategy / Planning",
+      "sentences": [
+        {"en": "The flywheel effect accelerates as more users generate more data and better algorithms.", "zh": "飞轮效应随着更多用户产生更多数据和更好的算法而加速。"},
+        {"en": "We need to de-risk the expansion by running a controlled pilot first.", "zh": "我们需要先做一个受控试点来降低扩张风险。"},
+        {"en": "The OKR framework ensures strategic alignment from the CEO down to individual contributors.", "zh": "OKR框架确保了从CEO到个人贡献者的战略对齐。"},
+        {"en": "Our competitive intelligence suggests the rival is about to launch a similar product.", "zh": "我们的竞争情报显示对手即将推出类似产品。"},
+        {"en": "The disintermediation trend in financial services favors digital-native platforms.", "zh": "金融服务中的去中介化趋势有利于数字原生平台。"}
+      ],
+      "vocabulary": [
+        {"word": "flywheel", "phonetic": "/ˈflaɪwiːl/", "meaning": "飞轮效应", "example": {"en": "Amazon's flywheel starts with low prices, which attract more customers.", "zh": "亚马逊的飞轮从低价开始，吸引更多客户。"}},
+        {"word": "de-risk", "phonetic": "/diː rɪsk/", "meaning": "降低风险", "example": {"en": "A phased rollout helps de-risk the launch of a new product.", "zh": "分阶段推出有助于降低新产品发布的风险。"}},
+        {"word": "strategic alignment", "phonetic": "/strəˈtiːdʒɪk əˈlaɪnmənt/", "meaning": "战略对齐", "example": {"en": "Without strategic alignment, teams may work toward conflicting goals.", "zh": "没有战略对齐，团队可能会朝着相互冲突的目标努力。"}},
+        {"word": "competitive intelligence", "phonetic": "/kəmˈpetɪtɪv ɪnˈtelɪdʒəns/", "meaning": "竞争情报", "example": {"en": "Competitive intelligence helps anticipate rival moves and market shifts.", "zh": "竞争情报有助于预判竞争对手的动向和市场变化。"}},
+        {"word": "disintermediation", "phonetic": "/ˌdɪsɪntəˌmiːdiˈeɪʃən/", "meaning": "去中介化", "example": {"en": "Disintermediation reduces costs by cutting out middlemen from transactions.", "zh": "去中介化通过在交易中去掉中间商来降低成本。"}}
+      ]
+    }
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "date": "2026-05-30",
+  "themes": {
+    "growth": {
+      "label": "Growth / Marketing",
+      "sentences": [
+        {"en": "The customer lifetime value for premium users is 5 times higher than free-tier users.", "zh": "高级用户的客户生命周期价值是免费用户的5倍。"},
+        {"en": "We should optimize the top of the funnel before increasing spend on awareness campaigns.", "zh": "在增加品牌认知活动支出之前，我们应该先优化漏斗顶部。"},
+        {"en": "The net promoter score jumped from 32 to 48 after the app redesign.", "zh": "App改版后，净推荐值从32跃升至48。"},
+        {"en": "Cross-selling brokerage services to existing banking customers is our biggest lever.", "zh": "向现有银行客户交叉销售经纪服务是我们最大的杠杆点。"},
+        {"en": "The lookalike audience on social platforms outperformed interest-based targeting.", "zh": "社交平台上的相似受众表现优于兴趣定向投放。"}
+      ],
+      "vocabulary": [
+        {"word": "lifetime value", "phonetic": "/ˈlaɪftaɪm ˈvæljuː/", "meaning": "生命周期价值", "example": {"en": "Increasing lifetime value is more cost-effective than acquiring new users.", "zh": "提升生命周期价值比获取新用户更具成本效益。"}},
+        {"word": "net promoter score", "phonetic": "/net prəˈməʊtər skɔːr/", "meaning": "净推荐值", "example": {"en": "A net promoter score above 50 is considered world-class.", "zh": "净推荐值超过50被认为是世界级水平。"}},
+        {"word": "cross-selling", "phonetic": "/krɒs ˈselɪŋ/", "meaning": "交叉销售", "example": {"en": "Cross-selling increases revenue per customer without additional acquisition cost.", "zh": "交叉销售在不增加获客成本的情况下提升每客收入。"}},
+        {"word": "lookalike audience", "phonetic": "/ˈlʊkəlaɪk ˈɔːdiəns/", "meaning": "相似受众", "example": {"en": "We built a lookalike audience based on our top 1% spenders.", "zh": "我们基于消费最高的1%用户构建了相似受众。"}},
+        {"word": "impression", "phonetic": "/ɪmˈpreʃən/", "meaning": "曝光量；展示次数", "example": {"en": "The campaign generated 2 million impressions in the first week.", "zh": "该活动在第一周产生了200万次曝光。"}}
+      ]
+    },
+    "product": {
+      "label": "Product / Metrics",
+      "sentences": [
+        {"en": "The load time on the market data page needs to be under 500 milliseconds.", "zh": "行情数据页面的加载时间需要控制在500毫秒以内。"},
+        {"en": "We introduced a feedback widget that captures user sentiment in real time.", "zh": "我们引入了一个反馈组件，可以实时捕获用户情绪。"},
+        {"en": "The tech debt backlog has grown to 30% of the total sprint capacity.", "zh": "技术债积压已经增长到总冲刺容量的30%。"},
+        {"en": "Our mobile app received a 4.7 rating on the App Store after the latest update.", "zh": "最新更新后，我们的移动应用在App Store上获得了4.7的评分。"},
+        {"en": "The data pipeline failed silently, causing stale prices to be displayed for two hours.", "zh": "数据管道静默失败，导致过期价格显示了两个小时。"}
+      ],
+      "vocabulary": [
+        {"word": "tech debt", "phonetic": "/tek det/", "meaning": "技术债", "example": {"en": "Ignoring tech debt eventually slows down feature delivery.", "zh": "忽视技术债最终会拖慢功能交付速度。"}},
+        {"word": "sentiment", "phonetic": "/ˈsentɪmənt/", "meaning": "情绪；市场情绪", "example": {"en": "Market sentiment turned bearish after the trade war escalation.", "zh": "贸易战升级后，市场情绪转为看跌。"}},
+        {"word": "backlog", "phonetic": "/ˈbæklɒɡ/", "meaning": "待办事项；积压", "example": {"en": "The product backlog should be groomed and prioritized every sprint.", "zh": "产品待办列表应该每个冲刺进行梳理和排序。"}},
+        {"word": "stale", "phonetic": "/steɪl/", "meaning": "过期的；陈旧的", "example": {"en": "Stale cache data caused users to see outdated portfolio values.", "zh": "过期的缓存数据导致用户看到过时的持仓价值。"}},
+        {"word": "uptime", "phonetic": "/ˈʌptaɪm/", "meaning": "正常运行时间", "example": {"en": "We guarantee 99.95% uptime in our service level agreement.", "zh": "我们在服务等级协议中保证99.95%的正常运行时间。"}}
+      ]
+    },
+    "finance": {
+      "label": "Finance / Investment",
+      "sentences": [
+        {"en": "The market capitalization of the company surpassed 100 billion dollars this week.", "zh": "该公司的市值本周突破了1000亿美元。"},
+        {"en": "Analysts downgraded the stock from buy to hold after the weak guidance.", "zh": "在疲弱的业绩指引之后，分析师将该股从买入下调至持有。"},
+        {"en": "The put-call ratio suggests bearish sentiment among options traders.", "zh": "看跌/看涨期权比率表明期权交易者中存在看跌情绪。"},
+        {"en": "Revenue per user increased 18% after launching the margin trading feature.", "zh": "上线融资融券功能后，每用户收入增长了18%。"},
+        {"en": "The SPAC merger is expected to close by the end of Q3.", "zh": "SPAC合并预计将在第三季度末完成。"}
+      ],
+      "vocabulary": [
+        {"word": "market capitalization", "phonetic": "/ˈmɑːkɪt ˌkæpɪtəlaɪˈzeɪʃən/", "meaning": "市值", "example": {"en": "Apple's market capitalization makes it the most valuable public company.", "zh": "苹果的市值使其成为最有价值的上市公司。"}},
+        {"word": "downgrade", "phonetic": "/ˈdaʊnɡreɪd/", "meaning": "下调评级", "example": {"en": "The downgrade triggered a 5% sell-off in the stock.", "zh": "评级下调触发了该股票5%的抛售。"}},
+        {"word": "put-call ratio", "phonetic": "/pʊt kɔːl ˈreɪʃiəʊ/", "meaning": "看跌/看涨期权比率", "example": {"en": "A rising put-call ratio indicates growing fear in the market.", "zh": "看跌/看涨期权比率上升表明市场恐慌情绪加剧。"}},
+        {"word": "margin trading", "phonetic": "/ˈmɑːdʒɪn ˈtreɪdɪŋ/", "meaning": "融资融券交易", "example": {"en": "Margin trading amplifies both gains and losses.", "zh": "融资融券交易同时放大了收益和亏损。"}},
+        {"word": "SPAC", "phonetic": "/spæk/", "meaning": "特殊目的收购公司", "example": {"en": "Going public through a SPAC can be faster than a traditional IPO.", "zh": "通过SPAC上市可能比传统IPO更快。"}}
+      ]
+    },
+    "team": {
+      "label": "Team / Management",
+      "sentences": [
+        {"en": "The OKR scoring shows that two of three key results are on track.", "zh": "OKR评分显示三个关键结果中有两个在正轨上。"},
+        {"en": "We should rotate the scrum master role to build leadership skills across the team.", "zh": "我们应该轮换Scrum Master角色，以培养团队中的领导力。"},
+        {"en": "The talent density of the team improved after raising the hiring bar.", "zh": "提高招聘标准后，团队的人才密度提升了。"},
+        {"en": "Please document the decision and rationale in the meeting minutes.", "zh": "请在会议纪要中记录决定和理由。"},
+        {"en": "The manager gave specific, actionable feedback using the SBI framework.", "zh": "经理使用SBI框架给出了具体、可执行的反馈。"}
+      ],
+      "vocabulary": [
+        {"word": "on track", "phonetic": "/ɒn træk/", "meaning": "在正轨上", "example": {"en": "The project is on track to deliver by the end of the month.", "zh": "项目在正轨上，预计月底交付。"}},
+        {"word": "talent density", "phonetic": "/ˈtælənt ˈdensɪti/", "meaning": "人才密度", "example": {"en": "Netflix attributes its success to maintaining high talent density.", "zh": "Netflix将其成功归因于保持高人才密度。"}},
+        {"word": "rationale", "phonetic": "/ˌræʃəˈnɑːl/", "meaning": "理由；依据", "example": {"en": "Always document the rationale behind major technical decisions.", "zh": "始终记录重大技术决策背后的理由。"}},
+        {"word": "actionable", "phonetic": "/ˈækʃənəbl/", "meaning": "可执行的", "example": {"en": "Good feedback is specific, timely, and actionable.", "zh": "好的反馈是具体的、及时的、可执行的。"}},
+        {"word": "hiring bar", "phonetic": "/ˈhaɪərɪŋ bɑːr/", "meaning": "招聘标准", "example": {"en": "Raising the hiring bar means every new hire should raise the team average.", "zh": "提高招聘标准意味着每个新员工都应该拉高团队平均水平。"}}
+      ]
+    },
+    "strategy": {
+      "label": "Strategy / Planning",
+      "sentences": [
+        {"en": "The winner-takes-all dynamics in this market make early scaling critical.", "zh": "这个市场赢者通吃的特性使得早期扩张至关重要。"},
+        {"en": "Our differentiation comes from combining social features with trading tools.", "zh": "我们的差异化来自于将社交功能与交易工具相结合。"},
+        {"en": "The strategic review concluded that we should exit the Taiwan market.", "zh": "战略评审得出结论，我们应该退出台湾市场。"},
+        {"en": "Building a proprietary data moat requires sustained investment over multiple years.", "zh": "构建专有数据护城河需要多年的持续投资。"},
+        {"en": "The adjacency expansion into wealth management unlocks a new revenue pool.", "zh": "向财富管理的相邻扩展开辟了新的收入池。"}
+      ],
+      "vocabulary": [
+        {"word": "winner-takes-all", "phonetic": "/ˈwɪnər teɪks ɔːl/", "meaning": "赢者通吃", "example": {"en": "Platform businesses often exhibit winner-takes-all dynamics.", "zh": "平台型业务通常呈现赢者通吃的特征。"}},
+        {"word": "differentiation", "phonetic": "/ˌdɪfəˌrenʃiˈeɪʃən/", "meaning": "差异化", "example": {"en": "Product differentiation is key to avoiding price wars.", "zh": "产品差异化是避免价格战的关键。"}},
+        {"word": "proprietary", "phonetic": "/prəˈpraɪətəri/", "meaning": "专有的", "example": {"en": "Our proprietary algorithm gives us an edge in trade execution speed.", "zh": "我们的专有算法使我们在交易执行速度上占有优势。"}},
+        {"word": "adjacency", "phonetic": "/əˈdʒeɪsənsi/", "meaning": "相邻业务；邻接", "example": {"en": "Expanding into adjacencies can drive growth without entering entirely new markets.", "zh": "向相邻业务扩展可以在不进入全新市场的情况下推动增长。"}},
+        {"word": "revenue pool", "phonetic": "/ˈrevənjuː puːl/", "meaning": "收入池", "example": {"en": "The total revenue pool in Asia-Pacific fintech is estimated at $30 billion.", "zh": "亚太金融科技的总收入池估计为300亿美元。"}}
+      ]
+    }
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "date": "2026-05-03",
+  "themes": {
+    "growth": {
+      "label": "Growth / Marketing",
+      "sentences": [
+        {"en": "The lifetime value to CAC ratio is 3.2, which is above the healthy threshold.", "zh": "LTV与获客成本的比率是3.2，高于健康阈值。"},
+        {"en": "We are testing deep links that take users directly to the stock detail page.", "zh": "我们正在测试直接跳转到个股详情页的深链接。"},
+        {"en": "The promotional campaign cannibalized revenue from our existing user base.", "zh": "促销活动蚕食了我们现有用户的收入。"},
+        {"en": "Push notification fatigue is causing our opt-out rate to climb.", "zh": "推送疲劳正在导致我们的退订率攀升。"},
+        {"en": "We should prioritize channels with the shortest feedback loop for testing.", "zh": "我们应该优先选择反馈周期最短的渠道来做测试。"}
+      ],
+      "vocabulary": [
+        {"word": "lifetime value", "phonetic": "/ˈlaɪftaɪm ˈvæljuː/", "meaning": "生命周期价值（LTV）", "example": {"en": "Lifetime value helps us decide how much to spend on acquiring each user.", "zh": "生命周期价值帮助我们决定在获取每个用户上可以花多少钱。"}},
+        {"word": "deep link", "phonetic": "/diːp lɪŋk/", "meaning": "深链接", "example": {"en": "Deep links improve the user experience by skipping unnecessary screens.", "zh": "深链接通过跳过不必要的页面来提升用户体验。"}},
+        {"word": "cannibalize", "phonetic": "/ˈkænɪbəlaɪz/", "meaning": "蚕食；自我竞争", "example": {"en": "The new product line may cannibalize sales from the existing one.", "zh": "新产品线可能会蚕食现有产品的销售。"}},
+        {"word": "fatigue", "phonetic": "/fəˈtiːɡ/", "meaning": "疲劳；倦怠", "example": {"en": "Ad fatigue sets in when users see the same creative too many times.", "zh": "当用户多次看到相同的广告素材时，广告疲劳就会出现。"}},
+        {"word": "feedback loop", "phonetic": "/ˈfiːdbæk luːp/", "meaning": "反馈回路", "example": {"en": "Shorter feedback loops help teams iterate faster.", "zh": "更短的反馈回路帮助团队更快迭代。"}}
+      ]
+    },
+    "product": {
+      "label": "Product / Metrics",
+      "sentences": [
+        {"en": "The canary deployment caught a critical bug before it reached all users.", "zh": "金丝雀部署在问题影响所有用户之前发现了一个严重bug。"},
+        {"en": "We need to add rate limiting to prevent abuse of the public API.", "zh": "我们需要添加速率限制来防止公共API被滥用。"},
+        {"en": "The A/B test reached statistical significance after 14 days of running.", "zh": "A/B测试在运行14天后达到了统计显著性。"},
+        {"en": "User interviews revealed that our search function is the top pain point.", "zh": "用户访谈显示搜索功能是最大的痛点。"},
+        {"en": "We should build a design system to ensure consistency across all products.", "zh": "我们应该建立一个设计系统来确保所有产品的一致性。"}
+      ],
+      "vocabulary": [
+        {"word": "canary deployment", "phonetic": "/kəˈneəri dɪˈplɔɪmənt/", "meaning": "金丝雀部署", "example": {"en": "Canary deployment routes a small fraction of traffic to the new version first.", "zh": "金丝雀部署先将少量流量导向新版本。"}},
+        {"word": "rate limiting", "phonetic": "/reɪt ˈlɪmɪtɪŋ/", "meaning": "速率限制", "example": {"en": "Rate limiting protects the backend from being overwhelmed by requests.", "zh": "速率限制保护后端不被请求淹没。"}},
+        {"word": "statistical significance", "phonetic": "/stəˈtɪstɪkəl sɪɡˈnɪfɪkəns/", "meaning": "统计显著性", "example": {"en": "Do not make decisions until your test reaches statistical significance.", "zh": "在测试达到统计显著性之前不要做决策。"}},
+        {"word": "pain point", "phonetic": "/peɪn pɔɪnt/", "meaning": "痛点", "example": {"en": "Understanding customer pain points is the foundation of product design.", "zh": "理解客户痛点是产品设计的基础。"}},
+        {"word": "design system", "phonetic": "/dɪˈzaɪn ˈsɪstəm/", "meaning": "设计系统", "example": {"en": "A mature design system accelerates development by providing reusable components.", "zh": "成熟的设计系统通过提供可复用组件来加速开发。"}}
+      ]
+    },
+    "finance": {
+      "label": "Finance / Investment",
+      "sentences": [
+        {"en": "The put-call ratio suggests bearish sentiment is building in the market.", "zh": "看跌/看涨比率表明市场看空情绪正在加重。"},
+        {"en": "Revenue per share is a cleaner metric than total revenue for diluted companies.", "zh": "对于股权稀释的公司，每股收入比总收入更干净。"},
+        {"en": "The SPAC merger triggered a wave of arbitrage trading activity.", "zh": "SPAC合并引发了一波套利交易活动。"},
+        {"en": "Management's capital allocation track record has been exceptional over the past decade.", "zh": "管理层过去十年的资本配置记录非常出色。"},
+        {"en": "The stock is forming a double bottom pattern on the weekly chart.", "zh": "该股在周线图上正在形成双底形态。"}
+      ],
+      "vocabulary": [
+        {"word": "put-call ratio", "phonetic": "/pʊt kɔːl ˈreɪʃiəʊ/", "meaning": "看跌/看涨比率", "example": {"en": "A rising put-call ratio often signals increasing investor anxiety.", "zh": "看跌/看涨比率上升通常表明投资者焦虑加剧。"}},
+        {"word": "arbitrage", "phonetic": "/ˈɑːbɪtrɑːʒ/", "meaning": "套利", "example": {"en": "Arbitrage opportunities disappear quickly in efficient markets.", "zh": "在有效市场中，套利机会会迅速消失。"}},
+        {"word": "capital allocation", "phonetic": "/ˈkæpɪtəl ˌæləˈkeɪʃən/", "meaning": "资本配置", "example": {"en": "Smart capital allocation is what separates great CEOs from average ones.", "zh": "聪明的资本配置是区分优秀CEO和普通CEO的关键。"}},
+        {"word": "dilution", "phonetic": "/daɪˈluːʃən/", "meaning": "稀释", "example": {"en": "Stock option grants cause dilution for existing shareholders.", "zh": "股票期权授予会导致现有股东被稀释。"}},
+        {"word": "double bottom", "phonetic": "/ˈdʌbəl ˈbɒtəm/", "meaning": "双底形态", "example": {"en": "A confirmed double bottom is considered a bullish reversal signal.", "zh": "确认的双底形态被视为看涨反转信号。"}}
+      ]
+    },
+    "team": {
+      "label": "Team / Management",
+      "sentences": [
+        {"en": "The SBI framework helps deliver feedback that is specific and actionable.", "zh": "SBI框架有助于给出具体且可执行的反馈。"},
+        {"en": "We need to establish clear swim lanes to avoid duplication of effort.", "zh": "我们需要建立清晰的职责边界来避免重复劳动。"},
+        {"en": "The team morale survey revealed a significant gap between managers and ICs.", "zh": "团队士气调查揭示了管理层和个人贡献者之间的显著差距。"},
+        {"en": "Let us do a pre-mortem to anticipate what could go wrong with this launch.", "zh": "让我们做一个预验尸，预判这次上线可能出什么问题。"},
+        {"en": "The intern presented a surprisingly thorough competitive analysis at the review.", "zh": "实习生在评审会上展示了一份出人意料的详尽竞品分析。"}
+      ],
+      "vocabulary": [
+        {"word": "SBI framework", "phonetic": "/ˌes biː ˈaɪ ˈfreɪmwɜːk/", "meaning": "SBI反馈框架（情境-行为-影响）", "example": {"en": "The SBI framework structures feedback around Situation, Behavior, and Impact.", "zh": "SBI框架围绕情境、行为和影响来组织反馈。"}},
+        {"word": "swim lane", "phonetic": "/swɪm leɪn/", "meaning": "职责边界；泳道", "example": {"en": "Clear swim lanes reduce conflict between overlapping teams.", "zh": "清晰的职责边界减少了重叠团队之间的冲突。"}},
+        {"word": "morale", "phonetic": "/məˈrɑːl/", "meaning": "士气", "example": {"en": "Low morale often leads to higher turnover and lower productivity.", "zh": "低士气通常导致更高的离职率和更低的生产力。"}},
+        {"word": "pre-mortem", "phonetic": "/priː ˈmɔːtəm/", "meaning": "预验尸（提前假设失败）", "example": {"en": "A pre-mortem exercise imagines the project has already failed and asks why.", "zh": "预验尸练习想象项目已经失败，然后追问原因。"}},
+        {"word": "individual contributor", "phonetic": "/ˌɪndɪˈvɪdʒuəl kənˈtrɪbjuːtər/", "meaning": "个人贡献者（IC）", "example": {"en": "Many senior individual contributors have more impact than some managers.", "zh": "许多高级个人贡献者的影响力比一些管理者还大。"}}
+      ]
+    },
+    "strategy": {
+      "label": "Strategy / Planning",
+      "sentences": [
+        {"en": "The blue ocean strategy focuses on creating uncontested market space.", "zh": "蓝海战略聚焦于创造无竞争的市场空间。"},
+        {"en": "We should map out the value chain to identify where we capture the most margin.", "zh": "我们应该梳理价值链，找出我们获取最多利润的环节。"},
+        {"en": "The second-mover advantage allows us to learn from their mistakes.", "zh": "后发优势让我们能从他们的错误中学习。"},
+        {"en": "Vertical integration gives us more control over the user experience.", "zh": "垂直整合让我们对用户体验有更多的掌控。"},
+        {"en": "Our scenario planning includes a base case, a bull case, and a bear case.", "zh": "我们的情景规划包括基本情景、乐观情景和悲观情景。"}
+      ],
+      "vocabulary": [
+        {"word": "blue ocean", "phonetic": "/bluː ˈəʊʃən/", "meaning": "蓝海", "example": {"en": "Blue ocean markets have less competition but require category creation.", "zh": "蓝海市场竞争较少，但需要创建新品类。"}},
+        {"word": "value chain", "phonetic": "/ˈvæljuː tʃeɪn/", "meaning": "价值链", "example": {"en": "Owning more of the value chain increases your bargaining power.", "zh": "掌握更多价值链环节能增强你的议价能力。"}},
+        {"word": "vertical integration", "phonetic": "/ˈvɜːtɪkəl ˌɪntɪˈɡreɪʃən/", "meaning": "垂直整合", "example": {"en": "Vertical integration reduces dependency on third-party vendors.", "zh": "垂直整合减少了对第三方供应商的依赖。"}},
+        {"word": "scenario planning", "phonetic": "/sɪˈnɑːriəʊ ˈplænɪŋ/", "meaning": "情景规划", "example": {"en": "Scenario planning prepares the organization for multiple possible futures.", "zh": "情景规划让组织为多种可能的未来做好准备。"}},
+        {"word": "second-mover", "phonetic": "/ˈsekənd ˈmuːvər/", "meaning": "后发者", "example": {"en": "The second-mover can observe market reactions and optimize accordingly.", "zh": "后发者可以观察市场反应并据此优化。"}}
+      ]
+    }
+  }
+}

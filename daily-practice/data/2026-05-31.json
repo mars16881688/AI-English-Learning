@@ -1,0 +1,90 @@
+{
+  "date": "2026-05-31",
+  "themes": {
+    "growth": {
+      "label": "Growth / Marketing",
+      "sentences": [
+        {"en": "The referral incentive structure needs to reward both the inviter and the invitee.", "zh": "推荐激励结构需要同时奖励邀请者和被邀请者。"},
+        {"en": "We achieved a 3x return on ad spend by narrowing our targeting to active traders.", "zh": "通过将目标受众缩小到活跃交易者，我们实现了3倍的广告支出回报。"},
+        {"en": "The sign-up to first deposit conversion is the weakest link in our funnel.", "zh": "从注册到首次入金的转化是我们漏斗中最薄弱的环节。"},
+        {"en": "Influencer marketing in the finance vertical requires careful compliance review.", "zh": "金融垂直领域的网红营销需要仔细的合规审查。"},
+        {"en": "The dormant user reactivation campaign brought back 8,000 accounts last month.", "zh": "沉睡用户唤醒活动上个月挽回了8000个账户。"}
+      ],
+      "vocabulary": [
+        {"word": "return on ad spend", "phonetic": "/rɪˈtɜːn ɒn æd spend/", "meaning": "广告支出回报率", "example": {"en": "A return on ad spend of 3x means every dollar spent generates three dollars in revenue.", "zh": "3倍的广告支出回报率意味着每花1美元产生3美元收入。"}},
+        {"word": "invitee", "phonetic": "/ˌɪnvaɪˈtiː/", "meaning": "被邀请者", "example": {"en": "Both the inviter and the invitee receive a cash reward upon account opening.", "zh": "邀请者和被邀请者在开户后都会获得现金奖励。"}},
+        {"word": "dormant", "phonetic": "/ˈdɔːmənt/", "meaning": "沉睡的；不活跃的", "example": {"en": "Reactivating dormant users is often cheaper than acquiring new ones.", "zh": "唤醒沉睡用户通常比获取新用户更便宜。"}},
+        {"word": "influencer", "phonetic": "/ˈɪnfluənsər/", "meaning": "网红；意见领袖", "example": {"en": "Finance influencers on social media have huge impact on retail trading behavior.", "zh": "社交媒体上的金融网红对散户交易行为有巨大影响。"}},
+        {"word": "reactivation", "phonetic": "/riːˌæktɪˈveɪʃən/", "meaning": "唤醒；再激活", "example": {"en": "The reactivation email series targets users who have been inactive for 30 days.", "zh": "唤醒邮件系列针对已不活跃30天的用户。"}}
+      ]
+    },
+    "product": {
+      "label": "Product / Metrics",
+      "sentences": [
+        {"en": "The heatmap shows that most users ignore the banner at the top of the screen.", "zh": "热力图显示大多数用户忽略了屏幕顶部的横幅。"},
+        {"en": "We need to deprecate the legacy API before the new version goes live.", "zh": "在新版本上线之前，我们需要废弃旧版API。"},
+        {"en": "The accessibility audit found 15 critical issues that must be fixed before launch.", "zh": "无障碍审计发现了15个必须在上线前修复的严重问题。"},
+        {"en": "Real-time push notifications for price alerts increased daily sessions by 20%.", "zh": "价格提醒的实时推送通知使日均使用次数增长了20%。"},
+        {"en": "The conversion funnel visualization helped us spot a 40% drop-off at the KYC step.", "zh": "转化漏斗可视化帮助我们发现了KYC步骤40%的流失。"}
+      ],
+      "vocabulary": [
+        {"word": "heatmap", "phonetic": "/ˈhiːtmæp/", "meaning": "热力图", "example": {"en": "The heatmap revealed that users rarely scroll below the fold.", "zh": "热力图显示用户很少滚动到首屏以下。"}},
+        {"word": "deprecate", "phonetic": "/ˈdeprɪkeɪt/", "meaning": "废弃；弃用", "example": {"en": "We will deprecate the v1 endpoint six months after v2 launches.", "zh": "v2上线六个月后，我们将废弃v1接口。"}},
+        {"word": "accessibility", "phonetic": "/əkˌsesɪˈbɪlɪti/", "meaning": "无障碍性；可访问性", "example": {"en": "Improving accessibility is not just ethical but also expands our user base.", "zh": "改善无障碍性不仅是道德义务，还能扩大我们的用户群。"}},
+        {"word": "drop-off", "phonetic": "/ˈdrɒp ɒf/", "meaning": "流失；跳出", "example": {"en": "The biggest drop-off happens between the cart page and the payment page.", "zh": "最大的流失发生在购物车页面和支付页面之间。"}},
+        {"word": "visualization", "phonetic": "/ˌvɪʒuəlaɪˈzeɪʃən/", "meaning": "可视化", "example": {"en": "Data visualization makes complex metrics easier for stakeholders to understand.", "zh": "数据可视化使复杂指标更容易被利益相关方理解。"}}
+      ]
+    },
+    "finance": {
+      "label": "Finance / Investment",
+      "sentences": [
+        {"en": "The central bank's balance sheet reduction is tightening liquidity in the market.", "zh": "央行缩表正在收紧市场流动性。"},
+        {"en": "Earnings per share grew 25% year over year, beating the street estimate by 10%.", "zh": "每股收益同比增长25%，超出华尔街预期10%。"},
+        {"en": "The correlation between tech stocks and bond yields has strengthened this quarter.", "zh": "本季度科技股与债券收益率之间的相关性增强了。"},
+        {"en": "The company's gross merchandise value hit a record high during the Singles' Day promotion.", "zh": "双十一促销期间，该公司的成交总额创下历史新高。"},
+        {"en": "Sovereign wealth funds have been increasing their allocation to Asian equities.", "zh": "主权财富基金一直在增加对亚洲股票的配置。"}
+      ],
+      "vocabulary": [
+        {"word": "liquidity", "phonetic": "/lɪˈkwɪdɪti/", "meaning": "流动性", "example": {"en": "Low liquidity can lead to wider bid-ask spreads and higher trading costs.", "zh": "低流动性可能导致买卖价差扩大和交易成本上升。"}},
+        {"word": "earnings per share", "phonetic": "/ˈɜːnɪŋz pɜːr ʃeər/", "meaning": "每股收益", "example": {"en": "Diluted earnings per share is a more conservative measure than basic EPS.", "zh": "稀释每股收益是比基本EPS更保守的衡量指标。"}},
+        {"word": "correlation", "phonetic": "/ˌkɒrəˈleɪʃən/", "meaning": "相关性", "example": {"en": "A negative correlation between two assets reduces portfolio risk.", "zh": "两种资产之间的负相关性可以降低投资组合风险。"}},
+        {"word": "sovereign wealth fund", "phonetic": "/ˈsɒvrɪn welθ fʌnd/", "meaning": "主权财富基金", "example": {"en": "Singapore's sovereign wealth fund is one of the largest in the world.", "zh": "新加坡的主权财富基金是全球最大的之一。"}},
+        {"word": "allocation", "phonetic": "/ˌæləˈkeɪʃən/", "meaning": "配置；分配", "example": {"en": "Increasing allocation to equities can boost returns but also raise risk.", "zh": "增加股票配置可以提高回报，但也会增加风险。"}}
+      ]
+    },
+    "team": {
+      "label": "Team / Management",
+      "sentences": [
+        {"en": "The 360-degree feedback revealed blind spots in the manager's communication style.", "zh": "360度反馈揭示了该经理沟通风格中的盲点。"},
+        {"en": "We need to build bench strength so the team is not dependent on a single contributor.", "zh": "我们需要培养板凳深度，这样团队就不会依赖单一贡献者。"},
+        {"en": "The offsite workshop improved alignment between the growth and engineering teams.", "zh": "外出研讨会改善了增长团队和工程团队之间的对齐。"},
+        {"en": "Each team member should set stretch goals that push beyond their comfort zone.", "zh": "每个团队成员都应该设定超越舒适区的挑战性目标。"},
+        {"en": "The succession plan ensures continuity when a key leader transitions to a new role.", "zh": "继任计划确保关键领导者转岗时的连续性。"}
+      ],
+      "vocabulary": [
+        {"word": "360-degree feedback", "phonetic": "/ˌθriː sɪksti dɪˈɡriː ˈfiːdbæk/", "meaning": "360度反馈", "example": {"en": "360-degree feedback collects input from peers, reports, and managers.", "zh": "360度反馈收集来自同事、下属和上级的意见。"}},
+        {"word": "bench strength", "phonetic": "/bentʃ streŋθ/", "meaning": "板凳深度；后备力量", "example": {"en": "Strong bench strength means the team can absorb unexpected departures.", "zh": "强大的板凳深度意味着团队可以消化意外离职。"}},
+        {"word": "offsite", "phonetic": "/ˈɒfsaɪt/", "meaning": "外出会议；团建", "example": {"en": "The annual offsite focuses on strategic planning for the next fiscal year.", "zh": "年度外出会议聚焦于下一财年的战略规划。"}},
+        {"word": "stretch goal", "phonetic": "/stretʃ ɡəʊl/", "meaning": "挑战性目标", "example": {"en": "A stretch goal should be ambitious but not impossible.", "zh": "挑战性目标应该有雄心但不是不可能实现的。"}},
+        {"word": "succession plan", "phonetic": "/səkˈseʃən plæn/", "meaning": "继任计划", "example": {"en": "Every VP role should have a documented succession plan.", "zh": "每个VP岗位都应该有书面的继任计划。"}}
+      ]
+    },
+    "strategy": {
+      "label": "Strategy / Planning",
+      "sentences": [
+        {"en": "The platform strategy creates value by connecting buyers and sellers in a two-sided marketplace.", "zh": "平台策略通过在双边市场连接买卖双方来创造价值。"},
+        {"en": "We are pursuing an asset-light model to reduce capital expenditure.", "zh": "我们正在追求轻资产模式以减少资本支出。"},
+        {"en": "The scenario planning exercise identified three possible outcomes for the macro environment.", "zh": "情景规划演练确定了宏观环境的三种可能结果。"},
+        {"en": "Our competitive positioning hinges on superior execution, not just lower pricing.", "zh": "我们的竞争定位取决于卓越的执行力，而不仅仅是更低的定价。"},
+        {"en": "The ecosystem play locks in users by integrating trading, news, and community.", "zh": "生态系统打法通过整合交易、资讯和社区来锁定用户。"}
+      ],
+      "vocabulary": [
+        {"word": "two-sided marketplace", "phonetic": "/tuː saɪdɪd ˈmɑːkɪtpleɪs/", "meaning": "双边市场", "example": {"en": "A two-sided marketplace must solve the chicken-and-egg problem at launch.", "zh": "双边市场在启动时必须解决先有鸡还是先有蛋的问题。"}},
+        {"word": "asset-light", "phonetic": "/ˈæset laɪt/", "meaning": "轻资产的", "example": {"en": "An asset-light model scales faster because it requires less upfront investment.", "zh": "轻资产模式扩展更快，因为需要更少的前期投资。"}},
+        {"word": "scenario planning", "phonetic": "/sɪˈnɑːriəʊ ˈplænɪŋ/", "meaning": "情景规划", "example": {"en": "Scenario planning helps leaders prepare for uncertainty rather than predict the future.", "zh": "情景规划帮助领导者为不确定性做准备，而不是预测未来。"}},
+        {"word": "positioning", "phonetic": "/pəˈzɪʃənɪŋ/", "meaning": "定位", "example": {"en": "Clear positioning tells customers why they should choose you over competitors.", "zh": "清晰的定位告诉客户为什么应该选择你而不是竞争对手。"}},
+        {"word": "ecosystem", "phonetic": "/ˈiːkəʊsɪstəm/", "meaning": "生态系统", "example": {"en": "Building an ecosystem increases switching costs and deepens user loyalty.", "zh": "构建生态系统能提高转换成本并加深用户忠诚度。"}}
+      ]
+    }
+  }
+}

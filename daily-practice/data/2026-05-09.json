@@ -1,0 +1,90 @@
+{
+  "date": "2026-05-09",
+  "themes": {
+    "growth": {
+      "label": "Growth / Marketing",
+      "sentences": [
+        {"en": "The lead magnet we created generated 3,000 qualified leads in two weeks.", "zh": "我们创建的引流磁铁在两周内生成了3000个合格线索。"},
+        {"en": "Cross-selling complementary products increased average order value by 28%.", "zh": "交叉销售互补产品使平均订单金额提升了28%。"},
+        {"en": "We need to optimize the top of the funnel before investing more in bottom-of-funnel tactics.", "zh": "在投入更多漏斗底部策略之前，我们需要先优化漏斗顶部。"},
+        {"en": "The lookalike audience campaign outperformed interest-based targeting by 40%.", "zh": "相似受众营销活动比兴趣定向表现好40%。"},
+        {"en": "Customer testimonials on the pricing page improved the checkout conversion by 11%.", "zh": "定价页面上的客户评价使结账转化提升了11%。"}
+      ],
+      "vocabulary": [
+        {"word": "lead magnet", "phonetic": "/liːd ˈmæɡnɪt/", "meaning": "引流磁铁", "example": {"en": "A well-designed lead magnet captures email addresses for nurturing.", "zh": "设计良好的引流磁铁能捕获邮箱地址用于后续培育。"}},
+        {"word": "cross-selling", "phonetic": "/krɒs ˈselɪŋ/", "meaning": "交叉销售", "example": {"en": "Cross-selling works best when products are naturally complementary.", "zh": "当产品天然互补时，交叉销售效果最好。"}},
+        {"word": "lookalike audience", "phonetic": "/ˈlʊkəlaɪk ˈɔːdiəns/", "meaning": "相似受众", "example": {"en": "Build a lookalike audience from your highest-value customer segment.", "zh": "基于最高价值客户群创建相似受众。"}},
+        {"word": "testimonial", "phonetic": "/ˌtestɪˈmoʊniəl/", "meaning": "客户评价；推荐语", "example": {"en": "Video testimonials are more persuasive than text reviews.", "zh": "视频评价比文字评论更有说服力。"}},
+        {"word": "nurturing", "phonetic": "/ˈnɜːrtʃərɪŋ/", "meaning": "培育；孵化", "example": {"en": "Lead nurturing emails gradually build trust before the sales pitch.", "zh": "线索培育邮件在销售推介之前逐步建立信任。"}}
+      ]
+    },
+    "product": {
+      "label": "Product / Metrics",
+      "sentences": [
+        {"en": "The net promoter score dropped to 32, which is below the industry benchmark.", "zh": "净推荐值下降到32，低于行业基准。"},
+        {"en": "We are implementing server-side rendering to improve initial page load speed.", "zh": "我们正在实现服务端渲染以提升首屏加载速度。"},
+        {"en": "The rollback was triggered automatically when error rates exceeded the threshold.", "zh": "当错误率超过阈值时，自动触发了回滚。"},
+        {"en": "User research uncovered a pain point we had not considered in the original spec.", "zh": "用户研究发现了一个原始需求文档中未考虑到的痛点。"},
+        {"en": "We need to establish a data pipeline to feed real-time metrics into the dashboard.", "zh": "我们需要建立数据管道，将实时指标输送到仪表盘。"}
+      ],
+      "vocabulary": [
+        {"word": "threshold", "phonetic": "/ˈθreʃhoʊld/", "meaning": "阈值", "example": {"en": "Set an alert when CPU usage crosses the 80% threshold.", "zh": "当CPU使用率超过80%阈值时设置告警。"}},
+        {"word": "rollback", "phonetic": "/ˈroʊlbæk/", "meaning": "回滚", "example": {"en": "The deployment included an automatic rollback mechanism in case of failure.", "zh": "部署包含了故障时的自动回滚机制。"}},
+        {"word": "pipeline", "phonetic": "/ˈpaɪplaɪn/", "meaning": "管道；流水线", "example": {"en": "Our CI/CD pipeline runs tests automatically on every commit.", "zh": "我们的CI/CD流水线会在每次提交时自动运行测试。"}},
+        {"word": "pain point", "phonetic": "/peɪn pɔɪnt/", "meaning": "痛点", "example": {"en": "The biggest pain point for new users is the complex verification process.", "zh": "新用户最大的痛点是复杂的验证流程。"}},
+        {"word": "spec", "phonetic": "/spek/", "meaning": "需求文档；规格说明", "example": {"en": "The product manager finalized the spec before the kickoff meeting.", "zh": "产品经理在启动会议前完成了需求文档。"}}
+      ]
+    },
+    "finance": {
+      "label": "Finance / Investment",
+      "sentences": [
+        {"en": "The company is using a share repurchase program to return capital to shareholders.", "zh": "该公司正通过股票回购计划向股东返还资本。"},
+        {"en": "Gross profit margin contracted due to rising raw material costs.", "zh": "由于原材料成本上升，毛利率收缩。"},
+        {"en": "The IPO was oversubscribed by 15 times, reflecting strong investor demand.", "zh": "IPO超额认购15倍，反映出强劲的投资者需求。"},
+        {"en": "Analysts downgraded the stock from buy to hold citing elevated risk.", "zh": "分析师以风险上升为由将该股评级从买入下调至持有。"},
+        {"en": "The price-to-book ratio is well below the historical average, suggesting value opportunity.", "zh": "市净率远低于历史均值，暗示存在价值投资机会。"}
+      ],
+      "vocabulary": [
+        {"word": "repurchase", "phonetic": "/riːˈpɜːrtʃəs/", "meaning": "回购", "example": {"en": "Share repurchases reduce outstanding shares and boost earnings per share.", "zh": "股票回购减少流通股数，提升每股收益。"}},
+        {"word": "oversubscribed", "phonetic": "/ˌoʊvərsəbˈskraɪbd/", "meaning": "超额认购", "example": {"en": "The bond issuance was oversubscribed, so the company tightened the spread.", "zh": "债券发行超额认购，公司因此收窄了利差。"}},
+        {"word": "downgrade", "phonetic": "/ˈdaʊnɡreɪd/", "meaning": "下调评级", "example": {"en": "The downgrade triggered a sell-off in afternoon trading.", "zh": "评级下调引发了午后的抛售。"}},
+        {"word": "price-to-book", "phonetic": "/praɪs tə bʊk/", "meaning": "市净率", "example": {"en": "Banks are often valued using the price-to-book ratio.", "zh": "银行通常使用市净率进行估值。"}},
+        {"word": "contracted", "phonetic": "/kənˈtræktɪd/", "meaning": "收缩", "example": {"en": "Revenue contracted for the second consecutive quarter.", "zh": "营收连续第二个季度收缩。"}}
+      ]
+    },
+    "team": {
+      "label": "Team / Management",
+      "sentences": [
+        {"en": "The new hire failed to meet expectations during the probation period.", "zh": "新员工在试用期内未能达到预期。"},
+        {"en": "We are introducing a mentorship program to accelerate junior employee development.", "zh": "我们正在引入导师计划以加速初级员工的发展。"},
+        {"en": "The feedback loop between design and engineering is too slow and needs streamlining.", "zh": "设计和工程之间的反馈循环太慢，需要精简。"},
+        {"en": "Let's establish clear decision-making authority so we don't bottleneck on approvals.", "zh": "让我们明确决策权限，这样就不会在审批环节卡住。"},
+        {"en": "The team retrospective identified communication breakdown as the root cause of the delay.", "zh": "团队复盘将沟通断裂确定为延迟的根本原因。"}
+      ],
+      "vocabulary": [
+        {"word": "probation", "phonetic": "/proʊˈbeɪʃən/", "meaning": "试用期", "example": {"en": "The probation period lasts three months for all new employees.", "zh": "所有新员工的试用期为三个月。"}},
+        {"word": "mentorship", "phonetic": "/ˈmentɔːrʃɪp/", "meaning": "导师制", "example": {"en": "Effective mentorship accelerates career growth for junior staff.", "zh": "有效的导师制能加速初级员工的职业成长。"}},
+        {"word": "streamline", "phonetic": "/ˈstriːmlaɪn/", "meaning": "精简；优化流程", "example": {"en": "We streamlined the approval process from five steps to two.", "zh": "我们将审批流程从五个步骤精简到两个。"}},
+        {"word": "bottleneck", "phonetic": "/ˈbɒtlˌnek/", "meaning": "瓶颈", "example": {"en": "The review process is the biggest bottleneck in our release cycle.", "zh": "评审流程是我们发布周期中最大的瓶颈。"}},
+        {"word": "root cause", "phonetic": "/ruːt kɔːz/", "meaning": "根本原因", "example": {"en": "Always investigate the root cause before applying a quick fix.", "zh": "在做快速修复之前，始终要调查根本原因。"}}
+      ]
+    },
+    "strategy": {
+      "label": "Strategy / Planning",
+      "sentences": [
+        {"en": "The adjacency expansion into wealth management leverages our existing brokerage user base.", "zh": "向财富管理的邻接扩张利用了我们现有的经纪用户群。"},
+        {"en": "We should apply the jobs-to-be-done framework to understand unmet customer needs.", "zh": "我们应该运用待办任务框架来理解未被满足的客户需求。"},
+        {"en": "The winner-takes-all dynamic in this market means second place has little value.", "zh": "这个市场赢者通吃的格局意味着第二名几乎没有价值。"},
+        {"en": "Our three-year horizon plan includes expansion into two new geographic markets.", "zh": "我们的三年远景计划包括进入两个新的地理市场。"},
+        {"en": "The strategic pivot from commission-based to subscription revenue stabilized cash flow.", "zh": "从佣金制转向订阅制收入的战略转型稳定了现金流。"}
+      ],
+      "vocabulary": [
+        {"word": "adjacency", "phonetic": "/əˈdʒeɪsənsi/", "meaning": "邻接；相邻领域", "example": {"en": "Adjacency expansion reduces risk by building on existing capabilities.", "zh": "邻接扩张通过利用现有能力来降低风险。"}},
+        {"word": "framework", "phonetic": "/ˈfreɪmwɜːrk/", "meaning": "框架", "example": {"en": "Choose the right analytical framework before diving into data.", "zh": "在深入数据之前选择正确的分析框架。"}},
+        {"word": "horizon", "phonetic": "/həˈraɪzən/", "meaning": "远景；视野", "example": {"en": "Short-term execution and long-term horizon planning must coexist.", "zh": "短期执行和长期远景规划必须共存。"}},
+        {"word": "pivot", "phonetic": "/ˈpɪvət/", "meaning": "转型；战略转向", "example": {"en": "The pivot to mobile-first was the best decision the company made.", "zh": "转向移动优先是公司做出的最佳决策。"}},
+        {"word": "winner-takes-all", "phonetic": "/ˈwɪnər teɪks ɔːl/", "meaning": "赢者通吃", "example": {"en": "In winner-takes-all markets, being number one is the only viable strategy.", "zh": "在赢者通吃的市场中，成为第一名是唯一可行的策略。"}}
+      ]
+    }
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "date": "2026-04-25",
+  "themes": {
+    "growth": {
+      "label": "Growth / Marketing",
+      "sentences": [
+        {"en": "The click-through rate on the banner dropped 40% due to ad fatigue.", "zh": "由于广告疲劳，横幅广告的点击率下降了40%。"},
+        {"en": "We should nurture dormant users with a re-engagement email series.", "zh": "我们应该通过再激活邮件系列来培育沉睡用户。"},
+        {"en": "The influencer campaign drove 5,000 downloads but only 800 completed registration.", "zh": "KOL活动带来了5000次下载，但只有800人完成注册。"},
+        {"en": "User-generated content outperforms branded content in terms of trust and shareability.", "zh": "就信任度和可分享性而言，用户生成内容优于品牌内容。"},
+        {"en": "We need to tighten the feedback loop between marketing spend and revenue impact.", "zh": "我们需要加强营销支出和收入影响之间的反馈闭环。"}
+      ],
+      "vocabulary": [
+        {"word": "ad fatigue", "phonetic": "/æd fəˈtiːɡ/", "meaning": "广告疲劳", "example": {"en": "Rotating creative assets every two weeks helps prevent ad fatigue.", "zh": "每两周轮换创意素材有助于防止广告疲劳。"}},
+        {"word": "dormant", "phonetic": "/ˈdɔːmənt/", "meaning": "休眠的；沉睡的", "example": {"en": "We identified 50,000 dormant users who haven't logged in for 90 days.", "zh": "我们识别出50000名90天未登录的沉睡用户。"}},
+        {"word": "re-engagement", "phonetic": "/riː ɪnˈɡeɪdʒmənt/", "meaning": "再激活；再触达", "example": {"en": "The re-engagement campaign brought back 12% of inactive users.", "zh": "再激活活动带回了12%的不活跃用户。"}},
+        {"word": "user-generated content", "phonetic": "/ˈjuːzə ˈdʒenəreɪtɪd ˈkɒntent/", "meaning": "用户生成内容（UGC）", "example": {"en": "Encouraging user-generated content can lower your content production costs.", "zh": "鼓励用户生成内容可以降低内容制作成本。"}},
+        {"word": "feedback loop", "phonetic": "/ˈfiːdbæk luːp/", "meaning": "反馈闭环", "example": {"en": "A tight feedback loop between data and decision-making improves agility.", "zh": "数据和决策之间紧密的反馈闭环能提升敏捷性。"}}
+      ]
+    },
+    "product": {
+      "label": "Product / Metrics",
+      "sentences": [
+        {"en": "The API rate limit was exceeded during peak hours, causing service degradation.", "zh": "高峰时段API速率限制被突破，导致服务降级。"},
+        {"en": "We prioritized the backlog based on impact-effort scoring.", "zh": "我们根据影响-工作量评分对需求池进行了优先级排序。"},
+        {"en": "The heatmap shows that users rarely scroll past the first fold of the page.", "zh": "热力图显示用户很少滚动到页面首屏以下。"},
+        {"en": "A/B test results showed a statistically significant improvement in the variant group.", "zh": "A/B测试结果显示实验组有统计学上显著的改善。"},
+        {"en": "The product spec was ambiguous, which led to different interpretations across teams.", "zh": "产品规格文档含糊不清，导致各团队理解不一致。"}
+      ],
+      "vocabulary": [
+        {"word": "rate limit", "phonetic": "/reɪt ˈlɪmɪt/", "meaning": "速率限制", "example": {"en": "We increased the API rate limit to handle the growing traffic.", "zh": "我们提高了API速率限制以应对增长的流量。"}},
+        {"word": "backlog", "phonetic": "/ˈbæklɒɡ/", "meaning": "需求池；积压", "example": {"en": "The product backlog has over 200 items that need to be groomed.", "zh": "产品需求池有超过200项待梳理的需求。"}},
+        {"word": "heatmap", "phonetic": "/ˈhiːtmæp/", "meaning": "热力图", "example": {"en": "The heatmap revealed that the call-to-action button gets very few clicks.", "zh": "热力图显示行动号召按钮的点击量非常少。"}},
+        {"word": "statistically significant", "phonetic": "/stəˈtɪstɪkli sɪɡˈnɪfɪkənt/", "meaning": "统计学上显著的", "example": {"en": "We need at least 10,000 samples for the result to be statistically significant.", "zh": "我们至少需要10000个样本才能使结果具有统计学显著性。"}},
+        {"word": "ambiguous", "phonetic": "/æmˈbɪɡjuəs/", "meaning": "模糊的；不明确的", "example": {"en": "Ambiguous requirements are the leading cause of rework in software projects.", "zh": "模糊的需求是软件项目中返工的首要原因。"}}
+      ]
+    },
+    "finance": {
+      "label": "Finance / Investment",
+      "sentences": [
+        {"en": "The central bank held interest rates steady, defying market expectations of a cut.", "zh": "央行维持利率不变，与市场预期的降息相左。"},
+        {"en": "Revenue per user increased by 12% after the premium tier was introduced.", "zh": "推出高级会员后，每用户收入提高了12%。"},
+        {"en": "The company's market capitalization surpassed $10 billion for the first time.", "zh": "公司市值首次突破100亿美元。"},
+        {"en": "Hedge funds are rotating out of tech stocks into defensive sectors.", "zh": "对冲基金正在从科技股转向防御性板块。"},
+        {"en": "The trailing twelve-month revenue grew 45% year-over-year.", "zh": "过去十二个月的收入同比增长了45%。"}
+      ],
+      "vocabulary": [
+        {"word": "interest rate", "phonetic": "/ˈɪntrəst reɪt/", "meaning": "利率", "example": {"en": "Rising interest rates typically put downward pressure on growth stocks.", "zh": "利率上升通常会对成长股构成下行压力。"}},
+        {"word": "market capitalization", "phonetic": "/ˈmɑːkɪt ˌkæpɪtəlaɪˈzeɪʃən/", "meaning": "市值", "example": {"en": "Apple's market capitalization makes it the most valuable company in the world.", "zh": "苹果的市值使其成为全球最有价值的公司。"}},
+        {"word": "hedge fund", "phonetic": "/hedʒ fʌnd/", "meaning": "对冲基金", "example": {"en": "Hedge funds use complex strategies to generate returns in any market condition.", "zh": "对冲基金使用复杂策略在任何市场条件下获取收益。"}},
+        {"word": "defensive sector", "phonetic": "/dɪˈfensɪv ˈsektə/", "meaning": "防御性板块", "example": {"en": "Utilities and healthcare are considered defensive sectors during downturns.", "zh": "公用事业和医疗保健在经济下行时被视为防御性板块。"}},
+        {"word": "trailing twelve months", "phonetic": "/ˈtreɪlɪŋ twelv mʌnθs/", "meaning": "过去十二个月（TTM）", "example": {"en": "Trailing twelve-month revenue is a common measure for evaluating recent performance.", "zh": "过去十二个月的收入是评估近期表现的常用指标。"}}
+      ]
+    },
+    "team": {
+      "label": "Team / Management",
+      "sentences": [
+        {"en": "The team velocity has stabilized at 40 story points per sprint.", "zh": "团队速率已稳定在每个冲刺40个故事点。"},
+        {"en": "We need to set clear boundaries between work time and personal time for remote workers.", "zh": "我们需要为远程员工在工作时间和个人时间之间设定明确界限。"},
+        {"en": "The competency matrix helps identify skill gaps across the engineering team.", "zh": "能力矩阵帮助识别工程团队的技能缺口。"},
+        {"en": "I want to empower the team to make decisions without waiting for my approval.", "zh": "我希望赋能团队自主决策，而不是等待我的批准。"},
+        {"en": "The attrition rate in Q1 was 8%, which is above our target of 5%.", "zh": "Q1的离职率为8%，高于我们5%的目标。"}
+      ],
+      "vocabulary": [
+        {"word": "velocity", "phonetic": "/vəˈlɒsɪti/", "meaning": "速率（敏捷开发）", "example": {"en": "Team velocity helps us predict how much work we can deliver in a sprint.", "zh": "团队速率帮助我们预测一个冲刺能交付多少工作量。"}},
+        {"word": "competency matrix", "phonetic": "/ˈkɒmpɪtənsi ˈmeɪtrɪks/", "meaning": "能力矩阵", "example": {"en": "The competency matrix maps each team member's skill level across key areas.", "zh": "能力矩阵标记了每个团队成员在关键领域的技能水平。"}},
+        {"word": "empower", "phonetic": "/ɪmˈpaʊə/", "meaning": "赋能；授权", "example": {"en": "Leaders who empower their teams see higher engagement and innovation.", "zh": "赋能团队的领导者能看到更高的参与度和创新。"}},
+        {"word": "attrition", "phonetic": "/əˈtrɪʃən/", "meaning": "流失；人员减少", "example": {"en": "High attrition in engineering is often caused by lack of growth opportunities.", "zh": "工程团队的高流失率通常是缺乏成长机会导致的。"}},
+        {"word": "story point", "phonetic": "/ˈstɔːri pɔɪnt/", "meaning": "故事点", "example": {"en": "We estimate task complexity using story points rather than hours.", "zh": "我们用故事点而不是工时来估算任务复杂度。"}}
+      ]
+    },
+    "strategy": {
+      "label": "Strategy / Planning",
+      "sentences": [
+        {"en": "The winner-take-all dynamic in this market favors the player with the largest user base.", "zh": "这个市场的赢者通吃格局有利于用户基数最大的玩家。"},
+        {"en": "We should conduct a scenario analysis to stress-test our three-year plan.", "zh": "我们应该进行情景分析来压力测试我们的三年计划。"},
+        {"en": "The adjacency strategy allows us to expand into related verticals with low risk.", "zh": "邻接战略让我们能以低风险扩展到相关垂直领域。"},
+        {"en": "Our pricing power comes from the switching cost embedded in the product.", "zh": "我们的定价权来自产品内嵌的转换成本。"},
+        {"en": "The joint venture in Singapore gives us a local license without building from scratch.", "zh": "在新加坡的合资企业使我们无需从零开始就能获得本地牌照。"}
+      ],
+      "vocabulary": [
+        {"word": "winner-take-all", "phonetic": "/ˈwɪnə teɪk ɔːl/", "meaning": "赢者通吃", "example": {"en": "Platform businesses tend to create winner-take-all markets.", "zh": "平台型企业往往会形成赢者通吃的市场格局。"}},
+        {"word": "scenario analysis", "phonetic": "/sɪˈnɑːriəʊ əˈnæləsɪs/", "meaning": "情景分析", "example": {"en": "Scenario analysis helps the board prepare for both best-case and worst-case outcomes.", "zh": "情景分析帮助董事会为最佳和最差结果做好准备。"}},
+        {"word": "adjacency", "phonetic": "/əˈdʒeɪsənsi/", "meaning": "邻接；相邻领域", "example": {"en": "Expanding into adjacencies leverages your existing capabilities.", "zh": "向相邻领域扩展可以利用你现有的能力。"}},
+        {"word": "switching cost", "phonetic": "/ˈswɪtʃɪŋ kɒst/", "meaning": "转换成本", "example": {"en": "High switching costs make it difficult for users to leave for a competitor.", "zh": "高转换成本使用户难以转向竞争对手。"}},
+        {"word": "joint venture", "phonetic": "/dʒɔɪnt ˈventʃə/", "meaning": "合资企业", "example": {"en": "The joint venture combines our technology with their local market expertise.", "zh": "合资企业将我们的技术与他们的本地市场专长结合起来。"}}
+      ]
+    }
+  }
+}

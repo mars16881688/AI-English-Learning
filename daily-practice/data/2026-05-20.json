@@ -1,0 +1,90 @@
+{
+  "date": "2026-05-20",
+  "themes": {
+    "growth": {
+      "label": "Growth / Marketing",
+      "sentences": [
+        {"en": "The activation event should be tied to the moment users first experience core value.", "zh": "激活事件应该与用户首次体验核心价值的时刻挂钩。"},
+        {"en": "We are testing a gamification layer to increase daily engagement among new users.", "zh": "我们正在测试游戏化层来提升新用户的日活跃度。"},
+        {"en": "The cost per install on TikTok is 40% lower than on Instagram in the Singapore market.", "zh": "在新加坡市场，TikTok上的每次安装成本比Instagram低40%。"},
+        {"en": "The notification fatigue is real — we should cap push messages at three per day.", "zh": "通知疲劳是真实存在的——我们应该将推送消息限制在每天三条。"},
+        {"en": "The growth accounting framework breaks MAU changes into new, retained, resurrected, and churned.", "zh": "增长核算框架将MAU变化拆解为新增、留存、回流和流失。"}
+      ],
+      "vocabulary": [
+        {"word": "gamification", "phonetic": "/ˌɡeɪmɪfɪˈkeɪʃən/", "meaning": "游戏化", "example": {"en": "Gamification elements like badges and streaks boost user engagement.", "zh": "徽章和连续打卡等游戏化元素能提升用户参与度。"}},
+        {"word": "cost per install", "phonetic": "/kɒst pɜːr ɪnˈstɔːl/", "meaning": "每次安装成本（CPI）", "example": {"en": "The cost per install varies widely depending on the ad platform and geography.", "zh": "每次安装成本因广告平台和地域而差异很大。"}},
+        {"word": "notification fatigue", "phonetic": "/ˌnəʊtɪfɪˈkeɪʃən fəˈtiːɡ/", "meaning": "通知疲劳", "example": {"en": "Notification fatigue causes users to disable push notifications entirely.", "zh": "通知疲劳导致用户完全关闭推送通知。"}},
+        {"word": "growth accounting", "phonetic": "/ɡrəʊθ əˈkaʊntɪŋ/", "meaning": "增长核算", "example": {"en": "Growth accounting reveals whether MAU growth comes from new users or reactivation.", "zh": "增长核算揭示MAU增长是来自新用户还是重新激活。"}},
+        {"word": "resurrected user", "phonetic": "/ˌrezəˈrektɪd ˈjuːzər/", "meaning": "回流用户", "example": {"en": "Resurrected users who return after 30 days of inactivity have lower retention than new users.", "zh": "沉默30天后回流的用户留存率低于新用户。"}}
+      ]
+    },
+    "product": {
+      "label": "Product / Metrics",
+      "sentences": [
+        {"en": "The progressive disclosure pattern helps simplify complex interfaces for novice users.", "zh": "渐进式展示模式有助于为新手用户简化复杂界面。"},
+        {"en": "We should set up synthetic monitoring to detect outages before users report them.", "zh": "我们应该设置合成监控，在用户报告之前发现故障。"},
+        {"en": "The accessibility audit found 15 critical issues that violate WCAG guidelines.", "zh": "无障碍审计发现了15个违反WCAG指南的关键问题。"},
+        {"en": "The time-to-first-byte metric on our API has improved by 35% after the migration.", "zh": "迁移后，我们API的首字节时间指标改善了35%。"},
+        {"en": "We are building a recommendation engine to surface relevant stocks based on user behavior.", "zh": "我们正在构建推荐引擎，根据用户行为推荐相关股票。"}
+      ],
+      "vocabulary": [
+        {"word": "progressive disclosure", "phonetic": "/prəˈɡresɪv dɪsˈkləʊʒər/", "meaning": "渐进式展示", "example": {"en": "Progressive disclosure reduces cognitive load by showing only essential information first.", "zh": "渐进式展示通过先只显示核心信息来减少认知负担。"}},
+        {"word": "synthetic monitoring", "phonetic": "/sɪnˈθetɪk ˈmɒnɪtərɪŋ/", "meaning": "合成监控", "example": {"en": "Synthetic monitoring simulates user transactions to detect issues proactively.", "zh": "合成监控模拟用户交易以主动发现问题。"}},
+        {"word": "accessibility", "phonetic": "/əkˌsesɪˈbɪlɪti/", "meaning": "无障碍性", "example": {"en": "Improving accessibility benefits all users, not just those with disabilities.", "zh": "改善无障碍性有利于所有用户，不仅仅是残障人士。"}},
+        {"word": "time-to-first-byte", "phonetic": "/taɪm tə fɜːst baɪt/", "meaning": "首字节时间（TTFB）", "example": {"en": "A time-to-first-byte under 200 milliseconds is considered excellent.", "zh": "首字节时间低于200毫秒被认为是优秀的。"}},
+        {"word": "recommendation engine", "phonetic": "/ˌrekəmenˈdeɪʃən ˈendʒɪn/", "meaning": "推荐引擎", "example": {"en": "The recommendation engine uses collaborative filtering to personalize the experience.", "zh": "推荐引擎使用协同过滤来个性化用户体验。"}}
+      ]
+    },
+    "finance": {
+      "label": "Finance / Investment",
+      "sentences": [
+        {"en": "The Sharpe ratio measures risk-adjusted returns, making it easier to compare strategies.", "zh": "夏普比率衡量风险调整后的回报，使策略比较更容易。"},
+        {"en": "The company's revenue guidance for next quarter came in below market expectations.", "zh": "公司下季度的收入指引低于市场预期。"},
+        {"en": "Dollar-cost averaging reduces the impact of short-term price fluctuations.", "zh": "定投策略降低了短期价格波动的影响。"},
+        {"en": "The sector ETF saw record inflows as investors rotated into technology stocks.", "zh": "随着投资者转向科技股，该板块ETF录得了创纪录的资金流入。"},
+        {"en": "The company maintains a strong balance sheet with $2 billion in cash reserves.", "zh": "该公司资产负债表强劲，拥有20亿美元的现金储备。"}
+      ],
+      "vocabulary": [
+        {"word": "Sharpe ratio", "phonetic": "/ʃɑːp ˈreɪʃiəʊ/", "meaning": "夏普比率", "example": {"en": "A Sharpe ratio above 1 indicates good risk-adjusted performance.", "zh": "夏普比率高于1表示良好的风险调整后表现。"}},
+        {"word": "revenue guidance", "phonetic": "/ˈrevənjuː ˈɡaɪdəns/", "meaning": "收入指引", "example": {"en": "The company raised its full-year revenue guidance after the strong Q2 results.", "zh": "在强劲的Q2业绩后，公司上调了全年收入指引。"}},
+        {"word": "dollar-cost averaging", "phonetic": "/ˈdɒlər kɒst ˈævərɪdʒɪŋ/", "meaning": "定期定额投资（定投）", "example": {"en": "Dollar-cost averaging is ideal for long-term investors who want to minimize timing risk.", "zh": "定投非常适合想要最小化择时风险的长期投资者。"}},
+        {"word": "ETF", "phonetic": "/ˌiː tiː ˈef/", "meaning": "交易型开放式指数基金", "example": {"en": "ETFs provide diversified exposure to an entire sector with a single trade.", "zh": "ETF通过单笔交易提供对整个板块的分散化敞口。"}},
+        {"word": "balance sheet", "phonetic": "/ˈbæləns ʃiːt/", "meaning": "资产负债表", "example": {"en": "A strong balance sheet gives the company flexibility to pursue acquisitions.", "zh": "强劲的资产负债表赋予公司追求收购的灵活性。"}}
+      ]
+    },
+    "team": {
+      "label": "Team / Management",
+      "sentences": [
+        {"en": "The objective should be ambitious enough to inspire but realistic enough to achieve.", "zh": "目标应该足够有雄心来激励团队，但也要足够现实来实现。"},
+        {"en": "We are introducing a peer recognition program to reinforce positive behaviors.", "zh": "我们正在引入同侪认可项目来强化积极行为。"},
+        {"en": "The capacity planning exercise shows we are understaffed for the Q3 product roadmap.", "zh": "产能规划评估显示，我们在Q3产品路线图上人手不足。"},
+        {"en": "Transparent communication about company performance builds trust with the entire team.", "zh": "关于公司业绩的透明沟通能建立与整个团队的信任。"},
+        {"en": "The hiring bar should not be lowered even when the team is under pressure to deliver.", "zh": "即使团队面临交付压力，招聘标准也不应该降低。"}
+      ],
+      "vocabulary": [
+        {"word": "peer recognition", "phonetic": "/pɪər ˌrekəɡˈnɪʃən/", "meaning": "同侪认可", "example": {"en": "Peer recognition programs increase engagement and reduce voluntary turnover.", "zh": "同侪认可项目能提升参与度并降低主动离职率。"}},
+        {"word": "capacity planning", "phonetic": "/kəˈpæsɪti ˈplænɪŋ/", "meaning": "产能规划", "example": {"en": "Capacity planning ensures the team has enough resources to meet upcoming deadlines.", "zh": "产能规划确保团队有足够资源来满足即将到来的截止日期。"}},
+        {"word": "hiring bar", "phonetic": "/ˈhaɪərɪŋ bɑːr/", "meaning": "招聘标准", "example": {"en": "Maintaining a high hiring bar protects team quality and culture.", "zh": "保持高招聘标准保护了团队质量和文化。"}},
+        {"word": "transparent", "phonetic": "/trænsˈpærənt/", "meaning": "透明的", "example": {"en": "Transparent decision-making helps build trust across the organization.", "zh": "透明的决策有助于在整个组织中建立信任。"}},
+        {"word": "understaffed", "phonetic": "/ˌʌndəˈstɑːft/", "meaning": "人手不足的", "example": {"en": "Being understaffed leads to burnout and lower quality of work.", "zh": "人手不足会导致倦怠和工作质量下降。"}}
+      ]
+    },
+    "strategy": {
+      "label": "Strategy / Planning",
+      "sentences": [
+        {"en": "The Jobs-to-be-Done framework helps us understand why users hire our product.", "zh": "待完成工作框架帮助我们理解用户为什么选择使用我们的产品。"},
+        {"en": "We should protect our core market share while experimenting with adjacent opportunities.", "zh": "我们应该保护核心市场份额，同时尝试相邻机会。"},
+        {"en": "The asymmetric risk profile means the upside potential far outweighs the downside.", "zh": "不对称的风险特征意味着上行潜力远大于下行风险。"},
+        {"en": "The value chain analysis revealed that data processing is our weakest link.", "zh": "价值链分析揭示数据处理是我们最薄弱的环节。"},
+        {"en": "Our strategic intent is to become the fintech infrastructure layer for Asia-Pacific.", "zh": "我们的战略意图是成为亚太地区的金融科技基础设施层。"}
+      ],
+      "vocabulary": [
+        {"word": "Jobs-to-be-Done", "phonetic": "/dʒɒbz tə biː dʌn/", "meaning": "待完成工作（JTBD框架）", "example": {"en": "The Jobs-to-be-Done framework shifts focus from features to user outcomes.", "zh": "待完成工作框架将焦点从功能转向用户成果。"}},
+        {"word": "market share", "phonetic": "/ˈmɑːkɪt ʃeər/", "meaning": "市场份额", "example": {"en": "Gaining market share in a shrinking market is not a sustainable growth strategy.", "zh": "在萎缩的市场中获取市场份额不是可持续的增长策略。"}},
+        {"word": "asymmetric", "phonetic": "/ˌeɪsɪˈmetrɪk/", "meaning": "不对称的", "example": {"en": "Smart investors look for asymmetric bets where the potential gain far exceeds the potential loss.", "zh": "聪明的投资者寻找潜在收益远超潜在损失的不对称投注。"}},
+        {"word": "value chain", "phonetic": "/ˈvæljuː tʃeɪn/", "meaning": "价值链", "example": {"en": "Controlling more of the value chain increases profit margins and reduces dependency.", "zh": "控制更多的价值链能提升利润率并降低依赖性。"}},
+        {"word": "strategic intent", "phonetic": "/strəˈtiːdʒɪk ɪnˈtent/", "meaning": "战略意图", "example": {"en": "A clear strategic intent aligns the entire organization around a shared long-term goal.", "zh": "清晰的战略意图让整个组织围绕共同的长期目标对齐。"}}
+      ]
+    }
+  }
+}

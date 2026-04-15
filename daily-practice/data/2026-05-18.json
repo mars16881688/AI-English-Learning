@@ -1,0 +1,90 @@
+{
+  "date": "2026-05-18",
+  "themes": {
+    "growth": {
+      "label": "Growth / Marketing",
+      "sentences": [
+        {"en": "The freemium model works best when the free tier demonstrates clear value.", "zh": "免费增值模式在免费层展示出明确价值时效果最好。"},
+        {"en": "Our brand awareness survey shows 35% unaided recall in the Hong Kong market.", "zh": "品牌认知调查显示在香港市场有35%的无提示回忆率。"},
+        {"en": "The onboarding email sequence has a 28% completion rate across all steps.", "zh": "新手引导邮件序列在所有步骤中的完成率为28%。"},
+        {"en": "We need to calculate the marginal return on each additional dollar of ad spend.", "zh": "我们需要计算每增加一美元广告支出的边际回报。"},
+        {"en": "The referral loop closes when the invited user also starts inviting others.", "zh": "当被邀请的用户也开始邀请他人时，推荐闭环就形成了。"}
+      ],
+      "vocabulary": [
+        {"word": "freemium", "phonetic": "/ˈfriːmiəm/", "meaning": "免费增值", "example": {"en": "The freemium conversion rate from free to paid is typically 2-5%.", "zh": "从免费到付费的免费增值转化率通常为2-5%。"}},
+        {"word": "unaided recall", "phonetic": "/ˌʌnˈeɪdɪd rɪˈkɔːl/", "meaning": "无提示回忆", "example": {"en": "Unaided recall measures how well your brand comes to mind without prompting.", "zh": "无提示回忆衡量在没有提示的情况下你的品牌浮现在脑海中的程度。"}},
+        {"word": "marginal return", "phonetic": "/ˈmɑːdʒɪnəl rɪˈtɜːn/", "meaning": "边际回报", "example": {"en": "Diminishing marginal returns indicate we should reallocate budget.", "zh": "边际回报递减表明我们应该重新分配预算。"}},
+        {"word": "email sequence", "phonetic": "/ˈiːmeɪl ˈsiːkwəns/", "meaning": "邮件序列", "example": {"en": "The welcome email sequence has five touchpoints over 14 days.", "zh": "欢迎邮件序列在14天内有五个触点。"}},
+        {"word": "referral loop", "phonetic": "/rɪˈfɜːrəl luːp/", "meaning": "推荐闭环", "example": {"en": "A self-sustaining referral loop drives exponential growth.", "zh": "自我持续的推荐闭环驱动指数级增长。"}}
+      ]
+    },
+    "product": {
+      "label": "Product / Metrics",
+      "sentences": [
+        {"en": "The canary release caught a critical bug before it reached the majority of users.", "zh": "金丝雀发布在问题到达大多数用户之前捕获了一个关键缺陷。"},
+        {"en": "We need to define acceptance criteria before the engineering team starts building.", "zh": "在工程团队开始开发之前，我们需要先定义验收标准。"},
+        {"en": "The heat map analysis shows that most users ignore the right sidebar entirely.", "zh": "热力图分析显示大多数用户完全忽略了右侧边栏。"},
+        {"en": "Our technical architecture must support 10x the current traffic within two years.", "zh": "我们的技术架构必须在两年内支撑当前流量的10倍。"},
+        {"en": "The rollback took only 3 minutes thanks to the automated deployment pipeline.", "zh": "由于自动化部署流水线，回滚只用了3分钟。"}
+      ],
+      "vocabulary": [
+        {"word": "canary release", "phonetic": "/kəˈneəri rɪˈliːs/", "meaning": "金丝雀发布", "example": {"en": "A canary release exposes new code to a small subset of users first.", "zh": "金丝雀发布先将新代码暴露给一小部分用户。"}},
+        {"word": "acceptance criteria", "phonetic": "/əkˈseptəns kraɪˈtɪəriə/", "meaning": "验收标准", "example": {"en": "Well-defined acceptance criteria prevent scope creep and rework.", "zh": "明确的验收标准能防止范围蔓延和返工。"}},
+        {"word": "heat map", "phonetic": "/hiːt mæp/", "meaning": "热力图", "example": {"en": "The heat map revealed that the call-to-action button was below the fold.", "zh": "热力图显示行动号召按钮在页面首屏以下。"}},
+        {"word": "rollback", "phonetic": "/ˈrəʊlbæk/", "meaning": "回滚", "example": {"en": "The ability to rollback quickly is critical for production stability.", "zh": "快速回滚的能力对生产环境的稳定性至关重要。"}},
+        {"word": "pipeline", "phonetic": "/ˈpaɪplaɪn/", "meaning": "流水线", "example": {"en": "The CI/CD pipeline automates testing and deployment to production.", "zh": "CI/CD流水线自动化了测试和生产环境部署。"}}
+      ]
+    },
+    "finance": {
+      "label": "Finance / Investment",
+      "sentences": [
+        {"en": "The price-to-book ratio is below 1, which suggests the stock may be undervalued.", "zh": "市净率低于1，表明该股票可能被低估。"},
+        {"en": "Operating leverage kicked in as fixed costs were spread across higher revenue.", "zh": "随着固定成本分摊到更高的收入中，经营杠杆开始发挥作用。"},
+        {"en": "The company repurchased $300 million of its own shares in the open market.", "zh": "该公司在公开市场回购了3亿美元的自身股票。"},
+        {"en": "Emerging market equities offer higher growth potential but come with currency risk.", "zh": "新兴市场股票提供更高的增长潜力，但伴随汇率风险。"},
+        {"en": "The gross merchandise value exceeded $1 billion for the first time last quarter.", "zh": "上季度商品交易总额首次超过10亿美元。"}
+      ],
+      "vocabulary": [
+        {"word": "price-to-book", "phonetic": "/praɪs tə bʊk/", "meaning": "市净率（PB）", "example": {"en": "Banks with a price-to-book below 1 are trading below their net asset value.", "zh": "市净率低于1的银行交易价格低于其净资产价值。"}},
+        {"word": "operating leverage", "phonetic": "/ˈɒpəreɪtɪŋ ˈlevərɪdʒ/", "meaning": "经营杠杆", "example": {"en": "Software companies have high operating leverage due to low marginal costs.", "zh": "软件公司由于低边际成本而具有高经营杠杆。"}},
+        {"word": "share buyback", "phonetic": "/ʃeər ˈbaɪbæk/", "meaning": "股票回购", "example": {"en": "Share buybacks reduce the number of outstanding shares and boost EPS.", "zh": "股票回购减少流通股数量并提升每股收益。"}},
+        {"word": "emerging market", "phonetic": "/ɪˈmɜːdʒɪŋ ˈmɑːkɪt/", "meaning": "新兴市场", "example": {"en": "Emerging markets account for 40% of global GDP but attract disproportionately less capital.", "zh": "新兴市场占全球GDP的40%，但吸引的资本不成比例地少。"}},
+        {"word": "GMV", "phonetic": "/ˌdʒiː em ˈviː/", "meaning": "商品交易总额", "example": {"en": "GMV growth does not always translate into revenue growth.", "zh": "商品交易总额增长并不总是转化为收入增长。"}}
+      ]
+    },
+    "team": {
+      "label": "Team / Management",
+      "sentences": [
+        {"en": "The SBI framework helps deliver feedback that is specific, behavioral, and impactful.", "zh": "SBI框架帮助提供具体的、基于行为的、有影响力的反馈。"},
+        {"en": "We should celebrate small wins to maintain team morale during the long project.", "zh": "在长周期项目中，我们应该庆祝小胜利以维持团队士气。"},
+        {"en": "The talent pipeline is thin for senior data engineers in the Singapore market.", "zh": "在新加坡市场，高级数据工程师的人才储备不足。"},
+        {"en": "I need you to take the lead on the vendor evaluation process.", "zh": "我需要你来主导供应商评估流程。"},
+        {"en": "The team charter defines our working agreements and decision-making process.", "zh": "团队章程定义了我们的工作协议和决策流程。"}
+      ],
+      "vocabulary": [
+        {"word": "SBI framework", "phonetic": "/ˌes biː ˈaɪ ˈfreɪmwɜːk/", "meaning": "SBI反馈框架（情境-行为-影响）", "example": {"en": "Using the SBI framework prevents feedback from feeling like a personal attack.", "zh": "使用SBI框架能防止反馈让人感觉像人身攻击。"}},
+        {"word": "morale", "phonetic": "/məˈrɑːl/", "meaning": "士气", "example": {"en": "Low morale often leads to higher turnover and lower productivity.", "zh": "低士气通常导致更高的离职率和更低的生产力。"}},
+        {"word": "talent pipeline", "phonetic": "/ˈtælənt ˈpaɪplaɪn/", "meaning": "人才储备；人才管道", "example": {"en": "Building a strong talent pipeline requires continuous engagement with candidates.", "zh": "建立强大的人才储备需要与候选人持续互动。"}},
+        {"word": "vendor evaluation", "phonetic": "/ˈvendər ɪˌvæljuˈeɪʃən/", "meaning": "供应商评估", "example": {"en": "The vendor evaluation scorecard covers price, reliability, and support quality.", "zh": "供应商评估计分卡涵盖价格、可靠性和服务支持质量。"}},
+        {"word": "team charter", "phonetic": "/tiːm ˈtʃɑːtər/", "meaning": "团队章程", "example": {"en": "The team charter is reviewed and updated every quarter.", "zh": "团队章程每季度审查和更新一次。"}}
+      ]
+    },
+    "strategy": {
+      "label": "Strategy / Planning",
+      "sentences": [
+        {"en": "The disruptive innovation starts at the low end of the market and moves upward.", "zh": "颠覆性创新从市场低端开始，逐步向上发展。"},
+        {"en": "We need to build ecosystem stickiness so users cannot easily migrate to competitors.", "zh": "我们需要建立生态粘性，让用户不能轻易迁移到竞争对手。"},
+        {"en": "The risk-reward profile of this initiative favors aggressive investment.", "zh": "这个举措的风险回报特征有利于积极投入。"},
+        {"en": "Our data asset is the most defensible competitive advantage we have.", "zh": "我们的数据资产是我们拥有的最具防御性的竞争优势。"},
+        {"en": "The consolidation wave in the industry will create acquisition opportunities.", "zh": "行业整合浪潮将创造收购机会。"}
+      ],
+      "vocabulary": [
+        {"word": "disruptive innovation", "phonetic": "/dɪsˈrʌptɪv ˌɪnəˈveɪʃən/", "meaning": "颠覆性创新", "example": {"en": "Disruptive innovation often comes from startups that incumbents initially ignore.", "zh": "颠覆性创新往往来自在位者最初忽视的创业公司。"}},
+        {"word": "ecosystem", "phonetic": "/ˈiːkəʊsɪstəm/", "meaning": "生态系统", "example": {"en": "A robust ecosystem of third-party integrations adds value to the core platform.", "zh": "强大的第三方集成生态系统为核心平台增加价值。"}},
+        {"word": "risk-reward", "phonetic": "/rɪsk rɪˈwɔːd/", "meaning": "风险回报", "example": {"en": "Every strategic decision should be evaluated on its risk-reward profile.", "zh": "每个战略决策都应该根据其风险回报特征来评估。"}},
+        {"word": "defensible", "phonetic": "/dɪˈfensəbl/", "meaning": "可防御的", "example": {"en": "A defensible market position requires sustained investment in technology.", "zh": "可防御的市场地位需要在技术上持续投入。"}},
+        {"word": "consolidation", "phonetic": "/kənˌsɒlɪˈdeɪʃən/", "meaning": "整合；合并", "example": {"en": "Industry consolidation typically benefits the top three players.", "zh": "行业整合通常有利于前三名的玩家。"}}
+      ]
+    }
+  }
+}

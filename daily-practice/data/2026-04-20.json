@@ -1,0 +1,90 @@
+{
+  "date": "2026-04-20",
+  "themes": {
+    "growth": {
+      "label": "Growth / Marketing",
+      "sentences": [
+        {"en": "The referral incentive structure needs to reward both the referrer and the invitee.", "zh": "推荐激励结构需要同时奖励推荐人和被邀请人。"},
+        {"en": "We achieved product-market fit in Hong Kong but still iterating in Singapore.", "zh": "我们在香港已经实现了产品市场匹配，但在新加坡仍在迭代。"},
+        {"en": "The customer acquisition cost doubled after Apple's privacy changes.", "zh": "苹果隐私政策变更后，获客成本翻了一倍。"},
+        {"en": "Our brand awareness campaign lifted unaided recall by 12 percentage points.", "zh": "我们的品牌认知活动使无提示回忆率提升了12个百分点。"},
+        {"en": "Lifecycle marketing emails have a 3x higher open rate than promotional blasts.", "zh": "生命周期营销邮件的打开率比促销群发邮件高3倍。"}
+      ],
+      "vocabulary": [
+        {"word": "incentive", "phonetic": "/ɪnˈsentɪv/", "meaning": "激励；奖励", "example": {"en": "Cash incentives for first deposits drove a spike in new account openings.", "zh": "首次入金现金激励推动了新开户数的激增。"}},
+        {"word": "product-market fit", "phonetic": "/ˈprɒdʌkt ˈmɑːkɪt fɪt/", "meaning": "产品市场匹配", "example": {"en": "You know you have product-market fit when users start recommending you organically.", "zh": "当用户开始自发推荐你的产品时，你就知道达到了产品市场匹配。"}},
+        {"word": "unaided recall", "phonetic": "/ˌʌnˈeɪdɪd rɪˈkɔːl/", "meaning": "无提示回忆", "example": {"en": "Unaided recall measures how well consumers remember your brand without prompts.", "zh": "无提示回忆衡量消费者在没有提示下记住你品牌的程度。"}},
+        {"word": "lifecycle marketing", "phonetic": "/ˈlaɪfsaɪkəl ˈmɑːkɪtɪŋ/", "meaning": "生命周期营销", "example": {"en": "Lifecycle marketing tailors messages to each stage of the customer journey.", "zh": "生命周期营销根据客户旅程的每个阶段定制消息。"}},
+        {"word": "open rate", "phonetic": "/ˈəʊpən reɪt/", "meaning": "打开率", "example": {"en": "Personalizing the subject line improved the email open rate by 25%.", "zh": "个性化主题行使邮件打开率提升了25%。"}}
+      ]
+    },
+    "product": {
+      "label": "Product / Metrics",
+      "sentences": [
+        {"en": "The A/B test reached statistical significance after 14 days.", "zh": "A/B测试在14天后达到了统计显著性。"},
+        {"en": "We are migrating the monolith to a microservices architecture.", "zh": "我们正在将单体架构迁移到微服务架构。"},
+        {"en": "The product team prioritized the backlog using the RICE scoring framework.", "zh": "产品团队使用RICE评分框架对需求池进行了优先级排序。"},
+        {"en": "Push notification delivery rate dropped on Huawei devices due to a firmware update.", "zh": "由于固件更新，华为设备上的推送通知到达率下降了。"},
+        {"en": "We instrumented the checkout flow to capture every micro-conversion.", "zh": "我们在结账流程中埋了点，以捕获每一个微转化。"}
+      ],
+      "vocabulary": [
+        {"word": "statistical significance", "phonetic": "/stəˈtɪstɪkəl sɪɡˈnɪfɪkəns/", "meaning": "统计显著性", "example": {"en": "Do not make decisions based on results that lack statistical significance.", "zh": "不要根据缺乏统计显著性的结果做决策。"}},
+        {"word": "monolith", "phonetic": "/ˈmɒnəlɪθ/", "meaning": "单体架构", "example": {"en": "The monolith became difficult to maintain as the codebase grew.", "zh": "随着代码库的增长，单体架构变得难以维护。"}},
+        {"word": "backlog", "phonetic": "/ˈbæklɒɡ/", "meaning": "需求池；积压任务", "example": {"en": "The product backlog contains over 200 feature requests from users.", "zh": "产品需求池包含了来自用户的200多个功能请求。"}},
+        {"word": "instrumented", "phonetic": "/ˈɪnstrʊmentɪd/", "meaning": "已埋点的；加了监测的", "example": {"en": "Every key user action is instrumented to feed our analytics dashboard.", "zh": "每个关键用户行为都已埋点，数据流入我们的分析仪表盘。"}},
+        {"word": "micro-conversion", "phonetic": "/ˈmaɪkrəʊ kənˈvɜːʃən/", "meaning": "微转化", "example": {"en": "Tracking micro-conversions helps identify where users lose interest.", "zh": "追踪微转化有助于识别用户在哪里失去兴趣。"}}
+      ]
+    },
+    "finance": {
+      "label": "Finance / Investment",
+      "sentences": [
+        {"en": "The company's revenue mix is shifting from commissions to subscription fees.", "zh": "公司的收入结构正在从佣金向订阅费转移。"},
+        {"en": "Beta of 1.3 means this stock is 30% more volatile than the benchmark index.", "zh": "1.3的Beta系数意味着这只股票比基准指数波动性高30%。"},
+        {"en": "Gross margin compression was driven by higher raw material costs.", "zh": "毛利率收窄是由更高的原材料成本驱动的。"},
+        {"en": "The company's working capital cycle improved from 45 days to 32 days.", "zh": "公司的营运资金周转周期从45天改善到32天。"},
+        {"en": "The insider buying pattern suggests management confidence in near-term outlook.", "zh": "高管增持模式表明管理层对近期前景有信心。"}
+      ],
+      "vocabulary": [
+        {"word": "revenue mix", "phonetic": "/ˈrevənjuː mɪks/", "meaning": "收入结构", "example": {"en": "A diversified revenue mix reduces dependence on any single income source.", "zh": "多元化的收入结构减少了对单一收入来源的依赖。"}},
+        {"word": "beta", "phonetic": "/ˈbeɪtə/", "meaning": "贝塔系数（波动性指标）", "example": {"en": "A beta below 1 indicates the stock is less volatile than the market.", "zh": "贝塔系数低于1表明该股票波动性低于市场。"}},
+        {"word": "gross margin compression", "phonetic": "/ɡrəʊs ˈmɑːdʒɪn kəmˈpreʃən/", "meaning": "毛利率收窄", "example": {"en": "Gross margin compression often signals rising input costs or pricing pressure.", "zh": "毛利率收窄通常意味着投入成本上升或定价压力。"}},
+        {"word": "working capital", "phonetic": "/ˈwɜːkɪŋ ˈkæpɪtəl/", "meaning": "营运资金", "example": {"en": "Efficient working capital management frees up cash for investment.", "zh": "高效的营运资金管理释放出用于投资的现金。"}},
+        {"word": "insider buying", "phonetic": "/ɪnˈsaɪdə ˈbaɪɪŋ/", "meaning": "高管增持", "example": {"en": "Insider buying is often interpreted as a bullish signal by the market.", "zh": "高管增持通常被市场解读为看涨信号。"}}
+      ]
+    },
+    "team": {
+      "label": "Team / Management",
+      "sentences": [
+        {"en": "The 360-degree feedback highlighted her strong communication but weak prioritization.", "zh": "360度反馈突出了她出色的沟通能力但薄弱的优先级管理。"},
+        {"en": "We set up a RACI matrix to clarify ownership on the migration project.", "zh": "我们建立了RACI矩阵来明确迁移项目的责任归属。"},
+        {"en": "The team velocity dropped last sprint due to unplanned production incidents.", "zh": "由于计划外的生产事故，团队上个冲刺的速率下降了。"},
+        {"en": "I encourage everyone to block focus time on their calendars to protect deep work.", "zh": "我鼓励每个人在日历上预留专注时间来保护深度工作。"},
+        {"en": "The probation review confirmed she is a strong fit for the role.", "zh": "试用期评估确认她非常适合这个岗位。"}
+      ],
+      "vocabulary": [
+        {"word": "360-degree feedback", "phonetic": "/θriː ˈsɪksti dɪˈɡriː ˈfiːdbæk/", "meaning": "360度反馈", "example": {"en": "360-degree feedback collects input from peers, managers, and direct reports.", "zh": "360度反馈收集来自同事、上级和直接下属的意见。"}},
+        {"word": "RACI matrix", "phonetic": "/ˈreɪsi ˈmeɪtrɪks/", "meaning": "RACI矩阵（职责分配矩阵）", "example": {"en": "The RACI matrix prevents confusion about who is responsible for each deliverable.", "zh": "RACI矩阵防止对每个交付物的责任归属产生困惑。"}},
+        {"word": "velocity", "phonetic": "/vɪˈlɒsɪti/", "meaning": "速率（敏捷开发中的产出量）", "example": {"en": "Tracking velocity helps predict how many story points we can deliver per sprint.", "zh": "追踪速率有助于预测每个冲刺我们能交付多少故事点。"}},
+        {"word": "deep work", "phonetic": "/diːp wɜːk/", "meaning": "深度工作", "example": {"en": "Deep work requires uninterrupted blocks of at least 90 minutes.", "zh": "深度工作需要至少90分钟不被打断的时间块。"}},
+        {"word": "probation", "phonetic": "/prəˈbeɪʃən/", "meaning": "试用期", "example": {"en": "During probation, both the company and the employee assess mutual fit.", "zh": "在试用期内，公司和员工双方都在评估互相是否匹配。"}}
+      ]
+    },
+    "strategy": {
+      "label": "Strategy / Planning",
+      "sentences": [
+        {"en": "Our North Star metric is monthly active traders, not total registered users.", "zh": "我们的北极星指标是月活跃交易用户，而不是总注册用户。"},
+        {"en": "The five forces analysis reveals high bargaining power of suppliers in this market.", "zh": "五力分析揭示了该市场中供应商的高议价能力。"},
+        {"en": "We must build a defensible position before the incumbent reacts.", "zh": "我们必须在现有巨头反应之前建立可防御的市场地位。"},
+        {"en": "The strategic partnership with the bank gives us access to 5 million customers.", "zh": "与该银行的战略合作为我们提供了500万客户的触达。"},
+        {"en": "Our three-horizon framework balances core business, emerging opportunities, and moonshots.", "zh": "我们的三个层面框架平衡了核心业务、新兴机会和登月计划。"}
+      ],
+      "vocabulary": [
+        {"word": "North Star metric", "phonetic": "/nɔːθ stɑː ˈmetrɪk/", "meaning": "北极星指标", "example": {"en": "Aligning the entire company around a North Star metric drives focused execution.", "zh": "让整个公司围绕一个北极星指标可以驱动聚焦执行。"}},
+        {"word": "five forces", "phonetic": "/faɪv ˈfɔːsɪz/", "meaning": "五力模型（波特五力）", "example": {"en": "Porter's five forces framework helps assess industry competitiveness.", "zh": "波特五力框架有助于评估行业竞争力。"}},
+        {"word": "defensible", "phonetic": "/dɪˈfensɪbəl/", "meaning": "可防御的", "example": {"en": "A defensible market position requires sustainable competitive advantages.", "zh": "可防御的市场地位需要可持续的竞争优势。"}},
+        {"word": "incumbent", "phonetic": "/ɪnˈkʌmbənt/", "meaning": "现有巨头；在位者", "example": {"en": "Disrupting the incumbent requires a fundamentally different approach.", "zh": "颠覆现有巨头需要一种根本不同的方法。"}},
+        {"word": "moonshot", "phonetic": "/ˈmuːnʃɒt/", "meaning": "登月计划（大胆的长期目标）", "example": {"en": "The moonshot project aims to build a fully autonomous trading platform.", "zh": "登月计划项目旨在构建一个全自动交易平台。"}}
+      ]
+    }
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "date": "2026-05-29",
+  "themes": {
+    "growth": {
+      "label": "Growth / Marketing",
+      "sentences": [
+        {"en": "The cohort analysis shows that users acquired in March have the best LTV.", "zh": "同期群分析显示3月获取的用户拥有最佳生命周期价值。"},
+        {"en": "We are testing a freemium model to lower the barrier to entry.", "zh": "我们正在测试免费增值模式以降低进入门槛。"},
+        {"en": "The click-through rate on our email campaigns outperforms the industry average.", "zh": "我们邮件营销活动的点击率优于行业平均水平。"},
+        {"en": "Retargeting ads recovered 15% of users who abandoned the sign-up flow.", "zh": "再营销广告挽回了15%放弃注册流程的用户。"},
+        {"en": "Our brand awareness in the Hong Kong market doubled after the outdoor campaign.", "zh": "户外广告活动之后，我们在香港市场的品牌知名度翻了一倍。"}
+      ],
+      "vocabulary": [
+        {"word": "cohort", "phonetic": "/ˈkəʊhɔːt/", "meaning": "同期群", "example": {"en": "The January cohort retained 40% of users after 90 days.", "zh": "1月同期群在90天后保留了40%的用户。"}},
+        {"word": "freemium", "phonetic": "/ˈfriːmiəm/", "meaning": "免费增值", "example": {"en": "The freemium tier attracts users who later upgrade to paid plans.", "zh": "免费增值层吸引的用户后来会升级到付费方案。"}},
+        {"word": "click-through rate", "phonetic": "/klɪk θruː reɪt/", "meaning": "点击率", "example": {"en": "Personalized subject lines improved our click-through rate by 25%.", "zh": "个性化标题使我们的点击率提高了25%。"}},
+        {"word": "retargeting", "phonetic": "/riːˈtɑːɡɪtɪŋ/", "meaning": "再营销", "example": {"en": "Retargeting campaigns show ads to users who visited but did not convert.", "zh": "再营销活动向访问但未转化的用户展示广告。"}},
+        {"word": "brand awareness", "phonetic": "/brænd əˈweənəs/", "meaning": "品牌知名度", "example": {"en": "Building brand awareness is a long-term investment that pays compound returns.", "zh": "建立品牌知名度是一项能带来复合回报的长期投资。"}}
+      ]
+    },
+    "product": {
+      "label": "Product / Metrics",
+      "sentences": [
+        {"en": "The feature flag allowed us to roll out the update to 10% of users first.", "zh": "功能开关让我们先向10%的用户灰度发布更新。"},
+        {"en": "We need to define the north star metric before building the dashboard.", "zh": "在搭建数据看板之前，我们需要先定义北极星指标。"},
+        {"en": "The crash rate on Android exceeded our SLA threshold last week.", "zh": "上周Android端的崩溃率超过了我们的SLA阈值。"},
+        {"en": "User satisfaction scores improved after we simplified the trade confirmation screen.", "zh": "简化交易确认页面后，用户满意度评分提升了。"},
+        {"en": "The product spec should include acceptance criteria for every user story.", "zh": "产品规格文档应该为每个用户故事包含验收标准。"}
+      ],
+      "vocabulary": [
+        {"word": "feature flag", "phonetic": "/ˈfiːtʃə flæɡ/", "meaning": "功能开关", "example": {"en": "Feature flags let us toggle new functionality without redeploying.", "zh": "功能开关让我们无需重新部署即可切换新功能。"}},
+        {"word": "north star metric", "phonetic": "/nɔːθ stɑːr ˈmetrɪk/", "meaning": "北极星指标", "example": {"en": "Our north star metric is the number of weekly active traders.", "zh": "我们的北极星指标是每周活跃交易者数量。"}},
+        {"word": "threshold", "phonetic": "/ˈθreʃhəʊld/", "meaning": "阈值；门槛", "example": {"en": "If the error rate crosses the threshold, the system triggers an alert.", "zh": "如果错误率超过阈值，系统会触发告警。"}},
+        {"word": "acceptance criteria", "phonetic": "/əkˈseptəns kraɪˈtɪəriə/", "meaning": "验收标准", "example": {"en": "Clear acceptance criteria prevent misunderstandings between product and engineering.", "zh": "清晰的验收标准能防止产品和工程之间的误解。"}},
+        {"word": "rollout", "phonetic": "/ˈrəʊlaʊt/", "meaning": "灰度发布；逐步推出", "example": {"en": "The phased rollout minimized risk by limiting the initial user exposure.", "zh": "分阶段灰度发布通过限制初始用户覆盖来降低风险。"}}
+      ]
+    },
+    "finance": {
+      "label": "Finance / Investment",
+      "sentences": [
+        {"en": "The Federal Reserve is expected to hold rates steady at the next meeting.", "zh": "市场预计美联储将在下次会议上维持利率不变。"},
+        {"en": "Hedge funds are accumulating positions in undervalued semiconductor stocks.", "zh": "对冲基金正在低估值的半导体股票中建仓。"},
+        {"en": "The debt-to-equity ratio indicates the company is overleveraged.", "zh": "资产负债率显示该公司杠杆过高。"},
+        {"en": "Quarterly revenue guidance was revised downward due to supply chain disruptions.", "zh": "由于供应链中断，季度收入指引被下调。"},
+        {"en": "The stock trades at a 20% discount to its net asset value.", "zh": "该股票相对于其净资产值折价20%交易。"}
+      ],
+      "vocabulary": [
+        {"word": "hedge fund", "phonetic": "/hedʒ fʌnd/", "meaning": "对冲基金", "example": {"en": "Hedge funds use complex strategies to generate returns in any market condition.", "zh": "对冲基金使用复杂策略在任何市场条件下创造回报。"}},
+        {"word": "overleveraged", "phonetic": "/ˌəʊvəˈlevərɪdʒd/", "meaning": "杠杆过高的", "example": {"en": "Overleveraged companies are vulnerable during economic downturns.", "zh": "杠杆过高的公司在经济下行时很脆弱。"}},
+        {"word": "guidance", "phonetic": "/ˈɡaɪdəns/", "meaning": "业绩指引", "example": {"en": "Management raised full-year guidance after a strong first half.", "zh": "在强劲的上半年之后，管理层上调了全年业绩指引。"}},
+        {"word": "discount", "phonetic": "/ˈdɪskaʊnt/", "meaning": "折价", "example": {"en": "The stock is trading at a discount to its intrinsic value.", "zh": "该股票相对于其内在价值处于折价交易状态。"}},
+        {"word": "net asset value", "phonetic": "/net ˈæset ˈvæljuː/", "meaning": "净资产值", "example": {"en": "ETF prices usually track close to their net asset value.", "zh": "ETF价格通常紧跟其净资产值。"}}
+      ]
+    },
+    "team": {
+      "label": "Team / Management",
+      "sentences": [
+        {"en": "The one-on-one cadence should be weekly for new hires and biweekly for senior staff.", "zh": "一对一面谈节奏应该是新员工每周一次，资深员工每两周一次。"},
+        {"en": "We introduced a competency framework to make promotions more transparent.", "zh": "我们引入了能力框架，使晋升更加透明。"},
+        {"en": "The attrition rate in the engineering team is above the company average.", "zh": "工程团队的离职率高于公司平均水平。"},
+        {"en": "Psychological safety is the foundation for honest feedback in a team.", "zh": "心理安全感是团队中坦诚反馈的基础。"},
+        {"en": "The quarterly business review requires each department to present key results.", "zh": "季度业务回顾要求每个部门展示关键成果。"}
+      ],
+      "vocabulary": [
+        {"word": "cadence", "phonetic": "/ˈkeɪdəns/", "meaning": "节奏；频率", "example": {"en": "We changed the release cadence from monthly to biweekly.", "zh": "我们把发布节奏从每月改为每两周。"}},
+        {"word": "competency", "phonetic": "/ˈkɒmpɪtənsi/", "meaning": "能力；胜任力", "example": {"en": "The competency model defines what excellent looks like at each level.", "zh": "能力模型定义了每个层级的卓越标准。"}},
+        {"word": "attrition", "phonetic": "/əˈtrɪʃən/", "meaning": "人员流失", "example": {"en": "High attrition increases recruitment costs and disrupts team velocity.", "zh": "高离职率会增加招聘成本并打乱团队速度。"}},
+        {"word": "psychological safety", "phonetic": "/ˌsaɪkəˈlɒdʒɪkəl ˈseɪfti/", "meaning": "心理安全感", "example": {"en": "Teams with high psychological safety are more likely to experiment and innovate.", "zh": "心理安全感高的团队更有可能进行实验和创新。"}},
+        {"word": "business review", "phonetic": "/ˈbɪznəs rɪˈvjuː/", "meaning": "业务回顾", "example": {"en": "The quarterly business review is where we hold leaders accountable to their OKRs.", "zh": "季度业务回顾是我们对领导者OKR达成情况追责的场合。"}}
+      ]
+    },
+    "strategy": {
+      "label": "Strategy / Planning",
+      "sentences": [
+        {"en": "The blue ocean strategy requires us to create demand rather than compete for it.", "zh": "蓝海策略要求我们创造需求，而不是争夺需求。"},
+        {"en": "We are building a flywheel where better data leads to better recommendations and more trades.", "zh": "我们正在构建一个飞轮：更好的数据带来更好的推荐和更多交易。"},
+        {"en": "The risk of market entry is offset by the potential of a 10x return.", "zh": "进入市场的风险被10倍回报的潜力所抵消。"},
+        {"en": "Our mid-term plan targets profitability by the end of fiscal year 2027.", "zh": "我们的中期计划目标是在2027财年末实现盈利。"},
+        {"en": "Vertical integration allows us to control the entire customer experience.", "zh": "垂直整合使我们能够掌控整个客户体验。"}
+      ],
+      "vocabulary": [
+        {"word": "blue ocean", "phonetic": "/bluː ˈəʊʃən/", "meaning": "蓝海", "example": {"en": "A blue ocean strategy avoids head-to-head competition by creating a new market.", "zh": "蓝海策略通过创造新市场来避免正面竞争。"}},
+        {"word": "flywheel", "phonetic": "/ˈflaɪwiːl/", "meaning": "飞轮", "example": {"en": "Amazon's flywheel starts with low prices driving more traffic.", "zh": "亚马逊的飞轮从低价吸引更多流量开始。"}},
+        {"word": "profitability", "phonetic": "/ˌprɒfɪtəˈbɪlɪti/", "meaning": "盈利能力", "example": {"en": "Achieving profitability is the board's top priority this year.", "zh": "实现盈利是董事会今年的首要优先事项。"}},
+        {"word": "vertical integration", "phonetic": "/ˈvɜːtɪkəl ˌɪntɪˈɡreɪʃən/", "meaning": "垂直整合", "example": {"en": "Vertical integration reduces dependency on third-party vendors.", "zh": "垂直整合减少了对第三方供应商的依赖。"}},
+        {"word": "fiscal year", "phonetic": "/ˈfɪskəl jɪər/", "meaning": "财年", "example": {"en": "Our fiscal year ends in March, not December.", "zh": "我们的财年在3月结束，而不是12月。"}}
+      ]
+    }
+  }
+}

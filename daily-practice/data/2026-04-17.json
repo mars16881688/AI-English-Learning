@@ -1,0 +1,90 @@
+{
+  "date": "2026-04-17",
+  "themes": {
+    "growth": {
+      "label": "Growth / Marketing",
+      "sentences": [
+        {"en": "The payback period on our paid campaigns shortened from 9 months to 6.", "zh": "我们付费推广的回收期从9个月缩短到了6个月。"},
+        {"en": "Deep linking from the email campaign drove a 30% lift in app opens.", "zh": "邮件营销中的深度链接使App打开率提升了30%。"},
+        {"en": "We are seeing diminishing returns on Facebook ads — time to diversify channels.", "zh": "Facebook广告的边际效益在递减——是时候拓展其他渠道了。"},
+        {"en": "The loyalty program increased repeat purchase rate by 18%.", "zh": "忠诚度计划使复购率提升了18%。"},
+        {"en": "Attribution modeling shows that branded search captures most of the credit.", "zh": "归因模型显示品牌搜索获得了大部分归因。"}
+      ],
+      "vocabulary": [
+        {"word": "payback period", "phonetic": "/ˈpeɪbæk ˈpɪəriəd/", "meaning": "回收期", "example": {"en": "A shorter payback period allows us to reinvest profits sooner.", "zh": "更短的回收期让我们能更快地再投入利润。"}},
+        {"word": "deep linking", "phonetic": "/diːp ˈlɪŋkɪŋ/", "meaning": "深度链接", "example": {"en": "Deep linking takes users directly to the relevant in-app page.", "zh": "深度链接直接将用户带到App内的相关页面。"}},
+        {"word": "diminishing returns", "phonetic": "/dɪˈmɪnɪʃɪŋ rɪˈtɜːnz/", "meaning": "边际效益递减", "example": {"en": "After spending $100K, we hit diminishing returns on that channel.", "zh": "花费10万美元后，该渠道进入了边际效益递减阶段。"}},
+        {"word": "loyalty program", "phonetic": "/ˈlɔɪəlti ˈprəʊɡræm/", "meaning": "忠诚度计划", "example": {"en": "Our loyalty program rewards users with points for every trade.", "zh": "我们的忠诚度计划对每笔交易奖励用户积分。"}},
+        {"word": "attribution", "phonetic": "/ˌætrɪˈbjuːʃən/", "meaning": "归因", "example": {"en": "Multi-touch attribution gives credit to every channel in the user journey.", "zh": "多触点归因将用户旅程中每个渠道都纳入归因。"}}
+      ]
+    },
+    "product": {
+      "label": "Product / Metrics",
+      "sentences": [
+        {"en": "The session duration increased after we added personalized watchlists.", "zh": "添加个性化自选股列表后，会话时长增加了。"},
+        {"en": "We need to deprecate the legacy API by end of Q3.", "zh": "我们需要在Q3结束前弃用旧版API。"},
+        {"en": "The error rate on the payment gateway exceeded our SLA threshold.", "zh": "支付网关的错误率超过了我们的SLA阈值。"},
+        {"en": "User interviews revealed that the search function is the top pain point.", "zh": "用户访谈显示搜索功能是最大的痛点。"},
+        {"en": "We rolled back the release after discovering a data consistency bug.", "zh": "发现数据一致性问题后，我们回滚了这次发布。"}
+      ],
+      "vocabulary": [
+        {"word": "deprecate", "phonetic": "/ˈdeprɪkeɪt/", "meaning": "弃用；标记为过时", "example": {"en": "We will deprecate the v1 endpoint and migrate all clients to v2.", "zh": "我们将弃用v1接口，把所有客户端迁移到v2。"}},
+        {"word": "SLA", "phonetic": "/ˌes el ˈeɪ/", "meaning": "服务等级协议（Service Level Agreement）", "example": {"en": "Our SLA guarantees 99.95% uptime for premium clients.", "zh": "我们的SLA向高级客户保证99.95%的正常运行时间。"}},
+        {"word": "pain point", "phonetic": "/peɪn pɔɪnt/", "meaning": "痛点", "example": {"en": "Identifying user pain points is the first step in product improvement.", "zh": "识别用户痛点是产品改进的第一步。"}},
+        {"word": "roll back", "phonetic": "/rəʊl bæk/", "meaning": "回滚", "example": {"en": "The team decided to roll back to the previous stable version.", "zh": "团队决定回滚到之前的稳定版本。"}},
+        {"word": "watchlist", "phonetic": "/ˈwɒtʃlɪst/", "meaning": "自选股列表；关注列表", "example": {"en": "Users can add up to 50 stocks to their watchlist.", "zh": "用户最多可以将50只股票加入自选股列表。"}}
+      ]
+    },
+    "finance": {
+      "label": "Finance / Investment",
+      "sentences": [
+        {"en": "The stock corrected 15% after the company missed revenue guidance.", "zh": "公司未达营收指引后，股价回调了15%。"},
+        {"en": "Short interest in the stock has risen to 8% of the float.", "zh": "该股的做空比例已升至流通股的8%。"},
+        {"en": "The fund manager rebalanced the portfolio to reduce exposure to tech.", "zh": "基金经理重新调整了投资组合以降低对科技板块的敞口。"},
+        {"en": "Return on equity improved to 18% thanks to better capital allocation.", "zh": "得益于更好的资本配置，净资产收益率提升至18%。"},
+        {"en": "The company is trading below book value, which may signal a value trap.", "zh": "公司市值低于账面价值，这可能意味着价值陷阱。"}
+      ],
+      "vocabulary": [
+        {"word": "guidance", "phonetic": "/ˈɡaɪdəns/", "meaning": "业绩指引", "example": {"en": "Management raised full-year revenue guidance by 5%.", "zh": "管理层将全年营收指引上调了5%。"}},
+        {"word": "short interest", "phonetic": "/ʃɔːt ˈɪntrəst/", "meaning": "做空比例；空头头寸", "example": {"en": "Rising short interest suggests growing bearish sentiment.", "zh": "做空比例上升表明看空情绪在增长。"}},
+        {"word": "rebalance", "phonetic": "/riːˈbæləns/", "meaning": "再平衡；重新调配", "example": {"en": "Institutional investors rebalance their portfolios at the end of each quarter.", "zh": "机构投资者在每个季度末重新调配投资组合。"}},
+        {"word": "return on equity", "phonetic": "/rɪˈtɜːn ɒn ˈekwɪti/", "meaning": "净资产收益率（ROE）", "example": {"en": "A consistently high return on equity indicates efficient use of shareholder capital.", "zh": "持续较高的净资产收益率表明股东资本使用效率高。"}},
+        {"word": "book value", "phonetic": "/bʊk ˈvæljuː/", "meaning": "账面价值", "example": {"en": "Trading below book value may attract value investors.", "zh": "低于账面价值交易可能会吸引价值投资者。"}}
+      ]
+    },
+    "team": {
+      "label": "Team / Management",
+      "sentences": [
+        {"en": "The performance review cycle starts next Monday — please prepare your self-assessments.", "zh": "绩效评估周期下周一开始——请准备好你的自评。"},
+        {"en": "We reduced meeting overhead by switching to asynchronous status updates.", "zh": "通过改为异步状态更新，我们减少了会议开销。"},
+        {"en": "The mentorship program paired 20 junior employees with senior leaders.", "zh": "导师计划将20名初级员工与高级领导配对。"},
+        {"en": "I appreciate your initiative on the automation project — it saved the team 10 hours a week.", "zh": "感谢你在自动化项目上的主动性——它每周为团队节省了10小时。"},
+        {"en": "We need better documentation to reduce the bus factor on critical systems.", "zh": "我们需要更好的文档来降低关键系统的人员依赖风险。"}
+      ],
+      "vocabulary": [
+        {"word": "self-assessment", "phonetic": "/self əˈsesmənt/", "meaning": "自评", "example": {"en": "A thorough self-assessment helps managers understand your perspective.", "zh": "详尽的自评有助于管理者了解你的视角。"}},
+        {"word": "asynchronous", "phonetic": "/eɪˈsɪŋkrənəs/", "meaning": "异步的", "example": {"en": "Asynchronous communication reduces interruptions and improves focus.", "zh": "异步沟通减少了中断并提升了专注度。"}},
+        {"word": "mentorship", "phonetic": "/ˈmentɔːʃɪp/", "meaning": "导师制；指导关系", "example": {"en": "Effective mentorship accelerates career growth for junior employees.", "zh": "有效的导师制能加速初级员工的职业成长。"}},
+        {"word": "initiative", "phonetic": "/ɪˈnɪʃətɪv/", "meaning": "主动性；倡议", "example": {"en": "Taking initiative on difficult problems is a sign of leadership potential.", "zh": "主动承担困难问题是领导力潜质的表现。"}},
+        {"word": "bus factor", "phonetic": "/bʌs ˈfæktə/", "meaning": "人员依赖风险（关键人因子）", "example": {"en": "A bus factor of one means the project is at risk if that person leaves.", "zh": "关键人因子为一意味着如果那个人离开，项目就有风险。"}}
+      ]
+    },
+    "strategy": {
+      "label": "Strategy / Planning",
+      "sentences": [
+        {"en": "The first-mover advantage in this niche will be hard to replicate.", "zh": "在这个细分市场的先发优势将很难复制。"},
+        {"en": "We should consider a joint venture to enter the regulated market.", "zh": "我们应该考虑通过合资企业进入受监管市场。"},
+        {"en": "The SWOT analysis highlighted our weak distribution network.", "zh": "SWOT分析突显了我们薄弱的分销网络。"},
+        {"en": "Customer lifetime value must be at least three times the acquisition cost.", "zh": "客户生命周期价值必须至少是获客成本的三倍。"},
+        {"en": "Our go-to-market strategy relies heavily on channel partnerships.", "zh": "我们的上市策略严重依赖渠道合作伙伴。"}
+      ],
+      "vocabulary": [
+        {"word": "first-mover advantage", "phonetic": "/fɜːst ˈmuːvər ədˈvɑːntɪdʒ/", "meaning": "先发优势", "example": {"en": "The first-mover advantage allowed us to capture 40% market share early on.", "zh": "先发优势让我们早期就占据了40%的市场份额。"}},
+        {"word": "joint venture", "phonetic": "/dʒɔɪnt ˈventʃə/", "meaning": "合资企业", "example": {"en": "The joint venture combined our technology with their local expertise.", "zh": "合资企业将我们的技术与他们的本地经验相结合。"}},
+        {"word": "SWOT", "phonetic": "/swɒt/", "meaning": "SWOT分析（优势、劣势、机会、威胁）", "example": {"en": "We conduct a SWOT analysis annually to reassess our strategic position.", "zh": "我们每年进行一次SWOT分析以重新评估战略定位。"}},
+        {"word": "lifetime value", "phonetic": "/ˈlaɪftaɪm ˈvæljuː/", "meaning": "生命周期价值（LTV）", "example": {"en": "Improving retention by 5% can increase lifetime value by up to 25%.", "zh": "留存率提高5%可以使生命周期价值提升高达25%。"}},
+        {"word": "go-to-market", "phonetic": "/ɡəʊ tə ˈmɑːkɪt/", "meaning": "上市策略；进入市场", "example": {"en": "The go-to-market plan includes a phased rollout starting with Hong Kong.", "zh": "上市策略计划包括从香港开始的分阶段推出。"}}
+      ]
+    }
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "date": "2026-05-22",
+  "themes": {
+    "growth": {
+      "label": "Growth / Marketing",
+      "sentences": [
+        {"en": "The viral coefficient dropped below 1.0 which means the product is no longer growing organically.", "zh": "病毒系数降到了1.0以下，这意味着产品不再自然增长了。"},
+        {"en": "Deep linking from the ad directly into the app reduces the conversion gap.", "zh": "从广告深度链接直接进入App减少了转化断层。"},
+        {"en": "We are testing a gamification layer to improve 7-day retention.", "zh": "我们正在测试游戏化机制来提升7日留存。"},
+        {"en": "The CAC to LTV ratio needs to stay above 3x for the unit economics to work.", "zh": "获客成本与生命周期价值的比率需要保持在3倍以上，单元经济才能跑通。"},
+        {"en": "Retargeting ads brought back 12% of churned users last month.", "zh": "再营销广告上个月召回了12%的流失用户。"}
+      ],
+      "vocabulary": [
+        {"word": "viral coefficient", "phonetic": "/ˈvaɪərəl ˌkəʊɪˈfɪʃənt/", "meaning": "病毒系数", "example": {"en": "A viral coefficient above 1.0 means each user brings in more than one new user.", "zh": "病毒系数高于1.0意味着每个用户带来超过一个新用户。"}},
+        {"word": "deep linking", "phonetic": "/diːp ˈlɪŋkɪŋ/", "meaning": "深度链接", "example": {"en": "Deep linking sends users to the exact in-app screen instead of the homepage.", "zh": "深度链接将用户直接送到App内的具体页面，而非首页。"}},
+        {"word": "gamification", "phonetic": "/ˌɡeɪmɪfɪˈkeɪʃən/", "meaning": "游戏化", "example": {"en": "Gamification elements like badges and streaks increase daily active usage.", "zh": "徽章和连续打卡等游戏化元素能增加日活跃使用。"}},
+        {"word": "retargeting", "phonetic": "/riːˈtɑːɡɪtɪŋ/", "meaning": "再营销；重定向", "example": {"en": "Retargeting campaigns focus on users who visited but did not convert.", "zh": "再营销活动针对的是访问过但未转化的用户。"}},
+        {"word": "unit economics", "phonetic": "/ˈjuːnɪt ˌiːkəˈnɒmɪks/", "meaning": "单元经济", "example": {"en": "Healthy unit economics mean the revenue per user exceeds the cost to acquire them.", "zh": "健康的单元经济意味着每用户收入超过获客成本。"}}
+      ]
+    },
+    "product": {
+      "label": "Product / Metrics",
+      "sentences": [
+        {"en": "The error rate spiked to 5% during peak trading hours yesterday.", "zh": "昨天在交易高峰时段，错误率飙升至5%。"},
+        {"en": "We should prioritize the feature request that aligns with our North Star metric.", "zh": "我们应该优先考虑与北极星指标一致的功能需求。"},
+        {"en": "The load time on mobile exceeds 4 seconds which is unacceptable.", "zh": "移动端加载时间超过4秒，这是不可接受的。"},
+        {"en": "User feedback indicates the search function lacks relevance in results.", "zh": "用户反馈表明搜索功能的结果相关性不足。"},
+        {"en": "We released a hotfix to patch the login failure affecting 2% of users.", "zh": "我们发布了一个热修复补丁，修复了影响2%用户的登录失败问题。"}
+      ],
+      "vocabulary": [
+        {"word": "spike", "phonetic": "/spaɪk/", "meaning": "飙升；骤增", "example": {"en": "Traffic spiked 300% after the product was featured on the app store.", "zh": "产品被应用商店推荐后，流量飙升了300%。"}},
+        {"word": "North Star metric", "phonetic": "/nɔːθ stɑːr ˈmetrɪk/", "meaning": "北极星指标", "example": {"en": "Our North Star metric is weekly active traders, not just downloads.", "zh": "我们的北极星指标是每周活跃交易用户，而不仅是下载量。"}},
+        {"word": "load time", "phonetic": "/ləʊd taɪm/", "meaning": "加载时间", "example": {"en": "Every extra second of load time reduces conversion by approximately 7%.", "zh": "每多一秒的加载时间大约减少7%的转化率。"}},
+        {"word": "relevance", "phonetic": "/ˈreləvəns/", "meaning": "相关性", "example": {"en": "Search relevance is the top factor driving user satisfaction with the feature.", "zh": "搜索相关性是驱动用户对该功能满意度的首要因素。"}},
+        {"word": "hotfix", "phonetic": "/ˈhɒtfɪks/", "meaning": "热修复", "example": {"en": "The hotfix was deployed within two hours of discovering the critical bug.", "zh": "热修复在发现关键缺陷后两小时内完成了部署。"}}
+      ]
+    },
+    "finance": {
+      "label": "Finance / Investment",
+      "sentences": [
+        {"en": "The stock is trading below its 200-day moving average, which is a bearish signal.", "zh": "该股票交易价格低于200日均线，这是看跌信号。"},
+        {"en": "Free cash flow generation remains strong despite the revenue slowdown.", "zh": "尽管营收放缓，自由现金流生成依然强劲。"},
+        {"en": "The central bank hinted at a 25 basis point rate cut in the next meeting.", "zh": "央行暗示将在下次会议上降息25个基点。"},
+        {"en": "Insider buying often signals management confidence in the company outlook.", "zh": "内部人士买入通常表明管理层对公司前景有信心。"},
+        {"en": "The debt-to-equity ratio has climbed to 1.8x which raises leverage concerns.", "zh": "资产负债率攀升至1.8倍，引发了杠杆方面的担忧。"}
+      ],
+      "vocabulary": [
+        {"word": "moving average", "phonetic": "/ˈmuːvɪŋ ˈævərɪdʒ/", "meaning": "均线；移动平均线", "example": {"en": "The 50-day moving average crossed above the 200-day, forming a golden cross.", "zh": "50日均线上穿200日均线，形成金叉。"}},
+        {"word": "free cash flow", "phonetic": "/friː kæʃ fləʊ/", "meaning": "自由现金流", "example": {"en": "Free cash flow is the cash left after capital expenditures are deducted.", "zh": "自由现金流是扣除资本支出后剩余的现金。"}},
+        {"word": "basis point", "phonetic": "/ˈbeɪsɪs pɔɪnt/", "meaning": "基点", "example": {"en": "One basis point equals 0.01 percentage point.", "zh": "一个基点等于0.01个百分点。"}},
+        {"word": "insider", "phonetic": "/ˈɪnsaɪdər/", "meaning": "内部人士", "example": {"en": "Insider transactions must be disclosed to the securities regulator.", "zh": "内部人士交易必须向证券监管机构披露。"}},
+        {"word": "leverage", "phonetic": "/ˈlevərɪdʒ/", "meaning": "杠杆", "example": {"en": "High leverage amplifies both gains and losses for investors.", "zh": "高杠杆会放大投资者的收益和亏损。"}}
+      ]
+    },
+    "team": {
+      "label": "Team / Management",
+      "sentences": [
+        {"en": "The OKR confidence score for this key result dropped from 0.7 to 0.4.", "zh": "这个关键结果的OKR信心值从0.7降到了0.4。"},
+        {"en": "We need to backfill the senior engineer role before the project deadline.", "zh": "我们需要在项目截止日前补招一名高级工程师。"},
+        {"en": "The one-on-one is a safe space for honest conversation, not a status update.", "zh": "一对一会议是坦诚沟通的安全空间，不是工作汇报。"},
+        {"en": "She demonstrated strong ownership by proactively solving the client escalation.", "zh": "她通过主动解决客户升级问题展示了很强的主人翁意识。"},
+        {"en": "We are running a 360-degree feedback process this quarter for all managers.", "zh": "我们本季度对所有经理进行360度反馈流程。"}
+      ],
+      "vocabulary": [
+        {"word": "confidence score", "phonetic": "/ˈkɒnfɪdəns skɔːr/", "meaning": "信心值", "example": {"en": "A confidence score below 0.5 means the team believes the goal is at risk.", "zh": "信心值低于0.5意味着团队认为目标存在风险。"}},
+        {"word": "backfill", "phonetic": "/ˈbækfɪl/", "meaning": "补招；回填", "example": {"en": "We need to backfill this position quickly to avoid project delays.", "zh": "我们需要快速补招这个岗位，以避免项目延误。"}},
+        {"word": "one-on-one", "phonetic": "/wʌn ɒn wʌn/", "meaning": "一对一（会议）", "example": {"en": "Effective one-on-ones are driven by the report, not the manager.", "zh": "有效的一对一会议应由下属主导，而非经理。"}},
+        {"word": "ownership", "phonetic": "/ˈəʊnəʃɪp/", "meaning": "主人翁意识；所有权", "example": {"en": "Ownership means solving the problem end to end, not just your part.", "zh": "主人翁意识意味着端到端解决问题，而不只是你的部分。"}},
+        {"word": "escalation", "phonetic": "/ˌeskəˈleɪʃən/", "meaning": "升级；上报", "example": {"en": "Customer escalations should be acknowledged within one hour.", "zh": "客户升级问题应在一小时内确认。"}}
+      ]
+    },
+    "strategy": {
+      "label": "Strategy / Planning",
+      "sentences": [
+        {"en": "The barrier to entry in this market is high due to strict licensing requirements.", "zh": "由于严格的牌照要求，该市场的进入壁垒很高。"},
+        {"en": "We are building a moat through proprietary data and exclusive content partnerships.", "zh": "我们正通过独有数据和独家内容合作构建护城河。"},
+        {"en": "The scenario analysis suggests we can sustain operations for 18 months at the current burn rate.", "zh": "情景分析表明，以当前的消耗速率，我们可以维持运营18个月。"},
+        {"en": "Vertical integration gives us better control over the supply chain and pricing.", "zh": "纵向整合让我们对供应链和定价有更好的控制。"},
+        {"en": "Our product-market fit score improved after narrowing the target persona.", "zh": "缩小目标用户画像后，我们的产品市场契合度得分提高了。"}
+      ],
+      "vocabulary": [
+        {"word": "barrier to entry", "phonetic": "/ˈbæriər tə ˈentri/", "meaning": "进入壁垒", "example": {"en": "Capital requirements and regulations create a high barrier to entry.", "zh": "资本要求和监管形成了很高的进入壁垒。"}},
+        {"word": "moat", "phonetic": "/məʊt/", "meaning": "护城河", "example": {"en": "Network effects are the strongest moat a platform company can build.", "zh": "网络效应是平台公司能构建的最强护城河。"}},
+        {"word": "burn rate", "phonetic": "/bɜːn reɪt/", "meaning": "消耗速率；烧钱速度", "example": {"en": "Cutting the burn rate extended our runway by six months.", "zh": "降低消耗速率让我们的资金跑道延长了六个月。"}},
+        {"word": "vertical integration", "phonetic": "/ˈvɜːtɪkəl ˌɪntɪˈɡreɪʃən/", "meaning": "纵向整合", "example": {"en": "Tesla's vertical integration spans from battery production to retail sales.", "zh": "特斯拉的纵向整合从电池生产延伸到零售销售。"}},
+        {"word": "product-market fit", "phonetic": "/ˈprɒdʌkt ˈmɑːkɪt fɪt/", "meaning": "产品市场契合度", "example": {"en": "You know you have product-market fit when users are upset if the product disappears.", "zh": "当用户会因产品消失而不满时，你就知道产品市场契合了。"}}
+      ]
+    }
+  }
+}

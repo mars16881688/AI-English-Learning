@@ -1,0 +1,90 @@
+{
+  "date": "2026-04-29",
+  "themes": {
+    "growth": {
+      "label": "Growth / Marketing",
+      "sentences": [
+        {"en": "The lookalike audience generated 2x more qualified leads than our manual targeting.", "zh": "相似受众比手动定向产生了2倍多的合格线索。"},
+        {"en": "We need to reduce friction in the deposit flow to improve first-trade conversion.", "zh": "我们需要减少入金流程中的摩擦以提升首笔交易转化。"},
+        {"en": "The seasonal campaign around Chinese New Year outperformed all other holiday promotions.", "zh": "春节主题活动的表现超过了所有其他节日促销。"},
+        {"en": "Behavioral triggers like abandoned cart emails recovered 8% of lost transactions.", "zh": "购物车放弃提醒等行为触发邮件挽回了8%的流失交易。"},
+        {"en": "The north star metric for the growth team is weekly transacting users.", "zh": "增长团队的北极星指标是每周交易用户数。"}
+      ],
+      "vocabulary": [
+        {"word": "lookalike audience", "phonetic": "/ˈlʊkəlaɪk ˈɔːdiəns/", "meaning": "相似受众", "example": {"en": "Lookalike audiences are built from your best customers' behavioral profiles.", "zh": "相似受众是基于你最佳客户的行为画像构建的。"}},
+        {"word": "friction", "phonetic": "/ˈfrɪkʃən/", "meaning": "摩擦（阻碍）", "example": {"en": "Every extra step in the sign-up process adds friction and reduces conversion.", "zh": "注册流程中每多一步都会增加摩擦并降低转化率。"}},
+        {"word": "behavioral trigger", "phonetic": "/bɪˈheɪvjərəl ˈtrɪɡə/", "meaning": "行为触发", "example": {"en": "Behavioral triggers send automated messages based on specific user actions.", "zh": "行为触发根据特定用户操作发送自动化消息。"}},
+        {"word": "north star metric", "phonetic": "/nɔːθ stɑː ˈmetrɪk/", "meaning": "北极星指标", "example": {"en": "The north star metric aligns the entire company around a single measure of success.", "zh": "北极星指标让整个公司围绕单一成功指标保持一致。"}},
+        {"word": "abandoned cart", "phonetic": "/əˈbændənd kɑːt/", "meaning": "购物车放弃", "example": {"en": "An abandoned cart email sent within one hour has the highest recovery rate.", "zh": "一小时内发送的购物车放弃邮件拥有最高的挽回率。"}}
+      ]
+    },
+    "product": {
+      "label": "Product / Metrics",
+      "sentences": [
+        {"en": "The circuit breaker pattern prevents cascading failures across dependent services.", "zh": "熔断器模式防止级联故障跨依赖服务传播。"},
+        {"en": "The customer satisfaction score dropped after we removed the live chat feature.", "zh": "移除在线客服功能后，客户满意度分数下降了。"},
+        {"en": "We should conduct a post-mortem to understand why the release was delayed by two weeks.", "zh": "我们应该做一次事后复盘，了解为什么发布延迟了两周。"},
+        {"en": "The data warehouse query performance improved after we added partitioning by date.", "zh": "按日期添加分区后，数据仓库的查询性能有所提升。"},
+        {"en": "The progressive disclosure pattern keeps the interface simple for new users.", "zh": "渐进式展示模式让界面对新用户保持简洁。"}
+      ],
+      "vocabulary": [
+        {"word": "circuit breaker", "phonetic": "/ˈsɜːkɪt ˈbreɪkə/", "meaning": "熔断器", "example": {"en": "The circuit breaker opens after three consecutive failed requests.", "zh": "连续三次请求失败后，熔断器会打开。"}},
+        {"word": "customer satisfaction", "phonetic": "/ˈkʌstəmə ˌsætɪsˈfækʃən/", "meaning": "客户满意度", "example": {"en": "Customer satisfaction surveys should be sent within 24 hours of a support interaction.", "zh": "客户满意度调查应在客服互动后24小时内发送。"}},
+        {"word": "post-mortem", "phonetic": "/pəʊst ˈmɔːtəm/", "meaning": "事后复盘", "example": {"en": "A blameless post-mortem focuses on process improvement, not individual fault.", "zh": "无责复盘聚焦流程改进，而非追究个人过错。"}},
+        {"word": "partitioning", "phonetic": "/pɑːˈtɪʃənɪŋ/", "meaning": "分区", "example": {"en": "Table partitioning by date dramatically speeds up queries on large datasets.", "zh": "按日期分区能显著加速大数据集上的查询。"}},
+        {"word": "progressive disclosure", "phonetic": "/prəˈɡresɪv dɪsˈkləʊʒə/", "meaning": "渐进式展示", "example": {"en": "Progressive disclosure shows advanced options only when the user needs them.", "zh": "渐进式展示只在用户需要时才显示高级选项。"}}
+      ]
+    },
+    "finance": {
+      "label": "Finance / Investment",
+      "sentences": [
+        {"en": "The company achieved break-even for the first time since its founding.", "zh": "公司自创立以来首次实现盈亏平衡。"},
+        {"en": "The put-call ratio is elevated, suggesting bearish sentiment among options traders.", "zh": "看跌看涨比率升高，表明期权交易者情绪偏空。"},
+        {"en": "Working capital management improved after the payment terms were renegotiated.", "zh": "重新谈判付款条款后，营运资金管理有所改善。"},
+        {"en": "The stock's beta of 1.5 means it is 50% more volatile than the market.", "zh": "该股票1.5的贝塔值意味着其波动性比市场高50%。"},
+        {"en": "The convertible bond offering provides cheaper financing with equity upside for investors.", "zh": "可转债发行为投资者提供了更低成本的融资和股权上涨空间。"}
+      ],
+      "vocabulary": [
+        {"word": "break-even", "phonetic": "/breɪk ˈiːvən/", "meaning": "盈亏平衡", "example": {"en": "The business needs 10,000 paying subscribers to reach break-even.", "zh": "业务需要10000名付费订阅者才能实现盈亏平衡。"}},
+        {"word": "put-call ratio", "phonetic": "/pʊt kɔːl ˈreɪʃiəʊ/", "meaning": "看跌看涨比率", "example": {"en": "A rising put-call ratio often indicates growing fear in the market.", "zh": "看跌看涨比率上升通常表明市场恐惧情绪在增长。"}},
+        {"word": "working capital", "phonetic": "/ˈwɜːkɪŋ ˈkæpɪtəl/", "meaning": "营运资金", "example": {"en": "Efficient working capital management frees up cash for strategic initiatives.", "zh": "高效的营运资金管理能释放出用于战略举措的现金。"}},
+        {"word": "beta", "phonetic": "/ˈbeɪtə/", "meaning": "贝塔值（系统性风险）", "example": {"en": "A stock with a beta below 1.0 is less volatile than the overall market.", "zh": "贝塔值低于1.0的股票波动性小于整体市场。"}},
+        {"word": "convertible bond", "phonetic": "/kənˈvɜːtəbəl bɒnd/", "meaning": "可转债", "example": {"en": "Convertible bonds can be exchanged for shares at a predetermined price.", "zh": "可转债可以按预定价格转换为股票。"}}
+      ]
+    },
+    "team": {
+      "label": "Team / Management",
+      "sentences": [
+        {"en": "The engagement survey results show that career growth is the top priority for our team.", "zh": "敬业度调查结果显示，职业成长是我们团队的首要关注点。"},
+        {"en": "We should introduce a structured onboarding program with a 30-60-90 day plan.", "zh": "我们应该引入结构化的入职计划，包含30-60-90天方案。"},
+        {"en": "The knowledge base needs to be updated so new hires can self-serve common questions.", "zh": "知识库需要更新，以便新员工能自助解决常见问题。"},
+        {"en": "I appreciate the initiative you showed in solving the client escalation independently.", "zh": "我很欣赏你在独立解决客户升级问题时展现的主动性。"},
+        {"en": "The span of control for our directors has grown too wide at 12 direct reports each.", "zh": "我们总监的管理幅度过宽，每人有12个直属下属。"}
+      ],
+      "vocabulary": [
+        {"word": "engagement survey", "phonetic": "/ɪnˈɡeɪdʒmənt ˈsɜːveɪ/", "meaning": "敬业度调查", "example": {"en": "The annual engagement survey helps leadership identify areas for improvement.", "zh": "年度敬业度调查帮助管理层识别需要改善的领域。"}},
+        {"word": "30-60-90 day plan", "phonetic": "/ˈθɜːti ˈsɪksti ˈnaɪnti deɪ plæn/", "meaning": "30-60-90天计划", "example": {"en": "A 30-60-90 day plan sets clear milestones for new hire onboarding.", "zh": "30-60-90天计划为新员工入职设定了明确的里程碑。"}},
+        {"word": "knowledge base", "phonetic": "/ˈnɒlɪdʒ beɪs/", "meaning": "知识库", "example": {"en": "A well-organized knowledge base reduces repetitive support questions.", "zh": "组织良好的知识库能减少重复的支持问题。"}},
+        {"word": "initiative", "phonetic": "/ɪˈnɪʃətɪv/", "meaning": "主动性；倡议", "example": {"en": "Employees who show initiative are more likely to be considered for promotion.", "zh": "展现主动性的员工更有可能被考虑晋升。"}},
+        {"word": "span of control", "phonetic": "/spæn əv kənˈtrəʊl/", "meaning": "管理幅度", "example": {"en": "The ideal span of control is typically 5-8 direct reports for a manager.", "zh": "理想的管理幅度通常是一个管理者带5-8个直属下属。"}}
+      ]
+    },
+    "strategy": {
+      "label": "Strategy / Planning",
+      "sentences": [
+        {"en": "The disruptive innovation theory explains why incumbents often fail to respond to new entrants.", "zh": "颠覆性创新理论解释了为什么在位者往往无法应对新进入者。"},
+        {"en": "We should adopt a barbell strategy: 80% in proven channels and 20% in experimental ones.", "zh": "我们应该采用杠铃策略：80%放在验证过的渠道，20%放在实验性渠道。"},
+        {"en": "The opportunity cost of not entering the market now increases with every quarter we delay.", "zh": "每延迟一个季度，不进入市场的机会成本就会增加。"},
+        {"en": "Our competitive intelligence shows two new fintech startups targeting the same niche.", "zh": "竞争情报显示有两家新的金融科技初创公司瞄准了同一细分市场。"},
+        {"en": "The strategic alignment between product and sales is critical for enterprise deals.", "zh": "产品和销售之间的战略对齐对于企业级交易至关重要。"}
+      ],
+      "vocabulary": [
+        {"word": "disruptive innovation", "phonetic": "/dɪsˈrʌptɪv ˌɪnəˈveɪʃən/", "meaning": "颠覆性创新", "example": {"en": "Disruptive innovation often starts at the low end of the market.", "zh": "颠覆性创新通常从市场的低端开始。"}},
+        {"word": "barbell strategy", "phonetic": "/ˈbɑːbel ˈstrætədʒi/", "meaning": "杠铃策略", "example": {"en": "The barbell strategy balances safe bets with high-risk high-reward experiments.", "zh": "杠铃策略在安全押注和高风险高回报实验之间取得平衡。"}},
+        {"word": "opportunity cost", "phonetic": "/ˌɒpəˈtjuːnɪti kɒst/", "meaning": "机会成本", "example": {"en": "The opportunity cost of focusing on one market is missing growth in another.", "zh": "专注一个市场的机会成本是错过另一个市场的增长。"}},
+        {"word": "competitive intelligence", "phonetic": "/kəmˈpetɪtɪv ɪnˈtelɪdʒəns/", "meaning": "竞争情报", "example": {"en": "Competitive intelligence helps us anticipate market moves before they happen.", "zh": "竞争情报帮助我们在市场变化发生之前做出预判。"}},
+        {"word": "niche", "phonetic": "/niːʃ/", "meaning": "利基；细分市场", "example": {"en": "Dominating a niche market first can be a launchpad for broader expansion.", "zh": "先主导一个利基市场可以作为更广泛扩张的跳板。"}}
+      ]
+    }
+  }
+}

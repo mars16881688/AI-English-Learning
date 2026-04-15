@@ -1,0 +1,90 @@
+{
+  "date": "2026-05-28",
+  "themes": {
+    "growth": {
+      "label": "Growth / Marketing",
+      "sentences": [
+        {"en": "The payback period on our paid channels has shortened to 45 days.", "zh": "我们付费渠道的回本周期已缩短至45天。"},
+        {"en": "We should segment users by lifecycle stage before designing the campaign.", "zh": "在设计活动之前，我们应该按生命周期阶段对用户进行分层。"},
+        {"en": "Organic traffic grew 30% month over month after the SEO overhaul.", "zh": "SEO改版后，自然流量环比增长了30%。"},
+        {"en": "The attribution model needs to account for cross-device behavior.", "zh": "归因模型需要考虑跨设备行为。"},
+        {"en": "Incentivized sharing drove a 2x increase in viral coefficient this quarter.", "zh": "激励分享使本季度的病毒系数提升了2倍。"}
+      ],
+      "vocabulary": [
+        {"word": "payback period", "phonetic": "/ˈpeɪbæk ˈpɪəriəd/", "meaning": "回本周期", "example": {"en": "A shorter payback period means faster return on marketing spend.", "zh": "更短的回本周期意味着营销支出更快回收。"}},
+        {"word": "segment", "phonetic": "/ˈseɡmənt/", "meaning": "分层；细分", "example": {"en": "We segment our users into high-value and casual traders.", "zh": "我们将用户分为高价值用户和休闲交易者。"}},
+        {"word": "attribution", "phonetic": "/ˌætrɪˈbjuːʃən/", "meaning": "归因", "example": {"en": "Multi-touch attribution gives credit to every touchpoint in the journey.", "zh": "多触点归因将功劳分配给旅程中的每个触点。"}},
+        {"word": "viral coefficient", "phonetic": "/ˈvaɪrəl ˌkəʊɪˈfɪʃənt/", "meaning": "病毒系数", "example": {"en": "A viral coefficient above 1.0 means exponential organic growth.", "zh": "病毒系数超过1.0意味着指数级的自然增长。"}},
+        {"word": "organic", "phonetic": "/ɔːˈɡænɪk/", "meaning": "自然的；有机的", "example": {"en": "Organic acquisition costs nothing but requires patience to scale.", "zh": "自然获客不花钱，但需要耐心才能规模化。"}}
+      ]
+    },
+    "product": {
+      "label": "Product / Metrics",
+      "sentences": [
+        {"en": "The session duration on the portfolio page increased after adding real-time quotes.", "zh": "添加实时行情后，投资组合页面的会话时长增加了。"},
+        {"en": "We need to instrument the new feature before launch to track usage properly.", "zh": "上线前我们需要对新功能进行埋点，以便正确追踪使用情况。"},
+        {"en": "The error rate spiked to 5% during peak trading hours yesterday.", "zh": "昨天交易高峰时段，错误率飙升至5%。"},
+        {"en": "User interviews revealed that the search function is the top pain point.", "zh": "用户访谈发现搜索功能是最大的痛点。"},
+        {"en": "We prioritized the watchlist redesign based on impact versus effort scoring.", "zh": "我们根据影响力与工作量评分，优先排了自选股列表的改版。"}
+      ],
+      "vocabulary": [
+        {"word": "instrument", "phonetic": "/ˈɪnstrʊmənt/", "meaning": "埋点；插装监测", "example": {"en": "Make sure to instrument every critical user action before release.", "zh": "发布前确保对每个关键用户操作进行埋点。"}},
+        {"word": "spike", "phonetic": "/spaɪk/", "meaning": "飙升；突增", "example": {"en": "We saw a traffic spike after the press coverage went live.", "zh": "媒体报道上线后，我们看到了流量飙升。"}},
+        {"word": "pain point", "phonetic": "/peɪn pɔɪnt/", "meaning": "痛点", "example": {"en": "Identifying the biggest pain point is the first step in product improvement.", "zh": "找到最大的痛点是产品改进的第一步。"}},
+        {"word": "watchlist", "phonetic": "/ˈwɒtʃlɪst/", "meaning": "自选股列表；关注列表", "example": {"en": "Users can add up to 50 stocks to their watchlist.", "zh": "用户最多可以向自选股列表添加50只股票。"}},
+        {"word": "latency", "phonetic": "/ˈleɪtənsi/", "meaning": "延迟", "example": {"en": "Reducing API latency from 200ms to 50ms improved the user experience dramatically.", "zh": "将API延迟从200毫秒降低到50毫秒，极大改善了用户体验。"}}
+      ]
+    },
+    "finance": {
+      "label": "Finance / Investment",
+      "sentences": [
+        {"en": "The yield curve inversion has historically been a reliable recession indicator.", "zh": "收益率曲线倒挂在历史上一直是可靠的衰退指标。"},
+        {"en": "Short sellers increased their positions ahead of the earnings announcement.", "zh": "在财报发布前，做空者增加了他们的头寸。"},
+        {"en": "The company's free cash flow improved by 40% year over year.", "zh": "该公司的自由现金流同比改善了40%。"},
+        {"en": "Institutional investors are rotating out of growth stocks into value names.", "zh": "机构投资者正在从成长股轮动到价值股。"},
+        {"en": "The IPO was oversubscribed by 30 times due to strong retail demand.", "zh": "由于散户需求旺盛，该IPO超额认购了30倍。"}
+      ],
+      "vocabulary": [
+        {"word": "yield curve", "phonetic": "/jiːld kɜːv/", "meaning": "收益率曲线", "example": {"en": "An inverted yield curve often signals an economic slowdown.", "zh": "收益率曲线倒挂通常预示经济放缓。"}},
+        {"word": "short seller", "phonetic": "/ʃɔːt ˈselər/", "meaning": "做空者", "example": {"en": "Short sellers profit when the stock price declines.", "zh": "做空者在股价下跌时获利。"}},
+        {"word": "free cash flow", "phonetic": "/friː kæʃ fləʊ/", "meaning": "自由现金流", "example": {"en": "Strong free cash flow allows the company to invest in growth without raising debt.", "zh": "强劲的自由现金流使公司无需举债即可投资增长。"}},
+        {"word": "rotation", "phonetic": "/rəʊˈteɪʃən/", "meaning": "轮动", "example": {"en": "Sector rotation is a common strategy during market transitions.", "zh": "板块轮动是市场转换期的常见策略。"}},
+        {"word": "oversubscribed", "phonetic": "/ˌəʊvəsəbˈskraɪbd/", "meaning": "超额认购的", "example": {"en": "The bond offering was 5 times oversubscribed.", "zh": "该债券发行被超额认购了5倍。"}}
+      ]
+    },
+    "team": {
+      "label": "Team / Management",
+      "sentences": [
+        {"en": "The skip-level meeting revealed morale issues the direct manager had not surfaced.", "zh": "跨级会议暴露了直属经理未发现的士气问题。"},
+        {"en": "We should establish a clear escalation path for production incidents.", "zh": "我们应该为生产事故建立清晰的升级路径。"},
+        {"en": "The performance review cycle starts next Monday across all departments.", "zh": "绩效考核周期下周一在所有部门同步启动。"},
+        {"en": "I need you to own the end-to-end delivery of this project.", "zh": "我需要你全程负责这个项目的端到端交付。"},
+        {"en": "The hiring pipeline is healthy, with 12 candidates in the final round.", "zh": "招聘管线很健康，有12名候选人进入最终轮。"}
+      ],
+      "vocabulary": [
+        {"word": "skip-level", "phonetic": "/skɪp ˈlevəl/", "meaning": "跨级的", "example": {"en": "Skip-level meetings help senior leaders understand frontline challenges.", "zh": "跨级会议帮助高层领导了解一线挑战。"}},
+        {"word": "escalation", "phonetic": "/ˌeskəˈleɪʃən/", "meaning": "升级；上报", "example": {"en": "Timely escalation prevents small issues from becoming major incidents.", "zh": "及时上报能防止小问题演变为重大事故。"}},
+        {"word": "ownership", "phonetic": "/ˈəʊnəʃɪp/", "meaning": "主人翁意识；负责制", "example": {"en": "Taking ownership means being accountable for the outcome, not just the task.", "zh": "主人翁意识意味着对结果负责，而不仅仅是完成任务。"}},
+        {"word": "pipeline", "phonetic": "/ˈpaɪplaɪn/", "meaning": "管线；人才储备", "example": {"en": "A strong talent pipeline reduces the time to fill critical roles.", "zh": "强大的人才储备能缩短关键岗位的招聘周期。"}},
+        {"word": "morale", "phonetic": "/məˈrɑːl/", "meaning": "士气", "example": {"en": "Team morale dropped after three consecutive sprints of overtime.", "zh": "连续三个冲刺加班后，团队士气下降了。"}}
+      ]
+    },
+    "strategy": {
+      "label": "Strategy / Planning",
+      "sentences": [
+        {"en": "The first-mover advantage is fading as competitors replicate our core features.", "zh": "随着竞争对手复制我们的核心功能，先发优势正在消退。"},
+        {"en": "We adopted a land-and-expand strategy to penetrate the enterprise segment.", "zh": "我们采用先着陆再扩展的策略渗透企业客户市场。"},
+        {"en": "The regulatory landscape in Hong Kong favors licensed digital brokers.", "zh": "香港的监管环境有利于持牌数字券商。"},
+        {"en": "Our unit economics turned positive after reaching 50,000 active accounts.", "zh": "活跃账户达到5万之后，我们的单位经济模型转正了。"},
+        {"en": "Strategic partnerships with banks accelerated our customer acquisition in Singapore.", "zh": "与银行的战略合作加速了我们在新加坡的获客。"}
+      ],
+      "vocabulary": [
+        {"word": "first-mover advantage", "phonetic": "/fɜːst ˈmuːvər ədˈvɑːntɪdʒ/", "meaning": "先发优势", "example": {"en": "First-mover advantage matters less if execution is slow.", "zh": "如果执行速度慢，先发优势就不那么重要了。"}},
+        {"word": "land-and-expand", "phonetic": "/lænd ənd ɪkˈspænd/", "meaning": "先着陆再扩展", "example": {"en": "The land-and-expand model starts with a small deal and grows over time.", "zh": "先着陆再扩展模式从小单做起，随时间逐步扩大。"}},
+        {"word": "regulatory", "phonetic": "/ˈreɡjʊlətəri/", "meaning": "监管的", "example": {"en": "Regulatory compliance is a prerequisite for operating in financial markets.", "zh": "合规是在金融市场运营的前提条件。"}},
+        {"word": "unit economics", "phonetic": "/ˈjuːnɪt ˌiːkəˈnɒmɪks/", "meaning": "单位经济模型", "example": {"en": "Healthy unit economics means each customer generates more revenue than cost.", "zh": "健康的单位经济模型意味着每个客户产生的收入大于成本。"}},
+        {"word": "penetrate", "phonetic": "/ˈpenɪtreɪt/", "meaning": "渗透；打入", "example": {"en": "It took us two years to penetrate the institutional trading market.", "zh": "我们花了两年时间打入机构交易市场。"}}
+      ]
+    }
+  }
+}

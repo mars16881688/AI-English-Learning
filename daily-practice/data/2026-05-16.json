@@ -1,0 +1,90 @@
+{
+  "date": "2026-05-16",
+  "themes": {
+    "growth": {
+      "label": "Growth / Marketing",
+      "sentences": [
+        {"en": "The click-through rate on our push notifications has declined steadily over the past month.", "zh": "过去一个月，我们推送通知的点击率持续下降。"},
+        {"en": "We should implement a win-back campaign targeting dormant users.", "zh": "我们应该实施一个针对沉默用户的召回活动。"},
+        {"en": "Cross-selling brokerage services to existing banking customers doubled our ARPU.", "zh": "向现有银行客户交叉销售经纪服务使我们的ARPU翻了一倍。"},
+        {"en": "The SEO strategy is paying off with a 40% increase in search traffic this quarter.", "zh": "SEO策略正在见效，本季度搜索流量增长了40%。"},
+        {"en": "We need to reduce friction in the deposit flow to improve the funding rate.", "zh": "我们需要减少入金流程中的摩擦，以提升资金到账率。"}
+      ],
+      "vocabulary": [
+        {"word": "click-through rate", "phonetic": "/klɪk θruː reɪt/", "meaning": "点击率（CTR）", "example": {"en": "A compelling call-to-action can significantly improve the click-through rate.", "zh": "有吸引力的行动号召能显著提升点击率。"}},
+        {"word": "win-back", "phonetic": "/wɪn bæk/", "meaning": "召回；挽回", "example": {"en": "The win-back email offered a 30-day free trial to returning users.", "zh": "召回邮件为回归用户提供了30天免费试用。"}},
+        {"word": "cross-selling", "phonetic": "/krɒs ˈselɪŋ/", "meaning": "交叉销售", "example": {"en": "Cross-selling increases revenue without raising acquisition costs.", "zh": "交叉销售能在不增加获客成本的情况下提升收入。"}},
+        {"word": "dormant", "phonetic": "/ˈdɔːmənt/", "meaning": "沉默的；休眠的", "example": {"en": "Dormant users who have not logged in for 90 days are at risk of permanent churn.", "zh": "90天未登录的沉默用户面临永久流失的风险。"}},
+        {"word": "friction", "phonetic": "/ˈfrɪkʃən/", "meaning": "摩擦；阻力", "example": {"en": "Removing unnecessary steps reduces friction in the user experience.", "zh": "去掉不必要的步骤能减少用户体验中的摩擦。"}}
+      ]
+    },
+    "product": {
+      "label": "Product / Metrics",
+      "sentences": [
+        {"en": "The NPS score dropped from 45 to 32 after the price increase.", "zh": "涨价后，NPS评分从45降到了32。"},
+        {"en": "We need to build a self-service dashboard so users can track their own metrics.", "zh": "我们需要搭建一个自助仪表盘，让用户能够追踪自己的指标。"},
+        {"en": "The API uptime was 99.95% last month, which exceeded our target.", "zh": "上个月API的正常运行时间为99.95%，超出了我们的目标。"},
+        {"en": "User interviews revealed that the search function is the most requested improvement.", "zh": "用户访谈显示，搜索功能是最被期望改进的地方。"},
+        {"en": "We should track the activation milestone completion rate across different user segments.", "zh": "我们应该追踪不同用户群体的激活里程碑完成率。"}
+      ],
+      "vocabulary": [
+        {"word": "NPS", "phonetic": "/ˌen piː ˈes/", "meaning": "净推荐值", "example": {"en": "An NPS above 50 is considered excellent in the fintech industry.", "zh": "在金融科技行业，NPS超过50被认为是优秀的。"}},
+        {"word": "self-service", "phonetic": "/self ˈsɜːvɪs/", "meaning": "自助服务", "example": {"en": "Self-service tools reduce the burden on customer support teams.", "zh": "自助服务工具减轻了客服团队的负担。"}},
+        {"word": "uptime", "phonetic": "/ˈʌptaɪm/", "meaning": "正常运行时间", "example": {"en": "99.99% uptime means less than one hour of downtime per year.", "zh": "99.99%的正常运行时间意味着每年停机不到一小时。"}},
+        {"word": "milestone", "phonetic": "/ˈmaɪlstəʊn/", "meaning": "里程碑", "example": {"en": "Reaching one million users was a key milestone for the company.", "zh": "用户突破一百万是公司的关键里程碑。"}},
+        {"word": "user interview", "phonetic": "/ˈjuːzər ˈɪntəvjuː/", "meaning": "用户访谈", "example": {"en": "We conduct user interviews every sprint to validate our assumptions.", "zh": "我们每个迭代周期都进行用户访谈来验证假设。"}}
+      ]
+    },
+    "finance": {
+      "label": "Finance / Investment",
+      "sentences": [
+        {"en": "The stock is trading below its 200-day moving average, which is a bearish signal.", "zh": "该股票交易价格低于200日移动均线，这是一个看空信号。"},
+        {"en": "Gross profit grew by 25% year over year, driven by improved pricing power.", "zh": "受定价能力改善推动，毛利润同比增长25%。"},
+        {"en": "The analyst downgraded the stock from buy to hold after the earnings miss.", "zh": "财报低于预期后，分析师将该股票从买入降级为持有。"},
+        {"en": "Foreign exchange headwinds reduced international revenue by 5% in constant currency.", "zh": "外汇逆风以不变汇率计算使国际收入减少了5%。"},
+        {"en": "The company plans to raise capital through a secondary offering.", "zh": "该公司计划通过二次发行来筹集资金。"}
+      ],
+      "vocabulary": [
+        {"word": "moving average", "phonetic": "/ˈmuːvɪŋ ˈævərɪdʒ/", "meaning": "移动均线", "example": {"en": "The 50-day moving average is commonly used to identify short-term trends.", "zh": "50日移动均线通常用于识别短期趋势。"}},
+        {"word": "downgrade", "phonetic": "/ˌdaʊnˈɡreɪd/", "meaning": "降级；下调评级", "example": {"en": "The downgrade triggered a 10% sell-off in the stock price.", "zh": "评级下调引发了股价10%的抛售。"}},
+        {"word": "headwind", "phonetic": "/ˈhedwɪnd/", "meaning": "逆风；不利因素", "example": {"en": "Rising raw material costs are a significant headwind for manufacturers.", "zh": "原材料成本上升是制造商的重大不利因素。"}},
+        {"word": "secondary offering", "phonetic": "/ˈsekəndəri ˈɒfərɪŋ/", "meaning": "二次发行", "example": {"en": "A secondary offering dilutes existing shareholders' equity.", "zh": "二次发行会稀释现有股东的权益。"}},
+        {"word": "pricing power", "phonetic": "/ˈpraɪsɪŋ ˈpaʊər/", "meaning": "定价能力", "example": {"en": "Strong brand loyalty gives the company significant pricing power.", "zh": "强大的品牌忠诚度赋予公司显著的定价能力。"}}
+      ]
+    },
+    "team": {
+      "label": "Team / Management",
+      "sentences": [
+        {"en": "The key result should be measurable and time-bound to avoid ambiguity.", "zh": "关键结果应该是可衡量且有时限的，以避免模糊性。"},
+        {"en": "We need to address the knowledge silo between the data team and the product team.", "zh": "我们需要解决数据团队和产品团队之间的知识孤岛问题。"},
+        {"en": "The performance review cycle starts next week, so please prepare your self-assessment.", "zh": "绩效评估周期下周开始，请准备好自评。"},
+        {"en": "I recommend pairing senior engineers with juniors for faster knowledge transfer.", "zh": "我建议让资深工程师和初级工程师结对，以加速知识传递。"},
+        {"en": "The all-hands meeting is a chance to reinforce the company's mission and priorities.", "zh": "全员会议是强化公司使命和优先级的机会。"}
+      ],
+      "vocabulary": [
+        {"word": "key result", "phonetic": "/kiː rɪˈzʌlt/", "meaning": "关键结果（OKR中的KR）", "example": {"en": "Each objective should have 3 to 5 measurable key results.", "zh": "每个目标应该有3到5个可衡量的关键结果。"}},
+        {"word": "knowledge silo", "phonetic": "/ˈnɒlɪdʒ ˈsaɪləʊ/", "meaning": "知识孤岛", "example": {"en": "Breaking down knowledge silos improves cross-team collaboration.", "zh": "打破知识孤岛能改善跨团队协作。"}},
+        {"word": "self-assessment", "phonetic": "/self əˈsesmənt/", "meaning": "自评", "example": {"en": "A good self-assessment includes specific examples of impact and growth areas.", "zh": "好的自评应包含具体的影响力案例和成长方向。"}},
+        {"word": "knowledge transfer", "phonetic": "/ˈnɒlɪdʒ ˈtrænsfɜːr/", "meaning": "知识传递", "example": {"en": "Documentation and pairing sessions facilitate effective knowledge transfer.", "zh": "文档和结对环节有助于有效的知识传递。"}},
+        {"word": "all-hands", "phonetic": "/ɔːl hændz/", "meaning": "全员会议", "example": {"en": "The CEO presents the quarterly results at the all-hands meeting.", "zh": "CEO在全员会议上展示季度业绩。"}}
+      ]
+    },
+    "strategy": {
+      "label": "Strategy / Planning",
+      "sentences": [
+        {"en": "Our land-and-expand strategy targets small teams first, then grows within the enterprise.", "zh": "我们的先落地再扩展策略先瞄准小团队，然后在企业内部增长。"},
+        {"en": "The strategic partnership with the local bank gives us a distribution advantage.", "zh": "与本地银行的战略合作伙伴关系给我们带来了分发优势。"},
+        {"en": "We need to evaluate the build versus buy trade-off for the compliance module.", "zh": "我们需要评估合规模块的自建与购买之间的取舍。"},
+        {"en": "The adjacency expansion into wealth management leverages our existing user base.", "zh": "向财富管理的相邻扩展利用了我们现有的用户基础。"},
+        {"en": "Scenario planning helps us prepare for both bull and bear market conditions.", "zh": "情景规划帮助我们为牛市和熊市条件做好准备。"}
+      ],
+      "vocabulary": [
+        {"word": "land-and-expand", "phonetic": "/lænd ənd ɪkˈspænd/", "meaning": "先落地再扩展", "example": {"en": "The land-and-expand model keeps initial deal sizes small to reduce risk.", "zh": "先落地再扩展模式保持初始交易规模较小以降低风险。"}},
+        {"word": "adjacency", "phonetic": "/əˈdʒeɪsənsi/", "meaning": "相邻业务；邻近领域", "example": {"en": "Expanding into adjacencies is less risky than entering entirely new markets.", "zh": "向邻近领域扩展比进入全新市场风险更低。"}},
+        {"word": "trade-off", "phonetic": "/ˈtreɪd ɒf/", "meaning": "取舍；权衡", "example": {"en": "There is always a trade-off between speed and quality in product development.", "zh": "产品开发中，速度和质量之间总是存在取舍。"}},
+        {"word": "scenario planning", "phonetic": "/sɪˈnɑːriəʊ ˈplænɪŋ/", "meaning": "情景规划", "example": {"en": "Scenario planning prepares the organization for multiple possible futures.", "zh": "情景规划让组织为多种可能的未来做好准备。"}},
+        {"word": "distribution", "phonetic": "/ˌdɪstrɪˈbjuːʃən/", "meaning": "分发；渠道分销", "example": {"en": "In fintech, distribution partnerships often matter more than the product itself.", "zh": "在金融科技中，分发合作伙伴关系往往比产品本身更重要。"}}
+      ]
+    }
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "date": "2026-05-08",
+  "themes": {
+    "growth": {
+      "label": "Growth / Marketing",
+      "sentences": [
+        {"en": "The paywall experiment increased premium subscription rate by 14% without hurting retention.", "zh": "付费墙实验在不影响留存的情况下将高级订阅率提升了14%。"},
+        {"en": "We should segment our email list by engagement level to improve open rates.", "zh": "我们应该按互动程度对邮件列表进行分群，以提高打开率。"},
+        {"en": "Influencer marketing drove a 35% spike in app downloads over the weekend.", "zh": "达人营销使周末的应用下载量飙升了35%。"},
+        {"en": "The retargeting campaign recovered 22% of users who abandoned checkout.", "zh": "再营销活动挽回了22%放弃结账的用户。"},
+        {"en": "Organic search traffic has been declining since the algorithm update in March.", "zh": "自3月算法更新以来，自然搜索流量一直在下降。"}
+      ],
+      "vocabulary": [
+        {"word": "paywall", "phonetic": "/ˈpeɪwɔːl/", "meaning": "付费墙", "example": {"en": "Moving premium content behind a paywall boosted average revenue per user.", "zh": "将优质内容放到付费墙后面提升了每用户平均收入。"}},
+        {"word": "segment", "phonetic": "/ˈseɡmənt/", "meaning": "分群；细分", "example": {"en": "We segment users by behavior to deliver personalized push notifications.", "zh": "我们按行为对用户分群，以推送个性化通知。"}},
+        {"word": "retargeting", "phonetic": "/riːˈtɑːrɡɪtɪŋ/", "meaning": "再营销；重定向", "example": {"en": "Retargeting ads have a higher conversion rate than cold traffic ads.", "zh": "再营销广告的转化率高于冷流量广告。"}},
+        {"word": "organic", "phonetic": "/ɔːrˈɡænɪk/", "meaning": "自然的；有机的", "example": {"en": "Organic growth is more sustainable but slower than paid acquisition.", "zh": "自然增长比付费获客更可持续但更慢。"}},
+        {"word": "spike", "phonetic": "/spaɪk/", "meaning": "飙升；激增", "example": {"en": "We saw a traffic spike after the CEO's interview went viral.", "zh": "CEO的采访走红后，我们看到了流量飙升。"}}
+      ]
+    },
+    "product": {
+      "label": "Product / Metrics",
+      "sentences": [
+        {"en": "The crash rate on the latest iOS build is unacceptable and must be the top priority fix.", "zh": "最新iOS版本的崩溃率无法接受，必须作为最高优先级修复。"},
+        {"en": "We are tracking session depth as a proxy for content engagement.", "zh": "我们在追踪会话深度作为内容互动的代理指标。"},
+        {"en": "The technical debt from the legacy codebase is slowing down feature delivery.", "zh": "遗留代码库的技术债务正在拖慢功能交付速度。"},
+        {"en": "User satisfaction scores dropped after we removed the quick-access toolbar.", "zh": "移除快捷工具栏后，用户满意度评分下降了。"},
+        {"en": "We need to define clear acceptance criteria before the sprint planning meeting.", "zh": "在冲刺计划会议之前，我们需要定义清晰的验收标准。"}
+      ],
+      "vocabulary": [
+        {"word": "crash rate", "phonetic": "/kræʃ reɪt/", "meaning": "崩溃率", "example": {"en": "Keeping the crash rate below 0.5% is our stability target.", "zh": "将崩溃率保持在0.5%以下是我们的稳定性目标。"}},
+        {"word": "proxy", "phonetic": "/ˈprɒksi/", "meaning": "代理指标；替代", "example": {"en": "Time on page is often used as a proxy for content quality.", "zh": "页面停留时间常被用作内容质量的代理指标。"}},
+        {"word": "technical debt", "phonetic": "/ˈteknɪkəl det/", "meaning": "技术债务", "example": {"en": "Ignoring technical debt today creates bigger problems tomorrow.", "zh": "今天忽视技术债务会在明天制造更大的问题。"}},
+        {"word": "acceptance criteria", "phonetic": "/əkˈseptəns kraɪˈtɪəriə/", "meaning": "验收标准", "example": {"en": "Each user story must have clear acceptance criteria before development begins.", "zh": "每个用户故事在开发前必须有明确的验收标准。"}},
+        {"word": "legacy", "phonetic": "/ˈleɡəsi/", "meaning": "遗留的；历史遗产", "example": {"en": "Migrating off the legacy system will take at least two quarters.", "zh": "从遗留系统迁移至少需要两个季度。"}}
+      ]
+    },
+    "finance": {
+      "label": "Finance / Investment",
+      "sentences": [
+        {"en": "The debt-to-equity ratio indicates the company is overleveraged compared to peers.", "zh": "债务权益比表明该公司与同行相比杠杆过高。"},
+        {"en": "Institutional investors increased their holdings by 12% in the last quarter.", "zh": "机构投资者上季度增持了12%。"},
+        {"en": "The stock is trading below its 200-day moving average, signaling a bearish trend.", "zh": "该股票在200日均线下方交易，预示着看跌趋势。"},
+        {"en": "Net income was dragged down by a one-time restructuring charge of $45 million.", "zh": "净利润被4500万美元的一次性重组费用拖累。"},
+        {"en": "The company's return on equity has outpaced the sector average for three years.", "zh": "该公司的净资产收益率已连续三年超过行业平均水平。"}
+      ],
+      "vocabulary": [
+        {"word": "leverage", "phonetic": "/ˈlevərɪdʒ/", "meaning": "杠杆", "example": {"en": "Excessive leverage amplifies both gains and losses.", "zh": "过度杠杆会放大收益和亏损。"}},
+        {"word": "bearish", "phonetic": "/ˈberɪʃ/", "meaning": "看跌的；熊市的", "example": {"en": "Analysts turned bearish on the sector after weak earnings reports.", "zh": "疲软的财报后，分析师对该板块转为看跌。"}},
+        {"word": "restructuring", "phonetic": "/riːˈstrʌktʃərɪŋ/", "meaning": "重组", "example": {"en": "The restructuring plan includes laying off 10% of the workforce.", "zh": "重组计划包括裁减10%的员工。"}},
+        {"word": "holdings", "phonetic": "/ˈhoʊldɪŋz/", "meaning": "持仓；持股", "example": {"en": "The fund disclosed its top ten holdings in the quarterly filing.", "zh": "该基金在季度报告中披露了前十大持仓。"}},
+        {"word": "return on equity", "phonetic": "/rɪˈtɜːrn ɒn ˈekwɪti/", "meaning": "净资产收益率（ROE）", "example": {"en": "A high return on equity suggests efficient use of shareholders' capital.", "zh": "高净资产收益率表明股东资本得到了高效利用。"}}
+      ]
+    },
+    "team": {
+      "label": "Team / Management",
+      "sentences": [
+        {"en": "I noticed the team morale has dipped since the reorg announcement.", "zh": "我注意到自组织架构调整公告以来，团队士气有所下降。"},
+        {"en": "Let's do a skill gap analysis to plan the hiring roadmap for Q3.", "zh": "让我们做一个技能差距分析，以规划Q3的招聘路线图。"},
+        {"en": "The one-on-one meeting is your safe space to raise any concerns.", "zh": "一对一会议是你安全地提出任何顾虑的空间。"},
+        {"en": "We should celebrate small wins to keep the team motivated during the long project.", "zh": "我们应该庆祝小胜利，以在长期项目中保持团队积极性。"},
+        {"en": "Please document the decision rationale so future team members understand the context.", "zh": "请记录决策依据，以便未来的团队成员理解背景。"}
+      ],
+      "vocabulary": [
+        {"word": "morale", "phonetic": "/məˈræl/", "meaning": "士气", "example": {"en": "Transparent communication from leadership boosts team morale.", "zh": "领导层的透明沟通能提升团队士气。"}},
+        {"word": "reorg", "phonetic": "/ˌriːˈɔːrɡ/", "meaning": "组织架构调整", "example": {"en": "The reorg moved the data team under the product division.", "zh": "架构调整将数据团队划归到产品部门下。"}},
+        {"word": "rationale", "phonetic": "/ˌræʃəˈnæl/", "meaning": "依据；理由", "example": {"en": "Always explain the rationale behind a strategic decision.", "zh": "始终解释战略决策背后的依据。"}},
+        {"word": "skill gap", "phonetic": "/skɪl ɡæp/", "meaning": "技能差距", "example": {"en": "Identifying the skill gap early allows us to plan targeted training.", "zh": "尽早识别技能差距使我们能规划针对性培训。"}},
+        {"word": "one-on-one", "phonetic": "/wʌn ɒn wʌn/", "meaning": "一对一会议", "example": {"en": "Managers should hold one-on-ones with every direct report at least biweekly.", "zh": "管理者应至少每两周与每位直接下属进行一对一会议。"}}
+      ]
+    },
+    "strategy": {
+      "label": "Strategy / Planning",
+      "sentences": [
+        {"en": "The blue ocean strategy helped us avoid direct competition with incumbents.", "zh": "蓝海战略帮助我们避免了与在位者的直接竞争。"},
+        {"en": "We are pursuing vertical integration to control more of the value chain.", "zh": "我们正在推进纵向整合以控制更多价值链环节。"},
+        {"en": "The market entry barrier is high due to regulatory requirements in financial services.", "zh": "由于金融服务的监管要求，市场准入壁垒很高。"},
+        {"en": "Our flywheel effect accelerates as more users contribute content to the platform.", "zh": "随着更多用户向平台贡献内容，我们的飞轮效应在加速。"},
+        {"en": "We should conduct a scenario analysis to prepare for potential macroeconomic shocks.", "zh": "我们应该进行情景分析，为潜在的宏观经济冲击做好准备。"}
+      ],
+      "vocabulary": [
+        {"word": "incumbent", "phonetic": "/ɪnˈkʌmbənt/", "meaning": "在位者；现有企业", "example": {"en": "Disrupting incumbents requires a fundamentally different value proposition.", "zh": "颠覆在位者需要一个根本不同的价值主张。"}},
+        {"word": "vertical integration", "phonetic": "/ˈvɜːrtɪkəl ˌɪntɪˈɡreɪʃən/", "meaning": "纵向整合", "example": {"en": "Vertical integration reduces dependence on third-party suppliers.", "zh": "纵向整合减少了对第三方供应商的依赖。"}},
+        {"word": "flywheel", "phonetic": "/ˈflaɪwiːl/", "meaning": "飞轮效应", "example": {"en": "Amazon's flywheel starts with lower prices driving more traffic.", "zh": "亚马逊的飞轮从更低的价格带动更多流量开始。"}},
+        {"word": "barrier", "phonetic": "/ˈbæriər/", "meaning": "壁垒；障碍", "example": {"en": "Regulatory barriers protect existing players but slow down innovation.", "zh": "监管壁垒保护了现有玩家但减缓了创新。"}},
+        {"word": "scenario analysis", "phonetic": "/sɪˈnærioʊ əˈnæləsɪs/", "meaning": "情景分析", "example": {"en": "Scenario analysis helps management prepare contingency plans.", "zh": "情景分析帮助管理层制定应急计划。"}}
+      ]
+    }
+  }
+}

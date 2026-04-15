@@ -1,0 +1,90 @@
+{
+  "date": "2026-05-02",
+  "themes": {
+    "growth": {
+      "label": "Growth / Marketing",
+      "sentences": [
+        {"en": "The lookalike audience performed 40% better than our broad targeting.", "zh": "相似人群的表现比宽泛定向好了40%。"},
+        {"en": "We should sunset the referral bonus since the fraud rate is climbing.", "zh": "我们应该下线推荐奖励，因为欺诈率在攀升。"},
+        {"en": "The top-of-funnel metrics look healthy, but mid-funnel drop-off is alarming.", "zh": "漏斗顶部指标看起来健康，但中段流失令人担忧。"},
+        {"en": "Content marketing generates compounding returns over a longer time horizon.", "zh": "内容营销在更长的时间维度上产生复合回报。"},
+        {"en": "We need a dedicated growth engineer to build and maintain our experimentation platform.", "zh": "我们需要一个专职增长工程师来搭建和维护实验平台。"}
+      ],
+      "vocabulary": [
+        {"word": "lookalike audience", "phonetic": "/ˈlʊkəlaɪk ˈɔːdiəns/", "meaning": "相似人群", "example": {"en": "Lookalike audiences are built from your highest-value customer profiles.", "zh": "相似人群基于你最高价值的客户画像来构建。"}},
+        {"word": "sunset", "phonetic": "/ˈsʌnset/", "meaning": "下线；逐步淘汰", "example": {"en": "We will sunset the legacy rewards program at the end of this quarter.", "zh": "我们将在本季度末下线旧版奖励计划。"}},
+        {"word": "drop-off", "phonetic": "/ˈdrɒp ɒf/", "meaning": "流失；跳出", "example": {"en": "The biggest drop-off happens between account creation and first deposit.", "zh": "最大的流失发生在账户创建和首次入金之间。"}},
+        {"word": "compounding", "phonetic": "/kəmˈpaʊndɪŋ/", "meaning": "复合的；累积的", "example": {"en": "SEO delivers compounding traffic that grows without additional spend.", "zh": "SEO带来无需额外投入就能增长的复合流量。"}},
+        {"word": "experimentation", "phonetic": "/ɪkˌsperɪmenˈteɪʃən/", "meaning": "实验；测试", "example": {"en": "A culture of experimentation encourages teams to test bold ideas.", "zh": "实验文化鼓励团队测试大胆的想法。"}}
+      ]
+    },
+    "product": {
+      "label": "Product / Metrics",
+      "sentences": [
+        {"en": "The tech debt backlog is slowing down our ability to ship new features.", "zh": "技术债积压正在拖慢我们交付新功能的能力。"},
+        {"en": "We implemented server-side rendering to improve the initial page load speed.", "zh": "我们实现了服务端渲染来提升首屏加载速度。"},
+        {"en": "The accessibility audit revealed 23 critical issues on the trading page.", "zh": "无障碍审计在交易页面发现了23个严重问题。"},
+        {"en": "Our uptime SLA guarantees 99.95% availability for trading hours.", "zh": "我们的正常运行时间SLA保证交易时段99.95%的可用性。"},
+        {"en": "The product spec needs sign-off from both engineering and compliance.", "zh": "产品需求文档需要工程团队和合规团队共同签字确认。"}
+      ],
+      "vocabulary": [
+        {"word": "tech debt", "phonetic": "/tek det/", "meaning": "技术债", "example": {"en": "Ignoring tech debt now will cost three times more to fix later.", "zh": "现在忽视技术债，以后修复的成本将是三倍。"}},
+        {"word": "rendering", "phonetic": "/ˈrendərɪŋ/", "meaning": "渲染", "example": {"en": "Client-side rendering shifts the computational load to the user's device.", "zh": "客户端渲染将计算负载转移到用户设备上。"}},
+        {"word": "accessibility", "phonetic": "/əkˌsesəˈbɪləti/", "meaning": "无障碍访问", "example": {"en": "Accessibility improvements benefit all users, not just those with disabilities.", "zh": "无障碍改进惠及所有用户，而不仅仅是残障人士。"}},
+        {"word": "uptime", "phonetic": "/ˈʌptaɪm/", "meaning": "正常运行时间", "example": {"en": "We achieved 99.99% uptime in the last quarter.", "zh": "上季度我们实现了99.99%的正常运行时间。"}},
+        {"word": "sign-off", "phonetic": "/saɪn ɒf/", "meaning": "签字确认；审批", "example": {"en": "Legal sign-off is required before any public-facing feature goes live.", "zh": "任何面向公众的功能上线前都需要法务签字确认。"}}
+      ]
+    },
+    "finance": {
+      "label": "Finance / Investment",
+      "sentences": [
+        {"en": "The company announced a secondary offering to fund its expansion plans.", "zh": "该公司宣布二次发行以资助其扩张计划。"},
+        {"en": "Book value per share has been steadily increasing over the past five years.", "zh": "每股账面价值在过去五年中稳步增长。"},
+        {"en": "The analyst downgraded the stock from buy to hold citing execution risk.", "zh": "分析师以执行风险为由将该股从买入下调至持有。"},
+        {"en": "Operating leverage is kicking in as revenue scales faster than fixed costs.", "zh": "随着收入增速超过固定成本，经营杠杆效应正在显现。"},
+        {"en": "The rights issue was fully subscribed, showing strong investor confidence.", "zh": "供股获全额认购，显示出投资者的强烈信心。"}
+      ],
+      "vocabulary": [
+        {"word": "secondary offering", "phonetic": "/ˈsekəndəri ˈɒfərɪŋ/", "meaning": "二次发行", "example": {"en": "The secondary offering diluted existing shareholders by 8%.", "zh": "二次发行使现有股东被稀释了8%。"}},
+        {"word": "book value", "phonetic": "/bʊk ˈvæljuː/", "meaning": "账面价值", "example": {"en": "The stock is trading below book value, which may signal undervaluation.", "zh": "该股股价低于账面价值，可能意味着被低估。"}},
+        {"word": "downgrade", "phonetic": "/ˌdaʊnˈɡreɪd/", "meaning": "下调评级", "example": {"en": "The downgrade triggered a 5% sell-off in pre-market trading.", "zh": "评级下调引发了盘前交易5%的抛售。"}},
+        {"word": "operating leverage", "phonetic": "/ˈɒpəreɪtɪŋ ˈlevərɪdʒ/", "meaning": "经营杠杆", "example": {"en": "High operating leverage means small revenue gains drive large profit increases.", "zh": "高经营杠杆意味着小幅收入增长能推动大幅利润增加。"}},
+        {"word": "rights issue", "phonetic": "/raɪts ˈɪʃuː/", "meaning": "供股；配股", "example": {"en": "Existing shareholders have the right to participate in the rights issue at a discount.", "zh": "现有股东有权以折扣价参与供股。"}}
+      ]
+    },
+    "team": {
+      "label": "Team / Management",
+      "sentences": [
+        {"en": "The key result should be measurable and within the team's direct control.", "zh": "关键结果应该是可衡量的，并且在团队的直接控制范围内。"},
+        {"en": "We lost two senior engineers this quarter due to lack of career growth paths.", "zh": "本季度我们流失了两名高级工程师，原因是缺乏职业成长路径。"},
+        {"en": "The hiring bar should not drop just because we are under time pressure.", "zh": "不能因为时间紧迫就降低招聘标准。"},
+        {"en": "I noticed you have been consistently delivering ahead of schedule this sprint.", "zh": "我注意到这个冲刺你一直在提前交付。"},
+        {"en": "The decision matrix helps us evaluate trade-offs objectively.", "zh": "决策矩阵帮助我们客观地评估取舍。"}
+      ],
+      "vocabulary": [
+        {"word": "measurable", "phonetic": "/ˈmeʒərəbl/", "meaning": "可衡量的", "example": {"en": "Every OKR must have measurable key results with clear targets.", "zh": "每个OKR都必须有可衡量的、目标明确的关键结果。"}},
+        {"word": "attrition", "phonetic": "/əˈtrɪʃən/", "meaning": "人员流失", "example": {"en": "High attrition in the engineering team is a red flag for culture issues.", "zh": "工程团队的高流失率是文化问题的危险信号。"}},
+        {"word": "hiring bar", "phonetic": "/ˈhaɪərɪŋ bɑːr/", "meaning": "招聘标准", "example": {"en": "Maintaining a high hiring bar is essential for long-term team quality.", "zh": "保持高招聘标准对长期团队质量至关重要。"}},
+        {"word": "trade-off", "phonetic": "/ˈtreɪd ɒf/", "meaning": "取舍；权衡", "example": {"en": "Every product decision involves a trade-off between speed and quality.", "zh": "每个产品决策都涉及速度与质量之间的取舍。"}},
+        {"word": "decision matrix", "phonetic": "/dɪˈsɪʒən ˈmeɪtrɪks/", "meaning": "决策矩阵", "example": {"en": "We use a weighted decision matrix to rank vendor proposals.", "zh": "我们使用加权决策矩阵来对供应商方案进行排序。"}}
+      ]
+    },
+    "strategy": {
+      "label": "Strategy / Planning",
+      "sentences": [
+        {"en": "The platform play creates a two-sided marketplace with strong lock-in effects.", "zh": "平台策略创建了一个具有强锁定效应的双边市场。"},
+        {"en": "We underestimated the switching cost for users migrating from competitor apps.", "zh": "我们低估了用户从竞品迁移的切换成本。"},
+        {"en": "A bottom-up market sizing approach gives a more conservative but realistic estimate.", "zh": "自下而上的市场测算方法给出了更保守但更现实的估计。"},
+        {"en": "The adjacency expansion into wealth management is a natural next step.", "zh": "向财富管理的邻接扩张是自然的下一步。"},
+        {"en": "We must differentiate on service quality since pricing is becoming commoditized.", "zh": "由于价格正在商品化，我们必须在服务质量上形成差异化。"}
+      ],
+      "vocabulary": [
+        {"word": "lock-in", "phonetic": "/ˈlɒk ɪn/", "meaning": "锁定效应", "example": {"en": "Data portability reduces lock-in and gives users more freedom.", "zh": "数据可迁移性降低了锁定效应，给用户更多自由。"}},
+        {"word": "switching cost", "phonetic": "/ˈswɪtʃɪŋ kɒst/", "meaning": "切换成本", "example": {"en": "High switching costs make it harder for competitors to poach your users.", "zh": "高切换成本使竞争对手更难挖走你的用户。"}},
+        {"word": "bottom-up", "phonetic": "/ˈbɒtəm ʌp/", "meaning": "自下而上", "example": {"en": "Bottom-up analysis starts with individual customer segments and builds upward.", "zh": "自下而上的分析从单个客户细分开始，逐步向上汇总。"}},
+        {"word": "adjacency", "phonetic": "/əˈdʒeɪsənsi/", "meaning": "邻接领域", "example": {"en": "Adjacency moves into related markets leverage existing capabilities.", "zh": "向邻接市场的拓展能利用现有能力。"}},
+        {"word": "commoditized", "phonetic": "/kəˈmɒdɪtaɪzd/", "meaning": "商品化的", "example": {"en": "Once a feature is commoditized, it no longer serves as a differentiator.", "zh": "一旦某功能商品化，它就不再是差异化因素。"}}
+      ]
+    }
+  }
+}

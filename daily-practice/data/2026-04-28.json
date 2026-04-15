@@ -1,0 +1,90 @@
+{
+  "date": "2026-04-28",
+  "themes": {
+    "growth": {
+      "label": "Growth / Marketing",
+      "sentences": [
+        {"en": "The propensity model identifies users most likely to upgrade to a paid plan.", "zh": "倾向性模型识别最有可能升级为付费计划的用户。"},
+        {"en": "We launched a win-back campaign targeting users who canceled in the last 90 days.", "zh": "我们针对过去90天内取消订阅的用户发起了召回活动。"},
+        {"en": "The channel mix needs to shift towards owned media to reduce dependency on paid ads.", "zh": "渠道组合需要向自有媒体倾斜，以减少对付费广告的依赖。"},
+        {"en": "Micro-influencers delivered a 3x higher engagement rate than celebrity endorsements.", "zh": "微型KOL带来的互动率是明星代言的3倍。"},
+        {"en": "The onboarding checklist completion rate correlates strongly with 30-day retention.", "zh": "新手引导清单的完成率与30日留存率强相关。"}
+      ],
+      "vocabulary": [
+        {"word": "propensity", "phonetic": "/prəˈpensɪti/", "meaning": "倾向性", "example": {"en": "The propensity score helps us prioritize outreach to high-intent users.", "zh": "倾向性分数帮助我们优先触达高意向用户。"}},
+        {"word": "win-back", "phonetic": "/wɪn bæk/", "meaning": "召回；赢回", "example": {"en": "The win-back email offered a 50% discount to returning subscribers.", "zh": "召回邮件为回归订阅用户提供了50%的折扣。"}},
+        {"word": "channel mix", "phonetic": "/ˈtʃænəl mɪks/", "meaning": "渠道组合", "example": {"en": "Optimizing the channel mix maximizes ROI across marketing spend.", "zh": "优化渠道组合能最大化营销支出的ROI。"}},
+        {"word": "micro-influencer", "phonetic": "/ˈmaɪkrəʊ ˈɪnfluənsə/", "meaning": "微型KOL", "example": {"en": "Micro-influencers have smaller audiences but higher trust and engagement.", "zh": "微型KOL受众更小，但信任度和互动率更高。"}},
+        {"word": "correlate", "phonetic": "/ˈkɒrəleɪt/", "meaning": "相关联", "example": {"en": "Feature usage frequency correlates with long-term user retention.", "zh": "功能使用频率与长期用户留存相关联。"}}
+      ]
+    },
+    "product": {
+      "label": "Product / Metrics",
+      "sentences": [
+        {"en": "The load balancer distributed traffic unevenly, causing one server to reach capacity.", "zh": "负载均衡器分配流量不均，导致一台服务器达到容量上限。"},
+        {"en": "We need to implement graceful degradation so the app remains usable during outages.", "zh": "我们需要实现优雅降级，使App在故障期间仍然可用。"},
+        {"en": "The design system reduced component development time by 40% across all teams.", "zh": "设计系统使所有团队的组件开发时间减少了40%。"},
+        {"en": "The migration to microservices improved deployment independence but increased operational complexity.", "zh": "向微服务的迁移提升了部署独立性，但增加了运维复杂度。"},
+        {"en": "The telemetry data shows a spike in error rates between 2 AM and 4 AM UTC.", "zh": "遥测数据显示UTC凌晨2点到4点之间错误率出现尖峰。"}
+      ],
+      "vocabulary": [
+        {"word": "load balancer", "phonetic": "/ləʊd ˈbælənsə/", "meaning": "负载均衡器", "example": {"en": "The load balancer routes incoming requests to the least busy server.", "zh": "负载均衡器将传入请求路由到最空闲的服务器。"}},
+        {"word": "graceful degradation", "phonetic": "/ˈɡreɪsfəl ˌdeɡrəˈdeɪʃən/", "meaning": "优雅降级", "example": {"en": "Graceful degradation ensures core features work even when some services are down.", "zh": "优雅降级确保即使部分服务宕机，核心功能仍然可用。"}},
+        {"word": "design system", "phonetic": "/dɪˈzaɪn ˈsɪstəm/", "meaning": "设计系统", "example": {"en": "A well-maintained design system ensures visual consistency across the product.", "zh": "维护良好的设计系统确保产品的视觉一致性。"}},
+        {"word": "microservices", "phonetic": "/ˈmaɪkrəʊˌsɜːvɪsɪz/", "meaning": "微服务", "example": {"en": "Microservices allow each team to deploy independently without affecting others.", "zh": "微服务允许每个团队独立部署而不影响其他团队。"}},
+        {"word": "telemetry", "phonetic": "/tɪˈlemɪtri/", "meaning": "遥测", "example": {"en": "Application telemetry provides real-time visibility into system health.", "zh": "应用遥测提供对系统健康状态的实时可见性。"}}
+      ]
+    },
+    "finance": {
+      "label": "Finance / Investment",
+      "sentences": [
+        {"en": "The Sharpe ratio of our portfolio is 1.2, which outperforms the benchmark.", "zh": "我们投资组合的夏普比率为1.2，跑赢了基准。"},
+        {"en": "The company announced a secondary offering to raise capital for expansion.", "zh": "公司宣布二次发行以筹集扩张资金。"},
+        {"en": "Retail investor participation in the Hong Kong market increased 25% year-over-year.", "zh": "散户投资者在港股市场的参与度同比增长了25%。"},
+        {"en": "The cost of capital is rising, which makes unprofitable growth less attractive.", "zh": "资本成本正在上升，这使得无利润增长变得不那么有吸引力。"},
+        {"en": "The quarterly filing disclosed a material weakness in internal controls.", "zh": "季度申报披露了内部控制中的重大缺陷。"}
+      ],
+      "vocabulary": [
+        {"word": "Sharpe ratio", "phonetic": "/ʃɑːp ˈreɪʃiəʊ/", "meaning": "夏普比率", "example": {"en": "A Sharpe ratio above 1.0 is generally considered a good risk-adjusted return.", "zh": "夏普比率超过1.0通常被视为良好的风险调整后回报。"}},
+        {"word": "secondary offering", "phonetic": "/ˈsekəndəri ˈɒfərɪŋ/", "meaning": "二次发行", "example": {"en": "The secondary offering diluted existing shareholders by 8%.", "zh": "二次发行使现有股东被稀释了8%。"}},
+        {"word": "retail investor", "phonetic": "/ˈriːteɪl ɪnˈvestə/", "meaning": "散户投资者", "example": {"en": "Retail investors now account for 30% of daily trading volume.", "zh": "散户投资者目前占每日交易量的30%。"}},
+        {"word": "cost of capital", "phonetic": "/kɒst əv ˈkæpɪtəl/", "meaning": "资本成本", "example": {"en": "Projects should only proceed if their expected return exceeds the cost of capital.", "zh": "只有预期回报超过资本成本时，项目才应推进。"}},
+        {"word": "material weakness", "phonetic": "/məˈtɪəriəl ˈwiːknəs/", "meaning": "重大缺陷", "example": {"en": "A material weakness in controls can trigger regulatory scrutiny.", "zh": "内控中的重大缺陷可能引发监管审查。"}}
+      ]
+    },
+    "team": {
+      "label": "Team / Management",
+      "sentences": [
+        {"en": "The headcount plan for Q3 includes two senior engineers and one data analyst.", "zh": "Q3的编制计划包括两名高级工程师和一名数据分析师。"},
+        {"en": "We implemented asynchronous communication guidelines to support our distributed team.", "zh": "我们制定了异步沟通指南以支持分布式团队。"},
+        {"en": "The talent review identified three high-potential employees for the fast-track program.", "zh": "人才盘点识别出三名高潜力员工进入快速通道项目。"},
+        {"en": "The exit interview data suggests compensation is the primary reason people leave.", "zh": "离职面谈数据表明薪酬是员工离职的首要原因。"},
+        {"en": "We are piloting a four-day workweek to measure its impact on productivity and wellbeing.", "zh": "我们正在试行四天工作制，以衡量其对生产力和健康的影响。"}
+      ],
+      "vocabulary": [
+        {"word": "headcount", "phonetic": "/ˈhedkaʊnt/", "meaning": "编制；人数", "example": {"en": "The headcount freeze means no new hires until Q4.", "zh": "编制冻结意味着Q4之前不会有新招聘。"}},
+        {"word": "asynchronous", "phonetic": "/eɪˈsɪŋkrənəs/", "meaning": "异步的", "example": {"en": "Asynchronous communication works better for teams across multiple time zones.", "zh": "异步沟通更适合跨多个时区的团队。"}},
+        {"word": "high-potential", "phonetic": "/haɪ pəˈtenʃəl/", "meaning": "高潜力的", "example": {"en": "High-potential employees receive additional training and mentoring opportunities.", "zh": "高潜力员工获得额外的培训和辅导机会。"}},
+        {"word": "exit interview", "phonetic": "/ˈeksɪt ˈɪntəvjuː/", "meaning": "离职面谈", "example": {"en": "Exit interview insights help reduce future attrition.", "zh": "离职面谈的洞察有助于降低未来的离职率。"}},
+        {"word": "pilot", "phonetic": "/ˈpaɪlət/", "meaning": "试点；试行", "example": {"en": "We will pilot the new process with one team before rolling it out company-wide.", "zh": "我们将先在一个团队试行新流程，再推广到全公司。"}}
+      ]
+    },
+    "strategy": {
+      "label": "Strategy / Planning",
+      "sentences": [
+        {"en": "The PESTEL analysis highlighted geopolitical risk as the top external threat.", "zh": "PESTEL分析将地缘政治风险标记为最大的外部威胁。"},
+        {"en": "We should pursue a razor-and-blade model where the core product is free but add-ons are paid.", "zh": "我们应该采用剃刀-刀片模式，核心产品免费但增值服务收费。"},
+        {"en": "The three-horizon framework separates immediate optimization from long-term bets.", "zh": "三层面框架将短期优化和长期押注区分开来。"},
+        {"en": "Our data moat grows stronger with every trade executed on the platform.", "zh": "平台上每执行一笔交易，我们的数据护城河就变得更强。"},
+        {"en": "The total cost of ownership should include implementation, training, and ongoing maintenance.", "zh": "总拥有成本应包括实施、培训和持续维护。"}
+      ],
+      "vocabulary": [
+        {"word": "PESTEL", "phonetic": "/ˈpestəl/", "meaning": "PESTEL分析（政治经济社会技术环境法律）", "example": {"en": "PESTEL analysis provides a macro-level view of the external environment.", "zh": "PESTEL分析提供外部环境的宏观视角。"}},
+        {"word": "razor-and-blade", "phonetic": "/ˈreɪzər ənd bleɪd/", "meaning": "剃刀-刀片模式", "example": {"en": "The razor-and-blade model locks in customers through consumable purchases.", "zh": "剃刀-刀片模式通过消耗品购买锁定客户。"}},
+        {"word": "three-horizon", "phonetic": "/θriː həˈraɪzən/", "meaning": "三层面（框架）", "example": {"en": "Horizon one focuses on the core business, while horizon three explores disruptive innovation.", "zh": "第一层面聚焦核心业务，第三层面探索颠覆性创新。"}},
+        {"word": "data moat", "phonetic": "/ˈdeɪtə məʊt/", "meaning": "数据护城河", "example": {"en": "A data moat becomes more defensible as the dataset grows.", "zh": "随着数据集的增长，数据护城河变得更具防御性。"}},
+        {"word": "total cost of ownership", "phonetic": "/ˈtəʊtəl kɒst əv ˈəʊnəʃɪp/", "meaning": "总拥有成本（TCO）", "example": {"en": "The cheaper vendor had a higher total cost of ownership when support fees were included.", "zh": "算上支持费用后，较便宜的供应商的总拥有成本反而更高。"}}
+      ]
+    }
+  }
+}

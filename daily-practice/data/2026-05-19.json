@@ -1,0 +1,90 @@
+{
+  "date": "2026-05-19",
+  "themes": {
+    "growth": {
+      "label": "Growth / Marketing",
+      "sentences": [
+        {"en": "The content marketing strategy drives 60% of our inbound leads at near-zero marginal cost.", "zh": "内容营销策略以接近零的边际成本驱动了我们60%的入站线索。"},
+        {"en": "We should run a propensity model to predict which free users are likely to convert.", "zh": "我们应该跑一个倾向性模型来预测哪些免费用户可能会转化。"},
+        {"en": "The geotargeted ads performed 50% better in Hong Kong than the global creative.", "zh": "地理定向广告在香港的表现比全球素材好50%。"},
+        {"en": "The churn prediction model flagged 200 high-risk accounts for proactive outreach.", "zh": "流失预测模型标记了200个高风险账户以进行主动触达。"},
+        {"en": "User-generated content has become our most cost-effective channel for social proof.", "zh": "用户生成内容已成为我们最具性价比的社交证明渠道。"}
+      ],
+      "vocabulary": [
+        {"word": "inbound lead", "phonetic": "/ˈɪnbaʊnd liːd/", "meaning": "入站线索", "example": {"en": "Inbound leads have a 3x higher close rate than outbound leads.", "zh": "入站线索的成交率是外呼线索的3倍。"}},
+        {"word": "propensity model", "phonetic": "/prəˈpensɪti ˈmɒdəl/", "meaning": "倾向性模型", "example": {"en": "The propensity model assigns a score to each user based on their likelihood to upgrade.", "zh": "倾向性模型根据每个用户升级的可能性为其分配一个分数。"}},
+        {"word": "geotargeting", "phonetic": "/ˌdʒiːəʊˈtɑːɡɪtɪŋ/", "meaning": "地理定向", "example": {"en": "Geotargeting allows us to show different ad creatives based on the user's location.", "zh": "地理定向允许我们根据用户位置展示不同的广告素材。"}},
+        {"word": "social proof", "phonetic": "/ˈsəʊʃəl pruːf/", "meaning": "社交证明", "example": {"en": "Displaying user reviews on the landing page serves as powerful social proof.", "zh": "在落地页展示用户评价是强大的社交证明。"}},
+        {"word": "proactive outreach", "phonetic": "/prəʊˈæktɪv ˈaʊtriːtʃ/", "meaning": "主动触达", "example": {"en": "Proactive outreach to at-risk customers can prevent churn before it happens.", "zh": "对高风险客户的主动触达能在流失发生之前预防它。"}}
+      ]
+    },
+    "product": {
+      "label": "Product / Metrics",
+      "sentences": [
+        {"en": "The feature parity between iOS and Android must be maintained for consistency.", "zh": "iOS和Android之间的功能一致性必须保持一致。"},
+        {"en": "We implemented a circuit breaker pattern to prevent cascading failures.", "zh": "我们实现了断路器模式以防止级联故障。"},
+        {"en": "The customer effort score revealed that the withdrawal process is too complex.", "zh": "客户费力度评分表明提现流程太复杂了。"},
+        {"en": "Dark mode adoption reached 40%, so it should be our default setting for new users.", "zh": "深色模式使用率达到40%，应该成为新用户的默认设置。"},
+        {"en": "The load test simulated 100,000 concurrent users without any performance degradation.", "zh": "负载测试模拟了10万并发用户，没有任何性能下降。"}
+      ],
+      "vocabulary": [
+        {"word": "feature parity", "phonetic": "/ˈfiːtʃə ˈpærɪti/", "meaning": "功能一致性", "example": {"en": "Achieving feature parity across platforms requires a shared design system.", "zh": "实现跨平台功能一致性需要统一的设计体系。"}},
+        {"word": "circuit breaker", "phonetic": "/ˈsɜːkɪt ˈbreɪkər/", "meaning": "断路器（设计模式）", "example": {"en": "The circuit breaker trips when the error rate exceeds the threshold.", "zh": "当错误率超过阈值时，断路器会触发。"}},
+        {"word": "customer effort score", "phonetic": "/ˈkʌstəmər ˈefət skɔːr/", "meaning": "客户费力度评分（CES）", "example": {"en": "A low customer effort score indicates a smooth and easy experience.", "zh": "低客户费力度评分表示流畅和简便的体验。"}},
+        {"word": "concurrent", "phonetic": "/kənˈkʌrənt/", "meaning": "并发的", "example": {"en": "The system must handle 50,000 concurrent connections during peak hours.", "zh": "系统必须在高峰时段处理5万个并发连接。"}},
+        {"word": "load test", "phonetic": "/ləʊd test/", "meaning": "负载测试", "example": {"en": "We run load tests before every major release to ensure system stability.", "zh": "我们在每次重大发布前进行负载测试以确保系统稳定性。"}}
+      ]
+    },
+    "finance": {
+      "label": "Finance / Investment",
+      "sentences": [
+        {"en": "The stock split made shares more accessible to retail investors.", "zh": "股票拆分使得股票对散户投资者更容易获取。"},
+        {"en": "Net income turned positive for the first time since the company went public.", "zh": "净利润自公司上市以来首次转正。"},
+        {"en": "The risk-free rate has risen to 4.5%, making bonds more attractive relative to equities.", "zh": "无风险利率已升至4.5%，使债券相对于股票更具吸引力。"},
+        {"en": "The analyst revised the price target upward from $80 to $110.", "zh": "分析师将目标价从80美元上调至110美元。"},
+        {"en": "Working capital efficiency improved after the company shortened its receivables cycle.", "zh": "公司缩短了应收账款周期后，营运资金效率有所改善。"}
+      ],
+      "vocabulary": [
+        {"word": "stock split", "phonetic": "/stɒk splɪt/", "meaning": "股票拆分", "example": {"en": "A 4-for-1 stock split reduces the share price to one quarter of the original.", "zh": "4拆1的股票拆分将股价降至原来的四分之一。"}},
+        {"word": "net income", "phonetic": "/net ˈɪnkʌm/", "meaning": "净利润", "example": {"en": "Net income excludes non-operating items and provides a clearer profitability picture.", "zh": "净利润排除了非经营项目，提供更清晰的盈利图景。"}},
+        {"word": "risk-free rate", "phonetic": "/rɪsk friː reɪt/", "meaning": "无风险利率", "example": {"en": "The risk-free rate is typically based on government bond yields.", "zh": "无风险利率通常基于国债收益率。"}},
+        {"word": "price target", "phonetic": "/praɪs ˈtɑːɡɪt/", "meaning": "目标价", "example": {"en": "The consensus price target implies 25% upside from the current level.", "zh": "一致目标价意味着较当前水平有25%的上涨空间。"}},
+        {"word": "working capital", "phonetic": "/ˈwɜːkɪŋ ˈkæpɪtəl/", "meaning": "营运资金", "example": {"en": "Efficient working capital management frees up cash for strategic investments.", "zh": "高效的营运资金管理释放现金用于战略投资。"}}
+      ]
+    },
+    "team": {
+      "label": "Team / Management",
+      "sentences": [
+        {"en": "The competency matrix helps us identify skill gaps across the organization.", "zh": "能力矩阵帮助我们识别整个组织中的技能差距。"},
+        {"en": "We adopted asynchronous communication to accommodate team members across time zones.", "zh": "我们采用了异步沟通以适应不同时区的团队成员。"},
+        {"en": "The individual development plan should include both technical and leadership goals.", "zh": "个人发展计划应包含技术和领导力两方面的目标。"},
+        {"en": "Please document the decision rationale so future team members understand the context.", "zh": "请记录决策依据，以便未来的团队成员理解背景。"},
+        {"en": "The new manager training program covers coaching, feedback, and conflict resolution.", "zh": "新经理培训项目涵盖辅导、反馈和冲突解决。"}
+      ],
+      "vocabulary": [
+        {"word": "competency matrix", "phonetic": "/ˈkɒmpɪtənsi ˈmeɪtrɪks/", "meaning": "能力矩阵", "example": {"en": "The competency matrix maps required skills against current team capabilities.", "zh": "能力矩阵将所需技能与当前团队能力进行对照。"}},
+        {"word": "asynchronous", "phonetic": "/eɪˈsɪŋkrənəs/", "meaning": "异步的", "example": {"en": "Asynchronous work reduces meeting fatigue and gives people deep focus time.", "zh": "异步工作减少了会议疲劳，给人们深度专注时间。"}},
+        {"word": "development plan", "phonetic": "/dɪˈveləpmənt plæn/", "meaning": "发展计划", "example": {"en": "A good development plan is co-created by the manager and the employee.", "zh": "好的发展计划由经理和员工共同制定。"}},
+        {"word": "rationale", "phonetic": "/ˌræʃəˈnɑːl/", "meaning": "理由；依据", "example": {"en": "The rationale behind the decision was documented in the design review notes.", "zh": "决策背后的依据记录在设计评审笔记中。"}},
+        {"word": "conflict resolution", "phonetic": "/ˈkɒnflɪkt ˌrezəˈluːʃən/", "meaning": "冲突解决", "example": {"en": "Effective conflict resolution requires active listening and empathy.", "zh": "有效的冲突解决需要积极倾听和共情。"}}
+      ]
+    },
+    "strategy": {
+      "label": "Strategy / Planning",
+      "sentences": [
+        {"en": "The platform's two-sided marketplace creates a chicken-and-egg problem at launch.", "zh": "平台的双边市场在启动时产生了先有鸡还是先有蛋的问题。"},
+        {"en": "We should pursue a beachhead strategy by dominating one niche before expanding.", "zh": "我们应该采取桥头堡策略，先主导一个利基市场再扩展。"},
+        {"en": "The total cost of ownership for this solution is lower than the alternative over 3 years.", "zh": "在3年周期内，该方案的总拥有成本低于替代方案。"},
+        {"en": "Our competitive intelligence suggests the rival is about to launch a similar feature.", "zh": "我们的竞争情报显示对手即将推出类似功能。"},
+        {"en": "The strategic review concluded that we should double down on the core business.", "zh": "战略评审得出结论，我们应该加倍投入核心业务。"}
+      ],
+      "vocabulary": [
+        {"word": "two-sided marketplace", "phonetic": "/tuː saɪdɪd ˈmɑːkɪtpleɪs/", "meaning": "双边市场", "example": {"en": "A two-sided marketplace must solve the supply-demand imbalance to achieve scale.", "zh": "双边市场必须解决供需不平衡才能实现规模化。"}},
+        {"word": "beachhead", "phonetic": "/ˈbiːtʃhed/", "meaning": "桥头堡", "example": {"en": "Securing a beachhead in one market gives you credibility to expand further.", "zh": "在一个市场确立桥头堡为你进一步扩展提供了可信度。"}},
+        {"word": "total cost of ownership", "phonetic": "/ˈtəʊtəl kɒst əv ˈəʊnəʃɪp/", "meaning": "总拥有成本（TCO）", "example": {"en": "Total cost of ownership includes not just the purchase price but also maintenance and training.", "zh": "总拥有成本不仅包括购买价格，还包括维护和培训。"}},
+        {"word": "competitive intelligence", "phonetic": "/kəmˈpetɪtɪv ɪnˈtelɪdʒəns/", "meaning": "竞争情报", "example": {"en": "Competitive intelligence helps anticipate market moves and adjust strategy accordingly.", "zh": "竞争情报有助于预测市场动向并相应调整策略。"}},
+        {"word": "double down", "phonetic": "/ˈdʌbl daʊn/", "meaning": "加倍投入", "example": {"en": "When a strategy is working, the right move is to double down, not diversify prematurely.", "zh": "当策略有效时，正确的做法是加倍投入，而非过早多元化。"}}
+      ]
+    }
+  }
+}

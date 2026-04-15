@@ -1,0 +1,90 @@
+{
+  "date": "2026-05-21",
+  "themes": {
+    "growth": {
+      "label": "Growth / Marketing",
+      "sentences": [
+        {"en": "The attribution model shows that social media drives most top-of-funnel awareness.", "zh": "归因模型显示社交媒体驱动了大部分漏斗顶端的品牌认知。"},
+        {"en": "We saw a 30% uplift in sign-ups after launching the influencer campaign.", "zh": "启动KOL营销活动后，注册量提升了30%。"},
+        {"en": "Organic search traffic has been declining since the algorithm update.", "zh": "自从算法更新后，自然搜索流量一直在下降。"},
+        {"en": "The payback period on our paid channels shortened from 9 months to 6.", "zh": "付费渠道的回收周期从9个月缩短到了6个月。"},
+        {"en": "We should segment users by intent to personalize the welcome email sequence.", "zh": "我们应该按用户意图分层，个性化欢迎邮件序列。"}
+      ],
+      "vocabulary": [
+        {"word": "attribution", "phonetic": "/ˌætrɪˈbjuːʃən/", "meaning": "归因", "example": {"en": "Multi-touch attribution gives credit to every channel in the user journey.", "zh": "多触点归因会将功劳分配给用户旅程中的每个渠道。"}},
+        {"word": "uplift", "phonetic": "/ˈʌplɪft/", "meaning": "提升；增幅", "example": {"en": "The A/B test delivered a 15% uplift in click-through rate.", "zh": "A/B测试带来了点击率15%的提升。"}},
+        {"word": "organic", "phonetic": "/ɔːˈɡænɪk/", "meaning": "自然的；有机的", "example": {"en": "Organic growth is more sustainable than paid growth in the long run.", "zh": "从长远来看，自然增长比付费增长更可持续。"}},
+        {"word": "payback", "phonetic": "/ˈpeɪbæk/", "meaning": "回收；偿还", "example": {"en": "A shorter payback period means faster return on marketing investment.", "zh": "更短的回收周期意味着营销投资更快获得回报。"}},
+        {"word": "segment", "phonetic": "/ˈseɡmənt/", "meaning": "分层；细分", "example": {"en": "We segment our user base by trading frequency and asset size.", "zh": "我们按交易频率和资产规模对用户进行分层。"}}
+      ]
+    },
+    "product": {
+      "label": "Product / Metrics",
+      "sentences": [
+        {"en": "The bounce rate on the pricing page suggests users find the tiers confusing.", "zh": "定价页的跳出率表明用户觉得套餐层级令人困惑。"},
+        {"en": "We need to define success metrics before building the feature.", "zh": "在开发功能之前，我们需要先定义成功指标。"},
+        {"en": "Session duration increased after we redesigned the content feed.", "zh": "重新设计内容信息流后，会话时长增加了。"},
+        {"en": "The beta release received mixed feedback from power users.", "zh": "测试版发布收到了资深用户的褒贬不一的反馈。"},
+        {"en": "We track funnel drop-off at each step to identify friction points.", "zh": "我们追踪每一步的漏斗流失，以识别摩擦点。"}
+      ],
+      "vocabulary": [
+        {"word": "bounce rate", "phonetic": "/baʊns reɪt/", "meaning": "跳出率", "example": {"en": "A high bounce rate often indicates poor page load speed or irrelevant content.", "zh": "高跳出率通常意味着页面加载速度慢或内容不相关。"}},
+        {"word": "tier", "phonetic": "/tɪər/", "meaning": "层级；等级", "example": {"en": "The premium tier includes real-time market data and priority support.", "zh": "高级层级包含实时行情数据和优先客服支持。"}},
+        {"word": "session", "phonetic": "/ˈseʃən/", "meaning": "会话；一次访问", "example": {"en": "Average session duration is a key indicator of content quality.", "zh": "平均会话时长是内容质量的关键指标。"}},
+        {"word": "beta", "phonetic": "/ˈbiːtə/", "meaning": "测试版", "example": {"en": "We invite loyal users to join the beta program for early access.", "zh": "我们邀请忠实用户加入测试版计划，获得提前体验。"}},
+        {"word": "friction", "phonetic": "/ˈfrɪkʃən/", "meaning": "摩擦；阻力", "example": {"en": "Removing friction from the checkout flow boosted conversion by 20%.", "zh": "减少结账流程的摩擦后，转化率提升了20%。"}}
+      ]
+    },
+    "finance": {
+      "label": "Finance / Investment",
+      "sentences": [
+        {"en": "The yield curve inversion historically signals a recession within 12 to 18 months.", "zh": "收益率曲线倒挂在历史上预示12到18个月内会出现衰退。"},
+        {"en": "Short sellers increased their positions ahead of the earnings report.", "zh": "空头在财报发布前增加了头寸。"},
+        {"en": "The company announced a share buyback program worth $500 million.", "zh": "该公司宣布了一项价值5亿美元的股票回购计划。"},
+        {"en": "Net asset value per share declined due to unrealized losses in the bond portfolio.", "zh": "由于债券组合中的未实现亏损，每股净资产价值下降了。"},
+        {"en": "Institutional investors are rotating out of growth stocks into defensives.", "zh": "机构投资者正在从成长股轮动到防御性板块。"}
+      ],
+      "vocabulary": [
+        {"word": "yield curve", "phonetic": "/jiːld kɜːv/", "meaning": "收益率曲线", "example": {"en": "A steepening yield curve often benefits bank stocks.", "zh": "收益率曲线变陡通常利好银行股。"}},
+        {"word": "short seller", "phonetic": "/ʃɔːt ˈselər/", "meaning": "做空者；空头", "example": {"en": "Short sellers profit when the stock price falls below their entry point.", "zh": "当股价跌破入场价时，做空者获利。"}},
+        {"word": "buyback", "phonetic": "/ˈbaɪbæk/", "meaning": "回购", "example": {"en": "Share buybacks reduce the number of outstanding shares and boost EPS.", "zh": "股票回购减少流通股数量，提升每股收益。"}},
+        {"word": "unrealized", "phonetic": "/ʌnˈrɪəlaɪzd/", "meaning": "未实现的", "example": {"en": "Unrealized gains do not count as taxable income until the asset is sold.", "zh": "未实现收益在资产出售前不计为应税收入。"}},
+        {"word": "rotation", "phonetic": "/rəʊˈteɪʃən/", "meaning": "轮动", "example": {"en": "Sector rotation is a common strategy during market regime changes.", "zh": "行业轮动是市场风格切换时的常见策略。"}}
+      ]
+    },
+    "team": {
+      "label": "Team / Management",
+      "sentences": [
+        {"en": "The skip-level meeting helped me understand frontline concerns directly.", "zh": "跨级会议帮助我直接了解了一线团队的顾虑。"},
+        {"en": "We are piloting a four-day workweek to measure its impact on productivity.", "zh": "我们正在试行四天工作制，以衡量其对生产力的影响。"},
+        {"en": "The performance review cycle starts next Monday so please finalize your self-assessments.", "zh": "绩效考核周期下周一开始，请完成你的自评。"},
+        {"en": "Delegation is not about dumping tasks but empowering people to own outcomes.", "zh": "授权不是甩锅任务，而是赋能他人对结果负责。"},
+        {"en": "The team morale dipped after the reorganization announcement.", "zh": "组织架构调整公布后，团队士气有所下降。"}
+      ],
+      "vocabulary": [
+        {"word": "skip-level", "phonetic": "/skɪp ˈlevəl/", "meaning": "跨级的", "example": {"en": "Skip-level one-on-ones give senior leaders unfiltered insights.", "zh": "跨级一对一让高管获得未经过滤的洞察。"}},
+        {"word": "pilot", "phonetic": "/ˈpaɪlət/", "meaning": "试点；试行", "example": {"en": "We decided to pilot the new tool with one team before rolling it out company-wide.", "zh": "我们决定先在一个团队试点新工具，再全公司推广。"}},
+        {"word": "self-assessment", "phonetic": "/self əˈsesmənt/", "meaning": "自评", "example": {"en": "A thoughtful self-assessment helps your manager write a more accurate review.", "zh": "用心的自评能帮助你的经理写出更准确的评估。"}},
+        {"word": "delegation", "phonetic": "/ˌdelɪˈɡeɪʃən/", "meaning": "授权；委派", "example": {"en": "Effective delegation requires clear context, not just clear instructions.", "zh": "有效的授权需要清晰的背景，而不仅仅是清晰的指令。"}},
+        {"word": "morale", "phonetic": "/məˈrɑːl/", "meaning": "士气", "example": {"en": "Celebrating small wins is a simple way to boost team morale.", "zh": "庆祝小胜利是提升团队士气的简单方法。"}}
+      ]
+    },
+    "strategy": {
+      "label": "Strategy / Planning",
+      "sentences": [
+        {"en": "The land-and-expand model works best when the initial product has low switching costs.", "zh": "当初始产品的转换成本较低时，先落地再扩展的模式效果最好。"},
+        {"en": "We need a clear hypothesis before committing resources to this new market.", "zh": "在投入资源进入新市场之前，我们需要一个明确的假设。"},
+        {"en": "The regulatory landscape in Hong Kong differs significantly from mainland China.", "zh": "香港的监管环境与中国大陆有显著不同。"},
+        {"en": "Our go-to-market strategy relies heavily on partnerships with local brokers.", "zh": "我们的市场进入策略严重依赖与本地券商的合作。"},
+        {"en": "Second-mover advantage allows us to learn from competitors' mistakes.", "zh": "后发优势让我们能从竞争对手的错误中学习。"}
+      ],
+      "vocabulary": [
+        {"word": "land-and-expand", "phonetic": "/lænd ænd ɪkˈspænd/", "meaning": "先落地再扩展", "example": {"en": "The land-and-expand playbook starts with a free tier to build initial adoption.", "zh": "先落地再扩展的打法从免费层级开始，建立初始采用。"}},
+        {"word": "hypothesis", "phonetic": "/haɪˈpɒθɪsɪs/", "meaning": "假设", "example": {"en": "Every growth experiment should start with a testable hypothesis.", "zh": "每个增长实验都应从一个可验证的假设开始。"}},
+        {"word": "regulatory", "phonetic": "/ˈreɡjələtəri/", "meaning": "监管的", "example": {"en": "Regulatory compliance is a barrier to entry in the financial services industry.", "zh": "监管合规是金融服务行业的进入壁垒。"}},
+        {"word": "go-to-market", "phonetic": "/ɡəʊ tə ˈmɑːkɪt/", "meaning": "市场进入；上市策略", "example": {"en": "A strong go-to-market plan covers pricing, distribution, and messaging.", "zh": "强有力的市场进入计划涵盖定价、分销和信息传递。"}},
+        {"word": "second-mover", "phonetic": "/ˈsekənd ˈmuːvər/", "meaning": "后发者", "example": {"en": "Being a second-mover lets you avoid the pioneer's costly trial and error.", "zh": "作为后发者可以避免先驱者代价高昂的试错。"}}
+      ]
+    }
+  }
+}

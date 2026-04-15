@@ -1,0 +1,90 @@
+{
+  "date": "2026-04-23",
+  "themes": {
+    "growth": {
+      "label": "Growth / Marketing",
+      "sentences": [
+        {"en": "The payback period on our paid channels shortened to 45 days after creative optimization.", "zh": "创意素材优化后，我们付费渠道的回收周期缩短到了45天。"},
+        {"en": "We saw a 30% uplift in sign-ups after launching the incentive program.", "zh": "上线激励计划后，注册量提升了30%。"},
+        {"en": "Organic traffic now accounts for 40% of total visits, up from 25% last quarter.", "zh": "自然流量目前占总访问量的40%，高于上季度的25%。"},
+        {"en": "The attribution model needs to account for cross-device user behavior.", "zh": "归因模型需要考虑跨设备用户行为。"},
+        {"en": "We should segment users by lifecycle stage to personalize the messaging.", "zh": "我们应该按生命周期阶段对用户分层，以实现消息个性化。"}
+      ],
+      "vocabulary": [
+        {"word": "payback period", "phonetic": "/ˈpeɪbæk ˌpɪəriəd/", "meaning": "回收期", "example": {"en": "A shorter payback period means faster return on marketing investment.", "zh": "更短的回收期意味着营销投资回报更快。"}},
+        {"word": "uplift", "phonetic": "/ˈʌplɪft/", "meaning": "提升；增幅", "example": {"en": "The new creative delivered a 20% uplift in click-through rate.", "zh": "新素材带来了20%的点击率提升。"}},
+        {"word": "organic", "phonetic": "/ɔːˈɡænɪk/", "meaning": "自然的；有机的", "example": {"en": "Organic growth is more sustainable than paid growth in the long run.", "zh": "长期来看，自然增长比付费增长更可持续。"}},
+        {"word": "attribution", "phonetic": "/ˌætrɪˈbjuːʃən/", "meaning": "归因", "example": {"en": "Multi-touch attribution gives a more accurate picture of channel performance.", "zh": "多触点归因能更准确地反映渠道表现。"}},
+        {"word": "lifecycle", "phonetic": "/ˈlaɪfsaɪkəl/", "meaning": "生命周期", "example": {"en": "Lifecycle marketing targets users differently based on where they are in the journey.", "zh": "生命周期营销根据用户所处阶段进行差异化触达。"}}
+      ]
+    },
+    "product": {
+      "label": "Product / Metrics",
+      "sentences": [
+        {"en": "The crash rate on the latest build exceeds our acceptable threshold.", "zh": "最新版本的崩溃率超出了我们的可接受阈值。"},
+        {"en": "We need to instrument the checkout flow to identify where users abandon.", "zh": "我们需要对结算流程进行埋点，找出用户在哪里放弃。"},
+        {"en": "The net promoter score improved from 32 to 48 after the redesign.", "zh": "重新设计后，净推荐值从32提升到了48。"},
+        {"en": "Load time on mobile is 4.2 seconds, which is above the industry average.", "zh": "移动端加载时间为4.2秒，高于行业平均水平。"},
+        {"en": "The rollback was triggered automatically when error rate spiked above 5%.", "zh": "当错误率飙升到5%以上时，自动触发了回滚。"}
+      ],
+      "vocabulary": [
+        {"word": "threshold", "phonetic": "/ˈθreʃhəʊld/", "meaning": "阈值；门槛", "example": {"en": "We set an alert when latency exceeds the predefined threshold.", "zh": "当延迟超过预设阈值时，我们会设置告警。"}},
+        {"word": "instrument", "phonetic": "/ˈɪnstrəment/", "meaning": "埋点；监测", "example": {"en": "Make sure to instrument every step of the registration funnel.", "zh": "确保对注册漏斗的每一步都做好埋点。"}},
+        {"word": "net promoter score", "phonetic": "/net prəˈməʊtə skɔː/", "meaning": "净推荐值（NPS）", "example": {"en": "A net promoter score above 50 is considered excellent in our industry.", "zh": "在我们行业，净推荐值超过50被认为是优秀的。"}},
+        {"word": "rollback", "phonetic": "/ˈrəʊlbæk/", "meaning": "回滚", "example": {"en": "The team performed a rollback within 10 minutes of detecting the issue.", "zh": "团队在发现问题的10分钟内执行了回滚。"}},
+        {"word": "spike", "phonetic": "/spaɪk/", "meaning": "急剧上升；尖峰", "example": {"en": "There was a traffic spike right after the marketing campaign went live.", "zh": "营销活动上线后，流量出现了一个尖峰。"}}
+      ]
+    },
+    "finance": {
+      "label": "Finance / Investment",
+      "sentences": [
+        {"en": "The company's free cash flow turned positive for the first time this quarter.", "zh": "公司的自由现金流本季度首次转正。"},
+        {"en": "Analysts downgraded the stock after revenue guidance was cut by 10%.", "zh": "在营收指引下调10%后，分析师下调了该股评级。"},
+        {"en": "The bond yield curve inverted, signaling a potential recession ahead.", "zh": "债券收益率曲线倒挂，预示着可能即将到来的衰退。"},
+        {"en": "Short sellers increased their positions by 15% over the past two weeks.", "zh": "过去两周，做空者的仓位增加了15%。"},
+        {"en": "The IPO was oversubscribed by 30 times, reflecting strong institutional demand.", "zh": "IPO获得了30倍的超额认购，反映出强劲的机构需求。"}
+      ],
+      "vocabulary": [
+        {"word": "free cash flow", "phonetic": "/friː kæʃ fləʊ/", "meaning": "自由现金流", "example": {"en": "Strong free cash flow allows the company to invest in growth without raising debt.", "zh": "强劲的自由现金流使公司无需举债即可投资增长。"}},
+        {"word": "downgrade", "phonetic": "/ˌdaʊnˈɡreɪd/", "meaning": "下调评级", "example": {"en": "The stock dropped 5% after two major banks issued a downgrade.", "zh": "两家大行发布下调评级后，股价下跌了5%。"}},
+        {"word": "yield curve", "phonetic": "/jiːld kɜːv/", "meaning": "收益率曲线", "example": {"en": "An inverted yield curve has historically preceded economic downturns.", "zh": "收益率曲线倒挂在历史上通常预示着经济下行。"}},
+        {"word": "short seller", "phonetic": "/ʃɔːt ˈselə/", "meaning": "做空者", "example": {"en": "Short sellers profit when the stock price falls below their entry point.", "zh": "当股价跌破入场价时，做空者获利。"}},
+        {"word": "oversubscribed", "phonetic": "/ˌəʊvəsəbˈskraɪbd/", "meaning": "超额认购的", "example": {"en": "The fund was oversubscribed within 48 hours of opening.", "zh": "该基金在开放48小时内即获超额认购。"}}
+      ]
+    },
+    "team": {
+      "label": "Team / Management",
+      "sentences": [
+        {"en": "I need you to take ownership of the weekly reporting process.", "zh": "我需要你来负责每周报告流程。"},
+        {"en": "The skip-level meeting revealed several morale issues in the engineering team.", "zh": "跨级会议揭示了工程团队中的几个士气问题。"},
+        {"en": "We are promoting two senior engineers to lead roles this quarter.", "zh": "本季度我们将提拔两位资深工程师担任负责人。"},
+        {"en": "The hiring pipeline is healthy, but the offer acceptance rate is too low.", "zh": "招聘漏斗很健康，但offer接受率太低了。"},
+        {"en": "Let us establish a clear escalation path for production incidents.", "zh": "让我们建立一个明确的生产事故升级路径。"}
+      ],
+      "vocabulary": [
+        {"word": "ownership", "phonetic": "/ˈəʊnəʃɪp/", "meaning": "归属感；主人翁意识", "example": {"en": "Taking ownership means you are responsible for the outcome, not just the task.", "zh": "承担ownership意味着你要对结果负责，而不只是完成任务。"}},
+        {"word": "skip-level", "phonetic": "/skɪp ˈlevəl/", "meaning": "跨级的", "example": {"en": "Skip-level meetings help managers understand issues beyond direct reports.", "zh": "跨级会议帮助管理者了解直属下属之外的问题。"}},
+        {"word": "morale", "phonetic": "/məˈrɑːl/", "meaning": "士气", "example": {"en": "Team morale dropped significantly after the layoff announcement.", "zh": "裁员公告后，团队士气明显下降。"}},
+        {"word": "pipeline", "phonetic": "/ˈpaɪplaɪn/", "meaning": "管道；流程线", "example": {"en": "We have 15 candidates in the interview pipeline this week.", "zh": "本周面试流程中有15位候选人。"}},
+        {"word": "escalation", "phonetic": "/ˌeskəˈleɪʃən/", "meaning": "升级；逐级上报", "example": {"en": "The escalation procedure ensures critical issues reach leadership within one hour.", "zh": "升级流程确保关键问题在一小时内上报到管理层。"}}
+      ]
+    },
+    "strategy": {
+      "label": "Strategy / Planning",
+      "sentences": [
+        {"en": "The first-mover advantage in this market is significant but not permanent.", "zh": "这个市场的先发优势很显著，但并非永久的。"},
+        {"en": "We should pursue a land-and-expand strategy with enterprise clients.", "zh": "对于企业客户，我们应该采取先落地再扩展的策略。"},
+        {"en": "The regulatory landscape in Hong Kong is more favorable than in mainland China.", "zh": "香港的监管环境比中国大陆更为有利。"},
+        {"en": "Our unit economics are not viable at the current price point.", "zh": "在目前的定价下，我们的单位经济模型是不可行的。"},
+        {"en": "Strategic partnerships can accelerate market penetration without heavy capital investment.", "zh": "战略合作能在不需要大量资本投入的情况下加速市场渗透。"}
+      ],
+      "vocabulary": [
+        {"word": "first-mover", "phonetic": "/fɜːst ˈmuːvə/", "meaning": "先发者", "example": {"en": "Being a first-mover in emerging markets can establish brand dominance early.", "zh": "在新兴市场成为先发者可以尽早建立品牌主导地位。"}},
+        {"word": "land-and-expand", "phonetic": "/lænd ənd ɪkˈspænd/", "meaning": "先落地再扩展", "example": {"en": "The land-and-expand approach starts with a small deal and grows over time.", "zh": "先落地再扩展的方法从小单开始，随时间逐步增长。"}},
+        {"word": "regulatory", "phonetic": "/ˈreɡjʊlətəri/", "meaning": "监管的", "example": {"en": "Regulatory compliance is a prerequisite for entering the financial services market.", "zh": "合规是进入金融服务市场的前提。"}},
+        {"word": "unit economics", "phonetic": "/ˈjuːnɪt ˌiːkəˈnɒmɪks/", "meaning": "单位经济模型", "example": {"en": "Healthy unit economics mean each customer generates more revenue than cost.", "zh": "健康的单位经济模型意味着每个客户产生的收入大于成本。"}},
+        {"word": "penetration", "phonetic": "/ˌpenɪˈtreɪʃən/", "meaning": "渗透；渗透率", "example": {"en": "Market penetration in tier-two cities is still below 5%.", "zh": "二线城市的市场渗透率仍低于5%。"}}
+      ]
+    }
+  }
+}

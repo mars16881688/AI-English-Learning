@@ -1,0 +1,90 @@
+{
+  "date": "2026-04-30",
+  "themes": {
+    "growth": {
+      "label": "Growth / Marketing",
+      "sentences": [
+        {"en": "We saw a spike in organic installs after the influencer campaign went live.", "zh": "网红推广上线后，我们看到自然安装量出现了一波高峰。"},
+        {"en": "The payback period on this channel is too long for our current cash position.", "zh": "这个渠道的回本周期对我们当前的现金状况来说太长了。"},
+        {"en": "Let us segment users by their first-week behavior to predict long-term value.", "zh": "我们按用户首周行为来分群，以预测长期价值。"},
+        {"en": "The viral coefficient is below one, so growth will not be self-sustaining.", "zh": "病毒系数低于1，增长不会自我维持。"},
+        {"en": "We should double down on the channel with the lowest blended CPA.", "zh": "我们应该加大投入到综合获客成本最低的渠道。"}
+      ],
+      "vocabulary": [
+        {"word": "payback period", "phonetic": "/ˈpeɪbæk ˈpɪəriəd/", "meaning": "回本周期", "example": {"en": "A payback period under six months is ideal for paid channels.", "zh": "付费渠道的回本周期在六个月以内是理想的。"}},
+        {"word": "segment", "phonetic": "/ˈseɡmənt/", "meaning": "分群；细分", "example": {"en": "We segment users by trading frequency and asset size.", "zh": "我们按交易频次和资产规模对用户进行分群。"}},
+        {"word": "viral coefficient", "phonetic": "/ˈvaɪrəl ˌkəʊɪˈfɪʃənt/", "meaning": "病毒系数", "example": {"en": "A viral coefficient above one means each user brings in more than one new user.", "zh": "病毒系数大于1意味着每个用户能带来超过一个新用户。"}},
+        {"word": "blended", "phonetic": "/ˈblendɪd/", "meaning": "综合的；混合的", "example": {"en": "The blended cost per acquisition across all channels is $45.", "zh": "所有渠道的综合获客成本是45美元。"}},
+        {"word": "organic", "phonetic": "/ɔːˈɡænɪk/", "meaning": "自然流量的；有机的", "example": {"en": "Organic growth is more sustainable than paid growth in the long run.", "zh": "从长远来看，自然增长比付费增长更可持续。"}}
+      ]
+    },
+    "product": {
+      "label": "Product / Metrics",
+      "sentences": [
+        {"en": "The crash rate on the latest build exceeded our acceptable threshold.", "zh": "最新版本的崩溃率超过了我们可接受的阈值。"},
+        {"en": "We need to instrument the new feature before rolling it out to production.", "zh": "在正式发布前，我们需要为新功能做好埋点。"},
+        {"en": "Session duration increased by 20% after we added the watchlist widget.", "zh": "添加自选股组件后，会话时长增长了20%。"},
+        {"en": "The error rate spiked during peak trading hours yesterday.", "zh": "昨天交易高峰时段错误率急剧上升。"},
+        {"en": "We should deprecate the old API endpoint by the end of Q2.", "zh": "我们应该在Q2结束前废弃旧的API端点。"}
+      ],
+      "vocabulary": [
+        {"word": "threshold", "phonetic": "/ˈθreʃhəʊld/", "meaning": "阈值；门槛", "example": {"en": "We set a threshold of 0.1% for acceptable crash rates.", "zh": "我们把可接受的崩溃率阈值设定在0.1%。"}},
+        {"word": "instrument", "phonetic": "/ˈɪnstrəmənt/", "meaning": "埋点；检测（动词）", "example": {"en": "Make sure to instrument all key user actions for analytics.", "zh": "确保对所有关键用户行为进行埋点以支持分析。"}},
+        {"word": "deprecate", "phonetic": "/ˈdeprɪkeɪt/", "meaning": "废弃；弃用", "example": {"en": "We plan to deprecate the v1 API and migrate all clients to v2.", "zh": "我们计划废弃v1 API，将所有客户端迁移到v2。"}},
+        {"word": "session", "phonetic": "/ˈseʃən/", "meaning": "会话；使用时段", "example": {"en": "Average session duration is a proxy for user engagement.", "zh": "平均会话时长是衡量用户参与度的代理指标。"}},
+        {"word": "rollout", "phonetic": "/ˈrəʊlaʊt/", "meaning": "发布；推出", "example": {"en": "We will do a phased rollout starting with 10% of users.", "zh": "我们将分阶段发布，先覆盖10%的用户。"}}
+      ]
+    },
+    "finance": {
+      "label": "Finance / Investment",
+      "sentences": [
+        {"en": "The Federal Reserve signaled a hawkish stance at its latest meeting.", "zh": "美联储在最近一次会议上释放了鹰派信号。"},
+        {"en": "Short sellers are building positions ahead of the earnings release.", "zh": "空头在财报发布前正在建仓。"},
+        {"en": "The yield curve inversion has historically preceded recessions.", "zh": "收益率曲线倒挂在历史上是衰退的先兆。"},
+        {"en": "Free cash flow is a more reliable indicator than reported net income.", "zh": "自由现金流比报告的净利润更可靠。"},
+        {"en": "The stock broke through its 200-day moving average on heavy volume.", "zh": "该股在放量情况下突破了200日均线。"}
+      ],
+      "vocabulary": [
+        {"word": "hawkish", "phonetic": "/ˈhɔːkɪʃ/", "meaning": "鹰派的（倾向加息）", "example": {"en": "Hawkish comments from the central bank pushed bond yields higher.", "zh": "央行的鹰派言论推高了债券收益率。"}},
+        {"word": "yield curve", "phonetic": "/jiːld kɜːv/", "meaning": "收益率曲线", "example": {"en": "An inverted yield curve often signals an economic downturn.", "zh": "收益率曲线倒挂通常预示着经济下行。"}},
+        {"word": "short seller", "phonetic": "/ʃɔːt ˈselər/", "meaning": "卖空者；空头", "example": {"en": "Short sellers profit when the stock price declines.", "zh": "空头在股价下跌时获利。"}},
+        {"word": "free cash flow", "phonetic": "/friː kæʃ fləʊ/", "meaning": "自由现金流", "example": {"en": "Companies with strong free cash flow can fund growth without dilution.", "zh": "自由现金流充裕的公司可以在不稀释股权的情况下支持增长。"}},
+        {"word": "moving average", "phonetic": "/ˈmuːvɪŋ ˈævərɪdʒ/", "meaning": "移动平均线；均线", "example": {"en": "The 50-day moving average acts as a dynamic support level.", "zh": "50日均线起到动态支撑位的作用。"}}
+      ]
+    },
+    "team": {
+      "label": "Team / Management",
+      "sentences": [
+        {"en": "I need you to take ownership of the retention workstream this quarter.", "zh": "我需要你本季度负责留存方向的工作。"},
+        {"en": "The skip-level meeting revealed some concerns about workload distribution.", "zh": "越级面谈揭示了一些关于工作量分配的担忧。"},
+        {"en": "Please escalate any blockers to me directly instead of waiting for the standup.", "zh": "有阻塞问题请直接升级给我，不要等站会。"},
+        {"en": "We are creating a dedicated task force to fix the signup conversion drop.", "zh": "我们正在组建一个专项小组来解决注册转化下降的问题。"},
+        {"en": "His ability to influence without authority makes him an effective leader.", "zh": "他无需职权就能施加影响力的能力使他成为一名高效的领导者。"}
+      ],
+      "vocabulary": [
+        {"word": "ownership", "phonetic": "/ˈəʊnəʃɪp/", "meaning": "主人翁意识；负责", "example": {"en": "Taking ownership means being accountable for both outcomes and process.", "zh": "承担ownership意味着对结果和过程都负责。"}},
+        {"word": "skip-level", "phonetic": "/skɪp ˈlevəl/", "meaning": "越级（面谈/会议）", "example": {"en": "Skip-level meetings help senior leaders understand frontline challenges.", "zh": "越级面谈帮助高层了解一线挑战。"}},
+        {"word": "escalate", "phonetic": "/ˈeskəleɪt/", "meaning": "升级（问题）；上报", "example": {"en": "If the issue is not resolved in 24 hours, escalate it to the VP.", "zh": "如果问题在24小时内未解决，就上报给副总裁。"}},
+        {"word": "task force", "phonetic": "/tɑːsk fɔːs/", "meaning": "专项小组", "example": {"en": "The CEO formed a task force to address the compliance gap.", "zh": "CEO组建了一个专项小组来解决合规缺口。"}},
+        {"word": "influence", "phonetic": "/ˈɪnfluəns/", "meaning": "影响力", "example": {"en": "Great product managers rely on influence rather than formal authority.", "zh": "优秀的产品经理依靠影响力而非正式权力。"}}
+      ]
+    },
+    "strategy": {
+      "label": "Strategy / Planning",
+      "sentences": [
+        {"en": "We are pursuing a land-and-expand strategy with enterprise clients.", "zh": "我们正在对企业客户采取先落地再扩展的策略。"},
+        {"en": "The regulatory landscape in Hong Kong is evolving rapidly.", "zh": "香港的监管环境正在快速演变。"},
+        {"en": "First-mover advantage only matters if you can sustain the lead.", "zh": "先发优势只有在你能保持领先时才重要。"},
+        {"en": "We need to build strategic partnerships to enter the mainland market.", "zh": "我们需要建立战略合作伙伴关系来进入大陆市场。"},
+        {"en": "The opportunity cost of not acting now exceeds the risk of failure.", "zh": "现在不行动的机会成本超过了失败的风险。"}
+      ],
+      "vocabulary": [
+        {"word": "land-and-expand", "phonetic": "/lænd ənd ɪkˈspænd/", "meaning": "先落地再扩展", "example": {"en": "The land-and-expand model starts with a small deal and grows over time.", "zh": "先落地再扩展的模式从小订单开始，随时间增长。"}},
+        {"word": "regulatory", "phonetic": "/ˈreɡjələtəri/", "meaning": "监管的", "example": {"en": "Regulatory compliance is a prerequisite for operating in financial markets.", "zh": "合规是在金融市场运营的前提条件。"}},
+        {"word": "first-mover", "phonetic": "/fɜːst ˈmuːvər/", "meaning": "先发者；先行者", "example": {"en": "Being the first-mover gave us brand recognition but not a lasting moat.", "zh": "先发优势让我们获得了品牌认知，但并没有形成持久的护城河。"}},
+        {"word": "partnership", "phonetic": "/ˈpɑːtnəʃɪp/", "meaning": "合作伙伴关系", "example": {"en": "Strategic partnerships accelerate market entry in unfamiliar regions.", "zh": "战略合作伙伴关系能加速在陌生区域的市场进入。"}},
+        {"word": "opportunity cost", "phonetic": "/ˌɒpəˈtjuːnɪti kɒst/", "meaning": "机会成本", "example": {"en": "The opportunity cost of building in-house is the time lost to shipping.", "zh": "自建的机会成本是延迟交付所损失的时间。"}}
+      ]
+    }
+  }
+}

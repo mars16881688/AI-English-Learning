@@ -1,0 +1,90 @@
+{
+  "date": "2026-04-27",
+  "themes": {
+    "growth": {
+      "label": "Growth / Marketing",
+      "sentences": [
+        {"en": "The retention curve flattened at Day 30, indicating we found product-market fit for this segment.", "zh": "留存曲线在第30天趋平，说明我们在这个细分市场找到了产品-市场契合。"},
+        {"en": "We reduced the cost per install by 25% through programmatic ad buying.", "zh": "通过程序化广告采购，我们将每次安装成本降低了25%。"},
+        {"en": "The gamification features increased the 7-day engagement rate from 35% to 52%.", "zh": "游戏化功能将7日互动率从35%提升到了52%。"},
+        {"en": "We should test different value propositions in the ad copy for each audience segment.", "zh": "我们应该针对每个受众分层在广告文案中测试不同的价值主张。"},
+        {"en": "The referral reward structure needs to balance incentive generosity with unit economics.", "zh": "推荐奖励结构需要在激励力度和单位经济模型之间取得平衡。"}
+      ],
+      "vocabulary": [
+        {"word": "retention curve", "phonetic": "/rɪˈtenʃən kɜːv/", "meaning": "留存曲线", "example": {"en": "A healthy retention curve flattens rather than declining to zero.", "zh": "健康的留存曲线会趋平，而不是下降到零。"}},
+        {"word": "programmatic", "phonetic": "/ˌprəʊɡrəˈmætɪk/", "meaning": "程序化的", "example": {"en": "Programmatic advertising uses algorithms to buy and optimize ad placements.", "zh": "程序化广告使用算法来购买和优化广告位。"}},
+        {"word": "gamification", "phonetic": "/ˌɡeɪmɪfɪˈkeɪʃən/", "meaning": "游戏化", "example": {"en": "Gamification elements like badges and streaks boost daily active usage.", "zh": "徽章和连续打卡等游戏化元素能提高日活跃使用率。"}},
+        {"word": "value proposition", "phonetic": "/ˈvæljuː ˌprɒpəˈzɪʃən/", "meaning": "价值主张", "example": {"en": "A clear value proposition answers why a customer should choose your product.", "zh": "清晰的价值主张回答了客户为什么应该选择你的产品。"}},
+        {"word": "incentive", "phonetic": "/ɪnˈsentɪv/", "meaning": "激励", "example": {"en": "Cash incentives drove higher referral rates than non-monetary rewards.", "zh": "现金激励比非货币奖励带来了更高的推荐率。"}}
+      ]
+    },
+    "product": {
+      "label": "Product / Metrics",
+      "sentences": [
+        {"en": "The service mesh architecture improved the observability of inter-service communication.", "zh": "服务网格架构提升了服务间通信的可观测性。"},
+        {"en": "We achieved 99.95% uptime this quarter, which meets our SLA commitment.", "zh": "本季度我们实现了99.95%的可用率，达到了SLA承诺。"},
+        {"en": "The user persona document needs to be updated based on the latest survey data.", "zh": "用户画像文档需要根据最新的调研数据进行更新。"},
+        {"en": "The edge case handling in the payment flow caused a 0.3% failure rate.", "zh": "支付流程中的边界情况处理导致了0.3%的失败率。"},
+        {"en": "We should deprecate the v1 API and encourage all partners to migrate to v2.", "zh": "我们应该弃用v1 API，鼓励所有合作伙伴迁移到v2。"}
+      ],
+      "vocabulary": [
+        {"word": "observability", "phonetic": "/ˌɒbzɜːvəˈbɪlɪti/", "meaning": "可观测性", "example": {"en": "Good observability helps engineers debug production issues faster.", "zh": "良好的可观测性帮助工程师更快地调试生产问题。"}},
+        {"word": "uptime", "phonetic": "/ˈʌptaɪm/", "meaning": "可用时间；正常运行时间", "example": {"en": "Our target is 99.99% uptime for all customer-facing services.", "zh": "我们的目标是所有面向客户的服务达到99.99%的可用率。"}},
+        {"word": "persona", "phonetic": "/pəˈsəʊnə/", "meaning": "用户画像", "example": {"en": "Each persona represents a distinct user type with unique needs and behaviors.", "zh": "每个用户画像代表一种有独特需求和行为的用户类型。"}},
+        {"word": "edge case", "phonetic": "/edʒ keɪs/", "meaning": "边界情况", "example": {"en": "Testing edge cases prevents rare but critical failures in production.", "zh": "测试边界情况可以防止生产中罕见但关键的故障。"}},
+        {"word": "deprecate", "phonetic": "/ˈdeprəkeɪt/", "meaning": "弃用；标记为过时", "example": {"en": "We will deprecate the old SDK with a 6-month migration window.", "zh": "我们将弃用旧SDK，提供6个月的迁移窗口。"}}
+      ]
+    },
+    "finance": {
+      "label": "Finance / Investment",
+      "sentences": [
+        {"en": "The stock repurchased $500 million worth of shares in the open market.", "zh": "该公司在公开市场回购了价值5亿美元的股票。"},
+        {"en": "Gross merchandise value grew 60% but revenue only grew 20% due to lower take rates.", "zh": "GMV增长了60%，但由于佣金率降低，收入仅增长了20%。"},
+        {"en": "The EBITDA margin expanded to 28%, up from 22% in the same period last year.", "zh": "EBITDA利润率扩大至28%，高于去年同期的22%。"},
+        {"en": "The lockup period expires next month, which could increase selling pressure.", "zh": "禁售期下个月到期，这可能会增加抛售压力。"},
+        {"en": "The risk-adjusted return on this investment is superior to most alternatives.", "zh": "这项投资的风险调整后回报优于大多数替代选项。"}
+      ],
+      "vocabulary": [
+        {"word": "repurchase", "phonetic": "/riːˈpɜːtʃəs/", "meaning": "回购", "example": {"en": "Share repurchase programs signal management's confidence in the stock.", "zh": "股票回购计划表明管理层对股价有信心。"}},
+        {"word": "take rate", "phonetic": "/teɪk reɪt/", "meaning": "佣金率；抽成比例", "example": {"en": "The platform's take rate is 3% of each transaction value.", "zh": "平台对每笔交易收取3%的佣金率。"}},
+        {"word": "EBITDA", "phonetic": "/iːˈbɪtdɑː/", "meaning": "息税折旧摊销前利润", "example": {"en": "EBITDA is commonly used to compare profitability across companies.", "zh": "EBITDA通常用于比较不同公司之间的盈利能力。"}},
+        {"word": "lockup period", "phonetic": "/ˈlɒkʌp ˈpɪəriəd/", "meaning": "禁售期", "example": {"en": "Insiders cannot sell their shares during the lockup period after an IPO.", "zh": "IPO后的禁售期内，内部人士不能出售其股票。"}},
+        {"word": "risk-adjusted return", "phonetic": "/rɪsk əˈdʒʌstɪd rɪˈtɜːn/", "meaning": "风险调整后回报", "example": {"en": "The Sharpe ratio measures risk-adjusted return relative to a risk-free asset.", "zh": "夏普比率衡量相对于无风险资产的风险调整后回报。"}}
+      ]
+    },
+    "team": {
+      "label": "Team / Management",
+      "sentences": [
+        {"en": "The OKR scoring shows we achieved 70% of our ambitious targets, which is a healthy result.", "zh": "OKR打分显示我们完成了70%的激进目标，这是一个健康的结果。"},
+        {"en": "We need to address the communication silo between the Hong Kong and Singapore offices.", "zh": "我们需要解决香港和新加坡办公室之间的沟通壁垒。"},
+        {"en": "The probation review for the three new hires is scheduled for next Friday.", "zh": "三位新员工的试用期评审定在下周五。"},
+        {"en": "I recommend rotating team leads across projects to broaden their management experience.", "zh": "我建议在项目间轮换团队负责人以拓宽其管理经验。"},
+        {"en": "The employer branding initiative helped us attract 40% more qualified candidates.", "zh": "雇主品牌建设帮助我们吸引了多40%的合格候选人。"}
+      ],
+      "vocabulary": [
+        {"word": "OKR scoring", "phonetic": "/əʊ keɪ ɑː ˈskɔːrɪŋ/", "meaning": "OKR打分", "example": {"en": "OKR scoring at 60-70% typically indicates the goals were appropriately ambitious.", "zh": "OKR打分在60-70%通常表明目标设定了适当的挑战性。"}},
+        {"word": "silo", "phonetic": "/ˈsaɪləʊ/", "meaning": "筒仓；信息孤岛", "example": {"en": "Breaking down silos between departments improves collaboration and speed.", "zh": "打破部门之间的信息孤岛能改善协作和速度。"}},
+        {"word": "probation", "phonetic": "/prəˈbeɪʃən/", "meaning": "试用期", "example": {"en": "The standard probation period for all new hires is three months.", "zh": "所有新员工的标准试用期为三个月。"}},
+        {"word": "rotate", "phonetic": "/rəʊˈteɪt/", "meaning": "轮换；轮岗", "example": {"en": "Rotating on-call duty ensures no one person carries all the burden.", "zh": "轮换值班制度确保不会让一个人承担所有负担。"}},
+        {"word": "employer branding", "phonetic": "/ɪmˈplɔɪə ˈbrændɪŋ/", "meaning": "雇主品牌", "example": {"en": "Strong employer branding reduces hiring costs and attracts top talent.", "zh": "强大的雇主品牌能降低招聘成本并吸引顶尖人才。"}}
+      ]
+    },
+    "strategy": {
+      "label": "Strategy / Planning",
+      "sentences": [
+        {"en": "The bottom-up market sizing approach yielded a more conservative estimate than top-down.", "zh": "自下而上的市场规模估算方法得出了比自上而下更保守的数字。"},
+        {"en": "We should differentiate on service quality rather than competing solely on price.", "zh": "我们应该在服务质量上做差异化，而非仅靠价格竞争。"},
+        {"en": "The strategic review concluded that the wealth management vertical has the highest ROI potential.", "zh": "战略评审得出结论，财富管理垂直领域的ROI潜力最高。"},
+        {"en": "Our defensive strategy involves building data network effects that competitors cannot replicate.", "zh": "我们的防御策略包括建立竞争者无法复制的数据网络效应。"},
+        {"en": "The licensing requirement in each market adds 6 months to our expansion timeline.", "zh": "每个市场的牌照要求为我们的扩张时间表增加了6个月。"}
+      ],
+      "vocabulary": [
+        {"word": "bottom-up", "phonetic": "/ˈbɒtəm ʌp/", "meaning": "自下而上的", "example": {"en": "A bottom-up forecast builds from individual customer segments to the total.", "zh": "自下而上的预测从单个客户群体汇总到整体。"}},
+        {"word": "differentiate", "phonetic": "/ˌdɪfəˈrenʃieɪt/", "meaning": "差异化", "example": {"en": "We differentiate by offering real-time market data that competitors charge extra for.", "zh": "我们通过提供竞争对手额外收费的实时行情数据来实现差异化。"}},
+        {"word": "vertical", "phonetic": "/ˈvɜːtɪkəl/", "meaning": "垂直领域", "example": {"en": "The fintech vertical is one of the fastest-growing segments in Asia.", "zh": "金融科技垂直领域是亚洲增长最快的板块之一。"}},
+        {"word": "replicate", "phonetic": "/ˈreplɪkeɪt/", "meaning": "复制；重现", "example": {"en": "Proprietary data assets are hard to replicate, making them a durable advantage.", "zh": "专有数据资产难以复制，使其成为持久的优势。"}},
+        {"word": "timeline", "phonetic": "/ˈtaɪmlaɪn/", "meaning": "时间表", "example": {"en": "The project timeline was extended by two months due to regulatory delays.", "zh": "由于监管延误，项目时间表延长了两个月。"}}
+      ]
+    }
+  }
+}

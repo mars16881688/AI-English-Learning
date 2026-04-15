@@ -1,0 +1,90 @@
+{
+  "date": "2026-05-26",
+  "themes": {
+    "growth": {
+      "label": "Growth / Marketing",
+      "sentences": [
+        {"en": "The propensity model scores each user's likelihood to convert within the next 30 days.", "zh": "倾向性模型为每位用户在未来30天内转化的可能性评分。"},
+        {"en": "We reduced time-to-first-trade by simplifying the account funding flow.", "zh": "通过简化账户入金流程，我们缩短了首笔交易时间。"},
+        {"en": "Lifecycle marketing ensures we send the right message at the right stage.", "zh": "生命周期营销确保我们在正确的阶段发送正确的信息。"},
+        {"en": "The impression share for our brand keywords dropped, suggesting competitors are bidding higher.", "zh": "我们品牌关键词的展示份额下降了，说明竞争对手出价更高。"},
+        {"en": "Content marketing builds trust and generates inbound leads at a lower cost than paid ads.", "zh": "内容营销比付费广告以更低成本建立信任并产生主动来访的销售线索。"}
+      ],
+      "vocabulary": [
+        {"word": "propensity", "phonetic": "/prəˈpensɪti/", "meaning": "倾向性", "example": {"en": "High-propensity users are prioritized for outbound sales calls.", "zh": "高倾向性用户被优先安排外呼销售。"}},
+        {"word": "lifecycle", "phonetic": "/ˈlaɪfsaɪkəl/", "meaning": "生命周期", "example": {"en": "Each stage of the user lifecycle requires a different engagement strategy.", "zh": "用户生命周期的每个阶段需要不同的互动策略。"}},
+        {"word": "impression share", "phonetic": "/ɪmˈpreʃən ʃeər/", "meaning": "展示份额", "example": {"en": "Losing impression share means your ads are not showing as often as they could.", "zh": "展示份额下降意味着你的广告展示频率低于应有水平。"}},
+        {"word": "inbound", "phonetic": "/ˈɪnbaʊnd/", "meaning": "主动来访的；入站的", "example": {"en": "Inbound leads convert 5x better than outbound because they already show intent.", "zh": "入站线索的转化率是外呼线索的5倍，因为它们已经表现出意向。"}},
+        {"word": "time-to-first-trade", "phonetic": "/taɪm tə fɜːst treɪd/", "meaning": "首笔交易时间", "example": {"en": "Reducing time-to-first-trade from 5 days to 1 day doubled our activation rate.", "zh": "将首笔交易时间从5天缩短到1天使我们的激活率翻倍。"}}
+      ]
+    },
+    "product": {
+      "label": "Product / Metrics",
+      "sentences": [
+        {"en": "The heuristic evaluation found 8 usability issues in the portfolio management screen.", "zh": "启发式评估在持仓管理页面发现了8个可用性问题。"},
+        {"en": "We are building an event-driven architecture to decouple microservices.", "zh": "我们正在构建事件驱动架构以解耦微服务。"},
+        {"en": "The retention curve flattens at day 30, indicating we have found our core user base.", "zh": "留存曲线在第30天趋平，表明我们找到了核心用户群。"},
+        {"en": "A circuit breaker pattern prevents cascading failures across dependent services.", "zh": "断路器模式防止故障在依赖的服务之间级联传播。"},
+        {"en": "We should deprecate the v1 API by end of quarter and migrate all clients to v2.", "zh": "我们应该在季度末弃用v1 API，并将所有客户端迁移到v2。"}
+      ],
+      "vocabulary": [
+        {"word": "heuristic", "phonetic": "/hjʊəˈrɪstɪk/", "meaning": "启发式的", "example": {"en": "Heuristic evaluation is a fast way to find usability problems without user testing.", "zh": "启发式评估是一种无需用户测试就能快速发现可用性问题的方法。"}},
+        {"word": "event-driven", "phonetic": "/ɪˈvent ˈdrɪvən/", "meaning": "事件驱动的", "example": {"en": "Event-driven systems react to changes in real time rather than polling for updates.", "zh": "事件驱动系统实时响应变化，而不是轮询更新。"}},
+        {"word": "retention curve", "phonetic": "/rɪˈtenʃən kɜːv/", "meaning": "留存曲线", "example": {"en": "A flat retention curve after the initial drop shows strong product-market fit.", "zh": "初始下降后趋平的留存曲线显示出强产品市场契合度。"}},
+        {"word": "circuit breaker", "phonetic": "/ˈsɜːkɪt ˈbreɪkər/", "meaning": "断路器", "example": {"en": "The circuit breaker opens when error rate exceeds the threshold, stopping traffic to the failing service.", "zh": "当错误率超过阈值时，断路器打开，停止向故障服务发送流量。"}},
+        {"word": "deprecate", "phonetic": "/ˈdeprɪkeɪt/", "meaning": "弃用", "example": {"en": "Deprecated features are still available but will be removed in a future release.", "zh": "已弃用的功能仍然可用，但将在未来版本中移除。"}}
+      ]
+    },
+    "finance": {
+      "label": "Finance / Investment",
+      "sentences": [
+        {"en": "The risk-adjusted return measured by the Sharpe ratio outperformed the benchmark.", "zh": "以夏普比率衡量的风险调整后回报跑赢了基准。"},
+        {"en": "The lockup period for pre-IPO investors expires in 90 days.", "zh": "IPO前投资者的锁定期将在90天后到期。"},
+        {"en": "Revenue guidance implies a deceleration in top-line growth next quarter.", "zh": "收入指引暗示下季度营收增速将放缓。"},
+        {"en": "The options market is pricing in a 15% move around the earnings announcement.", "zh": "期权市场定价反映了财报公布前后15%的波动预期。"},
+        {"en": "The gross profit margin for the wealth management segment exceeded 70%.", "zh": "财富管理板块的毛利率超过了70%。"}
+      ],
+      "vocabulary": [
+        {"word": "Sharpe ratio", "phonetic": "/ʃɑːp ˈreɪʃiəʊ/", "meaning": "夏普比率", "example": {"en": "A Sharpe ratio above 1.0 is generally considered acceptable for most portfolios.", "zh": "夏普比率高于1.0对大多数投资组合来说通常被认为是可接受的。"}},
+        {"word": "lockup period", "phonetic": "/ˈlɒkʌp ˈpɪəriəd/", "meaning": "锁定期", "example": {"en": "Shares often decline when the lockup period ends due to increased selling pressure.", "zh": "锁定期结束时，由于卖压增加，股价常常下跌。"}},
+        {"word": "deceleration", "phonetic": "/diːˌseləˈreɪʃən/", "meaning": "减速；增速放缓", "example": {"en": "Revenue deceleration is expected as the company reaches market saturation.", "zh": "随着公司接近市场饱和，营收增速放缓是预期之中的。"}},
+        {"word": "price in", "phonetic": "/praɪs ɪn/", "meaning": "定价反映；已计入价格", "example": {"en": "The market has already priced in the expected rate cut.", "zh": "市场已经将预期的降息计入了价格。"}},
+        {"word": "gross profit", "phonetic": "/ɡrəʊs ˈprɒfɪt/", "meaning": "毛利润", "example": {"en": "Gross profit growth outpaced revenue growth thanks to improved cost efficiency.", "zh": "得益于成本效率提升，毛利润增速超过了营收增速。"}}
+      ]
+    },
+    "team": {
+      "label": "Team / Management",
+      "sentences": [
+        {"en": "The leadership offsite focused on defining the company values and operating principles.", "zh": "管理层外出会议聚焦于定义公司价值观和运营原则。"},
+        {"en": "We measure engineering velocity by the number of story points delivered per sprint.", "zh": "我们通过每次冲刺交付的故事点数来衡量工程速度。"},
+        {"en": "The talent review identified three high-potential employees for the leadership track.", "zh": "人才盘点识别出三名高潜力员工进入领导力发展通道。"},
+        {"en": "Setting clear expectations upfront prevents misalignment during execution.", "zh": "提前设定清晰的期望能防止执行过程中的偏差。"},
+        {"en": "We celebrate learning from failure as much as we celebrate success.", "zh": "我们庆祝从失败中学习，就像我们庆祝成功一样。"}
+      ],
+      "vocabulary": [
+        {"word": "offsite", "phonetic": "/ˈɒfsaɪt/", "meaning": "外出会议；异地会议", "example": {"en": "The annual offsite is where we set the strategic direction for the coming year.", "zh": "年度外出会议是我们为来年确定战略方向的时候。"}},
+        {"word": "velocity", "phonetic": "/vɪˈlɒsɪti/", "meaning": "速度；开发速率", "example": {"en": "Tracking sprint velocity helps predict future delivery timelines.", "zh": "跟踪冲刺速度有助于预测未来的交付时间线。"}},
+        {"word": "talent review", "phonetic": "/ˈtælənt rɪˈvjuː/", "meaning": "人才盘点", "example": {"en": "Talent reviews use a 9-box grid to assess performance and potential.", "zh": "人才盘点使用九宫格来评估绩效和潜力。"}},
+        {"word": "expectation", "phonetic": "/ˌekspekˈteɪʃən/", "meaning": "期望", "example": {"en": "Mismatched expectations between manager and report are the root of most conflicts.", "zh": "经理与下属之间期望不一致是大多数冲突的根源。"}},
+        {"word": "misalignment", "phonetic": "/ˌmɪsəˈlaɪnmənt/", "meaning": "偏差；不一致", "example": {"en": "Cross-team misalignment caused a two-week delay in the product launch.", "zh": "跨团队的不一致导致产品发布延迟了两周。"}}
+      ]
+    },
+    "strategy": {
+      "label": "Strategy / Planning",
+      "sentences": [
+        {"en": "The razor-and-blade model generates recurring revenue from consumable add-ons.", "zh": "剃刀和刀片模式通过消耗性附加产品产生经常性收入。"},
+        {"en": "First-principles thinking strips away assumptions to reveal the fundamental truth.", "zh": "第一性原理思维剥离假设以揭示根本真相。"},
+        {"en": "The partnership with the local bank provides regulatory cover and distribution access.", "zh": "与当地银行的合作提供了监管保障和分销渠道。"},
+        {"en": "Defensive positioning means protecting existing market share while competitors attack.", "zh": "防御型定位意味着在竞争对手进攻时保护现有市场份额。"},
+        {"en": "The long tail of small accounts collectively generates more revenue than the top 10 clients.", "zh": "大量小账户合计产生的收入超过前10大客户。"}
+      ],
+      "vocabulary": [
+        {"word": "razor-and-blade", "phonetic": "/ˈreɪzər ænd bleɪd/", "meaning": "剃刀和刀片（商业模式）", "example": {"en": "The razor-and-blade model works when the base product drives ongoing consumable purchases.", "zh": "当基础产品驱动持续的消耗品购买时，剃刀和刀片模式就会生效。"}},
+        {"word": "first-principles", "phonetic": "/fɜːst ˈprɪnsɪpəlz/", "meaning": "第一性原理", "example": {"en": "First-principles analysis asks what is fundamentally true rather than what everyone assumes.", "zh": "第一性原理分析追问什么是根本上正确的，而非大家都假设的是什么。"}},
+        {"word": "regulatory cover", "phonetic": "/ˈreɡjʊlətəri ˈkʌvər/", "meaning": "监管保障", "example": {"en": "Partnering with a licensed entity provides regulatory cover for market entry.", "zh": "与持牌机构合作为市场进入提供监管保障。"}},
+        {"word": "defensive positioning", "phonetic": "/dɪˈfensɪv pəˈzɪʃənɪŋ/", "meaning": "防御型定位", "example": {"en": "Defensive positioning involves reinforcing your strengths where competitors are weakest.", "zh": "防御型定位包括在竞争对手最弱的地方加强自身优势。"}},
+        {"word": "long tail", "phonetic": "/lɒŋ teɪl/", "meaning": "长尾", "example": {"en": "The long tail theory suggests that niche products collectively outsell mainstream hits.", "zh": "长尾理论认为利基产品的总销量超过主流热门产品。"}}
+      ]
+    }
+  }
+}

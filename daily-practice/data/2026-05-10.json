@@ -1,0 +1,90 @@
+{
+  "date": "2026-05-10",
+  "themes": {
+    "growth": {
+      "label": "Growth / Marketing",
+      "sentences": [
+        {"en": "The gamification mechanics we added to the loyalty program boosted repeat purchases by 18%.", "zh": "我们在忠诚度计划中添加的游戏化机制使复购率提升了18%。"},
+        {"en": "We are running a multivariate test on the checkout page to optimize layout and copy.", "zh": "我们正在对结账页面进行多变量测试，以优化布局和文案。"},
+        {"en": "The cost per install on TikTok is half of what we pay on Facebook.", "zh": "TikTok上的单次安装成本是Facebook的一半。"},
+        {"en": "Lifecycle marketing automation reduced manual campaign workload by 60%.", "zh": "生命周期营销自动化将手动活动工作量减少了60%。"},
+        {"en": "We should leverage user-generated content to build social proof at scale.", "zh": "我们应该利用用户生成内容来大规模构建社会认同。"}
+      ],
+      "vocabulary": [
+        {"word": "gamification", "phonetic": "/ˌɡeɪmɪfɪˈkeɪʃən/", "meaning": "游戏化", "example": {"en": "Gamification elements like badges and streaks increase daily active usage.", "zh": "徽章和连续打卡等游戏化元素能增加日活使用。"}},
+        {"word": "multivariate", "phonetic": "/ˌmʌltiˈveriət/", "meaning": "多变量的", "example": {"en": "A multivariate test lets you evaluate multiple variables simultaneously.", "zh": "多变量测试让你可以同时评估多个变量。"}},
+        {"word": "lifecycle", "phonetic": "/ˈlaɪfsaɪkəl/", "meaning": "生命周期", "example": {"en": "Map the customer lifecycle to identify key intervention points.", "zh": "绘制客户生命周期图以识别关键干预点。"}},
+        {"word": "social proof", "phonetic": "/ˈsoʊʃəl pruːf/", "meaning": "社会认同", "example": {"en": "Displaying download counts is a simple form of social proof.", "zh": "展示下载量是一种简单的社会认同形式。"}},
+        {"word": "user-generated content", "phonetic": "/ˈjuːzər ˈdʒenəreɪtɪd ˈkɒntent/", "meaning": "用户生成内容（UGC）", "example": {"en": "User-generated content feels more authentic than brand-produced material.", "zh": "用户生成内容比品牌制作的素材更有真实感。"}}
+      ]
+    },
+    "product": {
+      "label": "Product / Metrics",
+      "sentences": [
+        {"en": "The watchlist feature has the highest stickiness score among all product modules.", "zh": "自选股功能在所有产品模块中拥有最高的粘性评分。"},
+        {"en": "We introduced a canary deployment strategy to catch issues before full rollout.", "zh": "我们引入了金丝雀部署策略，以在全量上线前发现问题。"},
+        {"en": "The heatmap analysis shows users are ignoring the call-to-action below the fold.", "zh": "热力图分析显示用户忽略了首屏以下的行动号召按钮。"},
+        {"en": "Product-market fit is validated when organic word-of-mouth drives meaningful growth.", "zh": "当自发口碑驱动有意义的增长时，产品市场匹配就得到了验证。"},
+        {"en": "We need to deprecate the old API version by end of Q3.", "zh": "我们需要在Q3结束前弃用旧版API。"}
+      ],
+      "vocabulary": [
+        {"word": "stickiness", "phonetic": "/ˈstɪkinəs/", "meaning": "粘性", "example": {"en": "High stickiness means users keep coming back without being prompted.", "zh": "高粘性意味着用户无需提示就会持续回访。"}},
+        {"word": "canary deployment", "phonetic": "/kəˈneri dɪˈplɔɪmənt/", "meaning": "金丝雀部署", "example": {"en": "Canary deployment routes 5% of traffic to the new version first.", "zh": "金丝雀部署先将5%的流量路由到新版本。"}},
+        {"word": "heatmap", "phonetic": "/ˈhiːtmæp/", "meaning": "热力图", "example": {"en": "The heatmap revealed that most clicks happen in the top-left corner.", "zh": "热力图显示大多数点击发生在左上角。"}},
+        {"word": "deprecate", "phonetic": "/ˈdeprəkeɪt/", "meaning": "弃用", "example": {"en": "We will deprecate the legacy endpoint and migrate users to the new one.", "zh": "我们将弃用旧端点并将用户迁移到新端点。"}},
+        {"word": "word-of-mouth", "phonetic": "/wɜːrd əv maʊθ/", "meaning": "口碑", "example": {"en": "Word-of-mouth is the most trusted form of marketing.", "zh": "口碑是最受信任的营销方式。"}}
+      ]
+    },
+    "finance": {
+      "label": "Finance / Investment",
+      "sentences": [
+        {"en": "The company declared a special dividend after divesting its non-core subsidiary.", "zh": "公司在剥离非核心子公司后宣布了特别股息。"},
+        {"en": "The risk-adjusted return of the portfolio exceeded the benchmark index by 200 basis points.", "zh": "投资组合的风险调整后收益超过基准指数200个基点。"},
+        {"en": "Insider buying activity surged in the past two weeks, which is a bullish signal.", "zh": "过去两周内部人士买入活动激增，这是一个看涨信号。"},
+        {"en": "The capital expenditure forecast was revised upward to support data center expansion.", "zh": "资本支出预测被上调以支持数据中心扩张。"},
+        {"en": "The stock trades at a discount to intrinsic value based on our DCF model.", "zh": "根据我们的DCF模型，该股票以低于内在价值的折价交易。"}
+      ],
+      "vocabulary": [
+        {"word": "divesting", "phonetic": "/daɪˈvestɪŋ/", "meaning": "剥离；出售", "example": {"en": "Divesting non-core assets allows the company to focus on its strengths.", "zh": "剥离非核心资产使公司能专注于优势领域。"}},
+        {"word": "basis points", "phonetic": "/ˈbeɪsɪs pɔɪnts/", "meaning": "基点", "example": {"en": "The central bank raised interest rates by 25 basis points.", "zh": "央行加息25个基点。"}},
+        {"word": "bullish", "phonetic": "/ˈbʊlɪʃ/", "meaning": "看涨的；牛市的", "example": {"en": "The market turned bullish after strong employment data was released.", "zh": "强劲的就业数据发布后市场转为看涨。"}},
+        {"word": "capital expenditure", "phonetic": "/ˈkæpɪtəl ɪkˈspendɪtʃər/", "meaning": "资本支出（CapEx）", "example": {"en": "Capital expenditure on technology infrastructure doubled this year.", "zh": "今年技术基础设施的资本支出翻了一番。"}},
+        {"word": "intrinsic value", "phonetic": "/ɪnˈtrɪnzɪk ˈvæljuː/", "meaning": "内在价值", "example": {"en": "Warren Buffett focuses on buying stocks below their intrinsic value.", "zh": "巴菲特专注于以低于内在价值的价格买入股票。"}}
+      ]
+    },
+    "team": {
+      "label": "Team / Management",
+      "sentences": [
+        {"en": "The key result for this quarter is to increase the employee engagement score by 10 points.", "zh": "本季度的关键结果是将员工敬业度评分提高10分。"},
+        {"en": "We are piloting a four-day workweek to see if it improves productivity.", "zh": "我们正在试行四天工作制，看是否能提升生产力。"},
+        {"en": "The hiring freeze has been lifted, so we can start backfilling the open positions.", "zh": "招聘冻结已解除，我们可以开始回补空缺岗位。"},
+        {"en": "I recommend using the RACI matrix to clarify roles in this cross-team initiative.", "zh": "我建议使用RACI矩阵来明确这个跨团队项目中的角色。"},
+        {"en": "The attrition rate in engineering is 22%, which is well above the company average.", "zh": "工程团队的流失率为22%，远高于公司平均水平。"}
+      ],
+      "vocabulary": [
+        {"word": "attrition", "phonetic": "/əˈtrɪʃən/", "meaning": "自然减员；流失", "example": {"en": "High attrition in key roles disrupts project continuity.", "zh": "关键岗位的高流失率会打断项目连续性。"}},
+        {"word": "backfill", "phonetic": "/ˈbækfɪl/", "meaning": "回补（职位）", "example": {"en": "We need to backfill the senior designer role before the next sprint.", "zh": "我们需要在下一个冲刺前回补高级设计师岗位。"}},
+        {"word": "piloting", "phonetic": "/ˈpaɪlətɪŋ/", "meaning": "试点", "example": {"en": "We are piloting the new tool with one team before a company-wide rollout.", "zh": "我们先在一个团队试点新工具，然后再全公司推广。"}},
+        {"word": "RACI matrix", "phonetic": "/ˈreɪsi ˈmeɪtrɪks/", "meaning": "RACI矩阵（责任分配）", "example": {"en": "The RACI matrix prevents confusion about who makes the final call.", "zh": "RACI矩阵能防止对谁做最终决定产生困惑。"}},
+        {"word": "key result", "phonetic": "/kiː rɪˈzʌlt/", "meaning": "关键结果", "example": {"en": "Each objective should have two to five measurable key results.", "zh": "每个目标应该有两到五个可衡量的关键结果。"}}
+      ]
+    },
+    "strategy": {
+      "label": "Strategy / Planning",
+      "sentences": [
+        {"en": "The second-mover advantage allows us to learn from competitors' mistakes.", "zh": "后发优势让我们可以从竞争对手的错误中学习。"},
+        {"en": "We are building a data-driven decision culture to reduce reliance on gut feeling.", "zh": "我们正在构建数据驱动的决策文化，以减少对直觉的依赖。"},
+        {"en": "The freemium model serves as our primary top-of-funnel acquisition engine.", "zh": "免费增值模式是我们漏斗顶部的主要获客引擎。"},
+        {"en": "Regulatory compliance in Hong Kong and Singapore requires different approaches.", "zh": "香港和新加坡的合规要求需要不同的策略。"},
+        {"en": "The platform lock-in effect increases switching costs for power users.", "zh": "平台锁定效应增加了高频用户的转换成本。"}
+      ],
+      "vocabulary": [
+        {"word": "freemium", "phonetic": "/ˈfriːmiəm/", "meaning": "免费增值", "example": {"en": "The freemium tier attracts users who may later convert to paid plans.", "zh": "免费增值层吸引的用户可能会后续转化为付费用户。"}},
+        {"word": "compliance", "phonetic": "/kəmˈplaɪəns/", "meaning": "合规", "example": {"en": "Compliance costs are a significant overhead for financial services firms.", "zh": "合规成本是金融服务公司的重要管理费用。"}},
+        {"word": "lock-in", "phonetic": "/ˈlɒk ɪn/", "meaning": "锁定效应", "example": {"en": "High switching costs create a strong lock-in effect for the platform.", "zh": "高转换成本为平台创造了强大的锁定效应。"}},
+        {"word": "gut feeling", "phonetic": "/ɡʌt ˈfiːlɪŋ/", "meaning": "直觉", "example": {"en": "Data should validate or challenge your gut feeling, not replace it entirely.", "zh": "数据应该验证或挑战你的直觉，而非完全取代它。"}},
+        {"word": "switching costs", "phonetic": "/ˈswɪtʃɪŋ kɒsts/", "meaning": "转换成本", "example": {"en": "Low switching costs mean customers can easily move to a competitor.", "zh": "低转换成本意味着客户可以轻松转向竞争对手。"}}
+      ]
+    }
+  }
+}

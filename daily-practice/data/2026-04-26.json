@@ -1,0 +1,90 @@
+{
+  "date": "2026-04-26",
+  "themes": {
+    "growth": {
+      "label": "Growth / Marketing",
+      "sentences": [
+        {"en": "The customer acquisition cost tripled after we saturated the core audience on Facebook.", "zh": "在Facebook核心受众饱和后，客户获取成本翻了三倍。"},
+        {"en": "We should implement a loyalty program to increase repeat purchase frequency.", "zh": "我们应该实施忠诚度计划以提高复购频次。"},
+        {"en": "The geographic expansion into Macau showed a 2x higher signup rate than expected.", "zh": "向澳门的地域扩张显示出比预期高2倍的注册率。"},
+        {"en": "Cross-selling the insurance product to brokerage users boosted ARPU by 15%.", "zh": "向券商用户交叉销售保险产品使ARPU提升了15%。"},
+        {"en": "The waitlist strategy created urgency and drove 10,000 pre-registrations in one week.", "zh": "等候名单策略制造了紧迫感，一周内带来了10000个预注册。"}
+      ],
+      "vocabulary": [
+        {"word": "saturated", "phonetic": "/ˈsætʃəreɪtɪd/", "meaning": "饱和的", "example": {"en": "Once the market is saturated, growth must come from retention improvements.", "zh": "一旦市场饱和，增长就必须来自留存的提升。"}},
+        {"word": "loyalty program", "phonetic": "/ˈlɔɪəlti ˈprəʊɡræm/", "meaning": "忠诚度计划", "example": {"en": "The loyalty program rewards users with points for every trade they execute.", "zh": "忠诚度计划为用户每笔交易奖励积分。"}},
+        {"word": "cross-selling", "phonetic": "/krɒs ˈselɪŋ/", "meaning": "交叉销售", "example": {"en": "Cross-selling works best when the additional product solves a related need.", "zh": "当附加产品能解决相关需求时，交叉销售效果最好。"}},
+        {"word": "ARPU", "phonetic": "/ˌeɪ ɑːr piː ˈjuː/", "meaning": "每用户平均收入", "example": {"en": "ARPU increased after we launched the premium subscription tier.", "zh": "推出高级订阅后，ARPU有所提升。"}},
+        {"word": "waitlist", "phonetic": "/ˈweɪtlɪst/", "meaning": "等候名单", "example": {"en": "The waitlist grew to 50,000 users before the product even launched.", "zh": "产品上线前，等候名单已增长到50000名用户。"}}
+      ]
+    },
+    "product": {
+      "label": "Product / Metrics",
+      "sentences": [
+        {"en": "The latency percentile at P99 is 800ms, which exceeds our SLA target.", "zh": "P99延迟百分位为800毫秒，超出了我们的SLA目标。"},
+        {"en": "We should sunset the old dashboard and migrate all users to the new version.", "zh": "我们应该下线旧仪表盘，将所有用户迁移到新版本。"},
+        {"en": "The canary deployment caught a critical bug before it reached 100% of users.", "zh": "金丝雀部署在Bug影响100%用户之前就发现了它。"},
+        {"en": "User interviews revealed that the search function is the most frustrating part of the app.", "zh": "用户访谈显示，搜索功能是App中最令人沮丧的部分。"},
+        {"en": "The wireframe needs sign-off from both design and engineering before development starts.", "zh": "线框图需要在开发开始前获得设计和工程双方的签字确认。"}
+      ],
+      "vocabulary": [
+        {"word": "percentile", "phonetic": "/pəˈsentaɪl/", "meaning": "百分位", "example": {"en": "The P95 latency should be under 200ms for a good user experience.", "zh": "P95延迟应低于200毫秒以确保良好的用户体验。"}},
+        {"word": "sunset", "phonetic": "/ˈsʌnset/", "meaning": "下线；淘汰", "example": {"en": "We plan to sunset the legacy API by the end of Q3.", "zh": "我们计划在Q3末下线遗留API。"}},
+        {"word": "canary deployment", "phonetic": "/kəˈneəri dɪˈplɔɪmənt/", "meaning": "金丝雀部署", "example": {"en": "Canary deployment releases changes to a small group first to catch issues early.", "zh": "金丝雀部署先向一小部分用户发布变更，以尽早发现问题。"}},
+        {"word": "wireframe", "phonetic": "/ˈwaɪəfreɪm/", "meaning": "线框图", "example": {"en": "The wireframe outlines the layout without visual design details.", "zh": "线框图描绘了布局框架，不包含视觉设计细节。"}},
+        {"word": "sign-off", "phonetic": "/saɪn ɒf/", "meaning": "签字确认；审批通过", "example": {"en": "The product manager gave sign-off on the final design yesterday.", "zh": "产品经理昨天对最终设计进行了签字确认。"}}
+      ]
+    },
+    "finance": {
+      "label": "Finance / Investment",
+      "sentences": [
+        {"en": "The price-to-book ratio is 0.8, suggesting the stock may be undervalued.", "zh": "市净率为0.8，表明该股可能被低估。"},
+        {"en": "Foreign investors pulled $3 billion out of emerging market equities last month.", "zh": "上个月，外资从新兴市场股票中撤出了30亿美元。"},
+        {"en": "The company declared a special dividend of $2 per share following the asset sale.", "zh": "资产出售后，公司宣布每股2美元的特别股息。"},
+        {"en": "Sector rotation from growth to value stocks accelerated in the second half.", "zh": "下半年，从成长股到价值股的板块轮动加速了。"},
+        {"en": "The earnings call transcript revealed management's cautious outlook for next quarter.", "zh": "财报电话会议纪要显示管理层对下季度持谨慎态度。"}
+      ],
+      "vocabulary": [
+        {"word": "price-to-book", "phonetic": "/praɪs tə bʊk/", "meaning": "市净率", "example": {"en": "Banks are often valued using the price-to-book ratio.", "zh": "银行通常使用市净率来估值。"}},
+        {"word": "emerging market", "phonetic": "/ɪˈmɜːdʒɪŋ ˈmɑːkɪt/", "meaning": "新兴市场", "example": {"en": "Emerging markets offer higher growth potential but also higher risk.", "zh": "新兴市场提供更高的增长潜力，但风险也更大。"}},
+        {"word": "sector rotation", "phonetic": "/ˈsektə rəʊˈteɪʃən/", "meaning": "板块轮动", "example": {"en": "Sector rotation is a common strategy during changing economic cycles.", "zh": "板块轮动是经济周期变化中的常见策略。"}},
+        {"word": "earnings call", "phonetic": "/ˈɜːnɪŋz kɔːl/", "meaning": "财报电话会议", "example": {"en": "The CEO addressed investor concerns during the quarterly earnings call.", "zh": "CEO在季度财报电话会议上回应了投资者的担忧。"}},
+        {"word": "outlook", "phonetic": "/ˈaʊtlʊk/", "meaning": "前景；展望", "example": {"en": "The company revised its full-year outlook downward due to weaker demand.", "zh": "由于需求疲软，公司下调了全年展望。"}}
+      ]
+    },
+    "team": {
+      "label": "Team / Management",
+      "sentences": [
+        {"en": "The RACI matrix clarifies who is responsible, accountable, consulted, and informed.", "zh": "RACI矩阵明确了谁负责、谁问责、谁被咨询、谁被通知。"},
+        {"en": "We are introducing a 360-degree feedback process for all managers this quarter.", "zh": "本季度我们将为所有管理者引入360度反馈流程。"},
+        {"en": "The engineering team needs to reduce their bus factor by sharing knowledge more broadly.", "zh": "工程团队需要通过更广泛的知识共享来降低巴士因子。"},
+        {"en": "The standup meeting should take no longer than 15 minutes.", "zh": "站会应控制在15分钟以内。"},
+        {"en": "I want to recognize the outstanding performance of the growth team this quarter.", "zh": "我想表彰增长团队本季度的出色表现。"}
+      ],
+      "vocabulary": [
+        {"word": "RACI", "phonetic": "/ˈreɪsi/", "meaning": "RACI责任分配矩阵", "example": {"en": "The RACI chart prevents confusion about who owns each deliverable.", "zh": "RACI图表避免了关于谁负责每项交付物的困惑。"}},
+        {"word": "360-degree feedback", "phonetic": "/θriː ˈsɪksti dɪˈɡriː ˈfiːdbæk/", "meaning": "360度反馈", "example": {"en": "360-degree feedback collects input from peers, reports, and managers.", "zh": "360度反馈从同事、下属和上级那里收集意见。"}},
+        {"word": "bus factor", "phonetic": "/bʌs ˈfæktə/", "meaning": "巴士因子（关键人员风险）", "example": {"en": "A bus factor of one means the project depends entirely on a single person.", "zh": "巴士因子为1意味着项目完全依赖一个人。"}},
+        {"word": "standup", "phonetic": "/ˈstændʌp/", "meaning": "站会", "example": {"en": "The daily standup keeps the team synchronized on progress and blockers.", "zh": "每日站会使团队在进度和阻塞问题上保持同步。"}},
+        {"word": "recognize", "phonetic": "/ˈrekəɡnaɪz/", "meaning": "认可；表彰", "example": {"en": "Managers should recognize good work promptly to reinforce positive behavior.", "zh": "管理者应及时认可优秀工作以强化积极行为。"}}
+      ]
+    },
+    "strategy": {
+      "label": "Strategy / Planning",
+      "sentences": [
+        {"en": "The asset-light model allows us to expand without heavy capital expenditure.", "zh": "轻资产模式让我们无需大量资本支出即可扩张。"},
+        {"en": "We are hedging our exposure to currency risk in the Singapore market.", "zh": "我们正在对冲新加坡市场的汇率风险敞口。"},
+        {"en": "The ecosystem strategy creates stickiness by integrating multiple services.", "zh": "生态系统战略通过整合多项服务来创造粘性。"},
+        {"en": "Our three-year vision is to become the default brokerage for retail investors in Asia.", "zh": "我们的三年愿景是成为亚洲散户投资者的默认券商。"},
+        {"en": "The competitive moat is weakening as incumbents copy our features.", "zh": "随着现有竞争者复制我们的功能，竞争护城河正在减弱。"}
+      ],
+      "vocabulary": [
+        {"word": "asset-light", "phonetic": "/ˈæset laɪt/", "meaning": "轻资产的", "example": {"en": "An asset-light business model reduces fixed costs and improves flexibility.", "zh": "轻资产商业模式降低了固定成本并提高了灵活性。"}},
+        {"word": "hedging", "phonetic": "/ˈhedʒɪŋ/", "meaning": "对冲", "example": {"en": "Hedging foreign exchange risk is essential for companies with overseas revenue.", "zh": "对冲外汇风险对有海外收入的公司至关重要。"}},
+        {"word": "ecosystem", "phonetic": "/ˈiːkəʊsɪstəm/", "meaning": "生态系统", "example": {"en": "Building an ecosystem around the core product increases customer lifetime value.", "zh": "围绕核心产品构建生态系统可以提高客户终身价值。"}},
+        {"word": "incumbent", "phonetic": "/ɪnˈkʌmbənt/", "meaning": "在位者；现有竞争者", "example": {"en": "Incumbents have distribution advantages but often lack innovation speed.", "zh": "在位者拥有分发优势，但往往缺乏创新速度。"}},
+        {"word": "stickiness", "phonetic": "/ˈstɪkinəs/", "meaning": "粘性", "example": {"en": "Product stickiness reduces churn and increases long-term revenue.", "zh": "产品粘性降低流失率并增加长期收入。"}}
+      ]
+    }
+  }
+}

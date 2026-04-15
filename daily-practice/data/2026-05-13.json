@@ -1,0 +1,90 @@
+{
+  "date": "2026-05-13",
+  "themes": {
+    "growth": {
+      "label": "Growth / Marketing",
+      "sentences": [
+        {"en": "The win-back campaign targeting lapsed subscribers recovered 8% of lost revenue.", "zh": "针对流失订阅用户的召回活动挽回了8%的失去收入。"},
+        {"en": "We need to calculate the payback period for each acquisition channel to prioritize spend.", "zh": "我们需要计算每个获客渠道的回收期以确定支出优先级。"},
+        {"en": "The localized creative for the Singapore market outperformed the generic version by 50%.", "zh": "为新加坡市场本地化的创意素材比通用版本表现好50%。"},
+        {"en": "Event-triggered emails have three times the open rate of scheduled broadcast emails.", "zh": "事件触发邮件的打开率是定时群发邮件的三倍。"},
+        {"en": "We should run a sensitivity analysis on the LTV model to stress-test our assumptions.", "zh": "我们应该对LTV模型做敏感性分析，以压力测试我们的假设。"}
+      ],
+      "vocabulary": [
+        {"word": "win-back", "phonetic": "/wɪn bæk/", "meaning": "召回；赢回", "example": {"en": "A well-timed win-back offer can re-engage users who churned months ago.", "zh": "时机恰当的召回优惠可以重新激活数月前流失的用户。"}},
+        {"word": "payback period", "phonetic": "/ˈpeɪbæk ˈpɪəriəd/", "meaning": "回收期", "example": {"en": "Channels with a payback period under six months get priority funding.", "zh": "回收期在六个月以内的渠道优先获得资金。"}},
+        {"word": "localized", "phonetic": "/ˈloʊkəlaɪzd/", "meaning": "本地化的", "example": {"en": "Localized content resonates better with regional audiences.", "zh": "本地化内容更能引起区域受众的共鸣。"}},
+        {"word": "event-triggered", "phonetic": "/ɪˈvent ˈtrɪɡərd/", "meaning": "事件触发的", "example": {"en": "Event-triggered notifications respond to user actions in real time.", "zh": "事件触发通知能实时响应用户行为。"}},
+        {"word": "sensitivity analysis", "phonetic": "/ˌsensɪˈtɪvɪti əˈnæləsɪs/", "meaning": "敏感性分析", "example": {"en": "Sensitivity analysis reveals which assumptions have the biggest impact on the outcome.", "zh": "敏感性分析揭示哪些假设对结果的影响最大。"}}
+      ]
+    },
+    "product": {
+      "label": "Product / Metrics",
+      "sentences": [
+        {"en": "The API rate limiter kicked in during the flash sale, throttling 15% of requests.", "zh": "闪购期间API限流器启动，限制了15%的请求。"},
+        {"en": "We are building a feature store to centralize machine learning features across teams.", "zh": "我们正在构建特征存储以跨团队集中管理机器学习特征。"},
+        {"en": "The customer journey map exposed a gap between the marketing promise and the actual product experience.", "zh": "客户旅程图暴露了营销承诺和实际产品体验之间的差距。"},
+        {"en": "We should add circuit breakers to prevent cascading failures in the microservices architecture.", "zh": "我们应该添加熔断器以防止微服务架构中的级联故障。"},
+        {"en": "The north star metric for the trading platform is the number of weekly active traders.", "zh": "交易平台的北极星指标是每周活跃交易者数量。"}
+      ],
+      "vocabulary": [
+        {"word": "rate limiter", "phonetic": "/reɪt ˈlɪmɪtər/", "meaning": "限流器", "example": {"en": "The rate limiter prevents any single client from overwhelming the API.", "zh": "限流器防止任何单个客户端过载API。"}},
+        {"word": "circuit breaker", "phonetic": "/ˈsɜːrkɪt ˈbreɪkər/", "meaning": "熔断器", "example": {"en": "The circuit breaker pattern stops requests to a failing service to allow recovery.", "zh": "熔断器模式停止对故障服务的请求以允许恢复。"}},
+        {"word": "cascading failure", "phonetic": "/kæˈskeɪdɪŋ ˈfeɪljər/", "meaning": "级联故障", "example": {"en": "Without proper isolation, one service failure can trigger a cascading failure.", "zh": "没有适当隔离，一个服务故障可能触发级联故障。"}},
+        {"word": "north star metric", "phonetic": "/nɔːrθ stɑːr ˈmetrɪk/", "meaning": "北极星指标", "example": {"en": "The north star metric aligns the entire organization around a single measure of success.", "zh": "北极星指标使整个组织围绕单一成功衡量标准达成一致。"}},
+        {"word": "feature store", "phonetic": "/ˈfiːtʃər stɔːr/", "meaning": "特征存储", "example": {"en": "A feature store reduces duplication of ML feature engineering work.", "zh": "特征存储减少了机器学习特征工程的重复工作。"}}
+      ]
+    },
+    "finance": {
+      "label": "Finance / Investment",
+      "sentences": [
+        {"en": "The Sharpe ratio of our model portfolio outperforms the benchmark on a risk-adjusted basis.", "zh": "我们模型组合的夏普比率在风险调整基础上跑赢了基准。"},
+        {"en": "The company announced a secondary offering to raise capital for the acquisition.", "zh": "公司宣布增发以筹集资金用于收购。"},
+        {"en": "Mark-to-market losses on the bond portfolio weighed on the quarterly results.", "zh": "债券组合的按市值计价亏损拖累了季度业绩。"},
+        {"en": "The EBITDA margin expanded to 35%, reflecting strong operational efficiency.", "zh": "EBITDA利润率扩大至35%，反映了强劲的运营效率。"},
+        {"en": "Foreign institutional investors were net sellers for the fifth consecutive week.", "zh": "外资机构投资者连续第五周净卖出。"}
+      ],
+      "vocabulary": [
+        {"word": "Sharpe ratio", "phonetic": "/ʃɑːrp ˈreɪʃioʊ/", "meaning": "夏普比率", "example": {"en": "A higher Sharpe ratio indicates better risk-adjusted returns.", "zh": "更高的夏普比率表示更好的风险调整后回报。"}},
+        {"word": "secondary offering", "phonetic": "/ˈsekənderi ˈɒfərɪŋ/", "meaning": "增发", "example": {"en": "The secondary offering diluted existing shareholders by 8%.", "zh": "增发使现有股东被稀释了8%。"}},
+        {"word": "mark-to-market", "phonetic": "/mɑːrk tə ˈmɑːrkɪt/", "meaning": "按市值计价", "example": {"en": "Mark-to-market accounting requires assets to be valued at current market prices.", "zh": "按市值计价的会计方法要求资产以当前市场价格估值。"}},
+        {"word": "EBITDA", "phonetic": "/iːˈbɪtdɑː/", "meaning": "息税折旧摊销前利润", "example": {"en": "EBITDA is widely used to compare profitability across companies.", "zh": "EBITDA被广泛用于比较不同公司的盈利能力。"}},
+        {"word": "net sellers", "phonetic": "/net ˈselərz/", "meaning": "净卖出方", "example": {"en": "When foreign investors become net sellers, it often pressures the local currency.", "zh": "当外国投资者成为净卖出方时，往往会对当地货币造成压力。"}}
+      ]
+    },
+    "team": {
+      "label": "Team / Management",
+      "sentences": [
+        {"en": "The headcount planning for next year assumes a 15% growth in the engineering team.", "zh": "明年的人员编制规划假设工程团队增长15%。"},
+        {"en": "We introduced asynchronous standups to accommodate team members across three time zones.", "zh": "我们引入了异步站会以适应跨三个时区的团队成员。"},
+        {"en": "The talent acquisition pipeline needs more senior candidates with fintech experience.", "zh": "人才招聘管线需要更多具有金融科技经验的高级候选人。"},
+        {"en": "I recommend implementing a peer review process to catch issues before code merges.", "zh": "我建议实施同行评审流程，在代码合并前发现问题。"},
+        {"en": "The culture survey revealed that employees value autonomy more than compensation.", "zh": "文化调查显示员工更看重自主权而非薪酬。"}
+      ],
+      "vocabulary": [
+        {"word": "headcount", "phonetic": "/ˈhedkaʊnt/", "meaning": "人员编制", "example": {"en": "The headcount freeze means no new hires until Q3.", "zh": "人员编制冻结意味着直到Q3都不招新人。"}},
+        {"word": "asynchronous", "phonetic": "/eɪˈsɪŋkrənəs/", "meaning": "异步的", "example": {"en": "Asynchronous communication reduces meeting fatigue for distributed teams.", "zh": "异步沟通减少了分布式团队的会议疲劳。"}},
+        {"word": "talent acquisition", "phonetic": "/ˈtælənt ˌækwɪˈzɪʃən/", "meaning": "人才招聘", "example": {"en": "Talent acquisition should be treated as a strategic function, not just HR admin.", "zh": "人才招聘应被视为战略职能，而不仅仅是人事行政。"}},
+        {"word": "peer review", "phonetic": "/pɪər rɪˈvjuː/", "meaning": "同行评审", "example": {"en": "Peer review improves code quality and spreads knowledge across the team.", "zh": "同行评审提高代码质量并在团队中传播知识。"}},
+        {"word": "autonomy", "phonetic": "/ɔːˈtɒnəmi/", "meaning": "自主权", "example": {"en": "Giving engineers autonomy over their tools increases satisfaction and productivity.", "zh": "给予工程师工具选择的自主权能提升满意度和生产力。"}}
+      ]
+    },
+    "strategy": {
+      "label": "Strategy / Planning",
+      "sentences": [
+        {"en": "The Porter's Five Forces analysis reveals high supplier bargaining power in our industry.", "zh": "波特五力分析揭示了我们行业中供应商议价能力较高。"},
+        {"en": "We should adopt a test-and-learn approach rather than committing to a full-scale launch.", "zh": "我们应该采用测试学习的方式而非承诺全面发布。"},
+        {"en": "The strategic roadmap must account for potential regulatory changes in 2027.", "zh": "战略路线图必须考虑到2027年潜在的监管变化。"},
+        {"en": "Our value proposition needs to be crystal clear in the first five seconds of the pitch.", "zh": "我们的价值主张需要在演示的前五秒钟内极其清晰。"},
+        {"en": "The consolidation trend in the brokerage industry creates both acquisition targets and competitive threats.", "zh": "经纪行业的整合趋势既创造了收购标的也带来了竞争威胁。"}
+      ],
+      "vocabulary": [
+        {"word": "bargaining power", "phonetic": "/ˈbɑːrɡənɪŋ ˈpaʊər/", "meaning": "议价能力", "example": {"en": "Large customers have significant bargaining power in B2B negotiations.", "zh": "大客户在B2B谈判中拥有显著的议价能力。"}},
+        {"word": "test-and-learn", "phonetic": "/test ənd lɜːrn/", "meaning": "测试学习", "example": {"en": "A test-and-learn culture allows rapid experimentation without fear of failure.", "zh": "测试学习文化允许快速实验而不惧失败。"}},
+        {"word": "value proposition", "phonetic": "/ˈvæljuː ˌprɒpəˈzɪʃən/", "meaning": "价值主张", "example": {"en": "A strong value proposition answers why a customer should choose you over alternatives.", "zh": "强有力的价值主张回答了客户为什么应该选择你而非替代方案。"}},
+        {"word": "consolidation", "phonetic": "/kənˌsɒlɪˈdeɪʃən/", "meaning": "整合", "example": {"en": "Industry consolidation typically benefits the top two or three players.", "zh": "行业整合通常有利于前两三名玩家。"}},
+        {"word": "pitch", "phonetic": "/pɪtʃ/", "meaning": "演示；推介", "example": {"en": "Prepare a two-minute elevator pitch for potential investors.", "zh": "为潜在投资者准备一个两分钟的电梯演讲。"}}
+      ]
+    }
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "date": "2026-05-14",
+  "themes": {
+    "growth": {
+      "label": "Growth / Marketing",
+      "sentences": [
+        {"en": "The payback period on our paid channels has shortened to 4 months.", "zh": "我们付费渠道的回收期已经缩短到4个月。"},
+        {"en": "We saw a 30% uplift in sign-ups after launching the influencer campaign.", "zh": "启动 KOL 推广活动后，注册量提升了30%。"},
+        {"en": "Organic traffic now accounts for 45% of total new user acquisition.", "zh": "自然流量目前占新用户获取总量的45%。"},
+        {"en": "The cohort analysis shows that users acquired in March have the best LTV.", "zh": "群组分析显示，3月获取的用户终身价值最高。"},
+        {"en": "We need to optimize the attribution model to better allocate spend across channels.", "zh": "我们需要优化归因模型，以更好地在各渠道之间分配支出。"}
+      ],
+      "vocabulary": [
+        {"word": "payback period", "phonetic": "/ˈpeɪbæk ˈpɪəriəd/", "meaning": "回收期", "example": {"en": "A shorter payback period means the marketing spend is more efficient.", "zh": "更短的回收期意味着营销支出更高效。"}},
+        {"word": "uplift", "phonetic": "/ˈʌplɪft/", "meaning": "提升；增幅", "example": {"en": "The new creative delivered a 25% uplift in click-through rate.", "zh": "新素材带来了25%的点击率提升。"}},
+        {"word": "cohort", "phonetic": "/ˈkəʊhɔːt/", "meaning": "群组；同期群", "example": {"en": "We track each cohort separately to understand retention trends.", "zh": "我们分别追踪每个群组来了解留存趋势。"}},
+        {"word": "attribution", "phonetic": "/ˌætrɪˈbjuːʃən/", "meaning": "归因", "example": {"en": "Multi-touch attribution gives credit to every touchpoint in the user journey.", "zh": "多触点归因会把功劳分配给用户旅程中的每个触点。"}},
+        {"word": "organic", "phonetic": "/ɔːˈɡænɪk/", "meaning": "自然的；有机的", "example": {"en": "Organic growth is more sustainable than paid growth in the long run.", "zh": "从长远来看，自然增长比付费增长更可持续。"}}
+      ]
+    },
+    "product": {
+      "label": "Product / Metrics",
+      "sentences": [
+        {"en": "The feature flag allows us to roll out changes to a small percentage of users first.", "zh": "功能开关允许我们先把变更推给一小部分用户。"},
+        {"en": "Session duration increased by 20% after we redesigned the portfolio page.", "zh": "重新设计持仓页面后，会话时长增加了20%。"},
+        {"en": "We need to deprecate the legacy API before launching version 3.", "zh": "在发布第3版之前，我们需要弃用旧版API。"},
+        {"en": "The crash rate spiked on Android devices after the latest update.", "zh": "最新更新后，Android设备的崩溃率飙升。"},
+        {"en": "User satisfaction scores improved after we reduced the page load time.", "zh": "我们缩短页面加载时间后，用户满意度评分有所提升。"}
+      ],
+      "vocabulary": [
+        {"word": "feature flag", "phonetic": "/ˈfiːtʃə flæɡ/", "meaning": "功能开关", "example": {"en": "We use feature flags to test new features without a full release.", "zh": "我们使用功能开关来测试新功能，无需完整发布。"}},
+        {"word": "deprecate", "phonetic": "/ˈdeprɪkeɪt/", "meaning": "弃用；废弃", "example": {"en": "The old endpoint will be deprecated in the next quarter.", "zh": "旧接口将在下个季度弃用。"}},
+        {"word": "latency", "phonetic": "/ˈleɪtənsi/", "meaning": "延迟", "example": {"en": "High latency on the trading page causes users to drop off.", "zh": "交易页面的高延迟导致用户流失。"}},
+        {"word": "throughput", "phonetic": "/ˈθruːpʊt/", "meaning": "吞吐量", "example": {"en": "We doubled the system throughput by optimizing the database queries.", "zh": "通过优化数据库查询，我们将系统吞吐量翻了一倍。"}},
+        {"word": "crash rate", "phonetic": "/kræʃ reɪt/", "meaning": "崩溃率", "example": {"en": "Keeping the crash rate below 0.5% is a key stability target.", "zh": "将崩溃率控制在0.5%以下是关键的稳定性目标。"}}
+      ]
+    },
+    "finance": {
+      "label": "Finance / Investment",
+      "sentences": [
+        {"en": "The bond yield curve has inverted, which historically signals a recession.", "zh": "债券收益率曲线已经倒挂，历史上这通常预示衰退。"},
+        {"en": "Short sellers are building positions against the overvalued tech sector.", "zh": "做空者正在针对估值过高的科技板块建仓。"},
+        {"en": "The company's free cash flow has been negative for three consecutive quarters.", "zh": "该公司的自由现金流已连续三个季度为负。"},
+        {"en": "Institutional investors are rotating out of growth stocks into value plays.", "zh": "机构投资者正在从成长股转向价值股。"},
+        {"en": "The IPO was oversubscribed by five times, reflecting strong market demand.", "zh": "IPO获得了五倍超额认购，反映出强劲的市场需求。"}
+      ],
+      "vocabulary": [
+        {"word": "yield curve", "phonetic": "/jiːld kɜːv/", "meaning": "收益率曲线", "example": {"en": "An inverted yield curve has predicted every major recession.", "zh": "收益率曲线倒挂预测了每一次重大衰退。"}},
+        {"word": "short selling", "phonetic": "/ʃɔːt ˈselɪŋ/", "meaning": "做空；卖空", "example": {"en": "Short selling involves borrowing shares and selling them at the current price.", "zh": "做空是指借入股票并以当前价格卖出。"}},
+        {"word": "free cash flow", "phonetic": "/friː kæʃ fləʊ/", "meaning": "自由现金流", "example": {"en": "Positive free cash flow allows the company to invest in growth without raising debt.", "zh": "正的自由现金流使公司能够在不举债的情况下投资增长。"}},
+        {"word": "oversubscribed", "phonetic": "/ˌəʊvəsəbˈskraɪbd/", "meaning": "超额认购", "example": {"en": "The bond offering was heavily oversubscribed by institutional buyers.", "zh": "该债券发行被机构买家大幅超额认购。"}},
+        {"word": "rotation", "phonetic": "/rəʊˈteɪʃən/", "meaning": "轮动；切换", "example": {"en": "Sector rotation is a common strategy during market transitions.", "zh": "板块轮动是市场转换期的常见策略。"}}
+      ]
+    },
+    "team": {
+      "label": "Team / Management",
+      "sentences": [
+        {"en": "The skip-level meeting helped me understand the team's real concerns.", "zh": "越级面谈帮助我了解了团队的真实顾虑。"},
+        {"en": "We should establish a clearer escalation path for critical issues.", "zh": "我们应该为关键问题建立更清晰的升级路径。"},
+        {"en": "The mentorship program has significantly improved junior employee retention.", "zh": "导师计划显著提升了初级员工的留存率。"},
+        {"en": "I noticed some tension between the two teams during the review.", "zh": "我注意到评审会上两个团队之间有一些紧张关系。"},
+        {"en": "Let us set up a weekly sync to keep everyone on the same page.", "zh": "让我们设立每周同步会，让所有人保持信息一致。"}
+      ],
+      "vocabulary": [
+        {"word": "escalation", "phonetic": "/ˌeskəˈleɪʃən/", "meaning": "升级；逐级上报", "example": {"en": "Clear escalation procedures prevent small issues from becoming crises.", "zh": "清晰的升级流程能防止小问题变成危机。"}},
+        {"word": "mentorship", "phonetic": "/ˈmentɔːʃɪp/", "meaning": "导师制", "example": {"en": "Structured mentorship accelerates career growth for new hires.", "zh": "结构化的导师制能加速新员工的职业成长。"}},
+        {"word": "skip-level", "phonetic": "/skɪp ˈlevəl/", "meaning": "越级（面谈）", "example": {"en": "Skip-level meetings give senior leaders direct insight into frontline challenges.", "zh": "越级面谈让高管直接了解一线的挑战。"}},
+        {"word": "sync", "phonetic": "/sɪŋk/", "meaning": "同步会；对齐", "example": {"en": "A daily sync keeps the team aligned on priorities and blockers.", "zh": "每日同步会让团队在优先级和阻碍上保持一致。"}},
+        {"word": "attrition", "phonetic": "/əˈtrɪʃən/", "meaning": "人员流失", "example": {"en": "High attrition in engineering is a red flag for company culture.", "zh": "工程团队的高流失率是公司文化的警示信号。"}}
+      ]
+    },
+    "strategy": {
+      "label": "Strategy / Planning",
+      "sentences": [
+        {"en": "We are building a flywheel effect where more data improves the product, which attracts more users.", "zh": "我们正在构建飞轮效应：更多数据改善产品，从而吸引更多用户。"},
+        {"en": "The regulatory landscape in Hong Kong requires a different compliance strategy.", "zh": "香港的监管环境需要不同的合规策略。"},
+        {"en": "First-mover advantage is overrated if you cannot sustain the lead.", "zh": "如果无法维持领先，先发优势就被高估了。"},
+        {"en": "We need to identify the key bottleneck before investing in new initiatives.", "zh": "在投入新举措之前，我们需要先识别关键瓶颈。"},
+        {"en": "The platform strategy creates value by connecting supply and demand sides.", "zh": "平台策略通过连接供给侧和需求侧来创造价值。"}
+      ],
+      "vocabulary": [
+        {"word": "flywheel", "phonetic": "/ˈflaɪwiːl/", "meaning": "飞轮效应", "example": {"en": "Amazon's flywheel starts with low prices driving more traffic.", "zh": "亚马逊的飞轮从低价吸引更多流量开始。"}},
+        {"word": "regulatory", "phonetic": "/ˈreɡjʊlətəri/", "meaning": "监管的", "example": {"en": "Regulatory changes can create both risks and opportunities.", "zh": "监管变化既能带来风险，也能带来机遇。"}},
+        {"word": "first-mover advantage", "phonetic": "/fɜːst ˈmuːvər ədˈvɑːntɪdʒ/", "meaning": "先发优势", "example": {"en": "First-mover advantage matters less in markets with low switching costs.", "zh": "在转换成本低的市场中，先发优势不那么重要。"}},
+        {"word": "bottleneck", "phonetic": "/ˈbɒtlnek/", "meaning": "瓶颈", "example": {"en": "The approval process is the biggest bottleneck in our release cycle.", "zh": "审批流程是我们发布周期中最大的瓶颈。"}},
+        {"word": "compliance", "phonetic": "/kəmˈplaɪəns/", "meaning": "合规", "example": {"en": "Compliance requirements vary significantly across different markets.", "zh": "不同市场的合规要求差异很大。"}}
+      ]
+    }
+  }
+}
