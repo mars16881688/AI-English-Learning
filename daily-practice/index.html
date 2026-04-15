@@ -124,12 +124,14 @@
   .vocab-word{font-size:20px;font-weight:700;margin-right:8px;}
   .vocab-phonetic{font-size:14px;color:var(--text-secondary);font-family:'Lucida Sans Unicode',sans-serif;}
   .vocab-meaning{display:inline-block;background:rgba(255,151,40,.1);color:var(--orange);padding:2px 10px;border-radius:8px;font-size:13px;font-weight:500;margin-left:8px;}
-  .vocab-header{display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-bottom:12px;}
+  .vocab-header{display:flex;align-items:flex-start;gap:8px;margin-bottom:12px;}
+  .vocab-info{display:flex;flex-wrap:wrap;align-items:center;gap:4px;flex:1;min-width:0;}
+  .vocab-actions{display:flex;gap:6px;align-items:center;flex-shrink:0;}
   .vocab-example{background:rgba(0,0,0,.02);border-left:3px solid var(--border);padding:10px 14px;border-radius:0 8px 8px 0;margin-top:10px;}
   .vocab-example .en{font-size:14px;line-height:1.6;}.vocab-example .zh{font-size:13px;color:var(--text-secondary);margin-top:4px;}
 
   /* Star */
-  .star-btn{width:40px;height:40px;border-radius:50%;border:1.5px solid var(--border);background:transparent;color:var(--text-secondary);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;flex-shrink:0;margin-left:auto;}
+  .star-btn{width:40px;height:40px;border-radius:50%;border:1.5px solid var(--border);background:transparent;color:var(--text-secondary);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;flex-shrink:0;}
   .star-btn:hover{border-color:var(--orange);color:var(--orange);}
   .star-btn.saved{border-color:var(--orange);color:var(--orange);background:rgba(255,151,40,.08);}
   .star-btn svg{width:16px;height:16px;}
@@ -335,7 +337,8 @@
     .vocab-word{font-size:16px;}
     .vocab-phonetic{font-size:11px;}
     .vocab-meaning{font-size:11px;padding:2px 6px;margin-left:4px;}
-    .vocab-header{gap:3px 4px;margin-bottom:8px;}
+    .vocab-header{gap:6px;margin-bottom:8px;}
+    .vocab-info{gap:3px 4px;}
     .vocab-example{padding:8px 10px;margin-top:8px;}
     .vocab-example .en{font-size:13px;}
     .vocab-example .zh{font-size:12px;}
@@ -796,7 +799,7 @@ async function renderLesson(dateStr){
     h+=`<div class="card" data-text="${escHtml(s.en)}"><div class="card-header"><span class="card-num">#${i+1}${scoreBadgeHtml(s.en)}</span><div class="btn-group"><button class="icon-btn" onclick="speak('${escJs(tts)}',this)"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="6,3 20,12 6,21"/></svg></button>${hasSR?`<button class="icon-btn rec" onclick="toggleRecord(this)"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="7"/></svg></button>`:''}</div></div><div class="sentence-en">${escHtml(s.en)}</div><div class="sentence-zh">${escHtml(s.zh)}</div><div class="card-speed"><button class="speed-btn${currentRate===0.7?' active':''}" data-speed="0.7">0.7x</button><button class="speed-btn${currentRate===0.85?' active':''}" data-speed="0.85">0.85x</button><button class="speed-btn${currentRate===1?' active':''}" data-speed="1">1x</button><button class="speed-btn${currentRate===1.2?' active':''}" data-speed="1.2">1.2x</button></div><div class="rec-hint">Listening... tap ■ to finish</div><div class="score-result"></div></div>`;});
   h+='<div class="section-title">Vocabulary</div>';
   theme.vocabulary.forEach(v=>{const saved=isInWordbook(v.word);
-    h+=`<div class="vocab-card"><div class="vocab-header"><span class="vocab-word">${escHtml(v.word)}</span><span class="vocab-phonetic">${escHtml(v.phonetic)}</span><span class="vocab-meaning">${escHtml(v.meaning)}</span><button class="icon-btn" onclick="speak('${escJs(v.word)}',this)" style="margin-left:auto"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="6,3 20,12 6,21"/></svg></button><button class="star-btn ${saved?'saved':''}" onclick="toggleStar(this,'${escJs(v.word)}','${escJs(v.phonetic)}','${escJs(v.meaning)}','${escJs(dateStr)}')"><svg viewBox="0 0 24 24" fill="${saved?'currentColor':'none'}" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></button></div><div class="vocab-example"><div class="en">${escHtml(v.example.en)}</div><div class="zh">${escHtml(v.example.zh)}</div></div></div>`;});
+    h+=`<div class="vocab-card"><div class="vocab-header"><div class="vocab-info"><span class="vocab-word">${escHtml(v.word)}</span><span class="vocab-phonetic">${escHtml(v.phonetic)}</span><span class="vocab-meaning">${escHtml(v.meaning)}</span></div><div class="vocab-actions"><button class="icon-btn" onclick="speak('${escJs(v.word)}',this)"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="6,3 20,12 6,21"/></svg></button><button class="star-btn ${saved?'saved':''}" onclick="toggleStar(this,'${escJs(v.word)}','${escJs(v.phonetic)}','${escJs(v.meaning)}','${escJs(dateStr)}')"><svg viewBox="0 0 24 24" fill="${saved?'currentColor':'none'}" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></button></div></div><div class="vocab-example"><div class="en">${escHtml(v.example.en)}</div><div class="zh">${escHtml(v.example.zh)}</div></div></div>`;});
   el.innerHTML=h;
   document.querySelectorAll('.speed-btn').forEach(btn=>{btn.addEventListener('click',()=>{currentRate=parseFloat(btn.dataset.speed);document.querySelectorAll('.speed-btn').forEach(b=>b.classList.toggle('active',b.dataset.speed===btn.dataset.speed));});});
 }
