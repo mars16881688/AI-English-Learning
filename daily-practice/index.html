@@ -4,74 +4,108 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>DailyDose</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/epubjs@0.3.93/dist/epub.min.js"></script>
 <style>
   :root {
-    --bg: #f5f6f6; --surface: #ffffff; --border: #eaebec;
-    --text: #1f2a32; --text-secondary: #6b7280;
-    --accent: #00b8b8; --accent-hover: #00a3a3; --accent-light: rgba(0,184,184,0.1);
-    --green: #00b99a; --red: #f7415f; --orange: #ff9728; --radius: 12px;
+    /* Paper / editorial palette */
+    --bg: #f6f1e8; --surface: #fcf9f2; --surface-hi: #fff9eb; --border: #e8e0cf;
+    --text: #1c1a17; --text-secondary: #5a5651; --text-muted: #8a867e;
+    --cell-empty: #ece5d3;
+    --accent: #00a3a3; --accent-hover: #008787; --accent-light: rgba(0,163,163,0.08);
+    --green: #1f9a6b; --red: #c94a5e; --orange: #d19438; --radius: 12px;
+    --serif: 'Fraunces', 'Iowan Old Style', Georgia, serif;
+    --sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
   }
   *{margin:0;padding:0;box-sizing:border-box;}
   :focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px;}
-  body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','SF Pro Text',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;min-height:100vh;padding-bottom:70px;}
+  body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.55;min-height:100vh;padding-bottom:70px;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
 
-  /* Nav */
-  .nav{position:fixed;bottom:0;left:0;right:0;background:rgba(255,255,255,0.96);backdrop-filter:blur(12px);border-top:1px solid var(--border);display:flex;z-index:200;}
-  .nav-item{flex:1;display:flex;flex-direction:column;align-items:center;padding:8px 0;cursor:pointer;color:var(--text-secondary);font-size:11px;gap:2px;border:none;background:none;-webkit-tap-highlight-color:transparent;transition:color .15s;position:relative;}
+  /* Nav — floating editorial pill */
+  .nav{position:fixed;bottom:10px;left:12px;right:12px;background:var(--surface);border:1px solid var(--border);border-radius:28px;box-shadow:0 10px 30px rgba(20,15,10,0.12),0 2px 6px rgba(20,15,10,0.05);backdrop-filter:blur(20px);display:flex;z-index:200;padding:6px 8px;padding-bottom:calc(6px + env(safe-area-inset-bottom,0px));}
+  .nav-item{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:8px 0;cursor:pointer;color:var(--text-muted);font-size:10px;font-weight:500;letter-spacing:0.2px;gap:3px;border:none;background:none;-webkit-tap-highlight-color:transparent;transition:color .15s;position:relative;border-radius:18px;}
   .nav-item:hover,.nav-item.active{color:var(--accent);}
-  .nav-item svg{width:22px;height:22px;}
-  .nav-badge{position:absolute;top:4px;right:calc(50% - 18px);background:var(--red);color:#fff;font-size:10px;font-weight:700;min-width:16px;height:16px;border-radius:8px;display:flex;align-items:center;justify-content:center;padding:0 4px;}
+  .nav-item.active::before{content:'';position:absolute;inset:2px 18%;border-radius:18px;background:var(--accent-light);z-index:-1;}
+  .nav-item svg{width:20px;height:20px;}
+  .nav-badge{position:absolute;top:2px;right:calc(50% - 18px);background:var(--red);color:#fff;font-size:10px;font-weight:700;min-width:16px;height:16px;border-radius:8px;display:flex;align-items:center;justify-content:center;padding:0 4px;}
 
-  /* Header */
-  .header{background:linear-gradient(135deg,#e6f9f9,#ffffff);border-bottom:1px solid var(--border);padding:24px 20px;text-align:center;}
-  .header-inner{position:relative;}
-  .header-back{position:absolute;left:0;top:50%;transform:translateY(-50%);color:var(--accent);background:none;border:none;cursor:pointer;font-size:14px;display:flex;align-items:center;gap:4px;}
+  /* Header — editorial */
+  .header{background:var(--bg);border-bottom:none;padding:34px 24px 18px;text-align:left;}
+  .header-inner{position:relative;display:flex;flex-direction:column;gap:4px;}
+  .header-back{position:absolute;right:0;top:4px;color:var(--text-muted);background:none;border:none;cursor:pointer;font-size:13px;display:flex;align-items:center;gap:4px;padding:4px;}
+  .header-back:hover{color:var(--accent);}
   .header-back svg{width:18px;height:18px;}
-  .header .date-label{font-size:13px;color:var(--text-secondary);letter-spacing:2px;text-transform:uppercase;margin-bottom:6px;}
-  .header h1{font-size:22px;font-weight:700;margin-bottom:6px;}
-  .theme-tag{display:inline-block;background:var(--accent-light);color:var(--accent);padding:4px 14px;border-radius:20px;font-size:13px;font-weight:500;}
-  .container{max-width:720px;margin:0 auto;padding:20px 16px;}
+  .header .date-label{font-family:var(--sans);font-size:11px;color:var(--text-muted);letter-spacing:2px;text-transform:uppercase;font-weight:500;}
+  .header h1{font-family:var(--serif);font-size:40px;font-weight:400;letter-spacing:-1.2px;line-height:1;color:var(--text);margin-top:2px;}
+  .header .quote{font-family:var(--serif);font-size:16px;line-height:1.5;color:var(--text-secondary);margin-top:14px;letter-spacing:-0.1px;font-style:italic;max-width:320px;}
+  .streak-chip{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border-radius:100px;background:var(--accent-light);color:var(--accent);font-size:13px;font-weight:600;font-family:var(--sans);align-self:flex-start;margin-top:10px;}
+  .streak-chip svg{width:14px;height:14px;}
+  .theme-tag{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border-radius:100px;background:var(--accent-light);color:var(--accent);font-size:12px;font-weight:500;letter-spacing:0.2px;font-family:var(--mono);text-transform:uppercase;}
+  .container{max-width:720px;margin:0 auto;padding:14px 20px;}
 
-  /* Theme picker */
-  .theme-picker{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0;}
-  .theme-chip{padding:8px 16px;border-radius:20px;border:1.5px solid var(--border);background:var(--surface);color:var(--text-secondary);font-size:13px;font-weight:500;cursor:pointer;transition:all .15s;}
+  /* Theme picker — chip rail */
+  .theme-picker{display:flex;flex-wrap:nowrap;gap:6px;margin:6px 0 18px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px;}
+  .theme-picker::-webkit-scrollbar{display:none;}
+  .theme-chip{padding:9px 16px;border-radius:100px;border:1px solid var(--border);background:transparent;color:var(--text-secondary);font-size:13px;font-weight:500;letter-spacing:-0.1px;cursor:pointer;transition:all .18s;flex-shrink:0;font-family:var(--sans);}
   .theme-chip:hover{border-color:var(--accent);color:var(--accent);}
-  .theme-chip.active{background:var(--accent);color:#fff;border-color:var(--accent);}
+  .theme-chip.active{background:var(--text);color:var(--bg);border-color:var(--text);}
 
-  /* Streak */
-  .streak-bar{display:flex;align-items:center;justify-content:center;gap:10px;padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);margin-bottom:20px;}
-  .streak-num{font-size:36px;font-weight:800;color:var(--orange);line-height:1;}
-  .streak-text{font-size:13px;color:var(--text-secondary);}
+  /* Stats row */
+  .stats-row{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:8px;margin-bottom:18px;}
+  .stat-big{padding:14px 16px;border-radius:var(--radius);background:var(--surface);border:1px solid var(--border);}
+  .stat-big .lbl{display:flex;align-items:center;gap:5px;font-family:var(--sans);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-muted);font-weight:600;}
+  .stat-big .lbl svg{width:12px;height:12px;color:var(--accent);}
+  .stat-big .val{font-family:var(--serif);font-size:30px;font-weight:400;letter-spacing:-0.8px;margin-top:6px;line-height:1;color:var(--text);}
+  .stat-big .val .unit{font-family:var(--sans);font-size:13px;color:var(--text-muted);margin-left:3px;letter-spacing:0;font-weight:500;}
+  .stat-big.small .val{font-size:24px;}
+
+  /* Legacy streak bar — kept for fallback, restyled */
+  .streak-bar{display:none;}
 
   /* Calendar */
-  .cal-month-title{font-size:15px;font-weight:600;margin:20px 0 10px;}
-  .cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;margin-bottom:8px;}
-  .cal-dow{text-align:center;font-size:11px;color:var(--text-secondary);padding:4px 0;}
-  .cal-day{aspect-ratio:1;border-radius:10px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:14px;color:var(--text-secondary);border:1px solid transparent;cursor:default;position:relative;}
-  .cal-day.empty{visibility:hidden;}
-  .cal-day.has-lesson{cursor:pointer;color:var(--text);border-color:var(--border);background:var(--surface);}
-  .cal-day.has-lesson:hover{border-color:var(--accent);}
-  .cal-day.checked{background:rgba(0,185,154,0.1);border-color:var(--green);color:var(--green);font-weight:700;}
-  .cal-day.level-1{background:rgba(0,185,154,0.15);border-color:rgba(0,185,154,0.3);color:var(--text);font-weight:600;}
-  .cal-day.level-2{background:rgba(0,185,154,0.3);border-color:rgba(0,185,154,0.4);color:var(--text);font-weight:700;}
-  .cal-day.level-3{background:rgba(0,185,154,0.5);border-color:rgba(0,185,154,0.6);color:#fff;font-weight:700;}
-  .cal-day.level-4{background:rgba(0,185,154,0.75);border-color:rgba(0,185,154,0.8);color:#fff;font-weight:700;}
-  .cal-day.today{box-shadow:inset 0 0 0 2px var(--accent);}
-  .cal-day .dot{width:4px;height:4px;border-radius:50%;background:var(--green);position:absolute;bottom:4px;}
+  .month-head{display:flex;align-items:baseline;justify-content:space-between;margin:22px 0 12px;}
+  .month-title{font-family:var(--serif);font-size:26px;font-weight:400;letter-spacing:-0.6px;color:var(--text);}
+  .month-year{font-family:var(--mono);font-size:11px;color:var(--text-muted);letter-spacing:1px;margin-top:2px;text-transform:uppercase;}
+  .cal-card{padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);margin-bottom:14px;}
+  .cal-month-title{font-family:var(--serif);font-size:22px;font-weight:400;letter-spacing:-0.4px;margin:8px 0 10px;color:var(--text);}
+  .cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin-bottom:8px;}
+  .cal-dow{font-family:var(--mono);text-align:center;font-size:10px;color:var(--text-muted);padding:4px 0;letter-spacing:1px;font-weight:500;}
+  .cal-day{aspect-ratio:1;border-radius:7px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:12px;font-family:var(--mono);font-weight:500;color:var(--text-muted);border:1px solid transparent;cursor:default;position:relative;background:var(--cell-empty);}
+  .cal-day.empty{visibility:hidden;background:transparent;}
+  .cal-day.has-lesson{cursor:pointer;color:var(--text-secondary);}
+  .cal-day.has-lesson:hover{transform:scale(1.04);}
+  .cal-day.checked{background:rgba(0,163,163,0.15);color:var(--text);}
+  .cal-day.level-1{background:rgba(0,163,163,0.15);color:var(--text);}
+  .cal-day.level-2{background:rgba(0,163,163,0.28);color:var(--text);}
+  .cal-day.level-3{background:rgba(0,163,163,0.46);color:#fff;}
+  .cal-day.level-4{background:rgba(0,163,163,0.75);color:#fff;font-weight:600;}
+  .cal-day.today{border:1.5px solid var(--accent);background:var(--bg);color:var(--accent);font-weight:600;}
+  .cal-day.today.level-1,.cal-day.today.level-2,.cal-day.today.level-3,.cal-day.today.level-4{color:#fff;}
+  .cal-day .dot{display:none;}
+  .cal-legend{display:flex;align-items:center;gap:6px;margin-top:14px;padding-top:12px;border-top:1px solid var(--border);justify-content:space-between;font-family:var(--mono);font-size:10px;color:var(--text-muted);letter-spacing:0.5px;}
+  .cal-legend .swatches{display:flex;gap:4px;flex:1;justify-content:center;}
+  .cal-legend .sw{width:14px;height:14px;border-radius:4px;}
 
   /* Section */
-  .section-title{font-size:14px;font-weight:600;color:var(--text-secondary);letter-spacing:1.5px;text-transform:uppercase;margin:28px 0 14px;display:flex;align-items:center;gap:8px;}
-  .section-title::after{content:'';flex:1;height:1px;background:var(--border);}
+  .section-title{display:flex;align-items:baseline;gap:12px;margin:26px 0 14px;padding:0;}
+  .section-title::before{content:attr(data-num);font-family:var(--mono);font-size:11px;color:var(--accent);letter-spacing:1px;font-weight:600;flex-shrink:0;}
+  .section-title::after{content:'';flex:1;height:1px;background:var(--border);margin-bottom:4px;}
+  .section-title .sec-main{font-family:var(--serif);font-size:22px;font-weight:400;letter-spacing:-0.4px;line-height:1;color:var(--text);text-transform:none;}
+  .section-title .sec-sub{font-family:var(--sans);font-size:11px;color:var(--text-muted);margin-top:3px;letter-spacing:0.5px;font-weight:500;text-transform:none;display:block;}
+  .section-title .sec-block{display:flex;flex-direction:column;}
 
-  /* Cards */
-  .card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin-bottom:14px;transition:border-color .2s;}
+  /* Cards — minimal editorial */
+  .card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:18px;margin-bottom:10px;transition:background .25s;position:relative;}
+  .card.highlight{background:var(--surface-hi);}
   .card:hover{border-color:var(--accent);}
-  .card-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;}
-  .card-num{font-size:12px;font-weight:700;color:var(--accent);background:var(--accent-light);padding:2px 10px;border-radius:10px;}
+  .card-header{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:10px;}
+  .card-num{font-family:var(--mono);font-size:10px;font-weight:500;color:var(--text-muted);letter-spacing:1px;padding-top:3px;background:transparent;}
   .btn-group{display:flex;gap:8px;align-items:center;}
-  .icon-btn{width:44px;height:44px;border-radius:50%;border:1.5px solid var(--border);background:transparent;color:var(--text-secondary);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;flex-shrink:0;}
+  .icon-btn{width:36px;height:36px;border-radius:100px;border:1px solid var(--border);background:transparent;color:var(--text-secondary);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .15s;flex-shrink:0;}
   .icon-btn:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-light);}
   .icon-btn:active{transform:scale(0.92);}
   .icon-btn svg{width:16px;height:16px;}
@@ -82,8 +116,9 @@
   @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(0,185,154,.25);}50%{box-shadow:0 0 0 6px rgba(0,185,154,0);}}
   @keyframes rec-pulse{0%,100%{box-shadow:0 0 0 0 rgba(247,65,95,.3);}50%{box-shadow:0 0 0 8px rgba(247,65,95,0);}}
 
-  .sentence-en{font-size:17px;font-weight:500;line-height:1.6;margin-bottom:8px;}
-  .sentence-zh{font-size:14px;color:var(--text-secondary);line-height:1.6;}
+  .sentence-en{font-family:var(--serif);font-size:18px;font-weight:400;line-height:1.45;letter-spacing:-0.2px;margin-bottom:8px;color:var(--text);}
+  .sentence-en .kw{background:var(--accent-light);color:var(--accent);padding:0 3px;border-radius:3px;font-weight:600;}
+  .sentence-zh{font-size:13px;color:var(--text-secondary);line-height:1.55;}
 
   /* Score */
   .score-result{display:none;margin-top:14px;padding:14px;border-radius:10px;background:rgba(0,0,0,.04);border-left:3px solid var(--accent);}
@@ -122,38 +157,43 @@
   .az-word.fair{background:rgba(255,151,40,.08);border-color:var(--orange);color:var(--orange);}
   .az-word.poor{background:rgba(247,65,95,.06);border-color:var(--red);color:var(--red);}
 
-  /* Vocab */
-  .vocab-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin-bottom:14px;}
-  .vocab-card:hover{border-color:var(--orange);}
-  .vocab-word{font-size:20px;font-weight:700;margin-right:8px;}
-  .vocab-phonetic{font-size:14px;color:var(--text-secondary);font-family:'Lucida Sans Unicode',sans-serif;}
-  .vocab-meaning{display:inline-block;background:rgba(255,151,40,.1);color:var(--orange);padding:2px 10px;border-radius:8px;font-size:13px;font-weight:500;margin-left:8px;}
-  .vocab-header{display:flex;align-items:flex-start;gap:8px;margin-bottom:12px;}
-  .vocab-info{display:flex;flex-wrap:wrap;align-items:center;gap:4px;flex:1;min-width:0;}
+  /* Vocab — editorial */
+  .vocab-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:18px;margin-bottom:10px;transition:background .2s;}
+  .vocab-card:hover{border-color:var(--accent);}
+  .vocab-word{font-family:var(--serif);font-size:22px;font-weight:400;letter-spacing:-0.5px;color:var(--text);}
+  .vocab-phonetic{font-family:var(--mono);font-size:12px;color:var(--text-muted);margin-left:8px;}
+  .vocab-meaning{display:inline-block;color:var(--text-secondary);padding:0;font-size:13px;font-weight:400;margin-left:0;margin-top:4px;line-height:1.5;background:transparent;}
+  .vocab-pos{font-family:var(--serif);font-style:italic;font-size:11px;color:var(--accent);margin-left:8px;}
+  .vocab-header{display:flex;align-items:flex-start;gap:10px;margin-bottom:0;}
+  .vocab-info{display:flex;flex-direction:column;flex:1;min-width:0;}
+  .vocab-info > .top{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px;}
   .vocab-actions{display:flex;gap:6px;align-items:center;flex-shrink:0;}
-  .vocab-example{background:rgba(0,0,0,.02);border-left:3px solid var(--border);padding:10px 14px;border-radius:0 8px 8px 0;margin-top:10px;}
-  .vocab-example .en{font-size:14px;line-height:1.6;}.vocab-example .zh{font-size:13px;color:var(--text-secondary);margin-top:4px;}
+  .vocab-example{border-top:1px dashed var(--border);padding:12px 0 0;border-left:none;margin-top:14px;border-radius:0;background:transparent;display:flex;gap:8px;align-items:flex-start;}
+  .vocab-example::before{content:'\201C';font-family:var(--serif);font-size:22px;color:var(--accent);line-height:1;flex-shrink:0;margin-top:-2px;}
+  .vocab-example .body{flex:1;min-width:0;}
+  .vocab-example .en{font-family:var(--serif);font-size:15px;line-height:1.55;letter-spacing:-0.1px;color:var(--text);font-style:italic;}
+  .vocab-example .zh{font-size:12px;color:var(--text-secondary);margin-top:6px;line-height:1.5;}
 
   /* Star */
-  .star-btn{width:40px;height:40px;border-radius:50%;border:1.5px solid var(--border);background:transparent;color:var(--text-secondary);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;flex-shrink:0;}
-  .star-btn:hover{border-color:var(--orange);color:var(--orange);}
-  .star-btn.saved{border-color:var(--orange);color:var(--orange);background:rgba(255,151,40,.08);}
+  .star-btn{width:34px;height:34px;border-radius:100px;border:none;background:transparent;color:var(--text-muted);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .15s;flex-shrink:0;}
+  .star-btn:hover{color:var(--accent);background:var(--accent-light);}
+  .star-btn.saved{color:var(--accent);background:var(--accent-light);}
   .star-btn svg{width:16px;height:16px;}
 
   /* Wordbook */
-  .wb-empty{text-align:center;padding:60px 20px;color:var(--text-secondary);}
+  .wb-empty{text-align:center;padding:60px 20px;color:var(--text-muted);}
   .wb-empty svg{width:48px;height:48px;margin-bottom:12px;opacity:.4;}
-  .wb-count{font-size:13px;color:var(--text-secondary);margin-bottom:16px;}
-  .wb-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:16px;margin-bottom:14px;display:flex;align-items:flex-start;gap:12px;}
-  .wb-card:hover{border-color:var(--orange);}
+  .wb-count{font-family:var(--mono);font-size:11px;color:var(--text-muted);margin-bottom:14px;letter-spacing:1px;text-transform:uppercase;}
+  .wb-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:14px;margin-bottom:10px;display:flex;align-items:flex-start;gap:12px;transition:border-color .15s;}
+  .wb-card:hover{border-color:var(--accent);}
   .wb-card-body{flex:1;min-width:0;}
-  .wb-card-word{font-size:17px;font-weight:700;}
-  .wb-card-phonetic{font-size:13px;color:var(--text-secondary);margin-left:8px;}
-  .wb-card-meaning{font-size:13px;color:var(--orange);margin-top:2px;}
-  .wb-card-source{font-size:11px;color:var(--text-secondary);margin-top:4px;}
-  .wb-card-srs{font-size:11px;margin-top:4px;padding:2px 8px;border-radius:6px;display:inline-block;}
-  .wb-card-srs.due{background:rgba(247,65,95,.08);color:var(--red);}
-  .wb-card-srs.ok{background:rgba(0,185,154,.08);color:var(--green);}
+  .wb-card-word{font-family:var(--serif);font-size:18px;font-weight:400;letter-spacing:-0.3px;color:var(--text);}
+  .wb-card-phonetic{font-family:var(--mono);font-size:12px;color:var(--text-muted);margin-left:8px;}
+  .wb-card-meaning{font-size:13px;color:var(--text-secondary);margin-top:3px;line-height:1.5;}
+  .wb-card-source{font-family:var(--sans);font-size:10px;color:var(--text-muted);margin-top:6px;letter-spacing:0.3px;}
+  .wb-card-srs{font-family:var(--mono);font-size:10px;margin-top:6px;padding:3px 8px;border-radius:100px;display:inline-block;letter-spacing:0.3px;font-weight:500;}
+  .wb-card-srs.due{background:rgba(201,74,94,.1);color:var(--red);}
+  .wb-card-srs.ok{background:rgba(31,154,107,.1);color:var(--green);}
   .wb-remove{background:none;border:none;color:var(--text-secondary);cursor:pointer;padding:4px;border-radius:6px;flex-shrink:0;}
   .wb-remove:hover{color:var(--red);background:rgba(247,65,95,.06);}
   .wb-remove svg{width:16px;height:16px;}
@@ -161,37 +201,59 @@
   .wb-add-input{flex:1;padding:10px 14px;border-radius:10px;border:1px solid var(--border);background:var(--surface);color:var(--text);font-size:15px;outline:none;transition:border-color .2s;}
   .wb-add-input::placeholder{color:var(--text-secondary);}
   .wb-add-input:focus{border-color:var(--accent);}
-  .wb-add-btn{padding:10px 18px;border-radius:10px;border:none;background:var(--accent);color:#fff;font-size:14px;font-weight:600;cursor:pointer;white-space:nowrap;transition:all .15s;}
+  .wb-add-btn{padding:10px 18px;border-radius:10px;border:none;background:var(--accent);color:#fff;font-size:14px;font-weight:500;cursor:pointer;white-space:nowrap;transition:all .15s;font-family:var(--sans);}
   .wb-add-btn:hover{background:var(--accent-hover);}
 
   /* Review mode */
-  .review-banner{background:var(--accent-light);border:1px solid rgba(0,184,184,.2);border-radius:var(--radius);padding:14px 16px;margin-bottom:16px;display:flex;align-items:center;justify-content:space-between;cursor:pointer;transition:border-color .15s;}
+  .review-banner{background:var(--accent-light);border:1px solid rgba(0,163,163,.2);border-radius:var(--radius);padding:14px 16px;margin-bottom:16px;display:flex;align-items:center;justify-content:space-between;cursor:pointer;transition:border-color .15s;}
   .review-banner:hover{border-color:var(--accent);}
-  .review-banner-text{font-size:14px;font-weight:600;color:var(--accent);}
-  .review-banner-count{font-size:24px;font-weight:800;color:var(--accent);}
+  .review-banner-text{font-family:var(--serif);font-size:16px;font-weight:400;color:var(--accent);letter-spacing:-0.2px;}
+  .review-banner-count{font-family:var(--serif);font-size:26px;font-weight:400;color:var(--accent);letter-spacing:-0.6px;}
   .review-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px;margin-bottom:16px;text-align:center;}
 
-  /* Leaderboard */
-  .rank-tabs{display:flex;gap:8px;margin-bottom:16px;}
-  .rank-tab{flex:1;padding:10px;border-radius:10px;border:1.5px solid var(--border);background:var(--surface);color:var(--text-secondary);font-size:14px;font-weight:600;cursor:pointer;text-align:center;transition:all .15s;}
+  /* Leaderboard — editorial */
+  .rank-tabs{display:flex;gap:6px;margin-bottom:18px;}
+  .rank-tab{flex:1;padding:10px 0;border-radius:10px;border:1px solid var(--border);background:transparent;color:var(--text-secondary);font-size:13px;font-weight:500;cursor:pointer;text-align:center;transition:all .18s;font-family:var(--sans);}
   .rank-tab:hover{border-color:var(--accent);color:var(--accent);}
-  .rank-tab.active{background:var(--accent);color:#fff;border-color:var(--accent);}
+  .rank-tab.active{background:var(--text);color:var(--bg);border-color:var(--text);}
+  /* Podium */
+  .podium{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;align-items:flex-end;margin-bottom:22px;}
+  .podium-col{text-align:center;}
+  .podium-av{border-radius:100px;margin:0 auto 8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:18px;width:42px;height:42px;}
+  .podium-col.first .podium-av{width:52px;height:52px;font-size:22px;border:2px solid var(--accent);box-shadow:0 4px 20px rgba(0,163,163,0.35);}
+  .podium-name{font-family:var(--serif);font-size:13px;font-weight:400;color:var(--text);letter-spacing:-0.2px;line-height:1.2;}
+  .podium-col.first .podium-name{font-size:15px;}
+  .podium-rank{font-family:var(--mono);font-size:10px;color:var(--text-muted);letter-spacing:1px;margin-top:2px;}
+  .podium-bar{margin-top:10px;border-radius:var(--radius) var(--radius) 0 0;display:flex;align-items:center;justify-content:center;position:relative;background:var(--surface);border:1px solid var(--border);border-bottom:none;}
+  .podium-col.first .podium-bar{background:var(--accent);border:none;color:#fff;}
+  .podium-bar .val{font-family:var(--serif);font-size:20px;font-weight:400;letter-spacing:-0.4px;color:var(--text);}
+  .podium-col.first .podium-bar .val{color:#fff;font-size:24px;}
+  .podium-bar .sub{position:absolute;top:8px;left:8px;font-family:var(--mono);font-size:9px;letter-spacing:1px;color:var(--text-muted);}
+  .podium-col.first .podium-bar .sub{color:rgba(255,255,255,0.7);}
+  /* Rank rows */
   .rank-list{list-style:none;}
-  .rank-item{display:flex;align-items:center;gap:12px;padding:14px 16px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);margin-bottom:8px;transition:border-color .15s;}
-  .rank-item.me{border-color:var(--accent);background:var(--accent-light);}
-  .rank-pos{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;background:var(--bg);color:var(--text-secondary);flex-shrink:0;}
-  .rank-item:nth-child(1) .rank-pos{background:linear-gradient(135deg,#FFD700,#FFA500);color:#fff;}
-  .rank-item:nth-child(2) .rank-pos{background:linear-gradient(135deg,#C0C0C0,#A0A0A0);color:#fff;}
-  .rank-item:nth-child(3) .rank-pos{background:linear-gradient(135deg,#CD7F32,#A0522D);color:#fff;}
-  .rank-name{flex:1;font-weight:600;font-size:15px;}
-  .rank-value{font-size:18px;font-weight:800;color:var(--accent);}
-  .rank-sub{font-size:11px;color:var(--text-secondary);text-align:right;}
-  .rank-right{text-align:right;}
-  .review-word{font-size:28px;font-weight:800;margin-bottom:4px;}
-  .review-phonetic{font-size:16px;color:var(--text-secondary);margin-bottom:16px;}
-  .review-reveal{padding:10px 24px;border-radius:10px;border:1.5px solid var(--border);background:var(--surface);color:var(--text);font-size:15px;cursor:pointer;transition:all .15s;}
+  .rank-item{display:flex;align-items:center;gap:12px;padding:12px 14px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);margin-bottom:8px;transition:border-color .15s;position:relative;overflow:hidden;}
+  .rank-item.me{border-color:rgba(0,163,163,0.35);background:rgba(0,163,163,0.06);}
+  .rank-pos{font-family:var(--mono);font-size:12px;font-weight:600;color:var(--text-muted);width:22px;background:transparent!important;border-radius:0;display:block;text-align:left;flex-shrink:0;padding-top:2px;}
+  .rank-avatar{width:34px;height:34px;border-radius:100px;display:flex;align-items:center;justify-content:center;font-size:14px;color:#fff;flex-shrink:0;}
+  .rank-name{flex:1;min-width:0;font-family:var(--serif);font-size:15px;font-weight:400;letter-spacing:-0.2px;color:var(--text);}
+  .rank-body{flex:1;min-width:0;}
+  .rank-bar{height:3px;background:var(--border);border-radius:100px;margin-top:5px;overflow:hidden;}
+  .rank-bar-fill{height:100%;background:var(--accent);opacity:0.6;}
+  .rank-value{font-family:var(--serif);font-size:18px;font-weight:400;letter-spacing:-0.3px;color:var(--text);line-height:1;}
+  .rank-sub{font-family:var(--sans);font-size:9px;color:var(--text-muted);letter-spacing:1px;text-transform:uppercase;margin-top:3px;}
+  .rank-right{text-align:right;flex-shrink:0;}
+  .rank-you-card{padding:18px;border-radius:var(--radius);background:rgba(0,163,163,0.06);border:1px solid rgba(0,163,163,0.18);margin-top:14px;}
+  .rank-you-head{font-family:var(--mono);font-size:10px;color:var(--accent);letter-spacing:2px;text-transform:uppercase;font-weight:600;}
+  .rank-you-name{font-family:var(--serif);font-size:20px;font-weight:400;letter-spacing:-0.4px;margin-top:4px;color:var(--text);}
+  .rank-you-sub{font-size:12px;color:var(--text-secondary);margin-top:4px;}
+  .rank-you-value{font-family:var(--serif);font-size:38px;font-weight:400;letter-spacing:-1.2px;color:var(--accent);line-height:1;}
+  .rank-you-unit{font-family:var(--mono);font-size:10px;color:var(--text-muted);letter-spacing:1px;text-transform:uppercase;margin-top:2px;}
+  .review-word{font-family:var(--serif);font-size:34px;font-weight:400;letter-spacing:-0.8px;margin-bottom:4px;color:var(--text);}
+  .review-phonetic{font-family:var(--mono);font-size:14px;color:var(--text-muted);margin-bottom:16px;}
+  .review-reveal{padding:10px 24px;border-radius:100px;border:1px solid var(--border);background:transparent;color:var(--text-secondary);font-size:13px;font-weight:500;cursor:pointer;transition:all .15s;font-family:var(--sans);}
   .review-reveal:hover{border-color:var(--accent);color:var(--accent);}
-  .review-meaning{font-size:18px;color:var(--orange);font-weight:600;margin:16px 0;}
+  .review-meaning{font-family:var(--serif);font-size:20px;color:var(--text);font-weight:400;letter-spacing:-0.3px;margin:16px 0;font-style:italic;}
   .review-btns{display:flex;gap:8px;justify-content:center;margin-top:16px;}
   .review-btn{flex:1;max-width:120px;padding:10px 0;border-radius:10px;border:none;font-size:14px;font-weight:600;cursor:pointer;transition:all .15s;}
   .review-btn.again{background:rgba(247,65,95,.1);color:var(--red);}
@@ -222,26 +284,27 @@
 
   /* Auth page */
   .auth-box{max-width:360px;margin:60px auto;padding:32px 24px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);text-align:center;}
-  .auth-box h2{font-size:20px;margin-bottom:4px;}
+  .auth-box h2{font-family:var(--serif);font-size:28px;font-weight:400;letter-spacing:-0.6px;margin-bottom:6px;color:var(--text);}
   .auth-box .sub{font-size:13px;color:var(--text-secondary);margin-bottom:20px;}
-  .auth-input{width:100%;padding:12px 14px;border-radius:10px;border:1px solid var(--border);background:var(--bg);color:var(--text);font-size:15px;outline:none;margin-bottom:10px;transition:border-color .2s;}
+  .auth-input{width:100%;padding:12px 14px;border-radius:10px;border:1px solid var(--border);background:var(--bg);color:var(--text);font-size:15px;outline:none;margin-bottom:10px;transition:border-color .2s;font-family:var(--sans);}
   .auth-input:focus{border-color:var(--accent);}
-  .auth-btn{width:100%;padding:12px;border-radius:10px;border:none;background:var(--accent);color:#fff;font-size:15px;font-weight:600;cursor:pointer;transition:all .15s;margin-top:4px;}
+  .auth-btn{width:100%;padding:12px;border-radius:10px;border:none;background:var(--accent);color:#fff;font-size:15px;font-weight:500;cursor:pointer;transition:all .15s;margin-top:4px;font-family:var(--sans);letter-spacing:0.2px;}
   .auth-btn:hover{background:var(--accent-hover);}
   .auth-toggle{font-size:13px;color:var(--accent);cursor:pointer;margin-top:14px;display:inline-block;}
   .auth-toggle:hover{text-decoration:underline;}
   .auth-error{font-size:13px;color:var(--red);margin-top:8px;min-height:18px;}
-  .auth-user-bar{display:flex;align-items:center;justify-content:space-between;padding:8px 16px;background:var(--surface);border-bottom:1px solid var(--border);font-size:13px;color:var(--text-secondary);}
-  .auth-user-bar .name{font-weight:600;color:var(--text);}
-  .auth-user-bar .logout{color:var(--red);cursor:pointer;border:none;background:none;font-size:12px;}
-  .auth-user-bar .logout:hover{text-decoration:underline;}
+  .auth-user-bar{display:flex;align-items:center;justify-content:space-between;padding:8px 16px;background:var(--surface);border-bottom:1px solid var(--border);font-size:13px;color:var(--text-muted);}
+  .auth-user-bar .name{font-weight:500;color:var(--text);font-family:var(--serif);letter-spacing:-0.1px;}
+  .auth-user-bar .logout{color:var(--text-muted);cursor:pointer;border:none;background:none;font-size:12px;font-family:var(--mono);letter-spacing:0.5px;text-transform:uppercase;}
+  .auth-user-bar .logout:hover{color:var(--red);text-decoration:underline;}
 
   /* Score badge on cards */
-  .card-score{display:inline-flex;align-items:center;gap:4px;font-size:12px;font-weight:700;padding:2px 8px;border-radius:8px;margin-left:8px;}
-  .card-score.s-excellent{background:rgba(0,185,154,.1);color:var(--green);}
-  .card-score.s-good{background:var(--accent-light);color:var(--accent);}
-  .card-score.s-fair{background:rgba(255,151,40,.08);color:var(--orange);}
-  .card-score.s-poor{background:rgba(247,65,95,.06);color:var(--red);}
+  .card-score{display:inline-flex;align-items:center;gap:5px;font-family:var(--mono);font-size:11px;font-weight:600;padding:3px 8px;border-radius:100px;margin-left:8px;}
+  .card-score::before{content:'';width:5px;height:5px;border-radius:100px;background:currentColor;}
+  .card-score.s-excellent{background:rgba(31,154,107,.12);color:var(--green);}
+  .card-score.s-good{background:rgba(0,163,163,.12);color:var(--accent);}
+  .card-score.s-fair{background:rgba(209,148,56,.12);color:var(--orange);}
+  .card-score.s-poor{background:rgba(201,74,94,.12);color:var(--red);}
   /* Reading */
   .read-input{width:100%;min-height:120px;padding:14px;border-radius:var(--radius);border:1px solid var(--border);background:var(--surface);color:var(--text);font-size:15px;line-height:1.7;resize:vertical;outline:none;font-family:inherit;}
   .read-input:focus{border-color:var(--accent);}
@@ -340,29 +403,36 @@
 
   /* ── Mobile ── */
   @media(max-width:480px){
-    body{padding-bottom:calc(62px + env(safe-area-inset-bottom, 0px));}
-    .nav{padding-bottom:env(safe-area-inset-bottom, 0px);height:auto;}
-    .nav-item{padding:6px 0 4px;font-size:10px;gap:1px;}
+    body{padding-bottom:calc(72px + env(safe-area-inset-bottom, 0px));}
+    .nav{left:10px;right:10px;bottom:8px;padding:5px 6px;padding-bottom:calc(5px + env(safe-area-inset-bottom, 0px));}
+    .nav-item{padding:6px 0 4px;font-size:10px;gap:2px;}
     .nav-item svg{width:20px;height:20px;}
-    .header{padding:16px 14px 14px;}
-    .header h1{font-size:17px;}
-    .header .date-label{font-size:10px;letter-spacing:1px;margin-bottom:4px;}
-    .header-back{left:8px;}
-    .theme-tag{font-size:11px;padding:3px 10px;}
-    .container{padding:12px 10px;}
+    .header{padding:26px 18px 14px;}
+    .header h1{font-size:32px;letter-spacing:-0.9px;}
+    .header .date-label{font-size:10px;letter-spacing:1.5px;}
+    .header .quote{font-size:14px;margin-top:10px;max-width:280px;}
+    .header-back{right:8px;}
+    .theme-tag{font-size:11px;padding:4px 10px;}
+    .container{padding:12px 14px;}
     .card{padding:14px;margin-bottom:10px;}
     .card-header{margin-bottom:8px;}
-    .sentence-en{font-size:15px;line-height:1.5;margin-bottom:6px;}
-    .sentence-zh{font-size:13px;line-height:1.5;}
+    .sentence-en{font-size:16px;line-height:1.45;margin-bottom:6px;}
+    .sentence-zh{font-size:12px;line-height:1.5;}
     .vocab-card{padding:14px;margin-bottom:10px;}
-    .vocab-word{font-size:16px;}
+    .vocab-word{font-size:19px;letter-spacing:-0.4px;}
     .vocab-phonetic{font-size:11px;}
-    .vocab-meaning{font-size:11px;padding:2px 6px;margin-left:4px;}
-    .vocab-header{gap:6px;margin-bottom:8px;}
+    .vocab-meaning{font-size:12px;padding:0;margin-left:0;}
+    .vocab-header{gap:8px;}
     .vocab-info{gap:3px 4px;}
-    .vocab-example{padding:8px 10px;margin-top:8px;}
-    .vocab-example .en{font-size:13px;}
-    .vocab-example .zh{font-size:12px;}
+    .vocab-example{padding-top:10px;margin-top:10px;}
+    .vocab-example .en{font-size:14px;}
+    .vocab-example .zh{font-size:11px;}
+    .stats-row{gap:6px;}
+    .stat-big{padding:12px;}
+    .stat-big .val{font-size:24px;}
+    .stat-big.small .val{font-size:20px;}
+    .podium-bar{min-height:56px;}
+    .rank-you-value{font-size:32px;}
     .icon-btn{width:40px;height:40px;}
     .icon-btn svg{width:16px;height:16px;}
     .star-btn{width:36px;height:36px;}
@@ -449,7 +519,7 @@
 <body>
 
 <div class="page" id="page-auth">
-  <div class="header"><div class="header-inner"><h1>DailyDose</h1><div class="date-label">The right English, at the right time.</div></div></div>
+  <div class="header"><div class="header-inner"><div class="date-label">Mobile · English</div><h1>DailyDose</h1><p class="quote">"The right English, at the right time."</p></div></div>
   <div class="container">
     <div class="auth-box">
       <h2 id="auth-title">Sign In</h2>
@@ -470,38 +540,43 @@
 </div>
 
 <div class="page" id="page-calendar">
-  <div class="header"><div class="header-inner"><h1>DailyDose</h1><div class="date-label" id="cal-today-label"></div></div></div>
+  <div class="header"><div class="header-inner"><div class="date-label">Your progress</div><h1>Calendar</h1><div class="date-label" id="cal-today-label" style="margin-top:10px;letter-spacing:1.5px"></div></div></div>
   <div class="container" id="cal-content"></div>
 </div>
 
 <div class="page" id="page-lesson">
   <div class="header"><div class="header-inner">
-    <button class="header-back" onclick="navigate('calendar')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg></button>
-    <div class="date-label" id="lesson-date"></div><h1>DailyDose</h1><span class="theme-tag" id="lesson-theme" style="display:none"></span><div class="date-label" style="margin-top:2px">The right English, at the right time.</div>
+    <button class="header-back" onclick="navigate('calendar')" aria-label="Back">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+    <div class="date-label" id="lesson-date"></div>
+    <h1>Today</h1>
+    <span class="theme-tag" id="lesson-theme" style="display:none;margin-top:10px;align-self:flex-start"></span>
+    <p class="quote">"The right English, at the right time."</p>
   </div></div>
   <div class="container" id="lesson-content"></div>
 </div>
 
 <div class="page" id="page-wordbook">
-  <div class="header"><div class="header-inner"><h1>Wordbook</h1><div class="date-label">My Saved Words</div></div></div>
+  <div class="header"><div class="header-inner"><div class="date-label">My saved words</div><h1>Wordbook</h1></div></div>
   <div class="container" id="wb-content"></div>
 </div>
 
 <div class="page" id="page-review">
   <div class="header"><div class="header-inner">
-    <button class="header-back" onclick="navigate('wordbook')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg></button>
-    <h1>Review</h1><div class="date-label">Spaced Repetition</div>
+    <button class="header-back" onclick="navigate('wordbook')" aria-label="Back"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><polyline points="15 18 9 12 15 6"/></svg></button>
+    <div class="date-label">Spaced repetition</div><h1>Review</h1>
   </div></div>
   <div class="container" id="review-content"></div>
 </div>
 
 <div class="page" id="page-reading">
-  <div class="header"><div class="header-inner"><h1>Reading</h1><div class="date-label">Tap any word to look up</div></div></div>
+  <div class="header"><div class="header-inner"><div class="date-label">Tap any word to look up</div><h1>Reading</h1></div></div>
   <div class="container" id="reading-content"></div>
 </div>
 
 <div class="page" id="page-rank">
-  <div class="header"><div class="header-inner"><h1>Leaderboard</h1><div class="date-label">Who's putting in the hours?</div></div></div>
+  <div class="header"><div class="header-inner"><div class="date-label" id="rank-sub">This week</div><h1>Leaderboard</h1></div></div>
   <div class="container" id="rank-content"></div>
 </div>
 
@@ -840,14 +915,41 @@ window.addEventListener('hashchange',handleRoute);
 window.addEventListener('beforeunload',flushLessonSession);
 
 // ══════ CALENDAR ══════
+function romanNumeral(n){const map=[[1000,'M'],[900,'CM'],[500,'D'],[400,'CD'],[100,'C'],[90,'XC'],[50,'L'],[40,'XL'],[10,'X'],[9,'IX'],[5,'V'],[4,'IV'],[1,'I']];let r='';for(const[v,s]of map){while(n>=v){r+=s;n-=v;}}return r;}
 async function renderCalendar(){
   const idx=await loadIndex();const today=new Date();document.getElementById('cal-today-label').textContent=fmtDateDisplay(todayStr());
   const ck=getCheckins(),streak=getStreak(),ds=new Set(idx.dates);
   const months=[];for(let i=1;i>=0;i--){const d=new Date(today.getFullYear(),today.getMonth()-i,1);months.push({year:d.getFullYear(),month:d.getMonth()});}
-  let h=`<div class="streak-bar"><span style="font-size:28px">&#x1F525;</span><div><div class="streak-num">${streak}</div><div class="streak-text">day streak</div></div></div>`;
-  function heatLevel(mins){if(mins>=60)return'level-4';if(mins>=31)return'level-3';if(mins>=11)return'level-2';if(mins>=1)return'level-1';return'';}
-  h+='<div style="display:flex;align-items:center;gap:6px;justify-content:flex-end;margin-bottom:12px;font-size:11px;color:var(--text-secondary)"><span>Less</span><span style="width:12px;height:12px;border-radius:3px;background:rgba(0,185,154,0.15)"></span><span style="width:12px;height:12px;border-radius:3px;background:rgba(0,185,154,0.3)"></span><span style="width:12px;height:12px;border-radius:3px;background:rgba(0,185,154,0.5)"></span><span style="width:12px;height:12px;border-radius:3px;background:rgba(0,185,154,0.75)"></span><span>More</span></div>';
-  for(const{year,month}of months){const fd=new Date(year,month,1).getDay(),dim=new Date(year,month+1,0).getDate();h+=`<div class="cal-month-title">${MONTHS[month]} ${year}</div><div class="cal-grid">`;for(const d of DOW)h+=`<div class="cal-dow">${d}</div>`;for(let i=0;i<fd;i++)h+='<div class="cal-day empty"></div>';for(let d=1;d<=dim;d++){const s=`${year}-${String(month+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;const has=ds.has(s),entry=getCheckinEntry(ck,s),c=!!entry,mins=entry?(entry.minutes||0):0,it=s===todayStr();const cls=['cal-day'];if(has)cls.push('has-lesson');const lvl=heatLevel(mins);if(lvl)cls.push(lvl);else if(c)cls.push('checked');if(it)cls.push('today');const oc=has?` onclick="navigate('lesson','${s}')"`:'';const tip=mins?` title="${mins} min"`:c?' title="visited"':'';h+=`<div class="${cls.join(' ')}"${oc}${tip}>${d}${c?'<span class="dot"></span>':''}</div>`;}h+='</div>';}
+  function heatLevel(mins){if(mins>=60)return 4;if(mins>=31)return 3;if(mins>=11)return 2;if(mins>=1)return 1;return 0;}
+  // Stats
+  const todayStrV=todayStr();const monthPrefix=todayStrV.substring(0,7);const monthKeys=Object.keys(ck).filter(k=>k.startsWith(monthPrefix));const monthDaysActive=monthKeys.length;const dayOfMonth=today.getDate();const monthlyPct=dayOfMonth>0?Math.round(monthDaysActive/dayOfMonth*100):0;let totalMin=0;for(const k of monthKeys){const e=getCheckinEntry(ck,k);if(e)totalMin+=(e.minutes||0);}
+  const flameSvg='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c1.5 3 5 4.5 5 9a5 5 0 1 1-10 0c0-2 1-3 2-4 0 2 1 2.5 2 2 0-3 0-5 1-7z"/></svg>';
+  let h=`<div class="stats-row">
+    <div class="stat-big"><div class="lbl">${flameSvg}Streak</div><div class="val">${streak}<span class="unit">days</span></div></div>
+    <div class="stat-big small"><div class="lbl">This month</div><div class="val">${monthDaysActive}<span class="unit">d</span></div></div>
+    <div class="stat-big small"><div class="lbl">Completion</div><div class="val">${monthlyPct}<span class="unit">%</span></div></div>
+  </div>`;
+  for(const{year,month}of months){
+    const fd=new Date(year,month,1).getDay();
+    const dim=new Date(year,month+1,0).getDate();
+    h+=`<div class="month-head"><div><div class="month-title">${MONTHS[month]}</div><div class="month-year">${romanNumeral(year)}</div></div></div>`;
+    h+='<div class="cal-card"><div class="cal-grid">';
+    for(const d of DOW)h+=`<div class="cal-dow">${d[0]}</div>`;
+    for(let i=0;i<fd;i++)h+='<div class="cal-day empty"></div>';
+    for(let d=1;d<=dim;d++){
+      const s=`${year}-${String(month+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
+      const has=ds.has(s),entry=getCheckinEntry(ck,s),c=!!entry,mins=entry?(entry.minutes||0):0,it=s===todayStrV;
+      const cls=['cal-day'];if(has)cls.push('has-lesson');
+      const lvl=heatLevel(mins);if(lvl)cls.push('level-'+lvl);else if(c)cls.push('checked');
+      if(it)cls.push('today');
+      const oc=has?` onclick="navigate('lesson','${s}')"`:'';
+      const tip=mins?` title="${mins} min"`:c?' title="visited"':'';
+      h+=`<div class="${cls.join(' ')}"${oc}${tip}>${d}</div>`;
+    }
+    h+='</div>';
+    h+=`<div class="cal-legend"><span>LESS</span><div class="swatches"><span class="sw" style="background:var(--cell-empty)"></span><span class="sw" style="background:rgba(0,163,163,0.15)"></span><span class="sw" style="background:rgba(0,163,163,0.28)"></span><span class="sw" style="background:rgba(0,163,163,0.46)"></span><span class="sw" style="background:rgba(0,163,163,0.75)"></span></div><span>MORE</span></div>`;
+    h+='</div>';
+  }
   document.getElementById('cal-content').innerHTML=h;
 }
 
@@ -858,17 +960,25 @@ async function renderLesson(dateStr){
   document.getElementById('lesson-date').textContent=fmtDateDisplay(dateStr);
   const themes=lesson.themes,tk=Object.keys(themes);if(!themes[currentTheme])currentTheme=tk[0];
   const theme=themes[currentTheme];document.getElementById('lesson-theme').textContent=theme.label;
+  const streak=getStreak();
   const ck=getCheckins(),times=ck[dateStr]||[];
   let h='';
+  h+=`<div style="display:flex;justify-content:flex-end;margin:-6px 0 6px"><span class="streak-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c1.5 3 5 4.5 5 9a5 5 0 1 1-10 0c0-2 1-3 2-4 0 2 1 2.5 2 2 0-3 0-5 1-7z"/></svg>${streak}d</span></div>`;
   h+='<div class="theme-picker">';for(const k of tk){h+=`<button class="theme-chip${k===currentTheme?' active':''}" onclick="switchTheme('${k}','${dateStr}')">${escHtml(themes[k].label)}</button>`;}h+='</div>';
+  // Theme banner card
+  h+=`<div class="card" style="display:flex;justify-content:space-between;align-items:center;padding:16px 18px;margin-bottom:18px">
+    <div><div style="font-family:var(--mono);font-size:10px;letter-spacing:1.5px;color:var(--text-muted);text-transform:uppercase;font-weight:500">Today's theme</div><div style="font-family:var(--serif);font-size:22px;font-weight:400;letter-spacing:-0.4px;margin-top:2px;color:var(--text)">${escHtml(theme.label)}</div></div>
+    <div style="text-align:right"><div style="font-family:var(--serif);font-size:28px;font-weight:400;color:var(--accent);line-height:1">${theme.sentences.length}<span style="font-size:14px;color:var(--text-muted)">/${theme.sentences.length}</span></div><div style="font-family:var(--mono);font-size:10px;color:var(--text-muted);letter-spacing:1px;text-transform:uppercase;margin-top:4px">sentences</div></div>
+  </div>`;
   h+=`<div class="controls-bar"><div style="display:flex;align-items:center;gap:8px"><label>Voice</label><button class="voice-btn${currentVoice==='female'?' active':''}" onclick="switchVoice('female')">Female</button><button class="voice-btn${currentVoice==='male'?' active':''}" onclick="switchVoice('male')">Male</button></div></div>`;
   if(!hasSR)h+='<div class="no-speech-banner visible">Speech Recognition not supported. Use Chrome.</div>';
-  h+='<div class="section-title">Sentences</div>';
+  h+='<div class="section-title" data-num="01"><div class="sec-block"><div class="sec-main">Sentences</div><div class="sec-sub">Listen · Shadow · Score</div></div></div>';
   theme.sentences.forEach((s,i)=>{const tts=s.en.replace(/Let's/g,'Let us');
-    h+=`<div class="card" data-text="${escHtml(s.en)}"><div class="card-header"><span class="card-num">#${i+1}${scoreBadgeHtml(s.en)}</span><div class="btn-group"><button class="icon-btn" onclick="speak('${escJs(tts)}',this)"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="6,3 20,12 6,21"/></svg></button>${hasSR?`<button class="icon-btn rec" onclick="toggleRecord(this)"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="7"/></svg></button>`:''}</div></div><div class="sentence-en">${escHtml(s.en)}</div><div class="sentence-zh">${escHtml(s.zh)}</div><div class="card-speed"><button class="speed-btn${currentRate===0.7?' active':''}" data-speed="0.7">0.7x</button><button class="speed-btn${currentRate===0.85?' active':''}" data-speed="0.85">0.85x</button><button class="speed-btn${currentRate===1?' active':''}" data-speed="1">1x</button><button class="speed-btn${currentRate===1.2?' active':''}" data-speed="1.2">1.2x</button></div><div class="rec-hint">Listening... tap ■ to finish</div><div class="score-result"></div></div>`;});
-  h+='<div class="section-title">Vocabulary</div>';
+    h+=`<div class="card" data-text="${escHtml(s.en)}"><div class="card-header"><span class="card-num">№ ${String(i+1).padStart(2,'0')}${scoreBadgeHtml(s.en)}</span><div class="btn-group"><button class="icon-btn" onclick="speak('${escJs(tts)}',this)"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="6,3 20,12 6,21"/></svg></button>${hasSR?`<button class="icon-btn rec" onclick="toggleRecord(this)"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="7"/></svg></button>`:''}</div></div><div class="sentence-en">${escHtml(s.en)}</div><div class="sentence-zh">${escHtml(s.zh)}</div><div class="card-speed"><button class="speed-btn${currentRate===0.7?' active':''}" data-speed="0.7">0.7x</button><button class="speed-btn${currentRate===0.85?' active':''}" data-speed="0.85">0.85x</button><button class="speed-btn${currentRate===1?' active':''}" data-speed="1">1x</button><button class="speed-btn${currentRate===1.2?' active':''}" data-speed="1.2">1.2x</button></div><div class="rec-hint">Listening... tap ■ to finish</div><div class="score-result"></div></div>`;});
+  h+='<div class="section-title" data-num="02"><div class="sec-block"><div class="sec-main">Vocabulary</div><div class="sec-sub">Tap to save · star for later</div></div></div>';
   theme.vocabulary.forEach(v=>{const saved=isInWordbook(v.word);
-    h+=`<div class="vocab-card"><div class="vocab-header"><div class="vocab-info"><span class="vocab-word">${escHtml(v.word)}</span><span class="vocab-phonetic">${escHtml(v.phonetic)}</span><span class="vocab-meaning">${escHtml(v.meaning)}</span></div><div class="vocab-actions"><button class="icon-btn" onclick="speak('${escJs(v.word)}',this)"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="6,3 20,12 6,21"/></svg></button><button class="star-btn ${saved?'saved':''}" onclick="toggleStar(this,'${escJs(v.word)}','${escJs(v.phonetic)}','${escJs(v.meaning)}','${escJs(dateStr)}')"><svg viewBox="0 0 24 24" fill="${saved?'currentColor':'none'}" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></button></div></div><div class="vocab-example"><div class="en">${escHtml(v.example.en)}</div><div class="zh">${escHtml(v.example.zh)}</div></div></div>`;});
+    h+=`<div class="vocab-card"><div class="vocab-header"><div class="vocab-info"><div class="top"><span class="vocab-word">${escHtml(v.word)}</span><span class="vocab-phonetic">${escHtml(v.phonetic)}</span></div><span class="vocab-meaning">${escHtml(v.meaning)}</span></div><div class="vocab-actions"><button class="icon-btn" onclick="speak('${escJs(v.word)}',this)"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="6,3 20,12 6,21"/></svg></button><button class="star-btn ${saved?'saved':''}" onclick="toggleStar(this,'${escJs(v.word)}','${escJs(v.phonetic)}','${escJs(v.meaning)}','${escJs(dateStr)}')"><svg viewBox="0 0 24 24" fill="${saved?'currentColor':'none'}" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><polygon points="12 3 14.7 8.7 21 9.6 16.4 13.9 17.5 20 12 17.1 6.5 20 7.6 13.9 3 9.6 9.3 8.7 12 3"/></svg></button></div></div><div class="vocab-example"><div class="body"><div class="en">${escHtml(v.example.en)}</div><div class="zh">${escHtml(v.example.zh)}</div></div></div></div>`;});
+  h+=`<div style="padding:32px 4px 20px;text-align:center;font-family:var(--serif);font-size:13px;color:var(--text-muted);font-style:italic;letter-spacing:0.2px">— end of today's dose —</div>`;
   el.innerHTML=h;
   document.querySelectorAll('.speed-btn').forEach(btn=>{btn.addEventListener('click',()=>{currentRate=parseFloat(btn.dataset.speed);document.querySelectorAll('.speed-btn').forEach(b=>b.classList.toggle('active',b.dataset.speed===btn.dataset.speed));});});
 }
@@ -918,6 +1028,9 @@ function reviewRate(q){updateSrs(reviewQueue[reviewIdx].word,q);reviewIdx++;show
 
 // ══════ LEADERBOARD ══════
 let rankMode = 'total'; // 'total' | 'today'
+const RANK_AVATARS = ['🌕','🪐','⭐','🌙','✦','◐','☀','☾'];
+const RANK_COLORS = ['#00a3a3','#8b7355','#5a6b5d','#8d6c82','#4a6570','#997b47','#7b6a8a','#a64256'];
+function fmtRankTime(v){return v>=60?Math.floor(v/60)+'h '+(v%60)+'m':v+' min';}
 async function renderLeaderboard(){
   const el=document.getElementById('rank-content');
   el.innerHTML='<div class="loading">Loading leaderboard...</div>';
@@ -927,22 +1040,77 @@ async function renderLeaderboard(){
     if (resp.ok) { const r = await resp.json(); board = r.leaderboard || []; }
   } catch {}
   if (!board.length) { el.innerHTML='<div class="loading">No data yet. Start learning to appear on the leaderboard!</div>'; return; }
-  function renderBoard(){
-    const sorted = rankMode === 'today'
-      ? [...board].sort((a,b) => b.todayMinutes - a.todayMinutes || b.totalMinutes - a.totalMinutes)
-      : [...board].sort((a,b) => b.totalMinutes - a.totalMinutes || b.checkinDays - a.checkinDays);
-    let h = `<div class="rank-tabs"><button class="rank-tab${rankMode==='total'?' active':''}" onclick="rankMode='total';document.querySelector('[data-rankboard]').outerHTML='';renderLeaderboard()">Total</button><button class="rank-tab${rankMode==='today'?' active':''}" onclick="rankMode='today';document.querySelector('[data-rankboard]').outerHTML='';renderLeaderboard()">Today</button></div>`;
-    h += '<div data-rankboard>';
-    sorted.forEach((u, i) => {
+  const subEl = document.getElementById('rank-sub');
+  if (subEl) subEl.textContent = `This week · ${board.length} learner${board.length>1?'s':''}`;
+  const sorted = rankMode === 'today'
+    ? [...board].sort((a,b) => b.todayMinutes - a.todayMinutes || b.totalMinutes - a.totalMinutes)
+    : [...board].sort((a,b) => b.totalMinutes - a.totalMinutes || b.checkinDays - a.checkinDays);
+  const valOf = u => rankMode === 'today' ? u.todayMinutes : u.totalMinutes;
+  const max = Math.max(1, valOf(sorted[0]));
+  let h = `<div class="rank-tabs">
+    <button class="rank-tab${rankMode==='total'?' active':''}" onclick="rankMode='total';renderLeaderboard()">Total</button>
+    <button class="rank-tab${rankMode==='today'?' active':''}" onclick="rankMode='today';renderLeaderboard()">Today</button>
+  </div>`;
+  // Podium — top 3
+  const top = sorted.slice(0,3);
+  if (top.length >= 3) {
+    const order = [top[1], top[0], top[2]];
+    const ranks = [2,1,3];
+    const heights = [78, 110, 62];
+    h += '<div class="podium">';
+    order.forEach((u, i) => {
+      const rank = ranks[i];
+      const isFirst = rank === 1;
+      const av = RANK_AVATARS[i+1];
+      const color = RANK_COLORS[i];
       const isMe = authName && u.name.toLowerCase() === authName.toLowerCase();
-      const val = rankMode === 'today' ? u.todayMinutes : u.totalMinutes;
-      const fmtTime = val >= 60 ? Math.floor(val/60) + 'h ' + (val%60) + 'm' : val + ' min';
-      h += `<div class="rank-item${isMe?' me':''}"><div class="rank-pos">${i+1}</div><div class="rank-name">${escHtml(u.name)}</div><div class="rank-right"><div class="rank-value">${fmtTime}</div><div class="rank-sub">${u.streak}d streak · ${u.checkinDays} days</div></div></div>`;
+      h += `<div class="podium-col${isFirst?' first':''}">
+        <div class="podium-av" style="background:${color}">${av}</div>
+        <div class="podium-name">${escHtml(u.name)}${isMe?' ·':''}</div>
+        <div class="podium-rank">#${rank}</div>
+        <div class="podium-bar" style="height:${heights[i]}px"><span class="sub">${rankMode==='today'?'TODAY':'TOTAL'}</span><span class="val">${fmtRankTime(valOf(u))}</span></div>
+      </div>`;
     });
     h += '</div>';
-    el.innerHTML = h;
   }
-  renderBoard();
+  // Everyone else
+  const rest = sorted.slice(top.length >= 3 ? 3 : 0);
+  if (rest.length) {
+    h += '<div class="section-title" data-num="↓"><div class="sec-block"><div class="sec-main">Everyone else</div><div class="sec-sub">Keep climbing</div></div></div>';
+    rest.forEach((u, idx) => {
+      const i = idx + (top.length >= 3 ? 4 : 1);
+      const isMe = authName && u.name.toLowerCase() === authName.toLowerCase();
+      const val = valOf(u);
+      const pct = (val / max) * 100;
+      const color = RANK_COLORS[(i+2) % RANK_COLORS.length];
+      const av = RANK_AVATARS[(i+2) % RANK_AVATARS.length];
+      h += `<div class="rank-item${isMe?' me':''}">
+        <div class="rank-pos">#${i}</div>
+        <div class="rank-avatar" style="background:${color}">${av}</div>
+        <div class="rank-body"><div class="rank-name">${escHtml(u.name)}</div><div class="rank-bar"><div class="rank-bar-fill" style="width:${pct}%"></div></div></div>
+        <div class="rank-right"><div class="rank-value">${fmtRankTime(val)}</div><div class="rank-sub">${u.streak}d · ${u.checkinDays} days</div></div>
+      </div>`;
+    });
+  }
+  // You card
+  if (authName) {
+    const meIdx = sorted.findIndex(u => u.name.toLowerCase() === authName.toLowerCase());
+    if (meIdx >= 0) {
+      const me = sorted[meIdx];
+      const meVal = valOf(me);
+      const ahead = meIdx > 0 ? sorted[meIdx-1] : null;
+      const subLine = ahead
+        ? `${fmtRankTime(valOf(ahead) - meVal)} behind ${escHtml(ahead.name.split(' ')[0])}`
+        : 'You lead the pack 👑';
+      h += `<div class="rank-you-card">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:12px">
+          <div><div class="rank-you-head">You · #${meIdx+1}</div><div class="rank-you-name">${escHtml(me.name)}</div><div class="rank-you-sub">${subLine}</div></div>
+          <div style="text-align:right"><div class="rank-you-value">${fmtRankTime(meVal)}</div><div class="rank-you-unit">${rankMode==='today'?'today':'total'}</div></div>
+        </div>
+      </div>`;
+    }
+  }
+  el.innerHTML = h;
 }
 
 // ══════ TTS (Azure Neural Voice with fallback) ══════
@@ -1285,7 +1453,7 @@ async function renderReading() {
 
   // Bookshelf
   if (books.length) {
-    h += '<div class="section-title">My Books</div>';
+    h += '<div class="section-title" data-num="♦"><div class="sec-block"><div class="sec-main">My books</div><div class="sec-sub">Tap to open</div></div></div>';
     books.forEach(b => {
       const sizeMB = (b.size / 1024 / 1024).toFixed(1);
       const date = b.uploadedAt ? b.uploadedAt.slice(0, 10) : '';
